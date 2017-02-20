@@ -20,6 +20,7 @@ Scheme   | Description | Terminal | GUI |
 [hybrid-material] | Material color scheme based on w0ng/vim-hybrid | ✓ | ✓ |
 [lightning] | A light vim colorscheme based on Apprentice  | ✓ | ✓ |
 [lucius] | Lucius color scheme | ✓ | ✓ |
+[minimalist] | A Material Colorscheme Darker | ✓ | ✓ |
 [molokai] | Molokai color scheme | ✓ | ✓ |
 [molokayo] | Very tweaked molokai based theme | ✓ | ✓ |
 [oceanicnext] | Oceanic Next theme | ✓ | ✓ |
@@ -45,6 +46,7 @@ Scheme   | Description | Terminal | GUI |
 [hybrid-material]: https://github.com/kristijanhusak/vim-hybrid-material
 [lightning]: https://github.com/wimstefan/Lightning
 [lucius]: https://github.com/jonathanfilip/vim-lucius
+[minimalist]: https://github.com/dikiaap/minimalist
 [molokai]: https://github.com/tomasr/molokai
 [molokayo]: https://github.com/fmoralesc/molokayo
 [oceanicnext]: https://github.com/mhartington/oceanic-next
