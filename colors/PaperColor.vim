@@ -765,7 +765,7 @@ fun! s:set_highlightings_variable()
   call s:HL("Normal", s:foreground, s:background, "")
 
   call s:HL("Cursor", s:cursor_fg, s:cursor_bg, "")
-  call s:HL("NonText", s:nontext, "", "")
+  call s:HL("NonText", s:nontext, s:background, "")
   call s:HL("SpecialKey", s:nontext, "", "")
   call s:HL("Search", s:search_fg, s:search_bg, "")
   call s:HL("LineNr", s:linenumber_fg, s:linenumber_bg, "")

@@ -9,7 +9,7 @@ Scheme   | Description | Terminal | GUI |
 [Apprentice] | Dark, low-contrast colorscheme | ✓ | ✓ |
 [anderson] | Dark vim colorscheme based on colors from Wes Anderson films | ✓ | ✓ |
 [Atom] | Designed to be very readable in both light and dark environments |   | ✓ |
-[focuspoint] | Makes long coding sessions better while still maintaining color coordination and important keyword focus. |   | ✓ |
+[focuspoint] | Maintain color coordination and important keyword focus |   | ✓ |
 [flatcolor] | FlatColor colorscheme | ✓ | ✓ |
 [flattened] | Solarized, without the bullshit | ✓ (0-15) | ✓ |
 [gruvbox] | Retro groove color scheme | ✓ | ✓ |
