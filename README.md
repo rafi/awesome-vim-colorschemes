@@ -20,7 +20,7 @@ Scheme   | Description | Terminal | GUI |
 [hybrid-material] | Material color scheme based on w0ng/vim-hybrid | ✓ | ✓ |
 [lightning] | A light vim colorscheme based on Apprentice  | ✓ | ✓ |
 [lucius] | Lucius color scheme | ✓ | ✓ |
-[minimalist] | A Material Colorscheme Darker inspired by material-theme on Sublime Text | ✓ | ✓ |
+[minimalist] | A dark version material theme inspired by Sublime Text | ✓ | ✓ |
 [molokai] | Molokai color scheme | ✓ | ✓ |
 [molokayo] | Very tweaked molokai based theme | ✓ | ✓ |
 [oceanicnext] | Oceanic Next theme | ✓ | ✓ |
