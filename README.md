@@ -11,16 +11,16 @@ Scheme   | Description | Terminal | GUI |
 [Atom] | Designed to be very readable in both light and dark environments |   | ✓ |
 [focuspoint] | Maintain color coordination and important keyword focus |   | ✓ |
 [flatcolor] | FlatColor colorscheme | ✓ | ✓ |
-[flattened] | Solarized, without the bullshit | ✓ (0-15) | ✓ |
+[flattened] | Solarized, without the bullshit | ✓ (16) | ✓ |
 [gruvbox] | Retro groove color scheme | ✓ | ✓ |
 [papercolor] | Light and Dark color schemes inspired by Google's Material Design  | ✓ | ✓ |
-[parsec] | Color scheme for people tired of solarized  | ✓ (0-15) | ✓ |
+[parsec] | Color scheme for people tired of solarized  | ✓ (16) | ✓ |
 [scheakur] | A light/dark colorscheme  | ✓ | ✓ |
 [hybrid] | A dark colour scheme for Vim and gVim | ✓ | ✓ |
 [hybrid-material] | Material color scheme based on w0ng/vim-hybrid | ✓ | ✓ |
 [lightning] | A light vim colorscheme based on Apprentice  | ✓ | ✓ |
 [lucius] | Lucius color scheme | ✓ | ✓ |
-[minimalist] | A dark version material theme inspired by Sublime Text | ✓ | ✓ |
+[minimalist] | Darker version of material theme inspired by Sublime Text | ✓ | ✓ |
 [molokai] | Molokai color scheme | ✓ | ✓ |
 [molokayo] | Very tweaked molokai based theme | ✓ | ✓ |
 [oceanicnext] | Oceanic Next theme | ✓ | ✓ |
