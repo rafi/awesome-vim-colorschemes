@@ -5,7 +5,8 @@ function _dl() {
 	[ -d "$tmp" ] || mkdir "$tmp"
 	[ -d "$docs" ] || mkdir "$docs"
 	curl -L "https://api.github.com/repos/$1/tarball" | tar xz --strip=1 -C "$tmp"/
-	cp -r "$tmp"/after "$tmp"/autoload "$tmp"/colors .
+	rsync -avh "$tmp"/ --include='after/***' \
+		--include='autoload/***' --include='colors/***' --exclude='*' .
 	cp -r "$tmp"/README* "$docs"/"${1//\//-}".md
 	rm -rf "$tmp"
 }
