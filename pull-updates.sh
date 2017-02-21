@@ -35,5 +35,6 @@ function _main() {
 	_dl vim-scripts/wombat256.vim
 	_dl w0ng/vim-hybrid
 	_dl wimstefan/Lightning
+	_dl dikiaap/minimalist
 }
 _main
