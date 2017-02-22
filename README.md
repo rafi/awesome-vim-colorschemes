@@ -25,6 +25,7 @@ Scheme   | Description | Terminal | GUI |
 [molokayo] | Very tweaked molokai based theme | ✓ | ✓ |
 [oceanicnext] | Oceanic Next theme | ✓ | ✓ |
 [onedark] | Inspired by Atom's One Dark syntax theme | ✓ | ✓ |
+[orbital] | Dark blue base16 theme | ✓ | ✓ |
 [pyte] | Clean, light (nearly white) theme |   | ✓ |
 [rdark-terminal2] | Modified rdark-terminal to enhance visibility | ✓ |   |
 [seoul256] | Low-contrast color scheme based on Seoul Colors | ✓ | ✓ |
@@ -52,6 +53,7 @@ Scheme   | Description | Terminal | GUI |
 [molokayo]: https://github.com/fmoralesc/molokayo
 [oceanicnext]: https://github.com/mhartington/oceanic-next
 [onedark]: https://github.com/joshdick/onedark.vim
+[orbital]: https://github.com/fcpg/vim-orbital
 [pyte]: https://github.com/vim-scripts/pyte
 [rdark-terminal2]: https://github.com/vim-scripts/rdark-terminal2.vim
 [seoul256]: https://github.com/junegunn/seoul256.vim

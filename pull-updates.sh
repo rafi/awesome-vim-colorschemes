@@ -14,7 +14,7 @@ function _dl() {
 
 function _main() {
 	_dl chase/focuspoint-vim
-	# _dl chriskempson/base16-vim
+	_dl fcpg/vim-orbital
 	_dl fmoralesc/molokayo
 	_dl gilgigilgil/anderson.vim
 	_dl gregsexton/Atom
