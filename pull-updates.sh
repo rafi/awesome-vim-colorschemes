@@ -25,6 +25,7 @@ function _main() {
 	_dl MaxSt/FlatColor
 	_dl mhartington/oceanic-next
 	_dl morhetz/gruvbox
+	_dl lifepillar/vim-solarized8
 	_dl NLKNguyen/papercolor-theme
 	_dl romainl/Apprentice
 	_dl romainl/flattened
