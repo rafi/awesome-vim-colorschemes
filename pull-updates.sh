@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+shopt -s nocaseglob
 
 function _dl() {
 	local tmp="tmp" docs="docs"
