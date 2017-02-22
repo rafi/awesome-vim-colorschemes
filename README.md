@@ -60,3 +60,9 @@ Scheme   | Description | Terminal | GUI |
 [solarized8]: https://github.com/lifepillar/vim-solarized8
 [twilight256]: https://github.com/vim-scripts/twilight256.vim
 [wombat256]: https://github.com/vim-scripts/wombat256.vim
+
+Other Collections
+---
+
+- [`chriskempson/base16-vim`](https://github.com/chriskempson/base16-vim) - Syntax highlighting for hackers
+- [`mswift42/vim-themes`](https://github.com/mswift42/vim-themes) - Some emacs themes ported to vim
