@@ -13,7 +13,7 @@ Scheme   | Description | Terminal | GUI |
 [flatcolor] | FlatColor colorscheme | ✓ | ✓ |
 [flattened] | Solarized, without the bullshit | ✓ (16) | ✓ |
 [gruvbox] | Retro groove color scheme | ✓ | ✓ |
-[papercolor] | Light and Dark color schemes inspired by Google's Material Design  | ✓ | ✓ |
+[papercolor] | Light and Dark color schemes inspired by Google's Material Design | ✓ | ✓ |
 [parsec] | Color scheme for people tired of solarized  | ✓ (16) | ✓ |
 [scheakur] | A light/dark colorscheme  | ✓ | ✓ |
 [hybrid] | A dark colour scheme for Vim and gVim | ✓ | ✓ |

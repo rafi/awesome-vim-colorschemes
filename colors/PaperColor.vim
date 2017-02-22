@@ -178,11 +178,34 @@ let s:themes['default'].dark = {
 
 " }}}
 
+
+
 " Get Selected Theme: {{{
 let s:selected_theme = s:themes['default'] " default
 if exists("g:PaperColor_Theme") && has_key(s:themes, tolower(g:PaperColor_Theme))
   let s:selected_theme = s:themes[g:PaperColor_Theme]
 endif
+" }}}
+
+" Work In Progress: Sytematic Overriding Options {{{
+" Example config in .vimrc
+" let g:PaperColor_Theme_Options = {
+"       \   'allow_bold': 1,
+"       \   'allow_italic': 0,
+"       \   'transparent_background': 0
+"       \ }
+"
+let s:theme_options = {}
+if exists("g:PaperColor_Theme_Options")
+  let s:theme_options = g:PaperColor_Theme_Options
+endif
+
+
+let s:TRANSPARENT_BACKGROUND = 0
+if has_key(s:theme_options, 'transparent_background')
+  let s:TRANSPARENT_BACKGROUND = s:theme_options['transparent_background']
+endif
+
 " }}}
 
 " Get Theme Variant: either dark or light  {{{
@@ -762,14 +785,25 @@ endfun
 fun! s:set_highlightings_variable()
   let s:highlightings = []
   " Normal group should be executed first. Other parts assume that.
-  call s:HL("Normal", s:foreground, s:background, "")
+  if s:TRANSPARENT_BACKGROUND
+    call s:HL("Normal", s:foreground, "",  "")
+    call s:HL("NonText", s:nontext, "", "")
+  else
+    call s:HL("Normal", s:foreground, s:background, "")
+    call s:HL("NonText", s:nontext, s:background, "")
+  endif
 
   call s:HL("Cursor", s:cursor_fg, s:cursor_bg, "")
-  call s:HL("NonText", s:nontext, s:background, "")
   call s:HL("SpecialKey", s:nontext, "", "")
   call s:HL("Search", s:search_fg, s:search_bg, "")
-  call s:HL("LineNr", s:linenumber_fg, s:linenumber_bg, "")
-  call s:HL("Conceal", s:linenumber_fg, s:linenumber_bg, "")
+
+  if s:TRANSPARENT_BACKGROUND
+    call s:HL("LineNr", s:linenumber_fg, "", "")
+    call s:HL("Conceal", s:linenumber_fg, "", "")
+  else
+    call s:HL("LineNr", s:linenumber_fg, s:linenumber_bg, "")
+    call s:HL("Conceal", s:linenumber_fg, s:linenumber_bg, "")
+  endif
 
   call s:HL("StatusLine", s:statusline_active_bg, s:statusline_active_fg, "")
   call s:HL("StatusLineNC", s:statusline_inactive_bg, s:statusline_inactive_fg, "")
@@ -798,7 +832,11 @@ fun! s:set_highlightings_variable()
     call s:HL("CursorColumn", "", s:cursorcolumn, "none")
     call s:HL("PMenu", s:popupmenu_fg, s:popupmenu_bg, "none")
     call s:HL("PMenuSel", s:popupmenu_fg, s:popupmenu_bg, "reverse")
-    call s:HL("SignColumn", s:green, s:background, "none")
+    if s:TRANSPARENT_BACKGROUND
+      call s:HL("SignColumn", s:green, s:background, "none")
+    else
+      call s:HL("SignColumn", s:green, "", "none")
+    endif
   end
   if version >= 703
     call s:HL("ColorColumn", "", s:cursorcolumn, "none")
@@ -851,8 +889,6 @@ fun! s:set_highlightings_variable()
   call s:HL("Delimiter",s:aqua, "", "")
   call s:HL("SpecialComment", s:comment, "", s:bold)
   call s:HL("Debug", s:orange, "", "")
-
-  "call s:HL("Ignore", "666666", "", "")
 
   call s:HL("Error", s:error_fg, s:error_bg, "")
   call s:HL("Todo", s:todo_fg, s:todo_bg, s:bold)
