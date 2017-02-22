@@ -29,7 +29,7 @@ Scheme   | Description | Terminal | GUI |
 [pyte] | Clean, light (nearly white) theme |   | ✓ |
 [rdark-terminal2] | Modified rdark-terminal to enhance visibility | ✓ |   |
 [seoul256] | Low-contrast color scheme based on Seoul Colors | ✓ | ✓ |
-[solarized8] Optimized Solarized colorschemes | ✓ (16) | ✓ |
+[solarized8] | Optimized Solarized colorschemes | ✓ (16) | ✓ |
 [twilight256] | Imitates the Twilight theme for TextMate | ✓ | ✓ |
 [wombat256] | Wombat for 256 color xterms | ✓ | ✓ |
 
