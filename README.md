@@ -30,6 +30,7 @@ Scheme   | Description | Terminal | GUI |
 [rdark-terminal2] | Modified rdark-terminal to enhance visibility | ✓ |   |
 [seoul256] | Low-contrast color scheme based on Seoul Colors | ✓ | ✓ |
 [solarized8] | Optimized Solarized colorschemes | ✓ (16) | ✓ |
+[tender] | 24bit colorscheme for Vim | ✓ | ✓ |
 [twilight256] | Imitates the Twilight theme for TextMate | ✓ | ✓ |
 [wombat256] | Wombat for 256 color xterms | ✓ | ✓ |
 
@@ -58,6 +59,7 @@ Scheme   | Description | Terminal | GUI |
 [rdark-terminal2]: https://github.com/vim-scripts/rdark-terminal2.vim
 [seoul256]: https://github.com/junegunn/seoul256.vim
 [solarized8]: https://github.com/lifepillar/vim-solarized8
+[tender]: https://github.com/jacoborus/tender.vim
 [twilight256]: https://github.com/vim-scripts/twilight256.vim
 [wombat256]: https://github.com/vim-scripts/wombat256.vim
 
