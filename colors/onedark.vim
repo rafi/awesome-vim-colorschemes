@@ -170,7 +170,7 @@ call s:h("Special", { "fg": s:blue }) " any special symbol
 call s:h("SpecialChar", {}) " special character in a constant
 call s:h("Tag", {}) " you can use CTRL-] on this
 call s:h("Delimiter", {}) " character that needs attention
-call s:h("SpecialComment", {}) " special things inside a comment
+call s:h("SpecialComment", { "fg": s:comment_grey }) " special things inside a comment
 call s:h("Debug", {}) " debugging statements
 call s:h("Underlined", {}) " text that stands out, HTML links
 call s:h("Ignore", {}) " left blank, hidden
@@ -251,6 +251,9 @@ call s:h("cssPseudoClassId", { "fg": s:dark_yellow })
 call s:h("cssSelectorOp", { "fg": s:purple })
 call s:h("cssSelectorOp2", { "fg": s:purple })
 call s:h("cssTagName", { "fg": s:red })
+
+" Go
+call s:h("goDeclaration", { "fg": s:purple })
 
 " HTML
 call s:h("htmlTitle", { "fg": s:white })
@@ -355,6 +358,22 @@ call s:h("markdownLinkText", { "fg": s:blue })
 call s:h("markdownLinkDelimiter", { "fg": s:white })
 call s:h("markdownUrl", { "fg": s:purple })
 
+" Perl
+call s:h("perlFiledescRead", { "fg": s:green })
+call s:h("perlFunction", { "fg": s:purple })
+call s:h("perlMatchStartEnd",{ "fg": s:blue })
+call s:h("perlMethod", { "fg": s:purple })
+call s:h("perlPOD", { "fg": s:comment_grey })
+call s:h("perlSharpBang", { "fg": s:comment_grey })
+call s:h("perlSpecialString",{ "fg": s:cyan })
+call s:h("perlStatementFiledesc", { "fg": s:red })
+call s:h("perlStatementFlow",{ "fg": s:red })
+call s:h("perlStatementInclude", { "fg": s:purple })
+call s:h("perlStatementScalar",{ "fg": s:purple })
+call s:h("perlStatementStorage", { "fg": s:purple })
+call s:h("perlSubName",{ "fg": s:yellow })
+call s:h("perlVarPlain",{ "fg": s:blue })
+
 " PHP
 call s:h("phpVarSelector", { "fg": s:red })
 call s:h("phpOperator", { "fg": s:white })
@@ -396,6 +415,7 @@ call s:h("rubyStringDelimiter", { "fg": s:green})
 call s:h("rubySymbol", { "fg": s:cyan})
 
 " Sass
+" https://github.com/tpope/vim-haml
 call s:h("sassAmpersand", { "fg": s:red })
 call s:h("sassClass", { "fg": s:dark_yellow })
 call s:h("sassControl", { "fg": s:purple })
@@ -409,6 +429,14 @@ call s:h("sassMediaOperators", { "fg": s:white })
 call s:h("sassMixin", { "fg": s:purple })
 call s:h("sassMixinName", { "fg": s:blue })
 call s:h("sassMixing", { "fg": s:purple })
+call s:h("sassVariable", { "fg": s:purple })
+" https://github.com/cakebaker/scss-syntax.vim
+call s:h("scssExtend", { "fg": s:purple })
+call s:h("scssImport", { "fg": s:purple })
+call s:h("scssInclude", { "fg": s:purple })
+call s:h("scssMixin", { "fg": s:purple })
+call s:h("scssSelectorName", { "fg": s:dark_yellow })
+call s:h("scssVariable", { "fg": s:purple })
 
 " TypeScript
 call s:h("typescriptReserved", { "fg": s:purple })

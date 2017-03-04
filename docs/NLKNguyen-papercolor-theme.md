@@ -82,7 +82,21 @@ let g:PaperColor_Light_Override = { 'background' : '#abcdef', 'cursorline' : '#d
 #### Python
 
 ```VimL
-let g:PaperColor_Python_Highlight_Builtins = 1  " turns built-in highlighting on
+" highlight keywords for python language built-ins
+" examples: (print, iter, dir)
+let g:PaperColor_Python_Highlight_Builtins = 1
+```
+
+#### C / C++
+
+```VimL
+" highlight keywords from the C++ standard library
+" examples: (cin, cout, insert, first)
+let g:PaperColor_CPP_Highlight_Standard_Library = 1
+
+" highlight keywords for built-in functions in the C language
+" examples: (printf, bsearch, getenv)
+let g:PaperColor_C_Highlight_Builtins = 1
 ```
 
 ## Syntax Highlighting Plugins Target

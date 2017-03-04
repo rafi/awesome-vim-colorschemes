@@ -187,12 +187,23 @@ if exists("g:PaperColor_Theme") && has_key(s:themes, tolower(g:PaperColor_Theme)
 endif
 " }}}
 
-" Work In Progress: Sytematic Overriding Options {{{
+" Work In Progress: Sytematic User-Config Options {{{
 " Example config in .vimrc
 " let g:PaperColor_Theme_Options = {
 "       \   'allow_bold': 1,
 "       \   'allow_italic': 0,
-"       \   'transparent_background': 0
+"       \   'transparent_background': 0,
+"       \   'language': {
+"       \     'python': {
+"       \       'highlight_builtins' : 1
+"       \     },
+"       \     'c': {
+"       \       'highlight_builtins' : 1
+"       \     },
+"       \     'cpp': {
+"       \       'highlight_standard_library': 1
+"       \     }
+"       \   }
 "       \ }
 "
 let s:theme_options = {}
@@ -206,7 +217,41 @@ if has_key(s:theme_options, 'transparent_background')
   let s:TRANSPARENT_BACKGROUND = s:theme_options['transparent_background']
 endif
 
+
+" Language Options:
+let s:language_options = {}
+if has_key(s:theme_options, 'language')
+  let s:language_options = s:theme_options['language']
+endif
+
+" Function to check if a language option is provided and has the given value
+" @param option - string pattern [language].[option]
+" @param value - number or string
+" @return 1 if the option is provided and has the value; 0 otherwise
+" Example: s:Language_Options('python.highlight_builtins', 1)
+"     returns 1 if there is an option in `language` section in
+"     g:PaperColor_Theme_Options such as:
+"       'language': {
+"       \   'python': {
+"       \     'highlight_builtins': 1
+"       \   }
+"       }
+fun! s:Language_Options(option, value)
+  let l:parts = split(a:option, "\\.")
+  let l:language = l:parts[0]
+  let l:option = l:parts[1]
+
+  if has_key(s:language_options, l:language)
+    let l:language_option = s:language_options[l:language]
+    if has_key(l:language_option, l:option)
+      return l:language_option[l:option] ==? a:value
+    endif
+  endif
+
+  return 0
+endfun
 " }}}
+
 
 " Get Theme Variant: either dark or light  {{{
 let s:is_dark=(&background == 'dark')
@@ -761,25 +806,6 @@ fun! s:set_color_variables()
 endfun
 " }}}
 
-" LANGUAGE SPECIFIC SYNTAX HIGHLIGHTING FUNCTIONS: {{{
-
-fun! s:color_if_global_boolean_else_foreground(g_bool, color)
-  if get(g:, a:g_bool, 0) ==# 1
-    return a:color
-  else
-    return s:foreground
-  endif
-endfun
-
-fun! s:python_highlight_builtins(color)
-  " g:PaperColor_Python_Highlight_Builtins
-  return s:color_if_global_boolean_else_foreground(
-        \'PaperColor_Python_Highlight_Builtins',
-        \a:color)
-endfun
-
-" }}}
-
 " SET SYNTAX HIGHLIGHTING: {{{
 
 fun! s:set_highlightings_variable()
@@ -967,27 +993,39 @@ fun! s:set_highlightings_variable()
   " call s:HL("cSemiColon","", s:blue, "")
   call s:HL("cOperator",s:aqua, "", "")
   " call s:HL("cStatement",s:pink, "", "")
-  call s:HL("cFunction", s:foreground, "", "")
   " call s:HL("cTodo", s:comment, "", s:bold)
   " call s:HL("cStructure", s:blue, "", s:bold)
   call s:HL("cCustomParen", s:foreground, "", "")
   " call s:HL("cCustomFunc", s:foreground, "", "")
   " call s:HL("cUserFunction",s:blue, "", s:bold)
   call s:HL("cOctalZero", s:purple, "", s:bold)
+  if s:Language_Options('c.highlight_builtins', 1)
+    call s:HL("cFunction", s:blue, "", "")
+  else
+    call s:HL("cFunction", s:foreground, "", "")
+  endif
 
   " CPP highlighting
   call s:HL("cppBoolean", s:navy, "", "")
   call s:HL("cppSTLnamespace", s:purple, "", "")
-  call s:HL("cppSTLconstant", s:foreground, "", "")
-  call s:HL("cppSTLtype", s:foreground, "", "")
   call s:HL("cppSTLexception", s:pink, "", "")
   call s:HL("cppSTLfunctional", s:foreground, "", s:bold)
   call s:HL("cppSTLiterator", s:foreground, "", s:bold)
-  " call s:HL("cppSTLfunction", s:aqua, "", s:bold)
   call s:HL("cppExceptions", s:red, "", "")
   call s:HL("cppStatement", s:blue, "", "")
   call s:HL("cppStorageClass", s:navy, "", s:bold)
   call s:HL("cppAccess",s:blue, "", "")
+  if s:Language_Options('cpp.highlight_standard_library', 1)
+    call s:HL("cppSTLconstant", s:green, "", s:bold)
+    call s:HL("cppSTLtype", s:pink, "", s:bold)
+    call s:HL("cppSTLfunction", s:blue, "", "")
+    call s:HL("cppSTLios", s:olive, "", s:bold)
+  else
+    call s:HL("cppSTLconstant", s:foreground, "", "")
+    call s:HL("cppSTLtype", s:foreground, "", "")
+    call s:HL("cppSTLfunction", s:foreground, "", "")
+    call s:HL("cppSTLios", s:foreground, "", "")
+  endif
   " call s:HL("cppSTL",s:blue, "", "")
 
 
@@ -1155,8 +1193,14 @@ fun! s:set_highlightings_variable()
   call s:HL("pythonBytesEscape", s:olive, "", s:bold)
   call s:HL("pythonDottedName", s:purple, "", "")
   call s:HL("pythonStrFormat", s:foreground, "", "")
-  call s:HL("pythonBuiltinFunc", s:python_highlight_builtins(s:blue), "", "")
-  call s:HL("pythonBuiltinObj", s:python_highlight_builtins(s:red), "", "")
+
+  if s:Language_Options('python.highlight_builtins', 1)
+    call s:HL("pythonBuiltinFunc", s:blue, "", "")
+    call s:HL("pythonBuiltinObj", s:red, "", "")
+  else
+    call s:HL("pythonBuiltinFunc", s:foreground, "", "")
+    call s:HL("pythonBuiltinObj", s:foreground, "", "")
+  endif
 
   " Java Highlighting
   call s:HL("javaExternal", s:pink, "", "")
@@ -1497,11 +1541,11 @@ fun! s:set_highlightings_variable()
   call s:HL("elixirAlias", s:blue, "", s:bold)
   call s:HL("elixirAtom", s:navy, "", "")
   call s:HL("elixirVariable", s:navy, "", "")
-  call s:HL("elixirUnusedVariable", s:comment, "", "")
+  call s:HL("elixirUnusedVariable", s:foreground, "", s:bold)
   call s:HL("elixirInclude", s:purple, "", "")
   call s:HL("elixirStringDelimiter", s:olive, "", "")
   call s:HL("elixirKeyword", s:purple, "", s:bold)
-  call s:HL("elixirFunctionDeclaration", s:foreground, "", s:bold)
+  call s:HL("elixirFunctionDeclaration", s:aqua, "", s:bold)
   call s:HL("elixirBlockDefinition", s:pink, "", "")
   call s:HL("elixirDefine", s:pink, "", "")
   call s:HL("elixirStructDefine", s:pink, "", "")
@@ -1509,6 +1553,9 @@ fun! s:set_highlightings_variable()
   call s:HL("elixirModuleDefine", s:pink, "", "")
   call s:HL("elixirProtocolDefine", s:pink, "", "")
   call s:HL("elixirImplDefine", s:pink, "", "")
+  call s:HL("elixirModuleDeclaration", s:aqua, "", s:bold)
+  call s:HL("elixirDocString", s:olive, "", "")
+  call s:HL("elixirDocTest", s:green, "", s:bold)
 
   " Erlang Highlighting
   call s:HL("erlangBIF", s:purple, "", s:bold)
