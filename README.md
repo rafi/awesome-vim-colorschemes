@@ -6,6 +6,7 @@ Color Schemes
 ---
 Scheme   | Description | Terminal | GUI |
 -------------- | ------------|:--------:|:---:|:----:
+[afterglow] | Adaptation from Sublime Text | ✓ | ✓ |
 [Apprentice] | Dark, low-contrast colorscheme | ✓ | ✓ |
 [anderson] | Dark vim colorscheme based on colors from Wes Anderson films | ✓ | ✓ |
 [Atom] | Designed to be very readable in both light and dark environments |   | ✓ |
@@ -34,6 +35,7 @@ Scheme   | Description | Terminal | GUI |
 [twilight256] | Imitates the Twilight theme for TextMate | ✓ | ✓ |
 [wombat256] | Wombat for 256 color xterms | ✓ | ✓ |
 
+[afterglow]: https://github.com/danilo-augusto/vim-afterglow
 [Apprentice]: https://github.com/romainl/Apprentice
 [anderson]: https://github.com/gilgigilgil/anderson.vim
 [Atom]: https://github.com/gregsexton/Atom

@@ -14,10 +14,12 @@ function _dl() {
 
 function _main() {
 	_dl chase/focuspoint-vim
+	_dl danilo-augusto/vim-afterglow
 	_dl fcpg/vim-orbital
 	_dl fmoralesc/molokayo
 	_dl gilgigilgil/anderson.vim
 	_dl gregsexton/Atom
+	_dl jacoborus/tender.vim
 	_dl jonathanfilip/vim-lucius
 	_dl joshdick/onedark.vim
 	_dl junegunn/seoul256.vim
