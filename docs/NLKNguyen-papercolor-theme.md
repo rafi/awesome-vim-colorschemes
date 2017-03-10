@@ -79,24 +79,26 @@ let g:PaperColor_Light_Override = { 'background' : '#abcdef', 'cursorline' : '#d
 
 ### Language-specific options
 
-#### Python
+In general, for each language, built-in functions and constants are not highlighted.
+This is intentional; the vim syntax file often lags behind actual language development.
+To override the default behavior, optionally place a language section in g:PaperColor_Theme_Options.
+An example configuration is available below, and will be updated as new languages are supported.
+
 
 ```VimL
-" highlight keywords for python language built-ins
-" examples: (print, iter, dir)
-let g:PaperColor_Python_Highlight_Builtins = 1
-```
-
-#### C / C++
-
-```VimL
-" highlight keywords from the C++ standard library
-" examples: (cin, cout, insert, first)
-let g:PaperColor_CPP_Highlight_Standard_Library = 1
-
-" highlight keywords for built-in functions in the C language
-" examples: (printf, bsearch, getenv)
-let g:PaperColor_C_Highlight_Builtins = 1
+let g:PaperColor_Theme_Options = {
+  \   'language': {
+  \     'python': {
+  \       'highlight_builtins' : 1
+  \     },
+  \     'cpp': {
+  \       'highlight_standard_library': 1
+  \     },
+  \     'c': {
+  \       'highlight_builtins' : 1
+  \     }
+  \   }
+  \ }
 ```
 
 ## Syntax Highlighting Plugins Target
