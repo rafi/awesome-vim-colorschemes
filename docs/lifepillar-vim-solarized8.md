@@ -9,29 +9,26 @@ the original [Solarized](https://github.com/altercation/vim-colors-solarized)
 and the [Flattened](https://github.com/romainl/flattened) variant. It
 removes only *some* of the bullshit. The color palette is exactly the same as
 in Solarized, of course, although some highlight groups are defined slightly
-differently (and better, in my opinion).
+differently (for instance, I have tried to avoid red on blue).
 
 The main reason for the existence of this project is that the original Solarized
-theme does not define `guifg` and `guibg` in terminal Vim, which means that gui
-colors cannot be used with versions of Vim supporting true-color terminals.
-Another reason is that I do not understand why a color scheme should dynamically
-compute constant values again and again. So, this version may be thought of as
-a “compiled” Solarized (in fact, code from the original Solarized is used as
-“source” code), and it loads >2.2x times as fast (not that you are likely to
-notice the difference…).
-
-This color scheme works **out of the box** if you use:
+theme does not define `guifg` and `guibg` in terminal Vim, making it unsuitable
+for versions of Vim supporting true-color terminals. Instead, this color scheme
+works **out of the box** if you use:
 
 - Vim ≥7.4.1799 with `termguicolors` set, or
 - NeoVim,
 
 **and** a true-color enabled terminal (e.g., [iTerm2](https://www.iterm2.com)).
-
 Solarized 8 also works in MacVim, gVim, etc…: no configuration is needed.
 
-For terminals not supporting true colors, the requirement is the same as for the
-other color schemes: your 16 terminal ASCII colors must be set to the Solarized
-palette. The ugly degraded 256-color variant has been removed.
+For terminals not supporting true colors, your 16 terminal ASCII colors **must**
+be set to the Solarized palette. The ugly degraded 256-color variant of the
+original Solarized has been removed from Solarized 8.
+
+In NeoVim, Solarized 8 also defines the color palette for the [terminal
+emulator](https://neovim.io/doc/user/nvim_terminal_emulator.html), as well as
+colors for the `TermCursor` and `TermCursorNC` highlight groups.
 
 
 ## Installation
@@ -50,7 +47,7 @@ There are actually 8 optimized color schemes:
 - `solarized8_dark_low` and `solarized8_light_low`: low-contrast variant;
 - `solarized8_dark_high` and `solarized8_light_high`: high-contrast variant;
 - `solarized8_dark_flat` and `solarized8_light_flat`: “flat” variant (not
-  present in the original Solarized).
+  present in the original Solarized, see screenshots above).
 
 To use any of them, put a line like the following in your `.vimrc`:
 
@@ -86,7 +83,7 @@ favourite true-color enabled terminal!**
 
 Try putting this in your `.vimrc`:
 
-```
+```viml
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 ```
@@ -99,7 +96,7 @@ See `:h xterm-true-color` for the details.
 If you want to quickly toggle between dark and light background, you may define
 a mapping like the following:
 
-```
+```viml
 nnoremap  <leader>B :<c-u>exe "colors" (g:colors_name =~# "dark"
     \ ? substitute(g:colors_name, 'dark', 'light', '')
     \ : substitute(g:colors_name, 'light', 'dark', '')
@@ -108,7 +105,7 @@ nnoremap  <leader>B :<c-u>exe "colors" (g:colors_name =~# "dark"
 
 To tune the contrast level you may use the following snippet:
 
-```
+```viml
 fun! Solarized8Contrast(delta)
   let l:schemes = map(["_low", "_flat", "", "_high"], '"solarized8_".(&background).v:val')
   exe "colors" l:schemes[((a:delta+index(l:schemes, g:colors_name)) % 4 + 4) % 4]

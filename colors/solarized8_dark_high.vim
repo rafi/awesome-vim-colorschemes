@@ -1,6 +1,6 @@
-" Name:     Solarized colorscheme for Vim 8
-" Author:   Lifepillar <lifepillar@lifepillar.me>
-" License:  OSI approved MIT license (see end of this file)
+" Name:         Solarized colorscheme for Vim 8
+" Maintainer:   Lifepillar <lifepillar@lifepillar.me>
+" License:      OSI approved MIT license (see end of this file)
 
 set background=dark
 hi clear
@@ -121,6 +121,22 @@ hi! link lCursor Cursor
 if has('nvim')
   hi! link TermCursor Cursor
   hi! TermCursorNC ctermfg=8 guifg=#002b36 ctermbg=11 guibg=#657b83 cterm=NONE gui=NONE
+  let g:terminal_color_0 = '#073642'
+  let g:terminal_color_1 = '#dc322f'
+  let g:terminal_color_2 = '#719e07'
+  let g:terminal_color_3 = '#b58900'
+  let g:terminal_color_4 = '#268bd2'
+  let g:terminal_color_5 = '#d33682'
+  let g:terminal_color_6 = '#2aa198'
+  let g:terminal_color_7 = '#eee8d5'
+  let g:terminal_color_8 = '#002b36'
+  let g:terminal_color_9 = '#cb4b16'
+  let g:terminal_color_10 = '#586e75'
+  let g:terminal_color_11 = '#657b83'
+  let g:terminal_color_12 = '#839496'
+  let g:terminal_color_13 = '#6c71c4'
+  let g:terminal_color_14 = '#93a1a1'
+  let g:terminal_color_15 = '#fdf6e3'
 endif
 hi! MatchParen cterm=NONE,bold gui=NONE,bold ctermfg=15 guifg=#fdf6e3 ctermbg=0 guibg=#073642
 hi! link vimVar Identifier
