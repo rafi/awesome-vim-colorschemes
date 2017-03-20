@@ -178,80 +178,14 @@ let s:themes['default'].dark = {
 
 " }}}
 
-
-
 " Get Selected Theme: {{{
-let s:selected_theme = s:themes['default'] " default
+
+let s:theme_name = 'default'
 if exists("g:PaperColor_Theme") && has_key(s:themes, tolower(g:PaperColor_Theme))
-  let s:selected_theme = s:themes[g:PaperColor_Theme]
+  let s:theme_name = tolower(g:PaperColor_Theme)
 endif
+let s:selected_theme = s:themes[s:theme_name]
 " }}}
-
-" Work In Progress: Sytematic User-Config Options {{{
-" Example config in .vimrc
-" let g:PaperColor_Theme_Options = {
-"       \   'allow_bold': 1,
-"       \   'allow_italic': 0,
-"       \   'transparent_background': 0,
-"       \   'language': {
-"       \     'python': {
-"       \       'highlight_builtins' : 1
-"       \     },
-"       \     'c': {
-"       \       'highlight_builtins' : 1
-"       \     },
-"       \     'cpp': {
-"       \       'highlight_standard_library': 1
-"       \     }
-"       \   }
-"       \ }
-"
-let s:theme_options = {}
-if exists("g:PaperColor_Theme_Options")
-  let s:theme_options = g:PaperColor_Theme_Options
-endif
-
-
-let s:TRANSPARENT_BACKGROUND = 0
-if has_key(s:theme_options, 'transparent_background')
-  let s:TRANSPARENT_BACKGROUND = s:theme_options['transparent_background']
-endif
-
-
-" Language Options:
-let s:language_options = {}
-if has_key(s:theme_options, 'language')
-  let s:language_options = s:theme_options['language']
-endif
-
-" Function to check if a language option is provided and has the given value
-" @param option - string pattern [language].[option]
-" @param value - number or string
-" @return 1 if the option is provided and has the value; 0 otherwise
-" Example: s:Language_Options('python.highlight_builtins', 1)
-"     returns 1 if there is an option in `language` section in
-"     g:PaperColor_Theme_Options such as:
-"       'language': {
-"       \   'python': {
-"       \     'highlight_builtins': 1
-"       \   }
-"       }
-fun! s:Language_Options(option, value)
-  let l:parts = split(a:option, "\\.")
-  let l:language = l:parts[0]
-  let l:option = l:parts[1]
-
-  if has_key(s:language_options, l:language)
-    let l:language_option = s:language_options[l:language]
-    if has_key(l:language_option, l:option)
-      return l:language_option[l:option] ==? a:value
-    endif
-  endif
-
-  return 0
-endfun
-" }}}
-
 
 " Get Theme Variant: either dark or light  {{{
 let s:is_dark=(&background == 'dark')
@@ -271,6 +205,133 @@ else " is light background
   endif
 endif
 " }}}
+
+" Sytematic User-Config Options: {{{
+" Example config in .vimrc
+" let g:PaperColor_Theme_Options = {
+"       \   'theme': {
+"       \     'default': {
+"       \       'allow_bold': 1,
+"       \       'allow_italic': 0,
+"       \       'transparent_background': 1
+"       \     }
+"       \   },
+"       \   'language': {
+"       \     'python': {
+"       \       'highlight_builtins' : 1
+"       \     },
+"       \     'c': {
+"       \       'highlight_builtins' : 1
+"       \     },
+"       \     'cpp': {
+"       \       'highlight_standard_library': 1
+"       \     }
+"       \   }
+"       \ }
+"
+let s:options = {}
+if exists("g:PaperColor_Theme_Options")
+  let s:options = g:PaperColor_Theme_Options
+endif
+
+" }}}
+
+" Theme Options: {{{
+" Part of user-config options
+let s:theme_options = {}
+if has_key(s:options, 'theme')
+  let s:theme_options = s:options['theme']
+endif
+
+
+" Function to obtain theme option for the current theme
+" @param option - string
+" @return the value of that option if specified; empty string otherwise
+" Example: s:Theme_Options('transparent_background')
+"     returns 1 if there is an option for current theme in `theme` section in
+"     g:PaperColor_Theme_Options such as:
+"       'theme': {
+"       \   'default': {
+"       \     'transparent_background': 1
+"       \   }
+"       }
+"     OR it could specify for the exact light or dark variant of the theme,
+"     which will take higher precedence for the current theme variant
+"       'theme': {
+"       \   'default': {
+"       \     'transparent_background': 0
+"       \   },
+"       \   'default.light': {
+"       \     'transparent_background': 1
+"       \   }
+"       }
+fun! s:Theme_Options(option)
+  let l:value = ''
+
+  let l:variant = 'light'
+  if s:is_dark
+    let l:variant = 'dark'
+  endif
+  let l:specific_theme_variant = s:theme_name . '.' . l:variant
+
+  if has_key(s:theme_options, l:specific_theme_variant)
+    let l:theme_option = s:theme_options[l:specific_theme_variant]
+    if has_key(l:theme_option, a:option)
+      let l:value = l:theme_option[a:option]
+    endif
+  elseif has_key(s:theme_options, s:theme_name)
+    let l:theme_option = s:theme_options[s:theme_name]
+    if has_key(l:theme_option, a:option)
+      let l:value = l:theme_option[a:option]
+    endif
+  endif
+
+  return l:value
+endfun
+
+" These options will be checked at many place so better be cached to variables
+let s:TRANSPARENT_BACKGROUND = s:Theme_Options('transparent_background') == 1
+
+
+" }}}
+
+" Language Options: {{{
+" Part of user-config options
+let s:language_options = {}
+if has_key(s:options, 'language')
+  let s:language_options = s:options['language']
+endif
+
+" Function to obtain a language option
+" @param option - string pattern [language].[option]
+" @param value - number or string
+" @return the option value if it is provided; empty string otherwise
+" Example: s:Language_Options('python.highlight_builtins', 1)
+"     returns 1 if there is an option in `language` section in
+"     g:PaperColor_Theme_Options such as:
+"       'language': {
+"       \   'python': {
+"       \     'highlight_builtins': 1
+"       \   }
+"       }
+fun! s:Language_Options(option)
+  let l:parts = split(a:option, "\\.")
+  let l:language = l:parts[0]
+  let l:option = l:parts[1]
+
+  if has_key(s:language_options, l:language)
+    let l:language_option = s:language_options[l:language]
+    if has_key(l:language_option, l:option)
+      return l:language_option[l:option]
+    endif
+  endif
+
+  return ''
+endfun
+
+" }}}
+
+
 
 " HEX TO 256-COLOR CONVERTER: {{{
 " Returns an approximate grey index for the given grey level
@@ -999,7 +1060,7 @@ fun! s:set_highlightings_variable()
   " call s:HL("cCustomFunc", s:foreground, "", "")
   " call s:HL("cUserFunction",s:blue, "", s:bold)
   call s:HL("cOctalZero", s:purple, "", s:bold)
-  if s:Language_Options('c.highlight_builtins', 1)
+  if s:Language_Options('c.highlight_builtins') == 1
     call s:HL("cFunction", s:blue, "", "")
   else
     call s:HL("cFunction", s:foreground, "", "")
@@ -1015,7 +1076,7 @@ fun! s:set_highlightings_variable()
   call s:HL("cppStatement", s:blue, "", "")
   call s:HL("cppStorageClass", s:navy, "", s:bold)
   call s:HL("cppAccess",s:blue, "", "")
-  if s:Language_Options('cpp.highlight_standard_library', 1)
+  if s:Language_Options('cpp.highlight_standard_library') == 1
     call s:HL("cppSTLconstant", s:green, "", s:bold)
     call s:HL("cppSTLtype", s:pink, "", s:bold)
     call s:HL("cppSTLfunction", s:blue, "", "")
@@ -1194,7 +1255,7 @@ fun! s:set_highlightings_variable()
   call s:HL("pythonDottedName", s:purple, "", "")
   call s:HL("pythonStrFormat", s:foreground, "", "")
 
-  if s:Language_Options('python.highlight_builtins', 1)
+  if s:Language_Options('python.highlight_builtins') == 1
     call s:HL("pythonBuiltinFunc", s:blue, "", "")
     call s:HL("pythonBuiltinObj", s:red, "", "")
   else

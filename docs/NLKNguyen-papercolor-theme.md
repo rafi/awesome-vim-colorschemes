@@ -51,37 +51,48 @@ set number
 set laststatus=2
 ```
 
-## Highlighting Customization
+## User-config Options
 
+This theme currently provides theme options and language-specific options. All config options can be stored in global variable `g:PaperColor_Theme_Options` which can be set in your `.vimrc` 
 
-### General Options 
+### Theme Options
+
+Within section `theme`, options for each theme can be specified under the theme name. The original PaperColor theme is `default`. For example:
 
 ```VimL
 let g:PaperColor_Theme_Options = {
-  \   'transparent_background': 1
+  \   'theme': {
+  \     'default': {
+  \       'transparent_background': 1
+  \     }
+  \   }
   \ }
 ```
-* `transparent_background` set to 1 to use terminal background. Default is 0, use theme background
 
-
-*Note*: The below information has not been updated for the current stage of the project. Some information apply only for version 0.7 and earlier.
-
-Some elements have default highlighting color that may not fit everyone, and you can customize their HEX color code in your .vimrc file.
-Refer to 256-color table when choosing color.
-
-Example of currently available options:
+Or if you want to specify options only for a variant (dark or light) of a theme, you can specify using this pattern `[theme name].light` or `[theme name].dark`. For example:
 
 ```VimL
-let g:PaperColor_Dark_Override = { 'background' : '#1c1c1c', 'cursorline' : '#abcdef', 'matchparen' : '#3a3a3a', 'comment' : '#5f875f' }
-
-let g:PaperColor_Light_Override = { 'background' : '#abcdef', 'cursorline' : '#dfdfff', 'matchparen' : '#d6d6d6' , 'comment' : '#8e908c' }
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default.dark': {
+  \       'transparent_background': 1
+  \     }
+  \   }
+  \ }
 ```
+**Note**: if the same option is provided in both a theme and a theme's variant, the value in the theme's variant options will take precedence. 
+
+#### Currently available theme options
+
+`transparent_background` set to 1 to use terminal background. Default is 0, use theme background
+
+
 
 ### Language-specific options
 
 In general, for each language, built-in functions and constants are not highlighted.
 This is intentional; the vim syntax file often lags behind actual language development.
-To override the default behavior, optionally place a language section in g:PaperColor_Theme_Options.
+To override the default behavior, optionally place a language section in `g:PaperColor_Theme_Options`.
 An example configuration is available below, and will be updated as new languages are supported.
 
 
