@@ -1,39 +1,39 @@
-Awesome Vim Color Schemes
-===
+# Awesome Vim Color Schemes
+
 Collection of awesome color schemes for Vim, merged together.
 
-Color Schemes
----
-Scheme   | Description | Terminal | GUI |
--------------- | ------------|:--------:|:---:|:----:
-[afterglow] | Adaptation from Sublime Text | ✓ | ✓ |
-[Apprentice] | Dark, low-contrast colorscheme | ✓ | ✓ |
-[anderson] | Dark vim colorscheme based on colors from Wes Anderson films | ✓ | ✓ |
-[Atom] | Designed to be very readable in both light and dark environments |   | ✓ |
-[focuspoint] | Maintain color coordination and important keyword focus |   | ✓ |
-[flatcolor] | FlatColor colorscheme | ✓ | ✓ |
-[flattened] | Solarized, without the bullshit | ✓ (16) | ✓ |
-[gruvbox] | Retro groove color scheme | ✓ | ✓ |
-[papercolor] | Light and Dark color schemes inspired by Google's Material Design | ✓ | ✓ |
-[parsec] | Color scheme for people tired of solarized  | ✓ (16) | ✓ |
-[scheakur] | A light/dark colorscheme  | ✓ | ✓ |
-[hybrid] | A dark colour scheme for Vim and gVim | ✓ | ✓ |
-[hybrid-material] | Material color scheme based on w0ng/vim-hybrid | ✓ | ✓ |
-[lightning] | A light vim colorscheme based on Apprentice  | ✓ | ✓ |
-[lucius] | Lucius color scheme | ✓ | ✓ |
-[minimalist] | Darker version of material theme inspired by Sublime Text | ✓ | ✓ |
-[molokai] | Molokai color scheme | ✓ | ✓ |
-[molokayo] | Very tweaked molokai based theme | ✓ | ✓ |
-[oceanicnext] | Oceanic Next theme | ✓ | ✓ |
-[onedark] | Inspired by Atom's One Dark syntax theme | ✓ | ✓ |
-[orbital] | Dark blue base16 theme | ✓ | ✓ |
-[pyte] | Clean, light (nearly white) theme |   | ✓ |
-[rdark-terminal2] | Modified rdark-terminal to enhance visibility | ✓ |   |
-[seoul256] | Low-contrast color scheme based on Seoul Colors | ✓ | ✓ |
-[solarized8] | Optimized Solarized colorschemes | ✓ (16) | ✓ |
-[tender] | 24bit colorscheme for Vim | ✓ | ✓ |
-[twilight256] | Imitates the Twilight theme for TextMate | ✓ | ✓ |
-[wombat256] | Wombat for 256 color xterms | ✓ | ✓ |
+## Color Schemes
+
+| Scheme | Description | Terminal | GUI |
+| -------------- | ------------|:--------:|:---:|
+| [afterglow] | Adaptation from Sublime Text | ✓ | ✓ |
+| [Apprentice] | Dark, low-contrast colorscheme | ✓ | ✓ |
+| [anderson] | Dark vim colorscheme based on colors from Wes Anderson films | ✓ | ✓ |
+| [Atom] | Designed to be very readable in both light and dark environments |   | ✓ |
+| [focuspoint] | Maintain color coordination and important keyword focus |   | ✓ |
+| [flatcolor] | FlatColor colorscheme | ✓ | ✓ |
+| [flattened] | Solarized, without the bullshit | ✓ (16) | ✓ |
+| [gruvbox] | Retro groove color scheme | ✓ | ✓ |
+| [papercolor] | Light and Dark color schemes inspired by Google's Material Design | ✓ | ✓ |
+| [parsec] | Color scheme for people tired of solarized  | ✓ (16) | ✓ |
+| [scheakur] | A light/dark colorscheme  | ✓ | ✓ |
+| [hybrid] | A dark colour scheme for Vim and gVim | ✓ | ✓ |
+| [hybrid-material] | Material color scheme based on w0ng/vim-hybrid | ✓ | ✓ |
+| [lightning] | A light vim colorscheme based on Apprentice  | ✓ | ✓ |
+| [lucius] | Lucius color scheme | ✓ | ✓ |
+| [minimalist] | Darker version of material theme inspired by Sublime Text | ✓ | ✓ |
+| [molokai] | Molokai color scheme | ✓ | ✓ |
+| [molokayo] | Very tweaked molokai based theme | ✓ | ✓ |
+| [oceanicnext] | Oceanic Next theme | ✓ | ✓ |
+| [onedark] | Inspired by Atom's One Dark syntax theme | ✓ | ✓ |
+| [orbital] | Dark blue base16 theme | ✓ | ✓ |
+| [pyte] | Clean, light (nearly white) theme |   | ✓ |
+| [rdark-terminal2] | Modified rdark-terminal to enhance visibility | ✓ |   |
+| [seoul256] | Low-contrast color scheme based on Seoul Colors | ✓ | ✓ |
+| [solarized8] | Optimized Solarized colorschemes | ✓ (16) | ✓ |
+| [tender] | 24bit colorscheme for Vim | ✓ | ✓ |
+| [twilight256] | Imitates the Twilight theme for TextMate | ✓ | ✓ |
+| [wombat256] | Wombat for 256 color xterms | ✓ | ✓ |
 
 [afterglow]: https://github.com/danilo-augusto/vim-afterglow
 [Apprentice]: https://github.com/romainl/Apprentice
@@ -65,8 +65,7 @@ Scheme   | Description | Terminal | GUI |
 [twilight256]: https://github.com/vim-scripts/twilight256.vim
 [wombat256]: https://github.com/vim-scripts/wombat256.vim
 
-Other Collections
----
+## Other Collections
 
 - [`chriskempson/base16-vim`](https://github.com/chriskempson/base16-vim) - Syntax highlighting for hackers
 - [`mswift42/vim-themes`](https://github.com/mswift42/vim-themes) - Some emacs themes ported to vim
