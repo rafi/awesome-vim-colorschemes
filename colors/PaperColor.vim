@@ -74,7 +74,7 @@ let s:themes['default'].light = {
       \       'matchparen_fg' : ['#005f87', '24'],
       \       'visual_fg' : ['#eeeeee', '255'],
       \       'visual_bg' : ['#0087af', '31'],
-      \       'folded_fg' : ['#005f87', '24'],
+      \       'folded_fg' : ['#0087af', '31'],
       \       'folded_bg' : ['#afd7ff', '153'],
       \       'wildmenu_fg': ['#444444', '238'],
       \       'wildmenu_bg': ['#ffff00', '226'],
@@ -89,7 +89,7 @@ let s:themes['default'].light = {
       \       'difftext_fg':   ['#0087af', '31'],
       \       'difftext_bg':   ['#ffffd7', '230'],
       \       'diffchange_fg': ['#444444', '238'],
-      \       'diffchange_bg': ['#ffffaf', '229'],
+      \       'diffchange_bg': ['#ffd787', '222'],
       \       'tabline_bg':          ['#005f87', '24'],
       \       'tabline_active_fg':   ['#444444', '238'],
       \       'tabline_active_bg':   ['#e4e4e4', '254'],
@@ -759,6 +759,7 @@ fun! s:set_color_variables()
   let s:blue       = get(s:palette, 'color14') + ['LightCyan'] " other keyword
   let s:highlight  = get(s:palette, 'color15') + ['White']
 
+  let s:transparent = [s:background[0], 'none', 'none']
   " EXTENDED COLORS:
   " From here on, all colors are optional and must have default values (3rd parameter of the
   " `get` command) that point to the above basic colors in case the target theme doesn't
@@ -875,28 +876,24 @@ fun! s:set_highlightings_variable()
   if s:TRANSPARENT_BACKGROUND
     call s:HL("Normal", s:foreground, "",  "")
     call s:HL("NonText", s:nontext, "", "")
+    call s:HL("LineNr", s:linenumber_fg, "", "")
+    call s:HL("Conceal", s:linenumber_fg, "", "")
+    call s:HL("VertSplit", s:vertsplit_fg, "", "none")
+    call s:HL("FoldColumn", s:folded_fg, s:transparent, "none")
   else
     call s:HL("Normal", s:foreground, s:background, "")
     call s:HL("NonText", s:nontext, s:background, "")
+    call s:HL("LineNr", s:linenumber_fg, s:linenumber_bg, "")
+    call s:HL("Conceal", s:linenumber_fg, s:linenumber_bg, "")
+    call s:HL("VertSplit", s:vertsplit_bg, s:vertsplit_fg, "")
+    call s:HL("FoldColumn", s:folded_fg, s:background, "none")
   endif
 
   call s:HL("Cursor", s:cursor_fg, s:cursor_bg, "")
   call s:HL("SpecialKey", s:nontext, "", "")
   call s:HL("Search", s:search_fg, s:search_bg, "")
-
-  if s:TRANSPARENT_BACKGROUND
-    call s:HL("LineNr", s:linenumber_fg, "", "")
-    call s:HL("Conceal", s:linenumber_fg, "", "")
-  else
-    call s:HL("LineNr", s:linenumber_fg, s:linenumber_bg, "")
-    call s:HL("Conceal", s:linenumber_fg, s:linenumber_bg, "")
-  endif
-
   call s:HL("StatusLine", s:statusline_active_bg, s:statusline_active_fg, "")
   call s:HL("StatusLineNC", s:statusline_inactive_bg, s:statusline_inactive_fg, "")
-
-  call s:HL("VertSplit", s:vertsplit_bg, s:vertsplit_fg, "")
-
   call s:HL("Visual", s:visual_fg, s:visual_bg, "")
   call s:HL("Directory", s:blue, "", "")
   call s:HL("ModeMsg", s:olive, "", "")
@@ -905,12 +902,10 @@ fun! s:set_highlightings_variable()
   call s:HL("WarningMsg", s:pink, "", "")
   call s:HL("MatchParen", s:matchparen_fg, s:matchparen_bg, "")
   call s:HL("Folded", s:folded_fg, s:folded_bg, "")
-  call s:HL("FoldColumn", "", s:background, "")
   call s:HL("WildMenu", s:wildmenu_fg, s:wildmenu_bg, s:bold)
 
   if version >= 700
     call s:HL("CursorLine", "", s:cursorline, "none")
-    " call s:HL("CursorLine", "", "", "none")
     if s:mode == s:MODE_16_COLOR
       call s:HL("CursorLineNr", s:cursorlinenr_fg, s:cursorlinenr_bg, "")
     else
@@ -920,9 +915,9 @@ fun! s:set_highlightings_variable()
     call s:HL("PMenu", s:popupmenu_fg, s:popupmenu_bg, "none")
     call s:HL("PMenuSel", s:popupmenu_fg, s:popupmenu_bg, "reverse")
     if s:TRANSPARENT_BACKGROUND
-      call s:HL("SignColumn", s:green, s:background, "none")
-    else
       call s:HL("SignColumn", s:green, "", "none")
+    else
+      call s:HL("SignColumn", s:green, s:background, "none")
     endif
   end
   if version >= 703
@@ -998,6 +993,7 @@ fun! s:set_highlightings_variable()
   call s:HL("vimIsCommand", s:foreground, "", "")
   call s:HL("vimFuncVar", s:aqua, "", "")
   call s:HL("vimLet", s:red, "", "")
+  call s:HL("vimContinue", s:aqua, "", "")
   call s:HL("vimMapRhsExtend", s:foreground, "", "")
   call s:HL("vimCommentTitle", s:comment, "", s:bold)
   call s:HL("vimBracket", s:aqua, "", "")

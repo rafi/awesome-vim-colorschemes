@@ -135,6 +135,8 @@ There are syntax highlighting enhancement plugins that improve upon Vim built-in
 
 ## Screenshots
 
+**Default Light**
+
 ![Sample Ruby code](https://nlknguyen.files.wordpress.com/2015/05/ruby1.png)
 
 ![Sample DTrace code](https://nlknguyen.files.wordpress.com/2015/05/dtrace1.png)
@@ -143,7 +145,9 @@ There are syntax highlighting enhancement plugins that improve upon Vim built-in
 
 ![Sample Assembly code](https://nlknguyen.files.wordpress.com/2015/05/asm.png)
 
-*Note*: The background of the dark color scheme was brightened a bit to reduce contrast after these following screenshots were taken.
+![Sample Vimdiff w/ git tool](https://cloud.githubusercontent.com/assets/4667129/24315492/9410c372-10a4-11e7-84c7-8846984bdca0.png)
+
+**Default Dark**
 
 ![Sample Ruby code](https://nlknguyen.files.wordpress.com/2015/05/ruby-dark.png)
 
@@ -152,6 +156,13 @@ There are syntax highlighting enhancement plugins that improve upon Vim built-in
 ![Sample JavaScript code](https://nlknguyen.files.wordpress.com/2015/05/javascript-dark2.png)
 
 ![Sample C code](https://nlknguyen.files.wordpress.com/2015/05/c-dark-split.png)
+
+![Sample Vimdiff w/ git tool](https://cloud.githubusercontent.com/assets/4667129/24315493/94122816-10a4-11e7-8d3f-f5d92a064a14.png)
+
+
+**Have screenshots to contribute?** Use [this thread](https://github.com/NLKNguyen/papercolor-theme/issues/90) to upload images and get direct links.
+
+----
 
 ![Vim-airline support](https://nlknguyen.files.wordpress.com/2015/05/gifrecord_2015-05-31_010251.gif)
 
