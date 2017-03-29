@@ -1,6 +1,6 @@
 " Minimalist - A Material Colorscheme Darker
 "
-" Author:       Diki Andriansyah <diki1aap@gmail.com>
+" Author:       Diki Ananta <diki1aap@gmail.com>
 " Repository:   https://github.com/dikiaap/minimalist
 " Version:      1.2
 " License:      MIT

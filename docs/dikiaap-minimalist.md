@@ -69,4 +69,4 @@ At this time `minimalist` is looks beautiful & focused on:
 
 ## License
 
-MIT © [Diki Andriansyah](https://dikiaap.id)
+MIT © [Diki Ananta](https://dikiaap.id)
