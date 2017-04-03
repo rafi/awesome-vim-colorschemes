@@ -27,6 +27,7 @@ Collection of awesome color schemes for Vim, merged together.
 | [scheakur] | A light/dark colorscheme  | ✓ | ✓ |
 | [hybrid] | A dark colour scheme for Vim and gVim | ✓ | ✓ |
 | [hybrid-material] | Material color scheme based on w0ng/vim-hybrid | ✓ | ✓ |
+| [jellybeans] | Colorful, dark color scheme | ✓ | ✓ |
 | [lightning] | A light vim colorscheme based on Apprentice  | ✓ | ✓ |
 | [lucius] | Lucius color scheme | ✓ | ✓ |
 | [minimalist] | Darker version of material theme inspired by Sublime Text | ✓ | ✓ |
@@ -65,6 +66,7 @@ Collection of awesome color schemes for Vim, merged together.
 [scheakur]: https://github.com/scheakur/vim-scheakur
 [hybrid]: https://github.com/w0ng/vim-hybrid
 [hybrid-material]: https://github.com/kristijanhusak/vim-hybrid-material
+[jellybeans]: https://github.com/nanotech/jellybeans.vim
 [lightning]: https://github.com/wimstefan/Lightning
 [lucius]: https://github.com/jonathanfilip/vim-lucius
 [minimalist]: https://github.com/dikiaap/minimalist
