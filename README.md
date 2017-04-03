@@ -9,6 +9,7 @@ Collection of awesome color schemes for Vim, merged together.
 | [256noir] | Dark minimal colors, to avoid distraction | ✓ | ✓ |
 | [abstract] | Dark theme based on Abstract app | ✓ | ✓ |
 | [afterglow] | Adaptation from Sublime Text | ✓ | ✓ |
+| [alduin] | Dark rustic colors | ✓ | ✓ |
 | [Apprentice] | Dark, low-contrast colorscheme | ✓ | ✓ |
 | [anderson] | Dark vim colorscheme based on colors from Wes Anderson films | ✓ | ✓ |
 | [Atom] | Designed to be very readable in both light and dark environments |   | ✓ |
@@ -40,6 +41,7 @@ Collection of awesome color schemes for Vim, merged together.
 [256noir]: https://github.com/andreasvc/vim-256noir
 [abstract]: https://github.com/jdsimcoe/abstract.vim
 [afterglow]: https://github.com/danilo-augusto/vim-afterglow
+[alduin]: https://github.com/AlessandroYorba/Alduin
 [Apprentice]: https://github.com/romainl/Apprentice
 [anderson]: https://github.com/gilgigilgil/anderson.vim
 [Atom]: https://github.com/gregsexton/Atom
