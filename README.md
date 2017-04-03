@@ -39,6 +39,7 @@ Use your favorite package-manager to install, and enjoy!
 | [molokai] | Molokai color scheme | ✓ | ✓ |
 | [molokayo] | Very tweaked molokai based theme | ✓ | ✓ |
 | [oceanicnext] | Oceanic Next theme | ✓ | ✓ |
+| [one] | Adaptation of one-light and one-dark | ✓ | ✓ |
 | [onedark] | Inspired by Atom's One Dark syntax theme | ✓ | ✓ |
 | [orbital] | Dark blue base16 theme | ✓ | ✓ |
 | [paramount] | Minimal colorscheme that only puts emphasis on the paramount | ✓ | ✓ |
@@ -80,6 +81,7 @@ Use your favorite package-manager to install, and enjoy!
 [molokai]: https://github.com/tomasr/molokai
 [molokayo]: https://github.com/fmoralesc/molokayo
 [oceanicnext]: https://github.com/mhartington/oceanic-next
+[one]: https://github.com/rakr/vim-one
 [onedark]: https://github.com/joshdick/onedark.vim
 [orbital]: https://github.com/fcpg/vim-orbital
 [paramount]: https://github.com/owickstrom/vim-colors-paramount
