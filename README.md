@@ -18,7 +18,7 @@ Use your favorite package-manager to install, and enjoy!
 | [anderson] | Dark vim colorscheme based on colors from Wes Anderson films | ✓ | ✓ |
 | [angr] | Pleasant, mild, dark theme | ✓ | ✓ |
 | [Atom] | Designed to be very readable in both light and dark environments |   | ✓ |
-| [deep-space] | Intergalactically friendly color scheme based off of Hybrid | ✓ | ✓ |
+| [deep-space] | Intergalactic friendly color scheme based off Hybrid | ✓ | ✓ |
 | [focuspoint] | Maintain color coordination and important keyword focus |   | ✓ |
 | [flatcolor] | FlatColor colorscheme | ✓ | ✓ |
 | [flattened] | Solarized, without the bullshit | ✓ (16) | ✓ |
@@ -107,3 +107,4 @@ Use your favorite package-manager to install, and enjoy!
 
 - [`chriskempson/base16-vim`](https://github.com/chriskempson/base16-vim) - Syntax highlighting for hackers
 - [`mswift42/vim-themes`](https://github.com/mswift42/vim-themes) - Some emacs themes ported to vim
+- [`mkarmona/colorsbox`](https://github.com/mkarmona/colorsbox)
