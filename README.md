@@ -36,6 +36,7 @@ Use your favorite package-manager to install, and enjoy!
 | [lucid] | Vivid highlights and friendly, clear colors |   | ✓ |
 | [lucius] | Lucius color scheme | ✓ | ✓ |
 | [materialbox] | Light and dark material palette inspired based on Gruvbox |   | ✓ |
+| [meta5] | Dark colorscheme, inspired by Tron | ✓ | ✓ |
 | [minimalist] | Darker version of material theme inspired by Sublime Text | ✓ | ✓ |
 | [molokai] | Molokai color scheme | ✓ | ✓ |
 | [molokayo] | Very tweaked molokai based theme | ✓ | ✓ |
@@ -79,6 +80,7 @@ Use your favorite package-manager to install, and enjoy!
 [lucid]: https://github.com/cseelus/vim-colors-lucid
 [lucius]: https://github.com/jonathanfilip/vim-lucius
 [materialbox]: https://github.com/mkarmona/materialbox
+[meta5]: https://github.com/christophermca/meta5
 [minimalist]: https://github.com/dikiaap/minimalist
 [molokai]: https://github.com/tomasr/molokai
 [molokayo]: https://github.com/fmoralesc/molokayo

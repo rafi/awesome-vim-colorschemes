@@ -17,6 +17,7 @@ function _main() {
 	_dl AlessandroYorba/Alduin
 	_dl andreasvc/vim-256noir
 	_dl chase/focuspoint-vim
+	_dl christophermca/meta5
 	_dl cseelus/vim-colors-lucid
 	_dl danilo-augusto/vim-afterglow
 	_dl endel/vim-github-colorscheme
