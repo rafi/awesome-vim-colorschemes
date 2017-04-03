@@ -1,6 +1,10 @@
 # Awesome Vim Color Schemes
 
-Collection of awesome color schemes for Vim, merged together.
+Collection of awesome color schemes for Vim, merged for quick use.
+
+## Installation
+
+Use your favorite package-manager to install, and enjoy!
 
 ## Color Schemes
 
@@ -28,7 +32,7 @@ Collection of awesome color schemes for Vim, merged together.
 | [hybrid] | A dark colour scheme for Vim and gVim | ✓ | ✓ |
 | [hybrid-material] | Material color scheme based on w0ng/vim-hybrid | ✓ | ✓ |
 | [jellybeans] | Colorful, dark color scheme | ✓ | ✓ |
-| [lightning] | A light vim colorscheme based on Apprentice  | ✓ | ✓ |
+| [lightning] | Light vim colorscheme based on Apprentice | ✓ | ✓ |
 | [lucius] | Lucius color scheme | ✓ | ✓ |
 | [minimalist] | Darker version of material theme inspired by Sublime Text | ✓ | ✓ |
 | [molokai] | Molokai color scheme | ✓ | ✓ |
