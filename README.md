@@ -12,6 +12,7 @@ Collection of awesome color schemes for Vim, merged together.
 | [alduin] | Dark rustic colors | ✓ | ✓ |
 | [Apprentice] | Dark, low-contrast colorscheme | ✓ | ✓ |
 | [anderson] | Dark vim colorscheme based on colors from Wes Anderson films | ✓ | ✓ |
+| [angr] | Pleasant, mild, dark theme | ✓ | ✓ |
 | [Atom] | Designed to be very readable in both light and dark environments |   | ✓ |
 | [focuspoint] | Maintain color coordination and important keyword focus |   | ✓ |
 | [flatcolor] | FlatColor colorscheme | ✓ | ✓ |
@@ -44,6 +45,7 @@ Collection of awesome color schemes for Vim, merged together.
 [alduin]: https://github.com/AlessandroYorba/Alduin
 [Apprentice]: https://github.com/romainl/Apprentice
 [anderson]: https://github.com/gilgigilgil/anderson.vim
+[angr]: https://github.com/zacanger/angr.vim
 [Atom]: https://github.com/gregsexton/Atom
 [base16]: https://github.com/chriskempson/base16-vim
 [focuspoint]: https://github.com/chase/focuspoint-vim

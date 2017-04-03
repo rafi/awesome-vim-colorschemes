@@ -45,5 +45,6 @@ function _main() {
 	_dl w0ng/vim-hybrid
 	_dl wimstefan/Lightning
 	_dl dikiaap/minimalist
+	_dl zacanger/angr.vim
 }
 _main
