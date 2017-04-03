@@ -52,6 +52,7 @@ Use your favorite package-manager to install, and enjoy!
 | [solarized8] | Optimized Solarized colorschemes | ✓ (16) | ✓ |
 | [space-vim-dark] | Dark magenta colors | ✓ | ✓ |
 | [tender] | 24bit colorscheme for Vim | ✓ | ✓ |
+| [termschool] | Based on the "codeschool" theme, with lots of tweaks | ✓ | ✓ |
 | [twilight256] | Imitates the Twilight theme for TextMate | ✓ | ✓ |
 | [wombat256] | Wombat for 256 color xterms | ✓ | ✓ |
 
@@ -98,6 +99,7 @@ Use your favorite package-manager to install, and enjoy!
 [solarized8]: https://github.com/lifepillar/vim-solarized8
 [space-vim-dark]: https://github.com/liuchengxu/space-vim-dark
 [tender]: https://github.com/jacoborus/tender.vim
+[termschool]: https://github.com/marcopaganini/termschool-vim-theme
 [twilight256]: https://github.com/vim-scripts/twilight256.vim
 [wombat256]: https://github.com/vim-scripts/wombat256.vim
 

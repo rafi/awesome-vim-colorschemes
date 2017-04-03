@@ -33,6 +33,7 @@ function _main() {
 	_dl junegunn/seoul256.vim
 	_dl keith/parsec.vim
 	_dl kristijanhusak/vim-hybrid-material
+	_dl marcopaganini/termschool-vim-theme
 	_dl MaxSt/FlatColor
 	_dl mhartington/oceanic-next
 	_dl mkarmona/materialbox
