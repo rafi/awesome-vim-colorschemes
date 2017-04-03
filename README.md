@@ -14,6 +14,7 @@ Collection of awesome color schemes for Vim, merged together.
 | [anderson] | Dark vim colorscheme based on colors from Wes Anderson films | ✓ | ✓ |
 | [angr] | Pleasant, mild, dark theme | ✓ | ✓ |
 | [Atom] | Designed to be very readable in both light and dark environments |   | ✓ |
+| [deep-space] | Intergalactically friendly color scheme based off of Hybrid | ✓ | ✓ |
 | [focuspoint] | Maintain color coordination and important keyword focus |   | ✓ |
 | [flatcolor] | FlatColor colorscheme | ✓ | ✓ |
 | [flattened] | Solarized, without the bullshit | ✓ (16) | ✓ |
@@ -47,6 +48,7 @@ Collection of awesome color schemes for Vim, merged together.
 [anderson]: https://github.com/gilgigilgil/anderson.vim
 [angr]: https://github.com/zacanger/angr.vim
 [Atom]: https://github.com/gregsexton/Atom
+[deep-space]: https://github.com/tyrannicaltoucan/vim-deep-space
 [base16]: https://github.com/chriskempson/base16-vim
 [focuspoint]: https://github.com/chase/focuspoint-vim
 [flatcolor]: https://github.com/MaxSt/FlatColor

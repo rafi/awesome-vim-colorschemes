@@ -38,6 +38,7 @@ function _main() {
 	_dl romainl/flattened
 	_dl scheakur/vim-scheakur
 	_dl tomasr/molokai
+	_dl tyrannicaltoucan/vim-deep-space
 	_dl vim-scripts/pyte
 	_dl vim-scripts/rdark-terminal2.vim
 	_dl vim-scripts/twilight256.vim
