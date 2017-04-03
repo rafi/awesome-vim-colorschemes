@@ -38,6 +38,7 @@ function _main() {
 	_dl mkarmona/materialbox
 	_dl morhetz/gruvbox
 	_dl lifepillar/vim-solarized8
+	_dl liuchengxu/space-vim-dark
 	_dl NLKNguyen/papercolor-theme
 	_dl nanotech/jellybeans.vim
 	_dl owickstrom/vim-colors-paramount

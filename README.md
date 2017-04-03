@@ -50,6 +50,7 @@ Use your favorite package-manager to install, and enjoy!
 | [seoul256] | Low-contrast color scheme based on Seoul Colors | ✓ | ✓ |
 | [sierra] | Dark vintage colors | ✓ | ✓ |
 | [solarized8] | Optimized Solarized colorschemes | ✓ (16) | ✓ |
+| [space-vim-dark] | Dark magenta colors | ✓ | ✓ |
 | [tender] | 24bit colorscheme for Vim | ✓ | ✓ |
 | [twilight256] | Imitates the Twilight theme for TextMate | ✓ | ✓ |
 | [wombat256] | Wombat for 256 color xterms | ✓ | ✓ |
@@ -95,6 +96,7 @@ Use your favorite package-manager to install, and enjoy!
 [seoul256]: https://github.com/junegunn/seoul256.vim
 [sierra]: https://github.com/AlessandroYorba/Sierra
 [solarized8]: https://github.com/lifepillar/vim-solarized8
+[space-vim-dark]: https://github.com/liuchengxu/space-vim-dark
 [tender]: https://github.com/jacoborus/tender.vim
 [twilight256]: https://github.com/vim-scripts/twilight256.vim
 [wombat256]: https://github.com/vim-scripts/wombat256.vim
