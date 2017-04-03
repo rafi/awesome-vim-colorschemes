@@ -33,6 +33,7 @@ Use your favorite package-manager to install, and enjoy!
 | [hybrid-material] | Material color scheme based on w0ng/vim-hybrid | ✓ | ✓ |
 | [jellybeans] | Colorful, dark color scheme | ✓ | ✓ |
 | [lightning] | Light vim colorscheme based on Apprentice | ✓ | ✓ |
+| [lucid] | Vivid highlights and friendly, clear colors |   | ✓ |
 | [lucius] | Lucius color scheme | ✓ | ✓ |
 | [materialbox] | Light and dark material palette inspired based on Gruvbox |   | ✓ |
 | [minimalist] | Darker version of material theme inspired by Sublime Text | ✓ | ✓ |
@@ -75,6 +76,7 @@ Use your favorite package-manager to install, and enjoy!
 [hybrid-material]: https://github.com/kristijanhusak/vim-hybrid-material
 [jellybeans]: https://github.com/nanotech/jellybeans.vim
 [lightning]: https://github.com/wimstefan/Lightning
+[lucid]: https://github.com/cseelus/vim-colors-lucid
 [lucius]: https://github.com/jonathanfilip/vim-lucius
 [materialbox]: https://github.com/mkarmona/materialbox
 [minimalist]: https://github.com/dikiaap/minimalist
