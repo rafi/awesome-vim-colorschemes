@@ -37,6 +37,7 @@ function _main() {
 	_dl lifepillar/vim-solarized8
 	_dl NLKNguyen/papercolor-theme
 	_dl nanotech/jellybeans.vim
+	_dl owickstrom/vim-colors-paramount
 	_dl romainl/Apprentice
 	_dl romainl/flattened
 	_dl scheakur/vim-scheakur
