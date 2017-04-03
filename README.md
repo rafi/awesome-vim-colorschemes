@@ -48,6 +48,7 @@ Use your favorite package-manager to install, and enjoy!
 | [pyte] | Clean, light (nearly white) theme |   | ✓ |
 | [rdark-terminal2] | Modified rdark-terminal to enhance visibility | ✓ |   |
 | [seoul256] | Low-contrast color scheme based on Seoul Colors | ✓ | ✓ |
+| [sierra] | Dark vintage colors | ✓ | ✓ |
 | [solarized8] | Optimized Solarized colorschemes | ✓ (16) | ✓ |
 | [tender] | 24bit colorscheme for Vim | ✓ | ✓ |
 | [twilight256] | Imitates the Twilight theme for TextMate | ✓ | ✓ |
@@ -92,6 +93,7 @@ Use your favorite package-manager to install, and enjoy!
 [pyte]: https://github.com/vim-scripts/pyte
 [rdark-terminal2]: https://github.com/vim-scripts/rdark-terminal2.vim
 [seoul256]: https://github.com/junegunn/seoul256.vim
+[sierra]: https://github.com/AlessandroYorba/Sierra
 [solarized8]: https://github.com/lifepillar/vim-solarized8
 [tender]: https://github.com/jacoborus/tender.vim
 [twilight256]: https://github.com/vim-scripts/twilight256.vim
