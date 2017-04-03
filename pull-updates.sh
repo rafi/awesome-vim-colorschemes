@@ -45,6 +45,7 @@ function _main() {
 	_dl vim-scripts/twilight256.vim
 	_dl vim-scripts/wombat256.vim
 	_dl w0ng/vim-hybrid
+	_dl whatyouhide/vim-gotham
 	_dl wimstefan/Lightning
 	_dl dikiaap/minimalist
 	_dl zacanger/angr.vim
