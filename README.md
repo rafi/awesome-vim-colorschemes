@@ -18,6 +18,7 @@ Collection of awesome color schemes for Vim, merged together.
 | [focuspoint] | Maintain color coordination and important keyword focus |   | ✓ |
 | [flatcolor] | FlatColor colorscheme | ✓ | ✓ |
 | [flattened] | Solarized, without the bullshit | ✓ (16) | ✓ |
+| [github] | Based on Github's syntax highlighting | ✓ | ✓ |
 | [gruvbox] | Retro groove color scheme | ✓ | ✓ |
 | [papercolor] | Light and Dark color schemes inspired by Google's Material Design | ✓ | ✓ |
 | [parsec] | Color scheme for people tired of solarized  | ✓ (16) | ✓ |
@@ -53,6 +54,7 @@ Collection of awesome color schemes for Vim, merged together.
 [focuspoint]: https://github.com/chase/focuspoint-vim
 [flatcolor]: https://github.com/MaxSt/FlatColor
 [flattened]: https://github.com/romainl/flattened
+[github]: https://github.com/endel/vim-github-colorscheme
 [gruvbox]: https://github.com/morhetz/gruvbox
 [papercolor]: https://github.com/NLKNguyen/papercolor-theme
 [parsec]: https://github.com/keith/parsec.vim

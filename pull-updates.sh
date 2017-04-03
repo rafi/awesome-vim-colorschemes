@@ -18,6 +18,7 @@ function _main() {
 	_dl andreasvc/vim-256noir
 	_dl chase/focuspoint-vim
 	_dl danilo-augusto/vim-afterglow
+	_dl endel/vim-github-colorscheme
 	_dl fcpg/vim-orbital
 	_dl fmoralesc/molokayo
 	_dl gilgigilgil/anderson.vim
