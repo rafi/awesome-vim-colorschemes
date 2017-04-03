@@ -48,6 +48,7 @@ function _main() {
 	_dl whatyouhide/vim-gotham
 	_dl wimstefan/Lightning
 	_dl dikiaap/minimalist
+	_dl yorickpeterse/happy_hacking.vim
 	_dl zacanger/angr.vim
 }
 _main

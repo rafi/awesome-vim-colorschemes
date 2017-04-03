@@ -21,6 +21,7 @@ Collection of awesome color schemes for Vim, merged together.
 | [github] | Based on Github's syntax highlighting | ✓ | ✓ |
 | [gotham] | Very dark vim colorscheme | ✓ | ✓ |
 | [gruvbox] | Retro groove color scheme | ✓ | ✓ |
+| [happy hacking] | Fairly small set of colors instead of throwing rainbows at your face | ✓ | ✓ |
 | [papercolor] | Light and Dark color schemes inspired by Google's Material Design | ✓ | ✓ |
 | [parsec] | Color scheme for people tired of solarized  | ✓ (16) | ✓ |
 | [scheakur] | A light/dark colorscheme  | ✓ | ✓ |
@@ -58,6 +59,7 @@ Collection of awesome color schemes for Vim, merged together.
 [github]: https://github.com/endel/vim-github-colorscheme
 [gotham]: https://github.com/whatyouhide/vim-gotham
 [gruvbox]: https://github.com/morhetz/gruvbox
+[happy hacking]: https://github.com/yorickpeterse/happy_hacking.vim
 [papercolor]: https://github.com/NLKNguyen/papercolor-theme
 [parsec]: https://github.com/keith/parsec.vim
 [scheakur]: https://github.com/scheakur/vim-scheakur
