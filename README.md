@@ -6,6 +6,8 @@ Collection of awesome color schemes for Vim, merged together.
 
 | Scheme | Description | Terminal | GUI |
 | -------------- | ------------|:--------:|:---:|
+| [256noir] | Dark minimal colors, to avoid distraction | ✓ | ✓ |
+| [abstract] | Dark theme based on Abstract app | ✓ | ✓ |
 | [afterglow] | Adaptation from Sublime Text | ✓ | ✓ |
 | [Apprentice] | Dark, low-contrast colorscheme | ✓ | ✓ |
 | [anderson] | Dark vim colorscheme based on colors from Wes Anderson films | ✓ | ✓ |
@@ -35,6 +37,8 @@ Collection of awesome color schemes for Vim, merged together.
 | [twilight256] | Imitates the Twilight theme for TextMate | ✓ | ✓ |
 | [wombat256] | Wombat for 256 color xterms | ✓ | ✓ |
 
+[256noir]: https://github.com/andreasvc/vim-256noir
+[abstract]: https://github.com/jdsimcoe/abstract.vim
 [afterglow]: https://github.com/danilo-augusto/vim-afterglow
 [Apprentice]: https://github.com/romainl/Apprentice
 [anderson]: https://github.com/gilgigilgil/anderson.vim

@@ -14,6 +14,7 @@ function _dl() {
 }
 
 function _main() {
+	_dl andreasvc/vim-256noir
 	_dl chase/focuspoint-vim
 	_dl danilo-augusto/vim-afterglow
 	_dl fcpg/vim-orbital
@@ -21,6 +22,7 @@ function _main() {
 	_dl gilgigilgil/anderson.vim
 	_dl gregsexton/Atom
 	_dl jacoborus/tender.vim
+	_dl jdsimcoe/abstract.vim
 	_dl jonathanfilip/vim-lucius
 	_dl joshdick/onedark.vim
 	_dl junegunn/seoul256.vim
