@@ -32,6 +32,7 @@ function _main() {
 	_dl kristijanhusak/vim-hybrid-material
 	_dl MaxSt/FlatColor
 	_dl mhartington/oceanic-next
+	_dl mkarmona/materialbox
 	_dl morhetz/gruvbox
 	_dl lifepillar/vim-solarized8
 	_dl NLKNguyen/papercolor-theme

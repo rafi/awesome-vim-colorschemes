@@ -34,6 +34,7 @@ Use your favorite package-manager to install, and enjoy!
 | [jellybeans] | Colorful, dark color scheme | ✓ | ✓ |
 | [lightning] | Light vim colorscheme based on Apprentice | ✓ | ✓ |
 | [lucius] | Lucius color scheme | ✓ | ✓ |
+| [materialbox] | Light and dark material palette inspired based on Gruvbox |   | ✓ |
 | [minimalist] | Darker version of material theme inspired by Sublime Text | ✓ | ✓ |
 | [molokai] | Molokai color scheme | ✓ | ✓ |
 | [molokayo] | Very tweaked molokai based theme | ✓ | ✓ |
@@ -73,6 +74,7 @@ Use your favorite package-manager to install, and enjoy!
 [jellybeans]: https://github.com/nanotech/jellybeans.vim
 [lightning]: https://github.com/wimstefan/Lightning
 [lucius]: https://github.com/jonathanfilip/vim-lucius
+[materialbox]: https://github.com/mkarmona/materialbox
 [minimalist]: https://github.com/dikiaap/minimalist
 [molokai]: https://github.com/tomasr/molokai
 [molokayo]: https://github.com/fmoralesc/molokayo
