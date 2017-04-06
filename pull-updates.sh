@@ -21,6 +21,7 @@ function _main() {
 	_dl christophermca/meta5
 	_dl cseelus/vim-colors-lucid
 	_dl danilo-augusto/vim-afterglow
+	_dl dracula/vim
 	_dl endel/vim-github-colorscheme
 	_dl fcpg/vim-orbital
 	_dl fmoralesc/molokayo

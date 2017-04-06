@@ -19,6 +19,7 @@ Use your favorite package-manager to install, and enjoy!
 | [angr] | Pleasant, mild, dark theme | ✓ | ✓ |
 | [Atom] | Designed to be very readable in both light and dark environments |   | ✓ |
 | [deep-space] | Intergalactic friendly color scheme based off Hybrid | ✓ | ✓ |
+| [dracula] | Dark theme | ✓ | ✓ |
 | [focuspoint] | Maintain color coordination and important keyword focus |   | ✓ |
 | [flatcolor] | FlatColor colorscheme | ✓ | ✓ |
 | [flattened] | Solarized, without the bullshit | ✓ (16) | ✓ |
@@ -65,7 +66,7 @@ Use your favorite package-manager to install, and enjoy!
 [angr]: https://github.com/zacanger/angr.vim
 [Atom]: https://github.com/gregsexton/Atom
 [deep-space]: https://github.com/tyrannicaltoucan/vim-deep-space
-[base16]: https://github.com/chriskempson/base16-vim
+[dracula]: https://github.com/dracula/vim
 [focuspoint]: https://github.com/chase/focuspoint-vim
 [flatcolor]: https://github.com/MaxSt/FlatColor
 [flattened]: https://github.com/romainl/flattened
