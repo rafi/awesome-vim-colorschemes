@@ -1,11 +1,28 @@
-Skyrim belongs to the Nords!!
--------
+![Screenshot](https://cloud.githubusercontent.com/assets/11221489/24883335/471c0e2a-1df9-11e7-8715-34e23d9f8628.png)
 
+:space_invader: Set Up
+------
+
+###### Dark Grey Background [Screenshot](https://cloud.githubusercontent.com/assets/11221489/24883335/471c0e2a-1df9-11e7-8715-34e23d9f8628.png)
 ```VimL
-"dark gray background
 colorscheme alduin 
 ```
-![Screenshot](https://cloud.githubusercontent.com/assets/11221489/24349520/2a21f8ea-1294-11e7-8d1a-c575bdef994f.png)
+
+###### Almost Black Background [Screenshot](https://cloud.githubusercontent.com/assets/11221489/24883448/ca7b5f1e-1df9-11e7-96a7-e1ad1093c00a.png)
+```VimL
+let g:alduin_Shout_Dragon_Aspect = 1
+colorscheme alduin 
+```
+
+###### Black Background [Screenshot](https://cloud.githubusercontent.com/assets/11221489/24883494/f6e46118-1df9-11e7-97a9-cff8fd7bee02.png)
+```VimL
+let g:alduin_Shout_Become_Ethereal = 1
+colorscheme alduin 
+```
+
+:crescent_moon: Nightly Build
+----------------------------
+pre-release version [here](https://github.com/AlessandroYorba/Alduin/tree/nightly)
 
 :octocat: Special Thanks
 -----------------

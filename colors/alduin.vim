@@ -35,8 +35,8 @@
 "=================================================================================
 " BASIC COLORS:
 "=================================================================================
-"     Foreground   #dfdfaf              |      Selection     #875f5f             |
-"     Background   #121212              |      Selected Text #dfdfaf             |
+"     Foreground   #dfdfaf              |      Selection     #af8787             |
+"     Background   #1c1c1c              |      Selected Text #dfdfaf             |
 "     CursorColor  #dfdfaf              |                                        |
 "     Bold         #ffffff              |                                        |
 "     Links        #af0000              |                                        |
@@ -47,13 +47,13 @@
 "     NORMAL       Hex          xterm   |      "BRIGHT      Hex          xterm   |
 "---------------------------------------|-----------------------------------------
 "     Black        #1c1c1c      0       |      brBlack      #87875f      8       |
-"     Red          #af1600      1       |      brRed        #af5f5f      9       |
-"     Green        #af5f00      2       |      brGreen      #d75f00      10      |
-"     Yellow       #878787      3       |      brYellow     #5f5f87      11      |
-"     Blue         #af875f      4       |      brBlue       #dfaf87      12      |
-"     Magenta      #875f5f      5       |      brMagenta    #af8787      13      |
-"     Cyan         #87afaf      6       |      brCyan       #afd7d7      14      |
-"     White        #dfdfaf      7       |      brWhite      #ffdf87      15      |
+"     Red          #af5f5f      1       |      brRed        #af5f5f      9       |
+"     Green        #af875f      2       |      brGreen      #af875f      10      |
+"     Yellow       #878787      3       |      brYellow     #878787      11      |
+"     Blue         #dfaf87      4       |      brBlue       #dfaf87      12      |
+"     Magenta      #875f5f      5       |      brMagenta    #875f5f      13      |
+"     Cyan         #87afaf      6       |      brCyan       #87afaf      14      |
+"     White        #dfdfaf      7       |      brWhite      #dfdfaf      15      |
 "---------------------------------------|-----------------------------------------
 
 "=================================================================================
