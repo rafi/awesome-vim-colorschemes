@@ -115,7 +115,7 @@ call s:hi('String'      , 36  , '' , 'None' , 'None')
 call s:hi('Conditional' , 134 , '' , 'bold' , 'bold')
 call s:hi('Constant'    , 135 , '' , 'bold' , 'bold')
 call s:hi('Debug'       , 225 , '' , 'bold' , 'bold')
-call s:hi('Define'      , 81  , '' , 'None' , 'None')
+call s:hi('Define'      , 177  , '' , 'None' , 'None')
 call s:hi('Delimiter'   , 241 , '' , 'None' , 'None')
 hi Boolean         guifg=#FF68DD
 hi Character       guifg=#FF62B0
@@ -242,7 +242,7 @@ call s:hi('Comment'  , 30  , ''  , 'None' , 'italic')
 hi Comment guifg=#2aa1ae
 
 " tilde group
-call s:hi('NonText' , 141 , '' , 'None' , 'None')
+call s:hi('NonText' , 241 , '' , 'None' , 'None')
 hi NonText guifg=#534B5D
 
 hi SVDNormal  guifg=#b2b2b2 ctermfg=249

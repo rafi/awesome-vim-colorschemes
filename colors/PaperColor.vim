@@ -206,7 +206,7 @@ else " is light background
 endif
 " }}}
 
-" Sytematic User-Config Options: {{{
+" Systematic User-Config Options: {{{
 " Example config in .vimrc
 " let g:PaperColor_Theme_Options = {
 "       \   'theme': {
