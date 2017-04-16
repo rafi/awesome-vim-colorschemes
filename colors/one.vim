@@ -415,10 +415,32 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   " }}}
 
   " C/C++ highlighting ------------------------------------------------------{{{
-  call <sid>X('cConstant',           s:hue_6,  '', '')
-  call <sid>X('cType',               s:hue_3,  '', '')
+  call <sid>X('cInclude',           s:hue_3,  '', '')
+  call <sid>X('cPreCondit',         s:hue_3,  '', '')
+  call <sid>X('cPreConditMatch',    s:hue_3,  '', '')
 
-  call <sid>X('cCppString',          s:hue_4,  '', '')
+  call <sid>X('cType',              s:hue_3,  '', '')
+  call <sid>X('cStorageClass',      s:hue_3,  '', '')
+  call <sid>X('cStructure',         s:hue_3,  '', '')
+  call <sid>X('cOperator',          s:hue_3,  '', '')
+  call <sid>X('cStatement',         s:hue_3,  '', '')
+  call <sid>X('cCommentL',          s:mono_3, '', '')
+  call <sid>X('cComment',           s:mono_3, '', '')
+  call <sid>X('cTODO',              s:hue_3,  '', '')
+  call <sid>X('cConstant',          s:hue_6,  '', '')
+  call <sid>X('cSpecial',           s:hue_1,  '', '')
+  call <sid>X('cSpecialCharacter',  s:hue_1,  '', '')
+  call <sid>X('cString',            s:hue_4,  '', '')
+
+  call <sid>X('cppType',            s:hue_3,  '', '')
+  call <sid>X('cppStorageClass',    s:hue_3,  '', '')
+  call <sid>X('cppStructure',       s:hue_3,  '', '')
+  call <sid>X('cppModifier',        s:hue_3,  '', '')
+  call <sid>X('cppOperator',        s:hue_3,  '', '')
+  call <sid>X('cppAccess',          s:hue_3,  '', '')
+  call <sid>X('cppStatement',       s:hue_3,  '', '')
+  call <sid>X('cppConstant',        s:hue_5,  '', '')
+  call <sid>X('cCppString',         s:hue_4,  '', '')
   " }}}
 
   " Cucumber highlighting ---------------------------------------------------{{{
