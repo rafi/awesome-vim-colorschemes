@@ -60,5 +60,7 @@ function _main() {
 	_dl dikiaap/minimalist
 	_dl yorickpeterse/happy_hacking.vim
 	_dl zacanger/angr.vim
+
+	chmod -x colors/*vim
 }
 _main
