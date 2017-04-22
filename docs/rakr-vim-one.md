@@ -132,6 +132,30 @@ I've tested the following setup on a Mac:
 * Neovim 0.1.4 and 0.1.5-dev
 * Vim 7.4.1952
 
+## Customising One without fork
+
+Following a request to be able to customise **one** without the need to fork,
+**one** is now exposing a public function to meet this requirement.
+
+After the colorscheme has been initialised, you can call the following function:
+
+```
+one#highlight(group, fg, bg, attribute)
+```
+
+* `group`: Highlight you want to customise for example `vimLineComment`
+* `fg`: foreground color for the highlight, without the '#', for example:
+  `ff0000`
+* `bg`: background color for the highlight, without the '#', for example:
+  `ff0000`
+* `attribute`: `bold`, `italic`, `underline` or any comma separated combination
+
+For example:
+
+```
+call one#highlight('vimLineComment', 'cccccc', '', 'none')
+```
+
 ## Contributors
 
 A special thank you to the following people
@@ -140,6 +164,7 @@ A special thank you to the following people
 * [Malcolm Ramsay - malramsay64](https://github.com/malramsay64): Gracefully fail if colorscheme is not properly loaded
 * [Arthur Xavier](https://github.com/arthur-xavier): PureScript support
 * [keremc](https://github.com/keremc): Tip Vim true color support inside tmux
+* [jetm](https://github.com/jetm): C/C++ highlighting
 
 [logo]: screenshots/new-logo.png
 

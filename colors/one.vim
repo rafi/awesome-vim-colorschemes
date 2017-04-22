@@ -5,6 +5,18 @@
 
 " Global setup =============================================================={{{
 
+if exists("*<SID>X")
+  delf <SID>X
+  delf <SID>rgb
+  delf <SID>color
+  delf <SID>rgb_color
+  delf <SID>rgb_level
+  delf <SID>rgb_number
+  delf <SID>grey_color
+  delf <SID>grey_level
+  delf <SID>grey_number
+endif
+
 hi clear
 syntax reset
 if exists('g:colors_name')
@@ -242,9 +254,11 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
     if l:exec != ''
       exec "hi " . a:group . l:exec
     endif
+
   endfun
 
   "}}}
+
 
   " Color definition --------------------------------------------------------{{{
   if &background ==# 'dark'
@@ -774,18 +788,23 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   " }}}
 
   " Delete functions =========================================================={{{
-  delf <SID>X
-  delf <SID>rgb
-  delf <SID>color
-  delf <SID>rgb_color
-  delf <SID>rgb_level
-  delf <SID>rgb_number
-  delf <SID>grey_color
-  delf <SID>grey_level
-  delf <SID>grey_number
+  " delf <SID>X
+  " delf <SID>rgb
+  " delf <SID>color
+  " delf <SID>rgb_color
+  " delf <SID>rgb_level
+  " delf <SID>rgb_number
+  " delf <SID>grey_color
+  " delf <SID>grey_level
+  " delf <SID>grey_number
   "}}}
 
 endif
 "}}}
+  " Public API --------------------------------------------------------------{{{
+  function! one#highlight(group, fg, bg, attr)
+    call <sid>X(a:group, a:fg, a:bg, a:attr)
+  endfunction
+  "}}}
 
 " vim: set fdl=0 fdm=marker:
