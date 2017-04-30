@@ -1,4 +1,3 @@
-
 "    ███████╗██╗███████╗██████╗ ██████╗  █████╗
 "    ██╔════╝██║██╔════╝██╔══██╗██╔══██╗██╔══██╗
 "    ███████╗██║█████╗  ██████╔╝██████╔╝███████║
@@ -50,7 +49,7 @@
 "     Black         #303030      0      |      brBlack       #686868      8      |
 "     Red           #af5f5f      1      |      brRed         #af5f5f      9      |
 "     Green         #d75f5f      2      |      brGreen       #d75f5f      10     |
-"     Yellow        #87d7d7      3      |      brYellow      #87d7d7      11     |
+"     Yellow        #afd7d7      3      |      brYellow      #afd7d7      11     |
 "     Blue          #af8787      4      |      brBlue        #af8787      12     |
 "     Magenta       #dfaf87      5      |      brMagenta     #dfaf87      13     |
 "     Cyan          #ffafaf      6      |      brCyan        #ffafaf      14     |
@@ -147,7 +146,7 @@ endif
 highlight! Operator               guifg=#af8787  guibg=NONE     gui=NONE       ctermfg=138    ctermbg=NONE  cterm=NONE
 highlight! Constant               guifg=#d78787  guibg=NONE     gui=NONE       ctermfg=174    ctermbg=NONE  cterm=NONE
 highlight! String                 guifg=#ffafaf  guibg=NONE     gui=NONE       ctermfg=217    ctermbg=NONE  cterm=NONE
-highlight! Function               guifg=#87d7d7  guibg=NONE     gui=NONE       ctermfg=116    ctermbg=NONE  cterm=NONE
+highlight! Function               guifg=#afd7d7  guibg=NONE     gui=NONE       ctermfg=152    ctermbg=NONE  cterm=NONE
 highlight! Statement              guifg=#5f8787  guibg=NONE     gui=NONE       ctermfg=66    ctermbg=NONE  cterm=NONE
 highlight! PreProc                guifg=#d75f5f  guibg=NONE     gui=NONE       ctermfg=167    ctermbg=NONE  cterm=NONE
 highlight! Special                guifg=#dfaf87  guibg=NONE     gui=NONE       ctermfg=180    ctermbg=NONE  cterm=NONE
@@ -196,19 +195,20 @@ if 1
     highlight! SpecialComment       guifg=#767676  guibg=NONE     gui=reverse  ctermfg=243   ctermbg=NONE  cterm=reverse
     highlight! TabLineFill          guifg=NONE     guibg=#262626  gui=NONE     ctermfg=NONE  ctermbg=235   cterm=NONE
     highlight! PmenuSbar            guifg=#262626  guibg=#262626  gui=NONE     ctermfg=235   ctermbg=235   cterm=NONE
+    highlight! NonText              guifg=#444444  guibg=NONE     gui=NONE     ctermfg=238   ctermbg=NONE  cterm=NONE
 
     highlight! link PmenuThumb      PmenuSbar
     highlight! link VertSplit       StatusLineNC
     highlight! link TabLine         StatusLineNC
     highlight! link Pmenu           StatusLineNC
     highlight! link LineNr          StatusLineNC
-    highlight! link NonText         Comment
     highlight! link Folded          Comment
     highlight! link TabLineSel      StatusLine
     highlight! link PmenuSel        StatusLine
     highlight! link CursorColumn    CursorLine
     highlight! link ColorColumn     CursorLine
     highlight! link VimCommentTitle SpecialComment
+    highlight! link SpecialKey      NonText
 endif
 
 "================================================================================
@@ -223,19 +223,20 @@ if g:sierra_Sunset
     highlight! SpecialComment       guifg=#6c6c6c  guibg=NONE     gui=reverse  ctermfg=242   ctermbg=NONE  cterm=reverse
     highlight! TabLineFill          guifg=NONE     guibg=#1c1c1c  gui=NONE     ctermfg=NONE  ctermbg=234   cterm=NONE
     highlight! PmenuSbar            guifg=#1c1c1c  guibg=#1c1c1c  gui=NONE     ctermfg=234   ctermbg=234   cterm=NONE
+    highlight! NonText              guifg=#3a3a3a  guibg=NONE     gui=NONE     ctermfg=237   ctermbg=NONE  cterm=NONE
 
     highlight! link PmenuThumb      PmenuSbar
     highlight! link VertSplit       StatusLineNC
     highlight! link TabLine         StatusLineNC
     highlight! link Pmenu           StatusLineNC
     highlight! link LineNr          StatusLineNC
-    highlight! link NonText         Comment
     highlight! link Folded          Comment
     highlight! link TabLineSel      StatusLine
     highlight! link PmenuSel        StatusLine
     highlight! link CursorColumn    CursorLine
     highlight! link ColorColumn     CursorLine
     highlight! link VimCommentTitle SpecialComment
+    highlight! link SpecialKey      NonText
 endif
 
 "================================================================================
@@ -250,19 +251,20 @@ if g:sierra_Twilight
     highlight! SpecialComment       guifg=#626262  guibg=NONE     gui=reverse  ctermfg=241   ctermbg=NONE  cterm=reverse
     highlight! TabLineFill          guifg=NONE     guibg=#121212  gui=NONE     ctermfg=NONE  ctermbg=233   cterm=NONE
     highlight! PmenuSbar            guifg=#121212  guibg=#121212  gui=NONE     ctermfg=233   ctermbg=233   cterm=NONE
+    highlight! NonText              guifg=#303030  guibg=NONE     gui=NONE     ctermfg=236   ctermbg=NONE  cterm=NONE
 
     highlight! link PmenuThumb      PmenuSbar
     highlight! link VertSplit       StatusLineNC
     highlight! link TabLine         StatusLineNC
     highlight! link Pmenu           StatusLineNC
     highlight! link LineNr          StatusLineNC
-    highlight! link NonText         Comment
     highlight! link Folded          Comment
     highlight! link TabLineSel      StatusLine
     highlight! link PmenuSel        StatusLine
     highlight! link CursorColumn    CursorLine
     highlight! link ColorColumn     CursorLine
     highlight! link VimCommentTitle SpecialComment
+    highlight! link SpecialKey      NonText
 endif
 
 "================================================================================
@@ -277,19 +279,20 @@ if g:sierra_Midnight
     highlight! SpecialComment       guifg=#585858  guibg=NONE     gui=reverse  ctermfg=240   ctermbg=NONE  cterm=reverse
     highlight! TabLineFill          guifg=NONE     guibg=#1c1c1c  gui=NONE     ctermfg=NONE  ctermbg=234   cterm=NONE
     highlight! PmenuSbar            guifg=#1c1c1c  guibg=#1c1c1c  gui=NONE     ctermfg=234   ctermbg=234   cterm=NONE
+    highlight! NonText              guifg=#262626  guibg=NONE     gui=NONE     ctermfg=235   ctermbg=NONE  cterm=NONE
 
     highlight! link PmenuThumb      PmenuSbar
     highlight! link VertSplit       StatusLineNC
     highlight! link TabLine         StatusLineNC
     highlight! link Pmenu           StatusLineNC
     highlight! link LineNr          StatusLineNC
-    highlight! link NonText         Comment
     highlight! link Folded          Comment
     highlight! link TabLineSel      StatusLine
     highlight! link PmenuSel        StatusLine
     highlight! link CursorColumn    CursorLine
     highlight! link ColorColumn     CursorLine
     highlight! link VimCommentTitle SpecialComment
+    highlight! link SpecialKey      NonText
 endif
 
 "================================================================================
@@ -304,19 +307,20 @@ if g:sierra_Pitch
     highlight! SpecialComment       guifg=#4e4e4e  guibg=NONE     gui=reverse  ctermfg=239   ctermbg=NONE  cterm=reverse
     highlight! TabLineFill          guifg=NONE     guibg=NONE     gui=NONE     ctermfg=NONE  ctermbg=235   cterm=NONE
     highlight! PmenuSbar            guifg=#121212  guibg=#121212  gui=NONE     ctermfg=233   ctermbg=233   cterm=NONE
+    highlight! NonText              guifg=#1c1c1c  guibg=NONE     gui=NONE     ctermfg=234   ctermbg=NONE  cterm=NONE
 
     highlight! link PmenuThumb      PmenuSbar
     highlight! link VertSplit       StatusLineNC
     highlight! link TabLine         StatusLineNC
     highlight! link Pmenu           StatusLineNC
     highlight! link LineNr          StatusLineNC
-    highlight! link NonText         Comment
     highlight! link Folded          Comment
     highlight! link TabLineSel      StatusLine
     highlight! link PmenuSel        StatusLine
     highlight! link CursorColumn    CursorLine
     highlight! link ColorColumn     CursorLine
     highlight! link VimCommentTitle SpecialComment
+    highlight! link SpecialKey      NonText
 endif
 
 "================================================================================
@@ -332,5 +336,3 @@ endif
 if g:sierra_Clear_Skies
     highlight! CursorLine         guifg=NONE  guibg=NONE  gui=NONE  ctermfg=NONE  ctermbg=NONE  cterm=NONE
 endif
-
-

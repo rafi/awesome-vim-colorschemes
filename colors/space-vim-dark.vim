@@ -142,9 +142,6 @@ call s:hi('Identifier' , 168 , ''  , 'None' , 'None')
 call s:hi('Ignore'     , 244 , 233 , 'None' , 'None')
 call s:hi('Operator'   , 67  , ''  , 'None' , 'None')
 hi Folded       guifg=#59955C guibg=#273746
-hi Function     guifg=#bc6ec5
-hi Identifier   guifg=#E994AB
-hi Identifier   guifg=#5f87d7
 hi Ignore       guifg=#B4D1B6
 hi Operator     guifg=#25A0C5
 

@@ -2,7 +2,7 @@
 "
 " Author:       Diki Ananta <diki1aap@gmail.com>
 " Repository:   https://github.com/dikiaap/minimalist
-" Version:      1.2
+" Version:      1.3
 " License:      MIT
 
 " Normal Mode
