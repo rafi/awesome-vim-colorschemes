@@ -295,7 +295,7 @@ call s:hi('MatchParen', ['', ''], [s:dark_bg + 3, s:light_bg - 3])
 call s:hi('ModeMsg', [173, 173], ['', ''])
 
 " let &showbreak = '> '
-call s:hi('NonText', [101, 101], ['', ''])
+call s:hi('NonText', [59, 145], ['', ''])
 
 call s:hi('MoreMsg', [173, 173], ['', ''])
 

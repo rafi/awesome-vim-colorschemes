@@ -145,8 +145,7 @@ highlight! SpellLocal             guifg=#5f875f  guibg=NONE     gui=undercurl  c
 highlight! SpellCap               guifg=#87afff  guibg=NONE     gui=undercurl  ctermfg=111   ctermbg=NONE  cterm=undercurl
 highlight! SpellRare              guifg=#d75f00  guibg=NONE     gui=undercurl  ctermfg=166   ctermbg=NONE  cterm=undercurl
 highlight! VisualNOS              guifg=NONE     guibg=NONE     gui=underline  ctermfg=NONE  ctermbg=NONE  cterm=underline
-highlight! Underlined             guifg=#afd7d7  guibg=NONE     gui=NONE       ctermfg=152   ctermbg=NONE  cterm=NONE
-
+highlight! Underlined             guifg=#af5f5f  guibg=NONE     gui=NONE       ctermfg=131   ctermbg=NONE  cterm=NONE
 
 highlight! link VertSplit         LineNr
 highlight! link WildMenu          Search
@@ -179,6 +178,7 @@ highlight! link Character         Number
 highlight! link Boolean           Number
 highlight! link Float             Number
 highlight! link VimCommentTitle   SpecialComment
+highlight! link htmlStatement     Statement
 
 "===================================================================================================================
 " ALDUIN UI:
@@ -192,6 +192,7 @@ if 1
     highlight! CursorLineNR       guifg=#1c1c1c  guibg=#87875f  gui=NONE     ctermfg=234   ctermbg=101  cterm=NONE
     highlight! FoldColumn         guifg=#87afaf  guibg=#1c1c1c  gui=NONE     ctermfg=109   ctermbg=234  cterm=NONE
     highlight! String             guifg=#ffdf87  guibg=#262626  gui=NONE     ctermfg=222   ctermbg=235  cterm=NONE
+    highlight! TabLine            guifg=#87875f  guibg=#080808  gui=NONE     ctermfg=101   ctermbg=233  cterm=NONE
     highlight! ColorColumn        guifg=NONE     guibg=#262626  gui=NONE     ctermfg=NONE  ctermbg=235  cterm=NONE
     highlight! PmenuSbar          guifg=#121212  guibg=#121212  gui=NONE     ctermfg=233   ctermbg=233  cterm=NONE
     highlight! NonText            guifg=#303030  guibg=NONE     gui=NONE     ctermfg=236   ctermbg=NONE cterm=NONE
@@ -203,8 +204,7 @@ if 1
     highlight! link TabLineSel    StatusLine
     highlight! link TabLine       LineNr
     highlight! link Folded        LineNr
-    highlight! link Underlined    NonText
-    highlight! link SpecialKey      NonText
+    highlight! link SpecialKey    NonText
 endif
 
 "===================================================================================================================

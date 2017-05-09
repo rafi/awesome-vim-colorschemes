@@ -117,6 +117,25 @@ else
   let s:termBlack = "Grey"
 endif
 
+" When `termguicolors` is set, Vim[^1] ignores `guibg=NONE` after
+" `guibg` is already set to a color. See:
+"
+" - https://github.com/vim/vim/issues/981
+" - https://github.com/nanotech/jellybeans.vim/issues/64
+"
+" To work around this, ensure we don't set the default background
+" color before an override changes it to `NONE` by ensuring that the
+" background color isn't set to a value different from its override.
+"
+" [^1]: Tested on 8.0.567. Does not apply to Neovim.
+"
+" TODO: Enable this behavior for all highlights by applying
+"       overrides before calling highlight commands.
+"
+if has_key(s:overrides, "background") && has_key(s:overrides["background"], "guibg")
+    let s:background_color = s:overrides["background"]["guibg"]
+endif
+
 " Color approximation functions by Henry So, Jr. and David Liang {{{
 " Added to jellybeans.vim by Daniel Herbert
 

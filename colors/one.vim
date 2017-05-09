@@ -352,6 +352,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   call <sid>X('Question',     s:hue_2,         '',               '')
   call <sid>X('Search',       s:syntax_bg,     s:hue_6_2,        '')
   call <sid>X('SpecialKey',   s:special_grey,  '',               'none')
+  call <sid>X('Whitespace',   s:special_grey,  '',               'none')
   call <sid>X('StatusLine',   s:syntax_fg,     s:syntax_cursor,  'none')
   call <sid>X('StatusLineNC', s:mono_3,        '',               '')
   call <sid>X('TabLine',      s:mono_1,        s:syntax_bg,      '')
@@ -438,8 +439,6 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   call <sid>X('cStructure',         s:hue_3,  '', '')
   call <sid>X('cOperator',          s:hue_3,  '', '')
   call <sid>X('cStatement',         s:hue_3,  '', '')
-  call <sid>X('cCommentL',          s:mono_3, '', '')
-  call <sid>X('cComment',           s:mono_3, '', '')
   call <sid>X('cTODO',              s:hue_3,  '', '')
   call <sid>X('cConstant',          s:hue_6,  '', '')
   call <sid>X('cSpecial',           s:hue_1,  '', '')
@@ -786,6 +785,25 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   hi link manTitle String
   call <sid>X('manFooter', s:mono_3, '', '')
   " }}}
+
+  " Neovim Terminal Colors --------------------------------------------------{{{
+  let g:terminal_color_0  = "#353a44"
+  let g:terminal_color_8  = "#353a44"
+  let g:terminal_color_1  = "#e88388"
+  let g:terminal_color_9  = "#e88388"
+  let g:terminal_color_2  = "#a7cc8c"
+  let g:terminal_color_10 = "#a7cc8c"
+  let g:terminal_color_3  = "#ebca8d"
+  let g:terminal_color_11 = "#ebca8d"
+  let g:terminal_color_4  = "#72bef2"
+  let g:terminal_color_12 = "#72bef2"
+  let g:terminal_color_5  = "#d291e4"
+  let g:terminal_color_13 = "#d291e4"
+  let g:terminal_color_6  = "#65c2cd"
+  let g:terminal_color_14 = "#65c2cd"
+  let g:terminal_color_7  = "#e3e5e9"
+  let g:terminal_color_15 = "#e3e5e9"
+  "}}}
 
   " Delete functions =========================================================={{{
   " delf <SID>X
