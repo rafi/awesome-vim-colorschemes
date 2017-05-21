@@ -129,12 +129,6 @@ hi EasyMotionTarget        guifg=#ffff5f ctermfg=227 ctermbg=NONE gui=bold cterm
 hi EasyMotionTarget2First  guifg=#df005f ctermfg=161 ctermbg=NONE gui=NONE cterm=NONE
 hi EasyMotionTarget2Second guifg=#ffff5f ctermfg=227 ctermbg=NONE gui=NONE cterm=NONE
 
-" Plugin: vim-rfc {{{1
-hi RFCDelim guifg=#585858 ctermfg=240 ctermbg=NONE gui=NONE cterm=NONE
-hi RFCID    guifg=#ffaf5f ctermfg=215 ctermbg=NONE gui=NONE cterm=NONE
-hi RFCTitle guifg=#eeeeee ctermfg=255 ctermbg=NONE gui=NONE cterm=NONE
-hi RFCType  guifg=#585858 ctermfg=240 ctermbg=NONE gui=NONE cterm=NONE
-
 " Plugin: vim-signify {{{1
 hi SignifySignAdd    guifg=#87ff5f ctermfg=119 guibg=#3a3a3a ctermbg=237 gui=bold cterm=bold
 hi SignifySignChange guifg=#ffff5f ctermfg=227 guibg=#3a3a3a ctermbg=237 gui=bold cterm=bold

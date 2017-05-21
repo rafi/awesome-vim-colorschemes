@@ -20,9 +20,6 @@ let g:colors_name='space-vim-dark'
 
 " refer to http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
 let s:color_map = {
-            \   0 : '#000000',  1 : '#800000',  2 : '#008000',  3 : '#808000',  4 : '#000080',  5 : '#800080',  6 : '#008080',  7 : '#c0c0c0',
-            \   8 : '#808080',  9 : '#ff0000', 10 : '#00ff00', 11 : '#ffff00', 12 : '#0000ff', 13 : '#ff00ff', 14 : '#00ffff', 15 : '#ffffff',
-            \
             \   16 : '#000000',  17 : '#00005f',  18 : '#000087',  19 : '#0000af',  20 : '#0000d7',  21 : '#0000ff',
             \   22 : '#005f00',  23 : '#005f5f',  24 : '#005f87',  25 : '#005faf',  26 : '#005fd7',  27 : '#005fff',
             \   28 : '#008700',  29 : '#00875f',  30 : '#008787',  31 : '#0087af',  32 : '#0087d7',  33 : '#0087ff',
@@ -78,33 +75,44 @@ endfunction
 
 " call s:hi(item, fg, bg, cterm_style, gui_style)
 
-let s:n_bg = 235
+let s:bg = get(g:, 'space_vim_dark_background', 235)
 
-call s:hi('Normal' , 249 , s:n_bg , 'None' , 'None' )
+let s:bias = s:bg - 235
+
+let s:bg0 = s:bg - 1
+let s:bg1 = s:bg + 1
+let s:bg2 = s:bg + 2
+let s:bg3 = s:bg + 3
+let s:bg4 = s:bg + 4
+
+let s:fg = 249
+
+call s:hi('Normal' , 249 , s:bg , 'None' , 'None' )
 hi Normal       guibg=#292b2e
 
 call s:hi('Cursor' , 88 , 214 , 'bold' , 'bold')
 hi Cursor       guifg=#330033 guibg=#FF9331
 
-call s:hi('LineNr'       , 238 , s:n_bg-1 , 'None' , 'None' )
-call s:hi('CursorLine'   , ''  , s:n_bg-1 , 'None' , 'None' )
-call s:hi('CursorLineNr' , 134 , s:n_bg-1 , 'None' , 'None' )
-call s:hi('CursorColumn' , ''  , s:n_bg-1 , 'None' , 'None')
+call s:hi('LineNr'       , 238+s:bias , s:bg0 , 'None' , 'None' )
+
+call s:hi('CursorLine'   , ''  , s:bg0 , 'None' , 'None' )
+call s:hi('CursorLineNr' , 134 , s:bg0 , 'None' , 'None' )
+call s:hi('CursorColumn' , ''  , s:bg0 , 'None' , 'None')
 hi LineNr       guifg=#44505c guibg=#212026
 hi CursorLine                 guibg=#212026
 hi CursorLineNr               guibg=#212026
 hi CursorColumn               guibg=#212026
 
 " bug. opposite here.
-call s:hi('StatusLine'   , 140 , s:n_bg+2 , 'None' , 'None')
-call s:hi('StatusLineNC' , 244 , s:n_bg+1 , 'None' , 'None')
+call s:hi('StatusLine'   , 140 , s:bg2 , 'None' , 'None')
+call s:hi('StatusLineNC' , 244 , s:bg1 , 'None' , 'None')
 hi StatusLineNC guibg=#3a3a3a
 
-call s:hi('TabLine'     , 66  , s:n_bg+3 , 'None' , 'None')
-call s:hi('TabLineSel'  , 178 , s:n_bg+4 , 'None' , 'None')
-call s:hi('TabLineFill' , 145 , s:n_bg+2 , 'None' , 'None')
+call s:hi('TabLine'     , 66  , s:bg3 , 'None' , 'None')
+call s:hi('TabLineSel'  , 178 , s:bg4 , 'None' , 'None')
+call s:hi('TabLineFill' , 145 , s:bg2 , 'None' , 'None')
 
-call s:hi('WildMenu' , 169 , s:n_bg+1 , 'bold' , 'bold')
+call s:hi('WildMenu' , 214 , s:bg3 , 'None' , 'None')
 hi WildMenu guifg=#FF4848
 
 call s:hi('Boolean'     , 135 , '' , 'None' , 'None')
@@ -112,7 +120,7 @@ call s:hi('Character'   , 75  , '' , 'None' , 'None')
 call s:hi('Number'      , 111 , '' , 'None' , 'None')
 call s:hi('Float'       , 135 , '' , 'None' , 'None')
 call s:hi('String'      , 36  , '' , 'None' , 'None')
-call s:hi('Conditional' , 134 , '' , 'None' , 'None')
+call s:hi('Conditional' , 134 , '' , 'bold' , 'bold')
 call s:hi('Constant'    , 135 , '' , 'None' , 'None')
 call s:hi('Debug'       , 225 , '' , 'None' , 'None')
 call s:hi('Define'      , 177 , '' , 'None' , 'None')
@@ -122,7 +130,7 @@ hi Character       guifg=#FF62B0
 hi Number          guifg=#E697E6
 hi Float           guifg=#B7B7FF
 hi String          guifg=#20af81
-hi Conditional     guifg=#9191FF
+hi Conditional     guifg=#a45bad
 hi Constant        guifg=#7BA7E1
 hi Debug           guifg=#FFC8C8
 hi Define          guifg=#D881ED
@@ -135,24 +143,23 @@ call s:hi('DiffText'   , ''  , 102 , 'None' , 'None')
 
 call s:hi('Directory'  , 67  , ''  , 'bold' , 'bold')
 call s:hi('Exception'  , 137 , ''  , 'bold' , 'bold')
-call s:hi('FoldColumn' , 67  , 16  , 'None' , 'None')
-call s:hi('Folded'     , 133  , 236 , 'None' , 'None')
 call s:hi('Function'   , 132 , ''  , 'bold' , 'bold')
 call s:hi('Identifier' , 168 , ''  , 'None' , 'None')
-call s:hi('Ignore'     , 244 , 233 , 'None' , 'None')
+call s:hi('Ignore'     , 244 , ''  , 'None' , 'None')
 call s:hi('Operator'   , 67  , ''  , 'None' , 'None')
-hi Folded       guifg=#59955C guibg=#273746
+call s:hi('FoldColumn' , 67  , s:bg1 , 'None' , 'None')
+call s:hi('Folded'     , 133 , s:bg1 , 'bold' , 'bold')
 hi Ignore       guifg=#B4D1B6
 hi Operator     guifg=#25A0C5
+hi Function     guifg=#bc6ec5
 
 call s:hi('PreCondit' , 139 , '' , 'None' , 'None')
-call s:hi('PreProc'   , 176  , '' , 'None' , 'None')
+call s:hi('PreProc'   , 176 , '' , 'None' , 'None')
 call s:hi('Question'  , 81  , '' , 'None' , 'None')
-call s:hi('Repeat'    , 31  , '' , 'bold' , 'bold')
+call s:hi('Repeat'    , 68  , '' , 'bold' , 'bold')
 hi PreCondit    guifg=#D698FE
 hi PreProc      guifg=#DD75DD
 hi Question     guifg=#F9BB00
-hi Repeat       guifg=#8282FF
 
 call s:hi('Keyword' , 68  , '' , 'bold' , 'bold')
 call s:hi('Label'   , 104 , '' , 'None' , 'None')
@@ -172,7 +179,7 @@ hi Statement guifg=#4f97d7
 
 call s:hi('Search'    , 16 , 76 , 'bold' , 'bold')
 call s:hi('IncSearch' , 16 , 76 , 'bold' , 'bold')
-call s:hi('MatchParen', 40 , s:n_bg-1, 'bold,underline', 'bold,underline')
+call s:hi('MatchParen', 40 , s:bg0, 'bold,underline', 'bold,underline')
 hi Search       guifg=#292b2e guibg=#86dc2f
 hi MatchParen   guifg=#00ff00 guibg=NONE
 
@@ -180,7 +187,7 @@ call s:hi('ModeMsg'  , 229 , '' , 'None' , 'None')
 hi ModeMsg guifg=#FFF06A
 
 " Popup menu
-call s:hi('Pmenu'      , 141 , 236 , 'None' , 'None')
+call s:hi('Pmenu'      , 141 , s:bg1 , 'None' , 'None')
 call s:hi('PmenuSel'   , 251 , 97  , 'None' , 'None')
 call s:hi('PmenuSbar'  , 28  , 233 , 'None' , 'None')
 call s:hi('PmenuThumb' , 160 , 97  , 'None' , 'None')
@@ -188,22 +195,22 @@ hi Pmenu        guifg=#9a9aba guibg=#34323e
 hi PmenuSbar    guifg=#C269FE guibg=#303030
 
 " SignColumn may relate to ale sign
-call s:hi('SignColumn' , 118 , s:n_bg , 'None' , 'None')
-call s:hi('Todo'       , 172 , s:n_bg , 'bold' , 'bold')
+call s:hi('SignColumn' , 118 , s:bg , 'None' , 'None')
+call s:hi('Todo'       , 172 , s:bg , 'bold' , 'bold')
 hi Todo         guibg=NONE
 hi SignColumn   guibg=NONE
 
 " VertSplit consistent with normal background to hide it
-call s:hi('VertSplit' , s:n_bg , s:n_bg , 'None' , 'None')
+call s:hi('VertSplit' , s:bg , '' , 'None' , 'None')
 hi VertSplit    guibg=NONE
 
-call s:hi('Warning'    , 222 , s:n_bg , 'bold' , 'bold')
-call s:hi('WarningMsg' , 222 , s:n_bg , 'bold' , 'bold')
+call s:hi('Warning'    , 222 , '' , 'bold' , 'bold')
+call s:hi('WarningMsg' , 222 , '' , 'bold' , 'bold')
 hi Warning      guifg=#dc752f guibg=NONE
 hi WarningMsg   guifg=#dc752f guibg=NONE
 
-call s:hi('Error'    , 160 , s:n_bg , 'bold' , 'bold')
-call s:hi('ErrorMsg' , 196 , s:n_bg , 'bold' , 'bold')
+call s:hi('Error'    , 160 , '' , 'bold' , 'bold')
+call s:hi('ErrorMsg' , 196 , '' , 'bold' , 'bold')
 hi Error        guifg=#e0211d guibg=NONE
 hi ErrorMsg     guifg=#e0211d guibg=NONE
 
@@ -224,14 +231,14 @@ call s:hi('SpellRare'  , 218 , '' , 'underline'    , 'undercurl')
 
 call s:hi('Tag'          , 161 , ''  , 'None' , 'None')
 call s:hi('Title'        , 176 , ''  , 'None' , 'None')
-call s:hi('Structure'    , 32  , ''  , 'None' , 'None')
-call s:hi('StorageClass' , 208 , ''  , 'None' , 'None')
+call s:hi('Structure'    , 68  , ''  , 'bold' , 'bold')
+call s:hi('StorageClass' , 170 , ''  , 'None' , 'None')
 hi Tag          guifg=#E469FE
 hi Title        guifg=#DD75DD
-hi Structure    guifg=#E37795
-hi StorageClass guifg=#D881ED
+hi Structure    guifg=#4f97d7
+hi StorageClass guifg=#a45bad
 
-call s:hi('Visual'    , '' , s:n_bg+3 , 'None' , 'None')
+call s:hi('Visual'    , '' , s:bg3 , 'None' , 'None')
 call s:hi('VisualNOS' , '' , 238      , 'None' , 'None')
 hi Visual guibg=#544A65
 
@@ -241,6 +248,8 @@ hi Comment guifg=#2aa1ae
 " tilde group
 call s:hi('NonText' , 241 , '' , 'None' , 'None')
 hi NonText guifg=#534B5D
+
+hi link qfLineNr Type
 
 hi SVDNormal  guifg=#b2b2b2 ctermfg=249
 hi SVDDark1   guifg=#3c3836 ctermfg=237
@@ -276,6 +285,42 @@ hi link markdownH6 SVDGreen
 " cpp
 hi cppExceptions       ctermfg=207 guifg=#CC3366 cterm=bold gui=bold
 hi link cppSTLexception cppExceptions
+
+" dot
+hi link dotKeyChar Number
+
+" sh
+call s:hi('shFunctionKey' , 68 , '' , 'bold' , 'bold')
+
+" vimL
+call s:hi('vimLet' , 68 , '' , 'bold' , 'bold')
+hi vimLet guifg=#4f97d7
+
+
+" python-mode
+hi pythonLambdaExpr      ctermfg=105 guifg=#8787ff
+hi pythonInclude         ctermfg=68  guifg=#5f87d7 cterm=bold gui=bold
+hi pythonClass           ctermfg=167 guifg=#FF62B0 cterm=bold gui=bold
+hi pythonParameters      ctermfg=147 guifg=#AAAAFF
+hi pythonParam           ctermfg=175 guifg=#67b11d
+hi pythonBrackets        ctermfg=183 guifg=#d7afff
+hi pythonClassParameters ctermfg=111 guifg=#FF5353
+hi pythonSelf            ctermfg=68  guifg=#5f87d7 cterm=bold gui=bold
+
+call s:hi('pythonOperator' , 68 , '' , 'bold' , 'bold')
+hi pythonOperator guifg=#4f97d7
+
+hi pythonDottedName      ctermfg=74  guifg=#5fafd7
+
+hi pythonError           ctermfg=196 guifg=#ff0000
+hi pythonIndentError     ctermfg=197 guifg=#ff005f
+hi pythonSpaceError      ctermfg=198 guifg=#ff0087
+
+hi pythonBuiltinType     ctermfg=74  guifg=#9191FF cterm=bold gui=bold
+hi pythonBuiltinObj      ctermfg=71  guifg=#5faf5f cterm=bold gui=bold
+hi pythonBuiltinFunc     ctermfg=169 guifg=#d75faf cterm=bold gui=bold
+
+hi pythonException       ctermfg=207 guifg=#CC3366 cterm=bold gui=bold
 
 """""""""""""""""""""""""""""""""""""""""""
 " Plugins
@@ -325,8 +370,17 @@ hi link LeaderGuideKeys Function
 hi link LeaderGuideBrackets SVDGreen
 " }
 
+" NERDTree {
+hi link NERDTreeDirSlash  Statement
+hi link NERDTreeCWD Function
+" }
+
+" Tagbar {
+call s:hi('TagbarHighlight'    , 16 , 36 , 'bold' , 'bold')
+" }
+
 delf s:hi
-unlet s:color_map s:n_bg
+unlet s:color_map s:bg
 
 " Must be at the end, because of ctermbg=234 bug.
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ

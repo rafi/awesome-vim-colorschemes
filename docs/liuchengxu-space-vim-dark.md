@@ -1,5 +1,6 @@
 space-vim-dark
 ==============
+<a href="https://github.com/liuchengxu/space-vim"><img src="https://rawgit.com/liuchengxu/space-vim/master/assets/space-vim-badge.svg" alt="badge"></a>
 
 Space-vim-dark colorscheme is derived from [spacemacs-dark-theme](https://github.com/nashamri/spacemacs-theme).
 
@@ -16,14 +17,22 @@ If you want to enable italics in terminal:
     hi Comment cterm=italic
     ```
 
-Terminal with `set termguicolors`:
+## GUI or Terminal with true colors enabled
 
-![screenshot](https://github.com/liuchengxu/space-vim-dark/blob/screenshots/screenshot3.png?raw=true)
+![screenshot](https://raw.githubusercontent.com/liuchengxu/img/master/space-vim/space-vim-gui.png)
+(Terminal with `set termguicolors`)
 
-![screenshot](https://github.com/liuchengxu/space-vim-dark/blob/screenshots/screenshot2.png?raw=true)
-
-![screenshot](https://github.com/liuchengxu/space-vim-dark/blob/screenshots/screenshot1.png?raw=true)
-
-Terminal with 256 colors:
+## Cterm (256 colors)
 
 ![screenshot](https://raw.githubusercontent.com/liuchengxu/img/master/space-vim/space-vim-cterm.png)
+
+### Change background color
+
+![screenshot](https://raw.githubusercontent.com/liuchengxu/img/master/space-vim-dark/space-vim-dark-bg-list.png)
+
+```vim
+"   Range:   233 (darkest) ~ 238 (lightest)
+"   Default: 235
+let g:space_vim_dark_background = 234
+color space-vim-dark
+```
