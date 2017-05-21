@@ -8,7 +8,7 @@ let s:c.base0 = { 'gui': '#0c1014', 'cterm': 0 }
 let s:c.base1 = { 'gui': '#11151c', 'cterm': 8 }
 let s:c.base2 = { 'gui': '#091f2e', 'cterm': 10 }
 let s:c.base3 = { 'gui': '#0a3749', 'cterm': 12 }
-let s:c.base4 = { 'gui': '#245361', 'cterm': 11 }
+let s:c.base4 = { 'gui': '#1e6479', 'cterm': 11 }
 let s:c.base5 = { 'gui': '#599cab', 'cterm': 14 }
 let s:c.base6 = { 'gui': '#99d1ce', 'cterm': 7 }
 let s:c.base7 = { 'gui': '#d3ebe9', 'cterm': 15 }
@@ -44,7 +44,7 @@ endfunction
 " Colors.
 let s:N1 = s:Array('base2', 'blue')
 let s:N2 = s:Array('base5', 'base2')
-let s:N3 = s:Array('base4', 'base1')
+let s:N3 = s:Array('blue', 'base1')
 
 let g:airline#themes#gotham#palette.normal =
       \ airline#themes#generate_color_map(s:N1, s:N2, s:N3)
@@ -60,7 +60,7 @@ let g:airline#themes#gotham#palette.normal_modified = {
 " Colors.
 let s:I1 = s:Array('base2', 'green')
 let s:I2 = s:Array('base6', 'base3')
-let s:I3 = s:Array('base4', 'base1')
+let s:I3 = s:Array('blue', 'base1')
 
 " Override for when increased contrast is enabled
 if get(g:, 'gotham_airline_emphasised_insert', 1)
@@ -88,7 +88,7 @@ let g:airline#themes#gotham#palette.insert_paste = {
 " Colors.
 let s:R1 = s:Array('base2', 'orange')
 let s:R2 = s:Array('base6', 'base3')
-let s:R3 = s:Array('base4', 'base1')
+let s:R3 = s:Array('blue', 'base1')
 
 let g:airline#themes#gotham#palette.replace =
       \ airline#themes#generate_color_map(s:R1, s:R2, s:R3)
@@ -118,9 +118,9 @@ let g:airline#themes#gotham#palette.visual_modified =
 
 " Inactive mode (when the focus is not on the window) =========================
 
-let s:IA1 = s:Array('base4', 'base2')
-let s:IA2 = s:Array('base4', 'base1')
-let s:IA3 = s:Array('base4', 'base0')
+let s:IA1 = s:Array('blue', 'base2')
+let s:IA2 = s:Array('blue', 'base1')
+let s:IA3 = s:Array('blue', 'base0')
 
 let g:airline#themes#gotham#palette.inactive =
       \ airline#themes#generate_color_map(s:IA1, s:IA2, s:IA3)
@@ -154,7 +154,7 @@ if !get(g:, 'loaded_ctrlp', 0)
 endif
 
 let s:CP1 = s:Array('base6', 'base2', '')
-let s:CP2 = s:Array('base6', 'base4', '')
+let s:CP2 = s:Array('base6', 'blue', '')
 let s:CP3 = s:Array('base7', 'green', 'bold')
 
 let g:airline#themes#gotham#palette.ctrlp =
