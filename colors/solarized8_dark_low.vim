@@ -33,6 +33,8 @@ hi! Underlined cterm=NONE gui=NONE ctermfg=13 guifg=#6c71c4 ctermbg=NONE guibg=N
 hi! Ignore cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE
 hi! Error cterm=NONE,bold gui=NONE,bold ctermfg=1 guifg=#dc322f ctermbg=NONE guibg=NONE
 hi! Todo cterm=NONE,bold gui=NONE,bold ctermfg=5 guifg=#d33682 ctermbg=NONE guibg=NONE
+hi! MatchParen cterm=NONE,bold gui=NONE,bold ctermfg=15 guifg=#fdf6e3 ctermbg=0 guibg=#073642
+hi! Cursor cterm=NONE gui=NONE ctermfg=15 guifg=#fdf6e3 ctermbg=4 guibg=#268bd2
 if get(g:, "solarized_visibility", "") == "high"
   hi! SpecialKey cterm=NONE,reverse gui=NONE,reverse ctermfg=9 guifg=#cb4b16 ctermbg=NONE guibg=NONE
   hi! NonText cterm=NONE,bold gui=NONE,bold ctermfg=9 guifg=#cb4b16 ctermbg=NONE guibg=NONE
@@ -116,7 +118,6 @@ hi! PmenuThumb ctermfg=12 guifg=#839496 ctermbg=8 guibg=#002b36 cterm=NONE,rever
 hi! CursorColumn cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#073642
 hi! CursorLine cterm=NONE,underline gui=NONE,underline ctermfg=NONE guifg=NONE ctermbg=0 guibg=#073642 guisp=#93a1a1
 hi! ColorColumn cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#073642
-hi! Cursor cterm=NONE gui=NONE ctermfg=15 guifg=#fdf6e3 ctermbg=4 guibg=#268bd2
 hi! link lCursor Cursor
 if has('nvim')
   hi! link TermCursor Cursor
@@ -138,7 +139,6 @@ if has('nvim')
   let g:terminal_color_14 = '#93a1a1'
   let g:terminal_color_15 = '#fdf6e3'
 endif
-hi! MatchParen cterm=NONE,bold gui=NONE,bold ctermfg=15 guifg=#fdf6e3 ctermbg=0 guibg=#073642
 hi! link vimVar Identifier
 hi! link vimFunc Function
 hi! link vimUserFunc Function

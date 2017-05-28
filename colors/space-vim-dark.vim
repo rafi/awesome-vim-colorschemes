@@ -117,7 +117,7 @@ hi WildMenu guifg=#FF4848
 
 call s:hi('Boolean'     , 135 , '' , 'None' , 'None')
 call s:hi('Character'   , 75  , '' , 'None' , 'None')
-call s:hi('Number'      , 111 , '' , 'None' , 'None')
+call s:hi('Number'      , 176 , '' , 'None' , 'None')
 call s:hi('Float'       , 135 , '' , 'None' , 'None')
 call s:hi('String'      , 36  , '' , 'None' , 'None')
 call s:hi('Conditional' , 134 , '' , 'bold' , 'bold')
@@ -168,7 +168,7 @@ hi keyword      guifg=#E469FE
 hi Label        guifg=#DFB0FF
 hi Macro        guifg=#8C8CFF
 
-call s:hi('Type'       , 169 , '' , 'None'      , 'None')
+call s:hi('Type'       , 168 , '' , 'None'      , 'None')
 call s:hi('Typedef'    , 204 , '' , 'None'      , 'None')
 call s:hi('Underlined' , '' , '' , 'underline' , 'underline')
 hi Type         guifg=#ce537a
@@ -201,20 +201,20 @@ hi Todo         guibg=NONE
 hi SignColumn   guibg=NONE
 
 " VertSplit consistent with normal background to hide it
-call s:hi('VertSplit' , s:bg , '' , 'None' , 'None')
+call s:hi('VertSplit' , s:bg0 , '' , 'None' , 'None')
 hi VertSplit    guibg=NONE
 
-call s:hi('Warning'    , 222 , '' , 'bold' , 'bold')
-call s:hi('WarningMsg' , 222 , '' , 'bold' , 'bold')
+call s:hi('Warning'    , 136 , '' , 'bold' , 'bold')
+call s:hi('WarningMsg' , 136 , '' , 'bold' , 'bold')
 hi Warning      guifg=#dc752f guibg=NONE
 hi WarningMsg   guifg=#dc752f guibg=NONE
 
-call s:hi('Error'    , 160 , '' , 'bold' , 'bold')
+call s:hi('Error'    , 160 , s:bg , 'bold' , 'bold')
 call s:hi('ErrorMsg' , 196 , '' , 'bold' , 'bold')
 hi Error        guifg=#e0211d guibg=NONE
 hi ErrorMsg     guifg=#e0211d guibg=NONE
 
-call s:hi('Special'        , 75  , '' , 'None' , 'None')
+call s:hi('Special'        , 175 , '' , 'None' , 'None')
 call s:hi('SpecialKey'     , 59  , '' , 'None' , 'None')
 call s:hi('SpecialChar'    , 171 , '' , 'bold' , 'bold')
 call s:hi('SpecialComment' , 245 , '' , 'bold' , 'bold')
@@ -295,7 +295,13 @@ call s:hi('shFunctionKey' , 68 , '' , 'bold' , 'bold')
 " vimL
 call s:hi('vimLet' , 68 , '' , 'bold' , 'bold')
 hi vimLet guifg=#4f97d7
+hi link vimFuncKey vimLet
+hi link vimCommand vimLet
+hi link vimGroup Directory
+hi link vimHiGroup Directory
 
+" json
+hi link jsonStringSQError SVDRed
 
 " python-mode
 hi pythonLambdaExpr      ctermfg=105 guifg=#8787ff
@@ -316,7 +322,7 @@ hi pythonError           ctermfg=196 guifg=#ff0000
 hi pythonIndentError     ctermfg=197 guifg=#ff005f
 hi pythonSpaceError      ctermfg=198 guifg=#ff0087
 
-hi pythonBuiltinType     ctermfg=74  guifg=#9191FF cterm=bold gui=bold
+hi pythonBuiltinType     ctermfg=170  guifg=#D54FD5 cterm=bold gui=bold
 hi pythonBuiltinObj      ctermfg=71  guifg=#5faf5f cterm=bold gui=bold
 hi pythonBuiltinFunc     ctermfg=169 guifg=#d75faf cterm=bold gui=bold
 
@@ -325,6 +331,10 @@ hi pythonException       ctermfg=207 guifg=#CC3366 cterm=bold gui=bold
 """""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""
+"ALE {
+hi link ALEWarningSign  Warning
+hi link ALEErrorSign    Error
+"}
 " vim-indent-guides {
 let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  guibg=#708090 ctermbg=237

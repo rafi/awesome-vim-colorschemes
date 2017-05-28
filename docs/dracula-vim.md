@@ -1,6 +1,6 @@
-# Dracula for [Vim](http://vim.org)
+# Dracula for [Vim](http://www.vim.org/)
 
-> A dark theme for [Vim](http://vim.org).
+> A dark theme for [Vim](http://www.vim.org/).
 
 ![Screenshot](https://draculatheme.com/assets/img/screenshots/vim.png)
 

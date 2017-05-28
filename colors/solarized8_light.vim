@@ -38,16 +38,22 @@ if get(g:, "solarized_visibility", "") == "high"
   hi! NonText cterm=NONE,bold gui=NONE,bold ctermfg=1 guifg=#dc322f ctermbg=NONE guibg=NONE
   hi! CursorLineNr cterm=NONE,bold gui=NONE,bold ctermfg=1 guifg=#dc322f
   hi! Title cterm=NONE,bold gui=NONE,bold ctermfg=9 guifg=#cb4b16 ctermbg=NONE guibg=NONE
+  hi! MatchParen cterm=NONE,bold gui=NONE,bold ctermfg=15 guifg=#fdf6e3 ctermbg=12 guibg=#839496
+  hi! Cursor cterm=NONE gui=NONE ctermfg=15 guifg=#fdf6e3 ctermbg=1 guibg=#dc322f
 elseif get(g:, "solarized_visibility", "") == "low"
   hi! SpecialKey cterm=NONE,bold gui=NONE,bold ctermfg=7 guifg=#eee8d5 ctermbg=NONE guibg=NONE
   hi! NonText cterm=NONE,bold gui=NONE,bold ctermfg=7 guifg=#eee8d5 ctermbg=NONE guibg=NONE
   hi! CursorLineNr cterm=NONE,bold gui=NONE,bold ctermfg=14 guifg=#93a1a1
   hi! Title cterm=NONE,bold gui=NONE,bold ctermfg=14 guifg=#93a1a1 ctermbg=NONE guibg=NONE
+  hi! MatchParen cterm=NONE,bold,underline gui=NONE,bold,underline ctermfg=1 guifg=#dc322f ctermbg=7 guibg=#eee8d5
+  hi! Cursor cterm=NONE gui=NONE ctermfg=15 guifg=#fdf6e3 ctermbg=9 guibg=#cb4b16
 else
   hi! SpecialKey cterm=NONE,bold gui=NONE,bold ctermfg=12 guifg=#839496 ctermbg=7 guibg=#eee8d5
   hi! NonText cterm=NONE,bold gui=NONE,bold ctermfg=12 guifg=#839496 ctermbg=NONE guibg=NONE
   hi! CursorLineNr cterm=NONE,bold gui=NONE,bold ctermfg=11 guifg=#657b83
   hi! Title cterm=NONE,bold gui=NONE,bold ctermfg=9 guifg=#cb4b16 ctermbg=NONE guibg=NONE
+  hi! MatchParen cterm=NONE,bold,underline gui=NONE,bold,underline ctermfg=1 guifg=#dc322f ctermbg=7 guibg=#eee8d5
+  hi! Cursor cterm=NONE gui=NONE ctermfg=15 guifg=#fdf6e3 ctermbg=9 guibg=#cb4b16
 endif
 hi! NormalMode ctermfg=10 guifg=#586e75 ctermbg=15 guibg=#fdf6e3 cterm=NONE,reverse gui=NONE,reverse
 hi! InsertMode ctermfg=6 guifg=#2aa198 ctermbg=15 guibg=#fdf6e3 cterm=NONE,reverse gui=NONE,reverse
@@ -116,7 +122,6 @@ hi! PmenuThumb ctermfg=11 guifg=#657b83 ctermbg=15 guibg=#fdf6e3 cterm=NONE,reve
 hi! CursorColumn cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=7 guibg=#eee8d5
 hi! CursorLine cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=7 guibg=#eee8d5 guisp=#586e75
 hi! ColorColumn cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=7 guibg=#eee8d5
-hi! Cursor cterm=NONE gui=NONE ctermfg=8 guifg=#002b36 ctermbg=4 guibg=#268bd2
 hi! link lCursor Cursor
 if has('nvim')
   hi! link TermCursor Cursor
@@ -138,7 +143,6 @@ if has('nvim')
   let g:terminal_color_14 = '#93a1a1'
   let g:terminal_color_15 = '#fdf6e3'
 endif
-hi! MatchParen cterm=NONE,bold gui=NONE,bold ctermfg=NONE guifg=NONE ctermbg=7 guibg=#eee8d5
 hi! link vimVar Identifier
 hi! link vimFunc Function
 hi! link vimUserFunc Function
