@@ -1,23 +1,35 @@
-![Screenshot](https://cloud.githubusercontent.com/assets/11221489/26433284/928bf020-40b6-11e7-80f2-d15674a7258b.png)
+![Screenshot](https://cloud.githubusercontent.com/assets/11221489/26618880/db1a22ce-4590-11e7-8b41-042181b330ca.png)
 
 :space_invader: Set Up
 ------
 
-###### Dark Grey Background [Screenshot](https://cloud.githubusercontent.com/assets/11221489/24883335/471c0e2a-1df9-11e7-8715-34e23d9f8628.png)
+###### Dark Grey Background 
 ```VimL
 colorscheme alduin 
 ```
 
-###### Almost Black Background [Screenshot](https://cloud.githubusercontent.com/assets/11221489/24883448/ca7b5f1e-1df9-11e7-96a7-e1ad1093c00a.png)
+###### Dragon Aspect - Almost Black Background
 ```VimL
 let g:alduin_Shout_Dragon_Aspect = 1
 colorscheme alduin 
 ```
 
-###### Black Background [Screenshot](https://cloud.githubusercontent.com/assets/11221489/24883494/f6e46118-1df9-11e7-97a9-cff8fd7bee02.png)
+###### Become Ethereal - Black Background
 ```VimL
 let g:alduin_Shout_Become_Ethereal = 1
 colorscheme alduin 
+```
+
+######  Sanguinare Vampiris - Automatically cycles thru modes depending on time of night
+```VimL
+let g:alduin_Contract_Vampirism = 1
+colorscheme alduin 
+```
+
+###### Dark Red - Special Highlighting
+```VimL
+let g:alduin_Shout_Fire_Breath = 1
+colorscheme alduin
 ```
 
 :crescent_moon: Nightly Build
@@ -38,5 +50,4 @@ pre-release version [here](https://github.com/AlessandroYorba/Alduin/tree/nightl
 [Sierra](https://github.com/AlessandroYorba/Sierra)<br>
 [Sidonia](https://github.com/AlessandroYorba/Sidonia)<br>
 [Monrovia](https://github.com/AlessandroYorba/Monrovia)<br>
-[Acadia](https://github.com/AlessandroYorba/Acadia)
-
+[Arcadia](https://github.com/AlessandroYorba/Arcadia)

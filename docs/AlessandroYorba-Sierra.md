@@ -1,34 +1,40 @@
-![Screenshot](https://cloud.githubusercontent.com/assets/11221489/26434690/f701590c-40be-11e7-83dc-7b8fc0ec7bba.png)
+![Screenshot](https://cloud.githubusercontent.com/assets/11221489/26614447/500dada6-4575-11e7-8d14-63b9621ab547.png)
 
 :space_invader: Set Up
 ------
 
-###### Grey Background [Screenshot](https://cloud.githubusercontent.com/assets/11221489/24884378/f0017e86-1dfd-11e7-803b-f7502a8c2428.png)
+###### Day Mode - Grey Background
 ```VimL
 colorscheme sierra 
 ```
 
-###### Dark Grey Background [Screenshot](https://cloud.githubusercontent.com/assets/11221489/24884594/03eeedb0-1dff-11e7-89f0-4863510a90a2.png)
+###### Sunset Mode - Dark Grey Background
 ```VimL
 let g:sierra_Sunset = 1
 colorscheme sierra 
 ```
 
-###### Darker Grey Background [Screenshot](https://cloud.githubusercontent.com/assets/11221489/24884655/466fa2a6-1dff-11e7-9b11-b5f6d069f89e.png)
+###### Twilight Mode - Darker Grey Background
 ```VimL
 let g:sierra_Twilight = 1
 colorscheme sierra 
 ```
 
-###### Almost Black Background [Screenshot](https://cloud.githubusercontent.com/assets/11221489/24884678/69387ae2-1dff-11e7-86df-f89b4bb106c6.png)
+###### Midnight Mode - Almost Black Background
 ```VimL
 let g:sierra_Midnight = 1
 colorscheme sierra 
 ```
 
-###### Black Background [Screenshot](https://cloud.githubusercontent.com/assets/11221489/24884694/7d2de38e-1dff-11e7-8e48-03c49f77ec41.png)
+###### Pitch Mode - Black Background
 ```VimL
 let g:sierra_Pitch = 1
+colorscheme sierra 
+```
+
+######  Campfire Mode - Automatically cycles thru modes depending on time of day
+```VimL
+let g:sierra_Campfire = 1
 colorscheme sierra 
 ```
 
