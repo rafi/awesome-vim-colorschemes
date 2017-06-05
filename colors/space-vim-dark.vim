@@ -120,7 +120,7 @@ call s:hi('Character'   , 75  , '' , 'None' , 'None')
 call s:hi('Number'      , 176 , '' , 'None' , 'None')
 call s:hi('Float'       , 135 , '' , 'None' , 'None')
 call s:hi('String'      , 36  , '' , 'None' , 'None')
-call s:hi('Conditional' , 134 , '' , 'bold' , 'bold')
+call s:hi('Conditional' , 68 , '' , 'bold' , 'bold')
 call s:hi('Constant'    , 135 , '' , 'None' , 'None')
 call s:hi('Debug'       , 225 , '' , 'None' , 'None')
 call s:hi('Define'      , 177 , '' , 'None' , 'None')
@@ -130,7 +130,7 @@ hi Character       guifg=#FF62B0
 hi Number          guifg=#E697E6
 hi Float           guifg=#B7B7FF
 hi String          guifg=#20af81
-hi Conditional     guifg=#a45bad
+hi Conditional     guifg=#4f97d7
 hi Constant        guifg=#7BA7E1
 hi Debug           guifg=#FFC8C8
 hi Define          guifg=#D881ED
@@ -142,7 +142,7 @@ call s:hi('DiffDelete' , 162 , 53  , 'None' , 'None')
 call s:hi('DiffText'   , ''  , 102 , 'None' , 'None')
 
 call s:hi('Directory'  , 67  , ''  , 'bold' , 'bold')
-call s:hi('Exception'  , 137 , ''  , 'bold' , 'bold')
+call s:hi('Exception'  , 203 , ''  , 'bold' , 'bold')
 call s:hi('Function'   , 132 , ''  , 'bold' , 'bold')
 call s:hi('Identifier' , 168 , ''  , 'None' , 'None')
 call s:hi('Ignore'     , 244 , ''  , 'None' , 'None')
@@ -160,6 +160,7 @@ call s:hi('Repeat'    , 68  , '' , 'bold' , 'bold')
 hi PreCondit    guifg=#D698FE
 hi PreProc      guifg=#DD75DD
 hi Question     guifg=#F9BB00
+hi Repeat       guifg=#4f97d7
 
 call s:hi('Keyword' , 68  , '' , 'bold' , 'bold')
 call s:hi('Label'   , 104 , '' , 'None' , 'None')
@@ -303,6 +304,9 @@ hi link vimHiGroup Directory
 " json
 hi link jsonStringSQError SVDRed
 
+" html
+hi link htmlSpecialTagName Tag
+
 " python-mode
 hi pythonLambdaExpr      ctermfg=105 guifg=#8787ff
 hi pythonInclude         ctermfg=68  guifg=#5f87d7 cterm=bold gui=bold
@@ -315,6 +319,8 @@ hi pythonSelf            ctermfg=68  guifg=#5f87d7 cterm=bold gui=bold
 
 call s:hi('pythonOperator' , 68 , '' , 'bold' , 'bold')
 hi pythonOperator guifg=#4f97d7
+
+hi link pythonStatement pythonOperator
 
 hi pythonDottedName      ctermfg=74  guifg=#5fafd7
 

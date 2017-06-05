@@ -43,7 +43,6 @@ let s:green    = "#8daf67"
 let s:turqoise = "#B3EBBF"
 let s:orange   = "#FAA166"
 let s:pink     = "#F77EBD"
-let s:gold     = "#CBC983"
 let s:red      = "#F05E48"
 let s:gray1    = "#292929"
 let s:gray2    = "#525252"
@@ -129,7 +128,7 @@ call s:Color("Keyword",  s:red,     "NONE", s:t_red,     "NONE")
 call s:Color("Number",   s:turqoise, "NONE", s:t_turqoise, "NONE")
 call s:Color("Regexp",   s:orange,   "NONE", s:t_orange,   "NONE")
 call s:Color("Macro",    s:orange,   "NONE", s:t_orange,   "NONE")
-call s:Color("Function", s:gold,     "NONE", s:t_gold,     "NONE")
+call s:Color("Function", s:yellow,   "NONE", s:t_yellow,   "NONE")
 call s:Color("Notice",   s:yellow,   "NONE", s:t_yellow,   "NONE")
 
 call s:Color("MatchParen", "NONE", "NONE", "NONE", "NONE", "bold")
