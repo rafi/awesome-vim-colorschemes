@@ -65,6 +65,7 @@ At this time `minimalist` is looks beautiful & focused on:
 
 [GitHub](https://github.com/dikiaap/minimalist) ·
 [Vim.org](http://www.vim.org/scripts/script.php?script_id=5490) ·
+[Vim Awesome](http://vimawesome.com/plugin/minimalist-vim) ·
 [DotShare.it](http://dotshare.it/dots/1397/)
 
 ## License
