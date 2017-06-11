@@ -211,7 +211,7 @@ hi Warning      guifg=#dc752f guibg=NONE
 hi WarningMsg   guifg=#dc752f guibg=NONE
 
 call s:hi('Error'    , 160 , s:bg , 'bold' , 'bold')
-call s:hi('ErrorMsg' , 196 , '' , 'bold' , 'bold')
+call s:hi('ErrorMsg' , 196 , s:bg , 'bold' , 'bold')
 hi Error        guifg=#e0211d guibg=NONE
 hi ErrorMsg     guifg=#e0211d guibg=NONE
 
@@ -291,18 +291,24 @@ hi link cppSTLexception cppExceptions
 hi link dotKeyChar Number
 
 " sh
-call s:hi('shFunctionKey' , 68 , '' , 'bold' , 'bold')
+hi link shSet         SVDBlueBold
+hi link shLoop        SVDBlueBold
+hi link shFunctionKey SVDBlueBold
 
 " vimL
-call s:hi('vimLet' , 68 , '' , 'bold' , 'bold')
-hi vimLet guifg=#4f97d7
-hi link vimFuncKey vimLet
-hi link vimCommand vimLet
-hi link vimGroup Directory
+hi link vimLet     SVDBlueBold
+hi link vimFuncKey SVDBlueBold
+hi link vimCommand SVDBlueBold
+hi link vimGroup   Directory
 hi link vimHiGroup Directory
 
 " json
 hi link jsonStringSQError SVDRed
+
+" xml
+hi link xmlTag     Identifier
+hi link xmlEndTag  Identifier
+hi link xmlTagName Identifier
 
 " html
 hi link htmlSpecialTagName Tag
@@ -317,10 +323,8 @@ hi pythonBrackets        ctermfg=183 guifg=#d7afff
 hi pythonClassParameters ctermfg=111 guifg=#FF5353
 hi pythonSelf            ctermfg=68  guifg=#5f87d7 cterm=bold gui=bold
 
-call s:hi('pythonOperator' , 68 , '' , 'bold' , 'bold')
-hi pythonOperator guifg=#4f97d7
-
-hi link pythonStatement pythonOperator
+hi link pythonOperator  SVDBlueBold
+hi link pythonStatement SVDBlueBold
 
 hi pythonDottedName      ctermfg=74  guifg=#5fafd7
 
@@ -338,9 +342,10 @@ hi pythonException       ctermfg=207 guifg=#CC3366 cterm=bold gui=bold
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""
 "ALE {
-hi link ALEWarningSign  Warning
 hi link ALEErrorSign    Error
+hi link ALEWarningSign  Warning
 "}
+
 " vim-indent-guides {
 let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  guibg=#708090 ctermbg=237
@@ -371,8 +376,8 @@ hi link SignifySignDelete SVDRed
 
 " vim-startify {
 hi link StartifyFile    Normal
-hi link StartifySection SVDBlueBold
 hi link StartifyHeader  Define
+hi link StartifySection SVDBlueBold
 " }
 
 " YouCompleteMe {
@@ -381,14 +386,14 @@ hi YcmWarningSection guibg=#5f5f87 guifg=#b2b2b2 ctermbg=60 ctermfg=249
 " }
 
 " vim-leader-guide {
-hi link LeaderGuideDesc SVDNormal
-hi link LeaderGuideKeys Function
+hi link LeaderGuideKeys     Function
+hi link LeaderGuideDesc     SVDNormal
 hi link LeaderGuideBrackets SVDGreen
 " }
 
 " NERDTree {
+hi link NERDTreeCWD       Function
 hi link NERDTreeDirSlash  Statement
-hi link NERDTreeCWD Function
 " }
 
 " Tagbar {

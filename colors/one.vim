@@ -805,6 +805,11 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   let g:terminal_color_15 = "#e3e5e9"
   "}}}
 
+  " ALE (Asynchronous Lint Engine) highlighting -----------------------------{{{
+  call <sid>X('ALEWarningSign', s:hue_6_2, '', '')
+  call <sid>X('ALEErrorSign', s:hue_5,   '', '')
+  " }}}
+
   " Delete functions =========================================================={{{
   " delf <SID>X
   " delf <SID>rgb
