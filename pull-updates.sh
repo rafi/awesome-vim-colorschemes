@@ -44,7 +44,9 @@ function _main() {
 	_dl NLKNguyen/papercolor-theme
 	_dl nanotech/jellybeans.vim
 	_dl owickstrom/vim-colors-paramount
+	_dl rakr/vim-colors-rakr
 	_dl rakr/vim-one
+	_dl rakr/vim-two-firewatch
 	_dl romainl/Apprentice
 	_dl romainl/flattened
 	_dl scheakur/vim-scheakur

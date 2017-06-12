@@ -47,6 +47,7 @@ Use your favorite package-manager to install, and enjoy!
 | [orbital] | Dark blue base16 theme | ✓ | ✓ |
 | [paramount] | Minimal colorscheme that only puts emphasis on the paramount | ✓ | ✓ |
 | [pyte] | Clean, light (nearly white) theme |   | ✓ |
+| [rakr] | Flat colorscheme light and dark variant | ✓ | ✓ |
 | [rdark-terminal2] | Modified rdark-terminal to enhance visibility | ✓ |   |
 | [seoul256] | Low-contrast color scheme based on Seoul Colors | ✓ | ✓ |
 | [sierra] | Dark vintage colors | ✓ | ✓ |
@@ -55,6 +56,7 @@ Use your favorite package-manager to install, and enjoy!
 | [tender] | 24bit colorscheme for Vim | ✓ | ✓ |
 | [termschool] | Based on the "codeschool" theme, with lots of tweaks | ✓ | ✓ |
 | [twilight256] | Imitates the Twilight theme for TextMate | ✓ | ✓ |
+| [two-firewatch] | A blend between duotone light and firewatch (for atom) | ✓ | ✓ |
 | [wombat256] | Wombat for 256 color xterms | ✓ | ✓ |
 
 [256noir]: https://github.com/andreasvc/vim-256noir
@@ -94,6 +96,7 @@ Use your favorite package-manager to install, and enjoy!
 [orbital]: https://github.com/fcpg/vim-orbital
 [paramount]: https://github.com/owickstrom/vim-colors-paramount
 [pyte]: https://github.com/vim-scripts/pyte
+[rakr]: https://github.com/rakr/vim-colors-rakr
 [rdark-terminal2]: https://github.com/vim-scripts/rdark-terminal2.vim
 [seoul256]: https://github.com/junegunn/seoul256.vim
 [sierra]: https://github.com/AlessandroYorba/Sierra
@@ -102,6 +105,7 @@ Use your favorite package-manager to install, and enjoy!
 [tender]: https://github.com/jacoborus/tender.vim
 [termschool]: https://github.com/marcopaganini/termschool-vim-theme
 [twilight256]: https://github.com/vim-scripts/twilight256.vim
+[two-firewatch]: https://github.com/rakr/vim-two-firewatch
 [wombat256]: https://github.com/vim-scripts/wombat256.vim
 
 ## Other Collections
