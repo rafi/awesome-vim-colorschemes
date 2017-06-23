@@ -282,6 +282,8 @@ hi link markdownH3 SVDYellowBold
 hi link markdownH4 SVDOrangeBold
 hi link markdownH5 SVDBlue
 hi link markdownH6 SVDGreen
+hi link mkdCode    SVDYellow
+hi link mkdItalic  String
 
 " cpp
 hi cppExceptions       ctermfg=207 guifg=#CC3366 cterm=bold gui=bold
@@ -312,6 +314,7 @@ hi link xmlTagName Identifier
 
 " html
 hi link htmlSpecialTagName Tag
+hi link htmlItalic String
 
 " python-mode
 hi pythonLambdaExpr      ctermfg=105 guifg=#8787ff
@@ -393,7 +396,11 @@ hi link LeaderGuideBrackets SVDGreen
 
 " NERDTree {
 hi link NERDTreeCWD       Function
-hi link NERDTreeDirSlash  Statement
+hi link NERDTreeUp        SVDBlueBold
+hi link NERDTreeDir       SVDBlueBold
+hi link NERDTreeDirSlash  SVDBlueBold
+hi link NERDTreeOpenable  SVDBlueBold
+hi link NERDTreeClosable  SVDBlueBold
 " }
 
 " Tagbar {

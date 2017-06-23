@@ -155,6 +155,7 @@ highlight! cssTagName             guifg=#afd7d7  guibg=NONE     gui=NONE       c
 highlight! FoldColumn             guifg=#afd7d7  guibg=NONE     gui=NONE       ctermfg=152    ctermbg=NONE  cterm=NONE
 
 highlight! PreProc                guifg=#d75f5f  guibg=NONE     gui=NONE       ctermfg=167    ctermbg=NONE  cterm=NONE
+highlight! Type                   guifg=#d75f5f  guibg=NONE     gui=NONE       ctermfg=167    ctermbg=NONE  cterm=NONE
 highlight! netrwExe               guifg=#d75f5f  guibg=NONE     gui=NONE       ctermfg=167    ctermbg=NONE  cterm=NONE
 highlight! cssClassName           guifg=#d75f5f  guibg=NONE     gui=NONE       ctermfg=167    ctermbg=NONE  cterm=NONE
 highlight! cssIdentifier          guifg=#d75f5f  guibg=NONE     gui=NONE       ctermfg=167    ctermbg=NONE  cterm=NONE
@@ -166,14 +167,15 @@ highlight! WarningMsg             guifg=#d75f5f  guibg=NONE     gui=NONE       c
 highlight! Question               guifg=#dfaf5f  guibg=NONE     gui=NONE       ctermfg=179    ctermbg=NONE  cterm=NONE
 highlight! MoreMsg                guifg=#dfaf5f  guibg=NONE     gui=NONE       ctermfg=179    ctermbg=NONE  cterm=NONE
 
-highlight! Special                guifg=#dfdfaf  guibg=NONE     gui=NONE       ctermfg=187    ctermbg=NONE  cterm=NONE
-highlight! StorageClass           guifg=#dfdfaf  guibg=NONE     gui=NONE       ctermfg=187    ctermbg=NONE  cterm=NONE
+highlight! String                 guifg=#ffafaf  guibg=NONE     gui=NONE       ctermfg=217    ctermbg=NONE  cterm=NONE
+highlight! Special                guifg=#ffffdf  guibg=NONE     gui=NONE       ctermfg=230    ctermbg=NONE  cterm=NONE
+highlight! StorageClass           guifg=#ffffdf  guibg=NONE     gui=NONE       ctermfg=230    ctermbg=NONE  cterm=NONE
 
-highlight! Visual                 guifg=#eeeeee  guibg=#875f5f  gui=NONE       ctermfg=255    ctermbg=95    cterm=NONE
+highlight! Visual                 guifg=#5f8787  guibg=NONE     gui=reverse    ctermfg=66     ctermbg=NONE    cterm=reverse
 highlight! MatchParen             guifg=#eeeeee  guibg=#875f5f  gui=NONE       ctermfg=255    ctermbg=95    cterm=NONE
 highlight! WildMenu               guifg=#eeeeee  guibg=#875f5f  gui=NONE       ctermfg=255    ctermbg=95    cterm=NONE
 
-highlight! Search                 guifg=#eeeeee  guibg=#5f8787  gui=NONE       ctermfg=255    ctermbg=66    cterm=NONE
+highlight! Search                 guifg=#ffffdf  guibg=NONE     gui=reverse    ctermfg=230    ctermbg=NONE  cterm=reverse
 highlight! Todo                   guifg=#eeeeee  guibg=#1c1c1c  gui=reverse    ctermfg=255    ctermbg=234   cterm=reverse
 
 highlight! SpecialComment         guifg=#87afaf  guibg=NONE     gui=reverse    ctermfg=109     ctermbg=NONE  cterm=reverse
@@ -185,8 +187,7 @@ highlight! Operator               guifg=#dfafaf  guibg=NONE     gui=NONE       c
 highlight! Underlined             guifg=#87af87  guibg=NONE     gui=NONE       ctermfg=108    ctermbg=NONE  cterm=NONE
 
 highlight! htmlArg                guifg=#d78787  guibg=NONE     gui=NONE       ctermfg=174    ctermbg=NONE  cterm=NONE
-highlight! Type                   guifg=#dfaf87  guibg=NONE     gui=NONE       ctermfg=180    ctermbg=NONE  cterm=NONE
-highlight! String                 guifg=#ffafaf  guibg=NONE     gui=NONE       ctermfg=217    ctermbg=NONE  cterm=NONE
+
 highlight! ModeMsg                guifg=#5f8787  guibg=NONE     gui=NONE       ctermfg=66     ctermbg=NONE  cterm=NONE
 highlight! Conditional            guifg=#5f8787  guibg=NONE     gui=NONE       ctermfg=66     ctermbg=NONE  cterm=NONE
 highlight! Constant               guifg=#af5f5f  guibg=NONE     gui=NONE       ctermfg=131    ctermbg=NONE  cterm=NONE
