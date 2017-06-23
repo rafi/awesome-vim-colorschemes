@@ -1,4 +1,4 @@
-![Screenshot](https://cloud.githubusercontent.com/assets/11221489/26618880/db1a22ce-4590-11e7-8b41-042181b330ca.png)
+![Screenshot](https://user-images.githubusercontent.com/11221489/27158103-efd6b814-5119-11e7-9295-f8a7a881da29.png)
 
 :space_invader: Set Up
 ------
@@ -50,4 +50,5 @@ pre-release version [here](https://github.com/AlessandroYorba/Alduin/tree/nightl
 [Sierra](https://github.com/AlessandroYorba/Sierra)<br>
 [Sidonia](https://github.com/AlessandroYorba/Sidonia)<br>
 [Monrovia](https://github.com/AlessandroYorba/Monrovia)<br>
-[Arcadia](https://github.com/AlessandroYorba/Arcadia)
+[Arcadia](https://github.com/AlessandroYorba/Arcadia)<br>
+[Absolute](https://github.com/AlessandroYorba/Absolute)

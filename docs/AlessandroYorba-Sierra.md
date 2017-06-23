@@ -1,4 +1,4 @@
-![Screenshot](https://cloud.githubusercontent.com/assets/11221489/26614447/500dada6-4575-11e7-8d14-63b9621ab547.png)
+![Screenshot](https://user-images.githubusercontent.com/11221489/27158209-b93ebb70-511a-11e7-8164-e05597eb97b4.png)
 
 :space_invader: Set Up
 ------
@@ -53,4 +53,5 @@ pre-release version [here](https://github.com/AlessandroYorba/Sierra/tree/nightl
 [Despacio](https://github.com/AlessandroYorba/Despacio)<br>
 [Sidonia](https://github.com/AlessandroYorba/Sidonia)<br>
 [Monrovia](https://github.com/AlessandroYorba/Monrovia)<br>
-[Arcadia](https://github.com/AlessandroYorba/Arcadia)
+[Arcadia](https://github.com/AlessandroYorba/Arcadia)<br>
+[Absolute](https://github.com/AlessandroYorba/Absolute)
