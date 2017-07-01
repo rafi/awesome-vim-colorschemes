@@ -42,7 +42,7 @@ endfunction
 " Normal mode =================================================================
 
 " Colors.
-let s:N1 = s:Array('base2', 'blue')
+let s:N1 = s:Array('base6', 'blue')
 let s:N2 = s:Array('base5', 'base2')
 let s:N3 = s:Array('blue', 'base1')
 
