@@ -31,7 +31,11 @@ hi! Error cterm=NONE,bold gui=NONE,bold ctermfg=1 guifg=#dc322f ctermbg=NONE gui
 hi! Todo cterm=NONE,bold gui=NONE,bold ctermfg=5 guifg=#d33682 ctermbg=NONE guibg=NONE
 hi! link QuickFixLine Search
 hi! MatchParen cterm=NONE,bold gui=NONE,bold ctermfg=15 guifg=#fdf6e3 ctermbg=0 guibg=#073642
-hi! Cursor cterm=NONE gui=NONE ctermfg=15 guifg=#fdf6e3 ctermbg=4 guibg=#268bd2
+if get(g:, 'solarized_old_cursor_style', 0)
+  hi! Cursor cterm=NONE gui=NONE ctermfg=8 guifg=#002b36 ctermbg=12 guibg=#839496
+else
+  hi! Cursor cterm=NONE gui=NONE ctermfg=15 guifg=#fdf6e3 ctermbg=4 guibg=#268bd2
+endif
 if get(g:, "solarized_visibility", "") == "high"
   hi! SpecialKey cterm=NONE,reverse gui=NONE,reverse ctermfg=9 guifg=#cb4b16 ctermbg=NONE guibg=NONE
   hi! NonText cterm=NONE,bold gui=NONE,bold ctermfg=9 guifg=#cb4b16 ctermbg=NONE guibg=NONE

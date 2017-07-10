@@ -37,21 +37,25 @@
 "=================================================================================
 "     Foreground   #dfdfaf              |      Selection     #af8787             |
 "     Background   #1c1c1c              |      Selected Text #dfdfaf             |
-"     CursorColor  #dfdfaf              |                                        |
 "     Bold         #ffffff              |                                        |
 "     Links        #af0000              |                                        |
+"=================================================================================
+" CURSOR COLORS:
+"=================================================================================
+"     Cursor       #dfdfaf              |                                        |
+"     Cursor Text  #1c1c1c              |                                        |
 "=================================================================================
 " ANSI COLORS ALDUIN:
 "=================================================================================
 "---------------------------------------|-----------------------------------------
 "     NORMAL       Hex          xterm   |      "BRIGHT      Hex          xterm   |
 "---------------------------------------|-----------------------------------------
-"     Black        #1c1c1c      0       |      brBlack      #87875f      8       |
+"     Black        #1c1c1c      0       |      brBlack      #878787      8       |
 "     Red          #af5f5f      1       |      brRed        #af5f5f      9       |
-"     Green        #af875f      2       |      brGreen      #af875f      10      |
-"     Yellow       #878787      3       |      brYellow     #878787      11      |
-"     Blue         #dfaf87      4       |      brBlue       #dfaf87      12      |
-"     Magenta      #875f5f      5       |      brMagenta    #875f5f      13      |
+"     Green        #87875f      2       |      brGreen      #87875f      10      |
+"     Yellow       #af875f      3       |      brYellow     #af875f      11      |
+"     Blue         #878787      4       |      brBlue       #878787      12      |
+"     Magenta      #af8787      5       |      brMagenta    #af8787      13      |
 "     Cyan         #87afaf      6       |      brCyan       #87afaf      14      |
 "     White        #dfdfaf      7       |      brWhite      #dfdfaf      15      |
 "---------------------------------------|-----------------------------------------
@@ -174,7 +178,7 @@ highlight! IncSearch              guifg=#af5f5f  guibg=NONE     gui=reverse    c
 highlight! Todo                   guifg=#af5f00  guibg=NONE     gui=reverse    ctermfg=130   ctermbg=NONE  cterm=reverse
 highlight! Constant               guifg=#af8787  guibg=NONE     gui=NONE       ctermfg=138   ctermbg=NONE  cterm=NONE
 highlight! MatchParen             guifg=#dfdfaf  guibg=#875f5f  gui=NONE       ctermfg=187   ctermbg=95    cterm=NONE
-highlight! ModeMsg                guifg=#afaf87  guibg=NONE     gui=NONE       ctermfg=144   ctermbg=NONE  cterm=NONE
+highlight! ModeMsg                guifg=#5f8787  guibg=NONE     gui=NONE       ctermfg=66    ctermbg=NONE  cterm=NONE
 highlight! Type                   guifg=#af875f  guibg=NONE     gui=NONE       ctermfg=137   ctermbg=NONE  cterm=NONE
 highlight! Identifier             guifg=#87afaf  guibg=NONE     gui=NONE       ctermfg=109   ctermbg=NONE  cterm=NONE
 highlight! VisualNOS              guifg=NONE     guibg=NONE     gui=underline  ctermfg=NONE  ctermbg=NONE  cterm=underline
@@ -195,7 +199,7 @@ highlight! SpellRare              guifg=#d75f00  guibg=NONE     gui=undercurl  c
 "===================================================================================================================
 if 1
     highlight! Normal             guifg=#dfdfaf  guibg=#1c1c1c  gui=NONE     ctermfg=187   ctermbg=234  cterm=NONE
-    highlight! TabLineSel         guifg=#1c1c1c  guibg=#5f8787  gui=NONE     ctermfg=234   ctermbg=66   cterm=NONE
+    highlight! TabLineSel         guifg=#1c1c1c  guibg=#87875f  gui=NONE     ctermfg=234   ctermbg=101   cterm=NONE
 
     highlight! StatusLine         guifg=#87875f  guibg=#121212  gui=NONE     ctermfg=101   ctermbg=233  cterm=NONE
     highlight! Pmenu              guifg=#87875f  guibg=#121212  gui=NONE     ctermfg=101   ctermbg=233  cterm=NONE
@@ -228,7 +232,7 @@ endif
 "===================================================================================================================
 if g:alduin_Shout_Dragon_Aspect
     highlight! Normal             guifg=#dfdfaf  guibg=#121212  gui=NONE     ctermfg=187   ctermbg=233  cterm=NONE
-    highlight! TabLineSel         guifg=#121212  guibg=#5f8787  gui=NONE     ctermfg=233   ctermbg=66   cterm=NONE
+    highlight! TabLineSel         guifg=#121212  guibg=#87875f  gui=NONE     ctermfg=233   ctermbg=101   cterm=NONE
 
     highlight! StatusLine         guifg=#87875f  guibg=#080808  gui=NONE     ctermfg=101   ctermbg=232  cterm=NONE
     highlight! Pmenu              guifg=#87875f  guibg=#080808  gui=NONE     ctermfg=101   ctermbg=232  cterm=NONE
@@ -261,7 +265,7 @@ endif
 "===================================================================================================================
 if g:alduin_Shout_Become_Ethereal
     highlight! Normal             guifg=#dfdfaf  guibg=#080808  gui=NONE     ctermfg=187   ctermbg=232  cterm=NONE
-    highlight! TabLineSel         guifg=#080808  guibg=#5f8787  gui=NONE     ctermfg=232   ctermbg=66   cterm=NONE
+    highlight! TabLineSel         guifg=#080808  guibg=#87875f  gui=NONE     ctermfg=232   ctermbg=101   cterm=NONE
 
     highlight! StatusLine         guifg=#87875f  guibg=#1c1c1c  gui=NONE     ctermfg=101   ctermbg=234  cterm=NONE
     highlight! Pmenu              guifg=#87875f  guibg=#1c1c1c  gui=NONE     ctermfg=101   ctermbg=234  cterm=NONE
@@ -283,10 +287,10 @@ if g:alduin_Shout_Become_Ethereal
     highlight! ColorColumn        guifg=NONE     guibg=#121212  gui=NONE     ctermfg=NONE  ctermbg=233  cterm=NONE
 
     highlight! PmenuSbar          guifg=#1c1c1c  guibg=#1c1c1c  gui=NONE     ctermfg=234   ctermbg=234  cterm=NONE
-    highlight! PmenuThumb          guifg=#1c1c1c  guibg=#1c1c1c  gui=NONE     ctermfg=234   ctermbg=234  cterm=NONE
+    highlight! PmenuThumb         guifg=#1c1c1c  guibg=#1c1c1c  gui=NONE     ctermfg=234   ctermbg=234  cterm=NONE
 
     highlight! NonText            guifg=#1c1c1c  guibg=NONE     gui=NONE     ctermfg=234   ctermbg=NONE cterm=NONE
-    highlight! SpecialKey            guifg=#1c1c1c  guibg=NONE     gui=NONE     ctermfg=234   ctermbg=NONE cterm=NONE
+    highlight! SpecialKey         guifg=#1c1c1c  guibg=NONE     gui=NONE     ctermfg=234   ctermbg=NONE cterm=NONE
 endif
 
 "===================================================================================================================

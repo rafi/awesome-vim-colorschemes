@@ -72,8 +72,11 @@ The following options were not available in the original Solarized:
 - `g:solarized_statusline`: one of `"normal"` (default) or `"low"`;
 - `g:solarized_term_italics`: set to `1` if your terminal supports italics
   (default is `0`).
+- `g:solarized_old_cursor_style`: set to `1` if you want to use the original
+  Solarized's cursor style (default: `0`). By default, the cursor is orange/red
+  in light themes, and blue in dark themes.
 
-These options may be used with any `solarized8_*` variant.
+The options above may be used with any `solarized8_*` variant.
 
 
 ## Troubleshooting

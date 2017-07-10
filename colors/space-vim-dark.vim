@@ -98,10 +98,12 @@ call s:hi('LineNr'       , 238+s:bias , s:bg0 , 'None' , 'None' )
 call s:hi('CursorLine'   , ''  , s:bg0 , 'None' , 'None' )
 call s:hi('CursorLineNr' , 134 , s:bg0 , 'None' , 'None' )
 call s:hi('CursorColumn' , ''  , s:bg0 , 'None' , 'None')
+call s:hi('ColorColumn' , ''  , s:bg0 , 'None' , 'None')
 hi LineNr       guifg=#44505c guibg=#212026
 hi CursorLine                 guibg=#212026
 hi CursorLineNr               guibg=#212026
 hi CursorColumn               guibg=#212026
+hi ColorColumn               guibg=#212026
 
 " bug. opposite here.
 call s:hi('StatusLine'   , 140 , s:bg2 , 'None' , 'None')
@@ -143,7 +145,7 @@ call s:hi('DiffText'   , ''  , 102 , 'None' , 'None')
 
 call s:hi('Directory'  , 67  , ''  , 'bold' , 'bold')
 call s:hi('Exception'  , 203 , ''  , 'bold' , 'bold')
-call s:hi('Function'   , 132 , ''  , 'bold' , 'bold')
+call s:hi('Function'   , 169 , ''  , 'bold' , 'bold')
 call s:hi('Identifier' , 168 , ''  , 'None' , 'None')
 call s:hi('Ignore'     , 244 , ''  , 'None' , 'None')
 call s:hi('Operator'   , 67  , ''  , 'None' , 'None')
@@ -304,6 +306,11 @@ hi link vimCommand SVDBlueBold
 hi link vimGroup   Directory
 hi link vimHiGroup Directory
 
+" rust
+hi link rustKeyword SVDBlueBold
+call s:hi('rustTrait'       , 168 , '' , 'bold'      , 'bold')
+hi Type         guifg=#ce537a
+
 " json
 hi link jsonStringSQError SVDRed
 
@@ -319,9 +326,9 @@ hi link htmlItalic String
 " python-mode
 hi pythonLambdaExpr      ctermfg=105 guifg=#8787ff
 hi pythonInclude         ctermfg=68  guifg=#5f87d7 cterm=bold gui=bold
-hi pythonClass           ctermfg=167 guifg=#FF62B0 cterm=bold gui=bold
+hi pythonClass           ctermfg=207 guifg=#FF62B0 cterm=bold gui=bold
 hi pythonParameters      ctermfg=147 guifg=#AAAAFF
-hi pythonParam           ctermfg=175 guifg=#67b11d
+hi pythonParam           ctermfg=108 guifg=#67b11d
 hi pythonBrackets        ctermfg=183 guifg=#d7afff
 hi pythonClassParameters ctermfg=111 guifg=#FF5353
 hi pythonSelf            ctermfg=68  guifg=#5f87d7 cterm=bold gui=bold

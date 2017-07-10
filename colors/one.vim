@@ -407,7 +407,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   call <sid>X('Delimiter',      '',              '',          '')
   call <sid>X('SpecialComment', '',              '',          '')
   call <sid>X('Debug',          '',              '',          '')
-  call <sid>X('Underlined',     '',              '',          '')
+  call <sid>X('Underlined',     '',              '',          'underline')
   call <sid>X('Ignore',         '',              '',          '')
   call <sid>X('Error',          s:hue_5,         s:syntax_bg, 'bold')
   call <sid>X('Todo',           s:hue_3,         s:syntax_bg, '')
