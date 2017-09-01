@@ -3,17 +3,35 @@ PaperColor Theme
 [![license](https://img.shields.io/github/license/NLKNguyen/papercolor-theme.svg?maxAge=2592000)](https://github.com/NLKNguyen/papercolor-theme/blob/master/LICENSE) [![](https://img.shields.io/github/issues-raw/NLKNguyen/papercolor-theme.svg?maxAge=2592000)](https://github.com/NLKNguyen/papercolor-theme/issues) [![](https://img.shields.io/github/issues-closed-raw/NLKNguyen/papercolor-theme.svg?maxAge=2592000)](https://github.com/NLKNguyen/papercolor-theme/issues) [![GitHub release](https://img.shields.io/github/release/NLKNguyen/papercolor-theme.svg)](https://github.com/NLKNguyen/papercolor-theme/releases) [![Travis CI Build Status](https://travis-ci.org/NLKNguyen/papercolor-theme.svg?branch=master)](https://travis-ci.org/NLKNguyen/papercolor-theme)
 
 
-Light & Dark color schemes for **Vim** terminal editor and **gVim**
+Light & Dark color schemes for terminal and graphic **Vim** awesome editor
 
 Inspired by Google's Material Design
 
 Improve code readability; great for presentation
 
-Currently designed for these file types:  C, C++, Java, Makefile, CMake, Lex/Flex & Yacc/Bison, Bash, VimL, Golang, JavaScript, JSON, HTML, XML, Python, Ruby, Markdown, DTrace, SystemTap, PlantUML, Haskell, Assembly (MIPS, GAS, NASM), SQL/MySQL, Octave/MATLAB, Fortran, R, Pascal, PHP, Perl, LUA, Clojure, Dockerfile, NGINX, Yaml, Dosini, Mail, reStructuredText, Erlang, Elixir, Cucumber
+## Inclusive support
+
+### Color Ranges
+
+Support True color / **GUI-color** and identical **256-color** that the design is based on.
+
+Also gracefully support down to **16-color** terminal, which will use terminal native colors. You need to change the terminal colors to PaperColor palette.
+
+In 8-color and 4-color, it might lack the necessary variation of colors to express PaperColor, but seriously let me know if you still use these kinds of terminals. 
+
+
+### Languages and Plugins
+
+Currently designed for these languages:
+  - Haskell, Erlang, Elixir, Clojure
+  - C, C++, Java, Golang, JavaScript, Python, Ruby, Pascal, PHP, Perl, LUA
+  - DTrace, SystemTap, SQL/MySQL, Octave/MATLAB, R, Lex/Flex & Yacc/Bison, Assembly (MIPS, GAS, NASM), Bash/Shell script, Sed script, Vim script
+  - Dockerfile, Makefile, CMake, NGINX, Cucumber, YAML, JSON, HTML, XML, Markdown, reStructuredText, PlantUML, Dosini, Mail, Git commit message
+  - Ada, COBOL, Fortran, *(what's your other favorite dinosaur?)*
 
 Other file types can still display well as long as your Vim is set up to recognize the language syntax even though that may not be the optimal experience. So, if the language you are working on isn't listed here, feel free to make a design request.
 
-Plugin support: vimdiff, netrw, [NERDTree](https://github.com/scrooloose/nerdtree), [tagbar](https://github.com/majutsushi/tagbar), [tabline](https://github.com/mkitt/tabline.vim), [vim-airline](https://github.com/bling/vim-airline), [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides), [vim-startify](https://github.com/mhinz/vim-startify)
+Plugin support: vimdiff, netrw, [NERDTree](https://github.com/scrooloose/nerdtree), [tagbar](https://github.com/majutsushi/tagbar), [tabline](https://github.com/mkitt/tabline.vim), [vim-airline](https://github.com/bling/vim-airline), [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides), [vim-startify](https://github.com/mhinz/vim-startify), [Agit](https://github.com/cohama/agit.vim)
 
 (see below for syntax-highlighting plugins target)
 
@@ -80,7 +98,9 @@ let g:PaperColor_Theme_Options = {
   \   }
   \ }
 ```
-**Note**: if the same option is provided in both a theme and a theme's variant, the value in the theme's variant options will take precedence. 
+**Note**: 
++ This variable must be placed anywhere **before** `color PaperColor` command.
++ if the same option is provided in both a theme and a theme's variant, the value in the theme's variant options will take precedence. 
 
 #### Currently available theme options
 

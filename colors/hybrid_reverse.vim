@@ -282,6 +282,13 @@ else
     let s:fg_bold = s:fmt_none
 endif
 
+" Set italic font depending on options
+if exists("g:enable_italic_font") && g:enable_italic_font == 1
+    let s:fg_italic = s:fmt_ital
+else
+    let s:fg_italic = s:fmt_none
+endif
+
 "}}}
 " Vim Highlighting: (see :help highlight-groups)"{{{
 " ----------------------------------------------------------------------------
@@ -343,9 +350,9 @@ exe "hi! Normal"        .s:fg_foreground  .s:bg_normal      .s:fmt_none
 "}}}
 " Generic Syntax Highlighting: (see :help group-name)"{{{
 " ----------------------------------------------------------------------------
-exe "hi! Comment"         .s:fg_comment     .s:bg_none        .s:fmt_none
+exe "hi! Comment"         .s:fg_comment     .s:bg_none        .s:fg_italic
 
-exe "hi! Constant"        .s:fg_purple         .s:bg_none        .s:fmt_none
+exe "hi! Constant"        .s:fg_purple      .s:bg_none        .s:fmt_none
 exe "hi! String"          .s:fg_green       .s:bg_none        .s:fmt_none
 "   Character"
 "   Number"

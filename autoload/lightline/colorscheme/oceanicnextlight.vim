@@ -4,7 +4,7 @@
 " URL: 
 " Author: Mike Hartington
 " License: Apache
-" Last Change: 2017/03/24 13:37
+" Last Change: 2017/07/22 18:33
 " ============================================================
 
 let s:p = {"normal": {}, "inactive": {}, "insert": {}, "replace": {}, "visual": {}, "tabline": {} }

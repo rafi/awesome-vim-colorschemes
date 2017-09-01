@@ -606,6 +606,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   call <sid>X('jsUndefined',            s:hue_6,   '', '')
   call <sid>X('jsObjectValue',          s:hue_2,   '', '')
   call <sid>X('jsObjectKey',            s:hue_1,   '', '')
+  call <sid>X('jsReturn',               s:hue_3,   '', '')
   " https://github.com/othree/yajs.vim
   call <sid>X('javascriptArrowFunc',    s:hue_3,   '', '')
   call <sid>X('javascriptClassExtends', s:hue_3,   '', '')

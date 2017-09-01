@@ -19,13 +19,13 @@ endif
 
 let g:colors_name='paramount'
 
-let s:black           = { "gui": "#262626", "cterm": "235" }
+let s:black           = { "gui": "#000000", "cterm": "232" }
 let s:medium_gray     = { "gui": "#767676", "cterm": "243" }
 let s:white           = { "gui": "#F1F1F1", "cterm": "15"  }
 let s:actual_white    = { "gui": "#FFFFFF", "cterm": "231" }
 let s:subtle_black    = { "gui": "#303030", "cterm": "236" }
-let s:light_black     = { "gui": "#4E4E4E", "cterm": "239" }
-let s:lighter_black   = { "gui": "#606060", "cterm": "241" }
+let s:light_black     = { "gui": "#262626", "cterm": "235" }
+let s:lighter_black   = { "gui": "#4E4E4E", "cterm": "239" }
 let s:light_gray      = { "gui": "#A8A8A8", "cterm": "248" }
 let s:lighter_gray    = { "gui": "#C6C6C6", "cterm": "251" }
 let s:lightest_gray   = { "gui": "#EEEEEE", "cterm": "255" }
@@ -141,7 +141,7 @@ call s:h("NonText",       {"fg": s:medium_gray})
 call s:h("Directory",     {"fg": s:dark_blue})
 call s:h("ErrorMsg",      {"fg": s:pink})
 call s:h("IncSearch",     {"bg": s:yellow, "fg": s:light_black})
-call s:h("Search",        {"bg": s:bg_subtle})
+call s:h("Search",        {"bg": s:light_green, "fg": s:light_black})
 call s:h("MoreMsg",       {"fg": s:medium_gray, "cterm": "bold", "gui": "bold"})
 hi! link ModeMsg MoreMsg
 call s:h("LineNr",        {"fg": s:bg_subtle})

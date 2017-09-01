@@ -124,6 +124,8 @@ hi! CursorColumn cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#07
 hi! CursorLine cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#073642 guisp=#eee8d5
 hi! ColorColumn cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=0 guibg=#073642
 hi! link lCursor Cursor
+hi! link StatusLineTerm StatusLine
+hi! link StatusLineTermNC StatusLineNC
 if has('nvim')
   hi! link TermCursor Cursor
   hi! TermCursorNC ctermfg=8 guifg=#002b36 ctermbg=11 guibg=#657b83 cterm=NONE gui=NONE

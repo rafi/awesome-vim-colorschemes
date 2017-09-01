@@ -1,7 +1,13 @@
 " Vim color scheme Lucid
 " ----------------------------------------------------------------------
-" Created by Chris Seelus (@cseelus)
 "
+" Repository: https://github.com/cseelus/vim-colors-lucid
+" Author:     Chris Seelus (@cseelus)
+"
+" BLACK
+" :let _rock_dark   = '#0b0a0b'
+" :let _rock        = '#121114'
+" :let _rock_medium = '#242228'
 " non saturated grays
 " :let _rock_dark   = '#131313'
 " :let _rock        = '#191919'
@@ -15,8 +21,11 @@
 " :let _rock_dark   = '#19171c'
 " :let _rock        = '#1f1d24'
 " saturated grays
-:let _rock_dark   = '#221b23'
-:let _rock        = '#27242e'
+" :let _rock_dark   = '#221b23'
+" :let _rock        = '#27242e'
+" very saturated grays
+:let _rock_dark   = '#0f0c14'
+:let _rock        = '#181320'
 " normal grays
 " --------------------------
 :let _rock_medium = '#36323d'
@@ -27,7 +36,7 @@
 :let _cloud       = '#e4e0ed'
 " colors
 " --------------------------
-:let _turquoise   = '#50e4b7'
+:let _turquoise   = '#3fc997'
 :let _fluoric     = '#d0ffc3'
 :let _cyan        = '#99feff'
 :let _steel       = '#83a8d1'
@@ -82,7 +91,7 @@ let colorgroup['CursorLine']   = {"GUIFG": _cloud,     "GUIBG":  _rock}
 let colorgroup['CursorLineNr'] = {"GUIFG": _gray_dark, "GUIBG":  _rock_dark}
 let colorgroup['Directory']    = {"GUIFG": _fluoric,   "GUIBG":  _rock_dark}
 let colorgroup['Error']        = {"GUIFG": _rock_dark, "GUIBG":  _pink}
-let colorgroup['ErrorMsg']        = {"GUIFG": _rock_dark, "GUIBG":  _pink}
+let colorgroup['ErrorMsg']     = {"GUIFG": _rock_dark, "GUIBG":  _pink}
 let colorgroup['FoldColumn']   = {                     "GUIBG":  _rock_dark}
 let colorgroup['Folded']       = {"GUIFG": _cloud,     "GUIBG":  _rock}
 let colorgroup['LineNr']       = {"GUIFG": _gray_dark, "GUIBG":  _rock_dark}
@@ -114,7 +123,7 @@ let colorgroup['Access']       = {"GUIFG": _purple,    "GUI": "bold"}
 let colorgroup['Comment']      = {"GUIFG": _gray,      "GUI": "italic"}
 let colorgroup['Class']        = {"GUIFG": _pink,      "GUI": "italic"}
 let colorgroup['Conditional']  = {"GUIFG": _cyan}
-let colorgroup['Constant']     = {"GUIFG": _turquoise}
+let colorgroup['Constant']     = {"GUIFG": _turquoise, "GUI": "bold"}
 let colorgroup['Delimiter']    = {"GUIFG": _pink}
 let colorgroup['Function']     = {"GUIFG": _steel}
 let colorgroup['Identifier']   = {"GUIFG": _sky}
@@ -123,7 +132,7 @@ let colorgroup['NonText']      = {"GUIFG": _gray_dark}
 let colorgroup['Number']       = {"GUIFG": _turquoise}
 let colorgroup['PreProc']      = {"GUIFG": _pink}
 let colorgroup['Statement']    = {"GUIFG": _turquoise}
-let colorgroup['Special']      = {"GUIFG": _sap}
+let colorgroup['Special']      = {"GUIFG": _pink}
 let colorgroup['SpecialKey']   = {"GUIFG": _gray_light}
 let colorgroup['String']       = {"GUIFG": _fluoric}
 let colorgroup['StorageClass'] = {"GUIFG": _cloud,     "GUI": "bold"}
@@ -131,6 +140,7 @@ let colorgroup['Structure']    = {"GUIFG": _gray_medium}
 let colorgroup['Symbol']       = {"GUIFG": _sky}
 let colorgroup['Type']         = {"GUIFG": _steel}
 let colorgroup['Underlined']   = {"GUIFG": _turquoise, "GUI": "underline"}
+let colorgroup['Userdef']      = {"GUIFG": _sap}
 " ------------------------
 hi link Boolean               Number
 hi link Character             Function
@@ -156,6 +166,13 @@ hi link Tag                   Special
 
 " CtrlP
 hi link CtrlPMatch            Function
+
+" Git commit
+hi link gitcommitBranch        Constant
+hi link gitcommitSelectedFile  Statement
+hi link gitcommitDiscardedFile Structure
+hi link gitcommitUntrackedFile Structure
+hi link gitcommitSummary       String
 
 " GitGutter
 hi link GitGutterAdd          Darker
@@ -202,17 +219,17 @@ hi link coffeeParen           Function
 " CSS
 hi link cssAttr               String
 hi link cssClass              Type
-hi link cssProp               StorageClass
-hi link cssSelectorOp         StorageClass
+hi link cssProp               Identifier
+hi link cssSelectorOp         Identifier
 
 " HAML
 hi link hamlTag               Function
 
 " HTML
-hi link htmlArg               Symbol
-hi link htmlTag               Function
+" hi link htmlArg               Symbol
+" hi link htmlTag               Constant
 hi link htmlTagName           Constant
-hi link htmlEndTag            Function
+" hi link htmlEndTag            Function
 
 " JavaScript
 hi link javascriptFuncArg     Function
@@ -232,6 +249,8 @@ hi link jsFuncCall            Function
 hi link jsModuleKeyword       Identifier
 hi link jsNull                Identifier
 hi link jsObjectKey           Identifier
+hi link jsStorageClass        Structure
+hi link jsTemplateBraces      PreProc
 
 " JSON
 hi link jsonKeyword           Function
@@ -243,6 +262,10 @@ hi link texInputFile          PreProc
 hi link mkdBlockquote         Symbol
 hi link mkdCode               Identifier
 hi link mkdIndentCode         Identifier
+" hi link mkdLink               Normal
+
+" MatchTagAlways
+hi link MatchTag              Identifier
 
 " PHP
 hi link phpParent             Normal
@@ -251,12 +274,15 @@ hi link phpVarSelector        Identifier
 
 " Ruby
 hi link rubyAccess            Access
+hi link rubyCallback          Function
 hi link rubyClass             Class
-hi link rubyControl           Function
+hi link rubyControl           Statement
 hi link rubyConstant          Constant
+hi link rubyEntity            Function
 hi link rubyFunction          StorageClass
 hi link rubyInclude           Include
 hi link rubyInterpolation     Include
+hi link rubyMacro             Function
 hi link rubyModule            Module
 " hi link RubyPseudoVariable    Type
 hi link rubySymbol            Symbol
@@ -269,11 +295,12 @@ hi link sassIdChar            Identifier
 " hi link sassVariable          Function
 
 " Slim
-hi link slimDocType           Function
-hi link slimDocTypeKeyword    Statement
-hi link slimRubyChar          PreProc
-hi link slimRubyOutputChar    PreProc
-hi link slimText              Normal
+" hi link slimDocType           Function
+" hi link slimDocTypeKeyword    Statement
+hi link rubyKeyword              PreProc
+" hi link slimRubyChar          PreProc
+" hi link slimRubyOutputChar    PreProc
+" hi link slimText              Normal
 
 " VimL
 hi link vimCmdSep             Function

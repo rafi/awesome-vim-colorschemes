@@ -3,14 +3,22 @@
 A color scheme for VIM with vivid highlights and friendly, clear colors.
 
 
-![Lucid preview](https://raw.github.com/cseelus/vim-colors-lucid/master/vim-colors-lucid_rails_preview.png)  
-*Screenshot with some Ruby sample code and the Menlo font*
+![Lucid preview Ruby](https://raw.github.com/cseelus/vim-colors-lucid/master/vim-colors-lucid-ruby-preview.png)  
+*Screenshot with some Ruby sample code and the Roboto Mono Font*
+
+![Lucid preview JavaScript](https://raw.github.com/cseelus/vim-colors-lucid/master/vim-colors-lucid-javascript-preview.png)  
+*Screenshot with some JavaScript sample code and the Roboto Mono Font*
+
+![Lucid preview C](https://raw.github.com/cseelus/vim-colors-lucid/master/vim-colors-lucid-c-preview.png)  
+*Screenshot with some C sample code and the Roboto Mono Font*
 
 ## Highlightings for these plugins
 
+- Ale
 - CtrlP
 - GitGutter
 - NERDTree
+- pangloss/vim-javascript
 - PlainTasks (.todo)
 - Startify
 - VIM-JavaScript (pangloss)
@@ -20,9 +28,11 @@ A color scheme for VIM with vivid highlights and friendly, clear colors.
 - Apache Config
 - CoffeeScript
 - CSS
+- Git
 - Haml
 - HTML
-- JavaScript
+- JavaScript w. or w/o pangloss/vim-javascript
+- Json
 - LaTeX
 - Markdown
 - PHP
@@ -33,6 +43,6 @@ A color scheme for VIM with vivid highlights and friendly, clear colors.
 - YAML
 - XML
 
-## Older Terminals
+## Ancient Terminals
 
 You can use some plugin like [CSApprox](http://www.vim.org/scripts/script.php?script_id=2390) to make this work smoothly in older 256 colors or even 88 colors terminals.

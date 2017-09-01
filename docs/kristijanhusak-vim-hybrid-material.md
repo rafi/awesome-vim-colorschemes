@@ -28,6 +28,11 @@ If you would like some of the code to be bolded, like functions and language con
 let g:enable_bold_font = 1
 ```
 
+If you want comments to be in italic, also add this:
+```vimL
+let g:enable_italic_font = 1
+```
+
 
 #### Hybrid Material
 Based on [equinusocio/material-theme](https://github.com/equinusocio/material-theme).

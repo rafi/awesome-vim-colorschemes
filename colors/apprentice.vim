@@ -2,6 +2,7 @@
 " Author:       Romain Lafourcade (romainlafourcade@gmail.com)
 " Description:  Essentially a streamlining and conversion to xterm colors of
 "               'sorcerer' by Jeet Sukumaran (jeetsukumaran@gmailcom)
+" Last Change:  2017 Aug 06
 
 " MADE-UP NAME    HEX        RGB                   XTERM  ANSI
 " ========================================================================
@@ -84,7 +85,7 @@ if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
   hi helpNormal       ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    cterm=NONE           gui=NONE
 
   hi StatusLine       ctermbg=101  ctermfg=235  guibg=#87875f guifg=#262626 cterm=NONE           gui=NONE
-  hi StatusLineNC     ctermbg=238  ctermfg=101  guibg=#444444 guifg=#87875f cterm=NONE           gui=italic
+  hi StatusLineNC     ctermbg=238  ctermfg=101  guibg=#444444 guifg=#87875f cterm=NONE           gui=NONE
 
   hi Visual           ctermbg=235  ctermfg=110  guibg=#262626 guifg=#8fafd7 cterm=reverse        gui=reverse
   hi VisualNOS        ctermbg=NONE ctermfg=NONE guibg=NONE    guifg=NONE    cterm=underline      gui=underline

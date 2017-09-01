@@ -20,15 +20,15 @@ All major plugin managers for vim/nvim are supported
 For vim, add the following to your `.vimrc`.
 
  ```viml
- " Theme
-syntax enable
+" Theme
+  syntax enable
 " for vim 7
-set t_Co=256
+  set t_Co=256
 
 " for vim 8
-if (has("termguicolors"))
- set termguicolors
-endif
+  if (has("termguicolors"))
+   set termguicolors
+  endif
 
 colorscheme OceanicNext
  ```
@@ -62,9 +62,14 @@ If anyone would like to contribute, I'd be happy to accept a Pull Request.
 
 ## Configuration
 
-**NOTE: 11-28-2016**
-Italics and Bold has been removed as the theme is generated via Estilo.
-I will work with the estilo dev in order to enable this again.
+If your terminal and setup supports it, you can enable italics and bold fonts with the following setting
+
+```viml
+  syntax on
+  let g:oceanic_next_terminal_bold = 1
+  let g:oceanic_next_terminal_italic = 1
+  colorscheme OceanicNext
+```
 
 
 
