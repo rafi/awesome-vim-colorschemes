@@ -109,6 +109,8 @@ hi ColorColumn               guibg=#212026
 call s:hi('StatusLine'   , 140 , s:bg2 , 'None' , 'None')
 call s:hi('StatusLineNC' , 244 , s:bg1 , 'None' , 'None')
 hi StatusLineNC guibg=#3a3a3a
+call s:hi('StatusLineTerm'   , 140 , s:bg2 , 'bold' , 'bold')
+call s:hi('StatusLineTermNC' , 244 , s:bg1 , 'bold' , 'bold')
 
 call s:hi('TabLine'     , 66  , s:bg3 , 'None' , 'None')
 call s:hi('TabLineSel'  , 178 , s:bg4 , 'None' , 'None')
@@ -146,7 +148,7 @@ call s:hi('DiffText'   , ''  , 102 , 'None' , 'None')
 call s:hi('Directory'  , 67  , ''  , 'bold' , 'bold')
 call s:hi('Exception'  , 203 , ''  , 'bold' , 'bold')
 call s:hi('Function'   , 169 , ''  , 'bold' , 'bold')
-call s:hi('Identifier' , 168 , ''  , 'None' , 'None')
+call s:hi('Identifier' , 167 , ''  , 'None' , 'None')
 call s:hi('Ignore'     , 244 , ''  , 'None' , 'None')
 call s:hi('Operator'   , 111 , ''  , 'None' , 'None')
 call s:hi('FoldColumn' , 67  , s:bg1 , 'None' , 'None')
@@ -167,7 +169,7 @@ call s:hi('Keyword' , 68  , '' , 'bold' , 'bold')
 call s:hi('Label'   , 104 , '' , 'None' , 'None')
 call s:hi('Macro'   , 141 , '' , 'None' , 'None')
 hi Keyword      guifg=#4f97d7
-hi Label        guifg=#DFB0FF
+hi Label        guifg=#DF90FF
 
 call s:hi('Type'       , 168 , '' , 'None'      , 'None')
 call s:hi('Typedef'    , 204 , '' , 'None'      , 'None')
@@ -331,7 +333,6 @@ hi link xmlEndTag  Identifier
 hi link xmlTagName Identifier
 
 " go
-hi link goFunctionCall    Function
 hi link goMethodCall      Function
 hi link goReceiverType    SVDYellow
 hi link goTypeConstructor SVDOrange
@@ -340,6 +341,7 @@ hi link goFloats          Float
 hi link goFormatSpecifier SVDBlue
 hi link goPredefinedIdentifiers SVDMagenta
 call s:hi('goTypeName', 169, '', 'bold', 'bold')
+call s:hi('goFunction', 168, '', 'bold', 'bold')
 
 " make
 hi link makeCommands      SVDBlue
@@ -451,7 +453,11 @@ hi link NERDTreeClosable  SVDBlueBold
 " }
 
 " Tagbar {
-call s:hi('TagbarHighlight'    , 16 , 36 , 'bold' , 'bold')
+call s:hi('TagbarHighlight'        , 16  , 36 , 'bold' , 'bold')
+call s:hi('TagbarVisibilityPublic' , 34  , '' , 'none' , 'none')
+call s:hi('TagbarScope'            , 169 , '' , 'bold' , 'bold')
+hi link TagbarKind       Function
+hi link TagbarNestedKind SVDBlueBold
 " }
 
 delf s:hi

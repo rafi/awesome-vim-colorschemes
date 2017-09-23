@@ -21,9 +21,12 @@ let s:themes = {}
 
 " Theme name should be lowercase
 let s:themes['default'] = {
-      \   'maintainer'  : 'Nikyle Nguyen<NLKNguyen@MSN.com>',
+      \   'maintainer'  : 'Nikyle Nguyen <me@Nikyle.com>',
       \   'source' : 'http://github.com/NLKNguyen/papercolor-theme',
-      \   'description' : 'Original PaperColor Theme, inspired by Google Material Design',
+      \   'description' : 'The original PaperColor Theme, inspired by Google Material Design',
+      \   'options' : {
+      \       'allow_bold': 1,
+      \    }
       \ }
 
 " Theme can have 'light' and/or 'dark' color palette.
@@ -107,6 +110,17 @@ let s:themes['default'].light = {
       \     }
       \   }
 
+" TODO: idea for subtheme options
+" let s:themes['default'].light.subtheme = {
+"       \     'alternative' : {
+"       \         'options' : {
+"       \           'transparent_background': 1
+"       \         },
+"       \         'palette' : {
+"       \         }
+"       \     }
+"       \ }
+
 let s:themes['default'].dark = {
       \     'TEST_256_COLOR_CONSISTENCY' : 1,
       \     'palette' : {
@@ -181,32 +195,108 @@ let s:themes['default'].dark = {
 
 " }}}
 
-" Get Selected Theme: {{{
+" Acquire Theme Data: {{{
 
-let s:theme_name = 'default'
+" Brief: 
+"   Function to get theme information and store in variables for other
+"   functions to use
+"
+" Require:
+"   s:themes    <dictionary>    collection of all theme palettes
+"
+" Require Optionally:
+"   {g:PaperColor_Theme_[s:theme_name]}   <dictionary>  user custom theme palette
+"   g:PaperColor_Theme_Options            <dictionary>  user options
+"
+" Expose:
+"   s:theme_name       <string>     the name of the selected theme 
+"   s:selected_theme   <dictionary> the selected theme object (contains palette, etc.)
+"   s:selected_variant <string>     'light' or 'dark'
+"   s:palette          <dictionary> the palette of selected theme
+"   s:options          <dictionary> user options
+fun! s:acquire_theme_data()
+  
+  " Get theme name: {{{
+  let s:theme_name = 'default'
 
-if exists("g:PaperColor_Theme") " Users expressed theme preference
-  let lowercase_theme_name = tolower(g:PaperColor_Theme)
+  if exists("g:PaperColor_Theme") " Users expressed theme preference
+    let lowercase_theme_name = tolower(g:PaperColor_Theme)
 
-  if has_key(s:themes, lowercase_theme_name) "the name is part of built-in themes
-    let s:theme_name = lowercase_theme_name
-
-  else "expect a variable with a designated theme name
-    let theme_variable =  "g:PaperColor_Theme_" . lowercase_theme_name
-
-    if exists(theme_variable)
-      " Register custom theme to theme dictionary
-      let s:themes[lowercase_theme_name] = {theme_variable}
+    if has_key(s:themes, lowercase_theme_name) "the name is part of built-in themes
       let s:theme_name = lowercase_theme_name
-    else
-      echom "Cannot find variable " . theme_variable
-      " Still use 'default' theme
+
+    else "expect a variable with a designated theme name
+      let theme_variable =  "g:PaperColor_Theme_" . lowercase_theme_name
+
+      if exists(theme_variable)
+        " Register custom theme to theme dictionary
+        let s:themes[lowercase_theme_name] = {theme_variable}
+        let s:theme_name = lowercase_theme_name
+      else
+        echom "Cannot find variable " . theme_variable
+        " Still use 'default' theme
+      endif
+
+    endif
+  endif
+  " }}}
+
+  let s:selected_theme = s:themes[s:theme_name]
+  " Get Theme Variant: either dark or light  {{{
+  let s:selected_variant = 'dark'
+
+  let s:is_dark=(&background == 'dark')
+
+  if s:is_dark
+    if has_key(s:selected_theme, 'dark')
+      let s:selected_variant = 'dark'
+    else " in case the theme only provides the other variant
+      let s:selected_variant = 'light'
     endif
 
+  else " is light background
+    if has_key(s:selected_theme, 'light')
+      let s:selected_variant = 'light'
+    else " in case the theme only provides the other variant
+      let s:selected_variant = 'dark'
+    endif
   endif
-endif
 
-let s:selected_theme = s:themes[s:theme_name]
+  let s:palette = s:selected_theme[s:selected_variant].palette
+
+  " Systematic User-Config Options: {{{
+  " Example config in .vimrc
+  " let g:PaperColor_Theme_Options = {
+  "       \   'theme': {
+  "       \     'default': {
+  "       \       'allow_bold': 1,
+  "       \       'allow_italic': 0,
+  "       \       'transparent_background': 1
+  "       \     }
+  "       \   },
+  "       \   'language': {
+  "       \     'python': {
+  "       \       'highlight_builtins' : 1
+  "       \     },
+  "       \     'c': {
+  "       \       'highlight_builtins' : 1
+  "       \     },
+  "       \     'cpp': {
+  "       \       'highlight_standard_library': 1
+  "       \     }
+  "       \   }
+  "       \ }
+  "
+  let s:options = {}
+
+
+  if exists("g:PaperColor_Theme_Options")
+    let s:options = g:PaperColor_Theme_Options
+  endif
+  " }}}
+
+  " }}}
+endfun
 
 
 " }}}
@@ -231,65 +321,133 @@ endfun
 command! -nargs=0 PaperColor :call g:PaperColor()
 " }}}
 
-" Get Theme Variant: either dark or light  {{{
-let s:selected_variant = 'dark'
 
-let s:is_dark=(&background == 'dark')
-
-if s:is_dark
-  if has_key(s:selected_theme, 'dark')
-    let s:selected_variant = 'dark'
-  else " in case the theme only provides the other variant
-    let s:selected_variant = 'light'
-  endif
-
-else " is light background
-  if has_key(s:selected_theme, 'light')
-    let s:selected_variant = 'light'
-  else " in case the theme only provides the other variant
-    let s:selected_variant = 'dark'
-  endif
-endif
-
-let s:palette = s:selected_theme[s:selected_variant].palette
-" }}}
-
-" Systematic User-Config Options: {{{
-" Example config in .vimrc
-" let g:PaperColor_Theme_Options = {
-"       \   'theme': {
-"       \     'default': {
-"       \       'allow_bold': 1,
-"       \       'allow_italic': 0,
-"       \       'transparent_background': 1
-"       \     }
-"       \   },
-"       \   'language': {
-"       \     'python': {
-"       \       'highlight_builtins' : 1
-"       \     },
-"       \     'c': {
-"       \       'highlight_builtins' : 1
-"       \     },
-"       \     'cpp': {
-"       \       'highlight_standard_library': 1
-"       \     }
-"       \   }
-"       \ }
-"
-let s:options = {}
-if exists("g:PaperColor_Theme_Options")
-  let s:options = g:PaperColor_Theme_Options
-endif
-
-" }}}
 
 " Theme Options: {{{
-" Part of user-config options
-let s:theme_options = {}
-if has_key(s:options, 'theme')
-  let s:theme_options = s:options['theme']
-endif
+
+" 
+fun! s:generate_theme_option_variables()
+  " 0. All possible theme option names must be registered here
+  let l:available_theme_options = [
+        \ 'allow_bold', 
+        \ 'transparent_background'
+        \ ]
+
+  " 1. Generate variables and set to default value
+  for l:option in l:available_theme_options
+      let s:{'themeOpt_' . l:option} = 0
+  endfor
+
+  " 2. Reassign value to the above variables based on theme settings
+
+  " 2.1 In case the theme has top-level options
+  if has_key(s:selected_theme, 'options')
+    let l:theme_options = s:selected_theme['options']
+    for l:opt_name in keys(l:theme_options)
+      let s:{'themeOpt_' . l:opt_name} = l:theme_options[l:opt_name]
+      " echo 's:themeOpt_' . l:opt_name . ' = ' . s:{'themeOpt_' . l:opt_name}
+    endfor
+  endif
+
+  " 2.2 In case the theme has specific variant options
+  if has_key(s:selected_theme[s:selected_variant], 'options')
+    let l:theme_options = s:selected_theme[s:selected_variant]['options']
+    for l:opt_name in keys(l:theme_options)
+      let s:{'themeOpt_' . l:opt_name} = l:theme_options[l:opt_name]
+      " echo 's:themeOpt_' . l:opt_name . ' = ' . s:{'themeOpt_' . l:opt_name}
+    endfor
+  endif
+
+
+  " 3. Reassign value to the above variables which the user customizes
+  " Part of user-config options
+  let s:theme_options = {}
+  if has_key(s:options, 'theme')
+    let s:theme_options = s:options['theme']
+  endif
+  
+  " 3.1 In case user sets for a theme without specifying which variant
+  if has_key(s:theme_options, s:theme_name)
+    let l:theme_options = s:theme_options[s:theme_name]
+    for l:opt_name in keys(l:theme_options)
+      let s:{'themeOpt_' . l:opt_name} = l:theme_options[l:opt_name]
+      " echo 's:themeOpt_' . l:opt_name . ' = ' . s:{'themeOpt_' . l:opt_name}
+    endfor
+  endif
+
+  " 3.2 In case user sets for a specific variant of a theme
+  
+  " Create the string that the user might have set for this theme variant
+  " for example, 'default.dark'
+  let l:specific_theme_variant = s:theme_name . '.' . s:selected_variant
+
+  if has_key(s:theme_options, l:specific_theme_variant)
+    let l:theme_options = s:theme_options[l:specific_theme_variant]
+    for l:opt_name in keys(l:theme_options)
+      let s:{'themeOpt_' . l:opt_name} = l:theme_options[l:opt_name]
+      " echo 's:themeOpt_' . l:opt_name . ' = ' . s:{'themeOpt_' . l:opt_name}
+    endfor
+  endif
+
+endfun
+
+" Generate Language Option Variables: {{{
+
+" Brief:
+"   Function to generate language option variables so that there is no need to
+"   look up from the dictionary every time the option value is checked in the
+"   function s:apply_syntax_highlightings()
+"
+" Require:
+"   s:options <dictionary> user options
+"
+" Require Optionally:
+"   g:PaperColor_Theme_Options  <dictionary>  user option config in .vimrc
+"
+" Expose:
+"   s:langOpt_[LANGUAGE]__[OPTION]  <any>   variables for language options
+"
+" Example: 
+"     g:PaperColor_Theme_Options has something like this:
+"       'language': {
+"       \   'python': {
+"       \     'highlight_builtins': 1
+"       \   }
+"       }
+"    The following variable will be generated:
+"    s:langOpt_python__highlight_builtins = 1
+
+fun! s:generate_language_option_variables()
+  " 0. All possible theme option names must be registered here
+  let l:available_language_options = [
+        \   'c__highlight_builtins',
+        \   'cpp__highlight_standard_library',
+        \   'python__highlight_builtins'
+        \ ]
+
+  " 1. Generate variables and set to default value
+  for l:option in l:available_language_options
+    let s:{'langOpt_' . l:option} = 0
+  endfor
+
+  " Part of user-config options
+  if has_key(s:options, 'language')
+    let l:language_options = s:options['language']
+    " echo l:language_options 
+    for l:lang in keys(l:language_options)
+      let l:options = l:language_options[l:lang]
+      " echo l:lang 
+      " echo l:options
+      for l:option in keys(l:options)
+        let s:{'langOpt_' . l:lang . '__' . l:option} = l:options[l:option]
+        " echo 's:langOpt_' . l:lang . '__' . l:option . ' = ' . l:options[l:option]
+      endfor
+    endfor
+
+  endif
+
+endfun
+" }}}
 
 
 " Function to obtain theme option for the current theme
@@ -313,71 +471,10 @@ endif
 "       \     'transparent_background': 1
 "       \   }
 "       }
-fun! s:Theme_Options(option)
-  let l:value = ''
-
-  let l:variant = 'light'
-  if s:is_dark
-    let l:variant = 'dark'
-  endif
-  let l:specific_theme_variant = s:theme_name . '.' . l:variant
-
-  if has_key(s:theme_options, l:specific_theme_variant)
-    let l:theme_option = s:theme_options[l:specific_theme_variant]
-    if has_key(l:theme_option, a:option)
-      let l:value = l:theme_option[a:option]
-    endif
-  elseif has_key(s:theme_options, s:theme_name)
-    let l:theme_option = s:theme_options[s:theme_name]
-    if has_key(l:theme_option, a:option)
-      let l:value = l:theme_option[a:option]
-    endif
-  endif
-
-  return l:value
-endfun
-
-" These options will be checked at many place so better be cached to variables
-let s:TRANSPARENT_BACKGROUND = s:Theme_Options('transparent_background') == 1
 
 
 " }}}
 
-" Language Options: {{{
-" Part of user-config options
-let s:language_options = {}
-if has_key(s:options, 'language')
-  let s:language_options = s:options['language']
-endif
-
-" Function to obtain a language option
-" @param option - string pattern [language].[option]
-" @param value - number or string
-" @return the option value if it is provided; empty string otherwise
-" Example: s:Language_Options('python.highlight_builtins', 1)
-"     returns 1 if there is an option in `language` section in
-"     g:PaperColor_Theme_Options such as:
-"       'language': {
-"       \   'python': {
-"       \     'highlight_builtins': 1
-"       \   }
-"       }
-fun! s:Language_Options(option)
-  let l:parts = split(a:option, "\\.")
-  let l:language = l:parts[0]
-  let l:option = l:parts[1]
-
-  if has_key(s:language_options, l:language)
-    let l:language_option = s:language_options[l:language]
-    if has_key(l:language_option, l:option)
-      return l:language_option[l:option]
-    endif
-  endif
-
-  return ''
-endfun
-
-" }}}
 
 " HEX TO 256-COLOR CONVERTER: {{{
 " Returns an approximate grey index for the given grey level
@@ -639,42 +736,53 @@ let s:to_HEX = {
 
 " }}}
 
-" COLOR MODE IDENTIFICATION: {{{
-let s:MODE_16_COLOR = 0
-let s:MODE_256_COLOR = 1
-let s:MODE_GUI_COLOR = 2
 
-if has("gui_running")  || has('termguicolors') && &termguicolors || has('nvim') && $NVIM_TUI_ENABLE_TRUE_COLOR
-  let s:mode = s:MODE_GUI_COLOR
-elseif (&t_Co >= 256)
-  let s:mode = s:MODE_256_COLOR
-else
-  let s:mode = s:MODE_16_COLOR
-endif
+" COLOR MODE IDENTIFICATION: {{{
+
+fun! s:identify_color_mode()
+  let s:MODE_16_COLOR = 0
+  let s:MODE_256_COLOR = 1
+  let s:MODE_GUI_COLOR = 2
+
+  if has("gui_running")  || has('termguicolors') && &termguicolors || has('nvim') && $NVIM_TUI_ENABLE_TRUE_COLOR
+    let s:mode = s:MODE_GUI_COLOR
+  elseif (&t_Co >= 256)
+    let s:mode = s:MODE_256_COLOR
+  else
+    let s:mode = s:MODE_16_COLOR
+  endif
+endfun
 
 " }}}
 
 " COLOR MODE ADAPTATION: {{{
 " Handle Preprocessing For Current Color Set If Necessary
-fun! s:adapt_to_environment()
+fun! s:set_format_attributes()
+  " Format options:
+
+  " These are the default
   if s:mode == s:MODE_GUI_COLOR
     let s:ft_bold    = " gui=bold "
-    let s:ft_italic  = " gui=italic "
     let s:ft_none    = " gui=none "
     let s:ft_reverse = " gui=reverse "
     " TODO: if require auto-gui-color coversion
   elseif s:mode == s:MODE_256_COLOR
     let s:ft_bold    = " cterm=bold "
-    let s:ft_italic  = " cterm=italic "
     let s:ft_none    = " cterm=none "
     let s:ft_reverse = " cterm=reverse "
     " TODO: if require auto-256-color coversion
   else
     let s:ft_bold    = ""
-    let s:ft_italic  = ""
     let s:ft_none    = " cterm=none "
     let s:ft_reverse = " cterm=reverse "
   endif
+
+  " Unless instructed otherwise either by theme setting or user overriding
+
+  if s:themeOpt_allow_bold == 0
+    let s:ft_bold    = ""
+  endif
+
 endfun
 " }}}
 
@@ -894,9 +1002,9 @@ endfun
 
 " SET SYNTAX HIGHLIGHTING: {{{
 
-fun! s:set_syntax_highlighting()
+fun! s:apply_syntax_highlightings()
 
-  if s:TRANSPARENT_BACKGROUND
+  if s:themeOpt_transparent_background
     exec 'hi Normal' . s:fg_foreground
     " Switching between dark & light variant through `set background`
     " NOTE: Handle background switching right after `Normal` group because of
@@ -953,7 +1061,7 @@ fun! s:set_syntax_highlighting()
     exec 'hi CursorColumn'  . s:bg_cursorcolumn . s:ft_none
     exec 'hi PMenu' . s:fg_popupmenu_fg . s:bg_popupmenu_bg . s:ft_none
     exec 'hi PMenuSel' . s:fg_popupmenu_fg . s:bg_popupmenu_bg . s:ft_reverse
-    if s:TRANSPARENT_BACKGROUND
+    if s:themeOpt_transparent_background
       exec 'hi SignColumn' . s:fg_green . s:ft_none
     else
       exec 'hi SignColumn' . s:fg_green . s:bg_background . s:ft_none
@@ -1095,7 +1203,7 @@ fun! s:set_syntax_highlighting()
   " exec 'hi cCustomFunc' . s:fg_foreground
   " exec 'hi cUserFunction' . s:fg_blue . s:ft_bold
   exec 'hi cOctalZero' . s:fg_purple . s:ft_bold
-  if s:Language_Options('c.highlight_builtins') == 1
+  if s:langOpt_c__highlight_builtins == 1
     exec 'hi cFunction' . s:fg_blue
   else
     exec 'hi cFunction' . s:fg_foreground
@@ -1111,7 +1219,7 @@ fun! s:set_syntax_highlighting()
   exec 'hi cppStatement' . s:fg_blue
   exec 'hi cppStorageClass' . s:fg_navy . s:ft_bold
   exec 'hi cppAccess' . s:fg_blue
-  if s:Language_Options('cpp.highlight_standard_library') == 1
+  if s:langOpt_cpp__highlight_standard_library == 1
     exec 'hi cppSTLconstant' . s:fg_green . s:ft_bold
     exec 'hi cppSTLtype' . s:fg_pink . s:ft_bold
     exec 'hi cppSTLfunction' . s:fg_blue
@@ -1290,7 +1398,7 @@ fun! s:set_syntax_highlighting()
   exec 'hi pythonDottedName' . s:fg_purple
   exec 'hi pythonStrFormat' . s:fg_foreground
 
-  if s:Language_Options('python.highlight_builtins') == 1
+  if s:langOpt_python__highlight_builtins == 1
     exec 'hi pythonBuiltinFunc' . s:fg_blue
     exec 'hi pythonBuiltinObj' . s:fg_red
   else
@@ -1808,6 +1916,7 @@ fun! s:set_syntax_highlighting()
   exec 'hi gitcommitSelectedFile' . s:fg_pink
   exec 'hi gitcommitUntrackedFile' . s:fg_diffdelete_fg
   exec 'hi gitcommitBranch' . s:fg_aqua . s:ft_bold
+  exec 'hi gitcommitDiscardedType' . s:fg_diffdelete_fg
 
   exec 'hi diffFile' . s:fg_aqua . s:ft_bold
   exec 'hi diffIndexLine' . s:fg_purple
@@ -2037,7 +2146,8 @@ fun! s:writeToFile(message, file)
   q
 endfun
 
-let s:script_path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+" TODO: why this thing here? delete ? 
+" let s:script_path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 
 fun! g:PaperColor_GenerateSpecs()
   call s:generate_color_palettes()
@@ -2082,9 +2192,13 @@ hi clear
 syntax reset
 let g:colors_name = "PaperColor"
 
-call s:adapt_to_environment()
+call s:acquire_theme_data()
+call s:identify_color_mode()
+call s:generate_theme_option_variables()
+call s:generate_language_option_variables()
+call s:set_format_attributes()
 call s:set_color_variables()
-call s:set_syntax_highlighting()
+call s:apply_syntax_highlightings()
 
 " }}}
 

@@ -122,10 +122,10 @@ else
 endif
 hi! SignColumn cterm=NONE gui=NONE ctermfg=11 guifg=#657b83 ctermbg=NONE guibg=NONE
 hi! Conceal cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
-hi! SpellBad cterm=NONE,undercurl gui=NONE,undercurl ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE guisp=#dc322f
-hi! SpellCap cterm=NONE,undercurl gui=NONE,undercurl ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE guisp=#6c71c4
-hi! SpellRare cterm=NONE,undercurl gui=NONE,undercurl ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE guisp=#2aa198
-hi! SpellLocal cterm=NONE,undercurl gui=NONE,undercurl ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE guisp=#b58900
+hi! SpellBad cterm=NONE,undercurl gui=NONE,undercurl ctermfg=5 guifg=#d33682 ctermbg=NONE guibg=NONE guisp=#6c71c4
+hi! SpellCap cterm=NONE,undercurl gui=NONE,undercurl ctermfg=5 guifg=#d33682 ctermbg=NONE guibg=NONE guisp=#6c71c4
+hi! SpellRare cterm=NONE,undercurl gui=NONE,undercurl ctermfg=6 guifg=#2aa198 ctermbg=NONE guibg=NONE guisp=#2aa198
+hi! SpellLocal cterm=NONE,undercurl gui=NONE,undercurl ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE guisp=#b58900
 hi! Pmenu ctermfg=7 guifg=#eee8d5 ctermbg=11 guibg=#657b83 cterm=NONE,reverse gui=NONE,reverse
 hi! PmenuSel ctermfg=14 guifg=#93a1a1 ctermbg=15 guibg=#fdf6e3 cterm=NONE,reverse gui=NONE,reverse
 hi! PmenuSbar ctermfg=7 guifg=#eee8d5 ctermbg=14 guibg=#93a1a1 cterm=NONE,reverse gui=NONE,reverse

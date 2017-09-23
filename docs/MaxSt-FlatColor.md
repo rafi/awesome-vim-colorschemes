@@ -22,7 +22,7 @@ endif
     For the best colors in terminal, its recommended to set set your terminalcolors to [FlatColor Terminal Colors](#flatcolor-terminal-colors) and use 16 colors.
 
 
-###FlatColor Terminal Colors###
+### FlatColor Terminal Colors ###
 ```
 ! ~/.Xresource
 *.foreground:   #cbe3e7

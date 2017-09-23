@@ -348,6 +348,10 @@ endif
 "
 call s:hi('StatusLine', [95, 95], [187, 187])
 call s:hi('StatusLineNC', [s:dark_bg + 2, s:light_bg - 2], [187, 238])
+call s:hi('StatusLineTerm', [95, 95], [187, 187])
+call s:hi('StatusLineTermNC', [s:dark_bg + 2, s:light_bg - 2], [187, 238])
+hi StatusLineTerm cterm=bold,reverse gui=bold,reverse
+hi StatusLineTermNC cterm=bold,reverse gui=bold,reverse
 call s:hi('TabLineFill', [s:dark_bg + 2, s:light_bg - 2], ['', ''])
 call s:hi('TabLineSel', [187, 187], [23, 66])
 call s:hi('TabLine', [s:dark_bg + 12, s:light_bg - 12], [s:dark_bg + 4, s:light_bg - 4])
