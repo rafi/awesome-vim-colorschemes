@@ -17,6 +17,7 @@ function _main() {
 	_dl AlessandroYorba/Alduin
 	_dl AlessandroYorba/Sierra
 	_dl andreasvc/vim-256noir
+	_dl Badacadabra/vim-archery
 	_dl chase/focuspoint-vim
 	_dl christophermca/meta5
 	_dl cseelus/vim-colors-lucid
