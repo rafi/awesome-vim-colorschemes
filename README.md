@@ -14,9 +14,10 @@ Use your favorite package-manager to install, and enjoy!
 | [abstract] | Dark theme based on Abstract app | ✓ | ✓ |
 | [afterglow] | Adaptation from Sublime Text | ✓ | ✓ |
 | [alduin] | Dark rustic colors | ✓ | ✓ |
-| [Apprentice] | Dark, low-contrast colorscheme | ✓ | ✓ |
 | [anderson] | Dark vim colorscheme based on colors from Wes Anderson films | ✓ | ✓ |
 | [angr] | Pleasant, mild, dark theme | ✓ | ✓ |
+| [Apprentice] | Dark, low-contrast colorscheme | ✓ | ✓ |
+| [Archery] | Vim colorscheme inspired by Arch Linux colors | ✓ | ✓ |
 | [Atom] | Designed to be very readable in both light and dark environments |   | ✓ |
 | [deep-space] | Intergalactic friendly color scheme based off Hybrid | ✓ | ✓ |
 | [dracula] | Dark theme | ✓ | ✓ |
