@@ -1,365 +1,1125 @@
-" Name:         Solarized colorscheme for Vim 8
+" Name:         Solarized8 Light Flat
+" Description:  Precision colors for machines and people
+" Author:       Ethan Schoonover
 " Maintainer:   Lifepillar <lifepillar@lifepillar.me>
-" License:      OSI approved MIT license (see end of this file)
+" Website:      https://github.com/lifepillar/vim-solarized8
+" License:      OSI approved MIT license
+" Last Updated: Sun Oct 29 21:17:23 2017
+
+if !(has('termguicolors') && &termguicolors) && !has('gui_running')
+      \ && (!exists('&t_Co') || &t_Co < (get(g:, 'solarized_use16', 0) ? 16 : 256))
+  echoerr '[Solarized8 Light Flat] There are not enough colors.'
+  finish
+endif
 
 set background=light
+
 hi clear
-if exists("syntax_on")
+if exists('syntax_on')
   syntax reset
 endif
-let colors_name = "solarized8_light_flat"
 
+let g:colors_name = 'solarized8_light_flat'
+
+" Color similarity table
+"  yellow: GUI=#b58900/rgb(181,137,  0)  Term=136 #af8700/rgb(175,135,  0)  [delta=1.465279]
+"    blue: GUI=#268bd2/rgb( 38,139,210)  Term= 32 #0087d7/rgb(  0,135,215)  [delta=2.677029]
+" magenta: GUI=#d33682/rgb(211, 54,130)  Term=162 #d70087/rgb(215,  0,135)  [delta=4.342643]
+"    cyan: GUI=#2aa198/rgb( 42,161,152)  Term= 37 #00afaf/rgb(  0,175,175)  [delta=5.365780]
+"  base01: GUI=#93a1a1/rgb(147,161,161)  Term=247 #9e9e9e/rgb(158,158,158)  [delta=6.489730]
+"  violet: GUI=#6c71c4/rgb(108,113,196)  Term= 61 #5f5faf/rgb( 95, 95,175)  [delta=6.795109]
+"     red: GUI=#dc322f/rgb(220, 50, 47)  Term=160 #d70000/rgb(215,  0,  0)  [delta=6.843619]
+"   green: GUI=#859900/rgb(133,153,  0)  Term=106 #87af00/rgb(135,175,  0)  [delta=6.901386]
+"  base00: GUI=#839496/rgb(131,148,150)  Term=246 #949494/rgb(148,148,148)  [delta=7.557606]
+"    back: GUI=#fdf6e3/rgb(253,246,227)  Term=230 #ffffd7/rgb(255,255,215)  [delta=7.816259]
+"  base03: GUI=#fdf6e3/rgb(253,246,227)  Term=230 #ffffd7/rgb(255,255,215)  [delta=7.816259]
+"  orange: GUI=#cb4b16/rgb(203, 75, 22)  Term=166 #d75f00/rgb(215, 95,  0)  [delta=8.065025]
+"  base02: GUI=#eee8d5/rgb(238,232,213)  Term=254 #e4e4e4/rgb(228,228,228)  [delta=8.289679]
+"   base0: GUI=#657b83/rgb(101,123,131)  Term= 66 #5f8787/rgb( 95,135,135)  [delta=8.468738]
+"   base1: GUI=#586e75/rgb( 88,110,117)  Term=242 #6c6c6c/rgb(108,108,108)  [delta=9.227744]
+"   base3: GUI=#002b36/rgb(  0, 43, 54)  Term=235 #262626/rgb( 38, 38, 38)  [delta=12.727247]
+"   base2: GUI=#073642/rgb(  7, 54, 66)  Term=236 #303030/rgb( 48, 48, 48)  [delta=13.434724]
+
+if get(g:, 'solarized_use16', 1)
 if !has('gui_running') && get(g:, 'solarized_termtrans', 0)
-  hi! Normal cterm=NONE gui=NONE ctermfg=11 guifg=#657b83 ctermbg=NONE guibg=NONE
+hi Normal ctermfg=11 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 else
-  hi! Normal cterm=NONE gui=NONE ctermfg=11 guifg=#657b83 ctermbg=15 guibg=#fdf6e3
+hi Normal ctermfg=11 ctermbg=15 guifg=#657b83 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
 endif
-hi! LineNr cterm=NONE gui=NONE ctermfg=14 guifg=#93a1a1 ctermbg=NONE guibg=NONE
-hi! CursorLineNr ctermbg=NONE guibg=NONE
-hi! Folded cterm=NONE,bold gui=NONE,bold ctermfg=11 guifg=#657b83 ctermbg=NONE guibg=NONE guisp=#fdf6e3
-hi! FoldColumn cterm=NONE gui=NONE ctermfg=11 guifg=#657b83 ctermbg=NONE guibg=NONE
-hi! Comment cterm=NONE gui=NONE,italic ctermfg=14 guifg=#93a1a1 ctermbg=NONE guibg=NONE
-hi! Constant cterm=NONE gui=NONE ctermfg=6 guifg=#2aa198 ctermbg=NONE guibg=NONE
-hi! Identifier cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
-hi! Statement cterm=NONE gui=NONE ctermfg=2 guifg=#719e07 ctermbg=NONE guibg=NONE
-hi! PreProc cterm=NONE gui=NONE ctermfg=9 guifg=#cb4b16 ctermbg=NONE guibg=NONE
-hi! Type cterm=NONE gui=NONE ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE
-hi! Special cterm=NONE gui=NONE ctermfg=9 guifg=#cb4b16 ctermbg=NONE guibg=NONE
-hi! Underlined cterm=NONE gui=NONE ctermfg=13 guifg=#6c71c4 ctermbg=NONE guibg=NONE
-hi! Ignore cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=NONE guibg=NONE
-hi! Error cterm=NONE,bold gui=NONE,bold ctermfg=1 guifg=#dc322f ctermbg=NONE guibg=NONE
-hi! Todo cterm=NONE,bold gui=NONE,bold ctermfg=5 guifg=#d33682 ctermbg=NONE guibg=NONE
-hi! link QuickFixLine Search
 if get(g:, "solarized_visibility", "") == "high"
-  hi! SpecialKey cterm=NONE,reverse gui=NONE,reverse ctermfg=1 guifg=#dc322f ctermbg=NONE guibg=NONE
-  hi! NonText cterm=NONE,bold gui=NONE,bold ctermfg=1 guifg=#dc322f ctermbg=NONE guibg=NONE
-  hi! CursorLineNr cterm=NONE,bold gui=NONE,bold ctermfg=1 guifg=#dc322f
-  hi! Title cterm=NONE,bold gui=NONE,bold ctermfg=9 guifg=#cb4b16 ctermbg=NONE guibg=NONE
-  hi! MatchParen cterm=NONE,bold,underline gui=NONE,bold,underline ctermfg=9 guifg=#cb4b16 ctermbg=7 guibg=#eee8d5
-  if get(g:, 'solarized_old_cursor_style', 0)
-    hi! Cursor cterm=NONE gui=NONE ctermfg=15 guifg=#fdf6e3 ctermbg=11 guibg=#657b83
-  else
-    hi! Cursor cterm=NONE gui=NONE ctermfg=15 guifg=#fdf6e3 ctermbg=1 guibg=#dc322f
-  endif
+if get(g:, 'solarized_old_cursor_style', 0)
+hi Cursor ctermfg=15 ctermbg=11 guifg=#fdf6e3 guibg=#657b83 guisp=NONE cterm=NONE gui=NONE
+else
+hi Cursor ctermfg=15 ctermbg=1 guifg=#fdf6e3 guibg=#dc322f guisp=NONE cterm=NONE gui=NONE
+endif
+hi CursorLineNr ctermfg=1 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi MatchParen ctermfg=9 ctermbg=7 guifg=#cb4b16 guibg=#eee8d5 guisp=NONE cterm=NONE,bold,underline gui=NONE,bold,underline
+hi NonText ctermfg=1 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi SpecialKey ctermfg=1 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi Title ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
 elseif get(g:, "solarized_visibility", "") == "low"
-  hi! SpecialKey cterm=NONE,bold gui=NONE,bold ctermfg=7 guifg=#eee8d5 ctermbg=NONE guibg=NONE
-  hi! NonText cterm=NONE,bold gui=NONE,bold ctermfg=7 guifg=#eee8d5 ctermbg=NONE guibg=NONE
-  hi! CursorLineNr cterm=NONE,bold gui=NONE,bold ctermfg=14 guifg=#93a1a1
-  hi! Title cterm=NONE,bold gui=NONE,bold ctermfg=14 guifg=#93a1a1 ctermbg=NONE guibg=NONE
-  hi! MatchParen cterm=NONE,bold gui=NONE,bold ctermfg=9 guifg=#cb4b16 ctermbg=7 guibg=#eee8d5
-  if get(g:, 'solarized_old_cursor_style', 0)
-    hi! Cursor cterm=NONE gui=NONE ctermfg=15 guifg=#fdf6e3 ctermbg=11 guibg=#657b83
-  else
-    hi! Cursor cterm=NONE gui=NONE ctermfg=15 guifg=#fdf6e3 ctermbg=9 guibg=#cb4b16
-  endif
+if get(g:, 'solarized_old_cursor_style', 0)
+hi Cursor ctermfg=15 ctermbg=11 guifg=#fdf6e3 guibg=#657b83 guisp=NONE cterm=NONE gui=NONE
 else
-  hi! SpecialKey cterm=NONE,bold gui=NONE,bold ctermfg=12 guifg=#839496 ctermbg=7 guibg=#eee8d5
-  hi! NonText cterm=NONE,bold gui=NONE,bold ctermfg=12 guifg=#839496 ctermbg=NONE guibg=NONE
-  hi! CursorLineNr cterm=NONE,bold gui=NONE,bold ctermfg=11 guifg=#657b83
-  hi! Title cterm=NONE,bold gui=NONE,bold ctermfg=9 guifg=#cb4b16 ctermbg=NONE guibg=NONE
-  hi! MatchParen cterm=NONE,bold gui=NONE,bold ctermfg=9 guifg=#cb4b16 ctermbg=7 guibg=#eee8d5
-  if get(g:, 'solarized_old_cursor_style', 0)
-    hi! Cursor cterm=NONE gui=NONE ctermfg=15 guifg=#fdf6e3 ctermbg=11 guibg=#657b83
-  else
-    hi! Cursor cterm=NONE gui=NONE ctermfg=15 guifg=#fdf6e3 ctermbg=9 guibg=#cb4b16
-  endif
+hi Cursor ctermfg=15 ctermbg=9 guifg=#fdf6e3 guibg=#cb4b16 guisp=NONE cterm=NONE gui=NONE
 endif
-if get(g:, "solarized_statusline", "") == "low"
-  hi! NormalMode ctermfg=7 guifg=#eee8d5 ctermbg=10 guibg=#586e75 cterm=NONE,reverse,bold gui=NONE,reverse,bold
-  hi! InsertMode ctermbg=6 guibg=#2aa198 ctermfg=7 guifg=#eee8d5 cterm=NONE,reverse,bold gui=NONE,reverse,bold
-  hi! ReplaceMode ctermbg=9 guibg=#cb4b16 ctermfg=7 guifg=#eee8d5 cterm=NONE,reverse,bold gui=NONE,reverse,bold
-  hi! VisualMode ctermbg=5 guibg=#d33682 ctermfg=7 guifg=#eee8d5 cterm=NONE,reverse,bold gui=NONE,reverse,bold
-  hi! CommandMode ctermbg=5 guibg=#d33682 ctermfg=7 guifg=#eee8d5 cterm=NONE,reverse,bold gui=NONE,reverse,bold
-  hi! StatusLine ctermfg=7 guifg=#eee8d5 ctermbg=10 guibg=#586e75 cterm=NONE,reverse,bold gui=NONE,reverse,bold
-  hi! StatusLineNC ctermfg=7 guifg=#eee8d5 ctermbg=14 guibg=#93a1a1 cterm=NONE,reverse gui=NONE,reverse
-  hi! TabLine ctermbg=7 guibg=#eee8d5 ctermfg=14 guifg=#93a1a1 cterm=NONE gui=NONE
-  hi! TabLineFill ctermbg=7 guibg=#eee8d5 ctermfg=14 guifg=#93a1a1 cterm=NONE gui=NONE
-  hi! TabLineSel ctermfg=10 guifg=#586e75 ctermbg=7 guibg=#eee8d5 cterm=NONE gui=NONE
+hi CursorLineNr ctermfg=14 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi MatchParen ctermfg=9 ctermbg=7 guifg=#cb4b16 guibg=#eee8d5 guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi NonText ctermfg=7 ctermbg=NONE guifg=#eee8d5 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi SpecialKey ctermfg=7 ctermbg=NONE guifg=#eee8d5 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi Title ctermfg=14 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
 else
-  hi! NormalMode ctermfg=7 guifg=#eee8d5 ctermbg=0 guibg=#073642 cterm=NONE,reverse gui=NONE,reverse
-  hi! InsertMode ctermbg=6 guibg=#2aa198 ctermfg=7 guifg=#eee8d5 cterm=NONE,reverse gui=NONE,reverse
-  hi! ReplaceMode ctermbg=9 guibg=#cb4b16 ctermfg=7 guifg=#eee8d5 cterm=NONE,reverse gui=NONE,reverse
-  hi! VisualMode ctermbg=5 guibg=#d33682 ctermfg=7 guifg=#eee8d5 cterm=NONE,reverse gui=NONE,reverse
-  hi! CommandMode ctermbg=5 guibg=#d33682 ctermfg=7 guifg=#eee8d5 cterm=NONE,reverse gui=NONE,reverse
-  hi! StatusLine ctermfg=7 guifg=#eee8d5 ctermbg=0 guibg=#073642 cterm=NONE,reverse gui=NONE,reverse
-  hi! StatusLineNC ctermfg=7 guifg=#eee8d5 ctermbg=10 guibg=#586e75 cterm=NONE,reverse gui=NONE,reverse
-  hi! TabLine ctermbg=7 guibg=#eee8d5 ctermfg=14 guifg=#93a1a1 cterm=NONE gui=NONE
-  hi! TabLineFill ctermbg=7 guibg=#eee8d5 ctermfg=14 guifg=#93a1a1 cterm=NONE gui=NONE
-  hi! TabLineSel ctermfg=0 guifg=#073642 ctermbg=7 guibg=#eee8d5 cterm=NONE gui=NONE
+if get(g:, 'solarized_old_cursor_style', 0)
+hi Cursor ctermfg=15 ctermbg=11 guifg=#fdf6e3 guibg=#657b83 guisp=NONE cterm=NONE gui=NONE
+else
+hi Cursor ctermfg=15 ctermbg=9 guifg=#fdf6e3 guibg=#cb4b16 guisp=NONE cterm=NONE gui=NONE
 endif
-hi! Visual ctermfg=14 guifg=#93a1a1 ctermbg=15 guibg=#fdf6e3 cterm=NONE,reverse gui=NONE,reverse
-hi! Directory cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
-hi! ErrorMsg cterm=NONE,reverse gui=NONE,reverse ctermfg=1 guifg=#dc322f ctermbg=15 guibg=#fdf6e3
-hi! IncSearch cterm=NONE,standout gui=NONE,standout ctermfg=9 guifg=#cb4b16 ctermbg=NONE guibg=NONE
-hi! Search cterm=NONE,reverse gui=NONE,reverse ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE
-hi! MoreMsg cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
-hi! ModeMsg cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
-hi! Question cterm=NONE,bold gui=NONE,bold ctermfg=6 guifg=#2aa198 ctermbg=NONE guibg=NONE
-hi! VertSplit cterm=NONE gui=NONE ctermfg=7 guifg=#eee8d5 ctermbg=7 guibg=#eee8d5
-hi! VisualNOS ctermfg=NONE guifg=NONE ctermbg=7 guibg=#eee8d5 cterm=NONE,reverse gui=NONE,reverse
-hi! WarningMsg cterm=NONE,bold gui=NONE,bold ctermfg=9 guifg=#cb4b16 ctermbg=NONE guibg=NONE
-hi! WildMenu ctermfg=14 guifg=#93a1a1 ctermbg=15 guibg=#fdf6e3 cterm=NONE,reverse gui=NONE,reverse
+hi CursorLineNr ctermfg=11 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi MatchParen ctermfg=8 ctermbg=7 guifg=#002b36 guibg=#eee8d5 guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi NonText ctermfg=12 ctermbg=NONE guifg=#839496 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi SpecialKey ctermfg=12 ctermbg=7 guifg=#839496 guibg=#eee8d5 guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi Title ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+endif
+hi ColorColumn ctermfg=NONE ctermbg=7 guifg=NONE guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+hi Conceal ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi CursorColumn ctermfg=NONE ctermbg=7 guifg=NONE guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+hi CursorLine ctermfg=NONE ctermbg=15 guifg=NONE guibg=#fdf6e3 guisp=#93a1a1 cterm=NONE,underline gui=NONE,underline
 if get(g:, "solarized_diffmode", "") == "high"
-  hi! DiffAdd cterm=NONE,reverse gui=NONE,reverse ctermfg=2 guifg=#719e07 ctermbg=NONE guibg=NONE
-  hi! DiffChange cterm=NONE,reverse gui=NONE,reverse ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE
-  hi! DiffDelete cterm=NONE,reverse gui=NONE,reverse ctermfg=1 guifg=#dc322f ctermbg=NONE guibg=NONE
-  hi! DiffText cterm=NONE,reverse gui=NONE,reverse ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
+hi DiffAdd ctermfg=2 ctermbg=NONE guifg=#859900 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi DiffChange ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi DiffDelete ctermfg=1 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi DiffText ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
 elseif get(g:, "solarized_diffmode", "") == "low"
-  hi! DiffAdd cterm=NONE gui=NONE ctermfg=2 guifg=#719e07 ctermbg=NONE guibg=NONE guisp=#719e07
-  hi! DiffChange cterm=NONE gui=NONE ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE guisp=#b58900
-  hi! DiffDelete cterm=NONE,bold gui=NONE,bold ctermfg=1 guifg=#dc322f ctermbg=NONE guibg=NONE
-  hi! DiffText cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE guisp=#268bd2
-elseif get(g:, "solarized_diffmode", "") == "bold"
-    hi! DiffAdd cterm=NONE,bold gui=NONE,bold ctermfg=2 guifg=#719e07 ctermbg=7 guibg=#eee8d5 guisp=#719e07
-    hi! DiffChange cterm=NONE,bold gui=NONE,bold ctermfg=3 guifg=#b58900 ctermbg=7 guibg=#eee8d5 guisp=#b58900
-    hi! DiffDelete cterm=NONE,bold gui=NONE,bold ctermfg=1 guifg=#dc322f ctermbg=7 guibg=#eee8d5
-    hi! DiffText cterm=NONE,bold gui=NONE,bold ctermfg=4 guifg=#268bd2 ctermbg=7 guibg=#eee8d5 guisp=#268bd2
+hi DiffAdd ctermfg=2 ctermbg=NONE guifg=#859900 guibg=NONE guisp=#859900 cterm=NONE gui=NONE
+hi DiffChange ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=#b58900 cterm=NONE gui=NONE
+hi DiffDelete ctermfg=1 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi DiffText ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=#268bd2 cterm=NONE gui=NONE
 else
-  hi! DiffAdd cterm=NONE gui=NONE ctermfg=2 guifg=#719e07 ctermbg=7 guibg=#eee8d5 guisp=#719e07
-  hi! DiffChange cterm=NONE gui=NONE ctermfg=3 guifg=#b58900 ctermbg=7 guibg=#eee8d5 guisp=#b58900
-  hi! DiffDelete cterm=NONE gui=NONE ctermfg=1 guifg=#dc322f ctermbg=7 guibg=#eee8d5
-  hi! DiffText cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=7 guibg=#eee8d5 guisp=#268bd2
+hi DiffAdd ctermfg=2 ctermbg=7 guifg=#859900 guibg=#eee8d5 guisp=#859900 cterm=NONE gui=NONE
+hi DiffChange ctermfg=3 ctermbg=7 guifg=#b58900 guibg=#eee8d5 guisp=#b58900 cterm=NONE gui=NONE
+hi DiffDelete ctermfg=1 ctermbg=7 guifg=#dc322f guibg=#eee8d5 guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi DiffText ctermfg=4 ctermbg=7 guifg=#268bd2 guibg=#eee8d5 guisp=#268bd2 cterm=NONE gui=NONE
 endif
-hi! SignColumn cterm=NONE gui=NONE ctermfg=11 guifg=#657b83 ctermbg=NONE guibg=NONE
-hi! Conceal cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
-hi! SpellBad cterm=NONE,undercurl gui=NONE,undercurl ctermfg=5 guifg=#d33682 ctermbg=NONE guibg=NONE guisp=#6c71c4
-hi! SpellCap cterm=NONE,undercurl gui=NONE,undercurl ctermfg=5 guifg=#d33682 ctermbg=NONE guibg=NONE guisp=#6c71c4
-hi! SpellRare cterm=NONE,undercurl gui=NONE,undercurl ctermfg=6 guifg=#2aa198 ctermbg=NONE guibg=NONE guisp=#2aa198
-hi! SpellLocal cterm=NONE,undercurl gui=NONE,undercurl ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE guisp=#b58900
-hi! Pmenu ctermfg=7 guifg=#eee8d5 ctermbg=11 guibg=#657b83 cterm=NONE,reverse gui=NONE,reverse
-hi! PmenuSel ctermfg=14 guifg=#93a1a1 ctermbg=15 guibg=#fdf6e3 cterm=NONE,reverse gui=NONE,reverse
-hi! PmenuSbar ctermfg=7 guifg=#eee8d5 ctermbg=14 guibg=#93a1a1 cterm=NONE,reverse gui=NONE,reverse
-hi! PmenuThumb ctermfg=12 guifg=#839496 ctermbg=15 guibg=#fdf6e3 cterm=NONE,reverse gui=NONE,reverse
-hi! CursorColumn cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=7 guibg=#eee8d5
-hi! CursorLine cterm=NONE,underline gui=NONE,underline ctermfg=NONE guifg=NONE ctermbg=15 guibg=#fdf6e3 guisp=#93a1a1
-hi! ColorColumn cterm=NONE gui=NONE ctermfg=NONE guifg=NONE ctermbg=7 guibg=#eee8d5
-hi! link lCursor Cursor
+hi Directory ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi EndOfBuffer ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi ErrorMsg ctermfg=1 ctermbg=8 guifg=#dc322f guibg=#002b36 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi FoldColumn ctermfg=11 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi Folded ctermfg=11 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=#fdf6e3 cterm=NONE,bold gui=NONE,bold
+hi IncSearch ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,standout gui=NONE,standout
+hi LineNr ctermfg=14 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi ModeMsg ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi MoreMsg ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi Pmenu ctermfg=7 ctermbg=11 guifg=#eee8d5 guibg=#657b83 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi PmenuSbar ctermfg=7 ctermbg=14 guifg=#eee8d5 guibg=#93a1a1 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi PmenuSel ctermfg=14 ctermbg=15 guifg=#93a1a1 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi PmenuThumb ctermfg=12 ctermbg=15 guifg=#839496 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi Question ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi! link QuickFixLine Search
+hi Search ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi SignColumn ctermfg=11 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi SpellBad ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,undercurl gui=NONE,undercurl
+hi SpellCap ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,undercurl gui=NONE,undercurl
+hi SpellLocal ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=#b58900 cterm=NONE,undercurl gui=NONE,undercurl
+hi SpellRare ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=#2aa198 cterm=NONE,undercurl gui=NONE,undercurl
+if get(g:, "solarized_statusline", "") == "low"
+hi StatusLine ctermfg=7 ctermbg=10 guifg=#eee8d5 guibg=#586e75 guisp=NONE cterm=NONE,bold,reverse gui=NONE,bold,reverse
+hi StatusLineNC ctermfg=7 ctermbg=14 guifg=#eee8d5 guibg=#93a1a1 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi TabLineSel ctermfg=10 ctermbg=7 guifg=#586e75 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+hi NormalMode ctermfg=7 ctermbg=10 guifg=#eee8d5 guibg=#586e75 guisp=NONE cterm=NONE,bold,reverse gui=NONE,bold,reverse
+else
+hi StatusLine ctermfg=7 ctermbg=0 guifg=#eee8d5 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi StatusLineNC ctermfg=7 ctermbg=10 guifg=#eee8d5 guibg=#586e75 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi TabLineSel ctermfg=0 ctermbg=7 guifg=#073642 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+hi NormalMode ctermfg=7 ctermbg=0 guifg=#eee8d5 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+endif
+hi TabLine ctermfg=14 ctermbg=7 guifg=#93a1a1 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+hi TabLineFill ctermfg=14 ctermbg=7 guifg=#93a1a1 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+hi InsertMode ctermfg=7 ctermbg=6 guifg=#eee8d5 guibg=#2aa198 guisp=NONE cterm=NONE,bold,reverse gui=NONE,bold,reverse
+hi ReplaceMode ctermfg=7 ctermbg=9 guifg=#eee8d5 guibg=#cb4b16 guisp=NONE cterm=NONE,bold,reverse gui=NONE,bold,reverse
+hi VisualMode ctermfg=7 ctermbg=5 guifg=#eee8d5 guibg=#d33682 guisp=NONE cterm=NONE,bold,reverse gui=NONE,bold,reverse
+hi CommandMode ctermfg=7 ctermbg=5 guifg=#eee8d5 guibg=#d33682 guisp=NONE cterm=NONE,bold,reverse gui=NONE,bold,reverse
 hi! link StatusLineTerm StatusLine
 hi! link StatusLineTermNC StatusLineNC
-if has('nvim')
-  hi! link TermCursor Cursor
-  hi! TermCursorNC ctermfg=15 guifg=#fdf6e3 ctermbg=14 guibg=#93a1a1 cterm=NONE gui=NONE
-  let g:terminal_color_0 = '#073642'
-  let g:terminal_color_1 = '#dc322f'
-  let g:terminal_color_2 = '#719e07'
-  let g:terminal_color_3 = '#b58900'
-  let g:terminal_color_4 = '#268bd2'
-  let g:terminal_color_5 = '#d33682'
-  let g:terminal_color_6 = '#2aa198'
-  let g:terminal_color_7 = '#eee8d5'
-  let g:terminal_color_8 = '#002b36'
-  let g:terminal_color_9 = '#cb4b16'
-  let g:terminal_color_10 = '#586e75'
-  let g:terminal_color_11 = '#657b83'
-  let g:terminal_color_12 = '#839496'
-  let g:terminal_color_13 = '#6c71c4'
-  let g:terminal_color_14 = '#93a1a1'
-  let g:terminal_color_15 = '#fdf6e3'
-endif
+hi VertSplit ctermfg=7 ctermbg=7 guifg=#eee8d5 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+hi Visual ctermfg=14 ctermbg=15 guifg=#93a1a1 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi VisualNOS ctermfg=NONE ctermbg=7 guifg=NONE guibg=#eee8d5 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi WarningMsg ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi WildMenu ctermfg=14 ctermbg=15 guifg=#93a1a1 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi! link Boolean Constant
+hi! link Character Constant
+hi Comment ctermfg=14 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE,italic
+hi! link Conditional Statement
+hi Constant ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi! link Define PreProc
+hi! link Debug Special
+hi! link Delimiter Special
+hi Error ctermfg=1 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi! link Exception Statement
+hi! link Float Constant
+hi! link Function Identifier
+hi Identifier ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi Ignore ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi! link Include PreProc
+hi! link Keyword Statement
+hi! link Label Statement
+hi! link Macro PreProc
+hi! link Number Constant
+hi! link Operator Statement
+hi! link PreCondit PreProc
+hi PreProc ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi! link Repeat Statement
+hi Special ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi! link SpecialChar Special
+hi! link SpecialComment Special
+hi Statement ctermfg=2 ctermbg=NONE guifg=#859900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi! link StorageClass Type
+hi! link String Constant
+hi! link Structure Type
+hi! link Tag Special
+hi Todo ctermfg=5 ctermbg=NONE guifg=#d33682 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi Type ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi! link Typedef Type
+hi Underlined ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi! link lCursor Cursor
+hi CursorIM ctermfg=NONE ctermbg=fg guifg=NONE guibg=fg guisp=NONE cterm=NONE gui=NONE
 hi! link vimVar Identifier
 hi! link vimFunc Function
 hi! link vimUserFunc Function
 hi! link helpSpecial Special
 hi! link vimSet Normal
 hi! link vimSetEqual Normal
-hi! vimCommentString cterm=NONE gui=NONE ctermfg=13 guifg=#6c71c4 ctermbg=NONE guibg=NONE
-hi! vimCommand cterm=NONE gui=NONE ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE
-hi! vimCmdSep cterm=NONE,bold gui=NONE,bold ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
-hi! helpExample cterm=NONE gui=NONE ctermfg=10 guifg=#586e75 ctermbg=NONE guibg=NONE
-hi! helpOption cterm=NONE gui=NONE ctermfg=6 guifg=#2aa198 ctermbg=NONE guibg=NONE
-hi! helpNote cterm=NONE gui=NONE ctermfg=5 guifg=#d33682 ctermbg=NONE guibg=NONE
-hi! helpVim cterm=NONE gui=NONE ctermfg=5 guifg=#d33682 ctermbg=NONE guibg=NONE
-hi! helpHyperTextJump cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
-hi! helpHyperTextEntry cterm=NONE gui=NONE ctermfg=2 guifg=#719e07 ctermbg=NONE guibg=NONE
-hi! vimIsCommand cterm=NONE gui=NONE ctermfg=12 guifg=#839496 ctermbg=NONE guibg=NONE
-hi! vimSynMtchOpt cterm=NONE gui=NONE ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE
-hi! vimSynType cterm=NONE gui=NONE ctermfg=6 guifg=#2aa198 ctermbg=NONE guibg=NONE
-hi! vimHiLink cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
-hi! vimHiGroup cterm=NONE gui=NONE ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
-hi! vimGroup cterm=NONE,bold gui=NONE,bold ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
+hi vimCommentString ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi vimCommand ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi vimCmdSep ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi helpExample ctermfg=10 ctermbg=NONE guifg=#586e75 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi helpOption ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi helpNote ctermfg=5 ctermbg=NONE guifg=#d33682 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi helpVim ctermfg=5 ctermbg=NONE guifg=#d33682 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi helpHyperTextJump ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi helpHyperTextEntry ctermfg=2 ctermbg=NONE guifg=#859900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi vimIsCommand ctermfg=12 ctermbg=NONE guifg=#839496 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi vimSynMtchOpt ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi vimSynType ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi vimHiLink ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi vimHiGroup ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi vimGroup ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
 hi! link diffAdded Statement
 hi! link diffLine Identifier
-hi! gitcommitComment cterm=NONE gui=NONE,italic ctermfg=14 guifg=#93a1a1 ctermbg=NONE guibg=NONE
+hi gitcommitComment ctermfg=14 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE,italic
 hi! link gitcommitUntracked gitcommitComment
 hi! link gitcommitDiscarded gitcommitComment
 hi! link gitcommitSelected gitcommitComment
-hi! gitcommitUnmerged cterm=NONE,bold gui=NONE,bold ctermfg=2 guifg=#719e07 ctermbg=NONE guibg=NONE
-hi! gitcommitOnBranch cterm=NONE,bold gui=NONE,bold ctermfg=14 guifg=#93a1a1 ctermbg=NONE guibg=NONE
-hi! gitcommitBranch cterm=NONE,bold gui=NONE,bold ctermfg=5 guifg=#d33682 ctermbg=NONE guibg=NONE
+hi gitcommitUnmerged ctermfg=2 ctermbg=NONE guifg=#859900 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi gitcommitOnBranch ctermfg=14 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi gitcommitBranch ctermfg=5 ctermbg=NONE guifg=#d33682 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
 hi! link gitcommitNoBranch gitcommitBranch
-hi! gitcommitDiscardedType cterm=NONE gui=NONE ctermfg=1 guifg=#dc322f ctermbg=NONE guibg=NONE
-hi! gitcommitSelectedType cterm=NONE gui=NONE ctermfg=2 guifg=#719e07 ctermbg=NONE guibg=NONE
-hi! gitcommitHeader cterm=NONE gui=NONE ctermfg=14 guifg=#93a1a1 ctermbg=NONE guibg=NONE
-hi! gitcommitUntrackedFile cterm=NONE,bold gui=NONE,bold ctermfg=6 guifg=#2aa198 ctermbg=NONE guibg=NONE
-hi! gitcommitDiscardedFile cterm=NONE,bold gui=NONE,bold ctermfg=1 guifg=#dc322f ctermbg=NONE guibg=NONE
-hi! gitcommitSelectedFile cterm=NONE,bold gui=NONE,bold ctermfg=2 guifg=#719e07 ctermbg=NONE guibg=NONE
-hi! gitcommitUnmergedFile cterm=NONE,bold gui=NONE,bold ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE
-hi! gitcommitFile cterm=NONE,bold gui=NONE,bold ctermfg=11 guifg=#657b83 ctermbg=NONE guibg=NONE
+hi gitcommitdiscardedtype ctermfg=1 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi gitcommitselectedtype ctermfg=2 ctermbg=NONE guifg=#859900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi gitcommitHeader ctermfg=14 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi gitcommitUntrackedFile ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi gitcommitDiscardedFile ctermfg=1 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi gitcommitSelectedFile ctermfg=2 ctermbg=NONE guifg=#859900 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi gitcommitUnmergedFile ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi gitcommitFile ctermfg=11 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
 hi! link gitcommitDiscardedArrow gitcommitDiscardedFile
 hi! link gitcommitSelectedArrow gitcommitSelectedFile
 hi! link gitcommitUnmergedArrow gitcommitUnmergedFile
-hi! htmlTag cterm=NONE gui=NONE ctermfg=14 guifg=#93a1a1 ctermbg=NONE guibg=NONE
-hi! htmlEndTag cterm=NONE gui=NONE ctermfg=14 guifg=#93a1a1 ctermbg=NONE guibg=NONE
-hi! htmlTagN cterm=NONE,bold gui=NONE,bold ctermfg=10 guifg=#586e75 ctermbg=NONE guibg=NONE
-hi! htmlTagName cterm=NONE,bold gui=NONE,bold ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
-hi! htmlSpecialTagName cterm=NONE gui=NONE,italic ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
-hi! htmlArg cterm=NONE gui=NONE ctermfg=12 guifg=#839496 ctermbg=NONE guibg=NONE
-hi! javaScript cterm=NONE gui=NONE ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE
-hi! perlHereDoc ctermfg=10 guifg=#586e75 ctermbg=15 guibg=#fdf6e3 cterm=NONE gui=NONE
-hi! perlVarPlain ctermfg=3 guifg=#b58900 ctermbg=15 guibg=#fdf6e3 cterm=NONE gui=NONE
-hi! perlStatementFileDesc ctermfg=6 guifg=#2aa198 ctermbg=15 guibg=#fdf6e3 cterm=NONE gui=NONE
-hi! texStatement ctermfg=6 guifg=#2aa198 ctermbg=15 guibg=#fdf6e3 cterm=NONE gui=NONE
-hi! texMathZoneX ctermfg=3 guifg=#b58900 ctermbg=15 guibg=#fdf6e3 cterm=NONE gui=NONE
-hi! texMathMatcher ctermfg=3 guifg=#b58900 ctermbg=15 guibg=#fdf6e3 cterm=NONE gui=NONE
-hi! texMathMatcher ctermfg=3 guifg=#b58900 ctermbg=15 guibg=#fdf6e3 cterm=NONE gui=NONE
-hi! texRefLabel ctermfg=3 guifg=#b58900 ctermbg=15 guibg=#fdf6e3 cterm=NONE gui=NONE
-hi! rubyDefine ctermfg=10 guifg=#586e75 ctermbg=15 guibg=#fdf6e3 cterm=NONE,bold gui=NONE,bold
-hi! cPreCondit ctermfg=9 guifg=#cb4b16 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! VarId ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! ConId ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! hsImport ctermfg=5 guifg=#d33682 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! hsString ctermfg=12 guifg=#839496 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! hsStructure ctermfg=6 guifg=#2aa198 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! hs_hlFunctionName ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE
-hi! hsStatement ctermfg=6 guifg=#2aa198 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! hsImportLabel ctermfg=6 guifg=#2aa198 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! hs_OpFunctionName ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! hs_DeclareFunction ctermfg=9 guifg=#cb4b16 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! hsVarSym ctermfg=6 guifg=#2aa198 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! hsType ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! hsTypedef ctermfg=6 guifg=#2aa198 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! hsModuleName ctermfg=2 guifg=#719e07 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
+hi htmlTag ctermfg=14 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi htmlEndTag ctermfg=14 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi htmlTagN ctermfg=10 ctermbg=NONE guifg=#586e75 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi htmlTagName ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi htmlSpecialTagName ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE,italic
+hi htmlArg ctermfg=12 ctermbg=NONE guifg=#839496 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi javaScript ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi perlHereDoc ctermfg=10 ctermbg=15 guifg=#586e75 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
+hi perlVarPlain ctermfg=3 ctermbg=15 guifg=#b58900 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
+hi perlStatementFileDesc ctermfg=6 ctermbg=15 guifg=#2aa198 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
+hi texstatement ctermfg=6 ctermbg=15 guifg=#2aa198 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
+hi texmathzonex ctermfg=3 ctermbg=15 guifg=#b58900 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
+hi texmathmatcher ctermfg=3 ctermbg=15 guifg=#b58900 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
+hi texreflabel ctermfg=3 ctermbg=15 guifg=#b58900 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
+hi rubyDefine ctermfg=10 ctermbg=15 guifg=#586e75 guibg=#fdf6e3 guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi! link rubySymbol Type
+hi rubyBoolean ctermfg=5 ctermbg=15 guifg=#d33682 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
+let hs_highlight_boolean=1
+let hs_highlight_delimiters=1
+hi cPreCondit ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi VarId ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi ConId ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hsImport ctermfg=5 ctermbg=NONE guifg=#d33682 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hsString ctermfg=12 ctermbg=NONE guifg=#839496 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hsStructure ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hs_hlFunctionName ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hsStatement ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hsImportLabel ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hs_OpFunctionName ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hs_DeclareFunction ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hsVarSym ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hsType ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hsTypedef ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hsModuleName ctermfg=2 ctermbg=NONE guifg=#859900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link hsImportParams Delimiter
 hi! link hsDelimTypeExport Delimiter
 hi! link hsModuleStartLabel hsStructure
 hi! link hsModuleWhereLabel hsModuleStartLabel
-hi! hsNiceOperator ctermfg=6 guifg=#2aa198 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! hsniceoperator ctermfg=6 guifg=#2aa198 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocTitleBlock ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocTitleBlockTitle ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocTitleComment ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocComment ctermfg=14 guifg=#93a1a1 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE,italic
-hi! pandocVerbatimBlock ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
+hi hsNiceOperator ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hsniceoperator ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocTitleBlock ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocTitleBlockTitle ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocTitleComment ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocComment ctermfg=14 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE,italic
+hi pandocVerbatimBlock ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link pandocVerbatimBlockDeep pandocVerbatimBlock
 hi! link pandocCodeBlock pandocVerbatimBlock
 hi! link pandocCodeBlockDelim pandocVerbatimBlock
-hi! pandocBlockQuote ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocBlockQuoteLeader1 ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocBlockQuoteLeader2 ctermfg=6 guifg=#2aa198 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocBlockQuoteLeader3 ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocBlockQuoteLeader4 ctermfg=1 guifg=#dc322f ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocBlockQuoteLeader5 ctermfg=11 guifg=#657b83 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocBlockQuoteLeader6 ctermfg=14 guifg=#93a1a1 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocListMarker ctermfg=5 guifg=#d33682 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocListReference ctermfg=5 guifg=#d33682 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocDefinitionBlock ctermfg=13 guifg=#6c71c4 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocDefinitionTerm ctermfg=13 guifg=#6c71c4 ctermbg=NONE guibg=NONE cterm=NONE,standout gui=NONE,standout
-hi! pandocDefinitionIndctr ctermfg=13 guifg=#6c71c4 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocEmphasisDefinition ctermfg=13 guifg=#6c71c4 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE,italic
-hi! pandocEmphasisNestedDefinition ctermfg=13 guifg=#6c71c4 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocStrongEmphasisDefinition ctermfg=13 guifg=#6c71c4 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocStrongEmphasisNestedDefinition ctermfg=13 guifg=#6c71c4 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocStrongEmphasisEmphasisDefinition ctermfg=13 guifg=#6c71c4 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocStrikeoutDefinition ctermfg=13 guifg=#6c71c4 ctermbg=NONE guibg=NONE cterm=NONE,reverse gui=NONE,reverse
-hi! pandocVerbatimInlineDefinition ctermfg=13 guifg=#6c71c4 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocSuperscriptDefinition ctermfg=13 guifg=#6c71c4 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocSubscriptDefinition ctermfg=13 guifg=#6c71c4 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocTable ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocTableStructure ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
+hi pandocBlockQuote ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocBlockQuoteLeader1 ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocBlockQuoteLeader2 ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocBlockQuoteLeader3 ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocBlockQuoteLeader4 ctermfg=1 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocBlockQuoteLeader5 ctermfg=11 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocBlockQuoteLeader6 ctermfg=14 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocListMarker ctermfg=5 ctermbg=NONE guifg=#d33682 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocListReference ctermfg=5 ctermbg=NONE guifg=#d33682 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocDefinitionBlock ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocDefinitionTerm ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE,standout gui=NONE,standout
+hi pandocDefinitionIndctr ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocEmphasisDefinition ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE,italic
+hi pandocEmphasisNestedDefinition ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrongEmphasisDefinition ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrongEmphasisNestedDefinition ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrongEmphasisEmphasisDefinition ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrikeoutDefinition ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi pandocVerbatimInlineDefinition ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocSuperscriptDefinition ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocSubscriptDefinition ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocTable ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocTableStructure ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link pandocTableStructureTop pandocTableStructre
 hi! link pandocTableStructureEnd pandocTableStructre
-hi! pandocTableZebraLight ctermfg=4 guifg=#268bd2 ctermbg=15 guibg=#fdf6e3 cterm=NONE gui=NONE
-hi! pandocTableZebraDark ctermfg=4 guifg=#268bd2 ctermbg=7 guibg=#eee8d5 cterm=NONE gui=NONE
-hi! pandocEmphasisTable ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE,italic
-hi! pandocEmphasisNestedTable ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocStrongEmphasisTable ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocStrongEmphasisNestedTable ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocStrongEmphasisEmphasisTable ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocStrikeoutTable ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE,reverse gui=NONE,reverse
-hi! pandocVerbatimInlineTable ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocSuperscriptTable ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocSubscriptTable ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocHeading ctermfg=9 guifg=#cb4b16 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocHeadingMarker ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocEmphasisHeading ctermfg=9 guifg=#cb4b16 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocEmphasisNestedHeading ctermfg=9 guifg=#cb4b16 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocStrongEmphasisHeading ctermfg=9 guifg=#cb4b16 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocStrongEmphasisNestedHeading ctermfg=9 guifg=#cb4b16 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocStrongEmphasisEmphasisHeading ctermfg=9 guifg=#cb4b16 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocStrikeoutHeading ctermfg=9 guifg=#cb4b16 ctermbg=NONE guibg=NONE cterm=NONE,reverse gui=NONE,reverse
-hi! pandocVerbatimInlineHeading ctermfg=9 guifg=#cb4b16 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocSuperscriptHeading ctermfg=9 guifg=#cb4b16 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocSubscriptHeading ctermfg=9 guifg=#cb4b16 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocLinkDelim ctermfg=14 guifg=#93a1a1 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocLinkLabel ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocLinkText ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocLinkURL ctermfg=12 guifg=#839496 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocLinkTitle ctermfg=12 guifg=#839496 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocLinkTitleDelim ctermfg=14 guifg=#93a1a1 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE guisp=#839496
-hi! pandocLinkDefinition ctermfg=6 guifg=#2aa198 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE guisp=#839496
-hi! pandocLinkDefinitionID ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocImageCaption ctermfg=13 guifg=#6c71c4 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocFootnoteLink ctermfg=2 guifg=#719e07 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocFootnoteDefLink ctermfg=2 guifg=#719e07 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocFootnoteInline ctermfg=2 guifg=#719e07 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocFootnote ctermfg=2 guifg=#719e07 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocCitationDelim ctermfg=5 guifg=#d33682 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocCitation ctermfg=5 guifg=#d33682 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocCitationID ctermfg=5 guifg=#d33682 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocCitationRef ctermfg=5 guifg=#d33682 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocStyleDelim ctermfg=14 guifg=#93a1a1 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocEmphasis ctermfg=11 guifg=#657b83 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE,italic
-hi! pandocEmphasisNested ctermfg=11 guifg=#657b83 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocStrongEmphasis ctermfg=11 guifg=#657b83 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocStrongEmphasisNested ctermfg=11 guifg=#657b83 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocStrongEmphasisEmphasis ctermfg=11 guifg=#657b83 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocStrikeout ctermfg=14 guifg=#93a1a1 ctermbg=NONE guibg=NONE cterm=NONE,reverse gui=NONE,reverse
-hi! pandocVerbatimInline ctermfg=3 guifg=#b58900 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocSuperscript ctermfg=13 guifg=#6c71c4 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocSubscript ctermfg=13 guifg=#6c71c4 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocRule ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocRuleLine ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocEscapePair ctermfg=1 guifg=#dc322f ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
-hi! pandocCitationRef ctermfg=5 guifg=#d33682 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocNonBreakingSpace ctermfg=1 guifg=#dc322f ctermbg=NONE guibg=NONE cterm=NONE,reverse gui=NONE,reverse
+hi pandocTableZebraLight ctermfg=4 ctermbg=15 guifg=#268bd2 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
+hi pandocTableZebraDark ctermfg=4 ctermbg=7 guifg=#268bd2 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+hi pandocEmphasisTable ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE,italic
+hi pandocEmphasisNestedTable ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrongEmphasisTable ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrongEmphasisNestedTable ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrongEmphasisEmphasisTable ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrikeoutTable ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi pandocVerbatimInlineTable ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocSuperscriptTable ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocSubscriptTable ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocHeading ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocHeadingMarker ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocEmphasisHeading ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocEmphasisNestedHeading ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrongEmphasisHeading ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrongEmphasisNestedHeading ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrongEmphasisEmphasisHeading ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrikeoutHeading ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi pandocVerbatimInlineHeading ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocSuperscriptHeading ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocSubscriptHeading ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocLinkDelim ctermfg=14 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocLinkLabel ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocLinkText ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocLinkURL ctermfg=12 ctermbg=NONE guifg=#839496 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocLinkTitle ctermfg=12 ctermbg=NONE guifg=#839496 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocLinkTitleDelim ctermfg=14 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=#839496 cterm=NONE gui=NONE
+hi pandocLinkDefinition ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=#839496 cterm=NONE gui=NONE
+hi pandocLinkDefinitionID ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocImageCaption ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocFootnoteLink ctermfg=2 ctermbg=NONE guifg=#859900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocFootnoteDefLink ctermfg=2 ctermbg=NONE guifg=#859900 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocFootnoteInline ctermfg=2 ctermbg=NONE guifg=#859900 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocFootnote ctermfg=2 ctermbg=NONE guifg=#859900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocCitationDelim ctermfg=5 ctermbg=NONE guifg=#d33682 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocCitation ctermfg=5 ctermbg=NONE guifg=#d33682 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocCitationID ctermfg=5 ctermbg=NONE guifg=#d33682 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocCitationRef ctermfg=5 ctermbg=NONE guifg=#d33682 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocStyleDelim ctermfg=14 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocEmphasis ctermfg=11 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE gui=NONE,italic
+hi pandocEmphasisNested ctermfg=11 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrongEmphasis ctermfg=11 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrongEmphasisNested ctermfg=11 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrongEmphasisEmphasis ctermfg=11 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrikeout ctermfg=14 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi pandocVerbatimInline ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocSuperscript ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocSubscript ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocRule ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocRuleLine ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocEscapePair ctermfg=1 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocCitationRef ctermfg=5 ctermbg=NONE guifg=#d33682 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocNonBreakingSpace ctermfg=1 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
 hi! link pandocEscapedCharacter pandocEscapePair
 hi! link pandocLineBreak pandocEscapePair
-hi! pandocMetadataDelim ctermfg=14 guifg=#93a1a1 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocMetadata ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocMetadataKey ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE gui=NONE
-hi! pandocMetadata ctermfg=4 guifg=#268bd2 ctermbg=NONE guibg=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocMetadataDelim ctermfg=14 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocMetadata ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocMetadataKey ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocMetadata ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
 hi! link pandocMetadataTitle pandocMetadata
 if get(g:, "solarized_term_italics", 0) != 0
-  hi Comment cterm=italic
-  hi gitcommitComment cterm=italic
-  hi htmlSpecialTagName cterm=italic
-  hi pandocComment cterm=italic
-  hi pandocEmphasisDefinition cterm=italic
-  hi pandocEmphasisTable cterm=italic
-  hi pandocEmphasis cterm=italic
+hi Comment cterm=italic
+hi gitcommitComment cterm=italic
+hi htmlSpecialTagName cterm=italic
+hi pandocComment cterm=italic
+hi pandocEmphasisDefinition cterm=italic
+hi pandocEmphasisTable cterm=italic
+hi pandocEmphasis cterm=italic
 endif
-" License "{{{
-" ---------------------------------------------------------------------
-"
-" Copyright (c) 2011 Ethan Schoonover
-"
-" Permission is hereby granted, free of charge, to any person obtaining a copy
-" of this software and associated documentation files (the "Software"), to deal
-" in the Software without restriction, including without limitation the rights
-" to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-" copies of the Software, and to permit persons to whom the Software is
-" furnished to do so, subject to the following conditions:
-"
-" The above copyright notice and this permission notice shall be included in
-" all copies or substantial portions of the Software.
-"
-" THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-" IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-" FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-" AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-" LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-" OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-" THE SOFTWARE.
-"
-" vim:foldmethod=marker:foldlevel=0
-"}}}
+if has('nvim')
+hi! link TermCursor Cursor
+hi TermCursorNC ctermfg=15 ctermbg=14 guifg=#fdf6e3 guibg=#93a1a1 guisp=NONE cterm=NONE gui=NONE
+let g:terminal_color_8='#fdf6e3'
+let g:terminal_color_0='#eee8d5'
+let g:terminal_color_10='#93a1a1'
+let g:terminal_color_11='#839496'
+let g:terminal_color_12='#657b83'
+let g:terminal_color_14='#586e75'
+let g:terminal_color_7='#073642'
+let g:terminal_color_15='#002b36'
+let g:terminal_color_3='#b58900'
+let g:terminal_color_9='#cb4b16'
+let g:terminal_color_1='#dc322f'
+let g:terminal_color_5='#d33682'
+let g:terminal_color_13='#6c71c4'
+let g:terminal_color_4='#268bd2'
+let g:terminal_color_6='#2aa198'
+let g:terminal_color_2='#859900'
+endif
+endif
+if !get(g:, 'solarized_use16', 1)
+if !has('gui_running') && get(g:, 'solarized_termtrans', 0)
+hi Normal ctermfg=66 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+else
+hi Normal ctermfg=66 ctermbg=230 guifg=#657b83 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
+endif
+if get(g:, "solarized_visibility", "") == "high"
+if get(g:, 'solarized_old_cursor_style', 0)
+hi Cursor ctermfg=230 ctermbg=66 guifg=#fdf6e3 guibg=#657b83 guisp=NONE cterm=NONE gui=NONE
+else
+hi Cursor ctermfg=230 ctermbg=160 guifg=#fdf6e3 guibg=#dc322f guisp=NONE cterm=NONE gui=NONE
+endif
+hi CursorLineNr ctermfg=160 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi MatchParen ctermfg=166 ctermbg=254 guifg=#cb4b16 guibg=#eee8d5 guisp=NONE cterm=NONE,bold,underline gui=NONE,bold,underline
+hi NonText ctermfg=160 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi SpecialKey ctermfg=160 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi Title ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+elseif get(g:, "solarized_visibility", "") == "low"
+if get(g:, 'solarized_old_cursor_style', 0)
+hi Cursor ctermfg=230 ctermbg=66 guifg=#fdf6e3 guibg=#657b83 guisp=NONE cterm=NONE gui=NONE
+else
+hi Cursor ctermfg=230 ctermbg=166 guifg=#fdf6e3 guibg=#cb4b16 guisp=NONE cterm=NONE gui=NONE
+endif
+hi CursorLineNr ctermfg=247 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi MatchParen ctermfg=166 ctermbg=254 guifg=#cb4b16 guibg=#eee8d5 guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi NonText ctermfg=254 ctermbg=NONE guifg=#eee8d5 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi SpecialKey ctermfg=254 ctermbg=NONE guifg=#eee8d5 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi Title ctermfg=247 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+else
+if get(g:, 'solarized_old_cursor_style', 0)
+hi Cursor ctermfg=230 ctermbg=66 guifg=#fdf6e3 guibg=#657b83 guisp=NONE cterm=NONE gui=NONE
+else
+hi Cursor ctermfg=230 ctermbg=166 guifg=#fdf6e3 guibg=#cb4b16 guisp=NONE cterm=NONE gui=NONE
+endif
+hi CursorLineNr ctermfg=66 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi MatchParen ctermfg=235 ctermbg=254 guifg=#002b36 guibg=#eee8d5 guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi NonText ctermfg=246 ctermbg=NONE guifg=#839496 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi SpecialKey ctermfg=246 ctermbg=254 guifg=#839496 guibg=#eee8d5 guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi Title ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+endif
+hi ColorColumn ctermfg=NONE ctermbg=254 guifg=NONE guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+hi Conceal ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi CursorColumn ctermfg=NONE ctermbg=254 guifg=NONE guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+hi CursorLine ctermfg=NONE ctermbg=230 guifg=NONE guibg=#fdf6e3 guisp=#93a1a1 cterm=NONE,underline gui=NONE,underline
+if get(g:, "solarized_diffmode", "") == "high"
+hi DiffAdd ctermfg=106 ctermbg=NONE guifg=#859900 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi DiffChange ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi DiffDelete ctermfg=160 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi DiffText ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+elseif get(g:, "solarized_diffmode", "") == "low"
+hi DiffAdd ctermfg=106 ctermbg=NONE guifg=#859900 guibg=NONE guisp=#859900 cterm=NONE gui=NONE
+hi DiffChange ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=#b58900 cterm=NONE gui=NONE
+hi DiffDelete ctermfg=160 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi DiffText ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=#268bd2 cterm=NONE gui=NONE
+else
+hi DiffAdd ctermfg=106 ctermbg=254 guifg=#859900 guibg=#eee8d5 guisp=#859900 cterm=NONE gui=NONE
+hi DiffChange ctermfg=136 ctermbg=254 guifg=#b58900 guibg=#eee8d5 guisp=#b58900 cterm=NONE gui=NONE
+hi DiffDelete ctermfg=160 ctermbg=254 guifg=#dc322f guibg=#eee8d5 guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi DiffText ctermfg=32 ctermbg=254 guifg=#268bd2 guibg=#eee8d5 guisp=#268bd2 cterm=NONE gui=NONE
+endif
+hi Directory ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi EndOfBuffer ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi ErrorMsg ctermfg=160 ctermbg=235 guifg=#dc322f guibg=#002b36 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi FoldColumn ctermfg=66 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi Folded ctermfg=66 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=#fdf6e3 cterm=NONE,bold gui=NONE,bold
+hi IncSearch ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,standout gui=NONE,standout
+hi LineNr ctermfg=247 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi ModeMsg ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi MoreMsg ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi Pmenu ctermfg=254 ctermbg=66 guifg=#eee8d5 guibg=#657b83 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi PmenuSbar ctermfg=254 ctermbg=247 guifg=#eee8d5 guibg=#93a1a1 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi PmenuSel ctermfg=247 ctermbg=230 guifg=#93a1a1 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi PmenuThumb ctermfg=246 ctermbg=230 guifg=#839496 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi Question ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi! link QuickFixLine Search
+hi Search ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi SignColumn ctermfg=66 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi SpellBad ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,undercurl gui=NONE,undercurl
+hi SpellCap ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,undercurl gui=NONE,undercurl
+hi SpellLocal ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=#b58900 cterm=NONE,undercurl gui=NONE,undercurl
+hi SpellRare ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=#2aa198 cterm=NONE,undercurl gui=NONE,undercurl
+if get(g:, "solarized_statusline", "") == "low"
+hi StatusLine ctermfg=254 ctermbg=242 guifg=#eee8d5 guibg=#586e75 guisp=NONE cterm=NONE,bold,reverse gui=NONE,bold,reverse
+hi StatusLineNC ctermfg=254 ctermbg=247 guifg=#eee8d5 guibg=#93a1a1 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi TabLineSel ctermfg=242 ctermbg=254 guifg=#586e75 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+hi NormalMode ctermfg=254 ctermbg=242 guifg=#eee8d5 guibg=#586e75 guisp=NONE cterm=NONE,bold,reverse gui=NONE,bold,reverse
+else
+hi StatusLine ctermfg=254 ctermbg=236 guifg=#eee8d5 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi StatusLineNC ctermfg=254 ctermbg=242 guifg=#eee8d5 guibg=#586e75 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi TabLineSel ctermfg=236 ctermbg=254 guifg=#073642 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+hi NormalMode ctermfg=254 ctermbg=236 guifg=#eee8d5 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+endif
+hi TabLine ctermfg=247 ctermbg=254 guifg=#93a1a1 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+hi TabLineFill ctermfg=247 ctermbg=254 guifg=#93a1a1 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+hi InsertMode ctermfg=254 ctermbg=37 guifg=#eee8d5 guibg=#2aa198 guisp=NONE cterm=NONE,bold,reverse gui=NONE,bold,reverse
+hi ReplaceMode ctermfg=254 ctermbg=166 guifg=#eee8d5 guibg=#cb4b16 guisp=NONE cterm=NONE,bold,reverse gui=NONE,bold,reverse
+hi VisualMode ctermfg=254 ctermbg=162 guifg=#eee8d5 guibg=#d33682 guisp=NONE cterm=NONE,bold,reverse gui=NONE,bold,reverse
+hi CommandMode ctermfg=254 ctermbg=162 guifg=#eee8d5 guibg=#d33682 guisp=NONE cterm=NONE,bold,reverse gui=NONE,bold,reverse
+hi! link StatusLineTerm StatusLine
+hi! link StatusLineTermNC StatusLineNC
+hi VertSplit ctermfg=254 ctermbg=254 guifg=#eee8d5 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+hi Visual ctermfg=247 ctermbg=230 guifg=#93a1a1 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi VisualNOS ctermfg=NONE ctermbg=254 guifg=NONE guibg=#eee8d5 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi WarningMsg ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi WildMenu ctermfg=247 ctermbg=230 guifg=#93a1a1 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi! link Boolean Constant
+hi! link Character Constant
+hi Comment ctermfg=247 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE,italic
+hi! link Conditional Statement
+hi Constant ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi! link Define PreProc
+hi! link Debug Special
+hi! link Delimiter Special
+hi Error ctermfg=160 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi! link Exception Statement
+hi! link Float Constant
+hi! link Function Identifier
+hi Identifier ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi Ignore ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi! link Include PreProc
+hi! link Keyword Statement
+hi! link Label Statement
+hi! link Macro PreProc
+hi! link Number Constant
+hi! link Operator Statement
+hi! link PreCondit PreProc
+hi PreProc ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi! link Repeat Statement
+hi Special ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi! link SpecialChar Special
+hi! link SpecialComment Special
+hi Statement ctermfg=106 ctermbg=NONE guifg=#859900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi! link StorageClass Type
+hi! link String Constant
+hi! link Structure Type
+hi! link Tag Special
+hi Todo ctermfg=162 ctermbg=NONE guifg=#d33682 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi Type ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi! link Typedef Type
+hi Underlined ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi! link lCursor Cursor
+hi CursorIM ctermfg=NONE ctermbg=fg guifg=NONE guibg=fg guisp=NONE cterm=NONE gui=NONE
+hi! link vimVar Identifier
+hi! link vimFunc Function
+hi! link vimUserFunc Function
+hi! link helpSpecial Special
+hi! link vimSet Normal
+hi! link vimSetEqual Normal
+hi vimCommentString ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi vimCommand ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi vimCmdSep ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi helpExample ctermfg=242 ctermbg=NONE guifg=#586e75 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi helpOption ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi helpNote ctermfg=162 ctermbg=NONE guifg=#d33682 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi helpVim ctermfg=162 ctermbg=NONE guifg=#d33682 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi helpHyperTextJump ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi helpHyperTextEntry ctermfg=106 ctermbg=NONE guifg=#859900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi vimIsCommand ctermfg=246 ctermbg=NONE guifg=#839496 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi vimSynMtchOpt ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi vimSynType ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi vimHiLink ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi vimHiGroup ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi vimGroup ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi! link diffAdded Statement
+hi! link diffLine Identifier
+hi gitcommitComment ctermfg=247 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE,italic
+hi! link gitcommitUntracked gitcommitComment
+hi! link gitcommitDiscarded gitcommitComment
+hi! link gitcommitSelected gitcommitComment
+hi gitcommitUnmerged ctermfg=106 ctermbg=NONE guifg=#859900 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi gitcommitOnBranch ctermfg=247 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi gitcommitBranch ctermfg=162 ctermbg=NONE guifg=#d33682 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi! link gitcommitNoBranch gitcommitBranch
+hi gitcommitdiscardedtype ctermfg=160 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi gitcommitselectedtype ctermfg=106 ctermbg=NONE guifg=#859900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi gitcommitHeader ctermfg=247 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi gitcommitUntrackedFile ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi gitcommitDiscardedFile ctermfg=160 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi gitcommitSelectedFile ctermfg=106 ctermbg=NONE guifg=#859900 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi gitcommitUnmergedFile ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi gitcommitFile ctermfg=66 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi! link gitcommitDiscardedArrow gitcommitDiscardedFile
+hi! link gitcommitSelectedArrow gitcommitSelectedFile
+hi! link gitcommitUnmergedArrow gitcommitUnmergedFile
+hi htmlTag ctermfg=247 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi htmlEndTag ctermfg=247 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi htmlTagN ctermfg=242 ctermbg=NONE guifg=#586e75 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi htmlTagName ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi htmlSpecialTagName ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE,italic
+hi htmlArg ctermfg=246 ctermbg=NONE guifg=#839496 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi javaScript ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi perlHereDoc ctermfg=242 ctermbg=230 guifg=#586e75 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
+hi perlVarPlain ctermfg=136 ctermbg=230 guifg=#b58900 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
+hi perlStatementFileDesc ctermfg=37 ctermbg=230 guifg=#2aa198 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
+hi texstatement ctermfg=37 ctermbg=230 guifg=#2aa198 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
+hi texmathzonex ctermfg=136 ctermbg=230 guifg=#b58900 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
+hi texmathmatcher ctermfg=136 ctermbg=230 guifg=#b58900 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
+hi texreflabel ctermfg=136 ctermbg=230 guifg=#b58900 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
+hi rubyDefine ctermfg=242 ctermbg=230 guifg=#586e75 guibg=#fdf6e3 guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi! link rubySymbol Type
+hi rubyBoolean ctermfg=162 ctermbg=230 guifg=#d33682 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
+let hs_highlight_boolean=1
+let hs_highlight_delimiters=1
+hi cPreCondit ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi VarId ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi ConId ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hsImport ctermfg=162 ctermbg=NONE guifg=#d33682 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hsString ctermfg=246 ctermbg=NONE guifg=#839496 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hsStructure ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hs_hlFunctionName ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hsStatement ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hsImportLabel ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hs_OpFunctionName ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hs_DeclareFunction ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hsVarSym ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hsType ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hsTypedef ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hsModuleName ctermfg=106 ctermbg=NONE guifg=#859900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi! link hsImportParams Delimiter
+hi! link hsDelimTypeExport Delimiter
+hi! link hsModuleStartLabel hsStructure
+hi! link hsModuleWhereLabel hsModuleStartLabel
+hi hsNiceOperator ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi hsniceoperator ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocTitleBlock ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocTitleBlockTitle ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocTitleComment ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocComment ctermfg=247 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE,italic
+hi pandocVerbatimBlock ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi! link pandocVerbatimBlockDeep pandocVerbatimBlock
+hi! link pandocCodeBlock pandocVerbatimBlock
+hi! link pandocCodeBlockDelim pandocVerbatimBlock
+hi pandocBlockQuote ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocBlockQuoteLeader1 ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocBlockQuoteLeader2 ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocBlockQuoteLeader3 ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocBlockQuoteLeader4 ctermfg=160 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocBlockQuoteLeader5 ctermfg=66 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocBlockQuoteLeader6 ctermfg=247 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocListMarker ctermfg=162 ctermbg=NONE guifg=#d33682 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocListReference ctermfg=162 ctermbg=NONE guifg=#d33682 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocDefinitionBlock ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocDefinitionTerm ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE,standout gui=NONE,standout
+hi pandocDefinitionIndctr ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocEmphasisDefinition ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE,italic
+hi pandocEmphasisNestedDefinition ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrongEmphasisDefinition ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrongEmphasisNestedDefinition ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrongEmphasisEmphasisDefinition ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrikeoutDefinition ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi pandocVerbatimInlineDefinition ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocSuperscriptDefinition ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocSubscriptDefinition ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocTable ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocTableStructure ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi! link pandocTableStructureTop pandocTableStructre
+hi! link pandocTableStructureEnd pandocTableStructre
+hi pandocTableZebraLight ctermfg=32 ctermbg=230 guifg=#268bd2 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
+hi pandocTableZebraDark ctermfg=32 ctermbg=254 guifg=#268bd2 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+hi pandocEmphasisTable ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE,italic
+hi pandocEmphasisNestedTable ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrongEmphasisTable ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrongEmphasisNestedTable ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrongEmphasisEmphasisTable ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrikeoutTable ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi pandocVerbatimInlineTable ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocSuperscriptTable ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocSubscriptTable ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocHeading ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocHeadingMarker ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocEmphasisHeading ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocEmphasisNestedHeading ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrongEmphasisHeading ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrongEmphasisNestedHeading ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrongEmphasisEmphasisHeading ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrikeoutHeading ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi pandocVerbatimInlineHeading ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocSuperscriptHeading ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocSubscriptHeading ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocLinkDelim ctermfg=247 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocLinkLabel ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocLinkText ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocLinkURL ctermfg=246 ctermbg=NONE guifg=#839496 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocLinkTitle ctermfg=246 ctermbg=NONE guifg=#839496 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocLinkTitleDelim ctermfg=247 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=#839496 cterm=NONE gui=NONE
+hi pandocLinkDefinition ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=#839496 cterm=NONE gui=NONE
+hi pandocLinkDefinitionID ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocImageCaption ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocFootnoteLink ctermfg=106 ctermbg=NONE guifg=#859900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocFootnoteDefLink ctermfg=106 ctermbg=NONE guifg=#859900 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocFootnoteInline ctermfg=106 ctermbg=NONE guifg=#859900 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocFootnote ctermfg=106 ctermbg=NONE guifg=#859900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocCitationDelim ctermfg=162 ctermbg=NONE guifg=#d33682 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocCitation ctermfg=162 ctermbg=NONE guifg=#d33682 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocCitationID ctermfg=162 ctermbg=NONE guifg=#d33682 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocCitationRef ctermfg=162 ctermbg=NONE guifg=#d33682 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocStyleDelim ctermfg=247 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocEmphasis ctermfg=66 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE gui=NONE,italic
+hi pandocEmphasisNested ctermfg=66 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrongEmphasis ctermfg=66 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrongEmphasisNested ctermfg=66 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrongEmphasisEmphasis ctermfg=66 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocStrikeout ctermfg=247 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi pandocVerbatimInline ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocSuperscript ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocSubscript ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocRule ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocRuleLine ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocEscapePair ctermfg=160 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi pandocCitationRef ctermfg=162 ctermbg=NONE guifg=#d33682 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocNonBreakingSpace ctermfg=160 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi! link pandocEscapedCharacter pandocEscapePair
+hi! link pandocLineBreak pandocEscapePair
+hi pandocMetadataDelim ctermfg=247 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocMetadata ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocMetadataKey ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi pandocMetadata ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+hi! link pandocMetadataTitle pandocMetadata
+if get(g:, "solarized_term_italics", 0) != 0
+hi Comment cterm=italic
+hi gitcommitComment cterm=italic
+hi htmlSpecialTagName cterm=italic
+hi pandocComment cterm=italic
+hi pandocEmphasisDefinition cterm=italic
+hi pandocEmphasisTable cterm=italic
+hi pandocEmphasis cterm=italic
+endif
+if has('nvim')
+hi! link TermCursor Cursor
+hi TermCursorNC ctermfg=230 ctermbg=247 guifg=#fdf6e3 guibg=#93a1a1 guisp=NONE cterm=NONE gui=NONE
+let g:terminal_color_8='#fdf6e3'
+let g:terminal_color_0='#eee8d5'
+let g:terminal_color_10='#93a1a1'
+let g:terminal_color_11='#839496'
+let g:terminal_color_12='#657b83'
+let g:terminal_color_14='#586e75'
+let g:terminal_color_7='#073642'
+let g:terminal_color_15='#002b36'
+let g:terminal_color_3='#b58900'
+let g:terminal_color_9='#cb4b16'
+let g:terminal_color_1='#dc322f'
+let g:terminal_color_5='#d33682'
+let g:terminal_color_13='#6c71c4'
+let g:terminal_color_4='#268bd2'
+let g:terminal_color_6='#2aa198'
+let g:terminal_color_2='#859900'
+endif
+endif
+
+" Color: base3                #002b36                ~        8
+" Color: base2                #073642                ~        0
+" Color: base1                #586e75                ~        10
+" Color: base0                #657b83                ~        11
+" Color: base00               #839496                ~        12
+" Color: base01               #93a1a1                ~        14
+" Color: base02               #eee8d5                ~        7
+" Color: base03               #fdf6e3                ~        15
+" Color: yellow               #b58900                ~        3
+" Color: orange               #cb4b16                ~        9
+" Color: red                  #dc322f                ~        1
+" Color: magenta              #d33682                ~        5
+" Color: violet               #6c71c4                ~        13
+" Color: blue                 #268bd2                ~        4
+" Color: cyan                 #2aa198                ~        6
+" Color: green                #859900                ~        2
+" Color: back                 #fdf6e3                ~        15
+" Background: light
+" verbatim
+" endverbatim
+"   Normal             base0             none
+" verbatim
+" else
+" endverbatim
+"   Normal            base0             back
+" verbatim
+" endif
+" endverbatim
+" verbatim
+" endverbatim
+" Cursor               base03            base0
+" verbatim
+" else
+" endverbatim
+" Cursor               base03            red
+" verbatim
+" endif
+" endverbatim
+" CursorLineNr         red               none              bold
+" MatchParen           orange            base02            bold,underline
+" NonText              red               none              bold
+" SpecialKey           red               none              reverse
+" Title                orange            none              bold
+" verbatim
+" endverbatim
+" Cursor               base03            base0
+" verbatim
+" else
+" endverbatim
+" Cursor               base03            orange
+" verbatim
+" endif
+" endverbatim
+" CursorLineNr         base01            none              bold
+" MatchParen           orange            base02            bold
+" NonText              base02            none              bold
+" SpecialKey           base02            none              bold
+" Title                base01            none              bold
+" verbatim
+" else
+" endverbatim
+" Cursor               base03            base0
+" verbatim
+" else
+" endverbatim
+" Cursor               base03            orange
+" verbatim
+" endif
+" endverbatim
+" CursorLineNr         base0             none              bold
+" MatchParen           base3             base02            bold
+" NonText              base00            none              bold
+" SpecialKey           base00            base02            bold
+" Title                orange            none              bold
+" verbatim
+" endif
+" endverbatim
+" ColorColumn          none              base02
+" Conceal              blue              none
+" CursorColumn         none              base02
+" CursorLine           none              base03            underline s=base01
+" verbatim
+" endverbatim
+" DiffAdd              green             none              reverse
+" DiffChange           yellow            none              reverse
+" DiffDelete           red               none              reverse
+" DiffText             blue              none              reverse
+" verbatim
+" endverbatim
+" DiffAdd              green             none              s=green
+" DiffChange           yellow            none              s=yellow
+" DiffDelete           red               none              bold
+" DiffText             blue              none              s=blue
+" verbatim
+" else
+" endverbatim
+" DiffAdd              green             base02            s=green
+" DiffChange           yellow            base02            s=yellow
+" DiffDelete           red               base02            bold
+" DiffText             blue              base02            s=blue
+" verbatim
+" endif
+" endverbatim
+" Directory            blue              none
+" EndOfBuffer          none              none
+" ErrorMsg             red               base3             reverse
+" FoldColumn           base0             none
+" Folded               base0             none              bold s=base03
+" IncSearch            orange            none              standout
+" LineNr               base01            none
+" ModeMsg              blue              none
+" MoreMsg              blue              none
+" Pmenu                base02            base0             reverse
+" PmenuSbar            base02            base01            reverse
+" PmenuSel             base01            base03            reverse
+" PmenuThumb           base00            base03            reverse
+" Question             cyan              none              bold
+" QuickFixLine     ->  Search
+" Search               yellow            none              reverse
+" SignColumn           base0             none
+" SpellBad             violet            none              undercurl s=violet
+" SpellCap             violet            none              undercurl s=violet
+" SpellLocal           yellow            none              undercurl s=yellow
+" SpellRare            cyan              none              undercurl s=cyan
+" verbatim
+" endverbatim
+" StatusLine           base02            base1             bold,reverse
+" StatusLineNC         base02            base01            reverse
+" TabLineSel           base1             base02
+" NormalMode           base02            base1             bold,reverse
+" verbatim
+" else
+" endverbatim
+" StatusLine           base02            base2             reverse
+" StatusLineNC         base02            base1             reverse
+" TabLineSel           base2             base02
+" NormalMode           base02            base2             reverse
+" verbatim
+" endif
+" endverbatim
+" TabLine              base01            base02
+" TabLineFill          base01            base02
+" InsertMode           base02            cyan              bold,reverse
+" ReplaceMode          base02            orange            bold,reverse
+" VisualMode           base02            magenta           bold,reverse
+" CommandMode          base02            magenta           bold,reverse
+" StatusLineTerm    -> StatusLine
+" StatusLineTermNC  -> StatusLineNC
+" VertSplit            base02            base02
+" Visual               base01            base03            reverse
+" VisualNOS            none              base02            reverse
+" WarningMsg           orange            none              bold
+" WildMenu             base01            base03            reverse
+" Boolean           -> Constant
+" Character         -> Constant
+" Comment              base01            none              g=italic
+" Conditional       -> Statement
+" Constant             cyan              none
+" Define            -> PreProc
+" Debug             -> Special
+" Delimiter         -> Special
+" Error                red               none              bold
+" Exception         -> Statement
+" Float             -> Constant
+" Function          -> Identifier
+" Identifier           blue              none
+" Ignore               none              none
+" Include           -> PreProc
+" Keyword           -> Statement
+" Label             -> Statement
+" Macro             -> PreProc
+" Number            -> Constant
+" Operator          -> Statement
+" PreCondit         -> PreProc
+" PreProc              orange            none
+" Repeat            -> Statement
+" Special              orange            none
+" SpecialChar       -> Special
+" SpecialComment    -> Special
+" Statement            green             none
+" StorageClass      -> Type
+" String            -> Constant
+" Structure         -> Type
+" Tag               -> Special
+" Todo                 magenta           none              bold
+" Type                 yellow            none
+" Typedef           -> Type
+" Underlined           violet            none
+" lCursor           -> Cursor
+" CursorIM             none              fg
+" vimVar            -> Identifier
+" vimFunc           -> Function
+" vimUserFunc       -> Function
+" helpSpecial       -> Special
+" vimSet            -> Normal
+" vimSetEqual       -> Normal
+" vimCommentString     violet            none
+" vimCommand           yellow            none
+" vimCmdSep            blue              none              bold
+" helpExample          base1             none
+" helpOption           cyan              none
+" helpNote             magenta           none
+" helpVim              magenta           none
+" helpHyperTextJump    blue              none
+" helpHyperTextEntry   green             none
+" vimIsCommand         base00            none
+" vimSynMtchOpt        yellow            none
+" vimSynType           cyan              none
+" vimHiLink            blue              none
+" vimHiGroup           blue              none
+" vimGroup             blue              none              bold
+" diffAdded         -> Statement
+" diffLine          -> Identifier
+" gitcommitComment           base01          none              g=italic
+" gitcommitUntracked      -> gitcommitComment
+" gitcommitDiscarded      -> gitcommitComment
+" gitcommitSelected       -> gitcommitComment
+" gitcommitUnmerged          green           none              bold
+" gitcommitOnBranch          base01          none              bold
+" gitcommitBranch            magenta         none              bold
+" gitcommitNoBranch       -> gitcommitBranch
+" gitcommitdiscardedtype     red             none
+" gitcommitselectedtype      green           none
+" gitcommitHeader            base01          none
+" gitcommitUntrackedFile     cyan            none              bold
+" gitcommitDiscardedFile     red             none              bold
+" gitcommitSelectedFile      green           none              bold
+" gitcommitUnmergedFile      yellow          none              bold
+" gitcommitFile              base0           none              bold
+" gitcommitDiscardedArrow -> gitcommitDiscardedFile
+" gitcommitSelectedArrow  -> gitcommitSelectedFile
+" gitcommitUnmergedArrow  -> gitcommitUnmergedFile
+" htmlTag                    base01          none
+" htmlEndTag                 base01          none
+" htmlTagN                   base1           none              bold
+" htmlTagName                blue            none              bold
+" htmlSpecialTagName         blue            none              g=italic
+" htmlArg                    base00          none
+" javaScript                 yellow          none
+" perlHereDoc                base1           back
+" perlVarPlain               yellow          back
+" perlStatementFileDesc      cyan            back
+" texstatement               cyan            back
+" texmathzonex               yellow          back
+" texmathmatcher             yellow          back
+" texreflabel                yellow          back
+" rubyDefine                 base1           back              bold
+" rubySymbol              -> Type
+" rubyBoolean                magenta         back
+" verbatim
+" let hs_highlight_boolean=1
+" let hs_highlight_delimiters=1
+" endverbatim
+" cPreCondit                 orange          none
+" VarId                      blue            none
+" ConId                      yellow          none
+" hsImport                   magenta         none
+" hsString                   base00          none
+" hsStructure                cyan            none
+" hs_hlFunctionName          blue            none
+" hsStatement                cyan            none
+" hsImportLabel              cyan            none
+" hs_OpFunctionName          yellow          none
+" hs_DeclareFunction         orange          none
+" hsVarSym                   cyan            none
+" hsType                     yellow          none
+" hsTypedef                  cyan            none
+" hsModuleName               green           none
+" hsImportParams          -> Delimiter
+" hsDelimTypeExport       -> Delimiter
+" hsModuleStartLabel      -> hsStructure
+" hsModuleWhereLabel      -> hsModuleStartLabel
+" hsNiceOperator             cyan            none
+" hsniceoperator             cyan            none
+" pandocTitleBlock                       blue               none
+" pandocTitleBlockTitle                  blue               none           bold
+" pandocTitleComment                     blue               none           bold
+" pandocComment                          base01             none           g=italic
+" pandocVerbatimBlock                    yellow             none
+" pandocVerbatimBlockDeep             -> pandocVerbatimBlock
+" pandocCodeBlock                     -> pandocVerbatimBlock
+" pandocCodeBlockDelim                -> pandocVerbatimBlock
+" pandocBlockQuote                       blue               none
+" pandocBlockQuoteLeader1                blue               none
+" pandocBlockQuoteLeader2                cyan               none
+" pandocBlockQuoteLeader3                yellow             none
+" pandocBlockQuoteLeader4                red                none
+" pandocBlockQuoteLeader5                base0              none
+" pandocBlockQuoteLeader6                base01             none
+" pandocListMarker                       magenta            none
+" pandocListReference                    magenta            none
+" pandocDefinitionBlock                  violet             none
+" pandocDefinitionTerm                   violet             none           standout
+" pandocDefinitionIndctr                 violet             none           bold
+" pandocEmphasisDefinition               violet             none           g=italic
+" pandocEmphasisNestedDefinition         violet             none           bold
+" pandocStrongEmphasisDefinition         violet             none           bold
+" pandocStrongEmphasisNestedDefinition   violet             none           bold
+" pandocStrongEmphasisEmphasisDefinition violet             none           bold
+" pandocStrikeoutDefinition              violet             none           reverse
+" pandocVerbatimInlineDefinition         violet             none
+" pandocSuperscriptDefinition            violet             none
+" pandocSubscriptDefinition              violet             none
+" pandocTable                            blue               none
+" pandocTableStructure                   blue               none
+" pandocTableStructureTop             -> pandocTableStructre
+" pandocTableStructureEnd             -> pandocTableStructre
+" pandocTableZebraLight                  blue               base03
+" pandocTableZebraDark                   blue               base02
+" pandocEmphasisTable                    blue               none           g=italic
+" pandocEmphasisNestedTable              blue               none           bold
+" pandocStrongEmphasisTable              blue               none           bold
+" pandocStrongEmphasisNestedTable        blue               none           bold
+" pandocStrongEmphasisEmphasisTable      blue               none           bold
+" pandocStrikeoutTable                   blue               none           reverse
+" pandocVerbatimInlineTable              blue               none
+" pandocSuperscriptTable                 blue               none
+" pandocSubscriptTable                   blue               none
+" pandocHeading                          orange             none           bold
+" pandocHeadingMarker                    orange             none           bold
+" pandocEmphasisHeading                  orange             none           bold
+" pandocEmphasisNestedHeading            orange             none           bold
+" pandocStrongEmphasisHeading            orange             none           bold
+" pandocStrongEmphasisNestedHeading      orange             none           bold
+" pandocStrongEmphasisEmphasisHeading    orange             none           bold
+" pandocStrikeoutHeading                 orange             none           reverse
+" pandocVerbatimInlineHeading            orange             none           bold
+" pandocSuperscriptHeading               orange             none           bold
+" pandocSubscriptHeading                 orange             none           bold
+" pandocLinkDelim                        base01             none
+" pandocLinkLabel                        blue               none
+" pandocLinkText                         blue               none
+" pandocLinkURL                          base00             none
+" pandocLinkTitle                        base00             none
+" pandocLinkTitleDelim                   base01             none           s=base00
+" pandocLinkDefinition                   cyan               none           s=base00
+" pandocLinkDefinitionID                 blue               none           bold
+" pandocImageCaption                     violet             none           bold
+" pandocFootnoteLink                     green              none
+" pandocFootnoteDefLink                  green              none           bold
+" pandocFootnoteInline                   green              none           bold
+" pandocFootnote                         green              none
+" pandocCitationDelim                    magenta            none
+" pandocCitation                         magenta            none
+" pandocCitationID                       magenta            none
+" pandocCitationRef                      magenta            none
+" pandocStyleDelim                       base01             none
+" pandocEmphasis                         base0              none           g=italic
+" pandocEmphasisNested                   base0              none           bold
+" pandocStrongEmphasis                   base0              none           bold
+" pandocStrongEmphasisNested             base0              none           bold
+" pandocStrongEmphasisEmphasis           base0              none           bold
+" pandocStrikeout                        base01             none           reverse
+" pandocVerbatimInline                   yellow             none
+" pandocSuperscript                      violet             none
+" pandocSubscript                        violet             none
+" pandocRule                             blue               none           bold
+" pandocRuleLine                         blue               none           bold
+" pandocEscapePair                       red                none           bold
+" pandocCitationRef                      magenta            none
+" pandocNonBreakingSpace                 red                none           reverse
+" pandocEscapedCharacter              -> pandocEscapePair
+" pandocLineBreak                     -> pandocEscapePair
+" pandocMetadataDelim                    base01             none
+" pandocMetadata                         blue               none
+" pandocMetadataKey                      blue               none
+" pandocMetadata                         blue               none           bold
+" pandocMetadataTitle                 -> pandocMetadata
+" verbatim
+" hi Comment cterm=italic
+" hi gitcommitComment cterm=italic
+" hi htmlSpecialTagName cterm=italic
+" hi pandocComment cterm=italic
+" hi pandocEmphasisDefinition cterm=italic
+" hi pandocEmphasisTable cterm=italic
+" hi pandocEmphasis cterm=italic
+" endif
+" endverbatim
+" verbatim
+" if has('nvim')
+" endverbatim
+" TermCursor        -> Cursor
+" TermCursorNC         base03            base01
+" verbatim
+" endif
+" endverbatim

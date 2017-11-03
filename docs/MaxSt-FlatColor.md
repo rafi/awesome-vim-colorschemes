@@ -3,11 +3,8 @@
 ### Terminal True Color Support ###
   Add this to your .vimrc to enable true colors:
 ```
-if has('patch-7.4.1778')
-  set guicolors
-endif
-if has('nvim')
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+if has('nvim') || has('termguicolors')
+  set termguicolors
 endif
 ```
 

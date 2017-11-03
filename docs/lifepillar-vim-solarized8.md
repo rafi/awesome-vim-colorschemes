@@ -22,14 +22,14 @@ works **out of the box** if you use:
 **and** a true-color enabled terminal (e.g., [iTerm2](https://www.iterm2.com)).
 Solarized 8 also works in MacVim, gVim, etc…: no configuration is needed.
 
-For terminals not supporting true colors, your terminal's 16 ANSI colors
-**must** be set to the Solarized palette. The ugly degraded 256-color variant of
-the original Solarized has been removed from Solarized 8.
+For terminals not supporting true colors, you have two possibilities:
 
-In NeoVim, Solarized 8 also defines the color palette for the [terminal
-emulator](https://neovim.io/doc/user/nvim_terminal_emulator.html), as well as
-colors for the `TermCursor` and `TermCursorNC` highlight groups.
-
+1. set your terminal's 16 ANSI color to the Solarized palette, or
+2. use an approximate palette based on xterm's 256 colors. To do so, put this in
+   your `vimrc`:
+   ```vim
+   let g:solarized_use16 = 0
+   ```
 
 ## Installation
 
@@ -77,7 +77,10 @@ The following options were not available in the original Solarized:
   in light themes, and blue in dark themes (but please note that your terminal
   may override the cursor's color).
 
-The options above may be used with any `solarized8_*` variant.
+Besides, you may choose which terminal palette to use with `g:solarized_use16`,
+as mentioned above.
+
+All these options may be used with any `solarized8_*` variant.
 
 
 ## Troubleshooting
@@ -119,6 +122,13 @@ nmap <leader>- :<c-u>call Solarized8Contrast(-v:count1)<cr>
 nmap <leader>+ :<c-u>call Solarized8Contrast(+v:count1)<cr>
 ```
 
-If you want to tweak the colors yourself, edit `src/solarized8.vim`, then `:source`
-it to recreate the color schemes.
+## Hacking
+
+Do you want to hack the theme? Install the
+[Colortemplate](https://github.com/lifepillar/vim-colortemplate) ftplugin,
+edit the `*.colortemplate` files, then rebuild the colorschemes using the
+script in the `templates` folder.
+
+If you extend or improve Solarized8, please consider submitting a pull request!
+
 

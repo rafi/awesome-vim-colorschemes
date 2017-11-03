@@ -7,6 +7,7 @@
 
 " Description:"{{{
 " ----------------------------------------------------------------------------
+"
 " The default RGB colour palette is taken from Tomorrow-Night.vim:
 " https://github.com/chriskempson/vim-tomorrow-theme
 "
@@ -322,12 +323,12 @@ exe "hi! PmenuSel"      .s:fg_foreground  .s:bg_selection   .s:fmt_revr
 exe "hi! Question"      .s:fg_green       .s:bg_none        .s:fmt_none
 exe "hi! Search"        .s:fg_background  .s:bg_yellow      .s:fmt_none
 exe "hi! SpecialKey"    .s:fg_selection   .s:bg_none        .s:fmt_none
-exe "hi! SpellCap"      .s:fg_blue        .s:bg_darkblue    .s:fmt_undr
-exe "hi! SpellLocal"    .s:fg_aqua        .s:bg_darkcyan    .s:fmt_undr
-exe "hi! SpellBad"      .s:fg_red         .s:bg_darkred     .s:fmt_undr
-exe "hi! SpellRare"     .s:fg_purple      .s:bg_darkpurple  .s:fmt_undr
-exe "hi! StatusLine"    .s:fg_comment     .s:bg_background  .s:fmt_revr
-exe "hi! StatusLineNC"  .s:fg_window      .s:bg_comment     .s:fmt_revr
+exe "hi! SpellCap"      .s:fg_blue        .s:bg_none        .s:fmt_undr
+exe "hi! SpellLocal"    .s:fg_aqua        .s:bg_none        .s:fmt_undr
+exe "hi! SpellBad"      .s:fg_red         .s:bg_none        .s:fmt_undr
+exe "hi! SpellRare"     .s:fg_purple      .s:bg_none        .s:fmt_undr
+exe "hi! StatusLine"    .s:fg_foreground  .s:bg_selection   .s:fg_bold
+exe "hi! StatusLineNC"  .s:fg_window      .s:bg_comment     .s:fmt_none
 exe "hi! TabLine"       .s:fg_foreground  .s:bg_darkcolumn  .s:fmt_revr
 "   TabLineFill"
 "   TabLineSel"
@@ -392,7 +393,7 @@ exe "hi! Underlined"      .s:fg_blue        .s:bg_none        .s:fmt_none
 
 exe "hi! Ignore"          .s:fg_none        .s:bg_none        .s:fmt_none
 
-exe "hi! Error"           .s:fg_purple      .s:bg_darkred     .s:fmt_undr
+exe "hi! Error"           .s:fg_red         .s:bg_none        .s:fmt_none
 
 exe "hi! Todo"            .s:fg_addfg       .s:bg_none        .s:fg_bold
 
@@ -416,9 +417,9 @@ exe "hi! qfLineNr"        .s:fg_yellow      .s:bg_none        .s:fmt_none
 "   diffIsA
 "   diffNoEOL
 "   diffCommon
-hi! link diffRemoved Constant
+hi! link diffRemoved Special
 "   diffChanged
-hi! link diffAdded Special
+hi! link diffAdded String
 "   diffLine
 "   diffSubname
 "   diffComment

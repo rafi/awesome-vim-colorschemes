@@ -1,12 +1,15 @@
-![Screenshot](https://user-images.githubusercontent.com/11221489/27158209-b93ebb70-511a-11e7-8164-e05597eb97b4.png)
+Sierra 
+-------
+![Screenshot](https://user-images.githubusercontent.com/11221489/31866343-42d87366-b733-11e7-9e79-43fb8b2567f9.png)
+
+![Screenshot](https://user-images.githubusercontent.com/11221489/31866346-4d06c52c-b733-11e7-933a-ab5ae505e92c.png)
 
 :space_invader: Set Up
 ------
 
-###### Day Mode - Grey Background
-```VimL
-colorscheme sierra 
-```
+###### Modes 
+The default UI for Sierra is a dark grey UI. However, depending on certain lighting conditions, time of day or personal preference you might want to try some of the darker or lighter versions that are available to you. To enable, add one of the following settings to your .vimrc 
+
 
 ###### Sunset Mode - Dark Grey Background
 ```VimL
@@ -38,20 +41,17 @@ let g:sierra_Campfire = 1
 colorscheme sierra 
 ```
 
-:crescent_moon: Nightly Build
+:crescent_moon: Dev Build
 ----------------------------
 pre-release version [here](https://github.com/AlessandroYorba/Sierra/tree/nightly)
 
 :octocat: Special Thanks
 -----------------
-[Kaolin-Theme for Emacs by 0rdy](https://github.com/0rdy/kaolin-theme)<br>
+[Kaolin - Theme for Emacs by Ogden Webb](https://github.com/ogdenwebb/kaolin-theme)<br>
 [Sierra Airline Theme by Danilo Augusto](https://github.com/danilo-augusto)
 
 :octopus: Moar Colorschemes
 -------
 [Alduin](https://github.com/AlessandroYorba/Alduin)<br>
 [Despacio](https://github.com/AlessandroYorba/Despacio)<br>
-[Sidonia](https://github.com/AlessandroYorba/Sidonia)<br>
-[Monrovia](https://github.com/AlessandroYorba/Monrovia)<br>
 [Arcadia](https://github.com/AlessandroYorba/Arcadia)<br>
-[Absolute](https://github.com/AlessandroYorba/Absolute)

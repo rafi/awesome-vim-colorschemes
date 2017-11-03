@@ -73,6 +73,11 @@ set laststatus=2
 
 This theme currently provides theme options and language-specific options. All config options can be stored in global variable `g:PaperColor_Theme_Options` which can be set in your `.vimrc` 
 
+
+**Note**: 
++ This `g:PaperColor_Theme_Options` variable must be placed anywhere **before** `color PaperColor` command.
++ if the same option is provided in both a theme and a theme's variant, the value in the theme's variant options will take precedence. 
+
 ### Theme Options
 
 Within section `theme`, options for each theme can be specified under the theme name. The original PaperColor theme is `default`. For example:
@@ -98,14 +103,39 @@ let g:PaperColor_Theme_Options = {
   \   }
   \ }
 ```
-**Note**: 
-+ This variable must be placed anywhere **before** `color PaperColor` command.
-+ if the same option is provided in both a theme and a theme's variant, the value in the theme's variant options will take precedence. 
+
+**Color overriding**
+
+
+You can override any color of the theme of interest. This example is for `default` theme (original PaperColor Theme), but you can specify any other theme that is registered.
+
+The overriding setting is placed in `override` key of `g:PaperColor_Theme_Options` variable that you set in `.vimrc` like this.
+
+```VimL
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default.dark': { 
+  \       'override' : {
+  \         'color00' : ['#080808', '232'],
+  \         'linenumber_bg' : ['#080808', '232']
+  \       }
+  \     }
+  \   }
+  \ }
+
+```
+
+See [DESIGN.md](https://github.com/NLKNguyen/papercolor-theme/blob/master/DESIGN.md) for more details and full list of color names.
+
 
 #### Currently available theme options
 
-`transparent_background` set to 1 to use terminal background. Default is 0, use theme background
-
+option                   | value                                          | default
+------                   | ------                                         | -------
+`transparent_background` | 1: use terminal background                     | 0: use theme background
+`allow_bold`             | 1: use bold for certain text, 0: not at all    | decided by the theme
+`allow_italic`           | 1: use italics for certain text, 0: not at all | decided by the theme
+`override`               | dictionary of color key-value                  |
 
 
 ### Language-specific options
@@ -113,7 +143,7 @@ let g:PaperColor_Theme_Options = {
 In general, for each language, built-in functions and constants are not highlighted.
 This is intentional; the vim syntax file often lags behind actual language development.
 To override the default behavior, optionally place a language section in `g:PaperColor_Theme_Options`.
-An example configuration is available below, and will be updated as new languages are supported.
+An example configuration is available below
 
 
 ```VimL
@@ -131,6 +161,15 @@ let g:PaperColor_Theme_Options = {
   \   }
   \ }
 ```
+
+#### Currently available language options
+
+language | option                       | value     | default
+------   | ------                       | ------    | ------
+`c`      | `highlight_builtins`         | 1: enable | 0: disable
+`cpp`    | `highlight_standard_library` | 1: enable | 0: disable
+`python` | `highlight_builtins`         | 1: enable | 0: disable
+
 
 ## Syntax Highlighting Plugins Target
 There are syntax highlighting enhancement plugins that improve upon Vim built-in syntax highlighting, and each can have many different implementations. This is the list of plugins that this color scheme targets.

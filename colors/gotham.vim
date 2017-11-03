@@ -166,7 +166,7 @@ call s:Col('VertSplit', 'blue', s:linenr_background)
 call s:Col('StatusLineNC', 'blue', 'base2')
 
 " Matching parenthesis.
-call s:Col('MatchParen', 'base1', 'orange')
+call s:Col('MatchParen', 'base6', 'orange')
 
 " Special keys, e.g. some of the chars in 'listchars'. See ':h listchars'.
 call s:Col('SpecialKey', 'base3')
@@ -261,6 +261,12 @@ let g:unite_source_grep_search_word_highlight = 'UniteGrep'
 " ale https://github.com/w0rp/ale
 call s:Col('ALEWarningSign', 'yellow', s:linenr_background)
 call s:Col('ALEErrorSign', 'red', s:linenr_background)
+
+" neomake https://github.com/neomake/neomake
+call s:Col('NeomakeWarningSign', 'yellow', s:linenr_background)
+call s:Col('NeomakeErrorSign', 'red', s:linenr_background)
+call s:Col('NeomakeWarning', 'yellow')
+call s:Col('NeomakeError', 'red')
 
 " Cleanup =====================================================================
 

@@ -85,7 +85,7 @@ let colorgroup['Normal']       = {"GUIFG": _cloud,     "GUIBG":  _rock_dark}
 " ------------------------
 let colorgroup['Darker']       = {"GUIFG": _gray,      "GUIBG":  _rock_dark}
 let colorgroup['ColorColumn']  = {"GUIFG": _rock_dark, "GUIBG":  _pink}
-let colorgroup['Conceal']      = {"GUIFG": _cloud,     "GUIBG":  _powder}
+let colorgroup['Conceal']      = {"GUIFG": _sap,        "GUI": "bold"}
 " let colorgroup['Cursor']       = {"GUIFG": _rock_dark, "GUIBG":  _turquoise}
 let colorgroup['CursorLine']   = {"GUIFG": _cloud,     "GUIBG":  _rock}
 let colorgroup['CursorLineNr'] = {"GUIFG": _gray_dark, "GUIBG":  _rock_dark}
@@ -257,6 +257,19 @@ hi link jsonKeyword           Function
 
 " LaTeX
 hi link texInputFile          PreProc
+hi link texDocType            Constant
+hi link texDocTypeArgs        Function
+hi link texInputFile          Symbol
+hi link texInputFileOpt       String
+hi link texMathMatcher        Statement
+hi link texMathSymbol         Symbol
+hi link texMathZoneA          Symbol
+hi link texMathZoneAS         Symbol
+hi link texSection            Title
+hi link texStatement          Function
+hi link texTypeSize           Symbol
+hi link texTypeStyle          Symbol
+" hi link texSpecialChar        Userdef
 
 " Markdown
 hi link mkdBlockquote         Symbol
@@ -285,6 +298,7 @@ hi link rubyInterpolation     Include
 hi link rubyMacro             Function
 hi link rubyModule            Module
 " hi link RubyPseudoVariable    Type
+hi link rubyStringDelimiter   rubyString
 hi link rubySymbol            Symbol
 
 " SASS

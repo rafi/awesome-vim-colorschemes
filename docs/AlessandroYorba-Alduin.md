@@ -1,12 +1,12 @@
-![Screenshot](https://user-images.githubusercontent.com/11221489/27158103-efd6b814-5119-11e7-9295-f8a7a881da29.png)
+![Screenshot](https://user-images.githubusercontent.com/11221489/31866459-937e8796-b734-11e7-8b65-4e8dcb370c13.png)
+
+![Screenshot](https://user-images.githubusercontent.com/11221489/31866462-9c79199c-b734-11e7-9297-cf94dd159a23.png)
 
 :space_invader: Set Up
 ------
 
-###### Dark Grey Background 
-```VimL
-colorscheme alduin 
-```
+###### Modes 
+The default UI for Alduin is a dark grey UI. However, depending on certain lighting conditions, time of day or personal preference you might want to try some of the darker or lighter versions that are available to you. To enable, add one of the following settings to your .vimrc 
 
 ###### Dragon Aspect - Almost Black Background
 ```VimL

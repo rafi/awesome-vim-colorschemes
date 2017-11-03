@@ -12,7 +12,7 @@ endif
 let colors_name = "orbital"
 
 if &t_Co >= 256 || has("gui_running")
-    hi Normal ctermbg=0 ctermfg=75 cterm=NONE guibg=#000000 guifg=#5fafff gui=NONE
+    hi Normal ctermbg=16 ctermfg=75 cterm=NONE guibg=#000000 guifg=#5fafff gui=NONE
     set background=dark
     hi NonText ctermbg=bg ctermfg=20 cterm=NONE guibg=bg guifg=#0000d7 gui=NONE
     hi Comment ctermbg=bg ctermfg=59 cterm=NONE guibg=bg guifg=#5f5f5f gui=NONE
@@ -30,6 +30,8 @@ if &t_Co >= 256 || has("gui_running")
     hi Underlined ctermbg=235 ctermfg=137 cterm=NONE guibg=#262626 guifg=#af875f gui=NONE
     hi StatusLine ctermbg=bg ctermfg=110 cterm=NONE guibg=bg guifg=#87afd7 gui=NONE
     hi StatusLineNC ctermbg=bg ctermfg=235 cterm=NONE guibg=bg guifg=#262626 gui=NONE
+    hi! link StatusLineTerm StatusLine
+    hi! link StatusLineTermNC StatusLineNC
     hi VertSplit ctermbg=bg ctermfg=235 cterm=NONE guibg=bg guifg=#262626 gui=NONE
     hi TabLine ctermbg=bg ctermfg=25 cterm=NONE guibg=bg guifg=#005faf gui=NONE
     hi TabLineFill ctermbg=235 ctermfg=254 cterm=NONE guibg=#262626 guifg=#e4e4e4 gui=NONE
@@ -41,7 +43,7 @@ if &t_Co >= 256 || has("gui_running")
     hi qfLineNr ctermbg=bg ctermfg=25 cterm=NONE guibg=bg guifg=#005faf gui=NONE
     hi helpLeadBlank ctermbg=bg ctermfg=254 cterm=NONE guibg=bg guifg=#e4e4e4 gui=NONE
     hi helpNormal ctermbg=bg ctermfg=254 cterm=NONE guibg=bg guifg=#e4e4e4 gui=NONE
-    hi Visual ctermbg=110 ctermfg=0 cterm=NONE guibg=#87afd7 guifg=#000000 gui=NONE
+    hi Visual ctermbg=110 ctermfg=16 cterm=NONE guibg=#87afd7 guifg=#000000 gui=NONE
     hi VisualNOS ctermbg=bg ctermfg=254 cterm=NONE guibg=bg guifg=#e4e4e4 gui=NONE
     hi Pmenu ctermbg=235 ctermfg=246 cterm=NONE guibg=#262626 guifg=#949494 gui=NONE
     hi PmenuSbar ctermbg=bg ctermfg=254 cterm=NONE guibg=bg guifg=#e4e4e4 gui=NONE
@@ -55,7 +57,7 @@ if &t_Co >= 256 || has("gui_running")
     hi DiffChange ctermbg=235 ctermfg=246 cterm=NONE guibg=#262626 guifg=#949494 gui=NONE
     hi DiffDelete ctermbg=bg ctermfg=20 cterm=NONE guibg=bg guifg=#0000d7 gui=NONE
     hi DiffText ctermbg=235 ctermfg=110 cterm=NONE guibg=#262626 guifg=#87afd7 gui=NONE
-    hi IncSearch ctermbg=68 ctermfg=0 cterm=NONE guibg=#5f87d7 guifg=#000000 gui=NONE
+    hi IncSearch ctermbg=68 ctermfg=16 cterm=NONE guibg=#5f87d7 guifg=#000000 gui=NONE
     hi Search ctermbg=20 ctermfg=250 cterm=NONE guibg=#0000d7 guifg=#bcbcbc gui=NONE
     hi Directory ctermbg=bg ctermfg=254 cterm=NONE guibg=bg guifg=#e4e4e4 gui=NONE
     hi MatchParen ctermbg=25 ctermfg=223 cterm=bold guibg=#005faf guifg=#ffd7af gui=bold
@@ -70,7 +72,7 @@ if &t_Co >= 256 || has("gui_running")
     hi MoreMsg ctermbg=bg ctermfg=223 cterm=NONE guibg=bg guifg=#ffd7af gui=NONE
     hi Question ctermbg=bg ctermfg=223 cterm=NONE guibg=bg guifg=#ffd7af gui=NONE
     hi WarningMsg ctermbg=bg ctermfg=223 cterm=NONE guibg=bg guifg=#ffd7af gui=NONE
-    hi Cursor ctermbg=68 ctermfg=0 cterm=NONE guibg=#5f87d7 guifg=#000000 gui=NONE
+    hi Cursor ctermbg=68 ctermfg=16 cterm=NONE guibg=#5f87d7 guifg=#000000 gui=NONE
     hi CursorColumn ctermbg=235 ctermfg=NONE cterm=NONE guibg=#262626 guifg=NONE gui=NONE
     hi Function ctermbg=bg ctermfg=250 cterm=NONE guibg=bg guifg=#bcbcbc gui=NONE
     hi Operator ctermbg=bg ctermfg=137 cterm=NONE guibg=bg guifg=#af875f gui=NONE
@@ -123,6 +125,8 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
     hi Underlined ctermbg=grey ctermfg=yellow cterm=NONE
     hi StatusLine ctermbg=bg ctermfg=blue cterm=NONE
     hi StatusLineNC ctermbg=bg ctermfg=grey cterm=NONE
+    hi link StatusLineTerm StatusLine
+    hi link StatusLineTermNC StatusLineNC
     hi VertSplit ctermbg=bg ctermfg=grey cterm=NONE
     hi TabLine ctermbg=bg ctermfg=darkblue cterm=NONE
     hi TabLineFill ctermbg=grey ctermfg=white cterm=NONE

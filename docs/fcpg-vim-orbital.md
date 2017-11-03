@@ -1,5 +1,5 @@
-Vim-orbital
-=============
+![Orbital](img/orbital.png)
+
 Orbital colorscheme for Vim:
 
 - Base16 theme for the standard 256-color palette of most terminals
@@ -64,7 +64,12 @@ augroup END
   Check vim help for 'fillchars': `:h 'fcs`. The lightline theme use the 'stl'
   char in 'fillchars' if it is defined; unset it in your .vimrc to turn on the 
   "solid" status line.
-  
+
+Other Themes
+-------------
+- [Fahrenheit](https://github.com/fcpg/vim-fahrenheit)
+- [Far Out](https://github.com/fcpg/vim-farout)
+
 License
 --------
 [Attribution-ShareAlike 4.0 Int.](https://creativecommons.org/licenses/by-sa/4.0/)

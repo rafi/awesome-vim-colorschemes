@@ -5,61 +5,99 @@
 "    ███████║██║███████╗██║  ██║██║  ██║██║  ██║
 "    ╚══════╝╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝
 
-
 " A Terminal Vim colorscheme
 " Author:       Alessandro Yorba
 " Script URL:   https://github.com/AlessandroYorba/Sierra
 " License:      MIT
 
-" Copyright (c) 2017 Alessandro Yorba
-"
-" Permission is hereby granted, free of charge, to any person obtaining a copy
-" of this software and associated documentation files (the "Software"), to deal
-" in the Software without restriction, including without limitation the rights
-" to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-" copies of the Software, and to permit persons to whom the Software is
-" furnished to do so, subject to the following conditions:
-"
-" The above copyright notice and this permission notice shall be included in
-" all copies or substantial portions of the Software.
-"
-" THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-" IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-" FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-" AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-" LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-" OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-" THE SOFTWARE.
 
-"=================================================================================
-" SIERRA TERMINAL:
-"=================================================================================
-"     Foreground    #e4e4e4             |      Selection     #875f5f             |
-"     Background    #303030             |      Selected Text #1e2834             |
-"     Bold          #ffffff             |                                        |
-"     Links         #005cbb             |                                        |
-"     CursorColor   #e4e4e4             |                                        |
-"     CursorText    #303030             |                                        |
-"=================================================================================
-" ANSI COLORS:                                                                   |
-"=================================================================================
-"---------------------------------------|-----------------------------------------
-"     NORMAL        Hex          xterm  |      BRIGHT        Hex          xterm  |
-"---------------------------------------|-----------------------------------------
-"     Black         #303030      0      |      brBlack       #686868      8      |
-"     Red           #af5f5f      1      |      brRed         #af5f5f      9      |
-"     Green         #d75f5f      2      |      brGreen       #d75f5f      10     |
-"     Yellow        #afd7d7      3      |      brYellow      #afd7d7      11     |
-"     Blue          #af8787      4      |      brBlue        #af8787      12     |
-"     Magenta       #dfaf87      5      |      brMagenta     #dfaf87      13     |
-"     Cyan          #ffafaf      6      |      brCyan        #ffafaf      14     |
-"     White         #e4e4e4      7      |      brWhite       #e4e4e4      15     |
-"---------------------------------------|-----------------------------------------
-"=================================================================================
+" UPDATED:      Nov 1st, 2017
+" CHANGES MADE: Revised StorageClass
+
+
+" MAINTAINER:            Alessandro Yorba       https://github.com/AlessandroYorba
+" Kaolin For Emacs:      ogdenwebb              https://github.com/ogdenwebb
+" Airline Theme:         Danilo Augusto         https://github.com/danilo-augusto
+
+
+" SUPPORTED ENVIRONMENTS:
+" 256 color terminals, Gui versions of vim, and Termguicolors versions of vim
+
+
+" INSTALL INSTRUCTIONS:
+" Unix users, place alduin.vim in ~/.vim/colors
+" Windows users, place alduin.vim in  ~\vimfiles\colors
+
+" SETUP AND CUSTOMIZATION:
+" To enable Sierra as your default colorscheme add the following  to your .vimrc:
+"   colorscheme alduin
+
+" There are several settings for Sierra that you can enable from within your .vimrc
+" Here are some descriptions and examples on how to enable them:
+"
+"   "Darker Grey Background
+"   let g:sierra_Sunset = 1
+"   colorscheme sierra
+
+"   "Darkest Grey Background
+"   let g:sierra_Twilight = 1
+"   colorscheme sierra
+
+"   "Amost Black Background
+"   let g:sierra_Midnight = 1
+"   colorscheme sierra
+
+"   "Black Background
+"   let g:sierra_Pitch = 1
+"   colorscheme sierra
+
+"   "Matching Parens are underlined
+"   let g:sierra_Nevada = 1
+"   colorscheme sierra
+
+"   "Automatically cycles thru modes depending on time of night
+"   let g:sierra_Campfire = 1
+"   colorscheme sierra
+
+
+" MATCHING TERMINAL:
+" The following table is designed to match the default colorscheme of sierra.
+" Please note that there are darker variants available that match the other color
+" settings for sierra_Sunset, sierra_Twilight, sierra_Midnight, sierra_Pitch.
+" All terminal themes for sierra can be found: https://github.com/AlessandroYorba/Sierra
+"-------------------------------------|-----------------------------------------
+"   BASIC        HEX                  |      BASIC         HEX                 |
+"-------------------------------------|-----------------------------------------
+"   Foreground   #dfdfaf              |      Selection     #ffffdf             |
+"   Background   #303030              |      Selected Text #dfdfaf             |
+"   Bold         #ffffff              |                                        |
+"   Links        #005cbb              |                                        |
+"-------------------------------------|-----------------------------------------
+
+"-------------------------------------|-----------------------------------------
+"   CURSOR       HEX                                                           |
+"-------------------------------------|-----------------------------------------
+"   Cursor       #dfdfaf              |                                        |
+"   Cursor Text  #303030              |                                        |
+"-------------------------------------|-----------------------------------------
+
+"-------------------------------------|-----------------------------------------
+"   NORMAL       HEX          XTERM   |      BRIGHT       HEX          XTERM   |
+"-------------------------------------|-----------------------------------------
+"   Black        #303030      0       |      brBlack      #6c6c6c      8       |
+"   Red          #af5f5f      1       |      brRed        #af5f5f      9       |
+"   Green        #d75f5f      2       |      brGreen      #d75f5f      10      |
+"   Yellow       #afd7d7      3       |      brYellow     #afd7d7      11      |
+"   Blue         #af8787      4       |      brBlue       #af8787      12      |
+"   Magenta      #dfaf87      5       |      brMagenta    #dfaf87      13      |
+"   Cyan         #ffafaf      6       |      brCyan       #ffafaf      14      |
+"   White        #dfdfaf      7       |      brWhite      #dfdfaf      15      |
+"-------------------------------------|-----------------------------------------
 
 "=================================================================================
 " SETUP:
 "=================================================================================
+
 
 set background=dark
 
@@ -144,7 +182,6 @@ endif
 "================================================================================
 highlight! Directory              guifg=#af8787  guibg=NONE     gui=NONE       ctermfg=138    ctermbg=NONE  cterm=NONE
 
-highlight! Label                  guifg=#87afaf  guibg=NONE     gui=NONE       ctermfg=109    ctermbg=NONE  cterm=NONE
 highlight! Statement              guifg=#87afaf  guibg=NONE     gui=NONE       ctermfg=109    ctermbg=NONE  cterm=NONE
 highlight! Identifier             guifg=#87afaf  guibg=NONE     gui=NONE       ctermfg=109    ctermbg=NONE  cterm=NONE
 
@@ -168,29 +205,30 @@ highlight! Question               guifg=#dfaf5f  guibg=NONE     gui=NONE       c
 highlight! MoreMsg                guifg=#dfaf5f  guibg=NONE     gui=NONE       ctermfg=179    ctermbg=NONE  cterm=NONE
 
 highlight! String                 guifg=#ffafaf  guibg=NONE     gui=NONE       ctermfg=217    ctermbg=NONE  cterm=NONE
-highlight! Special                guifg=#ffffdf  guibg=NONE     gui=NONE       ctermfg=230    ctermbg=NONE  cterm=NONE
-highlight! StorageClass           guifg=#ffffdf  guibg=NONE     gui=NONE       ctermfg=230    ctermbg=NONE  cterm=NONE
+highlight! Special                guifg=#af8787  guibg=NONE     gui=NONE       ctermfg=138    ctermbg=NONE  cterm=NONE
+highlight! StorageClass           guifg=#af8787  guibg=NONE     gui=NONE       ctermfg=138    ctermbg=NONE  cterm=NONE
 
-highlight! Visual                 guifg=#5f8787  guibg=NONE     gui=reverse    ctermfg=66     ctermbg=NONE    cterm=reverse
+highlight! Visual                 guifg=#5f8787  guibg=NONE     gui=reverse    ctermfg=66     ctermbg=NONE  cterm=reverse
 highlight! MatchParen             guifg=#eeeeee  guibg=#875f5f  gui=NONE       ctermfg=255    ctermbg=95    cterm=NONE
 highlight! WildMenu               guifg=#eeeeee  guibg=#875f5f  gui=NONE       ctermfg=255    ctermbg=95    cterm=NONE
 
-highlight! Search                 guifg=#ffffdf  guibg=NONE     gui=reverse    ctermfg=230    ctermbg=NONE  cterm=reverse
+highlight! Search                 guifg=#dfdfaf  guibg=NONE     gui=reverse    ctermfg=187    ctermbg=NONE  cterm=reverse
 highlight! Todo                   guifg=#eeeeee  guibg=#1c1c1c  gui=reverse    ctermfg=255    ctermbg=234   cterm=reverse
 
-highlight! SpecialComment         guifg=#87afaf  guibg=NONE     gui=reverse    ctermfg=109     ctermbg=NONE  cterm=reverse
-highlight! VimCommentTitle        guifg=#87afaf  guibg=NONE     gui=reverse    ctermfg=109     ctermbg=NONE  cterm=reverse
+highlight! SpecialComment         guifg=#87afaf  guibg=NONE     gui=reverse    ctermfg=109     ctermbg=NONE cterm=reverse
+highlight! VimCommentTitle        guifg=#b2b2b2  guibg=NONE     gui=reverse    ctermfg=249     ctermbg=NONE  cterm=reverse
 
 highlight! Boolean                guifg=#dfafaf  guibg=NONE     gui=NONE       ctermfg=181    ctermbg=NONE  cterm=NONE
 highlight! Operator               guifg=#dfafaf  guibg=NONE     gui=NONE       ctermfg=181    ctermbg=NONE  cterm=NONE
 
-highlight! Underlined             guifg=#87af87  guibg=NONE     gui=NONE       ctermfg=108    ctermbg=NONE  cterm=NONE
+highlight! Underlined             guifg=#dfaf87  guibg=NONE     gui=NONE       ctermfg=180    ctermbg=NONE  cterm=NONE
 
 highlight! htmlArg                guifg=#d78787  guibg=NONE     gui=NONE       ctermfg=174    ctermbg=NONE  cterm=NONE
 
 highlight! ModeMsg                guifg=#5f8787  guibg=NONE     gui=NONE       ctermfg=66     ctermbg=NONE  cterm=NONE
 highlight! Conditional            guifg=#5f8787  guibg=NONE     gui=NONE       ctermfg=66     ctermbg=NONE  cterm=NONE
 highlight! Constant               guifg=#af5f5f  guibg=NONE     gui=NONE       ctermfg=131    ctermbg=NONE  cterm=NONE
+highlight! Label                  guifg=#af5f5f  guibg=NONE     gui=NONE       ctermfg=131    ctermbg=NONE  cterm=NONE
 highlight! CursorLineNr           guifg=#5f8787  guibg=NONE     gui=reverse    ctermfg=66     ctermbg=NONE  cterm=reverse
 highlight! Error                  guifg=#d75f5f  guibg=NONE     gui=reverse    ctermfg=167    ctermbg=NONE  cterm=reverse
 highlight! SignColumn             guifg=#87af87  guibg=NONE     gui=NONE       ctermfg=108    ctermbg=NONE  cterm=NONE
@@ -221,7 +259,7 @@ if 1
     highlight! PmenuSel             guifg=#eeeeee  guibg=#262626  gui=NONE     ctermfg=255   ctermbg=235   cterm=NONE
 
     highlight! StatusLineNC         guifg=#767676  guibg=#262626  gui=NONE     ctermfg=243   ctermbg=235   cterm=NONE
-    highlight! VertSplit            guifg=#767676  guibg=#262626  gui=NONE     ctermfg=243   ctermbg=235   cterm=NONE
+    highlight! VertSplit            guifg=#262626  guibg=#303030  gui=NONE     ctermfg=235   ctermbg=236   cterm=NONE
     highlight! TabLine              guifg=#767676  guibg=#262626  gui=NONE     ctermfg=243   ctermbg=235   cterm=NONE
     highlight! Pmenu                guifg=#767676  guibg=#262626  gui=NONE     ctermfg=243   ctermbg=235   cterm=NONE
     highlight! LineNr               guifg=#767676  guibg=#262626  gui=NONE     ctermfg=243   ctermbg=235   cterm=NONE
@@ -252,7 +290,7 @@ if g:sierra_Sunset
     highlight! PmenuSel             guifg=#eeeeee  guibg=#1c1c1c  gui=NONE     ctermfg=255   ctermbg=234   cterm=NONE
 
     highlight! StatusLineNC         guifg=#6c6c6c  guibg=#1c1c1c  gui=NONE     ctermfg=242   ctermbg=234   cterm=NONE
-    highlight! VertSplit            guifg=#6c6c6c  guibg=#1c1c1c  gui=NONE     ctermfg=242   ctermbg=234   cterm=NONE
+    highlight! VertSplit            guifg=#1c1c1c  guibg=#262626  gui=NONE     ctermfg=234   ctermbg=235   cterm=NONE
     highlight! TabLine              guifg=#6c6c6c  guibg=#1c1c1c  gui=NONE     ctermfg=242   ctermbg=234   cterm=NONE
     highlight! Pmenu                guifg=#6c6c6c  guibg=#1c1c1c  gui=NONE     ctermfg=242   ctermbg=234   cterm=NONE
     highlight! LineNr               guifg=#6c6c6c  guibg=#1c1c1c  gui=NONE     ctermfg=242   ctermbg=234   cterm=NONE
@@ -283,7 +321,7 @@ if g:sierra_Twilight
     highlight! PmenuSel             guifg=#eeeeee  guibg=#121212  gui=NONE     ctermfg=255   ctermbg=233   cterm=NONE
 
     highlight! StatusLineNC         guifg=#626262  guibg=#121212  gui=NONE     ctermfg=241   ctermbg=233   cterm=NONE
-    highlight! VertSplit            guifg=#626262  guibg=#121212  gui=NONE     ctermfg=241   ctermbg=233   cterm=NONE
+    highlight! VertSplit            guifg=#121212  guibg=#1c1c1c  gui=NONE     ctermfg=233   ctermbg=234   cterm=NONE
     highlight! TabLine              guifg=#626262  guibg=#121212  gui=NONE     ctermfg=241   ctermbg=233   cterm=NONE
     highlight! Pmenu                guifg=#626262  guibg=#121212  gui=NONE     ctermfg=241   ctermbg=233   cterm=NONE
     highlight! LineNr               guifg=#626262  guibg=#121212  gui=NONE     ctermfg=241   ctermbg=233   cterm=NONE
@@ -314,7 +352,7 @@ if g:sierra_Midnight
     highlight! PmenuSel             guifg=#eeeeee  guibg=#1c1c1c  gui=none     ctermfg=255   ctermbg=234   cterm=none
 
     highlight! StatusLineNC         guifg=#585858  guibg=#1c1c1c  gui=none     ctermfg=240   ctermbg=234   cterm=none
-    highlight! VertSplit            guifg=#585858  guibg=#1c1c1c  gui=none     ctermfg=240   ctermbg=234   cterm=none
+    highlight! VertSplit            guifg=#1c1c1c  guibg=#121212  gui=none     ctermfg=234   ctermbg=233   cterm=none
     highlight! TabLine              guifg=#585858  guibg=#1c1c1c  gui=none     ctermfg=240   ctermbg=234   cterm=none
     highlight! Pmenu                guifg=#585858  guibg=#1c1c1c  gui=none     ctermfg=240   ctermbg=234   cterm=none
     highlight! LineNr               guifg=#585858  guibg=#1c1c1c  gui=none     ctermfg=240   ctermbg=234   cterm=none
@@ -345,7 +383,7 @@ if g:sierra_Pitch
     highlight! PmenuSel             guifg=#eeeeee  guibg=#121212  gui=NONE     ctermfg=255   ctermbg=233   cterm=NONE
 
     highlight! StatusLineNC         guifg=#4e4e4e  guibg=#121212  gui=NONE     ctermfg=239   ctermbg=233   cterm=NONE
-    highlight! VertSplit            guifg=#4e4e4e  guibg=#121212  gui=NONE     ctermfg=239   ctermbg=233   cterm=NONE
+    highlight! VertSplit            guifg=#121212  guibg=#080808  gui=NONE     ctermfg=233   ctermbg=232   cterm=NONE
     highlight! TabLine              guifg=#4e4e4e  guibg=#121212  gui=NONE     ctermfg=239   ctermbg=233   cterm=NONE
     highlight! Pmenu                guifg=#4e4e4e  guibg=#121212  gui=NONE     ctermfg=239   ctermbg=233   cterm=NONE
     highlight! LineNr               guifg=#4e4e4e  guibg=#121212  gui=NONE     ctermfg=239   ctermbg=233   cterm=NONE
@@ -367,9 +405,23 @@ if g:sierra_Nevada
     highlight! MatchParen         guifg=#ffffff  guibg=#000000  gui=underline  ctermfg=231  ctermbg=16  cterm=underline
 endif
 
-"================================================================================
-" CLEAR SKIES:
-"================================================================================
-if g:sierra_Clear_Skies
-    highlight! CursorLine         guifg=NONE  guibg=NONE  gui=NONE  ctermfg=NONE  ctermbg=NONE  cterm=NONE
-endif
+" LICENSE:
+" Copyright (c) 2017 Alessandro Yorba
+"
+" Permission is hereby granted, free of charge, to any person obtaining a copy
+" of this software and associated documentation files (the "Software"), to deal
+" in the Software without restriction, including without limitation the rights
+" to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+" copies of the Software, and to permit persons to whom the Software is
+" furnished to do so, subject to the following conditions:
+"
+" The above copyright notice and this permission notice shall be included in
+" all copies or substantial portions of the Software.
+"
+" THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+" IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+" FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+" AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+" LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+" OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+" THE SOFTWARE.
