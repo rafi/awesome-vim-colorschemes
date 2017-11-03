@@ -65,6 +65,7 @@ Use your favorite package-manager to install, and enjoy!
 [afterglow]: https://github.com/danilo-augusto/vim-afterglow
 [alduin]: https://github.com/AlessandroYorba/Alduin
 [Apprentice]: https://github.com/romainl/Apprentice
+[Archery]: https://github.com/Badacadabra/vim-archery
 [anderson]: https://github.com/gilgigilgil/anderson.vim
 [angr]: https://github.com/zacanger/angr.vim
 [Atom]: https://github.com/gregsexton/Atom
