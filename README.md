@@ -20,6 +20,8 @@ Use your favorite package-manager to install, and enjoy!
 | [Archery] | Vim colorscheme inspired by Arch Linux colors | ✓ | ✓ |
 | [Atom] | Designed to be very readable in both light and dark environments |   | ✓ |
 | [deep-space] | Intergalactic friendly color scheme based off Hybrid | ✓ | ✓ |
+| [deus] | For the late night coder | ✓ | ✓ |
+| [carbonized] | Inspired by the Carbon keycap set | ✓ (16) | ✓ |
 | [dracula] | Dark theme | ✓ | ✓ |
 | [focuspoint] | Maintain color coordination and important keyword focus |   | ✓ |
 | [flatcolor] | FlatColor colorscheme | ✓ | ✓ |
@@ -42,6 +44,7 @@ Use your favorite package-manager to install, and enjoy!
 | [minimalist] | Darker version of material theme inspired by Sublime Text | ✓ | ✓ |
 | [molokai] | Molokai color scheme | ✓ | ✓ |
 | [molokayo] | Very tweaked molokai based theme | ✓ | ✓ |
+| [nord] | An arctic, north-bluish clean and elegant theme | ✓ (16) | ✓ |
 | [oceanicnext] | Oceanic Next theme | ✓ | ✓ |
 | [one] | Adaptation of one-light and one-dark | ✓ | ✓ |
 | [onedark] | Inspired by Atom's One Dark syntax theme | ✓ | ✓ |
@@ -69,7 +72,9 @@ Use your favorite package-manager to install, and enjoy!
 [anderson]: https://github.com/gilgigilgil/anderson.vim
 [angr]: https://github.com/zacanger/angr.vim
 [Atom]: https://github.com/gregsexton/Atom
+[carbonized]: https://github.com/nightsense/carbonized
 [deep-space]: https://github.com/tyrannicaltoucan/vim-deep-space
+[deus]: https://github.com/ajmwagar/vim-deus
 [dracula]: https://github.com/dracula/vim
 [focuspoint]: https://github.com/chase/focuspoint-vim
 [flatcolor]: https://github.com/MaxSt/FlatColor
@@ -92,6 +97,7 @@ Use your favorite package-manager to install, and enjoy!
 [minimalist]: https://github.com/dikiaap/minimalist
 [molokai]: https://github.com/tomasr/molokai
 [molokayo]: https://github.com/fmoralesc/molokayo
+[nord]: https://github.com/arcticicestudio/nord-vim
 [oceanicnext]: https://github.com/mhartington/oceanic-next
 [one]: https://github.com/rakr/vim-one
 [onedark]: https://github.com/joshdick/onedark.vim

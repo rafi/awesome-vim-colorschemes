@@ -14,14 +14,17 @@ function _dl() {
 }
 
 function _main() {
+	_dl ajmwagar/vim-deus
 	_dl AlessandroYorba/Alduin
 	_dl AlessandroYorba/Sierra
 	_dl andreasvc/vim-256noir
+	_dl arcticicestudio/nord-vim
 	_dl Badacadabra/vim-archery
 	_dl chase/focuspoint-vim
 	_dl christophermca/meta5
 	_dl cseelus/vim-colors-lucid
 	_dl danilo-augusto/vim-afterglow
+	_dl dikiaap/minimalist
 	_dl dracula/vim
 	_dl endel/vim-github-colorscheme
 	_dl fcpg/vim-orbital
@@ -35,15 +38,16 @@ function _main() {
 	_dl junegunn/seoul256.vim
 	_dl keith/parsec.vim
 	_dl kristijanhusak/vim-hybrid-material
+	_dl lifepillar/vim-solarized8
+	_dl liuchengxu/space-vim-dark
 	_dl marcopaganini/termschool-vim-theme
 	_dl MaxSt/FlatColor
 	_dl mhartington/oceanic-next
 	_dl mkarmona/materialbox
 	_dl morhetz/gruvbox
-	_dl lifepillar/vim-solarized8
-	_dl liuchengxu/space-vim-dark
 	_dl NLKNguyen/papercolor-theme
 	_dl nanotech/jellybeans.vim
+	_dl nightsense/carbonized
 	_dl owickstrom/vim-colors-paramount
 	_dl rakr/vim-colors-rakr
 	_dl rakr/vim-one
@@ -60,7 +64,6 @@ function _main() {
 	_dl w0ng/vim-hybrid
 	_dl whatyouhide/vim-gotham
 	_dl wimstefan/Lightning
-	_dl dikiaap/minimalist
 	_dl yorickpeterse/happy_hacking.vim
 	_dl zacanger/angr.vim
 
