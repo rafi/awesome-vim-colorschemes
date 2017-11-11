@@ -168,7 +168,6 @@ call s:hi('Type'       , 68 , '' , 'None'      , 'None')
 call s:hi('Typedef'    , 68 , '' , 'None'      , 'None')
 call s:hi('Underlined' , ''  , '' , 'underline' , 'underline')
 
-
 call s:hi('Search'    , 16 , 76    , 'bold' , 'bold')
 call s:hi('IncSearch' , 16 , 76    , 'bold' , 'bold')
 call s:hi('MatchParen', 40 , s:bg0 , 'bold,underline', 'bold,underline')
@@ -234,7 +233,8 @@ call s:hi('mkdCode'    , 114 , '' , 'None' , 'None')
 call s:hi('mkdItalic'  , 36  , '' , 'None' , 'italic')
 
 " c
-call s:hi('cConstant', 178, '', 'none', 'none')
+call s:hi('cConstant'    , 178 , '' , 'none' , 'none')
+call s:hi('cCustomClass' , 167 , '' , 'bold' , 'bold')
 
 " cpp
 call s:hi('cppSTLexception', 199, '', 'bold', 'bold')
@@ -364,9 +364,10 @@ call s:hi('GitGutterDelete'       , 160 , '' , 'none' , 'none')
 call s:hi('GitGutterChangeDelete' , 140 , '' , 'none' , 'none')
 
 " vim-signify
-call s:hi('SignifySignAdd'    , 36  , '' , 'none' , 'none')
-call s:hi('SignifySignChange' , 178 , '' , 'none' , 'none')
-call s:hi('SignifySignDelete' , 160 , '' , 'none' , 'none')
+call s:hi('SignifySignAdd'         , 36  , '' , 'none' , 'none')
+call s:hi('SignifySignChange'      , 178 , '' , 'none' , 'none')
+call s:hi('SignifySignDelete'      , 160 , '' , 'none' , 'none')
+call s:hi('SignifySignChangeDelete', 140 , '' , 'none' , 'none')
 
 " vim-startify
 hi link StartifyFile Normal

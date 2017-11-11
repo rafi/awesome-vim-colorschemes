@@ -1,3 +1,11 @@
+**This repository has been superseded by [vimspectr](https://github.com/nightsense/vimspectr).**
+
+.
+
+.
+
+.
+
 <h1 id="carbonized">carbonized</h1>
 
 <p>A vim theme inspired by the <a href="https://geekhack.org/index.php?topic=79693.0">Carbon keycap set</a> by T0mb3ry.</p>

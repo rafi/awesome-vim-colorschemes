@@ -63,6 +63,40 @@ applies, use this `background` override:
     \    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
     \}
 
+#### `MatchParen` Colors
+
+Jellybeans sets alternate `MatchParen` colors (magenta on black)
+in some terminals to be more readable out of the box:
+
+- Apple's Terminal.app has default themes with cursor colors
+  that are too close in brightness to Jellybeans' preferred
+  `MatchParen` background color of `#556779` to be
+  clearly distinguishable.
+- Default 16-color terminal palettes don't typically have a
+  color available that can approximate the preferred
+  `MatchParen` background color.
+
+If you use Terminal.app with a brighter cursor color, you can
+use the standard `MatchParen` colors with this override:
+
+    let g:jellybeans_overrides = {
+    \    'MatchParen': { 'guifg': 'ffffff', 'guibg': '556779' },
+    \}
+
+To use the standard `MatchParen` colors in a 16-color terminal,
+configure Low-Color Black as [described in the section
+below](#low-color-black-16-and-8-color-terminals).
+
+If you prefer the alternate `MatchParen` colors, you can use them
+everywhere with
+
+    let g:jellybeans_overrides = {
+    \    'MatchParen': { 'guifg': 'dd0093', 'guibg': '000000',
+    \                    'ctermfg': 'Magenta', 'ctermbg': '' },
+    \}
+
+*Added in version 1.7 (unreleased).*
+
 ### Italics
 
 Jellybeans disables italics in terminal Vim by default, as some
@@ -81,19 +115,16 @@ If you don't want italics even in GUI Vim, add
 ### Low-Color Black (16 and 8 color terminals)
 
 Since the background on a dark terminal is usually black already,
-Jellybeans appropriates the black ANSI color as a dark grey and
-uses no color when it really wants black.
+Jellybeans can appropriate the black ANSI color as a dark grey and
+use no color when it really wants black.
 
-If you can’t or don’t want to change your terminal’s color
-mappings, add
+After changing your terminal’s color palette (`#444444` is
+suggested), add this to your .vimrc:
 
-    let g:jellybeans_use_lowcolor_black = 0
+    let g:jellybeans_use_lowcolor_black = 1
 
-to your .vimrc to render “black” text as Vim’s grey (ANSI white).
-
-Users of Apple’s pre-10.7 Terminal.app can use the TerminalColours
-plugin ([Leopard][tc-leopard], [Snow Leopard][tc-snowleopard]) to
-change the default colors.
+*This option was changed to be disabled by default in version
+1.7 (unreleased).*
 
 ## Screenshots
 
@@ -109,8 +140,6 @@ set guifont=Monaco:h10 noanti
 [ir_black]: https://web.archive.org/web/20140211124943/http://toddwerth.com/2008/01/25/a-black-os-x-leopard-terminal-theme-that-is-actually-readable/
 [twilight]: http://www.vim.org/scripts/script.php?script_id=1677
 [vimscript]: http://www.vim.org/scripts/script.php?script_id=2555
-[tc-leopard]: http://ciaranwal.sh/2007/11/01/customising-colours-in-leopard-terminal
-[tc-snowleopard]: https://github.com/timmfin/terminalcolours
 [preview-ss]: https://nanotech.nanotechcorp.net/downloads/jellybeans-preview.png
 [ss-anchor]: #screenshots
 [monaco]: https://en.wikipedia.org/wiki/Monaco_(typeface)

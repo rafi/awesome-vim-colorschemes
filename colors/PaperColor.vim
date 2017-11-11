@@ -891,7 +891,7 @@ fun! s:set_color_variables()
   " often called helps speeding things up quite a bit. Think of this like macro.
   "
   " If you are familiar with the old code base (v0.9 and ealier), this way of
-  " generate variables dramatically increases the loading speed.
+  " generate variables dramatically reduces the loading speed.
   " None of previous optimization tricks gets anywhere near this.
   if s:mode == s:MODE_GUI_COLOR
     fun! s:create_color_variables(color_name, rich_color, term_color)
@@ -1921,6 +1921,21 @@ fun! s:apply_syntax_highlightings()
   exec 'hi sedFunction' . s:fg_aqua . s:ft_bold
   exec 'hi sedBranch' . s:fg_green . s:ft_bold
   exec 'hi sedLabel' . s:fg_green . s:ft_bold
+
+  " GNU awk highlighting
+  exec 'hi awkPatterns' . s:fg_pink . s:ft_bold
+  exec 'hi awkSearch' . s:fg_pink
+  exec 'hi awkRegExp' . s:fg_blue . s:ft_bold
+  exec 'hi awkCharClass' . s:fg_blue . s:ft_bold
+  exec 'hi awkFieldVars' . s:fg_green . s:ft_bold
+  exec 'hi awkStatement' . s:fg_blue . s:ft_bold
+  exec 'hi awkFunction' . s:fg_blue
+  exec 'hi awkVariables' . s:fg_green . s:ft_bold
+  exec 'hi awkArrayElement' . s:fg_orange
+  exec 'hi awkOperator' . s:fg_foreground
+  exec 'hi awkBoolLogic' . s:fg_foreground
+  exec 'hi awkExpression' . s:fg_foreground
+  exec 'hi awkSpecialPrintf' . s:fg_olive . s:ft_bold
 
   " }}}
 

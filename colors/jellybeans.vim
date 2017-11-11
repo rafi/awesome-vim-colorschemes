@@ -73,7 +73,7 @@ endif
 
 " Configuration Variables:
 " - g:jellybeans_overrides          (default = {})
-" - g:jellybeans_use_lowcolor_black (default = 1)
+" - g:jellybeans_use_lowcolor_black (default = 0)
 " - g:jellybeans_use_gui_italics    (default = 1)
 " - g:jellybeans_use_term_italics   (default = 0)
 
@@ -111,14 +111,14 @@ if exists("g:jellybeans_background_color")
   endif
 endif
 
-if !exists("g:jellybeans_use_lowcolor_black") || g:jellybeans_use_lowcolor_black
+if exists("g:jellybeans_use_lowcolor_black") && g:jellybeans_use_lowcolor_black
   let s:termBlack = "Black"
 else
   let s:termBlack = "Grey"
 endif
 
-" When `termguicolors` is set, Vim[^1] ignores `guibg=NONE` after
-" `guibg` is already set to a color. See:
+" When `termguicolors` is set, Vim[^1] ignores `hi Normal guibg=NONE`
+" after Normal's `guibg` is already set to a color. See:
 "
 " - https://github.com/vim/vim/issues/981
 " - https://github.com/nanotech/jellybeans.vim/issues/64
@@ -128,9 +128,6 @@ endif
 " background color isn't set to a value different from its override.
 "
 " [^1]: Tested on 8.0.567. Does not apply to Neovim.
-"
-" TODO: Enable this behavior for all highlights by applying
-"       overrides before calling highlight commands.
 "
 if has_key(s:overrides, "background") && has_key(s:overrides["background"], "guibg")
     let s:background_color = s:overrides["background"]["guibg"]
@@ -395,19 +392,41 @@ endfun
 call s:X("Normal","e8e8d3",s:background_color,"","White","")
 set background=dark
 
-if version >= 700
-  call s:X("CursorLine","","1c1c1c","","",s:termBlack)
-  call s:X("CursorColumn","","1c1c1c","","",s:termBlack)
-  call s:X("MatchParen","ffffff","556779","bold","","DarkCyan")
+call s:X("CursorLine","","1c1c1c","","",s:termBlack)
+call s:X("CursorColumn","","1c1c1c","","",s:termBlack)
 
-  call s:X("TabLine","000000","b0b8c0","italic","",s:termBlack)
-  call s:X("TabLineFill","9098a0","","","",s:termBlack)
-  call s:X("TabLineSel","000000","f0f0f0","italic,bold",s:termBlack,"White")
-
-  " Auto-completion
-  call s:X("Pmenu","ffffff","606060","","White",s:termBlack)
-  call s:X("PmenuSel","101010","eeeeee","",s:termBlack,"White")
+" Some of Terminal.app's default themes have a cursor color
+" too close to Jellybeans' preferred MatchParen background
+" color to be easily distinguishable. Other terminals tend
+" to use a brighter cursor color.
+"
+" Use a more distinct color in Terminal.app, and also in
+" low-color terminals if the preferred background color is
+" not available.
+if !has('gui_running') && $TERM_PROGRAM == "Apple_Terminal"
+    let s:matchParenGuiFg = "dd0093"
+    let s:matchParenGuiBg = "000000"
+else
+    let s:matchParenGuiFg = "ffffff"
+    let s:matchParenGuiBg = "556779"
 endif
+if s:termBlack != "Black"
+    let s:matchParenTermFg = "Magenta"
+    let s:matchParenTermBg = ""
+else
+    let s:matchParenTermFg = ""
+    let s:matchParenTermBg = s:termBlack
+endif
+call s:X("MatchParen",s:matchParenGuiFg,s:matchParenGuiBg,"bold",
+\                     s:matchParenTermFg,s:matchParenTermBg)
+
+call s:X("TabLine","000000","b0b8c0","italic","",s:termBlack)
+call s:X("TabLineFill","9098a0","","","",s:termBlack)
+call s:X("TabLineSel","000000","f0f0f0","italic,bold",s:termBlack,"White")
+
+" Auto-completion
+call s:X("Pmenu","ffffff","606060","","White",s:termBlack)
+call s:X("PmenuSel","101010","eeeeee","",s:termBlack,"White")
 
 call s:X("Visual","","404040","","",s:termBlack)
 call s:X("Cursor",s:background_color,"b0d0f0","","","")
