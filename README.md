@@ -118,6 +118,7 @@ Use your favorite package-manager to install, and enjoy!
 
 ## Other Collections
 
+- [`nightsense/vimspectr`](https://github.com/nightsense/vimspectr) - Assemble your own Vim theme (choose base hue + saturation curve)
 - [`chriskempson/base16-vim`](https://github.com/chriskempson/base16-vim) - Syntax highlighting for hackers
-- [`mswift42/vim-themes`](https://github.com/mswift42/vim-themes) - Some emacs themes ported to vim
+- [`mswift42/vim-themes`](https://github.com/mswift42/vim-themes) - Some emacs themes ported to Vim
 - [`mkarmona/colorsbox`](https://github.com/mkarmona/colorsbox)
