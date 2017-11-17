@@ -30,6 +30,7 @@ Use your favorite package-manager to install, and enjoy!
 | [gotham] | Very dark vim colorscheme | ✓ | ✓ |
 | [gruvbox] | Retro groove color scheme | ✓ | ✓ |
 | [happy hacking] | Fairly small set of colors instead of throwing rainbows at your face | ✓ | ✓ |
+| [Iceberg] | Dark blue color scheme | ✓ | ✓ |
 | [papercolor] | Light and Dark color schemes inspired by Google's Material Design | ✓ | ✓ |
 | [parsec] | Color scheme for people tired of solarized  | ✓ (16) | ✓ |
 | [scheakur] | A light/dark colorscheme  | ✓ | ✓ |
@@ -88,6 +89,7 @@ Use your favorite package-manager to install, and enjoy!
 [scheakur]: https://github.com/scheakur/vim-scheakur
 [hybrid]: https://github.com/w0ng/vim-hybrid
 [hybrid-material]: https://github.com/kristijanhusak/vim-hybrid-material
+[Iceberg]: https://github.com/cocopon/iceberg.vim
 [jellybeans]: https://github.com/nanotech/jellybeans.vim
 [lightning]: https://github.com/wimstefan/Lightning
 [lucid]: https://github.com/cseelus/vim-colors-lucid
