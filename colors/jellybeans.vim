@@ -65,7 +65,13 @@ endif
 
 let colors_name = "jellybeans"
 
-if has("gui_running") || (has('termguicolors') && &termguicolors) || &t_Co >= 88
+if has("gui_running") || (has('termguicolors') && &termguicolors)
+  let s:true_color = 1
+else
+  let s:true_color = 0
+endif
+
+if s:true_color || &t_Co >= 88
   let s:low_color = 0
 else
   let s:low_color = 1
@@ -136,9 +142,10 @@ endif
 " Color approximation functions by Henry So, Jr. and David Liang {{{
 " Added to jellybeans.vim by Daniel Herbert
 
-" returns an approximate grey index for the given grey level
-fun! s:grey_number(x)
-  if &t_Co == 88
+if &t_Co == 88
+
+  " returns an approximate grey index for the given grey level
+  fun! s:grey_number(x)
     if a:x < 23
       return 0
     elseif a:x < 69
@@ -160,24 +167,10 @@ fun! s:grey_number(x)
     else
       return 9
     endif
-  else
-    if a:x < 14
-      return 0
-    else
-      let l:n = (a:x - 8) / 10
-      let l:m = (a:x - 8) % 10
-      if l:m < 5
-        return l:n
-      else
-        return l:n + 1
-      endif
-    endif
-  endif
-endfun
+  endfun
 
-" returns the actual grey level represented by the grey index
-fun! s:grey_level(n)
-  if &t_Co == 88
+  " returns the actual grey level represented by the grey index
+  fun! s:grey_level(n)
     if a:n == 0
       return 0
     elseif a:n == 1
@@ -199,18 +192,10 @@ fun! s:grey_level(n)
     else
       return 255
     endif
-  else
-    if a:n == 0
-      return 0
-    else
-      return 8 + (a:n * 10)
-    endif
-  endif
-endfun
+  endfun
 
-" returns the palette index for the given grey index
-fun! s:grey_color(n)
-  if &t_Co == 88
+  " returns the palette index for the given grey index
+  fun! s:grey_color(n)
     if a:n == 0
       return 16
     elseif a:n == 9
@@ -218,20 +203,10 @@ fun! s:grey_color(n)
     else
       return 79 + a:n
     endif
-  else
-    if a:n == 0
-      return 16
-    elseif a:n == 25
-      return 231
-    else
-      return 231 + a:n
-    endif
-  endif
-endfun
+  endfun
 
-" returns an approximate color index for the given color level
-fun! s:rgb_number(x)
-  if &t_Co == 88
+  " returns an approximate color index for the given color level
+  fun! s:rgb_number(x)
     if a:x < 69
       return 0
     elseif a:x < 172
@@ -241,7 +216,65 @@ fun! s:rgb_number(x)
     else
       return 3
     endif
-  else
+  endfun
+
+  " returns the actual color level for the given color index
+  fun! s:rgb_level(n)
+    if a:n == 0
+      return 0
+    elseif a:n == 1
+      return 139
+    elseif a:n == 2
+      return 205
+    else
+      return 255
+    endif
+  endfun
+
+  " returns the palette index for the given R/G/B color indices
+  fun! s:rgb_color(x, y, z)
+    return 16 + (a:x * 16) + (a:y * 4) + a:z
+  endfun
+
+else " assuming &t_Co == 256
+
+  " returns an approximate grey index for the given grey level
+  fun! s:grey_number(x)
+    if a:x < 14
+      return 0
+    else
+      let l:n = (a:x - 8) / 10
+      let l:m = (a:x - 8) % 10
+      if l:m < 5
+        return l:n
+      else
+        return l:n + 1
+      endif
+    endif
+  endfun
+
+  " returns the actual grey level represented by the grey index
+  fun! s:grey_level(n)
+    if a:n == 0
+      return 0
+    else
+      return 8 + (a:n * 10)
+    endif
+  endfun
+
+  " returns the palette index for the given grey index
+  fun! s:grey_color(n)
+    if a:n == 0
+      return 16
+    elseif a:n == 25
+      return 231
+    else
+      return 231 + a:n
+    endif
+  endfun
+
+  " returns an approximate color index for the given color level
+  fun! s:rgb_number(x)
     if a:x < 75
       return 0
     else
@@ -253,38 +286,23 @@ fun! s:rgb_number(x)
         return l:n + 1
       endif
     endif
-  endif
-endfun
+  endfun
 
-" returns the actual color level for the given color index
-fun! s:rgb_level(n)
-  if &t_Co == 88
-    if a:n == 0
-      return 0
-    elseif a:n == 1
-      return 139
-    elseif a:n == 2
-      return 205
-    else
-      return 255
-    endif
-  else
+  " returns the actual color level for the given color index
+  fun! s:rgb_level(n)
     if a:n == 0
       return 0
     else
       return 55 + (a:n * 40)
     endif
-  endif
-endfun
+  endfun
 
-" returns the palette index for the given R/G/B color indices
-fun! s:rgb_color(x, y, z)
-  if &t_Co == 88
-    return 16 + (a:x * 16) + (a:y * 4) + a:z
-  else
+  " returns the palette index for the given R/G/B color indices
+  fun! s:rgb_color(x, y, z)
     return 16 + (a:x * 36) + (a:y * 6) + a:z
-  endif
-endfun
+  endfun
+
+endif
 
 " returns the palette index to approximate the given R/G/B color levels
 fun! s:color(r, g, b)
@@ -360,15 +378,18 @@ endfun
 " sets the highlighting for the given group
 fun! s:X(group, fg, bg, attr, lcfg, lcbg)
   if s:low_color
-    exec "hi ".a:group.
+    let l:cmd = "hi ".a:group.
     \ " ctermfg=".s:prefix_highlight_value_with("", a:lcfg).
     \ " ctermbg=".s:prefix_highlight_value_with("", a:lcbg)
   else
-    exec "hi ".a:group.
+    let l:cmd = "hi ".a:group.
     \ " guifg=".s:prefix_highlight_value_with("#", a:fg).
-    \ " guibg=".s:prefix_highlight_value_with("#", a:bg).
-    \ " ctermfg=".s:rgb(a:fg).
-    \ " ctermbg=".s:rgb(a:bg)
+    \ " guibg=".s:prefix_highlight_value_with("#", a:bg)
+    if !s:true_color
+      let l:cmd = l:cmd.
+      \ " ctermfg=".s:rgb(a:fg).
+      \ " ctermbg=".s:rgb(a:bg)
+    endif
   endif
 
   let l:attr = s:prefix_highlight_value_with("", a:attr)
@@ -385,7 +406,8 @@ fun! s:X(group, fg, bg, attr, lcfg, lcbg)
     let l:gui_attr = s:remove_italic_attr(l:attr)
   endif
 
-  exec "hi ".a:group." gui=".l:gui_attr." cterm=".l:cterm_attr
+  let l:cmd = l:cmd." gui=".l:gui_attr." cterm=".l:cterm_attr
+  exec l:cmd
 endfun
 " }}}
 

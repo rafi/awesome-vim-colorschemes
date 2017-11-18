@@ -3,7 +3,7 @@
 " Description: a retro-modern colorscheme in Vim
 " Author: ajmwagar
 " Source: https://github.com/ajmwagar/deus
-" Last Modified: 04 Sep 2015
+" Last Modified: 14 Nov 2017
 " -----------------------------------------------------------------------------
 
 " Supporting code -------------------------------------------------------------
@@ -65,10 +65,6 @@ if !exists('g:deus_invert_indent_guides')
   let g:deus_invert_indent_guides=0
 endif
 
-if exists('g:deus_contrast')
-  echo 'g:deus_contrast is deprecated; use g:deus_contrast_light and g:deus_contrast_dark instead'
-endif
-
 if !exists('g:deus_contrast_dark')
   let g:deus_contrast_dark='medium'
 endif
@@ -86,9 +82,7 @@ let s:is_dark=(&background == 'dark')
 let s:ds = {}
 
 " fill it with absolute colors
-let s:ds.dark0_hard  = ['#2C313A', 234]     " 29-32-33
 let s:ds.dark0       = ['#2C323B', 235]     " 40-40-40
-let s:ds.dark0_soft  = ['#28282f', 236]     " 50-48-47
 let s:ds.dark1       = ['#3c3836', 237]     " 60-56-54
 let s:ds.dark2       = ['#2C313A', 239]     " 80-73-69
 let s:ds.dark3       = ['#665c54', 241]     " 102-92-84
@@ -98,12 +92,7 @@ let s:ds.dark4_256   = ['#7c6f64', 243]     " 124-111-100
 let s:ds.gray_245    = ['#928374', 245]     " 146-131-116
 let s:ds.gray_244    = ['#928374', 244]     " 146-131-116
 
-let s:ds.light0_hard = ['#d3d3d3', 230]     " 249-245-215
 let s:ds.light0      = ['#d2d2d2', 229]     " 253-244-193
-let s:ds.light0_soft = ['#d4d4d4', 228]     " 242-229-188
-"let s:ds.light0_hard  = ['#2C313A', 234]     " 29-32-33
-"let s:ds.light0       = ['#2C323B', 235]     " 40-40-40
-"let s:ds.light0_soft  = ['#28282f', 236]     " 50-48-47
 let s:ds.light1      = ['#ebdbb2', 223]     " 235-219-178
 let s:ds.light2      = ['#d5c4a1', 250]     " 213-196-161
 let s:ds.light3      = ['#bdae93', 248]     " 189-174-147
@@ -118,21 +107,6 @@ let s:ds.bright_purple  = ['#C678DD', 175]     " 211-134-155
 let s:ds.bright_aqua    = ['#8ec07c', 108]     " 142-192-124
 let s:ds.bright_orange  = ['#fe8019', 208]     " 254-128-25
 
-let s:ds.neutral_red    = ['#cc241d', 124]     " 204-36-29
-let s:ds.neutral_green  = ['#98971a', 106]     " 152-151-26
-let s:ds.neutral_yellow = ['#d79921', 172]     " 215-153-33
-let s:ds.neutral_blue   = ['#458588', 66]      " 69-133-136
-let s:ds.neutral_purple = ['#b16286', 132]     " 177-98-134
-let s:ds.neutral_aqua   = ['#689d6a', 72]      " 104-157-106
-let s:ds.neutral_orange = ['#d65d0e', 166]     " 214-93-14
-
-let s:ds.faded_red      = ['#9d0006', 88]      " 157-0-6
-let s:ds.faded_green    = ['#79740e', 100]     " 121-116-14
-let s:ds.faded_yellow   = ['#b57614', 136]     " 181-118-20
-let s:ds.faded_blue     = ['#076678', 24]      " 7-102-120
-let s:ds.faded_purple   = ['#8f3f71', 96]      " 143-63-113
-let s:ds.faded_aqua     = ['#427b58', 66]      " 66-123-88
-let s:ds.faded_orange   = ['#af3a03', 130]     " 175-58-3
 " }}}
 " Setup Emphasis: {{{
 
@@ -169,14 +143,7 @@ let s:vim_fg = ['fg', 'fg']
 let s:none = ['NONE', 'NONE']
 
 " determine relative colors
-if s:is_dark
   let s:bg0  = s:ds.dark0
-  if g:deus_contrast_dark == 'soft'
-    let s:bg0  = s:ds.dark0_soft
-  elseif g:deus_contrast_dark == 'hard'
-    let s:bg0  = s:ds.dark0_hard
-  endif
-
   let s:bg1  = s:ds.dark1
   let s:bg2  = s:ds.dark2
   let s:bg3  = s:ds.dark3
@@ -199,37 +166,6 @@ if s:is_dark
   let s:purple = s:ds.bright_purple
   let s:aqua   = s:ds.bright_aqua
   let s:orange = s:ds.bright_orange
-else
-  let s:bg0  = s:ds.light0
-  if g:deus_contrast_light == 'soft'
-    let s:bg0  = s:ds.light0_soft
-  elseif g:deus_contrast_light == 'hard'
-    let s:bg0  = s:ds.light0_hard
-  endif
-
-  let s:bg1  = s:ds.light1
-  let s:bg2  = s:ds.light2
-  let s:bg3  = s:ds.light3
-  let s:bg4  = s:ds.light4
-
-  let s:gray = s:ds.gray_244
-
-  let s:fg0 = s:ds.dark0
-  let s:fg1 = s:ds.dark1
-  let s:fg2 = s:ds.dark2
-  let s:fg3 = s:ds.dark3
-  let s:fg4 = s:ds.dark4
-
-  let s:fg4_256 = s:ds.dark4_256
-
-  let s:red    = s:ds.bright_red
-  let s:green  = s:ds.bright_green
-  let s:yellow = s:ds.bright_yellow
-  let s:blue   = s:ds.bright_blue
-  let s:purple = s:ds.bright_purple
-  let s:aqua   = s:ds.bright_aqua
-  let s:orange = s:ds.bright_orange
-endif
 
 " reset to 16 colors fallback
 "if g:deus_termcolors == 16
@@ -497,7 +433,7 @@ hi! link Directory deusGreenBold
 hi! link Title deusGreenBold
 
 " Error messages on the command line
-call s:HL('ErrorMsg',   s:vim_bg, s:red, s:bold)
+call s:HL('ErrorMsg',   s:red, s:bg1, s:bold)
 " More prompt: -- More --
 hi! link MoreMsg deusYellowBold
 " Current mode message: -- INSERT --
@@ -545,6 +481,7 @@ endif
 call s:HL('Comment', s:gray, s:none, s:italicize_comments)
 call s:HL('Todo', s:vim_fg, s:vim_bg, s:bold . s:italic)
 call s:HL('Error', s:red, s:vim_bg, s:bold . s:inverse)
+"call s:HL("Error", { "fg": s:red, "bg": s:vim_bg }) " any erroneous construct
 
 " Generic statement
 hi! link Statement deusRed

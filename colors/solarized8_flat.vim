@@ -4,7 +4,7 @@
 " Maintainer:   Lifepillar <lifepillar@lifepillar.me>
 " Website:      https://github.com/lifepillar/vim-solarized8
 " License:      OSI approved MIT license
-" Last Updated: Sat Nov 11 14:26:11 2017
+" Last Updated: Sun Nov 12 11:51:26 2017
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < (get(g:, 'solarized_use16', 0) ? 16 : 256))
@@ -58,16 +58,28 @@ if !get(g:, 'solarized_use16', 0)
       hi CursorLineNr ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
       hi NonText ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
       hi SpecialKey ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+      hi SpellBad ctermfg=61 ctermbg=254 guifg=#6c71c4 guibg=#eee8d5 guisp=#dc322f cterm=NONE,reverse,underline gui=NONE,reverse,undercurl
+      hi SpellCap ctermfg=61 ctermbg=254 guifg=#6c71c4 guibg=#eee8d5 guisp=#dc322f cterm=NONE,reverse,underline gui=NONE,reverse,undercurl
+      hi SpellLocal ctermfg=136 ctermbg=254 guifg=#b58900 guibg=#eee8d5 guisp=#dc322f cterm=NONE,reverse,underline gui=NONE,reverse,undercurl
+      hi SpellRare ctermfg=37 ctermbg=254 guifg=#2aa198 guibg=#eee8d5 guisp=#dc322f cterm=NONE,reverse,underline gui=NONE,reverse,undercurl
       hi Title ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
     elseif get(g:, "solarized_visibility", "") == "low"
       hi CursorLineNr ctermfg=242 ctermbg=NONE guifg=#586e75 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
       hi NonText ctermfg=236 ctermbg=NONE guifg=#073642 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
       hi SpecialKey ctermfg=236 ctermbg=NONE guifg=#073642 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+      hi SpellBad ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,underline gui=NONE,undercurl
+      hi SpellCap ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,underline gui=NONE,undercurl
+      hi SpellLocal ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=#b58900 cterm=NONE,underline gui=NONE,undercurl
+      hi SpellRare ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=#2aa198 cterm=NONE,underline gui=NONE,undercurl
       hi Title ctermfg=242 ctermbg=NONE guifg=#586e75 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
     else
       hi CursorLineNr ctermfg=246 ctermbg=NONE guifg=#839496 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
       hi NonText ctermfg=66 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
       hi SpecialKey ctermfg=66 ctermbg=236 guifg=#657b83 guibg=#073642 guisp=NONE cterm=NONE,bold gui=NONE,bold
+      hi SpellBad ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,underline gui=NONE,undercurl
+      hi SpellCap ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,underline gui=NONE,undercurl
+      hi SpellLocal ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=#b58900 cterm=NONE,underline gui=NONE,undercurl
+      hi SpellRare ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=#2aa198 cterm=NONE,underline gui=NONE,undercurl
       hi Title ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
     endif
     if get(g:, "solarized_diffmode", "") == "high"
@@ -104,10 +116,6 @@ if !get(g:, 'solarized_use16', 0)
     hi! link QuickFixLine Search
     hi Search ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
     hi SignColumn ctermfg=246 ctermbg=NONE guifg=#839496 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi SpellBad ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,undercurl gui=NONE,undercurl
-    hi SpellCap ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,undercurl gui=NONE,undercurl
-    hi SpellLocal ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=#b58900 cterm=NONE,undercurl gui=NONE,undercurl
-    hi SpellRare ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=#2aa198 cterm=NONE,undercurl gui=NONE,undercurl
     if get(g:, "solarized_statusline", "") == "low"
       hi StatusLine ctermfg=236 ctermbg=247 guifg=#073642 guibg=#93a1a1 guisp=NONE cterm=NONE,bold,reverse gui=NONE,bold,reverse
       hi StatusLineNC ctermfg=236 ctermbg=242 guifg=#073642 guibg=#586e75 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
@@ -412,6 +420,10 @@ if !get(g:, 'solarized_use16', 0)
     hi MatchParen ctermfg=166 ctermbg=254 guifg=#cb4b16 guibg=#eee8d5 guisp=NONE cterm=NONE,bold,underline gui=NONE,bold,underline
     hi NonText ctermfg=160 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi SpecialKey ctermfg=160 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi SpellBad ctermfg=61 ctermbg=254 guifg=#6c71c4 guibg=#eee8d5 guisp=#dc322f cterm=NONE,reverse,underline gui=NONE,reverse,undercurl
+    hi SpellCap ctermfg=61 ctermbg=254 guifg=#6c71c4 guibg=#eee8d5 guisp=#dc322f cterm=NONE,reverse,underline gui=NONE,reverse,undercurl
+    hi SpellLocal ctermfg=136 ctermbg=254 guifg=#b58900 guibg=#eee8d5 guisp=#cb4b16 cterm=NONE,reverse,underline gui=NONE,reverse,undercurl
+    hi SpellRare ctermfg=37 ctermbg=254 guifg=#2aa198 guibg=#eee8d5 guisp=#cb4b16 cterm=NONE,reverse,underline gui=NONE,reverse,undercurl
     hi Title ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   elseif get(g:, "solarized_visibility", "") == "low"
     if get(g:, 'solarized_old_cursor_style', 0)
@@ -423,6 +435,10 @@ if !get(g:, 'solarized_use16', 0)
     hi MatchParen ctermfg=166 ctermbg=254 guifg=#cb4b16 guibg=#eee8d5 guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi NonText ctermfg=254 ctermbg=NONE guifg=#eee8d5 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi SpecialKey ctermfg=254 ctermbg=NONE guifg=#eee8d5 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+    hi SpellBad ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,underline gui=NONE,undercurl
+    hi SpellCap ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,underline gui=NONE,undercurl
+    hi SpellLocal ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=#b58900 cterm=NONE,underline gui=NONE,undercurl
+    hi SpellRare ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=#2aa198 cterm=NONE,underline gui=NONE,undercurl
     hi Title ctermfg=247 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   else
     if get(g:, 'solarized_old_cursor_style', 0)
@@ -434,6 +450,10 @@ if !get(g:, 'solarized_use16', 0)
     hi MatchParen ctermfg=235 ctermbg=254 guifg=#002b36 guibg=#eee8d5 guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi NonText ctermfg=246 ctermbg=NONE guifg=#839496 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi SpecialKey ctermfg=246 ctermbg=254 guifg=#839496 guibg=#eee8d5 guisp=NONE cterm=NONE,bold gui=NONE,bold
+    hi SpellBad ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,underline gui=NONE,undercurl
+    hi SpellCap ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,underline gui=NONE,undercurl
+    hi SpellLocal ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=#b58900 cterm=NONE,underline gui=NONE,undercurl
+    hi SpellRare ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=#2aa198 cterm=NONE,underline gui=NONE,undercurl
     hi Title ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   endif
   hi ColorColumn ctermfg=NONE ctermbg=254 guifg=NONE guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
@@ -473,10 +493,6 @@ if !get(g:, 'solarized_use16', 0)
   hi! link QuickFixLine Search
   hi Search ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
   hi SignColumn ctermfg=66 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi SpellBad ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,undercurl gui=NONE,undercurl
-  hi SpellCap ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,undercurl gui=NONE,undercurl
-  hi SpellLocal ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=#b58900 cterm=NONE,undercurl gui=NONE,undercurl
-  hi SpellRare ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=#2aa198 cterm=NONE,undercurl gui=NONE,undercurl
   if get(g:, "solarized_statusline", "") == "low"
     hi StatusLine ctermfg=254 ctermbg=242 guifg=#eee8d5 guibg=#586e75 guisp=NONE cterm=NONE,bold,reverse gui=NONE,bold,reverse
     hi StatusLineNC ctermfg=254 ctermbg=247 guifg=#eee8d5 guibg=#93a1a1 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
@@ -768,16 +784,28 @@ if &background ==# 'dark'
     hi CursorLineNr ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi NonText ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi SpecialKey ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi SpellBad ctermfg=13 ctermbg=7 guifg=#6c71c4 guibg=#eee8d5 guisp=#dc322f cterm=NONE,reverse,underline gui=NONE,reverse,undercurl
+    hi SpellCap ctermfg=13 ctermbg=7 guifg=#6c71c4 guibg=#eee8d5 guisp=#dc322f cterm=NONE,reverse,underline gui=NONE,reverse,undercurl
+    hi SpellLocal ctermfg=3 ctermbg=7 guifg=#b58900 guibg=#eee8d5 guisp=#dc322f cterm=NONE,reverse,underline gui=NONE,reverse,undercurl
+    hi SpellRare ctermfg=6 ctermbg=7 guifg=#2aa198 guibg=#eee8d5 guisp=#dc322f cterm=NONE,reverse,underline gui=NONE,reverse,undercurl
     hi Title ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   elseif get(g:, "solarized_visibility", "") == "low"
     hi CursorLineNr ctermfg=10 ctermbg=NONE guifg=#586e75 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi NonText ctermfg=0 ctermbg=NONE guifg=#073642 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi SpecialKey ctermfg=0 ctermbg=NONE guifg=#073642 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi SpellBad ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,underline gui=NONE,undercurl
+    hi SpellCap ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,underline gui=NONE,undercurl
+    hi SpellLocal ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=#b58900 cterm=NONE,underline gui=NONE,undercurl
+    hi SpellRare ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=#2aa198 cterm=NONE,underline gui=NONE,undercurl
     hi Title ctermfg=10 ctermbg=NONE guifg=#586e75 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   else
     hi CursorLineNr ctermfg=12 ctermbg=NONE guifg=#839496 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi NonText ctermfg=11 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi SpecialKey ctermfg=11 ctermbg=0 guifg=#657b83 guibg=#073642 guisp=NONE cterm=NONE,bold gui=NONE,bold
+    hi SpellBad ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,underline gui=NONE,undercurl
+    hi SpellCap ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,underline gui=NONE,undercurl
+    hi SpellLocal ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=#b58900 cterm=NONE,underline gui=NONE,undercurl
+    hi SpellRare ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=#2aa198 cterm=NONE,underline gui=NONE,undercurl
     hi Title ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   endif
   if get(g:, "solarized_diffmode", "") == "high"
@@ -814,10 +842,6 @@ if &background ==# 'dark'
   hi! link QuickFixLine Search
   hi Search ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
   hi SignColumn ctermfg=12 ctermbg=NONE guifg=#839496 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi SpellBad ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,undercurl gui=NONE,undercurl
-  hi SpellCap ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,undercurl gui=NONE,undercurl
-  hi SpellLocal ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=#b58900 cterm=NONE,undercurl gui=NONE,undercurl
-  hi SpellRare ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=#2aa198 cterm=NONE,undercurl gui=NONE,undercurl
   if get(g:, "solarized_statusline", "") == "low"
     hi StatusLine ctermfg=0 ctermbg=14 guifg=#073642 guibg=#93a1a1 guisp=NONE cterm=NONE,bold,reverse gui=NONE,bold,reverse
     hi StatusLineNC ctermfg=0 ctermbg=10 guifg=#073642 guibg=#586e75 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
@@ -1104,6 +1128,10 @@ if get(g:, "solarized_visibility", "") == "high"
   hi MatchParen ctermfg=9 ctermbg=7 guifg=#cb4b16 guibg=#eee8d5 guisp=NONE cterm=NONE,bold,underline gui=NONE,bold,underline
   hi NonText ctermfg=1 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi SpecialKey ctermfg=1 ctermbg=NONE guifg=#dc322f guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+  hi SpellBad ctermfg=13 ctermbg=7 guifg=#6c71c4 guibg=#eee8d5 guisp=#dc322f cterm=NONE,reverse,underline gui=NONE,reverse,undercurl
+  hi SpellCap ctermfg=13 ctermbg=7 guifg=#6c71c4 guibg=#eee8d5 guisp=#dc322f cterm=NONE,reverse,underline gui=NONE,reverse,undercurl
+  hi SpellLocal ctermfg=3 ctermbg=7 guifg=#b58900 guibg=#eee8d5 guisp=#cb4b16 cterm=NONE,reverse,underline gui=NONE,reverse,undercurl
+  hi SpellRare ctermfg=6 ctermbg=7 guifg=#2aa198 guibg=#eee8d5 guisp=#cb4b16 cterm=NONE,reverse,underline gui=NONE,reverse,undercurl
   hi Title ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
 elseif get(g:, "solarized_visibility", "") == "low"
   if get(g:, 'solarized_old_cursor_style', 0)
@@ -1115,6 +1143,10 @@ elseif get(g:, "solarized_visibility", "") == "low"
   hi MatchParen ctermfg=9 ctermbg=7 guifg=#cb4b16 guibg=#eee8d5 guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi NonText ctermfg=7 ctermbg=NONE guifg=#eee8d5 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi SpecialKey ctermfg=7 ctermbg=NONE guifg=#eee8d5 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+  hi SpellBad ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,underline gui=NONE,undercurl
+  hi SpellCap ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,underline gui=NONE,undercurl
+  hi SpellLocal ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=#b58900 cterm=NONE,underline gui=NONE,undercurl
+  hi SpellRare ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=#2aa198 cterm=NONE,underline gui=NONE,undercurl
   hi Title ctermfg=14 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
 else
   if get(g:, 'solarized_old_cursor_style', 0)
@@ -1126,6 +1158,10 @@ else
   hi MatchParen ctermfg=8 ctermbg=7 guifg=#002b36 guibg=#eee8d5 guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi NonText ctermfg=12 ctermbg=NONE guifg=#839496 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi SpecialKey ctermfg=12 ctermbg=7 guifg=#839496 guibg=#eee8d5 guisp=NONE cterm=NONE,bold gui=NONE,bold
+  hi SpellBad ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,underline gui=NONE,undercurl
+  hi SpellCap ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,underline gui=NONE,undercurl
+  hi SpellLocal ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=#b58900 cterm=NONE,underline gui=NONE,undercurl
+  hi SpellRare ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=#2aa198 cterm=NONE,underline gui=NONE,undercurl
   hi Title ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
 endif
 hi ColorColumn ctermfg=NONE ctermbg=7 guifg=NONE guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
@@ -1165,10 +1201,6 @@ hi Question ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NON
 hi! link QuickFixLine Search
 hi Search ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
 hi SignColumn ctermfg=11 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi SpellBad ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,undercurl gui=NONE,undercurl
-hi SpellCap ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=#6c71c4 cterm=NONE,undercurl gui=NONE,undercurl
-hi SpellLocal ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=#b58900 cterm=NONE,undercurl gui=NONE,undercurl
-hi SpellRare ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=#2aa198 cterm=NONE,undercurl gui=NONE,undercurl
 if get(g:, "solarized_statusline", "") == "low"
   hi StatusLine ctermfg=7 ctermbg=10 guifg=#eee8d5 guibg=#586e75 guisp=NONE cterm=NONE,bold,reverse gui=NONE,bold,reverse
   hi StatusLineNC ctermfg=7 ctermbg=14 guifg=#eee8d5 guibg=#93a1a1 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
@@ -1468,14 +1500,26 @@ finish
 " CursorLineNr         orange            none              bold
 " NonText              orange            none              bold
 " SpecialKey           orange            none              reverse
+" SpellBad             violet            base2             t=underline,reverse g=undercurl,reverse s=red
+" SpellCap             violet            base2             t=underline,reverse g=undercurl,reverse s=red
+" SpellLocal           yellow            base2             t=underline,reverse g=undercurl,reverse s=red
+" SpellRare            cyan              base2             t=underline,reverse g=undercurl,reverse s=red
 " Title                yellow            none              bold
 " CursorLineNr         base01            none              bold
 " NonText              base02            none              bold
 " SpecialKey           base02            none              reverse
+" SpellBad             violet            none              t=underline g=undercurl s=violet
+" SpellCap             violet            none              t=underline g=undercurl s=violet
+" SpellLocal           yellow            none              t=underline g=undercurl s=yellow
+" SpellRare            cyan              none              t=underline g=undercurl s=cyan
 " Title                base01            none              bold
 " CursorLineNr         base0             none              bold
 " NonText              base00            none              bold
 " SpecialKey           base00            base02            bold
+" SpellBad             violet            none              t=underline g=undercurl s=violet
+" SpellCap             violet            none              t=underline g=undercurl s=violet
+" SpellLocal           yellow            none              t=underline g=undercurl s=yellow
+" SpellRare            cyan              none              t=underline g=undercurl s=cyan
 " Title                yellow            none              bold
 " DiffAdd              green             none              reverse
 " DiffChange           yellow            none              reverse
@@ -1507,10 +1551,6 @@ finish
 " QuickFixLine     ->  Search
 " Search               yellow            none              reverse
 " SignColumn           base0             none
-" SpellBad             violet            none              undercurl s=violet
-" SpellCap             violet            none              undercurl s=violet
-" SpellLocal           yellow            none              undercurl s=yellow
-" SpellRare            cyan              none              undercurl s=cyan
 " StatusLine           base02            base1             bold,reverse
 " StatusLineNC         base02            base01            reverse
 " TabLineSel           base1             base02
@@ -1771,6 +1811,10 @@ finish
 " MatchParen           orange            base02            bold,underline
 " NonText              red               none              bold
 " SpecialKey           red               none              reverse
+" SpellBad             violet            base02            t=underline,reverse g=undercurl,reverse s=red
+" SpellCap             violet            base02            t=underline,reverse g=undercurl,reverse s=red
+" SpellLocal           yellow            base02            t=underline,reverse g=undercurl,reverse s=orange
+" SpellRare            cyan              base02            t=underline,reverse g=undercurl,reverse s=orange
 " Title                orange            none              bold
 " Cursor               base03            base0
 " Cursor               base03            orange
@@ -1778,6 +1822,10 @@ finish
 " MatchParen           orange            base02            bold
 " NonText              base02            none              bold
 " SpecialKey           base02            none              bold
+" SpellBad             violet            none              t=underline g=undercurl s=violet
+" SpellCap             violet            none              t=underline g=undercurl s=violet
+" SpellLocal           yellow            none              t=underline g=undercurl s=yellow
+" SpellRare            cyan              none              t=underline g=undercurl s=cyan
 " Title                base01            none              bold
 " Cursor               base03            base0
 " Cursor               base03            orange
@@ -1785,6 +1833,10 @@ finish
 " MatchParen           base3             base02            bold
 " NonText              base00            none              bold
 " SpecialKey           base00            base02            bold
+" SpellBad             violet            none              t=underline g=undercurl s=violet
+" SpellCap             violet            none              t=underline g=undercurl s=violet
+" SpellLocal           yellow            none              t=underline g=undercurl s=yellow
+" SpellRare            cyan              none              t=underline g=undercurl s=cyan
 " Title                orange            none              bold
 " ColorColumn          none              base02
 " Conceal              blue              none
@@ -1819,10 +1871,6 @@ finish
 " QuickFixLine     ->  Search
 " Search               yellow            none              reverse
 " SignColumn           base0             none
-" SpellBad             violet            none              undercurl s=violet
-" SpellCap             violet            none              undercurl s=violet
-" SpellLocal           yellow            none              undercurl s=yellow
-" SpellRare            cyan              none              undercurl s=cyan
 " StatusLine           base02            base1             bold,reverse
 " StatusLineNC         base02            base01            reverse
 " TabLineSel           base1             base02
