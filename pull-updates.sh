@@ -22,6 +22,7 @@ function _main() {
 	_dl Badacadabra/vim-archery
 	_dl chase/focuspoint-vim
 	_dl christophermca/meta5
+	_dl cocopon/iceberg.vim
 	_dl cseelus/vim-colors-lucid
 	_dl danilo-augusto/vim-afterglow
 	_dl dikiaap/minimalist
