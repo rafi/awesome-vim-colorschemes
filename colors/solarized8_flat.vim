@@ -4,7 +4,7 @@
 " Maintainer:   Lifepillar <lifepillar@lifepillar.me>
 " Website:      https://github.com/lifepillar/vim-solarized8
 " License:      OSI approved MIT license
-" Last Updated: Sun Nov 12 11:51:26 2017
+" Last Updated: Tue Nov 21 09:39:02 2017
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < (get(g:, 'solarized_use16', 0) ? 16 : 256))
@@ -42,8 +42,10 @@ if !get(g:, 'solarized_use16', 0)
     "  base02: GUI=#073642/rgb(  7, 54, 66)  Term=236 #303030/rgb( 48, 48, 48)  [delta=13.434724]
     if !has('gui_running') && get(g:, 'solarized_termtrans', 0)
       hi Normal ctermfg=246 ctermbg=NONE guifg=#839496 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+      hi Terminal ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
     else
       hi Normal ctermfg=246 ctermbg=235 guifg=#839496 guibg=#002b36 guisp=NONE cterm=NONE gui=NONE
+      hi Terminal ctermfg=fg ctermbg=235 guifg=fg guibg=#002b36 guisp=NONE cterm=NONE gui=NONE
     endif
     hi ColorColumn ctermfg=NONE ctermbg=236 guifg=NONE guibg=#073642 guisp=NONE cterm=NONE gui=NONE
     hi Conceal ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -177,6 +179,8 @@ if !get(g:, 'solarized_use16', 0)
     hi Underlined ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi! link lCursor Cursor
     hi CursorIM ctermfg=NONE ctermbg=fg guifg=NONE guibg=fg guisp=NONE cterm=NONE gui=NONE
+    hi ToolbarLine ctermfg=NONE ctermbg=236 guifg=NONE guibg=#073642 guisp=NONE cterm=NONE gui=NONE
+    hi ToolbarButton ctermfg=247 ctermbg=236 guifg=#93a1a1 guibg=#073642 guisp=NONE cterm=NONE,bold gui=NONE,bold
     if get(g:, 'solarized_extra_hi_groups', 0)
       hi! link vimVar Identifier
       hi! link vimFunc Function
@@ -407,8 +411,10 @@ if !get(g:, 'solarized_use16', 0)
   "   base2: GUI=#073642/rgb(  7, 54, 66)  Term=236 #303030/rgb( 48, 48, 48)  [delta=13.434724]
   if !has('gui_running') && get(g:, 'solarized_termtrans', 0)
     hi Normal ctermfg=66 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi Terminal ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
   else
     hi Normal ctermfg=66 ctermbg=230 guifg=#657b83 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
+    hi Terminal ctermfg=fg ctermbg=230 guifg=fg guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
   endif
   if get(g:, "solarized_visibility", "") == "high"
     if get(g:, 'solarized_old_cursor_style', 0)
@@ -554,6 +560,8 @@ if !get(g:, 'solarized_use16', 0)
   hi Underlined ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi! link lCursor Cursor
   hi CursorIM ctermfg=NONE ctermbg=fg guifg=NONE guibg=fg guisp=NONE cterm=NONE gui=NONE
+  hi ToolbarLine ctermfg=NONE ctermbg=254 guifg=NONE guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+  hi ToolbarButton ctermfg=242 ctermbg=254 guifg=#586e75 guibg=#eee8d5 guisp=NONE cterm=NONE,bold gui=NONE,bold
   if get(g:, 'solarized_extra_hi_groups', 0)
     hi! link vimVar Identifier
     hi! link vimFunc Function
@@ -768,8 +776,10 @@ endif
 if &background ==# 'dark'
   if !has('gui_running') && get(g:, 'solarized_termtrans', 0)
     hi Normal ctermfg=12 ctermbg=NONE guifg=#839496 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi Terminal ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
   else
     hi Normal ctermfg=12 ctermbg=8 guifg=#839496 guibg=#002b36 guisp=NONE cterm=NONE gui=NONE
+    hi Terminal ctermfg=fg ctermbg=8 guifg=fg guibg=#002b36 guisp=NONE cterm=NONE gui=NONE
   endif
   hi ColorColumn ctermfg=NONE ctermbg=0 guifg=NONE guibg=#073642 guisp=NONE cterm=NONE gui=NONE
   hi Conceal ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -903,6 +913,8 @@ if &background ==# 'dark'
   hi Underlined ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi! link lCursor Cursor
   hi CursorIM ctermfg=NONE ctermbg=fg guifg=NONE guibg=fg guisp=NONE cterm=NONE gui=NONE
+  hi ToolbarLine ctermfg=NONE ctermbg=0 guifg=NONE guibg=#073642 guisp=NONE cterm=NONE gui=NONE
+  hi ToolbarButton ctermfg=14 ctermbg=0 guifg=#93a1a1 guibg=#073642 guisp=NONE cterm=NONE,bold gui=NONE,bold
   if get(g:, 'solarized_extra_hi_groups', 0)
     hi! link vimVar Identifier
     hi! link vimFunc Function
@@ -1115,8 +1127,10 @@ endif
 
 if !has('gui_running') && get(g:, 'solarized_termtrans', 0)
   hi Normal ctermfg=11 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi Terminal ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
 else
   hi Normal ctermfg=11 ctermbg=15 guifg=#657b83 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
+  hi Terminal ctermfg=fg ctermbg=15 guifg=fg guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
 endif
 if get(g:, "solarized_visibility", "") == "high"
   if get(g:, 'solarized_old_cursor_style', 0)
@@ -1262,6 +1276,8 @@ hi! link Typedef Type
 hi Underlined ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link lCursor Cursor
 hi CursorIM ctermfg=NONE ctermbg=fg guifg=NONE guibg=fg guisp=NONE cterm=NONE gui=NONE
+hi ToolbarLine ctermfg=NONE ctermbg=7 guifg=NONE guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+hi ToolbarButton ctermfg=10 ctermbg=7 guifg=#586e75 guibg=#eee8d5 guisp=NONE cterm=NONE,bold gui=NONE,bold
 if get(g:, 'solarized_extra_hi_groups', 0)
   hi! link vimVar Identifier
   hi! link vimFunc Function
@@ -1490,7 +1506,9 @@ finish
 " Color: green                #859900                ~        2
 " Color: back                 #002b36                ~        8
 "   Normal             base0             none
+"   Terminal           fg                none
 "   Normal            base0             back
+"   Terminal          fg                back
 " ColorColumn          none              base02
 " Conceal              blue              none
 " Cursor               base03            base0
@@ -1609,6 +1627,8 @@ finish
 " Underlined           violet            none
 " lCursor           -> Cursor
 " CursorIM             none              fg
+" ToolbarLine          none              base02
+" ToolbarButton        base1             base02            bold
 " vimVar            -> Identifier
 " vimFunc           -> Function
 " vimUserFunc       -> Function
@@ -1804,7 +1824,9 @@ finish
 " Color: green                #859900                ~        2
 " Color: back                 #fdf6e3                ~        15
 "   Normal             base0             none
+"   Terminal           fg                none
 "   Normal            base0             back
+"   Terminal          fg                back
 " Cursor               base03            base0
 " Cursor               base03            red
 " CursorLineNr         red               none              bold
@@ -1929,6 +1951,8 @@ finish
 " Underlined           violet            none
 " lCursor           -> Cursor
 " CursorIM             none              fg
+" ToolbarLine          none              base02
+" ToolbarButton        base1             base02            bold
 " vimVar            -> Identifier
 " vimFunc           -> Function
 " vimUserFunc       -> Function

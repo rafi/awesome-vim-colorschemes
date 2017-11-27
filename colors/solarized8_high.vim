@@ -4,7 +4,7 @@
 " Maintainer:   Lifepillar <lifepillar@lifepillar.me>
 " Website:      https://github.com/lifepillar/vim-solarized8
 " License:      OSI approved MIT license
-" Last Updated: Sun Nov 12 11:51:29 2017
+" Last Updated: Tue Nov 21 09:39:06 2017
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < (get(g:, 'solarized_use16', 0) ? 16 : 256))
@@ -45,12 +45,14 @@ if !get(g:, 'solarized_use16', 0)
       hi FoldColumn ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
       hi Folded ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=#002b36 cterm=NONE,bold gui=NONE,bold
       hi LineNr ctermfg=243 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+      hi Terminal ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
       hi CursorLineNr ctermbg=NONE guifg=NONE
     else
       hi Normal ctermfg=247 ctermbg=235 guifg=#93a1a1 guibg=#002b36 guisp=NONE cterm=NONE gui=NONE
       hi FoldColumn ctermfg=247 ctermbg=236 guifg=#93a1a1 guibg=#073642 guisp=NONE cterm=NONE gui=NONE
       hi Folded ctermfg=247 ctermbg=236 guifg=#93a1a1 guibg=#073642 guisp=#002b36 cterm=NONE,bold gui=NONE,bold
       hi LineNr ctermfg=243 ctermbg=236 guifg=#657b83 guibg=#073642 guisp=NONE cterm=NONE gui=NONE
+      hi Terminal ctermfg=fg ctermbg=235 guifg=fg guibg=#002b36 guisp=NONE cterm=NONE gui=NONE
       hi CursorLineNr ctermbg=236 guibg=#073642
     endif
     if get(g:, "solarized_visibility", "") == "high"
@@ -178,6 +180,8 @@ if !get(g:, 'solarized_use16', 0)
     hi Underlined ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi! link lCursor Cursor
     hi CursorIM ctermfg=NONE ctermbg=fg guifg=NONE guibg=fg guisp=NONE cterm=NONE gui=NONE
+    hi ToolbarLine ctermfg=NONE ctermbg=236 guifg=NONE guibg=#073642 guisp=NONE cterm=NONE gui=NONE
+    hi ToolbarButton ctermfg=254 ctermbg=236 guifg=#eee8d5 guibg=#073642 guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi NormalMode ctermfg=247 ctermbg=230 guifg=#93a1a1 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
     hi InsertMode ctermfg=37 ctermbg=230 guifg=#2aa198 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
     hi ReplaceMode ctermfg=166 ctermbg=230 guifg=#cb4b16 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
@@ -416,12 +420,14 @@ if !get(g:, 'solarized_use16', 0)
     hi FoldColumn ctermfg=242 ctermbg=NONE guifg=#586e75 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi Folded ctermfg=242 ctermbg=NONE guifg=#586e75 guibg=NONE guisp=#fdf6e3 cterm=NONE,bold gui=NONE,bold
     hi LineNr ctermfg=247 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi Terminal ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi CursorLineNr ctermbg=NONE guifg=NONE
   else
     hi Normal ctermfg=242 ctermbg=230 guifg=#586e75 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
     hi FoldColumn ctermfg=242 ctermbg=254 guifg=#586e75 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
     hi Folded ctermfg=242 ctermbg=254 guifg=#586e75 guibg=#eee8d5 guisp=#fdf6e3 cterm=NONE,bold gui=NONE,bold
     hi LineNr ctermfg=247 ctermbg=254 guifg=#93a1a1 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+    hi Terminal ctermfg=fg ctermbg=230 guifg=fg guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
     hi CursorLineNr ctermbg=254 guibg=#eee8d5
   endif
   if get(g:, "solarized_visibility", "") == "high"
@@ -561,6 +567,8 @@ if !get(g:, 'solarized_use16', 0)
   hi Underlined ctermfg=61 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi! link lCursor Cursor
   hi CursorIM ctermfg=NONE ctermbg=fg guifg=NONE guibg=fg guisp=NONE cterm=NONE gui=NONE
+  hi ToolbarLine ctermfg=NONE ctermbg=254 guifg=NONE guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+  hi ToolbarButton ctermfg=236 ctermbg=254 guifg=#073642 guibg=#eee8d5 guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi NormalMode ctermfg=236 ctermbg=230 guifg=#073642 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
   hi InsertMode ctermfg=37 ctermbg=230 guifg=#2aa198 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
   hi ReplaceMode ctermfg=166 ctermbg=230 guifg=#cb4b16 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
@@ -783,12 +791,14 @@ if &background ==# 'dark'
     hi FoldColumn ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi Folded ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=#002b36 cterm=NONE,bold gui=NONE,bold
     hi LineNr ctermfg=11 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi Terminal ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi CursorLineNr ctermbg=NONE guifg=NONE
   else
     hi Normal ctermfg=14 ctermbg=8 guifg=#93a1a1 guibg=#002b36 guisp=NONE cterm=NONE gui=NONE
     hi FoldColumn ctermfg=14 ctermbg=0 guifg=#93a1a1 guibg=#073642 guisp=NONE cterm=NONE gui=NONE
     hi Folded ctermfg=14 ctermbg=0 guifg=#93a1a1 guibg=#073642 guisp=#002b36 cterm=NONE,bold gui=NONE,bold
     hi LineNr ctermfg=11 ctermbg=0 guifg=#657b83 guibg=#073642 guisp=NONE cterm=NONE gui=NONE
+    hi Terminal ctermfg=fg ctermbg=8 guifg=fg guibg=#002b36 guisp=NONE cterm=NONE gui=NONE
     hi CursorLineNr ctermbg=0 guibg=#073642
   endif
   if get(g:, "solarized_visibility", "") == "high"
@@ -916,6 +926,8 @@ if &background ==# 'dark'
   hi Underlined ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi! link lCursor Cursor
   hi CursorIM ctermfg=NONE ctermbg=fg guifg=NONE guibg=fg guisp=NONE cterm=NONE gui=NONE
+  hi ToolbarLine ctermfg=NONE ctermbg=0 guifg=NONE guibg=#073642 guisp=NONE cterm=NONE gui=NONE
+  hi ToolbarButton ctermfg=7 ctermbg=0 guifg=#eee8d5 guibg=#073642 guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi NormalMode ctermfg=14 ctermbg=15 guifg=#93a1a1 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
   hi InsertMode ctermfg=6 ctermbg=15 guifg=#2aa198 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
   hi ReplaceMode ctermfg=9 ctermbg=15 guifg=#cb4b16 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
@@ -1136,12 +1148,14 @@ if !has('gui_running') && get(g:, 'solarized_termtrans', 0)
   hi FoldColumn ctermfg=10 ctermbg=NONE guifg=#586e75 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi Folded ctermfg=10 ctermbg=NONE guifg=#586e75 guibg=NONE guisp=#fdf6e3 cterm=NONE,bold gui=NONE,bold
   hi LineNr ctermfg=14 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi Terminal ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi CursorLineNr ctermbg=NONE guifg=NONE
 else
   hi Normal ctermfg=10 ctermbg=15 guifg=#586e75 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
   hi FoldColumn ctermfg=10 ctermbg=7 guifg=#586e75 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
   hi Folded ctermfg=10 ctermbg=7 guifg=#586e75 guibg=#eee8d5 guisp=#fdf6e3 cterm=NONE,bold gui=NONE,bold
   hi LineNr ctermfg=14 ctermbg=7 guifg=#93a1a1 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+  hi Terminal ctermfg=fg ctermbg=15 guifg=fg guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
   hi CursorLineNr ctermbg=7 guibg=#eee8d5
 endif
 if get(g:, "solarized_visibility", "") == "high"
@@ -1281,6 +1295,8 @@ hi! link Typedef Type
 hi Underlined ctermfg=13 ctermbg=NONE guifg=#6c71c4 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link lCursor Cursor
 hi CursorIM ctermfg=NONE ctermbg=fg guifg=NONE guibg=fg guisp=NONE cterm=NONE gui=NONE
+hi ToolbarLine ctermfg=NONE ctermbg=7 guifg=NONE guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+hi ToolbarButton ctermfg=0 ctermbg=7 guifg=#073642 guibg=#eee8d5 guisp=NONE cterm=NONE,bold gui=NONE,bold
 hi NormalMode ctermfg=0 ctermbg=15 guifg=#073642 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
 hi InsertMode ctermfg=6 ctermbg=15 guifg=#2aa198 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
 hi ReplaceMode ctermfg=9 ctermbg=15 guifg=#cb4b16 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
@@ -1517,10 +1533,12 @@ finish
 "   FoldColumn         fg                none
 "   Folded             fg                none             bold s=base03
 "   LineNr             base01            none
+"   Terminal           fg                none
 "   Normal            base0             back
 "   FoldColumn        base0             base02
 "   Folded            base0             base02            bold s=base03
 "   LineNr            base01            base02
+"   Terminal          fg                back
 " NonText              orange            none              bold
 " SpecialKey           orange            none              reverse
 " SpellBad             violet            base3             t=underline,reverse g=undercurl,reverse s=red
@@ -1629,6 +1647,8 @@ finish
 " Underlined           violet            none
 " lCursor           -> Cursor
 " CursorIM             none              fg
+" ToolbarLine          none              base02
+" ToolbarButton        base1             base02            bold
 " NormalMode           base0             base3             reverse
 " InsertMode           cyan              base3             reverse
 " ReplaceMode          orange            base3             reverse
@@ -1832,10 +1852,12 @@ finish
 "   FoldColumn         base0             none
 "   Folded             base0             none              bold s=base03
 "   LineNr             base01            none
+"   Terminal           fg                none
 "   Normal            base0             back
 "   FoldColumn        base0             base02
 "   Folded            base0             base02            bold s=base03
 "   LineNr            base01            base02
+"   Terminal          fg                back
 " Cursor               base03            base0
 " Cursor               base03            red
 " MatchParen           base03            base00            bold
@@ -1950,6 +1972,8 @@ finish
 " Underlined           violet            none
 " lCursor           -> Cursor
 " CursorIM             none              fg
+" ToolbarLine          none              base02
+" ToolbarButton        base1             base02            bold
 " NormalMode           base1             base03            reverse
 " InsertMode           cyan              base03            reverse
 " ReplaceMode          orange            base03            reverse
