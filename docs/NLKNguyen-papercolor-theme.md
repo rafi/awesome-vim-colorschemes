@@ -25,7 +25,7 @@ In 8-color and 4-color, it might lack the necessary variation of colors to expre
 Currently designed for these languages:
   - Haskell, Erlang, Elixir, Clojure
   - C, C++, Java, Golang, JavaScript, Python, Ruby, Pascal, PHP, Perl, LUA
-  - DTrace, SystemTap, SQL/MySQL, Octave/MATLAB, R, Lex/Flex & Yacc/Bison, Assembly (MIPS, GAS, NASM), Bash/Shell script, Sed script, Vim script
+  - DTrace, SystemTap, SQL/MySQL, Octave/MATLAB, R, Lex/Flex & Yacc/Bison, Assembly (MIPS, GAS, NASM), Bash/Shell script, Sed, Awk, Vim script
   - Dockerfile, Makefile, CMake, NGINX, Cucumber, YAML, JSON, HTML, XML, Markdown, reStructuredText, PlantUML, Dosini, Mail, Git commit message
   - Ada, COBOL, Fortran, *(what's your other favorite dinosaur?)*
 

@@ -206,6 +206,14 @@ call s:h("SyntasticWarning",        {"bg": s:yellow, "fg": s:black, "gui": "bold
 call s:h("SyntasticErrorSign",      {"fg": s:red})
 call s:h("SyntasticError",          {"bg": s:red, "fg": s:white, "gui": "bold", "cterm": "bold"})
 
+" Neomake
+hi link NeomakeWarningSign	SyntasticWarningSign
+hi link NeomakeErrorSign	SyntasticErrorSign
+
+" ALE
+hi link ALEWarningSign	SyntasticWarningSign
+hi link ALEErrorSign	SyntasticErrorSign
+
 " Signify, git-gutter
 hi link SignifySignAdd              LineNr
 hi link SignifySignDelete           LineNr

@@ -226,28 +226,31 @@ fun! s:acquire_theme_data()
     let lowercase_theme_name = tolower(g:PaperColor_Theme)
 
     if lowercase_theme_name !=? 'default'
-      " TODO: Change this to invoke autoload function
-      let theme_variable =  "g:PaperColor_Theme_" . lowercase_theme_name
+      let theme_identifier = 'PaperColor_' . lowercase_theme_name
+      let autoload_function = theme_identifier . '#register'
+
+      call {autoload_function}()
+
+      let theme_variable = 'g:' . theme_identifier
 
       if exists(theme_variable)
         let s:theme_name = lowercase_theme_name
-        " Register custom theme to theme dictionary
         let s:themes[s:theme_name] = {theme_variable}
-      else
-        echom "Cannot find variable " . theme_variable
-        " s:theme_name is still 'default'
       endif
+
     endif
 
   endif
   " }}}
 
   if s:theme_name ==? 'default'
-    " defer loading default theme until now
+    " Either no other theme is specified or they failed to load
+    " Defer loading default theme until now
     call s:register_default_theme()
   endif
 
   let s:selected_theme = s:themes[s:theme_name]
+
   " Get Theme Variant: either dark or light  {{{
   let s:selected_variant = 'dark'
 
@@ -1245,6 +1248,9 @@ fun! s:apply_syntax_highlightings()
   exec 'hi vimOperParen' . s:fg_foreground
   exec 'hi vimSynType' . s:fg_purple
   exec 'hi vimSynReg' . s:fg_pink . s:ft_none
+  exec 'hi vimSynRegion' . s:fg_foreground
+  exec 'hi vimSynMtchGrp' . s:fg_pink
+  exec 'hi vimSynNextgroup' . s:fg_pink
   exec 'hi vimSynKeyRegion' . s:fg_green
   exec 'hi vimSynRegOpt' . s:fg_blue
   exec 'hi vimSynMtchOpt' . s:fg_blue

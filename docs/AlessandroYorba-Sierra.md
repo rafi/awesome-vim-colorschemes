@@ -35,12 +35,6 @@ let g:sierra_Pitch = 1
 colorscheme sierra 
 ```
 
-######  Campfire Mode - Automatically cycles thru modes depending on time of day
-```VimL
-let g:sierra_Campfire = 1
-colorscheme sierra 
-```
-
 :crescent_moon: Dev Build
 ----------------------------
 pre-release version [here](https://github.com/AlessandroYorba/Sierra/tree/nightly)
