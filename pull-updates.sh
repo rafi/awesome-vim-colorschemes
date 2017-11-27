@@ -56,6 +56,7 @@ function _main() {
 	_dl romainl/Apprentice
 	_dl romainl/flattened
 	_dl scheakur/vim-scheakur
+	_dl sts10/vim-pink-moon
 	_dl tomasr/molokai
 	_dl tyrannicaltoucan/vim-deep-space
 	_dl vim-scripts/pyte
