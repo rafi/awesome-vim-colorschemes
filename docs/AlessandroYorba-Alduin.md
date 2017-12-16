@@ -1,33 +1,30 @@
-![Screenshot](https://user-images.githubusercontent.com/11221489/31866459-937e8796-b734-11e7-8b65-4e8dcb370c13.png)
+![Dark Grey](https://user-images.githubusercontent.com/11221489/33703680-040b8230-dade-11e7-80aa-c7bd37e2cdc1.png)
 
-![Screenshot](https://user-images.githubusercontent.com/11221489/31866462-9c79199c-b734-11e7-9297-cf94dd159a23.png)
+![screenshot](https://user-images.githubusercontent.com/11221489/33703778-6fb8eb6c-dade-11e7-90ea-538719c16698.png)
 
 :space_invader: Set Up
 ------
+The default UI for Alduin is dark grey. However, depending on certain lighting conditions, time of day or personal preference you might want to try some of the darker versions that are available. [screenshots of all modes](https://github.com/AlessandroYorba/Alduin/issues/5)
 
-###### Modes 
-The default UI for Alduin is a dark grey UI. However, depending on certain lighting conditions, time of day or personal preference you might want to try some of the darker or lighter versions that are available to you. To enable, add one of the following settings to your .vimrc 
+###### [Dark Grey](https://user-images.githubusercontent.com/11221489/33703680-040b8230-dade-11e7-80aa-c7bd37e2cdc1.png)
+```
+colorscheme alduin
+```
 
-###### Dragon Aspect - Almost Black Background
-```VimL
+###### [Almost Black](https://user-images.githubusercontent.com/11221489/33703720-3109e966-dade-11e7-88ed-0699e0b3c6b5.png)
+```
 let g:alduin_Shout_Dragon_Aspect = 1
 colorscheme alduin 
 ```
 
-###### Become Ethereal - Black Background
-```VimL
+###### [Black](https://user-images.githubusercontent.com/11221489/33703746-4d9d4802-dade-11e7-87bd-13cd7eebf2c1.png)
+```
 let g:alduin_Shout_Become_Ethereal = 1
 colorscheme alduin 
 ```
 
-######  Sanguinare Vampiris - Automatically cycles thru modes depending on time of night
-```VimL
-let g:alduin_Contract_Vampirism = 1
-colorscheme alduin 
+###### [Dark Red SpecialHL](https://user-images.githubusercontent.com/11221489/33703778-6fb8eb6c-dade-11e7-90ea-538719c16698.png)
 ```
-
-###### Dark Red - Special Highlighting
-```VimL
 let g:alduin_Shout_Fire_Breath = 1
 colorscheme alduin
 ```
@@ -49,3 +46,4 @@ development version [here](https://github.com/AlessandroYorba/Alduin/tree/nightl
 [Despacio](https://github.com/AlessandroYorba/Despacio)<br>
 [Sierra](https://github.com/AlessandroYorba/Sierra)<br>
 [Arcadia](https://github.com/AlessandroYorba/Arcadia)<br>
+[Libertine](https://github.com/AlessandroYorba/Libertine)<br>

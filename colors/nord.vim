@@ -191,7 +191,7 @@ else
   call s:hi("StatusLineNC", s:nord4_gui, s:nord3_gui, "NONE", s:nord3_term, "NONE", "")
 endif
 call s:hi("WarningMsg", s:nord0_gui, s:nord13_gui, s:nord1_term, s:nord13_term, "", "")
-call s:hi("WildMenu", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "", "")
+call s:hi("WildMenu", s:nord8_gui, s:nord1_gui, s:nord8_term, s:nord1_term, "", "")
 
 "+--- Search ---+
 call s:hi("IncSearch", s:nord1_gui, s:nord8_gui, s:nord1_term, s:nord8_term, "underline", "")
@@ -459,6 +459,12 @@ call s:hi("GitGutterAdd", s:nord14_gui, "", s:nord14_term, "", "", "")
 call s:hi("GitGutterChange", s:nord13_gui, "", s:nord13_term, "", "", "")
 call s:hi("GitGutterChangeDelete", s:nord11_gui, "", s:nord11_term, "", "", "")
 call s:hi("GitGutterDelete", s:nord11_gui, "", s:nord11_term, "", "", "")
+
+" fugitive.vim
+" > tpope/vim-fugitive
+call s:hi("gitcommitDiscardedFile", s:nord11_gui, "", s:nord11_term, "", "", "")
+call s:hi("gitcommitUntrackedFile", s:nord11_gui, "", s:nord11_term, "", "", "")
+call s:hi("gitcommitSelectedFile", s:nord14_gui, "", s:nord14_term, "", "", "")
 
 " davidhalter/jedi-vim
 call s:hi("jediFunction", s:nord4_gui, s:nord3_gui, "", s:nord3_term, "", "")

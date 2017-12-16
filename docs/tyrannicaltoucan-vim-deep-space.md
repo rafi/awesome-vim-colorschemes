@@ -26,3 +26,11 @@ To use the included [vim-airline](https://github.com/vim-airline/vim-airline) th
 let g:airline_theme='deep_space'
 ```
 
+### Vim Lightline
+To use the included [lightline.vim](https://github.com/itchyny/lightline.vim) theme:
+```vim
+let g:lightline = {
+      \ 'colorscheme': 'deepspace',
+      \ }
+```
+

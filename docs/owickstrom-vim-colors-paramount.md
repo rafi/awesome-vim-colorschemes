@@ -4,21 +4,17 @@ A minimal colorscheme for Vim that only puts emphasis on the paramount.
 
 ## Screenshots
 
-*Latin Modern Mono* font on light and dark backgrounds:
+*Fira Code* font on light and dark backgrounds, with Ruby code from
+[VimColors](vimcolors.com/438/paramount/dark):
 
-![](screenshots/latin-modern-light.png)
-![](screenshots/latin-modern-dark.png)
-
-*Monaco* font on light and dark backgrounds:
-
-![](screenshots/monaco-light.png)
-![](screenshots/monaco-dark.png)
+![](screenshots/light.png)
+![](screenshots/dark.png)
 
 ## Installation
 
-Simply copy the color scheme file to your `~/.vim/colors`
-directory or use a plugin manager like [Plug][] or [Vundle][] and add
-`"owickstrom/vim-colors-paramount"` as a plugin.
+Copy the color scheme file to your `~/.vim/colors` directory, or use a plugin
+manager like [Plug][] or [Vundle][] and add `"owickstrom/vim-colors-paramount"`
+as a plugin.
 
 [vundle]: https://github.com/gmarik/Vundle.vim
 [plug]: https://github.com/junegunn/vim-plug

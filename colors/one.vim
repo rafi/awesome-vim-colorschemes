@@ -637,6 +637,8 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   call <sid>X('jsonNoQuotesError',        s:hue_5,   '', 'reverse' )
   call <sid>X('jsonNumError',             s:hue_5,   '', 'reverse' )
   call <sid>X('jsonString',               s:hue_4,   '', ''        )
+  call <sid>X('jsonBoolean',              s:hue_3,   '', ''        )
+  call <sid>X('jsonNumber',               s:hue_6,   '', ''        )
   call <sid>X('jsonStringSQError',        s:hue_5,   '', 'reverse' )
   call <sid>X('jsonSemicolonError',       s:hue_5,   '', 'reverse' )
   " }}}

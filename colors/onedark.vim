@@ -69,36 +69,59 @@ endif
 
 " This function is based on one from FlatColor: https://github.com/MaxSt/FlatColor/
 " Which in turn was based on one found in hemisu: https://github.com/noahfrederick/vim-hemisu/
-function! s:h(group, style)
-  if g:onedark_terminal_italics == 0
-    if has_key(a:style, "cterm") && a:style["cterm"] == "italic"
-      unlet a:style.cterm
+let s:group_colors = {} " Cache of default highlight group settings, for later reference via `onedark#extend_highlight`
+function! s:h(group, style, ...)
+  if (a:0 > 0) " Will be true if we got here from onedark#extend_highlight
+    let a:highlight = s:group_colors[a:group]
+    for style_type in ["fg", "bg", "sp"]
+      if (has_key(a:style, style_type))
+        let l:default_style = (has_key(a:highlight, style_type) ? a:highlight[style_type] : { "cterm16": "NONE", "cterm": "NONE", "gui": "NONE" })
+        let a:highlight[style_type] = extend(l:default_style, a:style[style_type])
+      endif
+    endfor
+    if (has_key(a:style, "gui"))
+      let a:highlight.gui = a:style.gui
     endif
-    if has_key(a:style, "gui") && a:style["gui"] == "italic"
-      unlet a:style.gui
-    endif
-  endif
-  if g:onedark_termcolors == 16
-    let l:ctermfg = (has_key(a:style, "fg") ? a:style.fg.cterm16 : "NONE")
-    let l:ctermbg = (has_key(a:style, "bg") ? a:style.bg.cterm16 : "NONE")
   else
-    let l:ctermfg = (has_key(a:style, "fg") ? a:style.fg.cterm : "NONE")
-    let l:ctermbg = (has_key(a:style, "bg") ? a:style.bg.cterm : "NONE")
+    let a:highlight = a:style
+    let s:group_colors[a:group] = a:highlight " Cache default highlight group settings
   endif
+
+  if g:onedark_terminal_italics == 0
+    if has_key(a:highlight, "cterm") && a:highlight["cterm"] == "italic"
+      unlet a:highlight.cterm
+    endif
+    if has_key(a:highlight, "gui") && a:highlight["gui"] == "italic"
+      unlet a:highlight.gui
+    endif
+  endif
+
+  if g:onedark_termcolors == 16
+    let l:ctermfg = (has_key(a:highlight, "fg") ? a:highlight.fg.cterm16 : "NONE")
+    let l:ctermbg = (has_key(a:highlight, "bg") ? a:highlight.bg.cterm16 : "NONE")
+  else
+    let l:ctermfg = (has_key(a:highlight, "fg") ? a:highlight.fg.cterm : "NONE")
+    let l:ctermbg = (has_key(a:highlight, "bg") ? a:highlight.bg.cterm : "NONE")
+  endif
+
   execute "highlight" a:group
-    \ "guifg="   (has_key(a:style, "fg")    ? a:style.fg.gui   : "NONE")
-    \ "guibg="   (has_key(a:style, "bg")    ? a:style.bg.gui   : "NONE")
-    \ "guisp="   (has_key(a:style, "sp")    ? a:style.sp.gui   : "NONE")
-    \ "gui="     (has_key(a:style, "gui")   ? a:style.gui      : "NONE")
+    \ "guifg="   (has_key(a:highlight, "fg")    ? a:highlight.fg.gui   : "NONE")
+    \ "guibg="   (has_key(a:highlight, "bg")    ? a:highlight.bg.gui   : "NONE")
+    \ "guisp="   (has_key(a:highlight, "sp")    ? a:highlight.sp.gui   : "NONE")
+    \ "gui="     (has_key(a:highlight, "gui")   ? a:highlight.gui      : "NONE")
     \ "ctermfg=" . l:ctermfg
     \ "ctermbg=" . l:ctermbg
-    \ "cterm="   (has_key(a:style, "cterm") ? a:style.cterm    : "NONE")
+    \ "cterm="   (has_key(a:highlight, "cterm") ? a:highlight.cterm    : "NONE")
 endfunction
 
 " public {{{
 
 function! onedark#set_highlight(group, style)
   call s:h(a:group, a:style)
+endfunction
+
+function! onedark#extend_highlight(group, style)
+  call s:h(a:group, a:style, 1)
 endfunction
 
 " }}}

@@ -2,21 +2,6 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 
-function! s:attr(name, what, mode, default) abort
-  let attr = synIDattr(synIDtrans(hlID(a:name)), a:what, a:mode)
-  return !empty(attr) ? attr : a:default
-endfunction
-
-
-function! s:col(name) abort
-  return [
-        \ s:attr(a:name, 'fg', 'gui', 'Black'),
-        \ s:attr(a:name, 'bg', 'gui', 'Red'),
-        \ s:attr(a:name, 'fg', 'cterm', 0),
-        \ s:attr(a:name, 'bg', 'cterm', 9)]
-endfunction
-
-
 function! s:build_palette() abort
   let p = {
         \ 'normal':   {},
@@ -26,33 +11,40 @@ function! s:build_palette() abort
         \ 'visual':   {},
         \ 'tabline':  {}}
 
-  let col_base     = s:col('icebergLLBase')
-  let col_edge     = s:col('icebergLLEdge')
-  let col_gradient = s:col('icebergLLGradient')
-  let col_nc       = s:col('icebergLLNC')
-  let col_tabfill  = s:col('icebergLLTabFill')
+  let col_base     = ['#696d80', '#34394e', 243, 237]
+  let col_edge     = ['#17171b', '#818596', 234, 245]
+  let col_gradient = ['#17171b', '#5a5f72', 234, 241]
+  let col_nc       = ['#3e445e', '#0f1117', 238, 233]
+  let col_tabfill  = ['#696d80', '#34394e', 243, 237]
+  let col_normal   = ['#17171b', '#818596', 234, 245]
+  let col_error    = ['#161821', '#e27878', 234, 203]
+  let col_warning  = ['#161821', '#e2a478', 234, 216]
+  let col_insert   = ['#161821', '#84a0c6', 234, 110]
+  let col_replace  = ['#161821', '#e2a478', 234, 216]
+  let col_visual   = ['#161821', '#b4be82', 234, 150]
+  let col_tabsel   = ['#17171b', '#818596', 234, 245]
 
   let p.normal.middle = [
         \ col_base]
   let p.normal.left = [
-        \ s:col('icebergLLNormal'),
+        \ col_normal,
         \ col_gradient]
   let p.normal.right = [
         \ col_edge,
         \ col_gradient]
   let p.normal.error = [
-        \ s:col('icebergLLError')]
+        \ col_error]
   let p.normal.warning = [
-        \ s:col('icebergLLWarning')]
+        \ col_warning]
 
   let p.insert.left = [
-        \ s:col('icebergLLInsert'),
+        \ col_insert,
         \ col_gradient]
   let p.replace.left = [
-        \ s:col('icebergLLReplace'),
+        \ col_replace,
         \ col_gradient]
   let p.visual.left = [
-        \ s:col('icebergLLVisual'),
+        \ col_visual,
         \ col_gradient]
 
   let p.inactive.middle = [
@@ -69,7 +61,7 @@ function! s:build_palette() abort
   let p.tabline.left = [
         \ col_tabfill]
   let p.tabline.tabsel = [
-        \ s:col('icebergLLTabSel')]
+        \ col_tabsel]
 
   let p.tabline.right = copy(p.normal.right)
 
@@ -77,16 +69,6 @@ function! s:build_palette() abort
 endfunction
 
 
-" Iceberg should be applied ahead
-" because this palette uses colors declared by Iceberg
-if g:colors_name !=# 'iceberg'
-  let message = 'iceberg.vim: Execute `:colorscheme iceberg` before loading lightline colorscheme'
-
-  " Call both echomsg and echoerr
-  " because lightline doesn't show thrown error message
-  echomsg message
-  echoerr message
-endif
 let g:lightline#colorscheme#iceberg#palette = s:build_palette()
 
 

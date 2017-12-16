@@ -1154,4 +1154,22 @@ endfunction
 
 " }}}
 
+hi! link SignColumn LineNr
+    hi! VertSplit guibg=#242a32
+    hi! StatusLine guifg=#242a32 guibg=#ebdab2
+    hi! StatusLineNC guifg=#242a32 guibg=#ebdab2
+    hi! CursorLineNr guibg=#242a32 guifg=#ebdab2
+
+    hi! SignColumn guibg=#242a32
+    hi! SignifySignAdd guibg=#242a32 guifg=#99c379
+    hi! SignifySignDelete guibg=#242a32 guifg=#fb4733
+    hi! SignifySignChange guibg=#242a32 guifg=#8ec07b
+
+    hi! AleWarningSign guibg=#242a32 guifg=#ebdab2
+
+    hi! CursorLine guibg=#292f37
+    hi! ColorColumn guibg=#292f37
+    hi  Folded guibg=#242a32
+    hi! FoldColumn guibg=#242a32
+
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
