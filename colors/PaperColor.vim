@@ -105,8 +105,8 @@ fun! s:register_default_theme()
         \       'buftabline_bg':          ['#005f87', '24'],
         \       'buftabline_current_fg':  ['#444444', '238'],
         \       'buftabline_current_bg':  ['#e4e4e4', '254'],
-        \       'buftabline_active_fg': ['#eeeeee', '255'],
-        \       'buftabline_active_bg': ['#005faf', '25'],
+        \       'buftabline_active_fg':   ['#eeeeee', '255'],
+        \       'buftabline_active_bg':   ['#005faf', '25'],
         \       'buftabline_inactive_fg': ['#eeeeee', '255'],
         \       'buftabline_inactive_bg': ['#0087af', '31']
         \     }
@@ -175,11 +175,6 @@ fun! s:register_default_theme()
         \       'folded_bg' : ['#5f005f', '53'],
         \       'wildmenu_fg': ['#1c1c1c', '234'],
         \       'wildmenu_bg': ['#afd700', '148'],
-        \       'tabline_bg':          ['#262626', '235'],
-        \       'tabline_active_fg':   ['#121212', '233'],
-        \       'tabline_active_bg':   ['#00afaf', '37'],
-        \       'tabline_inactive_fg': ['#bcbcbc', '250'],
-        \       'tabline_inactive_bg': ['#585858', '240'],
         \       'spellbad':   ['#5f0000', '52'],
         \       'spellcap':   ['#5f005f', '53'],
         \       'spellrare':  ['#005f00', '22'],
@@ -191,7 +186,19 @@ fun! s:register_default_theme()
         \       'difftext_fg':   ['#5fffff', '87'],
         \       'difftext_bg':   ['#008787', '30'],
         \       'diffchange_fg': ['#d0d0d0', '252'],
-        \       'diffchange_bg': ['#005f5f', '23']
+        \       'diffchange_bg': ['#005f5f', '23'],
+        \       'tabline_bg':          ['#262626', '235'],
+        \       'tabline_active_fg':   ['#121212', '233'],
+        \       'tabline_active_bg':   ['#00afaf', '37'],
+        \       'tabline_inactive_fg': ['#bcbcbc', '250'],
+        \       'tabline_inactive_bg': ['#585858', '240'],
+        \       'buftabline_bg':          ['#262626', '235'],
+        \       'buftabline_current_fg':  ['#121212', '233'],
+        \       'buftabline_current_bg':  ['#00afaf', '37'],
+        \       'buftabline_active_fg':   ['#00afaf', '37'],
+        \       'buftabline_active_bg':   ['#585858', '240'],
+        \       'buftabline_inactive_fg': ['#bcbcbc', '250'],
+        \       'buftabline_inactive_bg': ['#585858', '240']
         \     }
         \   }
 endfun
