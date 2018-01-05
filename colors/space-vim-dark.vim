@@ -255,7 +255,9 @@ call s:hi('shFunctionKey' , 68  , '' , 'bold' , 'bold')
 call s:hi('shTestOpr'     , 178 , '' , 'none' , 'none')
 
 " solidity
-call s:hi('solContract' , 178 , '' , 'bold' , 'bold')
+call s:hi('solContract'     , 178 , '' , 'bold' , 'bold')
+call s:hi('solContractName' , 168 , '' , 'bold' , 'bold')
+call s:hi('solBuiltinType'  , 176 , '' , 'none' , 'none')
 
 " vimL
 call s:hi('vimLet'     , 68 , '' , 'bold' , 'bold')
@@ -390,6 +392,7 @@ call s:hi('NERDTreeDir'      , 68  , '' , 'bold' , 'bold')
 call s:hi('NERDTreeDirSlash' , 68  , '' , 'bold' , 'bold')
 call s:hi('NERDTreeOpenable' , 68  , '' , 'bold' , 'bold')
 call s:hi('NERDTreeClosable' , 68  , '' , 'bold' , 'bold')
+call s:hi('NERDTreeExecFile' , 167 , '' , 'bold' , 'bold')
 
 " Tagbar
 call s:hi('TagbarKind'             , 169 , '' , 'bold' , 'bold')

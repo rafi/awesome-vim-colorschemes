@@ -4,7 +4,7 @@ Orbital colorscheme for Vim:
 
 - Base16 theme for the standard 256-color palette of most terminals
 - Terminal & GUI support
-- Simple, clean code created with [vim-rng](https://gist.github.com/5cd2f4ec222805f49eca.git)
+- Simple, clean code created with [RNB](https://gist.github.com/5cd2f4ec222805f49eca.git)
 - Airline, Lightline & CtrlP support out-of-the-box
 
 Screenshots
@@ -43,6 +43,7 @@ Installation
   *  [Pathogen][1] - `git clone https://github.com/fcpg/vim-orbital ~/.vim/bundle/vim-orbital`
   *  [NeoBundle][2] - `NeoBundle 'fcpg/vim-orbital'`
   *  [Vundle][3] - `Plugin 'fcpg/vim-orbital'`
+  *  [Plug][4] - Plug 'fcpg/vim-complimentary'
   *  manual - copy all of the files into your `~/.vim` directory
 2. Append the following line to your .vimrc file:
 ```VimL
@@ -77,3 +78,4 @@ License
 [1]: https://github.com/tpope/vim-pathogen
 [2]: https://github.com/Shougo/neobundle.vim
 [3]: https://github.com/gmarik/vundle
+[4]: https://github.com/junegunn/vim-plug

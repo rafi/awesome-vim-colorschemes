@@ -82,9 +82,5 @@ Base colors used in the theme.
 _neovim_
 ![](https://raw.githubusercontent.com/mhartington/oceanic-next/master/oceanic-next-dark.nvim.png)
 
-
-_vim_
-![](https://raw.githubusercontent.com/mhartington/oceanic-next/master/oceanic-next-dark.vim.png)
-
 Shown here with [vim-devicons](https://github.com/ryanoasis/vim-devicons)
 

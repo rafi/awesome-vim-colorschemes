@@ -44,6 +44,7 @@
   let s:base0F=['#ab7967', '137']
   let s:base10=['#ffffff', '15']
   let s:none=['NONE', 'NONE']
+
 " }}}
 " {{{ Highlight function
 function! <sid>hi(group, fg, bg, attr, attrsp)
@@ -94,6 +95,7 @@ call <sid>hi('Conceal',                    s:base0D, s:base00, '',          '')
 call <sid>hi('Cursor',                     s:base00, s:base05, '',          '')
 call <sid>hi('NonText',                    s:base03, '',       '',          '')
 call <sid>hi('Normal',                     s:base05, s:base00, '',          '')
+call <sid>hi('EndOfBuffer',                s:base05, s:base00, '',          '')
 call <sid>hi('LineNr',                     s:base03, s:base00, '',          '')
 call <sid>hi('SignColumn',                 s:base00, s:base00, '',          '')
 call <sid>hi('StatusLine',                 s:base01, s:base03, '',          '')
@@ -101,7 +103,7 @@ call <sid>hi('StatusLineNC',               s:base03, s:base01, '',          '')
 call <sid>hi('VertSplit',                  s:base00, s:base02, '',          '')
 call <sid>hi('ColorColumn',                '',       s:base01, '',          '')
 call <sid>hi('CursorColumn',               '',       s:base01, '',          '')
-call <sid>hi('CursorLine',                 '',       s:base01, '',          '')
+call <sid>hi('CursorLine',                 '',       s:base01, 'NONE',      '')
 call <sid>hi('CursorLineNR',               s:base00, s:base00, '',          '')
 call <sid>hi('CursorLineNr',               s:base03, s:base01, '',          '')
 call <sid>hi('PMenu',                      s:base04, s:base01, '',          '')
@@ -143,10 +145,10 @@ call <sid>hi('Todo',                       s:base0A, s:base01, '',          '')
 call <sid>hi('Type',                       s:base0A, '',       '',          '')
 call <sid>hi('Typedef',                    s:base0A, '',       '',          '')
 
-call <sid>hi('SpellBad',                   '',       s:base00, 'undercurl', '')
-call <sid>hi('SpellLocal',                 '',       s:base00, 'undercurl', '')
-call <sid>hi('SpellCap',                   '',       s:base00, 'undercurl', '')
-call <sid>hi('SpellRare',                  '',       s:base00, 'undercurl', '')
+call <sid>hi('SpellBad',                   '',       '',       'undercurl', '')
+call <sid>hi('SpellLocal',                 '',       '',       'undercurl', '')
+call <sid>hi('SpellCap',                   '',       '',       'undercurl', '')
+call <sid>hi('SpellRare',                  '',       '',       'undercurl', '')
 
 call <sid>hi('csClass',                    s:base0A, '',       '',          '')
 call <sid>hi('csAttribute',                s:base0A, '',       '',          '')
@@ -195,9 +197,9 @@ call <sid>hi('markdownBold',               s:base0A, '',       s:bold,      '')
 call <sid>hi('markdownCodeDelimiter',      s:base0F, '',       s:italic,    '')
 call <sid>hi('markdownError',              s:base05, s:base00, '',          '')
 
-call <sid>hi('NeomakeErrorSign',           s:base08, s:base01, '',          '')
-call <sid>hi('NeomakeWarningSign',         s:base0A, s:base01, '',          '')
-call <sid>hi('NeomakeInfoSign',            s:base10, s:base01, '',          '')
+call <sid>hi('NeomakeErrorSign',           s:base08, s:base00, '',          '')
+call <sid>hi('NeomakeWarningSign',         s:base0A, s:base00, '',          '')
+call <sid>hi('NeomakeInfoSign',            s:base10, s:base00, '',          '')
 call <sid>hi('NeomakeError',               s:base08, '',       'undercurl', s:base08)
 call <sid>hi('NeomakeWarning',             s:base08, '',       'undercurl', s:base08)
 

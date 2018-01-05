@@ -13,7 +13,7 @@ if version > 580
 endif
 
 let g:colors_name = "nord"
-let s:nord_vim_version="0.6.0"
+let s:nord_vim_version="0.7.0"
 set background=dark
 
 let s:nord0_gui = "#2E3440"
@@ -71,8 +71,24 @@ let s:nord3_gui_brightened = [
   \ "#7b88a1",
 \ ]
 
-if !exists("g:nord_italic_comments")
-  let g:nord_italic_comments = 0
+if !exists("g:nord_italic")
+  if has("gui_running") || $TERM_ITALICS == "true"
+    let g:nord_italic=1
+  else
+    let g:nord_italic=0
+  endif
+endif
+
+let s:italic = "italic,"
+if g:nord_italic == 0
+  let s:italic = ""
+endif
+
+let s:italicize_comments = ""
+if exists("g:nord_italic_comments")
+  if g:nord_italic_comments == 1
+    let s:italicize_comments = s:italic
+  endif
 endif
 
 if !exists('g:nord_uniform_status_lines')
@@ -88,11 +104,6 @@ if !exists("g:nord_uniform_diff_background")
 endif
 
 function! s:hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
-  let l:attr = a:attr
-  if g:nord_italic_comments == 0 && l:attr ==? 'italic'
-    let l:attr= 'NONE'
-  endif
-
   if a:guifg != ""
     exec "hi " . a:group . " guifg=" . a:guifg
   endif
@@ -106,7 +117,7 @@ function! s:hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
     exec "hi " . a:group . " ctermbg=" . a:ctermbg
   endif
   if a:attr != ""
-    exec "hi " . a:group . " gui=" . l:attr . " cterm=" . l:attr
+    exec "hi " . a:group . " gui=" . a:attr . " cterm=" . a:attr
   endif
   if a:guisp != ""
     exec "hi " . a:group . " guisp=" . a:guisp
@@ -118,7 +129,7 @@ endfunction
 "+---------------+
 "+--- Attributes ---+
 call s:hi("Bold", "", "", "", "", "bold", "")
-call s:hi("Italic", "", "", "", "", "italic", "")
+call s:hi("Italic", "", "", "", "", s:italic, "")
 call s:hi("Underline", "", "", "", "", "underline", "")
 
 "+--- Editor ---+
@@ -128,7 +139,7 @@ call s:hi("CursorLine", "", s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
 call s:hi("Error", s:nord0_gui, s:nord11_gui, "", s:nord11_term, "", "")
 call s:hi("iCursor", s:nord0_gui, s:nord4_gui, "", "NONE", "", "")
 call s:hi("LineNr", s:nord3_gui, s:nord0_gui, s:nord3_term, "NONE", "", "")
-call s:hi("MatchParen", s:nord0_gui, s:nord8_gui, s:nord1_term, s:nord8_term, "", "")
+call s:hi("MatchParen", s:nord8_gui, s:nord0_gui, s:nord8_term, s:nord3_term, "", "")
 call s:hi("NonText", s:nord2_gui, "", s:nord3_term, "", "", "")
 call s:hi("Normal", s:nord4_gui, s:nord0_gui, "NONE", "NONE", "", "")
 call s:hi("PMenu", s:nord4_gui, s:nord2_gui, "NONE", s:nord1_term, "NONE", "")
@@ -211,7 +222,7 @@ call s:hi("VertSplit", s:nord2_gui, s:nord1_gui, s:nord3_term, s:nord1_term, "NO
 "+----------------------+
 call s:hi("Boolean", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Character", s:nord14_gui, "", s:nord14_term, "", "", "")
-call s:hi("Comment", s:nord3_gui_brightened[g:nord_comment_brightness], "", s:nord3_term, "", "italic", "")
+call s:hi("Comment", s:nord3_gui_brightened[g:nord_comment_brightness], "", s:nord3_term, "", s:italicize_comments, "")
 call s:hi("Conditional", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Constant", s:nord4_gui, "", "NONE", "", "", "")
 call s:hi("Define", s:nord9_gui, "", s:nord9_term, "", "", "")
@@ -229,7 +240,7 @@ call s:hi("PreProc", s:nord9_gui, "", s:nord9_term, "", "NONE", "")
 call s:hi("Repeat", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Special", s:nord4_gui, "", "NONE", "", "", "")
 call s:hi("SpecialChar", s:nord13_gui, "", s:nord13_term, "", "", "")
-call s:hi("SpecialComment", s:nord8_gui, "", s:nord8_term, "", "italic", "")
+call s:hi("SpecialComment", s:nord8_gui, "", s:nord8_term, "", s:italicize_comments, "")
 call s:hi("Statement", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("StorageClass", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("String", s:nord14_gui, "", s:nord14_term, "", "", "")
@@ -315,6 +326,9 @@ call s:hi("gitconfigVariable", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("goBuiltins", s:nord7_gui, "", s:nord7_term, "", "", "")
 hi! link goConstants Keyword
 
+call s:hi("helpBar", s:nord3_gui, "", s:nord3_term, "", "", "")
+call s:hi("helpHyperTextJump", s:nord8_gui, "", s:nord8_term, "", "underline", "")
+
 call s:hi("htmlArg", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("htmlLink", s:nord4_gui, "", "", "", "NONE", "NONE")
 hi! link htmlBold Bold
@@ -361,6 +375,8 @@ call s:hi("markdownIdDeclaration", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("markdownH1", s:nord8_gui, "", s:nord8_term, "", "", "")
 call s:hi("markdownLinkText", s:nord8_gui, "", s:nord8_term, "", "", "")
 call s:hi("markdownUrl", s:nord4_gui, "", "NONE", "", "NONE", "")
+hi! link markdownBold Bold
+hi! link markdownBoldDelimiter Keyword
 hi! link markdownFootnoteDefinition markdownFootnote
 hi! link markdownH2 markdownH1
 hi! link markdownH3 markdownH1
@@ -368,6 +384,8 @@ hi! link markdownH4 markdownH1
 hi! link markdownH5 markdownH1
 hi! link markdownH6 markdownH1
 hi! link markdownIdDelimiter Keyword
+hi! link markdownItalic Italic
+hi! link markdownItalicDelimiter Keyword
 hi! link markdownLinkDelimiter Keyword
 hi! link markdownLinkTextDelimiter Keyword
 hi! link markdownListMarker Keyword
@@ -460,6 +478,13 @@ call s:hi("GitGutterChange", s:nord13_gui, "", s:nord13_term, "", "", "")
 call s:hi("GitGutterChangeDelete", s:nord11_gui, "", s:nord11_term, "", "", "")
 call s:hi("GitGutterDelete", s:nord11_gui, "", s:nord11_term, "", "", "")
 
+" Signify
+" > mhinz/vim-signify
+call s:hi("SignifySignAdd", s:nord14_gui, "", s:nord14_term, "", "", "")
+call s:hi("SignifySignChange", s:nord13_gui, "", s:nord13_term, "", "", "")
+call s:hi("SignifySignChangeDelete", s:nord11_gui, "", s:nord11_term, "", "", "")
+call s:hi("SignifySignDelete", s:nord11_gui, "", s:nord11_term, "", "", "")
+
 " fugitive.vim
 " > tpope/vim-fugitive
 call s:hi("gitcommitDiscardedFile", s:nord11_gui, "", s:nord11_term, "", "", "")
@@ -488,7 +513,7 @@ call s:hi("plugDeleted", s:nord11_gui, "", "", s:nord11_term, "", "")
 "+--- Languages ---+
 " JavaScript
 " > pangloss/vim-javascript
-call s:hi("jsGlobalNodeObjects", s:nord8_gui, "", s:nord8_term, "", "italic", "")
+call s:hi("jsGlobalNodeObjects", s:nord8_gui, "", s:nord8_term, "", s:italic, "")
 hi! link jsBrackets Delimiter
 hi! link jsFuncCall Function
 hi! link jsFuncParens Delimiter
@@ -514,7 +539,7 @@ hi! link mkdFootnotes mkdFootnote
 hi! link mkdLink markdownLinkText
 hi! link mkdURL markdownUrl
 hi! link mkdInlineURL mkdURL
-hi! link mkdID Identifier "CHECK
+hi! link mkdID Identifier
 hi! link mkdLinkDef mkdLink
 hi! link mkdLinkDefTarget mkdURL
 hi! link mkdLinkTitle mkdInlineURL

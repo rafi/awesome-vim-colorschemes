@@ -36,3 +36,11 @@ If you want to enable italics in terminal:
 let g:space_vim_dark_background = 234
 color space-vim-dark
 ```
+
+## Credits
+
+- Thanks to the great effort of @axvr . Now we have the Xresources port of space-vim-dark theme.
+
+> To use this colour scheme for X based applications (e.g. Xterm, URxvt, etc.):
+> 1. Copy all lines from this file which are not comments (comments are lines which begin with a `!`) into your `~/.Xresources` file.
+> 2. Reload your configuration file with: `xrdb ~/.Xresources`.
