@@ -19,12 +19,12 @@ Use your favorite package-manager to install, and enjoy!
 | [Apprentice] | Dark, low-contrast colorscheme | ✓ | ✓ |
 | [Archery] | Vim colorscheme inspired by Arch Linux colors | ✓ | ✓ |
 | [Atom] | Designed to be very readable in both light and dark environments |   | ✓ |
+| [carbonized] | Inspired by the Carbon keycap set | ✓ (16) | ✓ |
+| [challenger-deep] | FlatColor colorscheme | ✓ | ✓ |
 | [deep-space] | Intergalactic friendly color scheme based off Hybrid | ✓ | ✓ |
 | [deus] | For the late night coder | ✓ | ✓ |
-| [carbonized] | Inspired by the Carbon keycap set | ✓ (16) | ✓ |
 | [dracula] | Dark theme | ✓ | ✓ |
 | [focuspoint] | Maintain color coordination and important keyword focus |   | ✓ |
-| [flatcolor] | FlatColor colorscheme | ✓ | ✓ |
 | [flattened] | Solarized, without the bullshit | ✓ (16) | ✓ |
 | [github] | Based on Github's syntax highlighting | ✓ | ✓ |
 | [gotham] | Very dark vim colorscheme | ✓ | ✓ |
@@ -75,11 +75,11 @@ Use your favorite package-manager to install, and enjoy!
 [angr]: https://github.com/zacanger/angr.vim
 [Atom]: https://github.com/gregsexton/Atom
 [carbonized]: https://github.com/nightsense/carbonized
+[challenger-deep]: https://github.com/challenger-deep-theme/vim
 [deep-space]: https://github.com/tyrannicaltoucan/vim-deep-space
 [deus]: https://github.com/ajmwagar/vim-deus
 [dracula]: https://github.com/dracula/vim
 [focuspoint]: https://github.com/chase/focuspoint-vim
-[flatcolor]: https://github.com/MaxSt/FlatColor
 [flattened]: https://github.com/romainl/flattened
 [github]: https://github.com/endel/vim-github-colorscheme
 [gotham]: https://github.com/whatyouhide/vim-gotham

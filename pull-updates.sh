@@ -20,6 +20,7 @@ function _main() {
 	_dl andreasvc/vim-256noir
 	_dl arcticicestudio/nord-vim
 	_dl Badacadabra/vim-archery
+	_dl challenger-deep-theme/vim
 	_dl chase/focuspoint-vim
 	_dl christophermca/meta5
 	_dl cocopon/iceberg.vim
@@ -42,13 +43,13 @@ function _main() {
 	_dl lifepillar/vim-solarized8
 	_dl liuchengxu/space-vim-dark
 	_dl marcopaganini/termschool-vim-theme
-	_dl MaxSt/FlatColor
 	_dl mhartington/oceanic-next
 	_dl mkarmona/materialbox
 	_dl morhetz/gruvbox
 	_dl NLKNguyen/papercolor-theme
 	_dl nanotech/jellybeans.vim
 	_dl nightsense/carbonized
+	_dl nightsense/stellarized
 	_dl owickstrom/vim-colors-paramount
 	_dl rakr/vim-colors-rakr
 	_dl rakr/vim-one

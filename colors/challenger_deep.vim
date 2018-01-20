@@ -1,5 +1,5 @@
 " Vim Color File
-" Name:       flatcolor.vim
+" Name:       challenger_deep.vim
 " Version:    2.0
 " Maintainer: github.com/MaxSt
 " License:    The MIT License (MIT)
@@ -11,17 +11,17 @@ if exists('syntax on')
     syntax reset
 endif
 
-let g:colors_name='flatcolor'
+let g:colors_name='challenger_deep'
 set background=dark
 
 
-if ! exists("g:flatcolor_termcolors")
-  let g:flatcolor_termcolors = 256
+if ! exists("g:challenger_deep_termcolors")
+  let g:challenger_deep_termcolors = 256
 endif
 
 " not all terminals support italics properly.  If yours does, opt-in.
-if ! exists("g:flatcolor_terminal_italics")
-  let g:flatcolor_terminal_italics = 0
+if ! exists("g:challenger_deep_terminal_italics")
+  let g:challenger_deep_terminal_italics = 0
 endif
 
 " Colors
@@ -77,10 +77,10 @@ let s:head_c         = s:dark_cyan
 " shamelessly stolen from hemisu: https://github.com/noahfrederick/vim-hemisu/
 function! s:h(group, style)
   " Not all terminals support italics properly. If yours does, opt-in.
-  if g:flatcolor_terminal_italics == 0 && has_key(a:style, "cterm") && a:style["cterm"] == "italic"
+  if g:challenger_deep_terminal_italics == 0 && has_key(a:style, "cterm") && a:style["cterm"] == "italic"
     unlet a:style.cterm
   endif
-  if g:flatcolor_termcolors == 16
+  if g:challenger_deep_termcolors == 16
     let l:ctermfg = (has_key(a:style, "fg") ? a:style.fg.cterm16 : "NONE")
     let l:ctermbg = (has_key(a:style, "bg") ? a:style.bg.cterm16 : "NONE")
   else

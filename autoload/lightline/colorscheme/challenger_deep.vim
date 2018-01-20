@@ -11,7 +11,7 @@ let s:subtle_black  = { "gui": "#303030", "cterm": "236", "cterm16" : "236" }
 let s:light_gray    = { "gui": "#B2B2B2", "cterm": "249", "cterm16" : "249" }
 let s:lighter_gray  = { "gui": "#C6C6C6", "cterm": "251", "cterm16" : "251" }
 
-" flat colors:
+" challenger deep colors:
 let s:asphalt = { "gui": "#1e1c31", "cterm": "233", "cterm16": "NONE"}
 let s:asphalt_subtle= { "gui": "#100E23", "cterm": "232", "cterm16": "8"}
 let s:dark_asphalt = { "gui": "#565575", "cterm": "236", "cterm16": "0"}
@@ -44,7 +44,7 @@ let s:norm            = s:clouds
 let s:norm_subtle     = s:dark_clouds
 let s:visual          = s:bg_dark
 
-" lightline flat colors:
+" lightline challenger deep colors:
 let s:lfc = {
       \'black': [ s:black.gui, s:black.cterm16],
       \'medium_gray': [ s:medium_gray.gui, s:medium_gray.cterm16],
@@ -111,4 +111,4 @@ let s:p.inactive.left   = [ [ s:lfc.dark_asphalt, s:lfc.bg_subtle ], [ s:lfc.dar
 let s:p.inactive.middle = [ [ s:lfc.dark_asphalt, s:lfc.bg_subtle ] ]
 let s:p.inactive.right  = [ [ s:lfc.dark_asphalt, s:lfc.bg_subtle ], [ s:lfc.dark_asphalt, s:lfc.bg_subtle ] ]
 
-let g:lightline#colorscheme#flatcolor#palette = lightline#colorscheme#flatten(s:p)
+let g:lightline#colorscheme#challenger_deep#palette = lightline#colorscheme#flatten(s:p)
