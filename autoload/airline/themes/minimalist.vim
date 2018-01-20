@@ -1,8 +1,8 @@
-" Minimalist Airline - A Material Colorscheme Darker
+" Minimalist Airline - A Material Color Scheme Darker
 "
 " Author:       Diki Ananta <diki1aap@gmail.com>
 " Repository:   https://github.com/dikiaap/minimalist
-" Version:      1.4
+" Version:      1.5
 " License:      MIT
 
 " Normal Mode

@@ -1,11 +1,11 @@
-" Copyright (c) 2016-2017 Arctic Ice Studio <development@arcticicestudio.com>
-" Copyright (c) 2016-2017 Sven Greb <code@svengreb.de>
+" Copyright (c) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
+" Copyright (c) 2016-present Sven Greb <code@svengreb.de>
 
 " Project: Nord Vim
 " Repository: https://github.com/arcticicestudio/nord-vim
 " License: MIT
 
-let s:nord_vim_version="0.7.0"
+let s:nord_vim_version="0.8.0"
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 
 let s:nord0 = ["#2E3440", "NONE"]

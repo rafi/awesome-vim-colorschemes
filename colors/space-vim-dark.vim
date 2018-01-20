@@ -393,6 +393,7 @@ call s:hi('NERDTreeDirSlash' , 68  , '' , 'bold' , 'bold')
 call s:hi('NERDTreeOpenable' , 68  , '' , 'bold' , 'bold')
 call s:hi('NERDTreeClosable' , 68  , '' , 'bold' , 'bold')
 call s:hi('NERDTreeExecFile' , 167 , '' , 'bold' , 'bold')
+hi link NERDTreeLinkTarget Macro
 
 " Tagbar
 call s:hi('TagbarKind'             , 169 , '' , 'bold' , 'bold')

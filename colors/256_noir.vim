@@ -30,7 +30,6 @@ if has("gui_running") || &t_Co == 256
 	hi diffRemoved	ctermfg=240	ctermbg=16	guifg=#585858	guibg=#000000
 	hi LineNr	ctermfg=240	ctermbg=16	guifg=#585858	guibg=#000000
 	hi NonText	ctermfg=240	ctermbg=16	guifg=#585858	guibg=#000000
-	hi StatusLineNC	ctermfg=240	ctermbg=16	guifg=#585858	guibg=#000000
 	hi SpecialComment	ctermfg=245	ctermbg=16	guifg=#8a8a8a	guibg=#000000
 	hi String	ctermfg=245	ctermbg=16	guifg=#8a8a8a	guibg=#000000
 	hi Boolean	ctermfg=250	ctermbg=16	guifg=#bcbcbc	guibg=#000000
@@ -62,7 +61,8 @@ if has("gui_running") || &t_Co == 256
 	hi SpecialChar	ctermfg=255	ctermbg=16	guifg=#eeeeee	guibg=#000000
 	hi Statement	ctermfg=255	ctermbg=16	guifg=#eeeeee	guibg=#000000
 	hi diffCommon	ctermfg=255	ctermbg=16	guifg=#eeeeee	guibg=#000000
-	hi StatusLine	ctermfg=255	ctermbg=16	guifg=#eeeeee	guibg=#000000
+	hi StatusLine	ctermfg=245	ctermbg=16	guifg=#8a8a8a	guibg=#000000
+	hi StatusLineNC	ctermfg=236	ctermbg=16	guifg=#303030	guibg=#000000
 	hi StorageClass	ctermfg=255	ctermbg=16	guifg=#eeeeee	guibg=#000000
 	hi Structure	ctermfg=255	ctermbg=16	guifg=#eeeeee	guibg=#000000
 	hi Todo	ctermfg=255	ctermbg=16	guifg=#eeeeee	guibg=#000000
@@ -106,9 +106,8 @@ else
 	hi diffRemoved	ctermfg=DarkGray	ctermbg=Black
 	hi LineNr	ctermfg=DarkGray	ctermbg=Black
 	hi NonText	ctermfg=DarkGray	ctermbg=Black
-	hi StatusLineNC	ctermfg=DarkGray	ctermbg=Black
-	hi SpecialComment	ctermfg=DarkGray	ctermbg=Black
-	hi String	ctermfg=DarkGray	ctermbg=Black
+	hi SpecialComment	ctermfg=LightGray	ctermbg=Black
+	hi String	ctermfg=LightGray	ctermbg=Black
 	hi Boolean	ctermfg=LightGray	ctermbg=Black
 	hi Debug	ctermfg=LightGray	ctermbg=Black
 	hi Delimiter	ctermfg=LightGray	ctermbg=Black
@@ -138,7 +137,8 @@ else
 	hi SpecialChar	ctermfg=White	ctermbg=Black
 	hi Statement	ctermfg=White	ctermbg=Black
 	hi diffCommon	ctermfg=White	ctermbg=Black
-	hi StatusLine	ctermfg=White	ctermbg=Black
+	hi StatusLine	ctermfg=LightGray	ctermbg=Black
+	hi StatusLineNC	ctermfg=DarkGray	ctermbg=Black
 	hi StorageClass	ctermfg=White	ctermbg=Black
 	hi Structure	ctermfg=White	ctermbg=Black
 	hi Todo	ctermfg=White	ctermbg=Black
@@ -150,13 +150,13 @@ else
 	hi SpellCap	ctermfg=White	ctermbg=Red
 	hi SpellLocal	ctermfg=White	ctermbg=Red
 	hi DiffText	ctermfg=LightGray	ctermbg=LightRed
-	hi Search	ctermfg=DarkGray	ctermbg=DarkGray
+	hi Search	ctermfg=LightGray	ctermbg=DarkGray
 	hi PmenuThumb	ctermfg=Black	ctermbg=DarkGray
 	hi Pmenu	ctermfg=White	ctermbg=DarkGray
-	hi Cursor	ctermfg=Black	ctermbg=DarkGray
-	hi CursorColumn	ctermfg=Black	ctermbg=DarkGray
-	hi MatchParen	ctermfg=Black	ctermbg=DarkGray
-	hi IncSearch	ctermfg=White	ctermbg=DarkGray
+	hi Cursor	ctermfg=Black	ctermbg=LightGray
+	hi CursorColumn	ctermfg=Black	ctermbg=LightGray
+	hi MatchParen	ctermfg=Black	ctermbg=LightGray
+	hi IncSearch	ctermfg=White	ctermbg=LightGray
 	hi ColorColumn	ctermfg=Black	ctermbg=LightGray
 	hi PmenuSbar	ctermfg=Black	ctermbg=LightGray
 	hi PmenuSel	ctermfg=Black	ctermbg=LightGray

@@ -1,5 +1,5 @@
-" Copyright (c) 2016-2017 Arctic Ice Studio <development@arcticicestudio.com>
-" Copyright (c) 2016-2017 Sven Greb <code@svengreb.de>
+" Copyright (c) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
+" Copyright (c) 2016-present Sven Greb <code@svengreb.de>
 
 " Project: Nord Vim
 " Repository: https://github.com/arcticicestudio/nord-vim
@@ -13,7 +13,7 @@ if version > 580
 endif
 
 let g:colors_name = "nord"
-let s:nord_vim_version="0.7.0"
+let s:nord_vim_version="0.8.0"
 set background=dark
 
 let s:nord0_gui = "#2E3440"
@@ -139,7 +139,7 @@ call s:hi("CursorLine", "", s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
 call s:hi("Error", s:nord0_gui, s:nord11_gui, "", s:nord11_term, "", "")
 call s:hi("iCursor", s:nord0_gui, s:nord4_gui, "", "NONE", "", "")
 call s:hi("LineNr", s:nord3_gui, s:nord0_gui, s:nord3_term, "NONE", "", "")
-call s:hi("MatchParen", s:nord8_gui, s:nord0_gui, s:nord8_term, s:nord3_term, "", "")
+call s:hi("MatchParen", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "", "")
 call s:hi("NonText", s:nord2_gui, "", s:nord3_term, "", "", "")
 call s:hi("Normal", s:nord4_gui, s:nord0_gui, "NONE", "NONE", "", "")
 call s:hi("PMenu", s:nord4_gui, s:nord2_gui, "NONE", s:nord1_term, "NONE", "")

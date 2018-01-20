@@ -280,7 +280,7 @@ Please report issues/bugs, feature requests and suggestions for improvements to 
 
 <p align="center"><img src="https://cdn.rawgit.com/arcticicestudio/nord/develop/src/assets/banner-footer-mountains.svg" /></p>
 
-<p align="center"> <img src="http://arcticicestudio.com/favicon.ico" width=16 height=16/> Copyright &copy; 2017 Arctic Ice Studio</p>
+<p align="center">Copyright &copy; 2016-present Arctic Ice Studio</p>
 
 <p align="center"><a href="https://github.com/arcticicestudio/nord-vim/blob/develop/LICENSE.md"><img src="https://img.shields.io/badge/License-MIT-5E81AC.svg?style=flat-square"/></a> <a href="https://creativecommons.org/licenses/by-sa/4.0"><img src="https://img.shields.io/badge/License-CC_BY--SA_4.0-5E81AC.svg?style=flat-square"/></a></p>
 

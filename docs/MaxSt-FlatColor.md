@@ -1,3 +1,5 @@
+# This theme is deprecated! Please use https://challenger-deep-theme.github.io/ instead.
+
 ## FlatColor ##
 
 ### Terminal True Color Support ###

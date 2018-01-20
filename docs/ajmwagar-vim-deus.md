@@ -54,7 +54,7 @@ add the following lines to your .vimrc:
 
 ```
 call plug#begin('~/.vim/bundle/')
-Plug (ajmwagar/vim-dues)
+Plug (ajmwagar/vim-deus)
 cal  plug#end()
 ```
 Don't forget to run:
@@ -109,7 +109,7 @@ Don't forget to run:
 ---
 ## Troubleshooting
 
-When using terminal-vim and vim-dues the colors
+When using terminal-vim and vim-deus the colors
 can get messed up.
 
 To fix this add the following snippet to your ~/.vimrc:
