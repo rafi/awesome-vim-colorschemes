@@ -345,7 +345,14 @@ if !has('gui_running') && exists("g:hybrid_custom_term_colors") && g:hybrid_cust
 else
   let s:bg_normal = s:bg_background
 endif
-exe "hi! Normal"        .s:fg_foreground  .s:bg_normal      .s:fmt_none
+
+let s:normal_bg = s:bg_normal
+
+if get(g:, 'hybrid_transparent_background', 0) == 1
+  let s:normal_bg = s:bg_none
+endif
+
+exe "hi! Normal"        .s:fg_foreground  .s:normal_bg      .s:fmt_none
 
 "}}}
 " Generic Syntax Highlighting: (see :help group-name)"{{{

@@ -24,10 +24,10 @@ In 8-color and 4-color, it might lack the necessary variation of colors to expre
 
 Currently designed for these languages:
   - Haskell, Erlang, Elixir, Clojure, Elm, Purescript, F#
-  - C, C++, Java, Golang, JavaScript, Python, Ruby, Pascal, PHP, Perl, LUA
-  - DTrace, SystemTap, SQL/MySQL, Octave/MATLAB, R, Lex/Flex & Yacc/Bison, Assembly (MIPS, GAS, NASM), Bash/Shell script, Sed, Awk, Vim script, Powershell script
+  - C, C++, Golang, Rust, Java, JavaScript, Python, Ruby, Pascal, PHP, Perl, LUA
+  - DTrace, SystemTap, SQL/MySQL, Octave/MATLAB, R, Lex/Flex & Yacc/Bison, ASN.1, Assembly (MIPS, GAS, NASM), Bash/Shell script, Sed, Awk, Vim script, Powershell script
   - Dockerfile, Makefile, CMake, NGINX, Cucumber, YAML, JSON, HTML, XML, Markdown, reStructuredText, PlantUML, Dosini, Mail, Git commit message
-  - Ada, COBOL, Fortran, *(what's your other favorite dinosaur?)*
+  - Ada, COBOL, Fortran, ALGOL, *(what's your other favorite dinosaur?)*
 
 Other file types can still display well as long as your Vim is set up to recognize the language syntax even though that may not be the optimal experience. So, if the language you are working on isn't listed here, feel free to make a design request.
 
@@ -194,7 +194,8 @@ There are syntax highlighting enhancement plugins that improve upon Vim built-in
 * Purescript: [purescript-vim](https://github.com/purescript-contrib/purescript-vim)
 * F#: [vim-fsharp](https://github.com/fsharp/vim-fsharp)
 * PowerShell: [vim-ps1](https://github.com/PProvost/vim-ps1)
-
+* CMake: [vim-cmake-syntax](https://github.com/pboettch/vim-cmake-syntax)
+* ALGOL: [vim-algol68](https://github.com/sterpe/vim-algol68)
 
 ## Screenshots
 
@@ -249,6 +250,8 @@ Suggestions/Wishes/Questions/Comments are welcome via [Github issues](https://gi
 [Terminal Theme](https://www.reddit.com/r/vim/comments/36xzbs/vim_paper_color_theme_inspired_by_googles/crqbfpa) by Fixles
 
 [PaperColor Light for iTerm2](https://github.com/aseom/dotfiles/blob/master/osx/iterm2/papercolor-light.itermcolors) by ASeom Han
+
+[PaperColor for Terminal.app](https://github.com/tomotargz/papercolor-terminal-app) by tomotargz
 
 [PaperColor Theme for Vis Editor](https://github.com/jceb/dotfiles/blob/master/config/vis/lexers/themes/papercolor.lua) by Jan Christoph Ebersbach
 

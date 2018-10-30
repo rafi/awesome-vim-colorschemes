@@ -43,7 +43,7 @@ Installation
   *  [Pathogen][1] - `git clone https://github.com/fcpg/vim-orbital ~/.vim/bundle/vim-orbital`
   *  [NeoBundle][2] - `NeoBundle 'fcpg/vim-orbital'`
   *  [Vundle][3] - `Plugin 'fcpg/vim-orbital'`
-  *  [Plug][4] - Plug 'fcpg/vim-complimentary'
+  *  [Plug][4] - `Plug 'fcpg/vim-orbital'`
   *  manual - copy all of the files into your `~/.vim` directory
 2. Append the following line to your .vimrc file:
 ```VimL

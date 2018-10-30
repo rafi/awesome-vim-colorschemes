@@ -25,6 +25,13 @@ GVIM + Pylint + Syntastic:
 Airline theme
 ![img](https://github.com/ajmwagar/vim-deus/blob/master/screencaps/Airline.png)
 
+Terminal (Neo)vim
+
+![img](https://github.com/ajmwagar/vim-deus/blob/master/screencaps/duesLinux.jpeg?raw=true)
+
+NERDTree
+![img](![img](https://github.com/ajmwagar/vim-deus/blob/master/screencaps/duesNerdtree.jpeg?raw=true)
+
 ---
 
 ## Installation
@@ -54,7 +61,7 @@ add the following lines to your .vimrc:
 
 ```
 call plug#begin('~/.vim/bundle/')
-Plug (ajmwagar/vim-deus)
+Plug 'ajmwagar/vim-deus'
 cal  plug#end()
 ```
 Don't forget to run:
@@ -128,7 +135,11 @@ To fix this add the following snippet to your ~/.vimrc:
 
 `let g:deus_termcolors=256`
 
-> _Please not this does **not** work with tmux (you will have a brownish background)._
+### Tmux
+
+Instructions on how to enable TrueColor for Tmux can be found [here](https://gist.github.com/parmort/4d95555b3f9435fa953f0b7c67c86e8f).
+
+If you use vim in a terminal that supports italics, in order to have italics enable with vim-deus, set the environment variable TERM_ITALICS to TRUE.
 
 ---
 

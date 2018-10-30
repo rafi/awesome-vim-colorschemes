@@ -1,5 +1,3 @@
-**NOTE: version 1.0.0 has backward incompatible changes. Please review this Readme!**
-
 # Solarized 8: True Colors
 
 Solarized 8 Flat Dark      |  Solarized 8 Flat Light
@@ -88,9 +86,8 @@ colorscheme, e.g.:
 To switch the background from dark to light or vice versa, just set `background`
 accordingly.
 
-**Note:** the old names (`solarized8_dark*` and `solarized8_light*`) are
-still available, but **they are deprecated** and will be removed in a future
-release. Please use one of the names above.
+**Note:** the old names (`solarized8_dark*` and `solarized8_light*`) have been
+removed in v1.1.1. Please use one of the names above.
 
 If you use Vim packages, there is no need to `packadd solarized8`. Keep your
 `runtimepath` clean!

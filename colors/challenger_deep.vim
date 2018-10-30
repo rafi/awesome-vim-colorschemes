@@ -101,7 +101,7 @@ endfunction
 " (see `:h w18`)
 
 call s:h("Normal",        {"bg": s:bg, "fg": s:norm})
-call s:h("Cursor",        {"bg": s:bg_dark, "fg": s:norm })
+call s:h("Cursor",        {"bg": s:blue, "fg": s:bg_dark})
 call s:h("Comment",       {"fg": s:medium_gray, "gui": "italic", "cterm": "italic"})
 
 call s:h("Constant",      {"fg": s:yellow})
@@ -146,8 +146,8 @@ hi! link Debug            Special
 
 call s:h("Underlined",    {"fg": s:norm                      , "gui": "underline", "cterm": "underline"})
 call s:h("Ignore",        {"fg": s:bg                                                                  })
-call s:h("Error",         {"fg": s:actual_white, "bg": s:dark_red , "gui": "bold"     , "cterm": "bold"     })
-call s:h("Todo",          {"fg": s:actual_white, "bg": s:blue, "gui": "bold"     , "cterm": "bold"     })
+call s:h("Error",         {"fg": s:dark_red, "bg": s:bg_subtle , "gui": "bold"     , "cterm": "bold"     })
+call s:h("Todo",          {"fg": s:dark_yellow, "bg": s:bg_subtle, "gui": "bold"     , "cterm": "bold"     })
 
 " ui chrome ====================================================================
 " ordered according to `:help hitest.vim`
@@ -164,7 +164,7 @@ call s:h("Search",        {"bg": s:bg_dark})
 call s:h("MoreMsg",       {"fg": s:medium_gray, "gui": "bold", "cterm": "bold"})
 hi! link ModeMsg MoreMsg
 call s:h("LineNr",        {"fg": s:dark_asphalt, "bg": s:bg_subtle})
-call s:h("CursorLineNr",  {"bg": s:blue, "fg": s:bg_subtle})
+call s:h("CursorLineNr",  {"bg": s:bg_subtle, "fg": s:blue, "gui": "bold"})
 call s:h("Question",      {"fg": s:red})
 call s:h("StatusLine",    {"bg": s:bg_dark})
 call s:h("Conceal",       {"fg": s:norm})
@@ -310,10 +310,10 @@ hi! link xmlTagName                 htmlTagName
 hi link SignifySignAdd              LineNr
 hi link SignifySignDelete           LineNr
 hi link SignifySignChange           LineNr
-call s:h("GitGutterAdd",{"fg": s:green})
-call s:h("GitGutterDelete",{"fg": s:red})
-call s:h("GitGutterChange",{"fg": s:yellow})
-call s:h("GitGutterChangeDelete",{"fg": s:red})
+call s:h("GitGutterAdd",{"fg": s:green, "bg": s:bg_subtle})
+call s:h("GitGutterDelete",{"fg": s:red, "bg": s:bg_subtle})
+call s:h("GitGutterChange",{"fg": s:yellow, "bg": s:bg_subtle})
+call s:h("GitGutterChangeDelete",{"fg": s:red, "bg": s:bg_subtle})
 
 
 "nvim terminal colors

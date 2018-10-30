@@ -1,8 +1,6 @@
-# onedark.vim
+![onedark.vim](https://raw.githubusercontent.com/joshdick/onedark.vim/master/img/readme_header.png)
 
 A dark Vim/Neovim color scheme for the GUI and 16/256/true-color terminals, based on [FlatColor](https://github.com/MaxSt/FlatColor), with colors inspired by the excellent [One Dark syntax theme](https://github.com/atom/one-dark-syntax) for the [Atom text editor](https://atom.io).
-
-![onedark.vim Preview](https://raw.githubusercontent.com/joshdick/onedark.vim/master/img/preview.png)
 
 ## Installation
 
@@ -134,7 +132,7 @@ However, you can use the `g:onedark_termcolors` option to control onedark.vim's 
 
 * **16-color mode** is the preferred option, since its colors are more accurate than those of 256-color mode. However, you'll need to set your terminal emulator's color palette to this color scheme's custom 16-color palette, since 16-color mode will cause the color scheme to use your terminal emulator's native 16 colors. If you don't use the custom 16-color palette in your terminal emulator when 16-color mode is enabled, onedark.vim's colors will not display correctly in Vim.
 
-   The canonical version of the 16-color palette is an [Xresources](https://en.wikipedia.org/wiki/X_resources) file located in this repository at `term/One Dark.Xresources`. [iTerm2](https://iterm2.com) and Mac Terminal.app color schemes are also provided in `term/`. (The iTerm2 color scheme works with iTerm2 versions 2.9.x and later.) You should be able to easily convert the Xresources color scheme for use with your terminal emulator of choice either by hand, or automatically by using [termcolors](https://github.com/stayradiated/termcolors).
+   The canonical version of the 16-color palette is an [Xresources](https://en.wikipedia.org/wiki/X_resources) file located in this repository at `term/One Dark.Xresources`. Color schemes for various terminal emulators are also provided in `term/`. (The [iTerm2](https://iterm2.com/) color scheme works with iTerm2 versions 2.9.x and later.) You should be able to easily convert the Xresources color scheme for use with your terminal emulator of choice either by hand, or automatically by using [termcolors](https://github.com/stayradiated/termcolors).
 
    Assuming your terminal emulator is configured to use the custom 16-color palette as described above, add the following line to your `~/.vimrc` to enable 16-color mode:
 
@@ -228,6 +226,7 @@ Several other themes and projects have reused code and/or colors from this proje
 
 If onedark.vim isn't meeting your needs, try one of its relatives!
 
+* [drewtempelmeyer/palenight.vim](https://github.com/drewtempelmeyer/palenight.vim)
 * [KeitaNakamura/neodark.vim](https://github.com/KeitaNakamura/neodark.vim)
 * [base16-onedark.vim](https://github.com/chriskempson/base16-vim/blob/master/colors/base16-onedark.vim)
   * Associated base16 scheme: [tilal6991/base16-onedark-scheme](https://github.com/tilal6991/base16-onedark-scheme)

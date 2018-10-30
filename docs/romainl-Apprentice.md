@@ -20,7 +20,7 @@ Some code in iTerm, with `TERM=xterm`, using the Tango color palette:
 
 ![image](http://romainl.github.io/Apprentice/images/08termtango.png)
 
-## Preparing your environment.
+## Preparing your environment
 
 Apprentice is designed first and foremost to look “good” in terminal emulators supporting 256 colors and in GUI Vim (GVim/MacVim). It supports lesser terminal emulators in the sense that it doesn’t break but it will definitely look “better” in more capable environments.
 
@@ -36,7 +36,7 @@ In practice, this new development doesn't change much for Apprentice which uses 
 
     :set termguicolors
 
-See [this gist](https://gist.github.com/XVilka/8346728) for more information and support status and, of course, `:help termguicolors`.
+See [this gist](https://gist.github.com/XVilka/8346728) for more information and support status and, of course, `:help 'termguicolors'`.
 
 ### 256color-ready terminal emulators
 
@@ -122,31 +122,47 @@ I recommend to adjust your terminal's background color to the one used in Appren
 | hexadecimal | `#262626`       |
 | rgb         | `rgb(38,38,38)` |
 
-## Installing Apprentice.
+## Installing Apprentice
 
 Colorschemes must be placed in a directory named `colors` that is somewhere in Vim’s `runtimepath`:
 
 The canonical location is:
 
-    ~/.vim/colors/apprentice.vim
+    colors/apprentice.vim
 
 but it could be:
 
-    ~/.vim/bundle/apprentice/colors/apprentice.vim
+    bundle/apprentice/colors/apprentice.vim
 
 or whatever works for you.
 
 Arch users may be happy to hear that Apprentice [has landed in AUR](https://aur.archlinux.org/packages/vim-apprentice/). To install it, use an AUR helper — `yaourt -S vim-apprentice` — or download the `PKGBUILD` and do `$ makepkg -i`.
 
-## Enabling Apprentice.
+## Enabling Apprentice
 
 To test Apprentice, just type this command from *normal* mode and hit `Enter`:
 
     :colorscheme apprentice
 
-If you like what you see and want to make Apprentice your default colorscheme, add this line to your `~/.vimrc`, preferably near the end, after any `syntax enable`, `syntax on`, `filetype ... on`, `call plug#end()`, or `call vundle#end()` line:
+If you like what you see and want to make Apprentice your default colorscheme, add this line to your `vimrc`, preferably near the end, after any `syntax enable`, `syntax on`, `filetype ... on`, `call plug#end()`, or `call vundle#end()` line:
 
     colorscheme apprentice
+
+## Tweaking Apprentice
+
+If you don't want to maintain your own fork of Apprentice you can add something like this to your `vimrc`, before `colorscheme apprentice`:
+
+    function! MyHighlights() abort
+        highlight Comment ctermfg=245
+        highlight NonText ctermbg=17
+    endfunction
+
+    augroup MyColors
+        autocmd!
+        autocmd ColorScheme * call MyHighlights()
+    augroup END
+
+See [this Gist](https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f) for reference.
 
 ## Lightline and Airline themes
 

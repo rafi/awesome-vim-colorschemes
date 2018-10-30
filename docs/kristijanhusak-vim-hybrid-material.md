@@ -33,6 +33,11 @@ If you want comments to be in italic, also add this:
 let g:enable_italic_font = 1
 ```
 
+To use transparent background, add this option:
+```vimL
+let g:hybrid_transparent_background = 1
+```
+
 
 #### Hybrid Material
 Based on [equinusocio/material-theme](https://github.com/equinusocio/material-theme).
@@ -75,6 +80,8 @@ If you are using [vim-airline](https://github.com/bling/vim-airline) plugin, the
 ```vimL
 let g:airline_theme = "hybrid"
 ```
+
+Font on screenshot: [Inconsolata](https://github.com/powerline/fonts/tree/master/Inconsolata)
 
 
 ### Thanks to

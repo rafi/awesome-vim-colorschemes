@@ -28,7 +28,7 @@ if !exists('g:one_allow_italics')
   let g:one_allow_italics = 0
 endif
 
-if has('gui_running') || &t_Co == 88 || &t_Co == 256
+if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   " functions
   " returns an approximate grey index for the given grey level
 
@@ -564,6 +564,21 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   call <sid>X('goUnsignedInts',        s:hue_1, '', '')
   " }}}
 
+  " Haskell highlighting ----------------------------------------------------{{{
+  call <sid>X('haskellDeclKeyword',    s:hue_2, '', '')
+  call <sid>X('haskellType',           s:hue_4, '', '')
+  call <sid>X('haskellWhere',          s:hue_5, '', '')
+  call <sid>X('haskellImportKeywords', s:hue_2, '', '')
+  call <sid>X('haskellOperators',      s:hue_5, '', '')
+  call <sid>X('haskellDelimiter',      s:hue_2, '', '')
+  call <sid>X('haskellIdentifier',     s:hue_6, '', '')
+  call <sid>X('haskellKeyword',        s:hue_5, '', '')
+  call <sid>X('haskellNumber',         s:hue_1, '', '')
+  call <sid>X('haskellString',         s:hue_1, '', '')
+  "}}}
+
+
+  
   " HTML highlighting -------------------------------------------------------{{{
   call <sid>X('htmlArg',            s:hue_6,  '', '')
   call <sid>X('htmlTagName',        s:hue_5,  '', '')
@@ -837,7 +852,7 @@ function! one#highlight(group, fg, bg, attr)
 endfunction
 "}}}
 
-if s:dark
+if exists('s:dark') && s:dark
   set background=dark
 endif
 

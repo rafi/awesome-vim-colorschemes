@@ -54,6 +54,13 @@ call plug#end()
   <li><code class="highlighter-rouge">colorscheme carbonized-dark</code></li>
 </ul>
 
+<p>To activate the <a href="https://github.com/itchyny/lightline.vim">lightline</a> theme, add one of the following lines to your lightline config:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">\ 'colorscheme': 'carbonized_light',</code></li>
+  <li><code class="highlighter-rouge">\ 'colorscheme': 'carbonized_dark',</code></li>
+</ul>
+
 <blockquote>
   <p>To assign themes to specific intervals of the day, try the <a href="https://github.com/nightsense/night-and-day">night-and-day</a> plugin.</p>
 </blockquote>

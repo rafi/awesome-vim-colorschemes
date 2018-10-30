@@ -81,8 +81,9 @@ let s:is_dark=(&background == 'dark')
 " setup palette dictionary
 let s:ds = {}
 
+
 " fill it with absolute colors
-let s:ds.dark0       = ['#2C323B', 235]     " 40-40-40
+let s:ds.dark0       = ['#2C323B', 235]     " 40-40-40 Background
 let s:ds.dark1       = ['#3c3836', 237]     " 60-56-54
 let s:ds.dark2       = ['#2C313A', 239]     " 80-73-69
 let s:ds.dark3       = ['#665c54', 241]     " 102-92-84
@@ -461,7 +462,7 @@ call s:HL('FoldColumn', s:gray, s:bg1)
 " Cursor: {{{
 
 " Character under cursor
-call s:HL('Cursor', s:none, s:none, s:inverse)
+"call s:HL('Cursor', s:none, s:none, s:inverse)
 " Visual mode cursor, selection
 hi! link vCursor Cursor
 " Input moder cursor
@@ -855,6 +856,33 @@ hi! link cOperator deusPurple
 hi! link cStructure deusOrange
 
 " }}}
+
+" C++ {{{
+
+hi! link  NamespaceTag deusPurpleBold
+hi! link  NamespaceAliasTag deusPurpleBold
+hi! link  ClassTag duesOrange
+hi! link  StructureTag deusOrange
+hi! link  EnumTag deusAqua
+hi! link  EnumValueTag deusAqua
+hi! link  UnionTag deusPurple
+hi! link  FieldTag deusPurple
+hi! link  LocalVariableTag deusOrange
+hi! link  FunctionTag deusGreen 
+hi! link  MethodTag deusGreen
+hi! link  FunctionParameterTag deusPurpleBold 
+hi! link  TemplateTypeParameterTag deusPurple
+hi! link  TemplateNonTypeParameterTag deusRedBold
+hi! link  TemplateTemplateParameterTag deusRed
+hi! link  MacroDefinitionTag deusBlue
+hi! link  MacroInstantiationTag deusBlue
+hi! link  TypedefTag deusPurple
+hi! link  UsingDirectiveTag deusOrange
+hi! link  UsingDeclarationTag deusOrange
+
+
+" }}}
+
 " Python: {{{
 
 hi! link pythonBuiltin deusOrange
@@ -1080,7 +1108,7 @@ hi! link markdownCodeBlock deusAqua
 hi! link markdownCodeDelimiter deusAqua
 
 hi! link markdownBlockquote deusGray
-hi! link markdownListMarker deusGray
+hi! link markdownListMarker deusPurple
 hi! link markdownOrderedListMarker deusGray
 hi! link markdownRule deusGray
 hi! link markdownHeadingRule deusGray

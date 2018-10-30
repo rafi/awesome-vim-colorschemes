@@ -36,8 +36,9 @@ Based on the [pencil][] and [off][] colorschemes.
 
 ## Contributions
 
-If you find any problems with this color scheme please post an Issue here on
-GitHub. Thanks!
+If you find any problems with this color scheme please post an issue here on
+GitHub. If you don't like some specific color, please fork it instead and customize
+to your liking. Thanks!
 
 ## License
 

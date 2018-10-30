@@ -28,6 +28,7 @@ scheme.
 * Cucumber features
 * Elixir
 * Go
+* Haskell
 * HTML
 * JavaScript, JSON
 * Markdown

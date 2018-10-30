@@ -244,6 +244,11 @@ call <sid>hi('GitGutterChange',            s:base0D, s:base00, s:bold,      '')
 call <sid>hi('GitGutterDelete',            s:base08, s:base00, s:bold,      '')
 call <sid>hi('GitGutterChangeDelete',      s:base0E, s:base00, s:bold,      '')
 
+call <sid>hi('SignifySignAdd',             s:base0B, s:base00, s:bold,      '')
+call <sid>hi('SignifySignChange',          s:base0D, s:base00, s:bold,      '')
+call <sid>hi('SignifySignDelete',          s:base08, s:base00, s:bold,      '')
+call <sid>hi('SignifySignChangeDelete',    s:base0E, s:base00, s:bold,      '')
+call <sid>hi('SignifySignDeleteFirstLine', s:base08, s:base00, s:bold,      '')
 
 call <sid>hi('xmlTag',                     s:base0C, '',       '',          '')
 call <sid>hi('xmlTagName',                 s:base05, '',       '',          '')
@@ -251,20 +256,29 @@ call <sid>hi('xmlEndTag',                  s:base0C, '',       '',          '')
 " }}}
 
 let g:terminal_color_0=s:base00[0]
+let g:terminal_color_8=s:base00[0]
+
 let g:terminal_color_1=s:base08[0]
+let g:terminal_color_9=s:base08[0]
+
 let g:terminal_color_2=s:base0B[0]
+let g:terminal_color_10=s:base0B[0]
+
 let g:terminal_color_3=s:base0A[0]
+let g:terminal_color_11=s:base0A[0]
+
 let g:terminal_color_4=s:base0D[0]
+let g:terminal_color_12=s:base0D[0]
+
 let g:terminal_color_5=s:base0E[0]
+let g:terminal_color_13=s:base0E[0]
+
 let g:terminal_color_6=s:base0C[0]
+let g:terminal_color_14=s:base0C[0]
+
 let g:terminal_color_7=s:base05[0]
-let g:terminal_color_8=s:base03[0]
-let g:terminal_color_9=s:base09[0]
-let g:terminal_color_10=s:base01[0]
-let g:terminal_color_11=s:base02[0]
-let g:terminal_color_12=s:base04[0]
-let g:terminal_color_13=s:base06[0]
-let g:terminal_color_14=s:base0F[0]
-let g:terminal_color_15=s:base07[0]
+let g:terminal_color_15=s:base05[0]
+
 let g:terminal_color_background=s:base00[0]
 let g:terminal_color_foreground=s:base10[0]
+

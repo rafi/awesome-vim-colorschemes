@@ -1,30 +1,32 @@
-![Dark Grey](https://user-images.githubusercontent.com/11221489/33703680-040b8230-dade-11e7-80aa-c7bd37e2cdc1.png)
-
-![screenshot](https://user-images.githubusercontent.com/11221489/33703778-6fb8eb6c-dade-11e7-90ea-538719c16698.png)
+![screenshot](https://user-images.githubusercontent.com/11221489/46834965-b52dce80-cd61-11e8-9461-ef54268d295f.png)
 
 :space_invader: Set Up
 ------
-The default UI for Alduin is dark grey. However, depending on certain lighting conditions, time of day or personal preference you might want to try some of the darker versions that are available. [screenshots of all modes](https://github.com/AlessandroYorba/Alduin/issues/5)
 
 ###### [Dark Grey](https://user-images.githubusercontent.com/11221489/33703680-040b8230-dade-11e7-80aa-c7bd37e2cdc1.png)
-```
+```VimL
 colorscheme alduin
 ```
 
-###### [Almost Black](https://user-images.githubusercontent.com/11221489/33703720-3109e966-dade-11e7-88ed-0699e0b3c6b5.png)
-```
+:milky_way: Change Background Colors
+------
+
+###### [Almost Black Background]()
+```VimL
 let g:alduin_Shout_Dragon_Aspect = 1
 colorscheme alduin 
 ```
 
-###### [Black](https://user-images.githubusercontent.com/11221489/33703746-4d9d4802-dade-11e7-87bd-13cd7eebf2c1.png)
-```
+###### [Black Background]()
+```VimL
 let g:alduin_Shout_Become_Ethereal = 1
 colorscheme alduin 
 ```
 
-###### [Dark Red SpecialHL](https://user-images.githubusercontent.com/11221489/33703778-6fb8eb6c-dade-11e7-90ea-538719c16698.png)
-```
+:squid:	Dark Red HL
+------
+###### [Dark Red SpecialHL]()
+```VimL
 let g:alduin_Shout_Fire_Breath = 1
 colorscheme alduin
 ```
@@ -46,4 +48,4 @@ development version [here](https://github.com/AlessandroYorba/Alduin/tree/nightl
 [Despacio](https://github.com/AlessandroYorba/Despacio)<br>
 [Sierra](https://github.com/AlessandroYorba/Sierra)<br>
 [Arcadia](https://github.com/AlessandroYorba/Arcadia)<br>
-[Libertine](https://github.com/AlessandroYorba/Libertine)<br>
+[Breve](https://github.com/AlessandroYorba/Breve)<br>

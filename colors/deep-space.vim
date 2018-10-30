@@ -185,3 +185,22 @@ call s:HL('GitGutterChangeDelete',          s:orange,   '',         '')
 call s:HL('SignifySignAdd',                 s:green,    '',         '')
 call s:HL('SignifySignChange',              s:yellow,   '',         '')
 call s:HL('SignifySignDelete',              s:red,      '',         '')
+
+if has("nvim") && exists("&termguicolors") && &termguicolors
+    let g:terminal_color_0  = "#1b202a"
+    let g:terminal_color_8  = "#232936"
+    let g:terminal_color_1  = "#b15e7c"
+    let g:terminal_color_9  = "#b3785d"
+    let g:terminal_color_2  = "#709d6c"
+    let g:terminal_color_10 = "#709d6c"
+    let g:terminal_color_3  = "#b5a262"
+    let g:terminal_color_11 = "#d5b875"
+    let g:terminal_color_4  = "#608cc3"
+    let g:terminal_color_12 = "#608cc3"
+    let g:terminal_color_5  = "#8f72bf"
+    let g:terminal_color_13 = "#c47ebd"
+    let g:terminal_color_6  = "#56adb7"
+    let g:terminal_color_14 = "#51617d"
+    let g:terminal_color_7  = "#323c4d"
+    let g:terminal_color_15 = "#9aa7bd"
+endif

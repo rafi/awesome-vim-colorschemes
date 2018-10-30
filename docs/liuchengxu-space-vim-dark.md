@@ -14,21 +14,45 @@ Plug 'liuchengxu/space-vim-dark'
 
 **Notes:**
 
-If you want to enable italics in terminal:
+- If you want to enable italics in terminal:
 
-1. check if the current terminal is able to display italics correctly: `echo -e "\e[3mfoo\e[23m"]]"`, if the output is _`foo`_ , the terminal (-emulator) supports italics.
+    1. check if the current terminal is able to display italics correctly: `echo -e "\e[3mfoo\e[23m"]]"`, if the output is _`foo`_ , the terminal (-emulator) supports italics.
 
-2. If the terminal supports italics, put `hi Comment cterm=italic` after colorshcme command in your vimrc.
+    2. If the terminal supports italics, put `hi Comment cterm=italic` after colorshcme command in your vimrc.
+
+        ```vim
+        colorscheme space-vim-dark
+        hi Comment cterm=italic
+        ```
+
+- If you want to make the background transparent, override the related items in your vimrc:
 
     ```vim
     colorscheme space-vim-dark
-    hi Comment cterm=italic
+    hi Normal     ctermbg=NONE guibg=NONE
+    hi LineNr     ctermbg=NONE guibg=NONE
+    hi SignColumn ctermbg=NONE guibg=NONE
     ```
+
+    <p align="center"><img width="500" alt="transparent" src="https://user-images.githubusercontent.com/8850248/36429354-75870ba6-168d-11e8-939a-34956e3c24b9.png"></p>
+
+- If you prefer the grey comment:
+
+    ```vim
+    colorscheme space-vim-dark
+    hi Comment guifg=#5C6370 ctermfg=59
+    ```
+    <p align="center"><img width="500" alt="transparent" src="https://raw.githubusercontent.com/liuchengxu/img/master/space-vim-dark/grey-comment.png"></p>
 
 ## GUI or Terminal with true colors enabled
 
+```vim
+color space-vim-dark
+set termguicolors
+hi LineNr ctermbg=NONE guibg=NONE
+```
+
 ![screenshot](https://raw.githubusercontent.com/liuchengxu/img/master/space-vim/space-vim-gui.png)
-(Terminal with `set termguicolors`)
 
 ## Cterm (256 colors)
 
