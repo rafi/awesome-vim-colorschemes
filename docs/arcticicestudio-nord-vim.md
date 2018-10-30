@@ -20,10 +20,12 @@ Nord Vim is a 16 colorspace theme build to run in GUI- and terminal mode with su
     - [Activation](#activation)
   - [Configuration](#configuration)
     - [Italic Support](#italic-support)
+    - [Underline Support](#underline-support)
     - [Italic Comments](#italic-comments)
     - [Uniform Status Lines](#uniform-status-lines)
     - [Comment Contrast](#comment-contrast)
     - [Uniform diff Background](#uniform-diff-background)
+    - [Line number background](#line-number-background)
   - [Plugin Support](#plugin-support)
     - [UI Plugins](#ui-plugins)
     - [Language Plugins](#language-plugins)
@@ -89,7 +91,7 @@ Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 A explicit version can be installed via Git tags:
 
 ```vim
-Plug 'arcticicestudio/nord-vim', { 'tag': 'v0.7.0' }
+Plug 'arcticicestudio/nord-vim', { 'tag': 'v0.9.0' }
 ```
 
 #### Manual
@@ -139,6 +141,22 @@ let g:nord_italic = 1
 ```
 
 <p align="center"><strong>Italic formatting in Markdown</strong><br><img src="https://raw.githubusercontent.com/arcticicestudio/nord-vim/develop/assets/scrot-config-italic-markdown.png"/></p>
+
+### Underline Support
+
+**This option should only be enabled if your terminal emulator supports underlines!**
+
+Can be enabled to support underlined text.
+
+Most terminals are not capable to handle underlines right so Nord disables these for terminals by default while it should work out-of-the-box™ in GUI mode.
+
+Set `g:nord_underline` to `1` to enforce displaying underlines.
+
+```vim
+let g:nord_underline = 1
+```
+
+<p align="center"><strong>Underlined Text</strong><br><img src="https://raw.githubusercontent.com/arcticicestudio/nord-vim/develop/assets/scrot-config-underline.png"/></p>
 
 ### Italic Comments
 
@@ -230,6 +248,17 @@ let g:nord_uniform_diff_background = 1
 <p align="center"><strong>Colorful backgrounds (default)</strong><br><img src="https://raw.githubusercontent.com/arcticicestudio/nord-vim/develop/assets/scrot-config-uniform-diff-default.png"/><br><strong>Uniform diff background</strong><br><img src="https://raw.githubusercontent.com/arcticicestudio/nord-vim/develop/assets/scrot-config-uniform-diff.png"/>
 </p>
 
+### Line number background
+
+Enables background for the line number of the current line.
+
+```vim
+let g:nord_cursor_line_number_background = 1
+```
+
+<p align="center"><strong>No background (default)</strong><br><img src="https://raw.githubusercontent.com/arcticicestudio/nord-vim/develop/assets/scrot-config-cursor-line-number-background-default.png"/><br><strong>Enabled background</strong><br><img src="https://raw.githubusercontent.com/arcticicestudio/nord-vim/develop/assets/scrot-config-cursor-line-number-background.png"/>
+</p>
+
 ## Plugin Support
 
 Nord Vim provides support for many third-party language- and UI plugins.
@@ -272,7 +301,7 @@ Detailed descriptions for supported languages can be found in the [project wiki]
 
 ## Development
 
-[![](https://img.shields.io/badge/Changelog-0.7.0-81A1C1.svg?style=flat-square)](https://github.com/arcticicestudio/nord-vim/blob/v0.7.0/CHANGELOG.md) [![](https://img.shields.io/badge/Workflow-gitflow--branching--model-81A1C1.svg?style=flat-square)](http://nvie.com/posts/a-successful-git-branching-model) [![](https://img.shields.io/badge/Versioning-ArcVer_0.8.0-81A1C1.svg?style=flat-square)](https://github.com/arcticicestudio/arcver)
+[![](https://img.shields.io/badge/Changelog-0.9.0-81A1C1.svg?style=flat-square)](https://github.com/arcticicestudio/nord-vim/blob/v0.9.0/CHANGELOG.md) [![](https://img.shields.io/badge/Workflow-gitflow--branching--model-81A1C1.svg?style=flat-square)](http://nvie.com/posts/a-successful-git-branching-model) [![](https://img.shields.io/badge/Versioning-ArcVer_0.8.0-81A1C1.svg?style=flat-square)](https://github.com/arcticicestudio/arcver)
 
 ### Contribution
 

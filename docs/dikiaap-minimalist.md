@@ -76,7 +76,7 @@ If you need more syntax highlighting, you can use
 ## Links
 
 [GitHub](https://github.com/dikiaap/minimalist) ·
-[Vim.org](http://www.vim.org/scripts/script.php?script_id=5490) ·
+[Vim.org](https://www.vim.org/scripts/script.php?script_id=5490) ·
 [Vim Awesome](https://vimawesome.com/plugin/minimalist-vim) ·
 [DotShare.it](http://dotshare.it/dots/1397/)
 

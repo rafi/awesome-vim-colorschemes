@@ -90,11 +90,11 @@ let s:R1 = s:Array('base2', 'orange')
 let s:R2 = s:Array('base6', 'base3')
 let s:R3 = s:Array('blue', 'base1')
 
-let g:airline#themes#gotham#palette.replace =
+let g:airline#themes#gotham256#palette.replace =
       \ airline#themes#generate_color_map(s:R1, s:R2, s:R3)
 
 " Overrides for when the buffer is modified in normal mode.
-let g:airline#themes#gotham#palette.replace_modified = {
+let g:airline#themes#gotham256#palette.replace_modified = {
       \ 'airline_c': s:Array('magenta', 'base1', '')
       \ }
 

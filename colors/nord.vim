@@ -13,7 +13,7 @@ if version > 580
 endif
 
 let g:colors_name = "nord"
-let s:nord_vim_version="0.8.0"
+let s:nord_vim_version="0.9.0"
 set background=dark
 
 let s:nord0_gui = "#2E3440"
@@ -84,6 +84,11 @@ if g:nord_italic == 0
   let s:italic = ""
 endif
 
+let s:underline = "underline,"
+if ! get(g:, "nord_underline", 1)
+  let s:underline = "NONE,"
+endif
+
 let s:italicize_comments = ""
 if exists("g:nord_italic_comments")
   if g:nord_italic_comments == 1
@@ -103,6 +108,10 @@ if !exists("g:nord_uniform_diff_background")
   let g:nord_uniform_diff_background = 0
 endif
 
+if !exists("g:nord_cursor_line_number_background")
+  let g:nord_cursor_line_number_background = 0
+endif
+
 function! s:hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
   if a:guifg != ""
     exec "hi " . a:group . " guifg=" . a:guifg
@@ -117,7 +126,7 @@ function! s:hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
     exec "hi " . a:group . " ctermbg=" . a:ctermbg
   endif
   if a:attr != ""
-    exec "hi " . a:group . " gui=" . a:attr . " cterm=" . a:attr
+    exec "hi " . a:group . " gui=" . a:attr . " cterm=" . substitute(a:attr, "undercurl", s:underline, "")
   endif
   if a:guisp != ""
     exec "hi " . a:group . " guisp=" . a:guisp
@@ -130,7 +139,7 @@ endfunction
 "+--- Attributes ---+
 call s:hi("Bold", "", "", "", "", "bold", "")
 call s:hi("Italic", "", "", "", "", s:italic, "")
-call s:hi("Underline", "", "", "", "", "underline", "")
+call s:hi("Underline", "", "", "", "", s:underline, "")
 
 "+--- Editor ---+
 call s:hi("ColorColumn", "", s:nord1_gui, "NONE", s:nord1_term, "", "")
@@ -147,16 +156,17 @@ call s:hi("PmenuSbar", s:nord4_gui, s:nord2_gui, "NONE", s:nord1_term, "", "")
 call s:hi("PMenuSel", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "", "")
 call s:hi("PmenuThumb", s:nord8_gui, s:nord3_gui, "NONE", s:nord3_term, "", "")
 call s:hi("SpecialKey", s:nord3_gui, "", s:nord3_term, "", "", "")
-call s:hi("SpellBad", "", s:nord0_gui, "", "NONE", "undercurl", s:nord11_gui)
-call s:hi("SpellCap", "", s:nord0_gui, "", "NONE", "undercurl", s:nord13_gui)
-call s:hi("SpellLocal", "", s:nord0_gui, "", "NONE", "undercurl", s:nord5_gui)
-call s:hi("SpellRare", "", s:nord0_gui, "", "NONE", "undercurl", s:nord6_gui)
+call s:hi("SpellBad", s:nord11_gui, s:nord0_gui, s:nord11_term, "NONE", "undercurl", s:nord11_gui)
+call s:hi("SpellCap", s:nord13_gui, s:nord0_gui, s:nord13_term, "NONE", "undercurl", s:nord13_gui)
+call s:hi("SpellLocal", s:nord5_gui, s:nord0_gui, s:nord5_term, "NONE", "undercurl", s:nord5_gui)
+call s:hi("SpellRare", s:nord6_gui, s:nord0_gui, s:nord6_term, "NONE", "undercurl", s:nord6_gui)
 call s:hi("Visual", "", s:nord2_gui, "", s:nord1_term, "", "")
 call s:hi("VisualNOS", "", s:nord2_gui, "", s:nord1_term, "", "")
 "+- Neovim Support -+
 call s:hi("healthError", s:nord11_gui, s:nord1_gui, s:nord11_term, s:nord1_term, "", "")
 call s:hi("healthSuccess", s:nord14_gui, s:nord1_gui, s:nord14_term, s:nord1_term, "", "")
 call s:hi("healthWarning", s:nord13_gui, s:nord1_gui, s:nord13_term, s:nord1_term, "", "")
+call s:hi("TermCursorNC", "", s:nord1_gui, "", s:nord1_term, "", "")
 
 "+- Neovim Terminal Colors -+
 if has('nvim')
@@ -180,7 +190,11 @@ endif
 
 "+--- Gutter ---+
 call s:hi("CursorColumn", "", s:nord1_gui, "NONE", s:nord1_term, "", "")
-call s:hi("CursorLineNr", s:nord3_gui, s:nord0_gui, "NONE", "", "", "")
+if g:nord_cursor_line_number_background == 0
+  call s:hi("CursorLineNr", s:nord4_gui, s:nord0_gui, "NONE", "", "", "")
+else
+  call s:hi("CursorLineNr", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "", "")
+endif
 call s:hi("Folded", s:nord3_gui, s:nord1_gui, s:nord3_term, s:nord1_term, "bold", "")
 call s:hi("FoldColumn", s:nord3_gui, s:nord0_gui, s:nord3_term, "NONE", "", "")
 call s:hi("SignColumn", s:nord1_gui, s:nord0_gui, s:nord1_term, "NONE", "", "")
@@ -197,15 +211,19 @@ call s:hi("Question", s:nord4_gui, "", "NONE", "", "", "")
 if g:nord_uniform_status_lines == 0
   call s:hi("StatusLine", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
   call s:hi("StatusLineNC", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
+  call s:hi("StatusLineTerm", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
+  call s:hi("StatusLineTermNC", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
 else
   call s:hi("StatusLine", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
   call s:hi("StatusLineNC", s:nord4_gui, s:nord3_gui, "NONE", s:nord3_term, "NONE", "")
+  call s:hi("StatusLineTerm", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
+  call s:hi("StatusLineTermNC", s:nord4_gui, s:nord3_gui, "NONE", s:nord3_term, "NONE", "")
 endif
 call s:hi("WarningMsg", s:nord0_gui, s:nord13_gui, s:nord1_term, s:nord13_term, "", "")
 call s:hi("WildMenu", s:nord8_gui, s:nord1_gui, s:nord8_term, s:nord1_term, "", "")
 
 "+--- Search ---+
-call s:hi("IncSearch", s:nord1_gui, s:nord8_gui, s:nord1_term, s:nord8_term, "underline", "")
+call s:hi("IncSearch", s:nord1_gui, s:nord8_gui, s:nord1_term, s:nord8_term, s:underline, "")
 call s:hi("Search", s:nord1_gui, s:nord8_gui, s:nord1_term, s:nord8_term, "NONE", "")
 
 "+--- Tabs ---+
@@ -282,7 +300,7 @@ hi! link csXmlTag SpecialComment
 
 call s:hi("cssAttributeSelector", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("cssDefinition", s:nord7_gui, "", s:nord7_term, "", "NONE", "")
-call s:hi("cssIdentifier", s:nord7_gui, "", s:nord7_term, "", "underline", "")
+call s:hi("cssIdentifier", s:nord7_gui, "", s:nord7_term, "", s:underline, "")
 call s:hi("cssStringQ", s:nord7_gui, "", s:nord7_term, "", "", "")
 hi! link cssAttr Keyword
 hi! link cssBraces Delimiter
@@ -309,12 +327,12 @@ if g:nord_uniform_diff_background == 0
   call s:hi("DiffAdd", s:nord14_gui, s:nord0_gui, s:nord14_term, "NONE", "inverse", "")
   call s:hi("DiffChange", s:nord13_gui, s:nord0_gui, s:nord13_term, "NONE", "inverse", "")
   call s:hi("DiffDelete", s:nord11_gui, s:nord0_gui, s:nord11_term, "NONE", "inverse", "")
-  call s:hi("DiffText", s:nord13_gui, s:nord0_gui, s:nord13_term, "NONE", "inverse", "")
+  call s:hi("DiffText", s:nord9_gui, s:nord0_gui, s:nord9_term, "NONE", "inverse", "")
 else
   call s:hi("DiffAdd", s:nord14_gui, s:nord1_gui, s:nord14_term, s:nord1_term, "", "")
   call s:hi("DiffChange", s:nord13_gui, s:nord1_gui, s:nord13_term, s:nord1_term, "", "")
   call s:hi("DiffDelete", s:nord11_gui, s:nord1_gui, s:nord11_term, s:nord1_term, "", "")
-  call s:hi("DiffText", s:nord13_gui, s:nord1_gui, s:nord13_term, s:nord1_term, "", "")
+  call s:hi("DiffText", s:nord9_gui, s:nord1_gui, s:nord9_term, s:nord1_term, "", "")
 endif
 " Legacy groups for official git.vim and diff.vim syntax
 hi! link diffAdded DiffAdd
@@ -327,7 +345,7 @@ call s:hi("goBuiltins", s:nord7_gui, "", s:nord7_term, "", "", "")
 hi! link goConstants Keyword
 
 call s:hi("helpBar", s:nord3_gui, "", s:nord3_term, "", "", "")
-call s:hi("helpHyperTextJump", s:nord8_gui, "", s:nord8_term, "", "underline", "")
+call s:hi("helpHyperTextJump", s:nord8_gui, "", s:nord8_term, "", s:underline, "")
 
 call s:hi("htmlArg", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("htmlLink", s:nord4_gui, "", "", "", "NONE", "NONE")
@@ -417,7 +435,7 @@ hi! link rubyPseudoVariable Keyword
 hi! link rubyRegexp SpecialChar
 
 call s:hi("sassClass", s:nord7_gui, "", s:nord7_term, "", "", "")
-call s:hi("sassId", s:nord7_gui, "", s:nord7_term, "", "underline", "")
+call s:hi("sassId", s:nord7_gui, "", s:nord7_term, "", s:underline, "")
 hi! link sassAmpersand Keyword
 hi! link sassClassChar Delimiter
 hi! link sassControl Keyword
@@ -493,7 +511,7 @@ call s:hi("gitcommitSelectedFile", s:nord14_gui, "", s:nord14_term, "", "", "")
 
 " davidhalter/jedi-vim
 call s:hi("jediFunction", s:nord4_gui, s:nord3_gui, "", s:nord3_term, "", "")
-call s:hi("jediFat", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "bold,underline", "")
+call s:hi("jediFat", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, s:underline."bold", "")
 
 " NERDTree
 " > scrooloose/nerdtree
@@ -510,6 +528,10 @@ hi! link CtrlPBufferHid Normal
 " > junegunn/vim-plug
 call s:hi("plugDeleted", s:nord11_gui, "", "", s:nord11_term, "", "")
 
+" vim-signature
+" > kshenoy/vim-signature
+call s:hi("SignatureMarkText", s:nord8_gui, "", s:nord8_term, "", "", "")
+
 "+--- Languages ---+
 " JavaScript
 " > pangloss/vim-javascript
@@ -517,6 +539,7 @@ call s:hi("jsGlobalNodeObjects", s:nord8_gui, "", s:nord8_term, "", s:italic, ""
 hi! link jsBrackets Delimiter
 hi! link jsFuncCall Function
 hi! link jsFuncParens Delimiter
+hi! link jsThis Keyword
 hi! link jsNoise Delimiter
 hi! link jsPrototype Keyword
 hi! link jsRegexpString SpecialChar
@@ -544,3 +567,26 @@ hi! link mkdLinkDef mkdLink
 hi! link mkdLinkDefTarget mkdURL
 hi! link mkdLinkTitle mkdInlineURL
 hi! link mkdDelimiter Keyword
+
+" Vimwiki
+" > vimwiki/vimwiki
+if !exists("g:vimwiki_hl_headers") || g:vimwiki_hl_headers == 0
+  for s:i in range(1,6)
+    call s:hi("VimwikiHeader".s:i, s:nord8_gui, "", s:nord8_term, "", "bold", "")
+  endfor
+else
+  let s:vimwiki_hcolor_guifg = [s:nord7_gui, s:nord8_gui, s:nord9_gui, s:nord10_gui, s:nord14_gui, s:nord15_gui]
+  let s:vimwiki_hcolor_ctermfg = [s:nord7_term, s:nord8_term, s:nord9_term, s:nord10_term, s:nord14_term, s:nord15_term]
+  for s:i in range(1,6)
+    call s:hi("VimwikiHeader".s:i, s:vimwiki_hcolor_guifg[s:i-1] , "", s:vimwiki_hcolor_ctermfg[s:i-1], "", "bold", "")
+  endfor
+endif
+
+call s:hi("VimwikiLink", s:nord8_gui, "", s:nord8_term, "", s:underline, "")
+hi! link VimwikiHeaderChar markdownHeadingDelimiter
+hi! link VimwikiHR Keyword
+hi! link VimwikiList markdownListMarker
+
+" YAML
+" > stephpy/vim-yaml
+call s:hi("yamlKey", s:nord7_gui, "", s:nord7_term, "", "", "")
