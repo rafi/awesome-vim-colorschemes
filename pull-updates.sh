@@ -19,6 +19,7 @@ function _main() {
 	_dl AlessandroYorba/Sierra
 	_dl andreasvc/vim-256noir
 	_dl arcticicestudio/nord-vim
+	_dl ayu-theme/ayu-vim
 	_dl Badacadabra/vim-archery
 	_dl challenger-deep-theme/vim
 	_dl chase/focuspoint-vim

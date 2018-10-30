@@ -16,6 +16,7 @@ Use your favorite package-manager to install, and enjoy!
 | [alduin] | Dark rustic colors | ✓ | ✓ |
 | [anderson] | Dark vim colorscheme based on colors from Wes Anderson films | ✓ | ✓ |
 | [angr] | Pleasant, mild, dark theme | ✓ | ✓ |
+| [ayu-vim] | Simple, bright and elegant theme |   | ✓ |
 | [Apprentice] | Dark, low-contrast colorscheme | ✓ | ✓ |
 | [Archery] | Vim colorscheme inspired by Arch Linux colors | ✓ | ✓ |
 | [Atom] | Designed to be very readable in both light and dark environments |   | ✓ |
@@ -74,6 +75,7 @@ Use your favorite package-manager to install, and enjoy!
 [anderson]: https://github.com/gilgigilgil/anderson.vim
 [angr]: https://github.com/zacanger/angr.vim
 [Atom]: https://github.com/gregsexton/Atom
+[ayu-vim]: https://github.com/ayu-theme/ayu-vim
 [carbonized]: https://github.com/nightsense/carbonized
 [challenger-deep]: https://github.com/challenger-deep-theme/vim
 [deep-space]: https://github.com/tyrannicaltoucan/vim-deep-space
