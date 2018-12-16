@@ -1,8 +1,29 @@
 # vim-afterglow
 
-Vim adaptation of the [Afterglow](https://github.com/YabataDesign/afterglow-theme) colorscheme from Sublime Text 2/3.
+Vim adaptation of the [Afterglow](https://github.com/YabataDesign/afterglow-theme) theme from Sublime Text 2/3.
 
-Airline scheme already included.
+Airline scheme included.
+
+## Setup
+
+- To enable it, simply add `colorscheme afterglow` (not ~~vim-afterglow~~) to your `~/.vimrc` after having installed the plugin (manually or by using a package manager).
+
+- Airline theme should be updated accordingly, but can be explicitly specified by using `let g:airline_theme='afterglow'`.
+
+## Options
+
+To further customize Afterglow, you can currently use the following options **before** setting the color scheme on your
+vimrc:
+
+- Black background: `let g:afterglow_blackout=1` (default: 0)
+
+     ☀️ Use this option if you need more contrast, such as working in an office where open windows cause glare on your screen.
+
+- Italicize comments: `let g:afterglow_italic_comments=1` (default: 0)
+
+    📖 Helps visual grepping and quickly differentiating source code and comments when skimming through files.
+
+    ⚠️ Using italics needs a terminal emulator (e.g. iTerm in MacOS) and a font supporting it.
 
 ## Screenshots
 

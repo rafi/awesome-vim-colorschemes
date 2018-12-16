@@ -40,11 +40,21 @@ let s:cterm0F = "187"
 let s:guiWhite = "#ffffff"
 let s:guiGray = "#666666"
 let s:guiDarkGray = "#545454"
-let s:guiAlmostBlack = "#2a2a2a"
 let s:ctermWhite = "231"
 let s:ctermGray = "243"
 let s:ctermDarkGray = "240"
-let s:ctermAlmostBlack = "235"
+
+" Depends on g:afterglow_blackout
+if !exists( "g:afterglow_blackout")
+    let g:afterglow_blackout = 0
+endif
+if g:afterglow_blackout
+    let s:guiAlmostBlack = "#121212"
+    let s:ctermAlmostBlack = "233"
+else
+    let s:guiAlmostBlack = "#2a2a2a"
+    let s:ctermAlmostBlack = "235"
+endif
 
 let g:airline#themes#afterglow#palette = {}
 let s:modified = { 'airline_c': [s:gui03, '', s:cterm03, '', ''] }

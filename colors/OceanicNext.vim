@@ -126,7 +126,7 @@ call <sid>hi('Define',                     s:base0E, '',       '',          '')
 call <sid>hi('Delimiter',                  s:base0F, '',       '',          '')
 call <sid>hi('Float',                      s:base09, '',       '',          '')
 call <sid>hi('Function',                   s:base0D, '',       '',          '')
-call <sid>hi('Identifier',                 s:base08, '',       '',          '')
+call <sid>hi('Identifier',                 s:base0C, '',       '',          '')
 call <sid>hi('Include',                    s:base0D, '',       '',          '')
 call <sid>hi('Keyword',                    s:base0E, '',       '',          '')
 call <sid>hi('Label',                      s:base0A, '',       '',          '')
@@ -174,7 +174,9 @@ call <sid>hi('DiffFile',                   s:base08, s:base00, '',          '')
 call <sid>hi('DiffNewFile',                s:base0B, s:base00, '',          '')
 call <sid>hi('DiffLine',                   s:base0D, s:base00, '',          '')
 call <sid>hi('DiffRemoved',                s:base10, s:base08, '',          '')
-
+" call <sid>hi('Error',                      s:base08, s:none,   'undercurl',          '')
+" call <sid>hi('NvimInternalError',          s:base08, s:none,   '',          '')
+" call <sid>hi('NvimInternalError',          s:base08, s:none,   '',          '')
 call <sid>hi('gitCommitOverflow',          s:base08, '',       '',          '')
 call <sid>hi('gitCommitSummary',           s:base0B, '',       '',          '')
 
@@ -210,8 +212,8 @@ call <sid>hi('ALEInfoSign',                s:base10, s:base00, s:bold,      '')
 call <sid>hi('NERDTreeExecFile',           s:base05, '',       '',          '')
 call <sid>hi('NERDTreeDirSlash',           s:base0D, '',       '',          '')
 call <sid>hi('NERDTreeOpenable',           s:base0D, '',       '',          '')
-
-
+call <sid>hi('NERDTreeFile',               '',       s:none,   '',          '')
+call <sid>hi('NERDTreeFlags',              s:base0D, '',       '',          '')
 
 call <sid>hi('phpComparison',              s:base05, '',       '',          '')
 call <sid>hi('phpParent',                  s:base05, '',       '',          '')
@@ -253,6 +255,8 @@ call <sid>hi('SignifySignDeleteFirstLine', s:base08, s:base00, s:bold,      '')
 call <sid>hi('xmlTag',                     s:base0C, '',       '',          '')
 call <sid>hi('xmlTagName',                 s:base05, '',       '',          '')
 call <sid>hi('xmlEndTag',                  s:base0C, '',       '',          '')
+
+
 " }}}
 
 let g:terminal_color_0=s:base00[0]

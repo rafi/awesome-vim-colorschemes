@@ -37,6 +37,7 @@ let colors_name = "apprentice"
 
 if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
   hi Normal           ctermbg=235  ctermfg=250  guibg=#262626 guifg=#bcbcbc cterm=NONE           gui=NONE
+  hi Terminal         ctermbg=235  ctermfg=250  guibg=#262626 guifg=#bcbcbc cterm=NONE           gui=NONE
   hi LineNr           ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c cterm=NONE           gui=NONE
   hi FoldColumn       ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c cterm=NONE           gui=NONE
   hi Folded           ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c cterm=NONE           gui=NONE
@@ -130,6 +131,7 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
   set t_Co=16
 
   hi Normal           ctermbg=NONE        ctermfg=white          cterm=NONE
+  hi Terminal         ctermbg=NONE        ctermfg=white          cterm=NONE
 
   set background=dark
 
@@ -216,50 +218,73 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
   hi debugBreakpoint  ctermbg=red
 endif
 
-hi link Boolean                  Constant
-hi link Character                Constant
-hi link Conditional              Statement
-hi link Debug                    Special
-hi link Define                   PreProc
-hi link Delimiter                Special
-hi link Exception                Statement
-hi link Float                    Number
-hi link HelpCommand              Statement
-hi link HelpExample              Statement
-hi link Include                  PreProc
-hi link Keyword                  Statement
-hi link Label                    Statement
-hi link Macro                    PreProc
-hi link Number                   Constant
-hi link Operator                 Statement
-hi link PreCondit                PreProc
-hi link Repeat                   Statement
-hi link SpecialChar              Special
-hi link SpecialComment           Special
-hi link StorageClass             Type
-hi link Structure                Type
-hi link Tag                      Special
-hi link Typedef                  Type
+let g:terminal_ansi_colors = [
+            \ '#1c1c1c',
+            \ '#af5f5f',
+            \ '#5f875f',
+            \ '#87875f',
+            \ '#5f87af',
+            \ '#5f5f87',
+            \ '#5f8787',
+            \ '#6c6c6c',
+            \ '#444444',
+            \ '#ff8700',
+            \ '#87af87',
+            \ '#ffffaf',
+            \ '#8fafd7',
+            \ '#8787af',
+            \ '#5fafaf',
+            \ '#ffffff'
+            \ ]
 
-hi link htmlEndTag               htmlTagName
-hi link htmlLink                 Function
-hi link htmlSpecialTagName       htmlTagName
-hi link htmlTag                  htmlTagName
-hi link htmlBold                 Normal
-hi link htmlItalic               Normal
-hi link xmlTag                   Statement
-hi link xmlTagName               Statement
-hi link xmlEndTag                Statement
-
-hi link markdownItalic           Preproc
-hi link asciidocQuotedEmphasized Preproc
-
-hi link diffBDiffer              WarningMsg
-hi link diffCommon               WarningMsg
-hi link diffDiffer               WarningMsg
-hi link diffIdentical            WarningMsg
-hi link diffIsA                  WarningMsg
-hi link diffNoEOL                WarningMsg
-hi link diffOnly                 WarningMsg
-hi link diffRemoved              WarningMsg
-hi link diffAdded                String
+let links = [
+            \ ['Boolean', 'Constant'],
+            \ ['Character', 'Constant'],
+            \ ['Conditional', 'Statement'],
+            \ ['Debug', 'Special'],
+            \ ['Define', 'PreProc'],
+            \ ['Delimiter', 'Special'],
+            \ ['Exception', 'Statement'],
+            \ ['Float', 'Number'],
+            \ ['HelpCommand', 'Statement'],
+            \ ['HelpExample', 'Statement'],
+            \ ['Include', 'PreProc'],
+            \ ['Keyword', 'Statement'],
+            \ ['Label', 'Statement'],
+            \ ['Macro', 'PreProc'],
+            \ ['Number', 'Constant'],
+            \ ['Operator', 'Statement'],
+            \ ['PreCondit', 'PreProc'],
+            \ ['Repeat', 'Statement'],
+            \ ['SpecialChar', 'Special'],
+            \ ['SpecialComment', 'Special'],
+            \ ['StorageClass', 'Type'],
+            \ ['Structure', 'Type'],
+            \ ['Tag', 'Special'],
+            \ ['Terminal', 'Normal'],
+            \ ['Typedef', 'Type'],
+            \ ['htmlEndTag', 'htmlTagName'],
+            \ ['htmlLink', 'Function'],
+            \ ['htmlSpecialTagName', 'htmlTagName'],
+            \ ['htmlTag', 'htmlTagName'],
+            \ ['htmlBold', 'Normal'],
+            \ ['htmlItalic', 'Normal'],
+            \ ['xmlTag', 'Statement'],
+            \ ['xmlTagName', 'Statement'],
+            \ ['xmlEndTag', 'Statement'],
+            \ ['markdownItalic', 'Preproc'],
+            \ ['asciidocQuotedEmphasized', 'Preproc'],
+            \ ['diffBDiffer', 'WarningMsg'],
+            \ ['diffCommon', 'WarningMsg'],
+            \ ['diffDiffer', 'WarningMsg'],
+            \ ['diffIdentical', 'WarningMsg'],
+            \ ['diffIsA', 'WarningMsg'],
+            \ ['diffNoEOL', 'WarningMsg'],
+            \ ['diffOnly', 'WarningMsg'],
+            \ ['diffRemoved', 'WarningMsg'],
+            \ ['diffAdded', 'String'],
+            \ ]
+augroup Apprentice
+    autocmd!
+    autocmd ColorScheme * if expand("<amatch>") == "apprentice" | for link in links | execute 'hi link' link[0] link[1] | endfor | else | for link in links | execute 'hi link' link[0] 'NONE' | endfor | endif
+augroup END

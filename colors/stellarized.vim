@@ -4,7 +4,7 @@
 " License:      MIT
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
-      \ && (!exists('&t_Co') || &t_Co < 256)
+   \ && (!exists('&t_Co') || &t_Co < 256)
   echoerr '[stellarized] There are not enough colors.'
   finish
 endif

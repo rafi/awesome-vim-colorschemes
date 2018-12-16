@@ -30,6 +30,9 @@ let s:wine = "b05279"
 let s:purple = "9e86c8"
 let s:window = "4d5057"
 
+" Auxiliar colors
+let s:black = "000000"
+
 if has("gui_running") || &t_Co == 88 || &t_Co == 256
     " Returns an approximate grey index for the given grey level
     fun <SID>grey_number(x)
@@ -239,8 +242,6 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     endfun
 
     " Vim Highlighting
-    call <SID>X("Normal", s:foreground, s:background, "")
-    call <SID>X("LineNr", s:comment, "", "")
     call <SID>X("NonText", s:selection, "", "")
     call <SID>X("SpecialKey", s:selection, "", "")
     call <SID>X("Search", s:background, s:yellow, "")
@@ -264,15 +265,12 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
         call <SID>X("CursorColumn", "", s:line, "none")
         call <SID>X("PMenu", s:foreground, s:selection, "none")
         call <SID>X("PMenuSel", s:foreground, s:selection, "reverse")
-        call <SID>X("SignColumn", "", s:background, "none")
     end
     if version >= 703
         call <SID>X("ColorColumn", "", s:line, "none")
     end
 
     " Standard Highlighting
-    call <SID>X("Comment", s:comment, "", "")
-    call <SID>X("Todo", s:red, s:background, "bold")
     call <SID>X("Title", s:comment, "", "bold")
     call <SID>X("Identifier", s:orange, "", "")
     call <SID>X("Statement", s:wine, "", "")
@@ -347,7 +345,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("pythonStatement", s:blue, "", "")
     call <SID>X("pythonConditional", s:wine, "", "")
     call <SID>X("pythonRepeat", s:wine, "", "")
-    call <SID>X("pythonException", s:wine, "", "")
+    call <SID>X("pythonException", s:orange, "", "")
     call <SID>X("pythonFunction", s:green, "", "italic")
     call <SID>X("pythonPreCondit", s:wine, "", "")
     call <SID>X("pythonExClass", s:orange, "", "")
@@ -533,6 +531,33 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("diffAdded", s:green, "", "")
     call <SID>X("diffRemoved", s:red, "", "")
     call <SID>X("gitcommitSummary", "", "", "bold")
+
+
+    " Option g:afterglow_blackout
+    if !exists( "g:afterglow_blackout")
+        let g:afterglow_blackout = 0
+    endif
+    if g:afterglow_blackout
+        let s:chosen_background = s:black
+    else
+        let s:chosen_background = s:background
+    endif
+    " Settings dependent on g:afterglow_blackout
+    call <SID>X("Normal", s:foreground, s:chosen_background, "")
+    call <SID>X("LineNr", s:comment, s:chosen_background, "")
+    if version >= 700
+        call <SID>X("SignColumn", "", s:chosen_background, "none")
+    end
+    call <SID>X("Todo", s:red, s:chosen_background, "bold")
+
+    " Option g:afterglow_italic_comments
+    if exists( "g:afterglow_italic_comments") && g:afterglow_italic_comments
+        call <SID>X("Comment", s:comment, "", "italic")
+    else
+        " make the global variable available to command mode
+        let g:afterglow_italic_comments = 0
+        call <SID>X("Comment", s:comment, "", "")
+    endif
 
     " Delete Functions
     delf <SID>X

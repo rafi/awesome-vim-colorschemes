@@ -19,6 +19,8 @@ All major plugin managers for vim/nvim are supported
 
 For vim, add the following to your `.vimrc`.
 
+*(On Google Cloud Shell try to `set t_Co=256` instead of `set termguicolors` even though your vim version is 8)*
+
  ```viml
 " Theme
   syntax enable
@@ -34,6 +36,7 @@ colorscheme OceanicNext
  ```
 
 For neovim, add the following to your `.nvimrc`.
+
 
 ```viml
 " For Neovim 0.1.3 and 0.1.4
@@ -80,6 +83,7 @@ Base colors used in the theme.
 ![](https://raw.githubusercontent.com/voronianski/oceanic-next-theme/master/colors.png)
 
 _neovim_
+
 ![](https://raw.githubusercontent.com/mhartington/oceanic-next/master/oceanic-next-dark.nvim.png)
 
 Shown here with [vim-devicons](https://github.com/ryanoasis/vim-devicons)

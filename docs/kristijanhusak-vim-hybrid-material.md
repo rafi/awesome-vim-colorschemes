@@ -44,6 +44,21 @@ Based on [equinusocio/material-theme](https://github.com/equinusocio/material-th
 
 ![hybrid-material](https://cloud.githubusercontent.com/assets/1782860/8340203/483e81f2-1abd-11e5-8fc6-b1ca5c646404.png)
 
+True colors are a requirement for this color scheme to work properly. To enable this, place the following in your `~/.vimrc` or `~/.config/nvim/init.vim` file:
+
+```vim
+if (has("nvim"))
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
+"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+if (has("termguicolors"))
+  set termguicolors
+endif
+```
 
 ##### GVim/MacVim
 Only add this to .vimrc after installation:

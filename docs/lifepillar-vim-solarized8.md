@@ -104,8 +104,7 @@ average (light background, 16 colors).
 The following options are inherited from Solarized:
 
 - `g:solarized_visibility`: one of `"normal"` (default), `"low"`, `"high"`;
-- `g:solarized_diffmode`: one of `"normal"` (default), `"low"`, `"high"`,
-  `"bold"`;
+- `g:solarized_diffmode`: one of `"normal"` (default), `"low"`, `"high"`;
 - `g:solarized_termtrans`: make terminal background transparent if set to `1`
   (default: `0`).
 

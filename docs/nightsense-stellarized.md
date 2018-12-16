@@ -140,6 +140,8 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 If `termguicolors` is not set, terminal vim will fall back to a rough approximation of stellarized.
 
+Note that if you're running vim in iTerm2, you must [use vim 8.1](https://github.com/nightsense/stellarized/issues/4) in order for stellarized to work properly.
+
 ### cursor shape
 
 To set mode-specific cursor shapes in terminal vim, see the [Vim Tips Wiki](http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes).
