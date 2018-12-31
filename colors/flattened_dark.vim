@@ -61,7 +61,7 @@ hi  TabLine                                 cterm=underline  ctermfg=12  ctermbg
 hi  TabLineFill                             cterm=underline  ctermfg=12  ctermbg=0  guifg=#839496  guibg=#073642  guisp=#839496  gui=underline
 hi  TabLineSel                              cterm=underline,reverse  ctermfg=10  ctermbg=7  guifg=#586e75  guibg=#eee8d5  guisp=#839496  gui=underline,reverse
 hi  Title                                   cterm=NONE  ctermfg=9  guifg=#cb4b16  gui=NONE
-hi  Todo                                    cterm=bold  ctermfg=5  guifg=#d33682  guibg=NONE  gui=bold
+hi  Todo                                    cterm=bold  ctermfg=5  ctermbg=8  guifg=#d33682  guibg=NONE  gui=bold
 hi  Type                                    cterm=NONE  ctermfg=3  guifg=#b58900  gui=NONE
 hi  Underlined                              cterm=NONE  ctermfg=13  guifg=#6c71c4  gui=NONE
 hi  VarId                                   cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE

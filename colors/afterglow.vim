@@ -291,7 +291,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("Underlined", s:orange, "", "underline")
 
     syntax match commonOperator "\(+\|=\|-\|*\|\^\|\/\||\)"
-    hi link commonOperator Operator
+    hi! link commonOperator Operator
 
     " Vim Highlighting
     call <SID>X("vimCommand", s:wine, "", "none")
@@ -530,8 +530,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     " Git
     call <SID>X("diffAdded", s:green, "", "")
     call <SID>X("diffRemoved", s:red, "", "")
+    call <SID>X("diffLine", s:blue, "", "italic")
+    call <SID>X("diffSubname", s:foreground, "", "")
+    call <SID>X("gitFile", s:orange, "", "")
     call <SID>X("gitcommitSummary", "", "", "bold")
-
 
     " Option g:afterglow_blackout
     if !exists( "g:afterglow_blackout")

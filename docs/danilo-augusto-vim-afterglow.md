@@ -1,5 +1,7 @@
 # vim-afterglow
 
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MVSBJ7JKSVGZ4&source=url)
+
 Vim adaptation of the [Afterglow](https://github.com/YabataDesign/afterglow-theme) theme from Sublime Text 2/3.
 
 Airline scheme included.
@@ -38,3 +40,11 @@ vimrc:
 
 ### Ruby
 <img width="700" alt="ruby" src="https://cloud.githubusercontent.com/assets/8104631/23351154/c99cf856-fcbf-11e6-88f6-857568a7ed8d.png">
+
+## Donate
+
+Don't forget to give back to the Open Source community in some way (not necessarily me). 😊
+
+And if you liked this project, feel free to pay me a cup of coffee! ☕️ ❤️ 👇
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MVSBJ7JKSVGZ4&source=url)
