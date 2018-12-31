@@ -6,14 +6,19 @@ function _dl() {
 	local tmp="tmp" docs="docs"
 	[ -d "$tmp" ] || mkdir "$tmp"
 	[ -d "$docs" ] || mkdir "$docs"
-	curl -L "https://api.github.com/repos/$1/tarball" | tar xz --strip=1 -C "$tmp"/
+	curl -L "https://api.github.com/repos/$1/tarball" \
+		-H "Authorization: token $HOMEBREW_GITHUB_API_TOKEN" \
+		| tar xz --strip=1 -C "$tmp"/
+
 	rsync -avh "$tmp"/ --include='after/***' \
 		--include='autoload/***' --include='colors/***' --exclude='*' .
+
 	cp -r "$tmp"/README* "$docs"/"${1//\//-}".md
 	rm -rf "$tmp"
 }
 
 function _main() {
+	_dl nightsense/snow
 	_dl ajmwagar/vim-deus
 	_dl AlessandroYorba/Alduin
 	_dl AlessandroYorba/Sierra
