@@ -65,6 +65,7 @@ Use your favorite package-manager to install, and enjoy!
 | [twilight256] | Imitates the Twilight theme for TextMate | ✓ | ✓ |
 | [two-firewatch] | A blend between duotone light and firewatch (for atom) | ✓ | ✓ |
 | [wombat256] | Wombat for 256 color xterms | ✓ | ✓ |
+| [beijing_opera] | Dark theme, 256 colors, simple | ✓ | ✓ |
 
 [256noir]: https://github.com/andreasvc/vim-256noir
 [abstract]: https://github.com/jdsimcoe/abstract.vim
@@ -121,6 +122,7 @@ Use your favorite package-manager to install, and enjoy!
 [twilight256]: https://github.com/vim-scripts/twilight256.vim
 [two-firewatch]: https://github.com/rakr/vim-two-firewatch
 [wombat256]: https://github.com/vim-scripts/wombat256.vim
+[beijing_opera]: https://github.com/Aaron2Ti/dot-vim/blob/28b58b4/colors/beijing_opera.vim
 
 ## Other Collections
 
