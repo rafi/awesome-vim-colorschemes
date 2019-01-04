@@ -122,7 +122,7 @@ Use your favorite package-manager to install, and enjoy!
 [twilight256]: https://github.com/vim-scripts/twilight256.vim
 [two-firewatch]: https://github.com/rakr/vim-two-firewatch
 [wombat256]: https://github.com/vim-scripts/wombat256.vim
-[beijing_opera]: https://github.com/Aaron2Ti/dot-vim/blob/28b58b4/colors/beijing_opera.vim
+[beijing_opera]: https://github.com/Aaron2Ti/dot-vim
 
 ## Other Collections
 
