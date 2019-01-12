@@ -9,7 +9,39 @@ those in `ansi-term-colors.txt` for best results.
 
 This script is [vimscript #2555][vimscript] at Vim.org.
 
+Jellybeans has also been ported to other editors and programs,
+listed on the [Ports wiki page][wiki-ports].
+
 Scroll down for [screenshots][ss-anchor]!
+
+[wiki-ports]: https://github.com/nanotech/jellybeans.vim/wiki/Ports
+
+## Installation
+
+Install the color scheme by adding it to your `~/.vim/colors` directory
+
+```bash
+mkdir -p ~/.vim/colors
+cd ~/.vim/colors
+curl -O https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim
+```
+
+Jellybeans can also be installed through plugin managers such as
+[dein.vim][dein], [Pathogen][pathogen], [VAM][vam],
+[vim-plug][vim-plug], [Vundle][vundle], etc.
+
+To enable the jellybeans color scheme, use 
+```
+:colorscheme jellybeans
+```
+
+If you are satisfied, you can add `colorscheme jellybeans` to your `~/.vimrc` file (`_vimrc` in Windows).
+
+[dein]: https://github.com/Shougo/dein.vim
+[pathogen]: https://github.com/tpope/vim-pathogen
+[vam]: https://github.com/MarcWeber/vim-addon-manager
+[vim-plug]: https://github.com/junegunn/vim-plug
+[vundle]: https://github.com/VundleVim/Vundle.vim
 
 ## Options
 
@@ -57,11 +89,14 @@ before 1.6.
 If you would prefer to use your terminal's default background
 (e.g. for transparent backgrounds, image backgrounds, or a
 different color) instead of the background color that Jellybeans
-applies, use this `background` override:
+applies, use this `background` override code:
 
     let g:jellybeans_overrides = {
     \    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
     \}
+    if has('termguicolors') && &termguicolors
+        let g:jellybeans_overrides['background']['guibg'] = 'none'
+    endif
 
 #### `MatchParen` Colors
 
