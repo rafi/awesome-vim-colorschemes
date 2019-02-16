@@ -2,6 +2,8 @@
 
 A dark Vim/Neovim color scheme for the GUI and 16/256/true-color terminals, based on [FlatColor](https://github.com/MaxSt/FlatColor), with colors inspired by the excellent [One Dark syntax theme](https://github.com/atom/one-dark-syntax) for the [Atom text editor](https://atom.io).
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/joshdick/onedark.vim.svg)](https://greenkeeper.io/)
+
 ## Installation
 
 1. Install the theme using your Vim plug-in manager of choice (or manually, by placing `colors/onedark.vim` in your `~/.vim/colors/` directory and `autoload/onedark.vim` in your `~/.vim/autoload/` directory.)
@@ -148,6 +150,10 @@ However, you can use the `g:onedark_termcolors` option to control onedark.vim's 
 
 If all comments look like the one in the screenshot above, you have enabled italics in onedark.vim by setting `g:onedark_terminal_italics=1` in your `~/.vimrc`, but your terminal isn't displaying italics correctly. You can either remove the option or [try to fix your terminal](https://github.com/joshdick/onedark.vim/issues/97#issuecomment-299719352). If you're using [iTerm2](http://iterm2.com) on macOS, you might need to [use a special TERMINFO](https://gist.github.com/sos4nt/3187620) to get italics working.
 
+### Why do colors look washed out when using [iTerm2](https://www.iterm2.com)?
+
+Make sure that in Preferences, Profiles -> [Active Profile] -> Colors -> Minimum Contrast is turned all the way down. See [#145](https://github.com/joshdick/onedark.vim/issues/145) for more information.
+
 ## Miscellaneous
 
 ### Customizing onedark.vim's look without forking the repository
@@ -158,7 +164,7 @@ onedark.vim exposes `onedark#extend_highlight` and `onedark#set_highlight` funct
 
 `onedark#extend_highlight` allows you to customize individual aspects of onedark.vim's existing highlight groups, overriding only the keys you provide. (To completely redefine/override an existing highlight group, see `onedark#set_highlight` below.)
 
-`onedark#extend_highlight`'s first argunment should be the name of a highlight group, and its second argument should be **partial** style data.
+`onedark#extend_highlight`'s first argument should be the name of a highlight group, and its second argument should be **partial** style data.
 
 Place the following lines **before** the `colorscheme onedark` line in your `~/.vimrc`, then change the example overrides to suit your needs:
 

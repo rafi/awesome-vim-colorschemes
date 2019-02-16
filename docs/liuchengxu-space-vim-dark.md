@@ -2,6 +2,16 @@ space-vim-dark
 ==============
 <a href="https://github.com/liuchengxu/space-vim"><img src="https://rawgit.com/liuchengxu/space-vim/master/assets/space-vim-badge.svg" alt="badge"></a>
 
+Try the successor of space-vim-dark for light background support!
+
+:tada: **>> [space-vim-theme](https://github.com/liuchengxu/space-vim-theme)**
+
+dark                                                                                  | light
+:----:                                                                                | :----:
+![](https://raw.githubusercontent.com/liuchengxu/img/master/space-vim-theme/dark.png) | ![](https://raw.githubusercontent.com/liuchengxu/img/master/space-vim-theme/light.png)
+
+-----------
+
 Space-vim-dark colorscheme is derived from [spacemacs-dark-theme](https://github.com/nashamri/spacemacs-theme).
 
 ## Installation
