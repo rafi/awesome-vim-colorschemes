@@ -116,7 +116,7 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
     hi Identifier ctermbg=bg ctermfg=grey cterm=NONE
     hi Ignore ctermbg=bg ctermfg=darkblue cterm=NONE
     hi PreProc ctermbg=bg ctermfg=white cterm=NONE
-    hi Special ctermbg=bg ctermfg=orange cterm=NONE
+    hi Special ctermbg=bg ctermfg=darkyellow cterm=NONE
     hi Statement ctermbg=bg ctermfg=blue cterm=NONE
     hi String ctermbg=grey ctermfg=blue cterm=NONE
     hi Number ctermbg=bg ctermfg=blue cterm=NONE
@@ -180,7 +180,7 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
     hi VimSubstRep4 ctermbg=grey ctermfg=darkblue cterm=NONE
     hi VimMapLhs ctermbg=grey ctermfg=white cterm=NONE
     hi javaScriptObjectKey ctermbg=bg ctermfg=blue cterm=NONE
-    hi javaScriptFunctionKey ctermbg=grey ctermfg=orange cterm=NONE
+    hi javaScriptFunctionKey ctermbg=grey ctermfg=darkyellow cterm=NONE
     hi htmlItalic ctermbg=bg ctermfg=blue cterm=NONE
     hi markdownLinkTextDelimiter ctermbg=bg ctermfg=blue cterm=NONE
     hi markdownLinkDelimiter ctermbg=bg ctermfg=darkblue cterm=NONE

@@ -4,7 +4,7 @@
 " Maintainer:   Lifepillar <lifepillar@lifepillar.me>
 " Website:      https://github.com/lifepillar/vim-solarized8
 " License:      OSI approved MIT license
-" Last Updated: Sun Aug 26 09:13:04 2018
+" Last Updated: Tue Mar 26 08:41:02 2019
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < (get(g:, 'solarized_use16', &t_Co < 256) ? 16 : 256))
@@ -45,14 +45,14 @@ if !get(g:, 'solarized_use16', &t_Co < 256)
       let g:terminal_color_15='#fdf6e3'
     endif
     if !has('gui_running') && get(g:, 'solarized_termtrans', 0)
-      hi Normal ctermfg=247 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+      hi Normal ctermfg=254 ctermbg=NONE guifg=#eee8d5 guibg=NONE guisp=NONE cterm=NONE gui=NONE
       hi FoldColumn ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
       hi Folded ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=#002b36 cterm=NONE,bold gui=NONE,bold
       hi LineNr ctermfg=243 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE gui=NONE
       hi Terminal ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
       hi CursorLineNr ctermbg=NONE guifg=NONE
     else
-      hi Normal ctermfg=247 ctermbg=235 guifg=#93a1a1 guibg=#002b36 guisp=NONE cterm=NONE gui=NONE
+      hi Normal ctermfg=254 ctermbg=235 guifg=#eee8d5 guibg=#002b36 guisp=NONE cterm=NONE gui=NONE
       hi FoldColumn ctermfg=247 ctermbg=236 guifg=#93a1a1 guibg=#073642 guisp=NONE cterm=NONE gui=NONE
       hi Folded ctermfg=247 ctermbg=236 guifg=#93a1a1 guibg=#073642 guisp=#002b36 cterm=NONE,bold gui=NONE,bold
       hi LineNr ctermfg=243 ctermbg=236 guifg=#657b83 guibg=#073642 guisp=NONE cterm=NONE gui=NONE
@@ -119,10 +119,10 @@ if !get(g:, 'solarized_use16', &t_Co < 256)
     hi MatchParen ctermfg=230 ctermbg=236 guifg=#fdf6e3 guibg=#073642 guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi ModeMsg ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi MoreMsg ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi Pmenu ctermfg=247 ctermbg=236 guifg=#93a1a1 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-    hi PmenuSbar ctermfg=230 ctermbg=247 guifg=#fdf6e3 guibg=#93a1a1 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-    hi PmenuSel ctermfg=243 ctermbg=230 guifg=#657b83 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-    hi PmenuThumb ctermfg=247 ctermbg=235 guifg=#93a1a1 guibg=#002b36 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi Pmenu ctermfg=254 ctermbg=236 guifg=#eee8d5 guibg=#073642 guisp=NONE cterm=NONE gui=NONE
+    hi PmenuSbar ctermfg=NONE ctermbg=247 guifg=NONE guibg=#93a1a1 guisp=NONE cterm=NONE gui=NONE
+    hi PmenuSel ctermfg=230 ctermbg=243 guifg=#fdf6e3 guibg=#657b83 guisp=NONE cterm=NONE gui=NONE
+    hi PmenuThumb ctermfg=NONE ctermbg=243 guifg=NONE guibg=#657b83 guisp=NONE cterm=NONE gui=NONE
     hi Question ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi! link QuickFixLine Search
     hi Search ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
@@ -133,23 +133,31 @@ if !get(g:, 'solarized_use16', &t_Co < 256)
       hi TabLine ctermfg=243 ctermbg=236 guifg=#657b83 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
       hi TabLineFill ctermfg=243 ctermbg=236 guifg=#657b83 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
       hi TabLineSel ctermfg=247 ctermbg=230 guifg=#93a1a1 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+      hi VertSplit ctermfg=236 ctermbg=243 guifg=#073642 guibg=#657b83 guisp=NONE cterm=NONE gui=NONE
+    elseif get(g:, "solarized_statusline", "") == "flat"
+      hi StatusLine ctermfg=236 ctermbg=230 guifg=#073642 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+      hi StatusLineNC ctermfg=236 ctermbg=254 guifg=#073642 guibg=#eee8d5 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+      hi TabLineSel ctermfg=230 ctermbg=236 guifg=#fdf6e3 guibg=#073642 guisp=NONE cterm=NONE gui=NONE
+      hi TabLine ctermfg=243 ctermbg=236 guifg=#657b83 guibg=#073642 guisp=NONE cterm=NONE gui=NONE
+      hi TabLineFill ctermfg=243 ctermbg=236 guifg=#657b83 guibg=#073642 guisp=NONE cterm=NONE gui=NONE
+      hi VertSplit ctermfg=243 ctermbg=236 guifg=#657b83 guibg=#073642 guisp=NONE cterm=NONE gui=NONE
     else
       hi StatusLine ctermfg=247 ctermbg=236 guifg=#93a1a1 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
       hi StatusLineNC ctermfg=243 ctermbg=236 guifg=#657b83 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
       hi TabLine ctermfg=243 ctermbg=236 guifg=#657b83 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
       hi TabLineFill ctermfg=243 ctermbg=236 guifg=#657b83 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
       hi TabLineSel ctermfg=247 ctermbg=236 guifg=#93a1a1 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+      hi VertSplit ctermfg=236 ctermbg=243 guifg=#073642 guibg=#657b83 guisp=NONE cterm=NONE gui=NONE
     endif
     hi! link StatusLineTerm StatusLine
     hi! link StatusLineTermNC StatusLineNC
-    hi VertSplit ctermfg=236 ctermbg=243 guifg=#073642 guibg=#657b83 guisp=NONE cterm=NONE gui=NONE
     hi Visual ctermfg=243 ctermbg=235 guifg=#657b83 guibg=#002b36 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
     hi VisualNOS ctermfg=NONE ctermbg=236 guifg=NONE guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
     hi WarningMsg ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi WildMenu ctermfg=230 ctermbg=236 guifg=#fdf6e3 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
     hi! link Boolean Constant
     hi! link Character Constant
-    hi Comment ctermfg=243 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE gui=NONE,italic
+    hi Comment ctermfg=246 ctermbg=NONE guifg=#839496 guibg=NONE guisp=NONE cterm=NONE gui=NONE,italic
     hi! link Conditional Statement
     hi Constant ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi! link Define PreProc
@@ -405,14 +413,14 @@ if !get(g:, 'solarized_use16', &t_Co < 256)
     let g:terminal_color_15='#fdf6e3'
   endif
   if !has('gui_running') && get(g:, 'solarized_termtrans', 0)
-    hi Normal ctermfg=242 ctermbg=NONE guifg=#586e75 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi Normal ctermfg=236 ctermbg=NONE guifg=#073642 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi FoldColumn ctermfg=242 ctermbg=NONE guifg=#586e75 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi Folded ctermfg=242 ctermbg=NONE guifg=#586e75 guibg=NONE guisp=#fdf6e3 cterm=NONE,bold gui=NONE,bold
     hi LineNr ctermfg=247 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi Terminal ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi CursorLineNr ctermbg=NONE guifg=NONE
   else
-    hi Normal ctermfg=242 ctermbg=230 guifg=#586e75 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
+    hi Normal ctermfg=236 ctermbg=230 guifg=#073642 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
     hi FoldColumn ctermfg=242 ctermbg=254 guifg=#586e75 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
     hi Folded ctermfg=242 ctermbg=254 guifg=#586e75 guibg=#eee8d5 guisp=#fdf6e3 cterm=NONE,bold gui=NONE,bold
     hi LineNr ctermfg=247 ctermbg=254 guifg=#93a1a1 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
@@ -491,10 +499,10 @@ if !get(g:, 'solarized_use16', &t_Co < 256)
   hi IncSearch ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,standout gui=NONE,standout
   hi ModeMsg ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi MoreMsg ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi Pmenu ctermfg=242 ctermbg=254 guifg=#586e75 guibg=#eee8d5 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-  hi PmenuSbar ctermfg=235 ctermbg=242 guifg=#002b36 guibg=#586e75 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-  hi PmenuSel ctermfg=247 ctermbg=235 guifg=#93a1a1 guibg=#002b36 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-  hi PmenuThumb ctermfg=242 ctermbg=230 guifg=#586e75 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+  hi Pmenu ctermfg=236 ctermbg=254 guifg=#073642 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+  hi PmenuSbar ctermfg=NONE ctermbg=236 guifg=NONE guibg=#073642 guisp=NONE cterm=NONE gui=NONE
+  hi PmenuSel ctermfg=235 ctermbg=247 guifg=#002b36 guibg=#93a1a1 guisp=NONE cterm=NONE gui=NONE
+  hi PmenuThumb ctermfg=NONE ctermbg=66 guifg=NONE guibg=#657b83 guisp=NONE cterm=NONE gui=NONE
   hi Question ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi! link QuickFixLine Search
   hi Search ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
@@ -505,23 +513,33 @@ if !get(g:, 'solarized_use16', &t_Co < 256)
     hi TabLine ctermfg=247 ctermbg=236 guifg=#93a1a1 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
     hi TabLineFill ctermfg=247 ctermbg=236 guifg=#93a1a1 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
     hi TabLineSel ctermfg=236 ctermbg=230 guifg=#073642 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi VertSplit ctermfg=236 ctermbg=247 guifg=#073642 guibg=#93a1a1 guisp=NONE cterm=NONE gui=NONE
+    hi WildMenu ctermfg=236 ctermbg=230 guifg=#073642 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+  elseif get(g:, "solarized_statusline", "") == "flat"
+    hi StatusLine ctermfg=254 ctermbg=235 guifg=#eee8d5 guibg=#002b36 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi StatusLineNC ctermfg=254 ctermbg=236 guifg=#eee8d5 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi TabLineSel ctermfg=235 ctermbg=254 guifg=#002b36 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+    hi TabLine ctermfg=247 ctermbg=254 guifg=#93a1a1 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+    hi TabLineFill ctermfg=247 ctermbg=254 guifg=#93a1a1 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+    hi VertSplit ctermfg=247 ctermbg=254 guifg=#93a1a1 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+    hi WildMenu ctermfg=242 ctermbg=230 guifg=#586e75 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
   else
     hi StatusLine ctermfg=236 ctermbg=254 guifg=#073642 guibg=#eee8d5 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
     hi StatusLineNC ctermfg=66 ctermbg=254 guifg=#657b83 guibg=#eee8d5 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
     hi TabLine ctermfg=66 ctermbg=254 guifg=#657b83 guibg=#eee8d5 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
     hi TabLineFill ctermfg=66 ctermbg=254 guifg=#657b83 guibg=#eee8d5 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
     hi TabLineSel ctermfg=236 ctermbg=254 guifg=#073642 guibg=#eee8d5 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi VertSplit ctermfg=236 ctermbg=247 guifg=#073642 guibg=#93a1a1 guisp=NONE cterm=NONE gui=NONE
+    hi WildMenu ctermfg=66 ctermbg=230 guifg=#657b83 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
   endif
   hi! link StatusLineTerm StatusLine
   hi! link StatusLineTermNC StatusLineNC
-  hi VertSplit ctermfg=236 ctermbg=247 guifg=#073642 guibg=#93a1a1 guisp=NONE cterm=NONE gui=NONE
   hi Visual ctermfg=247 ctermbg=230 guifg=#93a1a1 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
   hi VisualNOS ctermfg=NONE ctermbg=254 guifg=NONE guibg=#eee8d5 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
   hi WarningMsg ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
-  hi WildMenu ctermfg=235 ctermbg=254 guifg=#002b36 guibg=#eee8d5 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
   hi! link Boolean Constant
   hi! link Character Constant
-  hi Comment ctermfg=247 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE,italic
+  hi Comment ctermfg=66 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE gui=NONE,italic
   hi! link Conditional Statement
   hi Constant ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi! link Define PreProc
@@ -779,14 +797,14 @@ if &background ==# 'dark'
     let g:terminal_color_15='#fdf6e3'
   endif
   if !has('gui_running') && get(g:, 'solarized_termtrans', 0)
-    hi Normal ctermfg=14 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi Normal ctermfg=7 ctermbg=NONE guifg=#eee8d5 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi FoldColumn ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi Folded ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=#002b36 cterm=NONE,bold gui=NONE,bold
     hi LineNr ctermfg=11 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi Terminal ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi CursorLineNr ctermbg=NONE guifg=NONE
   else
-    hi Normal ctermfg=14 ctermbg=8 guifg=#93a1a1 guibg=#002b36 guisp=NONE cterm=NONE gui=NONE
+    hi Normal ctermfg=7 ctermbg=8 guifg=#eee8d5 guibg=#002b36 guisp=NONE cterm=NONE gui=NONE
     hi FoldColumn ctermfg=14 ctermbg=0 guifg=#93a1a1 guibg=#073642 guisp=NONE cterm=NONE gui=NONE
     hi Folded ctermfg=14 ctermbg=0 guifg=#93a1a1 guibg=#073642 guisp=#002b36 cterm=NONE,bold gui=NONE,bold
     hi LineNr ctermfg=11 ctermbg=0 guifg=#657b83 guibg=#073642 guisp=NONE cterm=NONE gui=NONE
@@ -853,10 +871,10 @@ if &background ==# 'dark'
   hi MatchParen ctermfg=15 ctermbg=0 guifg=#fdf6e3 guibg=#073642 guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi ModeMsg ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi MoreMsg ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi Pmenu ctermfg=14 ctermbg=0 guifg=#93a1a1 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-  hi PmenuSbar ctermfg=15 ctermbg=14 guifg=#fdf6e3 guibg=#93a1a1 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-  hi PmenuSel ctermfg=11 ctermbg=15 guifg=#657b83 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-  hi PmenuThumb ctermfg=14 ctermbg=8 guifg=#93a1a1 guibg=#002b36 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+  hi Pmenu ctermfg=7 ctermbg=0 guifg=#eee8d5 guibg=#073642 guisp=NONE cterm=NONE gui=NONE
+  hi PmenuSbar ctermfg=NONE ctermbg=14 guifg=NONE guibg=#93a1a1 guisp=NONE cterm=NONE gui=NONE
+  hi PmenuSel ctermfg=15 ctermbg=11 guifg=#fdf6e3 guibg=#657b83 guisp=NONE cterm=NONE gui=NONE
+  hi PmenuThumb ctermfg=NONE ctermbg=11 guifg=NONE guibg=#657b83 guisp=NONE cterm=NONE gui=NONE
   hi Question ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi! link QuickFixLine Search
   hi Search ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
@@ -867,23 +885,31 @@ if &background ==# 'dark'
     hi TabLine ctermfg=11 ctermbg=0 guifg=#657b83 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
     hi TabLineFill ctermfg=11 ctermbg=0 guifg=#657b83 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
     hi TabLineSel ctermfg=14 ctermbg=15 guifg=#93a1a1 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi VertSplit ctermfg=0 ctermbg=11 guifg=#073642 guibg=#657b83 guisp=NONE cterm=NONE gui=NONE
+  elseif get(g:, "solarized_statusline", "") == "flat"
+    hi StatusLine ctermfg=0 ctermbg=15 guifg=#073642 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi StatusLineNC ctermfg=0 ctermbg=7 guifg=#073642 guibg=#eee8d5 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi TabLineSel ctermfg=15 ctermbg=0 guifg=#fdf6e3 guibg=#073642 guisp=NONE cterm=NONE gui=NONE
+    hi TabLine ctermfg=11 ctermbg=0 guifg=#657b83 guibg=#073642 guisp=NONE cterm=NONE gui=NONE
+    hi TabLineFill ctermfg=11 ctermbg=0 guifg=#657b83 guibg=#073642 guisp=NONE cterm=NONE gui=NONE
+    hi VertSplit ctermfg=11 ctermbg=0 guifg=#657b83 guibg=#073642 guisp=NONE cterm=NONE gui=NONE
   else
     hi StatusLine ctermfg=14 ctermbg=0 guifg=#93a1a1 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
     hi StatusLineNC ctermfg=11 ctermbg=0 guifg=#657b83 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
     hi TabLine ctermfg=11 ctermbg=0 guifg=#657b83 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
     hi TabLineFill ctermfg=11 ctermbg=0 guifg=#657b83 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
     hi TabLineSel ctermfg=14 ctermbg=0 guifg=#93a1a1 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi VertSplit ctermfg=0 ctermbg=11 guifg=#073642 guibg=#657b83 guisp=NONE cterm=NONE gui=NONE
   endif
   hi! link StatusLineTerm StatusLine
   hi! link StatusLineTermNC StatusLineNC
-  hi VertSplit ctermfg=0 ctermbg=11 guifg=#073642 guibg=#657b83 guisp=NONE cterm=NONE gui=NONE
   hi Visual ctermfg=11 ctermbg=8 guifg=#657b83 guibg=#002b36 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
   hi VisualNOS ctermfg=NONE ctermbg=0 guifg=NONE guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
   hi WarningMsg ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi WildMenu ctermfg=15 ctermbg=0 guifg=#fdf6e3 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
   hi! link Boolean Constant
   hi! link Character Constant
-  hi Comment ctermfg=11 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE gui=NONE,italic
+  hi Comment ctermfg=12 ctermbg=NONE guifg=#839496 guibg=NONE guisp=NONE cterm=NONE gui=NONE,italic
   hi! link Conditional Statement
   hi Constant ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi! link Define PreProc
@@ -1139,14 +1165,14 @@ if has('nvim')
   let g:terminal_color_15='#fdf6e3'
 endif
 if !has('gui_running') && get(g:, 'solarized_termtrans', 0)
-  hi Normal ctermfg=10 ctermbg=NONE guifg=#586e75 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi Normal ctermfg=0 ctermbg=NONE guifg=#073642 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi FoldColumn ctermfg=10 ctermbg=NONE guifg=#586e75 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi Folded ctermfg=10 ctermbg=NONE guifg=#586e75 guibg=NONE guisp=#fdf6e3 cterm=NONE,bold gui=NONE,bold
   hi LineNr ctermfg=14 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi Terminal ctermfg=fg ctermbg=NONE guifg=fg guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi CursorLineNr ctermbg=NONE guifg=NONE
 else
-  hi Normal ctermfg=10 ctermbg=15 guifg=#586e75 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
+  hi Normal ctermfg=0 ctermbg=15 guifg=#073642 guibg=#fdf6e3 guisp=NONE cterm=NONE gui=NONE
   hi FoldColumn ctermfg=10 ctermbg=7 guifg=#586e75 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
   hi Folded ctermfg=10 ctermbg=7 guifg=#586e75 guibg=#eee8d5 guisp=#fdf6e3 cterm=NONE,bold gui=NONE,bold
   hi LineNr ctermfg=14 ctermbg=7 guifg=#93a1a1 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
@@ -1225,10 +1251,10 @@ hi ErrorMsg ctermfg=1 ctermbg=15 guifg=#dc322f guibg=#fdf6e3 guisp=NONE cterm=NO
 hi IncSearch ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,standout gui=NONE,standout
 hi ModeMsg ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi MoreMsg ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi Pmenu ctermfg=10 ctermbg=7 guifg=#586e75 guibg=#eee8d5 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-hi PmenuSbar ctermfg=8 ctermbg=10 guifg=#002b36 guibg=#586e75 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-hi PmenuSel ctermfg=14 ctermbg=8 guifg=#93a1a1 guibg=#002b36 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-hi PmenuThumb ctermfg=10 ctermbg=15 guifg=#586e75 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi Pmenu ctermfg=0 ctermbg=7 guifg=#073642 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+hi PmenuSbar ctermfg=NONE ctermbg=0 guifg=NONE guibg=#073642 guisp=NONE cterm=NONE gui=NONE
+hi PmenuSel ctermfg=8 ctermbg=14 guifg=#002b36 guibg=#93a1a1 guisp=NONE cterm=NONE gui=NONE
+hi PmenuThumb ctermfg=NONE ctermbg=11 guifg=NONE guibg=#657b83 guisp=NONE cterm=NONE gui=NONE
 hi Question ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
 hi! link QuickFixLine Search
 hi Search ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
@@ -1239,23 +1265,33 @@ if get(g:, "solarized_statusline", "") == "low"
   hi TabLine ctermfg=14 ctermbg=0 guifg=#93a1a1 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
   hi TabLineFill ctermfg=14 ctermbg=0 guifg=#93a1a1 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
   hi TabLineSel ctermfg=0 ctermbg=15 guifg=#073642 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+  hi VertSplit ctermfg=0 ctermbg=14 guifg=#073642 guibg=#93a1a1 guisp=NONE cterm=NONE gui=NONE
+  hi WildMenu ctermfg=0 ctermbg=15 guifg=#073642 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+elseif get(g:, "solarized_statusline", "") == "flat"
+  hi StatusLine ctermfg=7 ctermbg=8 guifg=#eee8d5 guibg=#002b36 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+  hi StatusLineNC ctermfg=7 ctermbg=0 guifg=#eee8d5 guibg=#073642 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+  hi TabLineSel ctermfg=8 ctermbg=7 guifg=#002b36 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+  hi TabLine ctermfg=14 ctermbg=7 guifg=#93a1a1 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+  hi TabLineFill ctermfg=14 ctermbg=7 guifg=#93a1a1 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+  hi VertSplit ctermfg=14 ctermbg=7 guifg=#93a1a1 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+  hi WildMenu ctermfg=10 ctermbg=15 guifg=#586e75 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
 else
   hi StatusLine ctermfg=0 ctermbg=7 guifg=#073642 guibg=#eee8d5 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
   hi StatusLineNC ctermfg=11 ctermbg=7 guifg=#657b83 guibg=#eee8d5 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
   hi TabLine ctermfg=11 ctermbg=7 guifg=#657b83 guibg=#eee8d5 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
   hi TabLineFill ctermfg=11 ctermbg=7 guifg=#657b83 guibg=#eee8d5 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
   hi TabLineSel ctermfg=0 ctermbg=7 guifg=#073642 guibg=#eee8d5 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+  hi VertSplit ctermfg=0 ctermbg=14 guifg=#073642 guibg=#93a1a1 guisp=NONE cterm=NONE gui=NONE
+  hi WildMenu ctermfg=11 ctermbg=15 guifg=#657b83 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
 endif
 hi! link StatusLineTerm StatusLine
 hi! link StatusLineTermNC StatusLineNC
-hi VertSplit ctermfg=0 ctermbg=14 guifg=#073642 guibg=#93a1a1 guisp=NONE cterm=NONE gui=NONE
 hi Visual ctermfg=14 ctermbg=15 guifg=#93a1a1 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
 hi VisualNOS ctermfg=NONE ctermbg=7 guifg=NONE guibg=#eee8d5 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
 hi WarningMsg ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
-hi WildMenu ctermfg=8 ctermbg=7 guifg=#002b36 guibg=#eee8d5 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
 hi! link Boolean Constant
 hi! link Character Constant
-hi Comment ctermfg=14 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE,italic
+hi Comment ctermfg=11 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE gui=NONE,italic
 hi! link Conditional Statement
 hi Constant ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi! link Define PreProc
@@ -1507,12 +1543,12 @@ finish
 " Color: back                 #002b36                ~        8
 " TermCursor        -> Cursor
 " TermCursorNC         base03            base01
-"   Normal             base0             none
+"   Normal             base1             none
 "   FoldColumn         fg                none
 "   Folded             fg                none             bold s=base03
 "   LineNr             base01            none
 "   Terminal           fg                none
-"   Normal            base0             back
+"   Normal            base1             back
 "   FoldColumn        base0             base02
 "   Folded            base0             base02            bold s=base03
 "   LineNr            base01            base02
@@ -1563,10 +1599,10 @@ finish
 " MatchParen           base3             base02            bold
 " ModeMsg              blue              none
 " MoreMsg              blue              none
-" Pmenu                base0             base02            reverse
-" PmenuSbar            base2             base0             reverse
-" PmenuSel             base01            base2             reverse
-" PmenuThumb           base0             base03            reverse
+" Pmenu                base1             base02
+" PmenuSbar            none              base0
+" PmenuSel             base2             base01
+" PmenuThumb           none              base01
 " Question             cyan              none              bold
 " QuickFixLine     ->  Search
 " Search               yellow            none              reverse
@@ -1576,21 +1612,28 @@ finish
 " TabLine              base01            base02            reverse
 " TabLineFill          base01            base02            reverse
 " TabLineSel           base0             base3             reverse
+" VertSplit            base02            base01
+" StatusLine           base02            base2             reverse
+" StatusLineNC         base02            base1             reverse
+" TabLineSel           base2             base02
+" TabLine              base01            base02
+" TabLineFill          base01            base02
+" VertSplit            base01            base02
 " StatusLine           base0             base02            reverse
 " StatusLineNC         base01            base02            reverse
 " TabLine              base01            base02            reverse
 " TabLineFill          base01            base02            reverse
 " TabLineSel           base0             base02            reverse
+" VertSplit            base02            base01
 " StatusLineTerm    -> StatusLine
 " StatusLineTermNC  -> StatusLineNC
-" VertSplit            base02            base01
 " Visual               base01            base03            reverse
 " VisualNOS            none              base02            reverse
 " WarningMsg           orange            none              bold
 " WildMenu             base2             base02            reverse
 " Boolean           -> Constant
 " Character         -> Constant
-" Comment              base01            none              g=italic
+" Comment              base00            none              g=italic
 " Conditional       -> Statement
 " Constant             cyan              none
 " Define            -> PreProc
@@ -1827,12 +1870,12 @@ finish
 " Color: back                 #fdf6e3                ~        15
 " TermCursor        -> Cursor
 " TermCursorNC         base03            base01
-"   Normal             base0             none
+"   Normal             base1             none
 "   FoldColumn         base0             none
 "   Folded             base0             none              bold s=base03
 "   LineNr             base01            none
 "   Terminal           fg                none
-"   Normal            base0             back
+"   Normal            base1             back
 "   FoldColumn        base0             base02
 "   Folded            base0             base02            bold s=base03
 "   LineNr            base01            base02
@@ -1889,10 +1932,10 @@ finish
 " IncSearch            orange            none              standout
 " ModeMsg              blue              none
 " MoreMsg              blue              none
-" Pmenu                base0             base02            reverse
-" PmenuSbar            base2             base0             reverse
-" PmenuSel             base01            base2             reverse
-" PmenuThumb           base0             base03            reverse
+" Pmenu                base1             base02
+" PmenuSbar            none              base1
+" PmenuSel             base2             base01
+" PmenuThumb           none              base00
 " Question             cyan              none              bold
 " QuickFixLine     ->  Search
 " Search               yellow            none              reverse
@@ -1902,21 +1945,30 @@ finish
 " TabLine              base01            base1             reverse
 " TabLineFill          base01            base1             reverse
 " TabLineSel           base1             base03            reverse
+" VertSplit            base1             base01
+" WildMenu             base1             base03            reverse
+" StatusLine           base02            base2             reverse
+" StatusLineNC         base02            base1             reverse
+" TabLineSel           base2             base02
+" TabLine              base01            base02
+" TabLineFill          base01            base02
+" VertSplit            base01            base02
+" WildMenu             base0             base03            reverse
 " StatusLine           base1             base02            reverse
 " StatusLineNC         base00            base02            reverse
 " TabLine              base00            base02            reverse
 " TabLineFill          base00            base02            reverse
 " TabLineSel           base1             base02            reverse
+" VertSplit            base1             base01
+" WildMenu             base00            base03            reverse
 " StatusLineTerm    -> StatusLine
 " StatusLineTermNC  -> StatusLineNC
-" VertSplit            base1             base01
 " Visual               base01            base03            reverse
 " VisualNOS            none              base02            reverse
 " WarningMsg           orange            none              bold
-" WildMenu             base2             base02            reverse
 " Boolean           -> Constant
 " Character         -> Constant
-" Comment              base01            none              g=italic
+" Comment              base00            none              g=italic
 " Conditional       -> Statement
 " Constant             cyan              none
 " Define            -> PreProc

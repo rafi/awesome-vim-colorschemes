@@ -71,23 +71,26 @@ Otherwise, use your favourite installation method.
 
 There are actually four optimized<sup>*</sup> colorschemes:
 
-- `solarized8`: the default Solarized theme;
-- `solarized8_low`: low-contrast variant;
-- `solarized8_high`: high-contrast variant;
-- `solarized8_flat`: “flat” variant (not present in the original Solarized, see
-   screenshots above).
+- `solarized8_high`: high-contrast variant (screenshow below, first column);
+- `solarized8`: the default Solarized theme (screenshot below, second column);
+- `solarized8_low`: low-contrast variant (screenshow below, third column);
+- `solarized8_flat`: “flat” variant (screenshow below, fourth column).
 
-To use any of them, set the background (`dark` or `light`) then load the
-colorscheme, e.g.:
+![](https://raw.github.com/lifepillar/Resources/master/solarized8/solarized8-variants.png)
+
+The “flat” variant does not exist in the original Solarized. It differs
+mainly in how the status line, split bars and tab bar look like:
+
+![](https://raw.github.com/lifepillar/Resources/master/solarized8/solarized8-normal-vs-flat.png)
+
+To use a Solarized 8 colorscheme, set the background (`dark` or `light`) then
+load the variant you want, e.g.:
 
     set background=dark
     colorscheme solarized8
 
 To switch the background from dark to light or vice versa, just set `background`
 accordingly.
-
-**Note:** the old names (`solarized8_dark*` and `solarized8_light*`) have been
-removed in v1.1.1. Please use one of the names above.
 
 If you use Vim packages, there is no need to `packadd solarized8`. Keep your
 `runtimepath` clean!
@@ -110,7 +113,7 @@ The following options are inherited from Solarized:
 
 The following options were not available in the original Solarized:
 
-- `g:solarized_statusline`: one of `"normal"` (default) or `"low"`;
+- `g:solarized_statusline`: one of `"normal"` (default), `"low"` or `"flat"`;
 - `g:solarized_term_italics`: set to `1` to enable italics in the terminal
   (default is `0`).
 - `g:solarized_old_cursor_style`: set to `1` if you want to use the original

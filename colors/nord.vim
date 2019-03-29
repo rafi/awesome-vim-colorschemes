@@ -1,5 +1,5 @@
-" Copyright (c) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
-" Copyright (c) 2016-present Sven Greb <code@svengreb.de>
+" Copyright (C) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
+" Copyright (C) 2016-present Sven Greb <development@svengreb.de>
 
 " Project: Nord Vim
 " Repository: https://github.com/arcticicestudio/nord-vim
@@ -13,13 +13,14 @@ if version > 580
 endif
 
 let g:colors_name = "nord"
-let s:nord_vim_version="0.9.0"
+let s:nord_vim_version="0.10.0"
 set background=dark
 
 let s:nord0_gui = "#2E3440"
 let s:nord1_gui = "#3B4252"
 let s:nord2_gui = "#434C5E"
 let s:nord3_gui = "#4C566A"
+let s:nord3_gui_bright = "#616E88"
 let s:nord4_gui = "#D8DEE9"
 let s:nord5_gui = "#E5E9F0"
 let s:nord6_gui = "#ECEFF4"
@@ -100,8 +101,17 @@ if !exists('g:nord_uniform_status_lines')
   let g:nord_uniform_status_lines = 0
 endif
 
-if !exists("g:nord_comment_brightness")
-  let g:nord_comment_brightness = 0
+function! s:logWarning(msg)
+  echohl WarningMsg
+  echomsg 'nord: warning: ' . a:msg
+  echohl None
+endfunction
+
+if exists("g:nord_comment_brightness")
+  call s:logWarning('Variable g:nord_comment_brightness has been deprecated and will be removed in version 1.0.0!' .
+                   \' The comment color brightness has been increased by 10% by default.' .
+                   \' Please see https://github.com/arcticicestudio/nord-vim/issues/145 for more details.')
+  let g:nord_comment_brightness = 10
 endif
 
 if !exists("g:nord_uniform_diff_background")
@@ -245,7 +255,7 @@ call s:hi("VertSplit", s:nord2_gui, s:nord1_gui, s:nord3_term, s:nord1_term, "NO
 "+----------------------+
 call s:hi("Boolean", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Character", s:nord14_gui, "", s:nord14_term, "", "", "")
-call s:hi("Comment", s:nord3_gui_brightened[g:nord_comment_brightness], "", s:nord3_term, "", s:italicize_comments, "")
+call s:hi("Comment", s:nord3_gui_bright, "", s:nord3_term, "", s:italicize_comments, "")
 call s:hi("Conditional", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Constant", s:nord4_gui, "", "NONE", "", "", "")
 call s:hi("Define", s:nord9_gui, "", s:nord9_term, "", "", "")
@@ -471,7 +481,7 @@ hi! link vimFunction Function
 hi! link vimUserFunc Function
 
 call s:hi("xmlAttrib", s:nord7_gui, "", s:nord7_term, "", "", "")
-call s:hi("xmlCdataStart", s:nord3_gui, "", s:nord3_term, "", "bold", "")
+call s:hi("xmlCdataStart", s:nord3_gui_bright, "", s:nord3_term, "", "bold", "")
 call s:hi("xmlNamespace", s:nord7_gui, "", s:nord7_term, "", "", "")
 hi! link xmlAttribPunct Delimiter
 hi! link xmlCdata Comment

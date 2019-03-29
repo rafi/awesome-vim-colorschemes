@@ -25,11 +25,11 @@ if ! exists("g:challenger_deep_terminal_italics")
 endif
 
 " Colors
-let s:black           = { "gui": "#212121", "cterm": "0", "cterm16" : "0" }
+let s:black           = { "gui": "#212121", "cterm": "0", "cterm16" : "8" }
 let s:medium_gray     = { "gui": "#767676", "cterm": "243", "cterm16" : "243" }
 let s:white           = { "gui": "#F3F3F3", "cterm": "15", "cterm16" : "15" }
 let s:actual_white    = { "gui": "#FFFFFF", "cterm": "231", "cterm16" : "231" }
-let s:light_black     = { "gui": "#424242", "cterm": "8", "cterm16" : "8" }
+let s:light_black     = { "gui": "#424242", "cterm": "8", "cterm16" : "0" }
 let s:lighter_black   = { "gui": "#545454", "cterm": "240", "cterm16" : "240" }
 
 " lighter shadows and darker grays
@@ -39,8 +39,8 @@ let s:lighter_gray  = { "gui": "#C6C6C6", "cterm": "251", "cterm16" : "251" }
 
 " flat colors:
 let s:asphalt = { "gui": "#1e1c31", "cterm": "233", "cterm16": "NONE"}
-let s:asphalt_subtle= { "gui": "#100E23", "cterm": "232", "cterm16": "8"}
-let s:dark_asphalt = { "gui": "#565575", "cterm": "236", "cterm16": "0"}
+let s:asphalt_subtle= { "gui": "#100E23", "cterm": "232", "cterm16": "0"}
+let s:dark_asphalt = { "gui": "#565575", "cterm": "236", "cterm16": "8"}
 
 let s:red = { "gui": "#ff8080", "cterm": "204", "cterm16": "1"}
 let s:dark_red = { "gui": "#ff5458", "cterm": "203", "cterm16": "9"}

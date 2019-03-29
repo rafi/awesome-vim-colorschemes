@@ -1,4 +1,4 @@
-![Challenger Deep](https://s17.postimg.org/8b54c0ia7/challenger-deep.png)
+![Challenger Deep](https://challenger-deep-theme.github.io/images/logo.png)
 
 ### [Challenger Deep Theme](https://challenger-deep-theme.github.io/) for VIM
 
@@ -75,7 +75,7 @@ Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 
 ### Lightline Theme ###
 
-![Lightline](http://s1.postimg.org/k6t3zssn3/lightline.png)
+![Lightline](https://challenger-deep-theme.github.io/images/screenshots/vim-lightline.png)
 
 Challenger Deep supports [lightline.vim](https://github.com/itchyny/lightline.vim). To enable the colorscheme,
 add one of the following lines to your `.vimrc`:

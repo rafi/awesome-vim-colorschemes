@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://i.imgur.com/wXBrfyv.png" alt="Minimalist on HTML">
+    <img src="https://files.dikiaap.id/img/open-source/minimalist_preview.png" alt="Minimalist on HTML">
 </p>
 
 # Minimalist
@@ -77,8 +77,7 @@ If you need more syntax highlighting, you can use
 
 [GitHub](https://github.com/dikiaap/minimalist) ·
 [Vim.org](https://www.vim.org/scripts/script.php?script_id=5490) ·
-[Vim Awesome](https://vimawesome.com/plugin/minimalist-vim) ·
-[DotShare.it](http://dotshare.it/dots/1397/)
+[Vim Awesome](https://vimawesome.com/plugin/minimalist-vim)
 
 ## License
 

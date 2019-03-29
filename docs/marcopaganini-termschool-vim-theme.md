@@ -1,4 +1,5 @@
 # termschool
+
 ## An improved codeschool like vim theme for 256-color terminals
 
 termschool is a vim theme optimized for 256-color terminals. The theme
@@ -59,7 +60,7 @@ ugly/weird, try adding the following to your `~/.vimrc` file right before the
 `colorscheme termschool` line:
 
 ```VimL
-set t_Co=256                                                                                        
+set t_Co=256
 ```
 
 This will force vim to use 256 colors.

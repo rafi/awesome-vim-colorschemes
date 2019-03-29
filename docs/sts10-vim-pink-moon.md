@@ -33,3 +33,7 @@ I liked the vibe of [this setup](https://imgur.com/a/5DSV6) (which I found thank
 Vim-Pink-Moon has HEX color codes in it, so it works well with GVim (including [MacVim](https://github.com/macvim-dev/macvim/releases/)), as well as terminals that have true color support (like [iTerm2](https://iterm2.com/) for macOS). 
 
 If you're using [Neovim](https://github.com/neovim/neovim) and macOS and having trouble with getting the colors in the screenshot above to appear for you, I've got [a blog post](https://sts10.github.io/2015/10/24/true-hex-colors-with-neovim-and-iterm2.html) explaining how to get HEX colors in iTerm2 using Neovim. I also later wrote [a separate blog post about troubleshooting HEX colors will regular terminal Vim + iTerm](https://sts10.github.io/2016/06/14/true-hex-colors-in-vim-with-iterm2.html).
+
+## Slack Theme
+
+If you want to make your [Slack](https://slack.com/) theme match this Vim colorscheme, go to Preferences > Sidebar > Theme, scroll down to "Custom Theme", and paste in `#333C47,#434852,#6F98B3,#F0FDFF,#434852,#F0FDFF,#D08785,#D08785`. 

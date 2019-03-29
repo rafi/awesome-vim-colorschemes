@@ -27,10 +27,10 @@ Airline theme
 
 Terminal (Neo)vim
 
-![img](https://github.com/ajmwagar/vim-deus/blob/master/screencaps/duesLinux.jpeg?raw=true)
+![img](https://github.com/ajmwagar/vim-deus/blob/master/screencaps/deusLinux.jpeg?raw=true)
 
 NERDTree
-![img](![img](https://github.com/ajmwagar/vim-deus/blob/master/screencaps/duesNerdtree.jpeg?raw=true)
+![img](https://github.com/ajmwagar/vim-deus/blob/master/screencaps/duesNerdtree.jpeg?raw=true)
 
 ---
 

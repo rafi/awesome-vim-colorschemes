@@ -1,11 +1,11 @@
-" Copyright (c) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
-" Copyright (c) 2016-present Sven Greb <code@svengreb.de>
+" Copyright (C) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
+" Copyright (C) 2016-present Sven Greb <development@svengreb.de>
 
 " Project: Nord Vim
 " Repository: https://github.com/arcticicestudio/nord-vim
 " License: MIT
 
-let s:nord_vim_version="0.9.0"
+let s:nord_vim_version="0.10.0"
 let g:airline#themes#nord#palette = {}
 
 let s:nord0_gui = "#2E3440"

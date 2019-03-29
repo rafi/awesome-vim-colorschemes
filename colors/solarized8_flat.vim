@@ -4,7 +4,7 @@
 " Maintainer:   Lifepillar <lifepillar@lifepillar.me>
 " Website:      https://github.com/lifepillar/vim-solarized8
 " License:      OSI approved MIT license
-" Last Updated: Sun Aug 26 09:12:59 2018
+" Last Updated: Tue Mar 26 08:40:59 2019
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < (get(g:, 'solarized_use16', &t_Co < 256) ? 16 : 256))
@@ -114,10 +114,10 @@ if !get(g:, 'solarized_use16', &t_Co < 256)
     hi MatchParen ctermfg=230 ctermbg=236 guifg=#fdf6e3 guibg=#073642 guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi ModeMsg ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi MoreMsg ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi Pmenu ctermfg=236 ctermbg=246 guifg=#073642 guibg=#839496 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-    hi PmenuSbar ctermfg=236 ctermbg=242 guifg=#073642 guibg=#586e75 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-    hi PmenuSel ctermfg=66 ctermbg=254 guifg=#657b83 guibg=#eee8d5 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-    hi PmenuThumb ctermfg=242 ctermbg=235 guifg=#586e75 guibg=#002b36 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+    hi Pmenu ctermfg=246 ctermbg=236 guifg=#839496 guibg=#073642 guisp=NONE cterm=NONE gui=NONE
+    hi PmenuSbar ctermfg=NONE ctermbg=236 guifg=NONE guibg=#073642 guisp=NONE cterm=NONE gui=NONE
+    hi PmenuSel ctermfg=254 ctermbg=242 guifg=#eee8d5 guibg=#586e75 guisp=NONE cterm=NONE gui=NONE
+    hi PmenuThumb ctermfg=NONE ctermbg=242 guifg=NONE guibg=#586e75 guisp=NONE cterm=NONE gui=NONE
     hi Question ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi! link QuickFixLine Search
     hi Search ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
@@ -473,17 +473,17 @@ if !get(g:, 'solarized_use16', &t_Co < 256)
   endif
   hi Directory ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi EndOfBuffer ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi ErrorMsg ctermfg=160 ctermbg=235 guifg=#dc322f guibg=#002b36 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+  hi ErrorMsg ctermfg=160 ctermbg=230 guifg=#dc322f guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
   hi FoldColumn ctermfg=66 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi Folded ctermfg=66 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=#fdf6e3 cterm=NONE,bold gui=NONE,bold
   hi IncSearch ctermfg=166 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,standout gui=NONE,standout
   hi LineNr ctermfg=247 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi ModeMsg ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi MoreMsg ctermfg=32 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi Pmenu ctermfg=254 ctermbg=66 guifg=#eee8d5 guibg=#657b83 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-  hi PmenuSbar ctermfg=254 ctermbg=247 guifg=#eee8d5 guibg=#93a1a1 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-  hi PmenuSel ctermfg=247 ctermbg=230 guifg=#93a1a1 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-  hi PmenuThumb ctermfg=246 ctermbg=230 guifg=#839496 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+  hi Pmenu ctermfg=66 ctermbg=254 guifg=#657b83 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+  hi PmenuSbar ctermfg=NONE ctermbg=254 guifg=NONE guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+  hi PmenuSel ctermfg=230 ctermbg=247 guifg=#fdf6e3 guibg=#93a1a1 guisp=NONE cterm=NONE gui=NONE
+  hi PmenuThumb ctermfg=NONE ctermbg=247 guifg=NONE guibg=#93a1a1 guisp=NONE cterm=NONE gui=NONE
   hi Question ctermfg=37 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi! link QuickFixLine Search
   hi Search ctermfg=136 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
@@ -836,10 +836,10 @@ if &background ==# 'dark'
   hi MatchParen ctermfg=15 ctermbg=0 guifg=#fdf6e3 guibg=#073642 guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi ModeMsg ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi MoreMsg ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi Pmenu ctermfg=0 ctermbg=12 guifg=#073642 guibg=#839496 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-  hi PmenuSbar ctermfg=0 ctermbg=10 guifg=#073642 guibg=#586e75 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-  hi PmenuSel ctermfg=11 ctermbg=7 guifg=#657b83 guibg=#eee8d5 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-  hi PmenuThumb ctermfg=10 ctermbg=8 guifg=#586e75 guibg=#002b36 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+  hi Pmenu ctermfg=12 ctermbg=0 guifg=#839496 guibg=#073642 guisp=NONE cterm=NONE gui=NONE
+  hi PmenuSbar ctermfg=NONE ctermbg=0 guifg=NONE guibg=#073642 guisp=NONE cterm=NONE gui=NONE
+  hi PmenuSel ctermfg=7 ctermbg=10 guifg=#eee8d5 guibg=#586e75 guisp=NONE cterm=NONE gui=NONE
+  hi PmenuThumb ctermfg=NONE ctermbg=10 guifg=NONE guibg=#586e75 guisp=NONE cterm=NONE gui=NONE
   hi Question ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi! link QuickFixLine Search
   hi Search ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
@@ -1195,17 +1195,17 @@ else
 endif
 hi Directory ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi EndOfBuffer ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi ErrorMsg ctermfg=1 ctermbg=8 guifg=#dc322f guibg=#002b36 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi ErrorMsg ctermfg=1 ctermbg=15 guifg=#dc322f guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
 hi FoldColumn ctermfg=11 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi Folded ctermfg=11 ctermbg=NONE guifg=#657b83 guibg=NONE guisp=#fdf6e3 cterm=NONE,bold gui=NONE,bold
 hi IncSearch ctermfg=9 ctermbg=NONE guifg=#cb4b16 guibg=NONE guisp=NONE cterm=NONE,standout gui=NONE,standout
 hi LineNr ctermfg=14 ctermbg=NONE guifg=#93a1a1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi ModeMsg ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi MoreMsg ctermfg=4 ctermbg=NONE guifg=#268bd2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi Pmenu ctermfg=7 ctermbg=11 guifg=#eee8d5 guibg=#657b83 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-hi PmenuSbar ctermfg=7 ctermbg=14 guifg=#eee8d5 guibg=#93a1a1 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-hi PmenuSel ctermfg=14 ctermbg=15 guifg=#93a1a1 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
-hi PmenuThumb ctermfg=12 ctermbg=15 guifg=#839496 guibg=#fdf6e3 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
+hi Pmenu ctermfg=11 ctermbg=7 guifg=#657b83 guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+hi PmenuSbar ctermfg=NONE ctermbg=7 guifg=NONE guibg=#eee8d5 guisp=NONE cterm=NONE gui=NONE
+hi PmenuSel ctermfg=15 ctermbg=14 guifg=#fdf6e3 guibg=#93a1a1 guisp=NONE cterm=NONE gui=NONE
+hi PmenuThumb ctermfg=NONE ctermbg=14 guifg=NONE guibg=#93a1a1 guisp=NONE cterm=NONE gui=NONE
 hi Question ctermfg=6 ctermbg=NONE guifg=#2aa198 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
 hi! link QuickFixLine Search
 hi Search ctermfg=3 ctermbg=NONE guifg=#b58900 guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
@@ -1539,10 +1539,10 @@ finish
 " MatchParen           base3             base02            bold
 " ModeMsg              blue              none
 " MoreMsg              blue              none
-" Pmenu                base02            base0             reverse
-" PmenuSbar            base02            base01            reverse
-" PmenuSel             base00            base2             reverse
-" PmenuThumb           base01            base03            reverse
+" Pmenu                base0             base02
+" PmenuSbar            none              base02
+" PmenuSel             base2             base01
+" PmenuThumb           none              base01
 " Question             cyan              none              bold
 " QuickFixLine     ->  Search
 " Search               yellow            none              reverse
@@ -1857,17 +1857,17 @@ finish
 " DiffText             blue              base02            s=blue
 " Directory            blue              none
 " EndOfBuffer          none              none
-" ErrorMsg             red               base3             reverse
+" ErrorMsg             red               base03            reverse
 " FoldColumn           base0             none
 " Folded               base0             none              bold s=base03
 " IncSearch            orange            none              standout
 " LineNr               base01            none
 " ModeMsg              blue              none
 " MoreMsg              blue              none
-" Pmenu                base02            base0             reverse
-" PmenuSbar            base02            base01            reverse
-" PmenuSel             base01            base03            reverse
-" PmenuThumb           base00            base03            reverse
+" Pmenu                base0             base02
+" PmenuSbar            none              base02
+" PmenuSel             base03            base01
+" PmenuThumb           none              base01
 " Question             cyan              none              bold
 " QuickFixLine     ->  Search
 " Search               yellow            none              reverse
