@@ -62,6 +62,7 @@ Use your favorite package-manager to install, and enjoy!
 | [space-vim-dark] | Dark magenta colors | ✓ | ✓ |
 | [tender] | 24bit colorscheme for Vim | ✓ | ✓ |
 | [termschool] | Based on the "codeschool" theme, with lots of tweaks | ✓ | ✓ |
+| [tomorrow-theme] | Tomorrow Theme the precursor to Base16 Theme | ✓ | ✓ |
 | [twilight256] | Imitates the Twilight theme for TextMate | ✓ | ✓ |
 | [two-firewatch] | A blend between duotone light and firewatch (for atom) | ✓ | ✓ |
 | [wombat256] | Wombat for 256 color xterms | ✓ | ✓ |
@@ -118,6 +119,7 @@ Use your favorite package-manager to install, and enjoy!
 [space-vim-dark]: https://github.com/liuchengxu/space-vim-dark
 [tender]: https://github.com/jacoborus/tender.vim
 [termschool]: https://github.com/marcopaganini/termschool-vim-theme
+[tomorrow-theme]: https://github.com/chriskempson/tomorrow-theme
 [twilight256]: https://github.com/vim-scripts/twilight256.vim
 [two-firewatch]: https://github.com/rakr/vim-two-firewatch
 [wombat256]: https://github.com/vim-scripts/wombat256.vim
