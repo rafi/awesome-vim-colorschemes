@@ -268,4 +268,8 @@ Suggestions/Wishes/Questions/Comments are welcome via [Github issues](https://gi
 
 [PaperColor theme for Hyper](https://github.com/rafaelrinaldi/hyper-papercolor) by [Rafael Rinaldi](https://github.com/rafaelrinaldi)
 
+[PaperColor Theme for kitty](https://github.com/craffate/papercolor-kitty) by [Cyril Raffatelli](https://github.com/craffate)
+
+[PaperColor Light theme for cmus](https://github.com/eremit/papercolor-light-cmus) by [eremit](https://github.com/eremit)
+
 Feel free to add related projects here!

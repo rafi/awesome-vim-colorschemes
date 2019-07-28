@@ -1,5 +1,5 @@
 " File: afterglow.vim
-" Author: Danilo Augusto <daniloaugusto.ita16@gmail.com>
+" Author: Danilo Augusto
 " Date: 2017-02-27
 " Vim color file - Afterglow (monokai version)
 "
@@ -539,11 +539,20 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     if !exists( "g:afterglow_blackout")
         let g:afterglow_blackout = 0
     endif
-    if g:afterglow_blackout
+
+    " Option g:afterglow_no_terminal_background
+    if !exists("g:afterglow_inherit_background")
+        let g:afterglow_inherit_background = 0
+    endif
+
+    if g:afterglow_inherit_background
+        let s:chosen_background = "none"
+    elseif g:afterglow_blackout
         let s:chosen_background = s:black
     else
         let s:chosen_background = s:background
     endif
+
     " Settings dependent on g:afterglow_blackout
     call <SID>X("Normal", s:foreground, s:chosen_background, "")
     call <SID>X("LineNr", s:comment, s:chosen_background, "")

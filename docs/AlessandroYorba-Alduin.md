@@ -41,7 +41,8 @@ development version [here](https://github.com/AlessandroYorba/Alduin/tree/nightl
 [Arch Linux Package by George Angelopoulos](https://github.com/lathan)<br>
 [KKPMW for Design Inspiration](https://github.com/KKPMW/moonshine-vim)<br>
 [Romain Lafourcade for Design Inspiration](https://github.com/romainl/Apprentice)<br>
-[jiyyt for UI contribution](https://github.com/jiyyt)
+[jiyyt for UI contribution](https://github.com/jiyyt)<br>
+[Aramis Razzaghipour for UI contribution](https://github.com/arzg)
 
 :octopus: Moar Colorschemes
 -------

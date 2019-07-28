@@ -161,6 +161,7 @@ call one#highlight('vimLineComment', 'cccccc', '', 'none')
 
 A special thank you to the following people
 
+* [laggardkernel](https://github.com/laggardkernel): Startup time improvement
 * [Erasin](https://github.com/erasin): Rust support
 * [Malcolm Ramsay - malramsay64](https://github.com/malramsay64): Gracefully fail if colorscheme is not properly loaded
 * [Arthur Xavier](https://github.com/arthur-xavier): PureScript support

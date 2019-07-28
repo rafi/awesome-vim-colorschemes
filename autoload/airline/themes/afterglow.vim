@@ -1,4 +1,4 @@
-" Author:   Danilo Augusto <daniloaugusto.ita16@gmail.com>
+" Author:   Danilo Augusto
 " Script:   Afterglow (vim-airline version)
 " License:  MIT
 " Date:     2017-02-27

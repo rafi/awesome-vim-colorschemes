@@ -23,6 +23,7 @@ information.
   / [Denite][denite]
   / [EasyMotion][easymotion]
   / [Git Gutter][git-gutter]
+  / [git-messenger.vim][git-messenger.vim]
   / [Signify][signify]
   / [Sneak][sneak]
   / [Startify][startify]
@@ -32,6 +33,7 @@ information.
   etc.
 - Better syntax highlight with:
   [typescript-vim][typescript-vim]
+  / [vim-elixir][vim-elixir]
   / [vim-flow][vim-flow]
   / [vim-graphql][vim-graphql]
   / [vim-javavscript][vim-javascript]
@@ -53,17 +55,27 @@ Creator of Iceberg talked about how to create your lovely color scheme in
 
 
 # For other environments
-- [Terminal.app profile](https://cocopon.github.io/iceberg.vim/#macosTerminalApp) by [cocopon](https://github.com/cocopon)
-- [iTerm2](https://github.com/aseom/dotfiles/blob/master/osx/iterm2/iceberg.itermcolors) by [aseom](https://github.com/aseom)
-- [Atom](https://github.com/cocopon/atom-iceberg-syntax/) by [cocopon](https://github.com/cocopon)
-- [Xcode](https://github.com/cocopon/xcode-iceberg) by [cocopon](https://github.com/cocopon)
-- [AppCode](https://github.com/Kuniwak/iceberg.icls) by [Kuniwak](https://github.com/Kuniwak)
-- [Fish](https://github.com/pkazmier/dotfiles/blob/master/.config/fish/functions/bobthefish_colors.fish) by [pkazmier](https://github.com/pkazmier)
-- [bumblebee-status](https://github.com/tobi-wan-kenobi/bumblebee-status) by [Aaron](https://github.com/whzup)
+- [Terminal.app profile](https://cocopon.github.io/iceberg.vim/#macosTerminalApp)
+  by [cocopon]
+- [Visual Studio Code](https://github.com/cocopon/vscode-iceberg-theme)
+  by [cocopon]
+- [Atom](https://github.com/cocopon/atom-iceberg-syntax/)
+  by [cocopon]
+- [Xcode](https://github.com/cocopon/xcode-iceberg)
+  by [cocopon]
+- [AppCode](https://github.com/Kuniwak/iceberg.icls)
+  by [Kuniwak](https://github.com/Kuniwak)
+- [bumblebee-status](https://github.com/tobi-wan-kenobi/bumblebee-status)
+  by [Aaron](https://github.com/whzup)
+- [st](https://notabug.org/vejetaryenvampir/st-iceberg)
+  by [vejetaryenvampir](https://notabug.org/vejetaryenvampir)
+- [Slack sidebar](https://gist.github.com/cocopon/2acffd70883ceb004c9c3117c34a9673)
+  by [cocopon]
 
 NOTE: [terminal.sexy][terminal-sexy] provides configuration files for
-the 16 ANSI colors for many terminal emulators. Use [.Xresources file][xresources]
-as import and export it for the emulator of your choice.
+the 16 ANSI colors for many terminal emulators (e.g. GNOME Terminal, iTerm2,
+etc.). Use [.Xresources file][xresources] as import and export it for
+the emulator of your choice.
 
 
 
@@ -102,10 +114,12 @@ MIT License. See `LICENSE.txt` for more information.
 
 [ale]:https://github.com/w0rp/ale
 [airline]:https://github.com/vim-airline/vim-airline/
+[cocopon]:https://github.com/cocopon
 [ctrlp]:https://github.com/ctrlpvim/ctrlp.vim
 [denite]:https://github.com/Shougo/denite.nvim
 [easymotion]:https://github.com/easymotion/vim-easymotion
 [git-gutter]:https://github.com/airblade/vim-gitgutter
+[git-messenger.vim]:https://github.com/rhysd/git-messenger.vim
 [lightline]:https://github.com/itchyny/lightline.vim
 [neovim]:https://neovim.io/
 [pgmnt]:https://github.com/cocopon/pgmnt.vim
@@ -115,6 +129,7 @@ MIT License. See `LICENSE.txt` for more information.
 [syntastic]:https://github.com/vim-syntastic/syntastic
 [terminal-sexy]:https://terminal.sexy
 [typescript-vim]:https://github.com/leafgarland/typescript-vim
+[vim-elixir]:https://github.com/elixir-editors/vim-elixir
 [vim-flow]:https://github.com/flowtype/vim-flow
 [vim-graphql]:https://github.com/jparise/vim-graphql
 [vim-javascript]:https://github.com/pangloss/vim-javascript

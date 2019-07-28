@@ -17,9 +17,15 @@ Airline scheme included.
 To further customize Afterglow, you can currently use the following options **before** setting the color scheme on your
 vimrc:
 
+- Inherit background: `let g:afterglow_inherit_background=1` (default: 0)
+
+    Use this option if you want the background color to play nicely with the program (e.g. gVim, iTerm etc.) in which vim is used.
+
 - Black background: `let g:afterglow_blackout=1` (default: 0)
 
      ☀️ Use this option if you need more contrast, such as working in an office where open windows cause glare on your screen.
+
+     NB: This option has no effect if `g:afterglow_inherit_background` is also set!
 
 - Italicize comments: `let g:afterglow_italic_comments=1` (default: 0)
 

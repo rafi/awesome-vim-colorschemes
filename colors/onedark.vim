@@ -303,6 +303,16 @@ call s:h("fishConditional", { "fg": s:purple })
 
 " Go
 call s:h("goDeclaration", { "fg": s:purple })
+call s:h("goBuiltins", { "fg": s:cyan })
+call s:h("goFunctionCall", { "fg": s:blue })
+call s:h("goVarDefs", { "fg": s:red })
+call s:h("goVarAssign", { "fg": s:red })
+call s:h("goVar", { "fg": s:purple })
+call s:h("goConst", { "fg": s:purple })
+call s:h("goType", { "fg": s:yellow })
+call s:h("goTypeName", { "fg": s:yellow })
+call s:h("goDeclType", { "fg": s:cyan })
+call s:h("goTypeDecl", { "fg": s:purple })
 
 " HTML
 call s:h("htmlTitle", { "fg": s:white })
@@ -492,6 +502,20 @@ call s:h("scssInclude", { "fg": s:purple })
 call s:h("scssMixin", { "fg": s:purple })
 call s:h("scssSelectorName", { "fg": s:dark_yellow })
 call s:h("scssVariable", { "fg": s:purple })
+
+" TeX
+call s:h("texStatement", { "fg": s:purple })
+call s:h("texSubscripts", { "fg": s:dark_yellow })
+call s:h("texSuperscripts", { "fg": s:dark_yellow })
+call s:h("texTodo", { "fg": s:dark_red })
+call s:h("texBeginEnd", { "fg": s:purple })
+call s:h("texBeginEndName", { "fg": s:blue })
+call s:h("texMathMatcher", { "fg": s:blue })
+call s:h("texMathDelim", { "fg": s:blue })
+call s:h("texDelimiter", { "fg": s:dark_yellow })
+call s:h("texSpecialChar", { "fg": s:dark_yellow })
+call s:h("texCite", { "fg": s:blue })
+call s:h("texRefZone", { "fg": s:blue })
 
 " TypeScript
 call s:h("typescriptReserved", { "fg": s:purple })

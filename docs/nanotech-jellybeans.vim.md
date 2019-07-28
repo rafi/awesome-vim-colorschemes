@@ -130,7 +130,7 @@ everywhere with
     \                    'ctermfg': 'Magenta', 'ctermbg': '' },
     \}
 
-*Added in version 1.7 (unreleased).*
+*Added in version 1.7.*
 
 ### Italics
 
@@ -158,8 +158,7 @@ suggested), add this to your .vimrc:
 
     let g:jellybeans_use_lowcolor_black = 1
 
-*This option was changed to be disabled by default in version
-1.7 (unreleased).*
+*This option was changed to be disabled by default in version 1.7.*
 
 ## Screenshots
 

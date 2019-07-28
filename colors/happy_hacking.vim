@@ -106,7 +106,7 @@ call s:Color("Normal",   s:white,  s:gray1,  s:t_white,  s:t_gray1)
 call s:Color("Search",   s:yellow, "NONE",   s:t_yellow, "NONE", "bold")
 call s:Color("Title",    s:white,  "NONE",   s:t_white,  "NONE", "bold")
 
-call s:Color("LineNr",       s:gray3, "NONE",  s:t_gray3, "NONE")
+call s:Color("LineNr",       s:gray4, "NONE",  s:t_gray4, "NONE")
 call s:Color("StatusLine",   s:white, s:gray6, s:t_white, s:t_gray6)
 call s:Color("StatusLineNC", s:gray4, s:gray6, s:t_gray4, s:t_gray6)
 call s:Color("VertSplit",    s:gray3, "NONE",  s:t_gray3, "NONE")
@@ -132,6 +132,7 @@ call s:Color("Function", s:yellow,   "NONE", s:t_yellow,   "NONE")
 call s:Color("Notice",   s:yellow,   "NONE", s:t_yellow,   "NONE")
 
 call s:Color("MatchParen", "NONE", "NONE", "NONE", "NONE", "bold")
+call s:Color("Conceal", "NONE", "NONE", "NONE", "NONE", "NONE")
 
 hi! link CursorLine   Cursor
 hi! link Identifier   Normal
@@ -152,6 +153,8 @@ hi! link MoreMsg      Normal
 hi! link Character    String
 hi! link Label        Special
 hi! link PreCondit    Macro
+
+hi! NonText guifg=bg
 
 " ============================================================================
 " Specific Languages
@@ -214,6 +217,12 @@ hi! link htmlSpecialTagName htmlTag
 hi! link htmlTagName        htmlTag
 hi! link htmlScriptTag      htmlTag
 
+" Inko
+call s:Color("inkoCommentBold", s:gray4, "NONE", s:t_gray4, "NONE", "bold")
+call s:Color("inkoCommentItalic", s:gray4, "NONE", s:t_gray4, "NONE", "italic")
+call s:Color("inkoCommentTitle", s:gray4, "NONE", s:t_gray4, "NONE", "bold")
+call s:Color("inkoCommentInlineUrl", s:turqoise, "NONE", s:t_turqoise, "NONE")
+
 " Javascript
 hi! link javaScriptBraces     Normal
 hi! link javaScriptMember     Normal
@@ -251,6 +260,7 @@ hi! link NERDTreeLink     Number
 hi! link NERDTreeDir      Directory
 hi! link NERDTreeOpenable NERDTreeDir
 hi! link NERDTreeClosable NERDTreeDir
+hi! NERDTreeFile guibg=NONE
 
 " Perl
 hi! link podCommand           Comment
@@ -357,3 +367,15 @@ let g:terminal_color_12 = s:blue
 let g:terminal_color_13 = s:pink
 let g:terminal_color_14 = s:turqoise
 let g:terminal_color_15 = s:white
+
+" Spell checking
+call s:Color("SpellBad", s:red, "NONE", s:t_red, "NONE", "underline")
+
+" Vimwiki
+hi! link VimWikiCode markdownCode
+
+" ALE
+hi! link ALEWarningSign WarningMsg
+hi! link ALEErrorSign Error
+hi! link ALEWarning WarningMsg
+hi! link ALEError Error

@@ -134,3 +134,17 @@ hi WildMenu ctermfg=NONE ctermbg=23 cterm=bold guifg=NONE guibg=#005f5f gui=bold
 
 " Markdown specific colors
 hi markdownCode ctermfg=74 ctermbg=NONE guifg=#5fafd7 guibg=NONE gui=NONE
+hi markdownH1 ctermfg=178 ctermbg=NONE cterm=bold guifg=#dfaf00 guibg=NONE gui=bold
+hi markdownH2 ctermfg=44 ctermbg=NONE cterm=bold guifg=#00d7d7 guibg=NONE gui=bold
+hi markdownH3 ctermfg=113 ctermbg=NONE cterm=bold guifg=#87d75f guibg=NONE gui=bold
+hi markdownH4 ctermfg=172 ctermbg=NONE cterm=bold guifg=#d75f00 guibg=NONE gui=bold
+hi markdownH5 ctermfg=172 ctermbg=NONE cterm=bold guifg=#d75f00 guibg=NONE gui=bold
+hi markdownH6 ctermfg=172 ctermbg=NONE cterm=bold guifg=#d75f00 guibg=NONE gui=bold
+hi markdownListMarker ctermfg=75 ctermbg=NONE cterm=bold guifg=#5fafff guibg=NONE gui=bold
+hi markdownOrderedListMarker ctermfg=75 ctermbg=NONE cterm=bold guifg=#5fafff guibg=NONE gui=bold
+hi markdownUrl ctermfg=45 ctermbg=NONE guifg=#00d7ff guibg=NONE
+
+" TODO: Investigate why bold is not bold (but Italic).
+hi markdownItalic cterm=italic gui=italic
+hi markdownBold cterm=bold gui=bold
+hi markdownBoldItalic cterm=bold gui=bold

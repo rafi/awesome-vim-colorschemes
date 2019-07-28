@@ -17,7 +17,7 @@ set background=light
 hi ColorColumn                             cterm=NONE  ctermbg=7  guibg=#eee8d5  gui=NONE
 hi Comment                                 cterm=NONE  ctermfg=14 guifg=#93a1a1  gui=italic
 hi ConId                                   cterm=NONE  ctermfg=3  guifg=#b58900  gui=NONE
-hi Conceal                                 cterm=NONE  ctermfg=4  guifg=#268bd2  gui=NONE
+hi Conceal                                 cterm=NONE  ctermfg=4  ctermbg=15  guifg=#268bd2  guibg=#fdf6e3  gui=NONE
 hi Constant                                cterm=NONE  ctermfg=6  guifg=#2aa198  gui=NONE
 hi Cursor                                  cterm=NONE  ctermfg=15  ctermbg=11  guifg=#fdf6e3  guibg=#657b83  gui=NONE
 hi CursorColumn                            cterm=NONE  ctermbg=7  guibg=#eee8d5  gui=NONE

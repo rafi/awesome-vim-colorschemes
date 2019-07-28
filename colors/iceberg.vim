@@ -8,7 +8,7 @@
 "
 " File:       iceberg.vim
 " Maintainer: cocopon <cocopon@me.com>
-" Modified:   2019-01-04 19:45+0900
+" Modified:   2019-07-19 09:22+0900
 " License:    MIT
 
 
@@ -102,6 +102,8 @@ hi! GitGutterAdd ctermbg=235 ctermfg=150 guibg=#1e2132 guifg=#b4be82
 hi! GitGutterChange ctermbg=235 ctermfg=109 guibg=#1e2132 guifg=#89b8c2
 hi! GitGutterChangeDelete ctermbg=235 ctermfg=109 guibg=#1e2132 guifg=#89b8c2
 hi! GitGutterDelete ctermbg=235 ctermfg=203 guibg=#1e2132 guifg=#e27878
+hi! gitmessengerEndOfBuffer ctermbg=235 ctermfg=239 guibg=#1e2132 guifg=#444b71
+hi! gitmessengerPopupNormal ctermbg=235 ctermfg=252 guibg=#1e2132 guifg=#c6c8d1
 hi! Sneak ctermbg=140 ctermfg=234 guibg=#a093c7 guifg=#161821
 hi! SneakScope ctermbg=236 ctermfg=242 guibg=#272c42 guifg=#6b7089
 hi! SyntasticErrorSign ctermbg=235 ctermfg=203 guibg=#1e2132 guifg=#e27878
@@ -152,11 +154,26 @@ hi! link CtrlPMatch Title
 hi! link CtrlPMode2 StatusLine
 hi! link deniteMatched Normal
 hi! link deniteMatchedChar Title
+hi! link elixirBlockDefinition Statement
+hi! link elixirDefine Statement
+hi! link elixirDocSigilDelimiter String
+hi! link elixirDocTest String
+hi! link elixirExUnitMacro Statement
+hi! link elixirExceptionDefine Statement
+hi! link elixirFunctionDeclaration Title
+hi! link elixirKeyword Statement
+hi! link elixirModuleDeclaration Normal
+hi! link elixirModuleDefine Statement
+hi! link elixirPrivateDefine Statement
+hi! link elixirStringDelimiter String
 hi! link jsFlowMaybe Normal
 hi! link jsFlowObject Normal
 hi! link jsFlowType PreProc
 hi! link graphqlName Normal
 hi! link graphqlOperator Normal
+hi! link gitmessengerHash Comment
+hi! link gitmessengerHeader Statement
+hi! link gitmessengerHistory Constant
 hi! link jsArrowFunction Operator
 hi! link jsClassDefinition Normal
 hi! link jsClassFuncName Title

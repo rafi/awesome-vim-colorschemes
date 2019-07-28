@@ -13,24 +13,29 @@
 " URL:          github.com/nanotech/jellybeans.vim
 " Scripts URL:  vim.org/scripts/script.php?script_id=2555
 " Maintainer:   NanoTech (nanotech.nanotechcorp.net)
-" Version:      1.6
-" Last Change:  October 18th, 2016
+" Version:      1.7
+" Last Change:  June 21st, 2019
 " License:      MIT
 " Contributors: Andrew Wong (w0ng)
+"               Benjamin R. Haskell (benizi)
 "               Brian Marshall (bmars)
 "               Daniel Herbert (pocketninja)
 "               David Liang <bmdavll at gmail dot com>
+"               Filipe Silva (ninrod)
 "               Henry So, Jr. <henryso@panix.com>
+"               Ihor Kalnytskyi (ikalnytskyi)
 "               Joe Doherty (docapotamus)
 "               Karl Litterfeldt (Litterfeldt)
 "               Keith Pitt (keithpitt)
+"               Mike Schreifels (schreifels)
 "               Philipp Rustemeier (12foo)
 "               Rafael Bicalho (rbika)
 "               Rich Healey (richo)
 "               Siwen Yu (yusiwen)
 "               Tim Willis (willist)
+"               Tom McLaughlin (tmcoma)
 "
-" Copyright (c) 2009-2016 NanoTech
+" Copyright (c) 2009-2019 NanoTech
 "
 " Permission is hereby granted, free of charge, to any per‐
 " son obtaining a copy of this software and associated doc‐

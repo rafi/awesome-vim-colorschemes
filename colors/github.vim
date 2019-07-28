@@ -114,3 +114,14 @@ if has("spell")
 endif
 " }}}
 
+" {{{ Airline
+hi airlineN1 ctermfg=188 ctermbg=0 guifg=#dddddd guibg=#000000 gui=none cterm=none
+hi airlineN2 ctermfg=188 ctermbg=238 guifg=#dddddd guibg=#404040 gui=none cterm=none
+hi airlineN3 ctermfg=0 ctermbg=188 guifg=#000000 guibg=#dddddd gui=none cterm=none
+hi airlineInsert1 ctermfg=188 ctermbg=26 guifg=#dddddd guibg=#005cc5 gui=none cterm=none
+hi airlineInsert2 ctermfg=188 ctermbg=17 guifg=#dddddd guibg=#032f62 gui=none cterm=none
+hi airlineVisual1 ctermfg=188 ctermbg=91 guifg=#dddddd guibg=#6f42c1 gui=none cterm=none
+hi airlineVisual2 ctermfg=188 ctermbg=237 guifg=#dddddd guibg=#45267d gui=none cterm=none
+hi airlineReplace1 ctermfg=188 ctermbg=167 guifg=#dddddd guibg=#d73a49 gui=none cterm=none
+hi airlineReplace2 ctermfg=188 ctermbg=124 guifg=#dddddd guibg=#b31d28 gui=none cterm=none
+" }}}
