@@ -409,6 +409,7 @@ endif
 
 " Weird black color breaks 
 hi! link NonText deusGreen 
+hi! link Ignore deusPurple 
 hi! link SpecialKey deusOrange
 
 call s:HL('Visual',    s:none,  s:bg3, s:invert_selection)

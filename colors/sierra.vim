@@ -1,8 +1,8 @@
 "AUTHOR: Alessandro Yorba
 "SCRIPT: https://github.com/AlessandroYorba/Sierra
 "
-"UPDATED: Oct 3, 2018
-"CHANGES: Reorganized Code
+"UPDATED: July 21, 2019
+"CHANGES: Added Vimscript and extended Diff support
 "
 " SUPPORT:
 " 256 color terminals, Gui versions of vim, and Termguicolors versions of vim
@@ -86,11 +86,32 @@ highlight cssTagName guifg=#afd7d7 guibg=NONE gui=NONE ctermfg=152 ctermbg=NONE 
 highlight cssClassName guifg=#d75f5f guibg=NONE gui=NONE ctermfg=167 ctermbg=NONE cterm=NONE
 highlight cssIdentifier guifg=#d75f5f guibg=NONE gui=NONE ctermfg=167 ctermbg=NONE cterm=NONE
 
+" VIMSCRIPT
+highlight link vimAutoCmdSfxList Type
+highlight link vimAutoEventList Identifier
+highlight link vimCmdSep Special
+highlight link vimCommentTitle SpecialComment
+highlight link vimFunction Function
+highlight link vimUserFunc Function
+
 "DIFF
 highlight DiffAdd guifg=#87afaf guibg=NONE gui=reverse ctermfg=109 ctermbg=NONE cterm=reverse
 highlight DiffText guifg=#87afaf guibg=NONE gui=reverse ctermfg=109 ctermbg=NONE cterm=reverse
 highlight DiffChange guifg=#5f8787 guibg=NONE gui=reverse ctermfg=66 ctermbg=NONE cterm=reverse
 highlight DiffDelete guifg=#af5f5f guibg=NONE gui=reverse ctermfg=131 ctermbg=NONE cterm=reverse
+highlight link diffAdded DiffAdd
+highlight link diffBDiffer WarningMsg
+highlight link diffChanged DiffChange
+highlight link diffCommon WarningMsg
+highlight link diffDiffer WarningMsg
+highlight link diffFile Directory
+highlight link diffIdentical WarningMsg
+highlight link diffIndexLine Number
+highlight link diffIsA WarningMsg
+highlight link diffNoEOL WarningMsg
+highlight link diffOnly WarningMsg
+highlight link diffRemoved DiffDelete
+
 "SPELLING
 highlight SpellBad guifg=#ff0000 guibg=NONE gui=undercurl ctermfg=196 ctermbg=NONE cterm=undercurl
 highlight SpellLocal guifg=#5f875f guibg=NONE gui=undercurl ctermfg=65 ctermbg=NONE cterm=undercurl

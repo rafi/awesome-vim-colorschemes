@@ -379,3 +379,7 @@ hi! link ALEWarningSign WarningMsg
 hi! link ALEErrorSign Error
 hi! link ALEWarning WarningMsg
 hi! link ALEError Error
+
+" Fugitive
+call s:Color("FugitiveblameHash", s:yellow, "NONE", s:t_yellow, "NONE")
+call s:Color("FugitiveblameTime", s:turqoise, "NONE", s:t_turqoise, "NONE")
