@@ -53,8 +53,8 @@ Use your favorite package-manager to install, and enjoy!
 | [orbital] | Dark blue base16 theme | ✓ | ✓ |
 | [paramount] | Minimal colorscheme that only puts emphasis on the paramount | ✓ | ✓ |
 | [pink-moon] | Dark pastel theme | ✓ | ✓ |
-| [pyte] | Clean, light (nearly white) theme |   | ✓ |
 | [purify] | Clean & vibrant color schemes for Vim, Terminals... | ✓ | ✓ |
+| [pyte] | Clean, light (nearly white) theme |   | ✓ |
 | [rakr] | Flat colorscheme light and dark variant | ✓ | ✓ |
 | [rdark-terminal2] | Modified rdark-terminal to enhance visibility | ✓ |   |
 | [seoul256] | Low-contrast color scheme based on Seoul Colors | ✓ | ✓ |
