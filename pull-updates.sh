@@ -3,7 +3,7 @@ set -eu
 shopt -s nocaseglob
 
 function _dl() {
-	local tmp="tmp" docs="docs" rtp=$2
+	local tmp="tmp" docs="docs" rtp=${2:-}
 
 	[ -d "$tmp" ] || mkdir "$tmp"
 	[ -d "$docs" ] || mkdir "$docs"
