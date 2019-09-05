@@ -110,8 +110,8 @@ Use your favorite package-manager to install, and enjoy!
 [orbital]: https://github.com/fcpg/vim-orbital
 [paramount]: https://github.com/owickstrom/vim-colors-paramount
 [pink-moon]: https://github.com/sts10/vim-pink-moon
-[pyte]: https://github.com/vim-scripts/pyte
 [purify]: https://github.com/kyoz/purify
+[pyte]: https://github.com/vim-scripts/pyte
 [rakr]: https://github.com/rakr/vim-colors-rakr
 [rdark-terminal2]: https://github.com/vim-scripts/rdark-terminal2.vim
 [seoul256]: https://github.com/junegunn/seoul256.vim
