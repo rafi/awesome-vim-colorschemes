@@ -48,7 +48,7 @@ function _main() {
 	_dl junegunn/seoul256.vim
 	_dl keith/parsec.vim
 	_dl kristijanhusak/vim-hybrid-material
-  _dl kyoz/purify vim/
+	_dl kyoz/purify vim/
 	_dl lifepillar/vim-solarized8
 	_dl liuchengxu/space-vim-dark
 	_dl marcopaganini/termschool-vim-theme
