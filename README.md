@@ -54,6 +54,7 @@ Use your favorite package-manager to install, and enjoy!
 | [paramount] | Minimal colorscheme that only puts emphasis on the paramount | ✓ | ✓ |
 | [pink-moon] | Dark pastel theme | ✓ | ✓ |
 | [pyte] | Clean, light (nearly white) theme |   | ✓ |
+| [purify] | Clean & vibrant color schemes for Vim, Terminals... | ✓ | ✓ |
 | [rakr] | Flat colorscheme light and dark variant | ✓ | ✓ |
 | [rdark-terminal2] | Modified rdark-terminal to enhance visibility | ✓ |   |
 | [seoul256] | Low-contrast color scheme based on Seoul Colors | ✓ | ✓ |
@@ -110,6 +111,7 @@ Use your favorite package-manager to install, and enjoy!
 [paramount]: https://github.com/owickstrom/vim-colors-paramount
 [pink-moon]: https://github.com/sts10/vim-pink-moon
 [pyte]: https://github.com/vim-scripts/pyte
+[purify]: https://github.com/kyoz/purify
 [rakr]: https://github.com/rakr/vim-colors-rakr
 [rdark-terminal2]: https://github.com/vim-scripts/rdark-terminal2.vim
 [seoul256]: https://github.com/junegunn/seoul256.vim
