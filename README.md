@@ -53,6 +53,7 @@ Use your favorite package-manager to install, and enjoy!
 | [orbital] | Dark blue base16 theme | ✓ | ✓ |
 | [paramount] | Minimal colorscheme that only puts emphasis on the paramount | ✓ | ✓ |
 | [pink-moon] | Dark pastel theme | ✓ | ✓ |
+| [purify] | Clean & vibrant color schemes for Vim, Terminals... | ✓ | ✓ |
 | [pyte] | Clean, light (nearly white) theme |   | ✓ |
 | [rakr] | Flat colorscheme light and dark variant | ✓ | ✓ |
 | [rdark-terminal2] | Modified rdark-terminal to enhance visibility | ✓ |   |
@@ -109,6 +110,7 @@ Use your favorite package-manager to install, and enjoy!
 [orbital]: https://github.com/fcpg/vim-orbital
 [paramount]: https://github.com/owickstrom/vim-colors-paramount
 [pink-moon]: https://github.com/sts10/vim-pink-moon
+[purify]: https://github.com/kyoz/purify
 [pyte]: https://github.com/vim-scripts/pyte
 [rakr]: https://github.com/rakr/vim-colors-rakr
 [rdark-terminal2]: https://github.com/vim-scripts/rdark-terminal2.vim

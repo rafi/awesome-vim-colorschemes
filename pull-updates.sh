@@ -3,17 +3,19 @@ set -eu
 shopt -s nocaseglob
 
 function _dl() {
-	local tmp="tmp" docs="docs"
+	local tmp="tmp" docs="docs" rtp=${2:-}
+
 	[ -d "$tmp" ] || mkdir "$tmp"
 	[ -d "$docs" ] || mkdir "$docs"
+
 	curl -L "https://api.github.com/repos/$1/tarball" \
 		-H "Authorization: token $HOMEBREW_GITHUB_API_TOKEN" \
 		| tar xz --strip=1 -C "$tmp"/
 
-	rsync -avh "$tmp"/ --include='after/***' \
+	rsync -avh "$tmp"/"$rtp" --include='after/***' \
 		--include='autoload/***' --include='colors/***' --exclude='*' .
 
-	cp -r "$tmp"/README* "$docs"/"${1//\//-}".md
+	cp -r "$tmp"/"$rtp"/README* "$docs"/"${1//\//-}".md
 	rm -rf "$tmp"
 }
 
@@ -46,6 +48,7 @@ function _main() {
 	_dl junegunn/seoul256.vim
 	_dl keith/parsec.vim
 	_dl kristijanhusak/vim-hybrid-material
+	_dl kyoz/purify vim/
 	_dl lifepillar/vim-solarized8
 	_dl liuchengxu/space-vim-dark
 	_dl marcopaganini/termschool-vim-theme
