@@ -1,8 +1,8 @@
 "AUTHOR: Alessandro Yorba
 "SCRIPT: https://github.com/AlessandroYorba/Alduin
 
-"UPDATED: June 29th, 2019
-"CHANGES: Reorganized Code
+"UPDATED: November 3rd, 2019
+"CHANGES: Added detail comments for CUSTOM VARIABLES
 
 "Arch Linux Package: George Angelopoulos https://github.com/lathan
 "Design Inspiration: Karolis Koncevičius https://github.com/KKPMW
@@ -13,30 +13,30 @@
 "SUPPORT:
 "256 color terminals, Gui versions of vim, and Termguicolors versions of vim
 "
-"INSTALL:
+"INSTALL LOCATION:
 "Unix users, place alduin.vim in ~/.vim/colors
 "Windows users, place alduin.vim in ~\vimfiles\colors
-"From your .vimrc add one of the following options
-"
-"colorscheme alduin
 
-"DARKEST GRAY
+"From your .vimrc add one of the following options
+"colorscheme alduin
+"
+"DARKER GRAY BACKGROUND COLOR:
 "let g:alduin_Shout_Dragon_Aspect = 1
 "colorscheme alduin
 "
-"BLACK
+"BLACK BACKGROUND COLOR:
 "let g:alduin_Shout_Become_Ethereal = 1
 "colorscheme alduin
 "
-"DEEP RED COLOR
+"ADDS DEEP RED COLOR FOR SPECIAL HIGHLIGHT GROUPS:
 "let g:alduin_Shout_Fire_Breath = 1
 "colorscheme alduin
 "
-"REMOVE BACKGROUND FROM STRINGS
+"REMOVE SUBTLE BACKGROUND HIGHLIGHTING FROM STRINGS:
 "let g:alduin_Shout_Animal_Allegiance = 1
 "colorscheme alduin
 "
-"REMOVE BLOCK MATCHPARENS - ADDS UNDERLINE
+"REMOVES BLOCK MATCHPARENS ADDS UNDERLINE:
 "let g:alduin_Shout_Aura_Whisper = 1
 "colorscheme alduin
 "

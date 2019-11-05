@@ -100,16 +100,15 @@ function! iceberg#palette#dark#create() abort
   let g.wildmenu_fg = g.statusline_fg
 
   " airline/lightline
-  let g.xline_base_bg = pgmnt#color#lighten(g.normal_bg, 0.15)
-  let g.xline_base_fg = pgmnt#color#adjust_color(
-        \ g.normal_bg, {
-        \   'saturation': -0.10,
-        \   'lightness': +0.35,
-        \ })
+  let g.xline_base_bg = g.statuslinenc_bg
+  let g.xline_base_fg = g.statuslinenc_fg
   let g.xline_edge_bg = g.statusline_bg
   let g.xline_edge_fg = g.statusline_fg
-  let g.xline_gradient_bg = pgmnt#color#mix(g.xline_base_bg, g.xline_edge_bg, 0.50)
-  let g.xline_gradient_fg = g.xline_edge_fg
+  let g.xline_gradient_bg = pgmnt#color#adjust_color(
+        \ pgmnt#color#mix(g.xline_base_bg, g.xline_edge_bg, 0.70), {
+        \   'saturation': +0.05,
+        \ })
+  let g.xline_gradient_fg = g.comment_fg
 
   " plugins
   let g.easymotion_shade_fg = pgmnt#color#hsl(hue_base, 0.20, 0.30)
@@ -181,12 +180,12 @@ function! iceberg#palette#dark#create() abort
   let c.wildmenu_fg = c.statusline_fg
 
   " airline/lightline
-  let c.xline_base_bg = 237
-  let c.xline_base_fg = 243
+  let c.xline_base_bg = c.statuslinenc_bg
+  let c.xline_base_fg = c.statuslinenc_fg
   let c.xline_edge_bg = c.statusline_bg
   let c.xline_edge_fg = c.statusline_fg
-  let c.xline_gradient_bg = 241
-  let c.xline_gradient_fg = c.xline_edge_fg
+  let c.xline_gradient_bg = 236
+  let c.xline_gradient_fg = c.comment_fg
 
   " plugins
   let c.easymotion_shade_fg = 239

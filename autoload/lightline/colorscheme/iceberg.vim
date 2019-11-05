@@ -11,11 +11,11 @@ function! s:build_palette() abort
         \ 'visual':   {},
         \ 'tabline':  {}}
 
-  let col_base     = ['#696d80', '#34394e', 243, 237]
+  let col_base     = ['#3e445e', '#0f1117', 238, 233]
   let col_edge     = ['#17171b', '#818596', 234, 245]
-  let col_gradient = ['#17171b', '#5a5f72', 234, 241]
+  let col_gradient = ['#6b7089', '#2e313f', 242, 236]
   let col_nc       = ['#3e445e', '#0f1117', 238, 233]
-  let col_tabfill  = ['#696d80', '#34394e', 243, 237]
+  let col_tabfill  = ['#3e445e', '#0f1117', 238, 233]
   let col_normal   = ['#17171b', '#818596', 234, 245]
   let col_error    = ['#161821', '#e27878', 234, 203]
   let col_warning  = ['#161821', '#e2a478', 234, 216]

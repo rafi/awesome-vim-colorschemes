@@ -227,6 +227,15 @@ call s:hi('htmlEventDQ',        { 'fg': s:salmon, 'styles': [s:styles.italic] })
 call s:hi('htmlComment',        { 'fg': s:comment_grey })
 call s:hi('htmlCommentError',   { 'fg': s:salmon })
 
+function! s:overwrite_html_highlight()
+    call s:hi('javaScript',	{ 'fg': s:white })
+endfunction
+
+augroup purify_html
+    autocmd!
+    autocmd Filetype html call s:overwrite_html_highlight()
+augroup END
+
 " }}}
 
 " CSS {{{
@@ -354,32 +363,21 @@ call s:hi('javaScriptMember',	        { 'fg': s:blue, 'styles': [s:styles.italic
 call s:hi('javaScriptDeprecated',	    { 'fg': s:pink, 'styles': [s:styles.italic] })
 call s:hi('javaScriptReserved',	        { 'fg': s:blue, 'styles': [s:styles.italic] })
 
-" Make javascript sync with typescript
-" https://github.com/leafgarland/typescript-vim/blob/master/syntax/typescript.vim
-
-function! s:overwrite_javascript_runtime_syntax()
+function! s:overwrite_javascript_highlight()
     syn clear javaScriptIdentifier
     syn clear javaScriptReserved
-    syn match   javascriptEndColons    "[;,]"
-    syn match   javascriptLogicSymbols "\(&&\)\|\(||\)\|\(!\)"
-    syn match   javascriptOpSymbols    "=\{1,3}\|!==\|!=\|<\|>\|>=\|<=\|++\|+=\|--\|-="
-    syn keyword javascriptLabel        case default async readonly
-    syn keyword javaScriptIdentifier   arguments var let const
-    syn keyword javaScriptReserved     abstract boolean byte char class debugger double enum export extends final float goto implements import int interface long native package private protected public short static super synchronized throws transient volatile 
-    syn keyword javaScriptThis         this
-
-    call s:hi('javascriptEndColons',	{ 'fg': s:pink })
-    call s:hi('javascriptLogicSymbols',	{ 'fg': s:salmon })
-    call s:hi('javascriptOpSymbols',	{ 'fg': s:pink })
-    call s:hi('javascriptLabel',	    { 'fg': s:pink, 'styles': [s:styles.italic] })
-    call s:hi('javaScriptIdentifier',	{ 'fg': s:green, 'styles': [s:styles.italic] })
-    call s:hi('javaScriptReserved',	    { 'fg': s:blue, 'styles': [s:styles.italic] })
-    call s:hi('javaScriptThis',	        { 'fg': s:blue, 'styles': [s:styles.italic] })
+    call s:hi('javascriptEndColons',         { 'fg': s:pink })
+    call s:hi('javascriptLogicSymbols',      { 'fg': s:salmon })
+    call s:hi('javascriptOpSymbols',         { 'fg': s:pink })
+    call s:hi('javascriptLabel',             { 'fg': s:pink, 'styles': [s:styles.italic] })
+    call s:hi('javaScriptThis',              { 'fg': s:blue, 'styles': [s:styles.italic] })
+    call s:hi('javaScriptCustomIdentifier',  { 'fg': s:green, 'styles': [s:styles.italic] })
+    call s:hi('javaScriptCustomReserved',    { 'fg': s:blue, 'styles': [s:styles.italic] })
 endfunction
 
 augroup purify_javascript
     autocmd!
-    autocmd Filetype javascript call s:overwrite_javascript_runtime_syntax()
+    autocmd Filetype javascript call s:overwrite_javascript_highlight()
 augroup END
 
 " }}}
@@ -424,14 +422,7 @@ call s:hi('pythonBuiltin',       { 'fg': s:blue, 'styles': [s:styles.italic] })
 call s:hi('pythonExceptions',    { 'fg': s:salmon })
 call s:hi('pythonSpaceError',    { 'fg': s:red })
 
-" Add more syntax for python
-function! s:add_more_python_syntax()
-    syn match pythonBraces       "[{}\[\]]"
-    syn match pythonParens       "[()]"
-    syn match pythonOpSymbols    "=\{1,3}\|!==\|!=\|<\|>\|>=\|<=\|++\|+=\|--\|-="
-    syn match pythonEndColons    "[;,]"
-    syn match pythonLogicSymbols "\(&&\)\|\(||\)\|\(!\)"
-
+function! s:overwrite_python_highlight()
     call s:hi('pythonBraces',       { 'fg': s:blue })
     call s:hi('pythonParens',       { 'fg': s:pink })
     call s:hi('pythonOpSymbols',    { 'fg': s:pink })
@@ -441,7 +432,7 @@ endfunction
 
 augroup purify_python
     autocmd!
-    autocmd Filetype python call s:add_more_python_syntax()
+    autocmd Filetype python call s:overwrite_python_highlight()
 augroup END
 
 " }}}
@@ -467,15 +458,7 @@ call s:hi('goBuiltins',     { 'fg': s:blue, 'styles': [s:styles.italic] })
 call s:hi('goConstants',    { 'fg': s:salmon, 'styles': [s:styles.italic] })
 call s:hi('goCharacter',    { 'fg': s:yellow })
 
-" Add more syntax for go
-function! s:add_more_go_syntax()
-    syn keyword goDeclarationOverwrite var const type 
-    syn match goBraces       "[{}\[\]]"
-    syn match goParens       "[()]"
-    syn match goOpSymbols    "=\{1,2}\|:=\|!=\|<\|>\|>=\|<=\|++\|+=\|--\|-="
-    syn match goEndColons    "[,]"
-    syn match goLogicSymbols "\(&&\)\|\(||\)\|\(!\)"
-
+function! s:overwrite_go_highlight()
     call s:hi('goDeclarationOverwrite', { 'fg': s:green, 'styles': [s:styles.italic] })
     call s:hi('goBraces',               { 'fg': s:blue })
     call s:hi('goParens',               { 'fg': s:pink })
@@ -486,7 +469,7 @@ endfunction
 
 augroup purify_go
     autocmd!
-    autocmd Filetype go call s:add_more_go_syntax()
+    autocmd Filetype go call s:overwrite_go_highlight()
 augroup END
 
 " }}}
@@ -521,15 +504,7 @@ call s:hi('cDefine',           { 'fg': s:blue, 'styles': [s:styles.italic] })
 call s:hi('cInclude',          { 'fg': s:blue, 'styles': [s:styles.italic] })
 call s:hi('cIncluded',         { 'fg': s:yellow })
 
-" Add more syntax for c
-function! s:add_more_c_syntax()
-    syn keyword cDeclarationOverwrite var const type 
-    syn match cBraces       "[{}\[\]]"
-    syn match cParens       "[()]"
-    syn match cOpSymbols    "=\{1,2}\|!=\|<\|>\|>=\|<=\|++\|+=\|--\|-="
-    syn match cEndColons    "[,]"
-    syn match cLogicSymbols "\(&&\)\|\(||\)\|\(!\)"
-
+function! s:overwrite_c_highlight()
     call s:hi('cDeclarationOverwrite', { 'fg': s:green, 'styles': [s:styles.italic] })
     call s:hi('cBraces',               { 'fg': s:blue })
     call s:hi('cParens',               { 'fg': s:pink })
@@ -540,7 +515,7 @@ endfunction
 
 augroup purify_c
     autocmd!
-    autocmd Filetype c call s:add_more_c_syntax()
+    autocmd Filetype c call s:overwrite_c_highlight()
 augroup END
 
 " }}}
@@ -561,15 +536,7 @@ call s:hi('cppBoolean',      { 'fg': s:salmon })
 call s:hi('cppNumber',       { 'fg': s:salmon })
 call s:hi('cppMinMax',       { 'fg': s:red })
 
-" Add more syntax for cpp
-function! s:add_more_cpp_syntax()
-    syn keyword cDeclarationOverwrite var const type 
-    syn match cppBraces       "[{}\[\]]"
-    syn match cppParens       "[()]"
-    syn match cppOpSymbols    "=\{1,2}\|!=\|<\|>\|>=\|<=\|++\|+=\|--\|-="
-    syn match cppEndColons    "[,]"
-    syn match cppLogicSymbols "\(&&\)\|\(||\)\|\(!\)"
-
+function! s:overwrite_cpp_highlight()
     call s:hi('cppDeclarationOverwrite', { 'fg': s:green, 'styles': [s:styles.italic] })
     call s:hi('cppBraces',               { 'fg': s:blue })
     call s:hi('cppParens',               { 'fg': s:pink })
@@ -580,7 +547,70 @@ endfunction
 
 augroup purify_cpp
     autocmd!
-    autocmd Filetype cpp call s:add_more_cpp_syntax()
+    autocmd Filetype cpp call s:overwrite_cpp_highlight()
+augroup END
+
+" }}}
+
+" Ruby {{{
+
+call s:hi('rubyInclude',          { 'fg': s:blue, 'styles': [s:styles.italic] })
+call s:hi('rubyStringDelimiter',  { 'fg': s:yellow })
+
+function! s:overwrite_ruby_highlight()
+    call s:hi('rubyBraces',        { 'fg': s:blue })
+    call s:hi('rubyParens',        { 'fg': s:pink })
+    call s:hi('rubyOpSymbols',     { 'fg': s:pink })
+    call s:hi('rubyEndColons',     { 'fg': s:pink })
+    call s:hi('rubyLogicSymbols',  { 'fg': s:blue })
+endfunction
+
+augroup purify_ruby
+    autocmd!
+    autocmd Filetype ruby call s:overwrite_ruby_highlight()
+augroup END
+
+" }}}
+
+" }}}
+
+" Frameworks {{{
+
+" Reactjs {{{
+" Support for 'MaxMEllon/vim-jsx-pretty'
+
+call s:hi('jsxTag',            { 'fg': s:white })
+call s:hi('jsxTagName',        { 'fg': s:pink })
+call s:hi('jsxComponentName',  { 'fg': s:salmon })
+call s:hi('jsxOpenPunct',      { 'fg': s:blue })
+call s:hi('jsxClosePunct',     { 'fg': s:blue })
+call s:hi('jsxCloseString',    { 'fg': s:blue })
+
+function! s:overwrite_javascriptreact_highlight()
+    syn clear javaScriptIdentifier
+    syn clear javaScriptReserved
+    call s:hi('jsxDeclarationOverwrite',     { 'fg': s:green, 'styles': [s:styles.italic] })
+    call s:hi('jsxBraces',                   { 'fg': s:blue })
+    call s:hi('jsxParens',                   { 'fg': s:pink })
+    call s:hi('jsxOpSymbols',                { 'fg': s:pink })
+    call s:hi('jsxEndColons',                { 'fg': s:pink })
+    call s:hi('jsxLogicSymbols',             { 'fg': s:blue })
+    call s:hi('jsxCustomIdentifier',         { 'fg': s:green, 'styles': [s:styles.italic] })
+    call s:hi('jsxCustomReserved',           { 'fg': s:blue, 'styles': [s:styles.italic] })
+
+    " Javascript init (in case you open jsx file only)
+    call s:hi('javascriptEndColons',         { 'fg': s:pink })
+    call s:hi('javascriptLogicSymbols',      { 'fg': s:salmon })
+    call s:hi('javascriptOpSymbols',         { 'fg': s:pink })
+    call s:hi('javascriptLabel',             { 'fg': s:pink, 'styles': [s:styles.italic] })
+    call s:hi('javaScriptThis',              { 'fg': s:blue, 'styles': [s:styles.italic] })
+    call s:hi('javaScriptCustomIdentifier',  { 'fg': s:green, 'styles': [s:styles.italic] })
+    call s:hi('javaScriptCustomReserved',    { 'fg': s:blue, 'styles': [s:styles.italic] })
+endfunction
+
+augroup purify_jsx
+    autocmd!
+    autocmd Filetype javascriptreact call s:overwrite_javascriptreact_highlight()
 augroup END
 
 " }}}

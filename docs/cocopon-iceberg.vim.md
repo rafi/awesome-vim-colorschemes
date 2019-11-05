@@ -16,6 +16,7 @@ information.
 - Simple: no configuration required and easy to use
 - Fast: pre-compiled to reduce loading time
 - 256-colors terminal support
+- Terminal colors support
 - [airline][airline] theme and [lightline][lightline] colorscheme
 - Various plugins support:
   [ALE][ale]
@@ -39,7 +40,8 @@ information.
   / [vim-javavscript][vim-javascript]
   / [vim-markdown][vim-markdown]
   etc.
-- [Neovim][neovim] terminal colors support
+
+![lightline](https://user-images.githubusercontent.com/602961/64060996-407cb080-cc0f-11e9-87dd-e5c535815fab.png)
 
 
 

@@ -2,10 +2,9 @@
 " Author:      Romain Lafourcade (romainlafourcade@gmail.com)
 " Webpage:     https://github.com/romainl/Apprentice
 " Description: Essentially a streamlining and conversion to xterm colors of 'sorcerer' by Jeet Sukumaran (jeetsukumaran@gmailcom)
-" Last Change: 2019-07-28
+" Last Change: 2019-09-29
 
 hi clear
-
 if exists("syntax_on")
   syntax reset
 endif
@@ -23,7 +22,7 @@ if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
     hi FoldColumn ctermbg=234 ctermfg=242 cterm=NONE guibg=#1c1c1c guifg=#6c6c6c gui=NONE
     hi Folded ctermbg=234 ctermfg=242 cterm=NONE guibg=#1c1c1c guifg=#6c6c6c gui=NONE
     hi MatchParen ctermbg=234 ctermfg=229 cterm=NONE guibg=#1c1c1c guifg=#ffffaf gui=NONE
-    hi signColumn ctermbg=234 ctermfg=242 cterm=NONE guibg=#1c1c1c guifg=#6c6c6c gui=NONE
+    hi SignColumn ctermbg=234 ctermfg=242 cterm=NONE guibg=#1c1c1c guifg=#6c6c6c gui=NONE
     hi Comment ctermbg=NONE ctermfg=240 cterm=NONE guibg=NONE guifg=#585858 gui=NONE
     hi Conceal ctermbg=NONE ctermfg=250 cterm=NONE guibg=NONE guifg=#bcbcbc gui=NONE
     hi Constant ctermbg=NONE ctermfg=208 cterm=NONE guibg=NONE guifg=#ff8700 gui=NONE
@@ -96,7 +95,7 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
     hi FoldColumn ctermbg=black ctermfg=lightgrey cterm=NONE
     hi Folded ctermbg=black ctermfg=lightgrey cterm=NONE
     hi MatchParen ctermbg=black ctermfg=yellow cterm=NONE
-    hi signColumn ctermbg=black ctermfg=lightgrey cterm=NONE
+    hi SignColumn ctermbg=black ctermfg=lightgrey cterm=NONE
     hi Comment ctermbg=NONE ctermfg=darkgrey cterm=NONE
     hi Conceal ctermbg=NONE ctermfg=lightgrey cterm=NONE
     hi Constant ctermbg=NONE ctermfg=red cterm=NONE
@@ -205,6 +204,7 @@ hi link diffNoEOL WarningMsg
 hi link diffOnly WarningMsg
 hi link diffRemoved WarningMsg
 hi link diffAdded String
+hi link QuickFixLine Search
 
 let g:terminal_ansi_colors = [
         \ '#1c1c1c',

@@ -3,26 +3,48 @@
 " Let's store all the colors in a dictionary.
 let s:c = {}
 
-" Base colors.
-let s:c.base0 = { 'gui': '#151a1e', 'cterm': 0 }
-let s:c.base1 = { 'gui': '#1c2328', 'cterm': 8 }
-let s:c.base2 = { 'gui': '#232b32', 'cterm': 10 }
-let s:c.base3 = { 'gui': '#2a343c', 'cterm': 12 }
-let s:c.base4 = { 'gui': '#313d46', 'cterm': 11 }
-let s:c.base5 = { 'gui': '#384550', 'cterm': 14 }
-let s:c.base6 = { 'gui': '#3f4e5a', 'cterm': 7 }
-let s:c.base7 = { 'gui': '#465764', 'cterm': 15 }
+if ayucolor == 'light'
+  " Base colors.
+  let s:c.base0 = { 'gui': '#EAEAEA', 'cterm': 0 }
+  let s:c.base1 = { 'gui': '#FAFAFA', 'cterm': 8 }
+  let s:c.base2 = { 'gui': '#FAFAFA', 'cterm': 10 }
+  let s:c.base3 = { 'gui': '#FAFAFA', 'cterm': 12 }
+  let s:c.base4 = { 'gui': '#313d46', 'cterm': 11 }
+  let s:c.base5 = { 'gui': '#EF7E46', 'cterm': 14 }
+  let s:c.base6 = { 'gui': '#FAFAFA', 'cterm': 7 }
+  let s:c.base7 = { 'gui': '#465764', 'cterm': 15 }
 
-" Other colors.
-let s:c.red     = { 'gui': '#FF3333', 'cterm': 1  }
-let s:c.orange  = { 'gui': '#FF7733', 'cterm': 9  }
-let s:c.yellow  = { 'gui': '#E7C547', 'cterm': 3  }
-let s:c.magenta = { 'gui': '#F07178', 'cterm': 13 }
-let s:c.violet  = { 'gui': '#A37ACC', 'cterm': 5  }
-let s:c.blue    = { 'gui': '#36A3D9', 'cterm': 4  }
-let s:c.cyan    = { 'gui': '#95E6CB', 'cterm': 6  }
-let s:c.green   = { 'gui': '#B8CC52', 'cterm': 2  }
+  " Other colors.
+  let s:c.red     = { 'gui': '#FF3333', 'cterm': 1  }
+  let s:c.orange  = { 'gui': '#FF7733', 'cterm': 9  }
+  let s:c.yellow  = { 'gui': '#E7C547', 'cterm': 3  }
+  let s:c.magenta = { 'gui': '#F07178', 'cterm': 13 }
+  let s:c.violet  = { 'gui': '#A37ACC', 'cterm': 5  }
+  let s:c.blue    = { 'gui': '#36A3D9', 'cterm': 4  }
+  let s:c.cyan    = { 'gui': '#95E6CB', 'cterm': 6  }
+  let s:c.green   = { 'gui': '#B8CC52', 'cterm': 2  }
 
+else
+  " Base colors.
+  let s:c.base0 = { 'gui': '#151a1e', 'cterm': 0 }
+  let s:c.base1 = { 'gui': '#1c2328', 'cterm': 8 }
+  let s:c.base2 = { 'gui': '#232b32', 'cterm': 10 }
+  let s:c.base3 = { 'gui': '#2a343c', 'cterm': 12 }
+  let s:c.base4 = { 'gui': '#313d46', 'cterm': 11 }
+  let s:c.base5 = { 'gui': '#384550', 'cterm': 14 }
+  let s:c.base6 = { 'gui': '#3f4e5a', 'cterm': 7 }
+  let s:c.base7 = { 'gui': '#465764', 'cterm': 15 }
+
+  " Other colors.
+  let s:c.red     = { 'gui': '#FF3333', 'cterm': 1  }
+  let s:c.orange  = { 'gui': '#FF7733', 'cterm': 9  }
+  let s:c.yellow  = { 'gui': '#E7C547', 'cterm': 3  }
+  let s:c.magenta = { 'gui': '#F07178', 'cterm': 13 }
+  let s:c.violet  = { 'gui': '#A37ACC', 'cterm': 5  }
+  let s:c.blue    = { 'gui': '#36A3D9', 'cterm': 4  }
+  let s:c.cyan    = { 'gui': '#95E6CB', 'cterm': 6  }
+  let s:c.green   = { 'gui': '#B8CC52', 'cterm': 2  }
+endif
 let g:airline#themes#ayu#palette = {}
 
 " Just remember:
@@ -59,7 +81,11 @@ let g:airline#themes#ayu#palette.normal_modified = {
 
 " Colors.
 let s:I1 = s:Array('base2', 'green')
-let s:I2 = s:Array('base6', 'base3')
+if ayucolor == 'light'
+  let s:I2 = s:Array('orange', 'base3')
+else
+  let s:I2 = s:Array('base6', 'base3')
+endif
 let s:I3 = s:Array('blue', 'base1')
 
 " Override for when increased contrast is enabled
@@ -87,7 +113,11 @@ let g:airline#themes#ayu#palette.insert_paste = {
 
 " Colors.
 let s:R1 = s:Array('base2', 'orange')
-let s:R2 = s:Array('base6', 'base3')
+if ayucolor == 'light'
+  let s:R2 = s:Array('orange', 'base3')
+else
+  let s:R2 = s:Array('base6', 'base3')
+endif
 let s:R3 = s:Array('blue', 'base1')
 
 let g:airline#themes#ayu#palette.replace =
@@ -104,7 +134,11 @@ let g:airline#themes#ayu#palette.replace_modified = {
 
 " Colors.
 let s:V1 = s:Array('base2', 'magenta')
-let s:V2 = s:Array('base6', 'base3')
+if ayucolor == 'light'
+  let s:V2 = s:Array('orange', 'base3')
+else
+  let s:V2 = s:Array('base6', 'base3')
+endif
 let s:V3 = s:N3
 
 let g:airline#themes#ayu#palette.visual =

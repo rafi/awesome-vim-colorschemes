@@ -2,7 +2,7 @@
 > Purify dark theme for vim (neovim)
 
 <p align="center">
-  <img src="../demo/purify_1.png" width="900px">
+  <img src="https://i.imgur.com/ej5vWWS.png" width="900px">
 </p>
 
 ## Contents
@@ -16,6 +16,7 @@
 - [Customize](#customize)
   - [Font styles](#font-styles)
   - [Overrides colors](#overrides-colors)
+- [Why i have to install other plugins](#why-i-have-to-install-other-plugins)
 - [License](#license)
 
 ## Installation
@@ -44,10 +45,14 @@ Purify support consistent color syntax for almost all common languages and file 
 - [x] Html, Html5...
 - [x] Css, Scss, Sass, Less
 - [x] Json, Xml, Markdown
-- [x] Javascript, Typescript
+- [x] Javascript, Typescript (Require [typescript-vim](https://github.com/leafgarland/typescript-vim)'s syntax)
 - [x] Python, Go
 - [x] C, C_++
 - [x] All [languages](https://github.com/vim/vim/tree/master/runtime/syntax) that vim support til now
+
+## Frameworks support
+
+- [x] React (Require [vim-jsx-pretty](https://github.com/MaxMEllon/vim-jsx-pretty))
 
 ## Plugins Support
 
@@ -104,6 +109,12 @@ let g:purify_override_colors = {
     \ 'green': { 'gui': '#5FD700', 'cterm': '76' }
 \ }
 ```
+
+## Why i have to install other plugins
+
+- Purify is only aim for colorscheme, i'v tried my best to make purify colorscheme is the same is all languages support by vim, nvim.
+
+- But for new languages, frameworks... you have to install other plugins to have correct syntax, I'll tried my best to support plugins that have good syntax for new languages, frameworks like React, Vue...
 
 ## Lisence
 MIT © [Kyoz](mailto:banminkyoz@gmail.com)

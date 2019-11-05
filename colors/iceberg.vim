@@ -8,7 +8,7 @@
 "
 " File:       iceberg.vim
 " Maintainer: cocopon <cocopon@me.com>
-" Modified:   2019-08-27 21:56+0900
+" Modified:   2019-08-31 16:56+0900
 " License:    MIT
 
 
@@ -80,6 +80,7 @@ hi! Structure ctermfg=110 guifg=#84a0c6
 hi! TabLine cterm=NONE ctermbg=233 ctermfg=238 gui=NONE guibg=#0f1117 guifg=#3e445e
 hi! TabLineFill cterm=reverse ctermbg=238 ctermfg=233 gui=reverse guibg=#3e445e guifg=#0f1117
 hi! TabLineSel cterm=NONE ctermbg=234 ctermfg=252 gui=NONE guibg=#161821 guifg=#9a9ca5
+hi! TermCursorNC ctermbg=242 ctermfg=234 guibg=#6b7089 guifg=#161821
 hi! Title ctermfg=216 gui=NONE guifg=#e2a478
 hi! Todo ctermbg=234 ctermfg=150 guibg=#45493e guifg=#b4be82
 hi! Type ctermfg=110 gui=NONE guifg=#84a0c6
@@ -93,7 +94,7 @@ hi! ALEErrorSign ctermbg=235 ctermfg=203 guibg=#1e2132 guifg=#e27878
 hi! ALEWarningSign ctermbg=235 ctermfg=216 guibg=#1e2132 guifg=#e2a478
 hi! ALEVirtualTextError ctermfg=203 guifg=#e27878
 hi! ALEVirtualTextWarning ctermfg=216 guifg=#e2a478
-hi! CtrlPMode1 ctermbg=241 ctermfg=234 guibg=#5a5f72 guifg=#17171b
+hi! CtrlPMode1 ctermbg=236 ctermfg=242 guibg=#2e313f guifg=#6b7089
 hi! EasyMotionShade ctermfg=239 guifg=#3d425b
 hi! EasyMotionTarget ctermfg=150 guifg=#b4be82
 hi! EasyMotionTarget2First ctermfg=216 guifg=#e2a478
@@ -113,6 +114,7 @@ hi! SyntasticWarningSign ctermbg=235 ctermfg=216 guibg=#1e2132 guifg=#e2a478
 hi! ZenSpace ctermbg=203 guibg=#e27878
 hi! icebergALAccentRed ctermfg=203 guifg=#e27878
 
+hi! link TermCursor Cursor
 hi! link cssBraces Delimiter
 hi! link cssClassName Special
 hi! link cssClassNameDot Normal

@@ -231,10 +231,18 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     " Sets the highlighting for the given group
     fun <SID>X(group, fg, bg, attr)
         if a:fg != ""
-            exec "hi " . a:group . " guifg=#" . a:fg . " ctermfg=" . <SID>rgb(a:fg)
+            if a:fg == "none"
+                exec "hi " . a:group . " guifg=none ctermfg=none"
+            else
+                exec "hi " . a:group . " guifg=#" . a:fg . " ctermfg=" . <SID>rgb(a:fg)
+            endif
         endif
         if a:bg != ""
-            exec "hi " . a:group . " guibg=#" . a:bg . " ctermbg=" . <SID>rgb(a:bg)
+            if a:bg == "none"
+                exec "hi " . a:group . " guibg=none ctermbg=none"
+            else
+                exec "hi " . a:group . " guibg=#" . a:bg . " ctermbg=" . <SID>rgb(a:bg)
+            endif
         endif
         if a:attr != ""
             exec "hi " . a:group . " gui=" . a:attr . " cterm=" . a:attr
@@ -545,6 +553,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
         let g:afterglow_inherit_background = 0
     endif
 
+    " Background behavior inference here:
     if g:afterglow_inherit_background
         let s:chosen_background = "none"
     elseif g:afterglow_blackout
