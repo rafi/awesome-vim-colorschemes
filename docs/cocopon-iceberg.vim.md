@@ -67,6 +67,8 @@ Creator of Iceberg talked about how to create your lovely color scheme in
   by [cocopon]
 - [AppCode](https://github.com/Kuniwak/iceberg.icls)
   by [Kuniwak](https://github.com/Kuniwak)
+- [Hyper](https://github.com/cocopon/hyper-iceberg)
+  by [cocopon]
 - [bumblebee-status](https://github.com/tobi-wan-kenobi/bumblebee-status)
   by [Aaron](https://github.com/whzup)
 - [kitty](https://gist.github.com/gkeep/9b6f3e86d44542f73b526183095d5c3a)

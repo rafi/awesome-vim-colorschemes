@@ -1565,7 +1565,6 @@ fun! s:apply_syntax_highlightings()
   exec 'hi pythonStrFormatting' . s:fg_olive . s:ft_bold
 
   exec 'hi pythonBoolean' . s:fg_green . s:ft_bold
-  exec 'hi pythonExClass' . s:fg_red
   exec 'hi pythonBytesEscape' . s:fg_olive . s:ft_bold
   exec 'hi pythonDottedName' . s:fg_purple
   exec 'hi pythonStrFormat' . s:fg_foreground
@@ -1611,6 +1610,11 @@ fun! s:apply_syntax_highlightings()
   exec 'hi javaScriptMember' . s:fg_foreground
 
   " @target https://github.com/pangloss/vim-javascript
+  exec 'hi jsImport' . s:fg_pink . s:ft_bold
+  exec 'hi jsExport' . s:fg_pink . s:ft_bold
+  exec 'hi jsModuleAs' . s:fg_pink . s:ft_bold
+  exec 'hi jsFrom' . s:fg_pink . s:ft_bold
+  exec 'hi jsExportDefault' . s:fg_pink . s:ft_bold
   exec 'hi jsFuncParens' . s:fg_blue
   exec 'hi jsFuncBraces' . s:fg_blue
   exec 'hi jsParens' . s:fg_blue

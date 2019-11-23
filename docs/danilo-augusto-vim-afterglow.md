@@ -8,10 +8,7 @@
 
 🔋 **Batteries included** so that you can concentrate on **what matters most: your code**.
  - Built-in airline scheme ✈️ 
- - No bad surprises:
-   - backwards compatibility (neovim, vim 8/7/6/5/4...)
-   - multiple terminal capabilities (gui, cterm 256,
-     cterm 88...)
+ - No bad surprises: works for both vim and neovim, terminal and GUI.
  - Highlighted important keywords in <span style="color:#b05279;font-weight:bold;">reddish and bold</span> inside comments: TODO/FIXME/XXX...
  - No more "it looks flat/terrible on this language": includes customized highlighting for many popular languages
     - Java

@@ -231,15 +231,15 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     " Sets the highlighting for the given group
     fun <SID>X(group, fg, bg, attr)
         if a:fg != ""
-            if a:fg == "none"
-                exec "hi " . a:group . " guifg=none ctermfg=none"
+            if a:fg == "NONE"
+                exec "hi " . a:group . " guifg=NONE ctermfg=NONE"
             else
                 exec "hi " . a:group . " guifg=#" . a:fg . " ctermfg=" . <SID>rgb(a:fg)
             endif
         endif
         if a:bg != ""
-            if a:bg == "none"
-                exec "hi " . a:group . " guibg=none ctermbg=none"
+            if a:bg == "NONE"
+                exec "hi " . a:group . " guibg=NONE ctermbg=NONE"
             else
                 exec "hi " . a:group . " guibg=#" . a:bg . " ctermbg=" . <SID>rgb(a:bg)
             endif
@@ -257,7 +257,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("TabLineFill", s:window, s:foreground, "reverse")
     call <SID>X("StatusLine", s:window, s:yellow, "reverse")
     call <SID>X("StatusLineNC", s:window, s:foreground, "reverse")
-    call <SID>X("VertSplit", s:window, s:window, "none")
+    call <SID>X("VertSplit", s:window, s:window, "NONE")
     call <SID>X("Visual", "", s:selection, "")
     call <SID>X("Directory", s:blue, "", "")
     call <SID>X("ModeMsg", s:green, "", "")
@@ -268,14 +268,14 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("Folded", s:comment, s:background, "")
     call <SID>X("FoldColumn", "", s:background, "")
     if version >= 700
-        call <SID>X("CursorLine", "", s:line, "none")
-        call <SID>X("CursorLineNR", s:orange, "", "none")
-        call <SID>X("CursorColumn", "", s:line, "none")
-        call <SID>X("PMenu", s:foreground, s:selection, "none")
+        call <SID>X("CursorLine", "", s:line, "NONE")
+        call <SID>X("CursorLineNR", s:orange, "", "NONE")
+        call <SID>X("CursorColumn", "", s:line, "NONE")
+        call <SID>X("PMenu", s:foreground, s:selection, "NONE")
         call <SID>X("PMenuSel", s:foreground, s:selection, "reverse")
     end
     if version >= 703
-        call <SID>X("ColorColumn", "", s:line, "none")
+        call <SID>X("ColorColumn", "", s:line, "NONE")
     end
 
     " Standard Highlighting
@@ -302,7 +302,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     hi! link commonOperator Operator
 
     " Vim Highlighting
-    call <SID>X("vimCommand", s:wine, "", "none")
+    call <SID>X("vimCommand", s:wine, "", "NONE")
 
     " C Highlighting
     call <SID>X("cType", s:wine, "", "")
@@ -409,13 +409,13 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
     " LaTeX
     call <SID>X("texStatement",s:blue, "", "")
-    call <SID>X("texMath", s:wine, "", "none")
-    call <SID>X("texMathMacher", s:yellow, "", "none")
-    call <SID>X("texRefLabel", s:wine, "", "none")
-    call <SID>X("texRefZone", s:blue, "", "none")
-    call <SID>X("texComment", s:comment, "", "none")
-    call <SID>X("texDelimiter", s:purple, "", "none")
-    call <SID>X("texMathZoneX", s:purple, "", "none")
+    call <SID>X("texMath", s:wine, "", "NONE")
+    call <SID>X("texMathMacher", s:yellow, "", "NONE")
+    call <SID>X("texRefLabel", s:wine, "", "NONE")
+    call <SID>X("texRefZone", s:blue, "", "NONE")
+    call <SID>X("texComment", s:comment, "", "NONE")
+    call <SID>X("texDelimiter", s:purple, "", "NONE")
+    call <SID>X("texMathZoneX", s:purple, "", "NONE")
 
     " CoffeeScript Highlighting
     call <SID>X("coffeeRepeat", s:wine, "", "")
@@ -437,10 +437,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("diffText", s:line, s:blue, "")
 
     " ShowMarks Highlighting
-    call <SID>X("ShowMarksHLl", s:orange, s:background, "none")
-    call <SID>X("ShowMarksHLo", s:wine, s:background, "none")
-    call <SID>X("ShowMarksHLu", s:yellow, s:background, "none")
-    call <SID>X("ShowMarksHLm", s:wine, s:background, "none")
+    call <SID>X("ShowMarksHLl", s:orange, s:background, "NONE")
+    call <SID>X("ShowMarksHLo", s:wine, s:background, "NONE")
+    call <SID>X("ShowMarksHLu", s:yellow, s:background, "NONE")
+    call <SID>X("ShowMarksHLm", s:wine, s:background, "NONE")
 
     " Lua Highlighting
     call <SID>X("luaStatement", s:wine, "", "")
@@ -553,9 +553,14 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
         let g:afterglow_inherit_background = 0
     endif
 
-    " Background behavior inference here:
+    " Background behavior inference here
+    if g:afterglow_inherit_background && has("gui_running")
+        echohl WarningMsg | echom "Inherit background is ignored in GUI." | echohl NONE
+        let g:afterglow_inherit_background = 0
+    endif
+
     if g:afterglow_inherit_background
-        let s:chosen_background = "none"
+        let s:chosen_background = "NONE"
     elseif g:afterglow_blackout
         let s:chosen_background = s:black
     else
@@ -566,7 +571,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("Normal", s:foreground, s:chosen_background, "")
     call <SID>X("LineNr", s:comment, s:chosen_background, "")
     if version >= 700
-        call <SID>X("SignColumn", "", s:chosen_background, "none")
+        call <SID>X("SignColumn", "", s:chosen_background, "NONE")
     end
     call <SID>X("Todo", s:red, s:chosen_background, "bold")
 
