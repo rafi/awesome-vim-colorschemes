@@ -2,7 +2,7 @@
 " Author:      Romain Lafourcade (romainlafourcade@gmail.com)
 " Webpage:     https://github.com/romainl/Apprentice
 " Description: Essentially a streamlining and conversion to xterm colors of 'sorcerer' by Jeet Sukumaran (jeetsukumaran@gmailcom)
-" Last Change: 2019-09-29
+" Last Change: 2019-12-08
 
 hi clear
 if exists("syntax_on")
@@ -13,9 +13,6 @@ let colors_name = "apprentice"
 
 if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
     hi Normal ctermbg=235 ctermfg=250 cterm=NONE guibg=#262626 guifg=#bcbcbc gui=NONE
-
-    set background=dark
-
     hi NonText ctermbg=NONE ctermfg=240 cterm=NONE guibg=NONE guifg=#585858 gui=NONE
     hi EndOfBuffer ctermbg=NONE ctermfg=240 cterm=NONE guibg=NONE guifg=#585858 gui=NONE
     hi LineNr ctermbg=234 ctermfg=242 cterm=NONE guibg=#1c1c1c guifg=#6c6c6c gui=NONE
@@ -86,9 +83,6 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
     set t_Co=16
 
     hi Normal ctermbg=black ctermfg=lightgrey cterm=NONE
-
-    set background=dark
-
     hi NonText ctermbg=NONE ctermfg=darkgrey cterm=NONE
     hi EndOfBuffer ctermbg=NONE ctermfg=darkgrey cterm=NONE
     hi LineNr ctermbg=black ctermfg=lightgrey cterm=NONE

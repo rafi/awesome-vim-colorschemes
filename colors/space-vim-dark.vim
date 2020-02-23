@@ -279,6 +279,11 @@ call s:hi('rustKeyword' , 68  , '' , 'bold' , 'bold')
 call s:hi('rustModPath' , 68  , '' , 'none' , 'none')
 call s:hi('rustTrait'   , 168 , '' , 'bold' , 'bold')
 
+" toml
+call s:hi('tomlTable' , 169  , '' , 'bold' , 'bold')
+call s:hi('tomlKey' , 68  , '' , 'none' , 'none')
+call s:hi('tomlComment' , 30 , '' , 'none' , 'italic')
+
 " json
 call s:hi('jsonStringSQError', 160, '', 'none', 'none')
 

@@ -22,6 +22,8 @@ Plug 'whatyouhide/vim-gotham'
 NeoBundle 'whatyouhide/vim-gotham'
 " Vundle
 Plugin 'whatyouhide/vim-gotham'
+" dein.vim
+call dein#add('whatyouhide/vim-gotham')
 ```
 
 If you don't use a plugin manager just copy the content of `vim/colors/` to
@@ -121,7 +123,7 @@ You can find the list of contributors [here][contributors].
 
 ## License
 
-MIT &copy; 2014-2015 Andrea Leopardi, see [the license][license-file].
+MIT &copy; 2014 Andrea Leopardi, see [the license][license-file].
 
 
 [logo]: http://i.imgur.com/FDLEzHC.png "Logo"
