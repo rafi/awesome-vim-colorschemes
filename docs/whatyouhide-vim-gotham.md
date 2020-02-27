@@ -3,6 +3,8 @@
 
 > It's the colorscheme we set that defines us. *(Batman)*
 
+[![main](https://github.com/whatyouhide/vim-gotham/workflows/main/badge.svg?branch=master)](https://github.com/whatyouhide/vim-gotham/actions?query=workflow%3Amain)
+
 Gotham is a **very dark** vim colorscheme. It works on GUI vim (MacVim or gVim)
 and on terminal vim. For terminal vim, there's support for a lot of terminal
 emulators in the [gotham-contrib][gotham-contrib] repository.
