@@ -25,8 +25,9 @@ Use your favorite package-manager to install, and enjoy!
 | [deep-space] | Intergalactic friendly color scheme based off Hybrid | ✓ | ✓ |
 | [deus] | For the late night coder | ✓ | ✓ |
 | [dracula] | Dark theme | ✓ | ✓ |
-| [focuspoint] | Maintain color coordination and important keyword focus |   | ✓ |
 | [flattened] | Solarized, without the bullshit | ✓ (16) | ✓ |
+| [focuspoint] | Maintain color coordination and important keyword focus |   | ✓ |
+| [fogbell] | Minimal grey monotone with 3 variants | ✓ | ✓ |
 | [github] | Based on Github's syntax highlighting | ✓ | ✓ |
 | [gotham] | Very dark vim colorscheme | ✓ | ✓ |
 | [gruvbox] | Retro groove color scheme | ✓ | ✓ |
@@ -61,6 +62,7 @@ Use your favorite package-manager to install, and enjoy!
 | [sierra] | Dark vintage colors | ✓ | ✓ |
 | [solarized8] | Optimized Solarized colorschemes | ✓ (16) | ✓ |
 | [space-vim-dark] | Dark magenta colors | ✓ | ✓ |
+| [spacecamp] | Colors for the final frontier | ✓ | ✓ |
 | [tender] | 24bit colorscheme for Vim | ✓ | ✓ |
 | [termschool] | Based on the "codeschool" theme, with lots of tweaks | ✓ | ✓ |
 | [twilight256] | Imitates the Twilight theme for TextMate | ✓ | ✓ |
@@ -82,8 +84,9 @@ Use your favorite package-manager to install, and enjoy!
 [deep-space]: https://github.com/tyrannicaltoucan/vim-deep-space
 [deus]: https://github.com/ajmwagar/vim-deus
 [dracula]: https://github.com/dracula/vim
-[focuspoint]: https://github.com/chase/focuspoint-vim
 [flattened]: https://github.com/romainl/flattened
+[focuspoint]: https://github.com/chase/focuspoint-vim
+[fogbell]: https://github.com/jaredgorski/fogbell.vim
 [github]: https://github.com/endel/vim-github-colorscheme
 [gotham]: https://github.com/whatyouhide/vim-gotham
 [gruvbox]: https://github.com/morhetz/gruvbox
@@ -118,6 +121,7 @@ Use your favorite package-manager to install, and enjoy!
 [sierra]: https://github.com/AlessandroYorba/Sierra
 [solarized8]: https://github.com/lifepillar/vim-solarized8
 [space-vim-dark]: https://github.com/liuchengxu/space-vim-dark
+[spacecamp]: https://github.com/jaredgorski/SpaceCamp
 [tender]: https://github.com/jacoborus/tender.vim
 [termschool]: https://github.com/marcopaganini/termschool-vim-theme
 [twilight256]: https://github.com/vim-scripts/twilight256.vim
