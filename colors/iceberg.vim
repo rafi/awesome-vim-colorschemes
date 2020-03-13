@@ -8,7 +8,7 @@
 "
 " File:       iceberg.vim
 " Maintainer: cocopon <cocopon@me.com>
-" Modified:   2019-08-31 16:56+0900
+" Modified:   2020-03-06 09:55+0900
 " License:    MIT
 
 
@@ -32,7 +32,7 @@ hi! CursorLine cterm=NONE ctermbg=235 guibg=#1e2132
 hi! Comment ctermfg=242 guifg=#6b7089
 hi! Constant ctermfg=140 guifg=#a093c7
 hi! Cursor ctermbg=252 ctermfg=234 guibg=#c6c8d1 guifg=#161821
-hi! CursorLineNr ctermbg=237 ctermfg=253 guibg=#2a3158 guifg=#cdd1e6
+hi! CursorLineNr cterm=NONE ctermbg=237 ctermfg=253 guibg=#2a3158 guifg=#cdd1e6
 hi! Delimiter ctermfg=252 guifg=#c6c8d1
 hi! DiffAdd ctermbg=29 ctermfg=158 guibg=#45493e guifg=#c0c5b9
 hi! DiffChange ctermbg=23 ctermfg=159 guibg=#384851 guifg=#b3c3cc
