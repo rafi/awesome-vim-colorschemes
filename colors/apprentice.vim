@@ -2,7 +2,7 @@
 " Author:      Romain Lafourcade (romainlafourcade@gmail.com)
 " Webpage:     https://github.com/romainl/Apprentice
 " Description: Essentially a streamlining and conversion to xterm colors of 'sorcerer' by Jeet Sukumaran (jeetsukumaran@gmailcom)
-" Last Change: 2019-12-08
+" Last Change: 2020-03-22
 
 hi clear
 if exists("syntax_on")
@@ -178,12 +178,14 @@ hi link Structure Type
 hi link Tag Special
 hi link Terminal Normal
 hi link Typedef Type
+hi link htmlTagName Statement
 hi link htmlEndTag htmlTagName
 hi link htmlLink Function
 hi link htmlSpecialTagName htmlTagName
 hi link htmlTag htmlTagName
 hi link htmlBold Normal
 hi link htmlItalic Normal
+hi link htmlArg htmlTagName
 hi link xmlTag Statement
 hi link xmlTagName Statement
 hi link xmlEndTag Statement

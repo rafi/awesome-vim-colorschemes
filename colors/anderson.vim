@@ -42,6 +42,10 @@ endif
 let colors_name = "anderson"
 set background=dark
 
+if version > 800
+	set termguicolors
+endif
+
 if &t_Co >= 256 || has("gui_running")
     hi Normal         ctermbg=0  ctermfg=15   cterm=NONE      guibg=#363432 guifg=#c5beba gui=NONE
     hi NonText        ctermbg=bg ctermfg=8    cterm=NONE      guibg=bg      guifg=#645d59 gui=NONE
