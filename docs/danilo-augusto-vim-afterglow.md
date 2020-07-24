@@ -56,6 +56,8 @@ To further customize Afterglow, you can use the following options **before** set
 
     > If using a terminal emulator (iTerm, Alacritty, Terminator...), check if it correctly supports italics. Evidently your chosen font type should have an italics variety too. In case of problems please check these two common scenarios before opening an issue concerning *italics*.
 
+- If you want to disable italics completely (for example if your emulator renders it with background highlight): `let g:afterglow_use_italics=0 (default: 1)`
+
 - Inherit background: `let g:afterglow_inherit_background=1 (default: 0)`
 
     Use this option if you want the background color to play nicely with the program (e.g. gVim, iTerm etc.) in which vim is used. It may be useful when instantiating vim inside Tmux.
