@@ -3,7 +3,9 @@
 " Let's store all the colors in a dictionary.
 let s:c = {}
 
-if ayucolor == 'light'
+let s:ayucolor = get(g:, 'ayucolor', 'dark')
+
+if s:ayucolor == 'light'
   " Base colors.
   let s:c.base0 = { 'gui': '#EAEAEA', 'cterm': 0 }
   let s:c.base1 = { 'gui': '#FAFAFA', 'cterm': 8 }
@@ -81,7 +83,7 @@ let g:airline#themes#ayu#palette.normal_modified = {
 
 " Colors.
 let s:I1 = s:Array('base2', 'green')
-if ayucolor == 'light'
+if s:ayucolor == 'light'
   let s:I2 = s:Array('orange', 'base3')
 else
   let s:I2 = s:Array('base6', 'base3')
@@ -113,7 +115,7 @@ let g:airline#themes#ayu#palette.insert_paste = {
 
 " Colors.
 let s:R1 = s:Array('base2', 'orange')
-if ayucolor == 'light'
+if s:ayucolor == 'light'
   let s:R2 = s:Array('orange', 'base3')
 else
   let s:R2 = s:Array('base6', 'base3')
@@ -134,7 +136,7 @@ let g:airline#themes#ayu#palette.replace_modified = {
 
 " Colors.
 let s:V1 = s:Array('base2', 'magenta')
-if ayucolor == 'light'
+if s:ayucolor == 'light'
   let s:V2 = s:Array('orange', 'base3')
 else
   let s:V2 = s:Array('base6', 'base3')
