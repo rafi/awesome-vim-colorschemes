@@ -187,7 +187,7 @@ There are syntax highlighting enhancement plugins that improve upon Vim built-in
 * Assembly MIPS: [mips](https://github.com/vim-scripts/mips.vim)
 * Assembly GAS: [vim-gas](https://github.com/Shirk/vim-gas)
 * Octave/MATLAB: [vim-octave](https://github.com/jvirtanen/vim-octave)
-* Python: [python-syntax](https://github.com/hdima/python-syntax/)
+* Python: [python-syntax](https://github.com/vim-python/python-syntax/)
 * Dockerfile: [dockerfile.vim](https://github.com/docker/docker/tree/master/contrib/syntax/vim)
 * NGINX: [nginx-vim-syntax](https://github.com/evanmiller/nginx-vim-syntax)
 * Elixir: [vim-elixir](https://github.com/elixir-lang/vim-elixir)
@@ -233,11 +233,17 @@ There are syntax highlighting enhancement plugins that improve upon Vim built-in
 
 To set [vim-airline](https://github.com/bling/vim-airline) theme:
 
-    let g:airline_theme='papercolor'
+```VimL
+let g:airline_theme='papercolor'
+```
+
+Note: to be able to use this theme, it is also necessary to install [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
 
 To set [lightline](https://github.com/itchyny/lightline.vim) theme:
 
-    let g:lightline = { 'colorscheme': 'PaperColor' }
+```VimL
+let g:lightline = { 'colorscheme': 'PaperColor' }
+```
 
 For more sceenshots, story behind the project, and other users' designs inspired by Paper Color, go to [this blog post](http://nlknguyen.com/2015/05/21/vim-paper-color-theme/)
 
@@ -256,6 +262,8 @@ Suggestions/Wishes/Questions/Comments are welcome via [Github issues](https://gi
 
 [PaperColor Light for konsole](https://raw.githubusercontent.com/z2oh/dotfiles/82bf6835948674f0ed1f98a14b82975ff2dd8f3e/konsole/paperrlight.colorscheme) by [z2oh](https://github.com/z2oh)
 
+[PaperColor Light for konsole](https://github.com/MaxG87/konsole-papercolor) (some palette collisions resolved) by [MaxG87](https://github.com/MaxG87)
+
 [PaperColor Theme for Vis Editor](https://github.com/jceb/dotfiles/blob/master/config/vis/lexers/themes/papercolor.lua) by Jan Christoph Ebersbach
 
 [Airline PaperColor Theme for Emacs Powerline](https://github.com/AnthonyDiGirolamo/airline-themes) by Anthony DiGirolamo
@@ -271,5 +279,7 @@ Suggestions/Wishes/Questions/Comments are welcome via [Github issues](https://gi
 [PaperColor Theme for kitty](https://github.com/craffate/papercolor-kitty) by [Cyril Raffatelli](https://github.com/craffate)
 
 [PaperColor Light theme for cmus](https://github.com/eremit/papercolor-light-cmus) by [eremit](https://github.com/eremit)
+
+[PaperColor Light theme for Alacritty](https://github.com/eendroroy/alacritty-theme/blob/master/themes/papercolor_light.yaml)
 
 Feel free to add related projects here!

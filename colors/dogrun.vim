@@ -76,10 +76,10 @@ hi SpellBad guifg=#f56574 ctermfg=204 gui=underline cterm=underline
 hi SpellCap gui=underline cterm=underline
 hi SpellLocal guifg=#f56574 ctermfg=204 gui=underline cterm=underline
 hi SpellRare guifg=#b5ae7d ctermfg=144 gui=underline cterm=underline
-hi DiffAdd guibg=#3d5843 ctermbg=23 gui=bold cterm=bold
-hi DiffChange guibg=#35332b ctermbg=236 gui=bold cterm=bold
+hi DiffAdd guibg=#104a65 ctermbg=24 gui=bold cterm=bold
+hi DiffChange guibg=#26463b ctermbg=23 gui=bold cterm=bold
 hi DiffDelete guifg=#d2d9ff ctermfg=189 guibg=#674267 ctermbg=96 gui=bold cterm=bold
-hi DiffText guibg=#685f3f ctermbg=58 gui=NONE cterm=NONE
+hi DiffText guibg=#28795c ctermbg=29 gui=NONE cterm=NONE
 hi QuickFixLine guifg=#9ea3c0 ctermfg=146 guibg=#363e7f ctermbg=61
 hi StatusLine guifg=#757aa5 ctermfg=103 guibg=#2a2c3f ctermbg=236 gui=bold cterm=bold
 hi StatusLineTerm guifg=#757aa5 ctermfg=103 guibg=#2a2c3f ctermbg=236 gui=bold cterm=bold
@@ -154,8 +154,8 @@ hi DefxIconsClosedTreeIcon guifg=#6f78be ctermfg=104 gui=NONE cterm=NONE
 hi Defx_git_Untracked guifg=#929be5 ctermfg=104 gui=NONE cterm=NONE
 hi Defx_git_Ignored guifg=#545c8c ctermfg=60 gui=NONE cterm=NONE
 hi Defx_git_Unknown guifg=#545c8c ctermfg=60 gui=NONE cterm=NONE
-hi Defx_git_Renamed guifg=#35332b ctermfg=236
-hi Defx_git_Modified guifg=#35332b ctermfg=236
+hi Defx_git_Renamed guifg=#26463b ctermfg=23
+hi Defx_git_Modified guifg=#26463b ctermfg=23
 hi Defx_git_Unmerged guifg=#c173c1 ctermfg=170
 hi Defx_git_Deleted guifg=#674267 ctermfg=96
 hi Defx_git_Staged guifg=#73c1a9 ctermfg=79
@@ -166,7 +166,7 @@ hi FernMarked guifg=#2aacbd ctermfg=73 gui=NONE cterm=NONE
 hi GitGutterAdd guifg=#7cbe8c ctermfg=108
 hi GitGutterChange guifg=#b5ae7d ctermfg=144
 hi GitGutterDelete guifg=#c173c1 ctermfg=170
-hi GitGutterChangeDelete guifg=#685f3f ctermfg=58
+hi GitGutterChangeDelete guifg=#28795c ctermfg=29
 hi fugitiveHeader guifg=#73c1a9 ctermfg=79 gui=bold cterm=bold
 hi ALEWarningSign guifg=#c2968c ctermfg=138 gui=bold cterm=bold
 hi ALEInfoSign guifg=#82dabf ctermfg=115 gui=NONE cterm=NONE

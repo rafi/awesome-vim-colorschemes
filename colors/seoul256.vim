@@ -275,6 +275,7 @@ call s:hi('ColorColumn', ['', ''], [s:dark_bg - 1, s:light_bg - 2])
 call s:hi('CursorLine', ['', ''], [s:dark_bg - 1, s:light_bg - 1])
 call s:hi('CursorLineNr', [131, 131], [s:dark_bg - 1, s:light_bg - 1])
 call s:hi('CursorColumn', ['', ''], [s:dark_bg - 1, s:light_bg - 1])
+call s:hi('NormalFloat', ['', ''], [s:dark_bg - 1, s:light_bg - 1])
 
 call s:hi('Directory', [187, 95], ['', ''])
 

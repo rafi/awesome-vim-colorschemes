@@ -1609,6 +1609,10 @@ fun! s:apply_syntax_highlightings()
   exec 'hi javaScriptMessage' . s:fg_foreground
   exec 'hi javaScriptMember' . s:fg_foreground
 
+  " TypeScript Highlighting
+  exec 'hi typescriptDecorators' . s:fg_orange
+  exec 'hi typescriptLabel' . s:fg_purple . s:ft_bold
+
   " @target https://github.com/pangloss/vim-javascript
   exec 'hi jsImport' . s:fg_pink . s:ft_bold
   exec 'hi jsExport' . s:fg_pink . s:ft_bold

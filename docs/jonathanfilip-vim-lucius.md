@@ -12,35 +12,32 @@ https://github.com/jonathanfilip/lucius
 
 Some sample screenshots of the different configurations:
 
-**Dark**
+### Dark
 ![LuciusDark](http://i.imgur.com/LsZbF.png "LuciusDark (default)")
 
-**Dark High Contrast**
+### Dark High Contrast
 ![LuciusDarkHighContrast](http://i.imgur.com/e70i9.png "LuciusDarkHighContrast")
 
-**Dark Low Contrast**
+### Dark Low Contrast
 ![LuciusDarkLowContrast](http://i.imgur.com/Hmw8s.png "LuciusDarkLowContrast")
 
-**Black**
+### Black
 ![LuciusBlack](http://i.imgur.com/iD4ri.png "LuciusBlack")
 
-**Black High Contrast**
+### Black High Contrast
 ![LuciusBlackHighContrast](http://i.imgur.com/lHvTJ.png  "LuciusBlackHighContrast")
 
-**Black Low Contrast**
+### Black Low Contrast
 ![LuciusBlackLowContrast](http://i.imgur.com/oZLkg.png "LuciusBlackLowContrast")
 
-**Light**
+### Light
 ![LuciusLight](http://i.imgur.com/soYD8.png "LuciusLight (light default)")
 
-**Light Low Contrast**
+### Light Low Contrast
 ![LuciusLightLowContrast](http://i.imgur.com/95I86.png "LuciusLightLowContrast")
 
-**White**
+### White
 ![LuciusWhite](http://i.imgur.com/wDzkz.png  "LuciusWhite")
 
-**White Low Contrast**
+### White Low Contrast
 ![LuciusWhiteLowContrast](http://i.imgur.com/jlUf4.png "LuciusWhiteLowContrast")
-
-
-

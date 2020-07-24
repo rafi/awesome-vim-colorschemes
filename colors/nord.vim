@@ -13,7 +13,7 @@ if version > 580
 endif
 
 let g:colors_name = "nord"
-let s:nord_vim_version="0.13.0"
+let s:nord_vim_version="0.15.0"
 set background=dark
 
 let s:nord0_gui = "#2E3440"
@@ -168,9 +168,9 @@ call s:hi("Underline", "", "", "", "", s:underline, "")
 call s:hi("ColorColumn", "", s:nord1_gui, "NONE", s:nord1_term, "", "")
 call s:hi("Cursor", s:nord0_gui, s:nord4_gui, "", "NONE", "", "")
 call s:hi("CursorLine", "", s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
-call s:hi("Error", s:nord0_gui, s:nord11_gui, "", s:nord11_term, "", "")
+call s:hi("Error", s:nord4_gui, s:nord11_gui, "", s:nord11_term, "", "")
 call s:hi("iCursor", s:nord0_gui, s:nord4_gui, "", "NONE", "", "")
-call s:hi("LineNr", s:nord3_gui, s:nord0_gui, s:nord3_term, "NONE", "", "")
+call s:hi("LineNr", s:nord3_gui, "NONE", s:nord3_term, "NONE", "", "")
 call s:hi("MatchParen", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "", "")
 call s:hi("NonText", s:nord2_gui, "", s:nord3_term, "", "", "")
 call s:hi("Normal", s:nord4_gui, s:nord0_gui, "NONE", "NONE", "", "")
@@ -219,7 +219,7 @@ endif
 "+--- Gutter ---+
 call s:hi("CursorColumn", "", s:nord1_gui, "NONE", s:nord1_term, "", "")
 if g:nord_cursor_line_number_background == 0
-  call s:hi("CursorLineNr", s:nord4_gui, s:nord0_gui, "NONE", "", "NONE", "")
+  call s:hi("CursorLineNr", s:nord4_gui, "", "NONE", "", "NONE", "")
 else
   call s:hi("CursorLineNr", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
 endif
@@ -234,7 +234,7 @@ call s:hi("Directory", s:nord8_gui, "", s:nord8_term, "NONE", "", "")
 call s:hi("EndOfBuffer", s:nord1_gui, "", s:nord1_term, "NONE", "", "")
 call s:hi("ErrorMsg", s:nord4_gui, s:nord11_gui, "NONE", s:nord11_term, "", "")
 call s:hi("ModeMsg", s:nord4_gui, "", "", "", "", "")
-call s:hi("MoreMsg", s:nord4_gui, "", "", "", "", "")
+call s:hi("MoreMsg", s:nord8_gui, "", s:nord8_term, "", "", "")
 call s:hi("Question", s:nord4_gui, "", "NONE", "", "", "")
 if g:nord_uniform_status_lines == 0
   call s:hi("StatusLine", s:nord8_gui, s:nord3_gui, s:nord8_term, s:nord3_term, "NONE", "")
@@ -561,6 +561,8 @@ call s:hi("ALEError" , s:nord11_gui, "", s:nord11_term, "", "undercurl", "")
 
 " Coc
 " > neoclide/coc
+call s:hi("CocWarningHighlight" , s:nord13_gui, "", s:nord13_term, "", "undercurl", "")
+call s:hi("CocErrorHighlight" , s:nord11_gui, "", s:nord11_term, "", "undercurl", "")
 call s:hi("CocWarningSign", s:nord13_gui, "", s:nord13_term, "", "", "")
 call s:hi("CocErrorSign" , s:nord11_gui, "", s:nord11_term, "", "", "")
 call s:hi("CocInfoSign" , s:nord8_gui, "", s:nord8_term, "", "", "")
@@ -572,7 +574,6 @@ call s:hi("LSPDiagnosticsWarning", s:nord13_gui, "", s:nord13_term, "", "", "")
 call s:hi("LSPDiagnosticsError" , s:nord11_gui, "", s:nord11_term, "", "", "")
 call s:hi("LSPDiagnosticsInformation" , s:nord8_gui, "", s:nord8_term, "", "", "")
 call s:hi("LSPDiagnosticsHint" , s:nord10_gui, "", s:nord10_term, "", "", "")
-
 
 " GitGutter
 " > airblade/vim-gitgutter
@@ -608,6 +609,36 @@ hi! link NERDTreeHelp Comment
 " > ctrlpvim/ctrlp.vim
 hi! link CtrlPMatch Keyword
 hi! link CtrlPBufferHid Normal
+
+" vim-clap
+" > liuchengxu/vim-clap
+call s:hi("ClapDir", s:nord4_gui, "", "", "", "", "")
+call s:hi("ClapDisplay", s:nord4_gui, s:nord1_gui, "", s:nord1_term, "", "")
+call s:hi("ClapFile", s:nord4_gui, "", "", "NONE", "", "")
+call s:hi("ClapMatches", s:nord8_gui, "", s:nord8_term, "", "", "")
+call s:hi("ClapNoMatchesFound", s:nord13_gui, "", s:nord13_term, "", "", "")
+call s:hi("ClapSelected", s:nord7_gui, "", s:nord7_term, "", s:bold, "")
+call s:hi("ClapSelectedSign", s:nord9_gui, "", s:nord9_term, "", "", "")
+
+let s:clap_matches = [
+        \ [s:nord8_gui,  s:nord8_term] ,
+        \ [s:nord9_gui,  s:nord9_term] ,
+        \ [s:nord10_gui, s:nord10_term] ,
+        \ ]
+for s:nord_clap_match_i in range(1,12)
+  let clap_match_color = s:clap_matches[s:nord_clap_match_i % len(s:clap_matches) - 1]
+  call s:hi("ClapMatches" . s:nord_clap_match_i, clap_match_color[0], "", clap_match_color[1], "", "", "")
+  call s:hi("ClapFuzzyMatches" . s:nord_clap_match_i, clap_match_color[0], "", clap_match_color[1], "", "", "")
+endfor
+unlet s:nord_clap_match_i
+
+hi! link ClapCurrentSelection PmenuSel
+hi! link ClapCurrentSelectionSign ClapSelectedSign
+hi! link ClapInput Pmenu
+hi! link ClapPreview Pmenu
+hi! link ClapProviderAbout ClapDisplay
+hi! link ClapProviderColon Type
+hi! link ClapProviderId Type
 
 " vim-plug
 " > junegunn/vim-plug
@@ -645,6 +676,47 @@ hi! link jsThis Keyword
 hi! link jsNoise Delimiter
 hi! link jsPrototype Keyword
 hi! link jsRegexpString SpecialChar
+
+" TypeScript
+" > HerringtonDarkholme/yats.vim
+call s:hi("typescriptBOMWindowMethod", s:nord8_gui, "", s:nord8_term, "", s:italic, "")
+call s:hi("typescriptClassName", s:nord7_gui, "", s:nord7_term, "", "", "")
+call s:hi("typescriptDecorator", s:nord12_gui, "", s:nord12_term, "", "", "")
+call s:hi("typescriptInterfaceName", s:nord7_gui, "", s:nord7_term, "", s:bold, "")
+call s:hi("typescriptRegexpString", s:nord13_gui, "", s:nord13_term, "", "", "")
+" TypeScript JSX
+ call s:hi("tsxAttrib", s:nord7_gui, "", s:nord7_term, "", "", "")
+hi! link typescriptOperator Operator
+hi! link typescriptBinaryOp Operator
+hi! link typescriptAssign Operator
+hi! link typescriptMember Identifier
+hi! link typescriptDOMStorageMethod Identifier
+hi! link typescriptArrowFuncArg Identifier
+hi! link typescriptGlobal typescriptClassName
+hi! link typescriptBOMWindowProp Function
+hi! link typescriptArrowFuncDef Function
+hi! link typescriptAliasDeclaration Function
+hi! link typescriptPredefinedType Type
+hi! link typescriptTypeReference typescriptClassName
+hi! link typescriptTypeAnnotation Structure
+hi! link typescriptDocNamedParamType SpecialComment
+hi! link typescriptDocNotation Keyword
+hi! link typescriptDocTags Keyword
+hi! link typescriptImport Keyword
+hi! link typescriptExport Keyword
+hi! link typescriptTry Keyword
+hi! link typescriptVariable Keyword
+hi! link typescriptBraces Normal
+hi! link typescriptObjectLabel Normal
+hi! link typescriptCall Normal
+hi! link typescriptClassHeritage typescriptClassName
+hi! link typescriptFuncTypeArrow Structure
+hi! link typescriptMemberOptionality Structure
+hi! link typescriptNodeGlobal typescriptGlobal
+hi! link typescriptTypeBrackets Structure
+hi! link tsxEqual Operator
+hi! link tsxIntrinsicTagName htmlTag
+hi! link tsxTagName tsxIntrinsicTagName
 
 " Markdown
 " > plasticboy/vim-markdown

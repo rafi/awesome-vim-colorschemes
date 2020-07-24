@@ -145,6 +145,11 @@ let g:airline#themes#gotham#palette.accents = {
       \ }
 
 
+" Terminal =====================================================================
+
+let g:airline#themes#gotham#palette.terminal =
+      \ airline#themes#generate_color_map(s:I1, s:I2, s:I3)
+
 
 " CtrlP =======================================================================
 

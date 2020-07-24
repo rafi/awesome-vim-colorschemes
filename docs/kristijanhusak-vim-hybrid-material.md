@@ -38,6 +38,7 @@ To use transparent background, add this option:
 let g:hybrid_transparent_background = 1
 ```
 
+**Note**: Options must be set before `colorscheme hybrid_material` statement.
 
 #### Hybrid Material
 Based on [equinusocio/material-theme](https://github.com/equinusocio/material-theme).

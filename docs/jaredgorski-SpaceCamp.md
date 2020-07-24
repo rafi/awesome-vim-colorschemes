@@ -49,6 +49,7 @@ Plug 'jaredgorski/spacecamp'
 - [Chrome Secure Shell](https://github.com/jaredgorski/SpaceCamp/raw/master/.terminal_themes/spacecamp_chrome-secure-shell.config)
 - [Gnome Terminal](https://github.com/jaredgorski/SpaceCamp/raw/master/.terminal_themes/spacecamp_gnome-terminal.sh)
 - [Guake](https://github.com/jaredgorski/SpaceCamp/raw/master/.terminal_themes/spacecamp_guake.config)
+- [Kitty: spacecamp-kitty](https://github.com/sebastianks/spacecamp-kitty) by [@sebastianks](https://github.com/sebastianks)
 - [Konsole](https://github.com/jaredgorski/SpaceCamp/raw/master/.terminal_themes/spacecamp_konsole.config)
 - [Linux Console](https://github.com/jaredgorski/SpaceCamp/raw/master/.terminal_themes/spacecamp_linux-console.sh)
 - [MinTTY](https://github.com/jaredgorski/SpaceCamp/raw/master/.terminal_themes/spacecamp_mintty.config)
@@ -106,6 +107,7 @@ Please send me an email at jaredgorski6@gmail.com or open an issue. If you're fe
 - [@cocopon](https://github.com/cocopon)'s [iceberg.vim](https://github.com/cocopon/iceberg.vim), which is inspiring in general
 - [@zenorocha](https://github.com/zenorocha), for blessing us all with [Dracula](https://github.com/dracula/dracula-theme)
 - [@reobin](https://github.com/reobin/), for showing up on Reddit and kindly giving us [spacecamp-iterm](https://github.com/reobin/spacecamp-iterm)
+- [@sebastianks](https://github.com/sebastianks), for the random email and kindly giving us [spacecamp-kitty](https://github.com/sebastianks/spacecamp-kitty)
 - [terminal.sexy](https://terminal.sexy), for helping me generate all the terminal themes
 
 ---

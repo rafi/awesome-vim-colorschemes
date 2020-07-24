@@ -2,7 +2,7 @@
 " Author:      Romain Lafourcade (romainlafourcade@gmail.com)
 " Webpage:     https://github.com/romainl/Apprentice
 " Description: Essentially a streamlining and conversion to xterm colors of 'sorcerer' by Jeet Sukumaran (jeetsukumaran@gmailcom)
-" Last Change: 2020-03-22
+" Last Change: 2020-05-26
 
 hi clear
 if exists("syntax_on")
@@ -37,8 +37,8 @@ if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
     hi PmenuSbar ctermbg=240 ctermfg=NONE cterm=NONE guibg=#585858 guifg=NONE gui=NONE
     hi PmenuSel ctermbg=66 ctermfg=235 cterm=NONE guibg=#5f8787 guifg=#262626 gui=NONE
     hi PmenuThumb ctermbg=66 ctermfg=66 cterm=NONE guibg=#5f8787 guifg=#5f8787 gui=NONE
-    hi ErrorMsg ctermbg=131 ctermfg=235 cterm=NONE guibg=#af5f5f guifg=#262626 gui=NONE
-    hi ModeMsg ctermbg=108 ctermfg=235 cterm=NONE guibg=#87af87 guifg=#262626 gui=NONE
+    hi ErrorMsg ctermbg=235 ctermfg=131 cterm=reverse guibg=#262626 guifg=#af5f5f gui=reverse
+    hi ModeMsg ctermbg=235 ctermfg=108 cterm=reverse guibg=#262626 guifg=#87af87 gui=reverse
     hi MoreMsg ctermbg=NONE ctermfg=66 cterm=NONE guibg=NONE guifg=#5f8787 gui=NONE
     hi Question ctermbg=NONE ctermfg=108 cterm=NONE guibg=NONE guifg=#87af87 gui=NONE
     hi WarningMsg ctermbg=NONE ctermfg=131 cterm=NONE guibg=NONE guifg=#af5f5f gui=NONE
@@ -107,8 +107,8 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
     hi PmenuSbar ctermbg=darkgrey ctermfg=NONE cterm=NONE
     hi PmenuSel ctermbg=darkcyan ctermfg=black cterm=NONE
     hi PmenuThumb ctermbg=darkcyan ctermfg=darkcyan cterm=NONE
-    hi ErrorMsg ctermbg=darkred ctermfg=black cterm=NONE
-    hi ModeMsg ctermbg=green ctermfg=black cterm=NONE
+    hi ErrorMsg ctermbg=black ctermfg=darkred cterm=reverse
+    hi ModeMsg ctermbg=black ctermfg=green cterm=reverse
     hi MoreMsg ctermbg=NONE ctermfg=darkcyan cterm=NONE
     hi Question ctermbg=NONE ctermfg=green cterm=NONE
     hi WarningMsg ctermbg=NONE ctermfg=darkred cterm=NONE

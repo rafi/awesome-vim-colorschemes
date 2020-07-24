@@ -206,21 +206,27 @@ I removed it from `master` but you can still find it in the "fancylines-and-neov
 
 ## Derivative works
 
-If light colorschemes are more your thing, [Disciple](https://github.com/romainl/Disciple) is an experimental and mostly unmaintained negative version of Apprentice.
+* If light colorschemes are more your thing, [Disciple](https://github.com/romainl/Disciple) is an experimental and mostly unmaintained negative version of Apprentice.
 
-On the same note, [Lightning](https://github.com/wimstefan/Lightning) is a light fork of Apprentice worth considering.
+* On the same note, [Lightning](https://github.com/wimstefan/Lightning) is a light fork of Apprentice worth considering.
 
-[Intern](https://github.com/drzel/intern-hexchat-theme) is an [HexChat](https://hexchat.github.io/) theme based on Apprentice.
+* [Intern](https://github.com/drzel/intern-hexchat-theme) is an [HexChat](https://hexchat.github.io/) theme based on Apprentice.
 
-[This very enthusiastic fellow](https://github.com/xHN35RQ) created [a home](https://github.com/xHN35RQ/apprentice-colorschemes) for terminal emulator themes adapted from Apprentice.
+* [This very enthusiastic fellow](https://github.com/xHN35RQ) created [a home](https://github.com/xHN35RQ/apprentice-colorschemes) for terminal emulator themes adapted from Apprentice.
 
-A port of Apprentice is available for the IDEA platform. Check it out [over there.](https://github.com/jpeddicord/apprentice-idea)
+* A port of Apprentice is available for the IDEA platform. Check it out [over there.](https://github.com/jpeddicord/apprentice-idea)
 
-[Elysian](https://github.com/nhooyr/elysian.vim) is a new very nice colorscheme for 256color terminal emulators inspired by Apprentice.
+* [Elysian](https://github.com/nhooyr/elysian.vim) is a new very nice colorscheme for 256color terminal emulators inspired by Apprentice.
 
-[Apprentice-theme](https://github.com/sjas/apprentice-theme) is a port to spacemacs.
+* [Apprentice-theme](https://github.com/sjas/apprentice-theme) is a port to spacemacs.
 
-[Warlock](https://github.com/hardselius/warlock) is a brand new greyscale variant worth trying if Apprentice's already low contrast is still too much.
+* [Warlock](https://github.com/hardselius/warlock) is a brand new greyscale variant worth trying if Apprentice's already low contrast is still too much.
+
+* [Apprentice-tmux](https://github.com/tombin/apprentice-tmux) is a tmux theme based on Apprentice.
+
+* [Apprentice-kitty](https://github.com/rsaihe/apprentice-kitty) is a port for kitty.
+
+* [Here](https://marketplace.visualstudio.com/items?itemName=amariampolskiy.theme-apprentice) is a port of Apprentice for Visual Studio Code.
 
 Go team!
 

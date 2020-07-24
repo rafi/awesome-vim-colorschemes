@@ -144,6 +144,10 @@ let g:airline#themes#gotham256#palette.accents = {
       \ 'red': [s:c.red.gui, '', s:c.red.cterm, '']
       \ }
 
+" Terminal =====================================================================
+
+let g:airline#themes#gotham256#palette.terminal =
+      \ airline#themes#generate_color_map(s:I1, s:I2, s:I3)
 
 
 " CtrlP =======================================================================
