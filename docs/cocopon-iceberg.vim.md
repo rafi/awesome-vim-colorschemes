@@ -1,7 +1,6 @@
 ![Iceberg](https://cocopon.github.io/iceberg.vim/assets/github/20180804/cover.png)
 
-Iceberg is a well-designed, eye-friendly, dark blue color scheme for Vim and
-Neovim.
+Iceberg is well-designed, bluish color scheme for Vim and Neovim.
 
 ![Screenshot](https://cocopon.github.io/iceberg.vim/assets/github/screenshot.png)
 
@@ -15,6 +14,7 @@ information.
 # Features
 - Simple: no configuration required and easy to use
 - Fast: pre-compiled to reduce loading time
+- Dark and light background (light version is in public beta)
 - 256-colors terminal support
 - Terminal colors support
 - [airline][airline] theme and [lightline][lightline] colorscheme
@@ -37,7 +37,7 @@ information.
   / [vim-elixir][vim-elixir]
   / [vim-flow][vim-flow]
   / [vim-graphql][vim-graphql]
-  / [vim-javavscript][vim-javascript]
+  / [vim-javascript][vim-javascript]
   / [vim-markdown][vim-markdown]
   etc.
 
@@ -57,8 +57,8 @@ Creator of Iceberg talked about how to create your lovely color scheme in
 
 
 # For other environments
-- [Terminal.app profile](https://cocopon.github.io/iceberg.vim/#macosTerminalApp)
-  by [cocopon]
+
+## IDEs and text editors
 - [Visual Studio Code](https://github.com/cocopon/vscode-iceberg-theme)
   by [cocopon]
 - [Atom](https://github.com/cocopon/atom-iceberg-syntax/)
@@ -67,23 +67,38 @@ Creator of Iceberg talked about how to create your lovely color scheme in
   by [cocopon]
 - [AppCode](https://github.com/Kuniwak/iceberg.icls)
   by [Kuniwak](https://github.com/Kuniwak)
+- [Emacs](https://github.com/conao3/iceberg-theme.el)
+  by [conao3](https://github.com/conao3)
+
+
+## Terminal emulators
+- [Terminal.app](https://cocopon.github.io/iceberg.vim/#macosTerminalApp)
+  by [cocopon]
 - [Hyper](https://github.com/cocopon/hyper-iceberg)
   by [cocopon]
-- [bumblebee-status](https://github.com/tobi-wan-kenobi/bumblebee-status)
-  by [Aaron](https://github.com/whzup)
-- [kitty](https://gist.github.com/gkeep/9b6f3e86d44542f73b526183095d5c3a)
-  by [Gennady Koshkin](https://github.com/gkeep)
-- [tmux, bumblebee-status, alternative theme for lightline](https://github.com/gkeep/iceberg-dark) 
-  by [Gennady Koshkin](https://github.com/gkeep)
 - [st](https://notabug.org/vejetaryenvampir/st-iceberg)
   by [vejetaryenvampir](https://notabug.org/vejetaryenvampir)
-- [Slack sidebar](https://gist.github.com/cocopon/2acffd70883ceb004c9c3117c34a9673)
-  by [cocopon]
+- [kitty (dark)](https://gist.github.com/gkeep/9b6f3e86d44542f73b526183095d5c3a)
+  by [gkeep](https://github.com/gkeep)
+- [kitty (light)](https://gist.github.com/gkeep/3434864a3321fcce7d69e75d6d63888e)
+  by [gkeep](https://github.com/gkeep)
+- [alacritty](https://github.com/alacritty/alacritty/wiki/Color-schemes#iceberg)
+  by [connorlay](https://github.com/connorlay)
 
 NOTE: [terminal.sexy][terminal-sexy] provides configuration files for
 the 16 ANSI colors for many terminal emulators (e.g. GNOME Terminal, iTerm2,
 etc.). Use [.Xresources file][xresources] as import and export it for
 the emulator of your choice.
+
+## Other
+- [bumblebee-status](https://github.com/tobi-wan-kenobi/bumblebee-status)
+  by [whzup](https://github.com/whzup)
+- [tmux](https://github.com/gkeep/iceberg-dark#tmux)
+  by [gkeep](https://github.com/gkeep)
+- [alternative dark theme for lightline and airline, bumblebee-status](https://github.com/gkeep/iceberg-dark)
+  by [gkeep](https://github.com/gkeep)
+- [Slack sidebar](https://gist.github.com/cocopon/2acffd70883ceb004c9c3117c34a9673)
+  by [cocopon]
 
 
 
@@ -95,9 +110,9 @@ color scheme, you don't have to follow these steps.
 1. Install [cocopon/pgmnt.vim][pgmnt], a template engine for Vim color scheme,
    to your Vim.
 
-2. To modify a color palette, edit `autoload/iceberg/palette/dark.vim`. If you 
-   make changes, be sure to `:source` this file before step 4 otherwise your
-   color palette changes will not be reflected.
+2. To modify a color palette, edit `autoload/iceberg/palette/(dark|light).vim`.
+   If you make changes, be sure to `:source` this file before step 4 otherwise
+   your color palette changes will not be reflected.
 
 3. To modify highlighting groups or links, edit `src/iceberg.vim`.
 
