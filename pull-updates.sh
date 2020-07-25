@@ -68,6 +68,7 @@ function _main() {
 	_dl rakr/vim-two-firewatch
 	_dl romainl/Apprentice
 	_dl romainl/flattened
+	_dl sainnhe/sonokai
 	_dl scheakur/vim-scheakur
 	_dl sts10/vim-pink-moon
 	_dl tomasr/molokai

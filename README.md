@@ -59,6 +59,7 @@ Use your favorite package-manager to install, and enjoy!
 | [pyte] | Clean, light (nearly white) theme |   | ✓ |
 | [rakr] | Flat colorscheme light and dark variant | ✓ | ✓ |
 | [rdark-terminal2] | Modified rdark-terminal to enhance visibility | ✓ |   |
+| [sainnhe/sonokai] | Vivid and high contrast based on Monokai Pro | ✓ | ✓ |
 | [seoul256] | Low-contrast color scheme based on Seoul Colors | ✓ | ✓ |
 | [sierra] | Dark vintage colors | ✓ | ✓ |
 | [solarized8] | Optimized Solarized colorschemes | ✓ (16) | ✓ |
@@ -120,6 +121,7 @@ Use your favorite package-manager to install, and enjoy!
 [pyte]: https://github.com/vim-scripts/pyte
 [rakr]: https://github.com/rakr/vim-colors-rakr
 [rdark-terminal2]: https://github.com/vim-scripts/rdark-terminal2.vim
+[sainnhe/sonokai]: https://github.com/sainnhe/sonokai
 [seoul256]: https://github.com/junegunn/seoul256.vim
 [sierra]: https://github.com/AlessandroYorba/Sierra
 [solarized8]: https://github.com/lifepillar/vim-solarized8
