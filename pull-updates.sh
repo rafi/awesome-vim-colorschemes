@@ -61,6 +61,7 @@ function _main() {
 	_dl nanotech/jellybeans.vim
 	_dl nightsense/carbonized
 	_dl nightsense/stellarized
+	_dl nikolvs/vim-sunbather
 	_dl owickstrom/vim-colors-paramount
 	_dl rakr/vim-colors-rakr
 	_dl rakr/vim-one

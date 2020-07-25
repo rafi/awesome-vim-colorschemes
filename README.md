@@ -64,6 +64,7 @@ Use your favorite package-manager to install, and enjoy!
 | [solarized8] | Optimized Solarized colorschemes | ✓ (16) | ✓ |
 | [space-vim-dark] | Dark magenta colors | ✓ | ✓ |
 | [spacecamp] | Colors for the final frontier | ✓ | ✓ |
+| [sunbather] | Minimal pink colorscheme | ✓ | ✓ |
 | [tender] | 24bit colorscheme for Vim | ✓ | ✓ |
 | [termschool] | Based on the "codeschool" theme, with lots of tweaks | ✓ | ✓ |
 | [twilight256] | Imitates the Twilight theme for TextMate | ✓ | ✓ |
@@ -124,6 +125,7 @@ Use your favorite package-manager to install, and enjoy!
 [solarized8]: https://github.com/lifepillar/vim-solarized8
 [space-vim-dark]: https://github.com/liuchengxu/space-vim-dark
 [spacecamp]: https://github.com/jaredgorski/SpaceCamp
+[sunbather]: https://github.com/nikolvs/vim-sunbather
 [tender]: https://github.com/jacoborus/tender.vim
 [termschool]: https://github.com/marcopaganini/termschool-vim-theme
 [twilight256]: https://github.com/vim-scripts/twilight256.vim
