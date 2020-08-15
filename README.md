@@ -25,7 +25,6 @@ Use your favorite package-manager to install, and enjoy!
 | [deep-space] | Intergalactic friendly color scheme based off Hybrid | ✓ | ✓ |
 | [deus] | For the late night coder | ✓ | ✓ |
 | [dogrun] | Dark purple | ✓ | ✓ |
-| [dracula] | Dark theme | ✓ | ✓ |
 | [flattened] | Solarized, without the bullshit | ✓ (16) | ✓ |
 | [focuspoint] | Maintain color coordination and important keyword focus |   | ✓ |
 | [fogbell] | Minimal grey monotone with 3 variants | ✓ | ✓ |
@@ -88,7 +87,6 @@ Use your favorite package-manager to install, and enjoy!
 [deep-space]: https://github.com/tyrannicaltoucan/vim-deep-space
 [deus]: https://github.com/ajmwagar/vim-deus
 [dogrun]: https://github.com/wadackel/vim-dogrun
-[dracula]: https://github.com/dracula/vim
 [flattened]: https://github.com/romainl/flattened
 [focuspoint]: https://github.com/chase/focuspoint-vim
 [fogbell]: https://github.com/jaredgorski/fogbell.vim
