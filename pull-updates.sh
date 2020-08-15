@@ -13,7 +13,8 @@ function _dl() {
 		| tar xz --strip=1 -C "$tmp"/
 
 	rsync -avh "$tmp"/"$rtp" --include='after/***' \
-		--include='autoload/***' --include='colors/***' --exclude='*' .
+		--include='autoload/***' --include='colors/***' \
+		--include='plugin/***' --exclude='*' .
 
 	cp -r "$tmp"/"$rtp"/README* "$docs"/"${1//\//-}".md
 	rm -rf "$tmp"

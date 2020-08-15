@@ -59,10 +59,10 @@ Use your favorite package-manager to install, and enjoy!
 | [pyte] | Clean, light (nearly white) theme |   | ✓ |
 | [rakr] | Flat colorscheme light and dark variant | ✓ | ✓ |
 | [rdark-terminal2] | Modified rdark-terminal to enhance visibility | ✓ |   |
-| [sainnhe/sonokai] | Vivid and high contrast based on Monokai Pro | ✓ | ✓ |
 | [seoul256] | Low-contrast color scheme based on Seoul Colors | ✓ | ✓ |
 | [sierra] | Dark vintage colors | ✓ | ✓ |
 | [solarized8] | Optimized Solarized colorschemes | ✓ (16) | ✓ |
+| [sonokai] | Vivid and high contrast based on Monokai Pro | ✓ | ✓ |
 | [space-vim-dark] | Dark magenta colors | ✓ | ✓ |
 | [spacecamp] | Colors for the final frontier | ✓ | ✓ |
 | [sunbather] | Minimal pink colorscheme | ✓ | ✓ |
@@ -121,10 +121,10 @@ Use your favorite package-manager to install, and enjoy!
 [pyte]: https://github.com/vim-scripts/pyte
 [rakr]: https://github.com/rakr/vim-colors-rakr
 [rdark-terminal2]: https://github.com/vim-scripts/rdark-terminal2.vim
-[sainnhe/sonokai]: https://github.com/sainnhe/sonokai
 [seoul256]: https://github.com/junegunn/seoul256.vim
 [sierra]: https://github.com/AlessandroYorba/Sierra
 [solarized8]: https://github.com/lifepillar/vim-solarized8
+[sonokai]: https://github.com/sainnhe/sonokai
 [space-vim-dark]: https://github.com/liuchengxu/space-vim-dark
 [spacecamp]: https://github.com/jaredgorski/SpaceCamp
 [sunbather]: https://github.com/nikolvs/vim-sunbather
@@ -136,6 +136,7 @@ Use your favorite package-manager to install, and enjoy!
 
 ## Other Collections
 
+- [`mcchrish/vim-no-color-collections`](https://github.com/mcchrish/vim-no-color-collections) - List of colorschemes with barely any colors
 - [`rainglow/vim`](https://github.com/rainglow/vim) - 320+ color themes for VIM
 - [`nightsense/vimspectr`](https://github.com/nightsense/vimspectr) - Assemble your own Vim theme (choose base hue + saturation curve)
 - [`chriskempson/base16-vim`](https://github.com/chriskempson/base16-vim) - Syntax highlighting for hackers
