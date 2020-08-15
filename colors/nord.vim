@@ -469,9 +469,12 @@ hi! link markdownHeadingDelimiter Keyword
 call s:hi("perlPackageDecl", s:nord7_gui, "", s:nord7_term, "", "", "")
 
 call s:hi("phpClasses", s:nord7_gui, "", s:nord7_term, "", "", "")
+call s:hi("phpClass", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("phpDocTags", s:nord7_gui, "", s:nord7_term, "", "", "")
 hi! link phpDocCustomTags phpDocTags
 hi! link phpMemberSelector Keyword
+hi! link phpMethod Function
+hi! link phpFunction Function
 
 call s:hi("podCmdText", s:nord7_gui, "", s:nord7_term, "", "", "")
 call s:hi("podVerbatimLine", s:nord4_gui, "", "NONE", "", "", "")

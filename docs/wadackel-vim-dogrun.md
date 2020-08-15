@@ -72,6 +72,7 @@ From now on, we will gradually support it :dog:
 - `cs`
 - `diff`
 - `go` ([vim-go](https://github.com/fatih/vim-go))
+- `graphql` ([vim-graphql](https://github.com/jparise/vim-graphql))
 - `html`
 - `javascript`
 - `json`

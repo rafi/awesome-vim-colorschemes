@@ -140,6 +140,10 @@ hi rustTypedef guifg=#929be5 ctermfg=104
 hi rustStructure guifg=#929be5 ctermfg=104
 hi rustMacro guifg=#929be5 ctermfg=104
 hi rustExternCrate guifg=#929be5 ctermfg=104
+hi graphqlStructure guifg=#c173c1 ctermfg=170
+hi graphqlDirective guifg=#c173c1 ctermfg=170
+hi graphqlName guifg=#929be5 ctermfg=104
+hi graphqlTemplateString guifg=#9ea3c0 ctermfg=146
 hi vimfilerOpenedFile guifg=#6f78be ctermfg=104
 hi vimfilerClosedFile guifg=#6f78be ctermfg=104
 hi vimfilerNonMark guifg=#73c1a9 ctermfg=79

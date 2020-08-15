@@ -385,7 +385,7 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   call <sid>X('Whitespace',   s:special_grey,  '',               'none')
   call <sid>X('StatusLine',   s:syntax_fg,     s:syntax_cursor,  'none')
   call <sid>X('StatusLineNC', s:mono_3,        '',               '')
-  call <sid>X('TabLine',      s:mono_1,        s:syntax_bg,      '')
+  call <sid>X('TabLine',      s:mono_2,        s:visual_grey,    'none')
   call <sid>X('TabLineFill',  s:mono_3,        s:visual_grey,    'none')
   call <sid>X('TabLineSel',   s:syntax_bg,     s:hue_2,          '')
   call <sid>X('Title',        s:syntax_fg,     '',               'bold')
