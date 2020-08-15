@@ -50,6 +50,7 @@ Use your favorite package-manager to install, and enjoy!
 | [molokayo] | Very tweaked molokai based theme | ✓ | ✓ |
 | [nord] | An arctic, north-bluish clean and elegant theme | ✓ (16) | ✓ |
 | [oceanicnext] | Oceanic Next theme | ✓ | ✓ |
+| [oceanic-material] | Material dark colorscheme | ✓ | ✓ |
 | [one] | Adaptation of one-light and one-dark | ✓ | ✓ |
 | [onedark] | Inspired by Atom's One Dark syntax theme | ✓ | ✓ |
 | [orbital] | Dark blue base16 theme | ✓ | ✓ |
@@ -112,6 +113,7 @@ Use your favorite package-manager to install, and enjoy!
 [molokayo]: https://github.com/fmoralesc/molokayo
 [nord]: https://github.com/arcticicestudio/nord-vim
 [oceanicnext]: https://github.com/mhartington/oceanic-next
+[oceanic-material]: https://github.com/hardcoreplayers/oceanic-material
 [one]: https://github.com/rakr/vim-one
 [onedark]: https://github.com/joshdick/onedark.vim
 [orbital]: https://github.com/fcpg/vim-orbital

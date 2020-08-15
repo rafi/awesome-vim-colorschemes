@@ -42,6 +42,7 @@ function _main() {
 	_dl fmoralesc/molokayo
 	_dl gilgigilgil/anderson.vim
 	_dl gregsexton/Atom
+	_dl hardcoreplayers/oceanic-material
 	_dl jacoborus/tender.vim
 	_dl jaredgorski/fogbell.vim
 	_dl jaredgorski/SpaceCamp
