@@ -86,7 +86,7 @@ Use your favorite package-manager to install, and enjoy!
 [ayu-vim]: https://github.com/ayu-theme/ayu-vim
 [carbonized]: https://github.com/nightsense/carbonized
 [challenger-deep]: https://github.com/challenger-deep-theme/vim
-[dalton]: github.com/edersonferreira/dalton-vim
+[dalton]: https://github.com/edersonferreira/dalton-vim
 [deep-space]: https://github.com/tyrannicaltoucan/vim-deep-space
 [deus]: https://github.com/ajmwagar/vim-deus
 [dogrun]: https://github.com/wadackel/vim-dogrun
