@@ -9,8 +9,8 @@ let s:I2 = [ '#006CA1' , '#0E1317' , 255 , 235  ] " guifg guibg ctermfg ctermbg
 let s:I3 = [ '#B3B1AD' , '#0C0A0F' , 250 , 235  ] " guifg guibg ctermfg ctermbg
 
 " Visual mode
-let s:V1 = [ '#3D424D' , '#FF7819' , 255 , 172  ] " guifg guibg ctermfg ctermbg
-let s:V2 = [ '#FF7819' , '#0E1317' , 255 , 235  ] " guifg guibg ctermfg ctermbg
+let s:V1 = [ '#EEEEEE' , '#C46C00' , 255 , 172  ] " guifg guibg ctermfg ctermbg
+let s:V2 = [ '#C46C00' , '#0E1317' , 255 , 235  ] " guifg guibg ctermfg ctermbg
 let s:V3 = [ '#B3B1AD' , '#0C0A0F' , 250 , 235  ] " guifg guibg ctermfg ctermbg
 
 " Replace mode
