@@ -20,7 +20,7 @@
 - Support 256 colors terminal.
 - Supports [lightline.vim](https://github.com/itchyny/lightline.vim) theme.
 - Supports [vim-clap](https://github.com/liuchengxu/vim-clap) theme.
-- Loading speed in increased by precompiled script.
+- Loading speed is increased by precompiled script.
 
 Check [here](#supported-filetypes--plugins) for a list of supported file types and plugins :muscle:
 

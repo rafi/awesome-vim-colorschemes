@@ -7,38 +7,38 @@ set background=dark
 
 let s:t_Co = exists('&t_Co') && !empty(&t_Co) && &t_Co > 1 ? &t_Co : 2
 
-let g:colors_name = 'mountaineer-grey'
+let g:colors_name = 'mountaineer-light'
 " }}}
 " Configuration: {{{
 let s:configuration = {}
-let s:configuration.palette = get(g:, 'mountaineer-grey_palette', 'soft')
-let s:configuration.transparent_background = get(g:, 'mountaineer-grey_transparent_background', 0)
-let s:configuration.disable_italic_comment = get(g:, 'mountaineer-grey_disable_italic_comment', 0)
-let s:configuration.enable_italic = get(g:, 'mountaineer-grey_enable_italic', 0)
-let s:configuration.cursor = get(g:, 'mountaineer-grey_cursor', 'auto')
-let s:configuration.current_word = get(g:, 'mountaineer-grey_current_word', get(g:, 'mountaineer-grey_transparent_background', 0) == 0 ? 'grey background' : 'bold')
+let s:configuration.palette = get(g:, 'mountaineer-light_palette', 'soft')
+let s:configuration.transparent_background = get(g:, 'mountaineer-light_transparent_background', 0)
+let s:configuration.disable_italic_comment = get(g:, 'mountaineer-light_disable_italic_comment', 0)
+let s:configuration.enable_italic = get(g:, 'mountaineer-light_enable_italic', 0)
+let s:configuration.cursor = get(g:, 'mountaineer-light_cursor', 'auto')
+let s:configuration.current_word = get(g:, 'mountaineer-light_current_word', get(g:, 'mountaineer-light_transparent_background', 0) == 0 ? 'grey background' : 'bold')
 " }}}
 " Palette: {{{
 let s:palette = {
-      \ 'bg0':        ['#232323',   '235',  'Black'],
-      \ 'bg1':        ['#303030',   '236',  'DarkGrey'],
-      \ 'bg2':        ['#303030',   '237',  'DarkGrey'],
-      \ 'bg3':        ['#232323',   '238',  'DarkGrey'],
-      \ 'bg4':        ['#232323',   '239',  'Grey'],
-      \ 'bg_red':     ['#303030',   '52',   'DarkRed'],
-      \ 'bg_green':   ['#303030',   '22',   'DarkGreen'],
-      \ 'bg_blue':    ['#303030',   '17',   'DarkBlue'],
-      \ 'fg':         ['#f0f0f0',   '223',  'White'],
-      \ 'red':        ['#D5BBBC',   '167',  'Red'],
-      \ 'orange':     ['#D5C7BB',   '208',  'Red'],
-      \ 'yellow':     ['#D5D5BB',   '214',  'Yellow'],
-      \ 'green':      ['#BBD5BE',   '108',  'Green'],
-      \ 'cyan':       ['#BBD5D4',   '108',  'Cyan'],
-      \ 'blue':       ['#BCBBD5',   '109',  'Blue'],
-      \ 'purple':     ['#D5BBD3',   '175',  'Magenta'],
-      \ 'grey':       ['#3d3d3d',   '245',  'LightGrey'],
-      \ 'light_grey': ['#545454',   '245',  'LightGrey'],
-      \ 'gold':       ['#2f4243',   '214',  'Yellow'],
+      \ 'bg0':        ['#f0f0f0',   '235',  'Black'],
+      \ 'bg1':        ['#d3d3d3',   '236',  'DarkGrey'],
+      \ 'bg2':        ['#d3d3d3',   '237',  'DarkGrey'],
+      \ 'bg3':        ['#f0f0f0',   '238',  'DarkGrey'],
+      \ 'bg4':        ['#f0f0f0',   '239',  'Grey'],
+      \ 'bg_red':     ['#d3d3d3',   '52',   'DarkRed'],
+      \ 'bg_green':   ['#d3d3d3',   '22',   'DarkGreen'],
+      \ 'bg_blue':    ['#d3d3d3',   '17',   'DarkBlue'],
+      \ 'fg':         ['#363636',   '223',  'White'],
+      \ 'red':        ['#786162',   '167',  'Red'],
+      \ 'orange':     ['#786162',   '208',  'Red'],
+      \ 'yellow':     ['#787661',   '214',  'Yellow'],
+      \ 'green':      ['#617878',   '108',  'Green'],
+      \ 'cyan':       ['#617878',   '108',  'Cyan'],
+      \ 'blue':       ['#646178',   '109',  'Blue'],
+      \ 'purple':     ['#786178',   '175',  'Magenta'],
+      \ 'grey':       ['#a2a2a2',   '245',  'LightGrey'],
+      \ 'light_grey': ['#a2a2a2',   '245',  'LightGrey'],
+      \ 'gold':       ['#BDD2ED',   '214',  'Yellow'],
       \ 'none':       ['NONE',      'NONE', 'NONE']
       \ }
 " }}}
@@ -185,7 +185,7 @@ call s:HL('StatusLineTermNC', s:palette.grey, s:palette.bg1)
 call s:HL('TabLine', s:palette.fg, s:palette.bg4)
 call s:HL('TabLineFill', s:palette.grey, s:palette.bg1)
 call s:HL('TabLineSel', s:palette.bg0, s:palette.green)
-call s:HL('VertSplit', s:palette.grey, s:palette.none)
+call s:HL('VertSplit', s:palette.bg4, s:palette.bg1)
 call s:HL('Visual', s:palette.fg, s:palette.gold)
 call s:HL('VisualNOS', s:palette.bg0, s:palette.gold, 'underline')
 call s:HL('CursorIM', s:palette.none, s:palette.fg)

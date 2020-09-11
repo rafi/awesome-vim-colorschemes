@@ -61,19 +61,20 @@ if s:oceanic_material_allow_undercurl == 1
   let s:undercurl = ' cterm=undercurl gui=undercurl '
 endif
 
+let s:background = {
+      \'medium': ['#282C34', '235'],
+      \'ocean' : ['#1b2b34', '235'],
+      \'deep': ['#212121', 'NONE'],
+      \'darker': ['#1d1f21', '234'],
+      \}
 
 let s:colors = {
+      \ 'bg0':              s:background[s:oceanic_material_background],
       \ 'bg1':              ['#343d46',   '237'],
       \ 'bg2':              ['#282828',   '235'],
       \ 'bg3':              ['#3c3836',   '237'],
       \ 'bg4':              ['#3c3836',   '237'],
       \ 'bg5':              ['#504945',   '239'],
-      \ 'bg_diff_green':    ['#32361a',   '22'],
-      \ 'bg_visual_green':  ['#333e34',   '22'],
-      \ 'bg_diff_red':      ['#3c1f1e',   '52'],
-      \ 'bg_visual_red':    ['#442e2d',   '52'],
-      \ 'bg_diff_blue':     ['#0d3138',   '18'],
-      \ 'bg_visual_blue':   ['#2e3b3b',   '18'],
       \ 'fg0':              ['#d4be98',   '223'],
       \ 'fg1':              ['#ddc7a1',   '223'],
       \ 'fg3':              ['#4f5b66',   '17'],
@@ -81,11 +82,10 @@ let s:colors = {
       \ 'magenta':          ['#d16d9e',   '205'],
       \ 'orange':           ['#e78a4e',   '208'],
       \ 'yellow':           ['#d8a657',   '214'],
-      \ 'green':            ['#a9b665',   '142'],
+      \ 'green':            ['#a7c777',   '111'],
       \ 'aqua':             ['#62b3b2',   '73'],
       \ 'blue':             ['#6699cc',   '68'],
       \ 'purple':           ['#c594c5',   '176'],
-      \ 'darkgreen':        ['#5faf5f',    '71'],
       \ 'black':            ['#000000',    '0'],
       \ 'bg_red':           ['#ea6962',   '167'],
       \ 'grey0':            ['#7c6f64',   '243'],
@@ -94,14 +94,6 @@ let s:colors = {
       \ 'operator_base05':  ['#c0c5ce',   '251'],
       \ 'none':             ['NONE',      'NONE']
   \ }
-
-if s:oceanic_material_background == 'medium'
-  let s:colors['bg0']  = ['#282C34', '235']
-elseif s:oceanic_material_background =='ocean'
-  let s:colors['bg0']  = ['#1b2b34', '235']
-elseif s:oceanic_material_background == 'darker'
-  let s:colors['bg0']  = ['#212121', 'NONE']
-endif
 
 function! g:OceanicMaterialPalette()
   return copy(s:colors)
@@ -187,11 +179,11 @@ function! s:apply_syntax_highlightings()
   exec 'hi CursorColumn'. s:fg_none. s:fg_bg1
   exec 'hi CursorLine'. s:fg_none . s:bg_bg1
   exec 'hi LineNr'. s:fg_grey0
-  exec 'hi CursorLineNr'. s:fg_darkgreen
-  exec 'hi DiffAdd'. s:fg_none . s:bg_bg_diff_green
-  exec 'hi DiffChange'. s:fg_none. s:bg_bg_diff_blue
-  exec 'hi DiffDelete'. s:fg_none. s:bg_bg_diff_red
-  exec 'hi DiffText'. s:fg_bg0 . s:bg_fg0
+  exec 'hi CursorLineNr'. s:fg_fg1
+  exec 'hi DiffAdd'. s:fg_black . s:bg_green
+  exec 'hi DiffChange'. s:fg_black. s:bg_yellow
+  exec 'hi DiffDelete'. s:fg_black. s:bg_red
+  exec 'hi DiffText'. s:fg_black . s:bg_fg0
   exec 'hi Directory'. s:fg_bg5. s:bg_none
   exec 'hi ErrorMsg'. s:fg_red. s:bg_none. s:bold . s:underline
   exec 'hi WarningMsg'. s:fg_yellow. s:bg_none. s:bold
@@ -865,25 +857,6 @@ function! s:apply_syntax_highlightings()
   exec 'hi semshiErrorSign' . s:fg_red
   exec 'hi semshiErrorChar' . s:fg_red
   "===============================================================
-  " Lua:
-  "===============================================================
-  exec 'hi luaFunc' . s:fg_green  . s:bold
-  exec 'hi luaFunction' . s:fg_aqua
-  exec 'hi luaTable' . s:fg_fg0
-  exec 'hi luaIn' . s:fg_red  . s:italic
-  " vim-lua: https://github.com/tbastos/vim-lua
-  exec 'hi luaFuncCall' . s:fg_green  . s:bold
-  exec 'hi luaLocal' . s:fg_orange
-  exec 'hi luaSpecialValue' . s:fg_green  . s:bold
-  exec 'hi luaBraces' . s:fg_fg0
-  exec 'hi luaBuiltIn' . s:fg_purple
-  exec 'hi luaNoise' . s:fg_grey1
-  exec 'hi luaLabel' . s:fg_purple
-  exec 'hi luaFuncTable' . s:fg_yellow
-  exec 'hi luaFuncArgName' . s:fg_blue
-  exec 'hi luaEllipsis' . s:fg_orange
-  exec 'hi luaDocTag' . s:fg_green
-  "===============================================================
   " Java:
   "===============================================================
   exec 'hi javaClassDecl' . s:fg_red  . s:italic
@@ -1111,25 +1084,11 @@ function! s:apply_syntax_highlightings()
   "===============================================================
   exec 'hi vimCommentTitle'. s:fg_grey1. s:bold
   exec 'hi vimLet' . s:fg_orange
-  exec 'hi vimFunction' . s:fg_green  . s:bold
+  exec 'hi vimVar' . s:fg_aqua
+  exec 'hi vimFunction' . s:fg_magenta  . s:bold
   exec 'hi vimIsCommand' . s:fg_fg0
-  exec 'hi vimUserFunc' . s:fg_green  . s:bold
-  exec 'hi vimFuncName' . s:fg_green  . s:bold
-  exec 'hi vimMap' . s:fg_purple  . s:italic
-  exec 'hi vimNotation' . s:fg_aqua
-  exec 'hi vimMapLhs' . s:fg_green
-  exec 'hi vimMapRhs' . s:fg_green
-  exec 'hi vimSetEqual' . s:fg_yellow
-  exec 'hi vimSetSep' . s:fg_fg0
-  exec 'hi vimOption' . s:fg_aqua
-  exec 'hi vimUserAttrbKey' . s:fg_yellow
-  exec 'hi vimUserAttrb' . s:fg_green
-  exec 'hi vimAutoCmdSfxList' . s:fg_aqua
-  exec 'hi vimSynType' . s:fg_orange
-  exec 'hi vimHiBang' . s:fg_orange
-  exec 'hi vimSet' . s:fg_yellow
-  exec 'hi vimSetSep' . s:fg_grey1
-  exec 'hi vimContinue' . s:fg_grey1
+  exec 'hi vimUserFunc' . s:fg_yellow  . s:bold
+  exec 'hi vimFuncName' . s:fg_yellow  . s:bold
   "===============================================================
   " Makefile:
   "===============================================================
@@ -1178,17 +1137,10 @@ function! s:apply_syntax_highlightings()
   exec 'hi gitcommitArrow' . s:fg_grey1
   exec 'hi gitcommitFile' . s:fg_green
   "===============================================================
-  "INI:
-  "===============================================================
-  exec 'hi dosiniHeader'. s:fg_red. s:bold
-  exec 'hi dosiniLabel' . s:fg_yellow
-  exec 'hi dosiniValue' . s:fg_green
-  exec 'hi dosiniNumber' . s:fg_green
-  "===============================================================
   " neoclide/coc.nvim
   "===============================================================
   exec 'hi CocHoverRange'. s:fg_none. s:bold . s:underline
-  exec 'hi CocHintHighlight'. s:fg_none. s:undercurl. s:sp_aqua
+  exec 'hi CocHintHighlight'. s:fg_none. s:undercurl. s:sp_aqua .s:underline
   exec 'hi CocErrorFloat'. s:fg_red. s:bg_bg3
   exec 'hi CocWarningFloat'. s:fg_yellow. s:bg_bg3
   exec 'hi CocInfoFloat'. s:fg_blue. s:bg_bg3
@@ -1198,8 +1150,8 @@ function! s:apply_syntax_highlightings()
   exec 'hi CocWarningSign' . s:fg_yellow
   exec 'hi CocInfoSign' . s:fg_blue
   exec 'hi CocHintSign' . s:fg_aqua
-  exec 'hi CocErrorHighlight' . s:fg_none  . s:undercurl . s:sp_red
-  exec 'hi CocWarningHighlight' . s:fg_none  . s:undercurl . s:sp_yellow
+  exec 'hi CocErrorHighlight' . s:fg_none  . s:undercurl . s:sp_red . s:underline
+  exec 'hi CocWarningHighlight' . s:fg_none  . s:undercurl . s:sp_yellow.s:underline
   exec 'hi CocInfoHighlight' . s:fg_none  . s:undercurl . s:sp_blue
   exec 'hi CocWarningVirtualText' . s:fg_grey1
   exec 'hi CocErrorVirtualText' . s:fg_grey1
@@ -1335,10 +1287,6 @@ function! s:apply_syntax_highlightings()
   exec 'hi WhichKeyGroup' . s:fg_yellow
   exec 'hi WhichKeyDesc' . s:fg_blue
   "===============================================================
-  " machakann/vim-sandwich
-  "===============================================================
-  exec 'hi OperatorSandwichChange' .s:fg_bg4 . s:bg_darkgreen
-  "===============================================================
   "kristijanhusak/vim-dadbod-ui
   "===============================================================
   exec 'hi dbui_tables' . s:fg_blue
@@ -1355,6 +1303,10 @@ function! s:apply_syntax_highlightings()
   exec 'hi DashboardFooter' . s:fg_purple .s:bold
   exec 'hi DashboardHeader' . s:fg_blue .s:bold
   "===============================================================
+  " voldkiss/vim-floaterm
+  "===============================================================
+  exec 'hi Floaterm' .s:fg_none . s:bg_bg0
+  exec 'hi FloatermBorder' .s:fg_blue . s:bg_none
 
 endfunction
 
