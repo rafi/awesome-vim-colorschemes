@@ -44,7 +44,7 @@ colorscheme dogrun
 
 #### lightline theme
 
-If you want, specify `dogrun` for `colorscheme`.
+If you want, specify `dogrun` to `colorscheme`.
 
 ```vim
 let g:lightline = {
@@ -54,7 +54,7 @@ let g:lightline = {
 
 #### vim-clap theme
 
-If you want, specify `dogrun` for `g:clap_theme`.
+If you want, specify `dogrun` to `g:clap_theme`.
 
 ```vim
 let g:clap_theme = 'dogrun'
@@ -98,6 +98,7 @@ From now on, we will gradually support it :dog:
 - [easymotion](https://github.com/easymotion/vim-easymotion)
 - [fern.vim](https://github.com/lambdalisue/fern.vim)
 - [fugitive.vim](https://github.com/tpope/vim-fugitive)
+- [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [lightline.vim](https://github.com/itchyny/lightline.vim)
 - [vim-clap](https://github.com/liuchengxu/vim-clap)
 - [vim-gitgutter](https://github.com/airblade/vim-gitgutter)

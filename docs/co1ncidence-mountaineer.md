@@ -2,47 +2,24 @@
 
 <p align="center"
 
-![img](scrots/mountaineer.png)
+![img](screenshots/mountaineer.png)
 
 </p>
 
-<p align="center" 
+<p align="center"
 
-![img](scrots/2.png)
-
-</p>
-
-<p align="center" 
-
-![img](scrots/3.png)
+![img](screenshots/mountaineer-grey.png)
 
 </p>
 
-<p align="center" 
+<p align="center"
 
-![img](scrots/1.png)
-
-</p>
-
-<p align="center" 
-
-![img](xfce-colorschemes/Screenshot.gif)
+![img](screenshots/mountaineer-light.png)
 
 </p>
 
-<p align="center" 
+## Installation
 
-![img](rofi/Screenshot1_dark.png)
+Move `colors/*` into your Vim colors folder, usually `~/.vim/colors` or `~/.config/nvim/colors` and set `colorscheme mountaineer{-grey|light}` in your Vim config.
 
-</p>
-
-<p align="center" 
-
-![img](rofi/Screenshot2.png)
-
-</p>
-
-### Installation:
-Simply move the variant you would like to use into your Vim/Neovim colorscheme folder.
-
-Themes for rofi, xfce4-terminal, and lightline.vim are also included if you would like to use them.
+There are also colorschemes for many different terminals and a Rofi theme included as well. If you would like to add a colorscheme for another app, please create a pull respect.

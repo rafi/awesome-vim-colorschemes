@@ -14,7 +14,7 @@
 
 A similar procedure should work with other plugin managers.
 
-**Option 2**: Manual installation (assuming your using Vim rather than Neovim)
+**Option 2**: Manual installation (assuming you're using Vim, as opposed to Neovim)
 
 1. Download the colorscheme: `curl -O https://raw.githubusercontent.com/sts10/vim-pink-moon/master/colors/pink-moon.vim`
 2. Move the colorscheme to `~/.vim/colors`: `mkdir -p ~/.vim/colors & mv pink-moon.vim ~/.vim/colors/`

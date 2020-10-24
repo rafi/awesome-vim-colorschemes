@@ -225,7 +225,7 @@ let g:defx_icons_gui_colors = {
   \ 'green': '63976f',
   \ 'lightGreen': '5aa46c',
   \ 'white': '898da6',
-  \}
+  \ }
 let g:defx_icons_term_colors = {
   \ 'brown': 160,
   \ 'aqua': 30,
@@ -243,4 +243,20 @@ let g:defx_icons_term_colors = {
   \ 'green': 65,
   \ 'lightGreen': 71,
   \ 'white': 103,
-  \}
+  \ }
+let g:fzf_colors = {
+  \ 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine'],
+  \ 'bg+':     ['bg', 'CursorLine'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'Comment'],
+  \ 'gutter':  ['bg', 'Normal'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Label'],
+  \ 'pointer': ['fg', 'Boolean'],
+  \ 'marker':  ['fg', 'Boolean'],
+  \ 'spinner': ['fg', 'Title'],
+  \ 'header':  ['fg', 'Comment'],
+  \ }

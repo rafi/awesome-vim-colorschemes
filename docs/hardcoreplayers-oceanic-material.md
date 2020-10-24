@@ -34,7 +34,7 @@ colorscheme oceanic_material
 | option                                      | value                                     | default                                             |
 | ------------------------------------------- | ----------------------------------------- | --------------------------------------------------- |
 | `g:oceanic_material_transparent_background` | 1: enable transparent background          | 0:disable transparent background                    |
-| `g:oceanic_material_background`             | 'ocean' use `#282c34` color as background | ocean: `#1b2b34` medium: `#282C34` deep:#212112 darker:`#1d1f21` |
+| `g:oceanic_material_background`             | 'medium' use `#282c34` color as background | ocean: `#1b2b34` medium: `#282C34` deep:#212112 darker:`#1d1f21` |
 | `g:oceanic_material_allow_bold`             | 1: use bold for certain text              | 0: not at all                                       |
 | `g:oceanic_material_allow_italic`           | 1: use italic for certain text            | 0: not at all                                       |
 | `g:oceanic_material_allow_underline`        | 1: use underline for certain text         | 0: not at all                                       |
@@ -102,7 +102,7 @@ colorscheme oceanic_material
 - machakann/vim-sandwich
 - kristijanhusak/vim-dadbod-ui
 - Shougo/defx.nvim
-- hardcoreplayers/dashboard-nvim
+- glepnir/dashboard-nvim
 
 # Donate
 
@@ -121,3 +121,5 @@ Do you like oceanic_material? buy me a coffe 😘!
 - [NLKNguyen/papercolor-theme](https://github.com/NLKNguyen/papercolor-theme)
 
 - [mhartington/oceanic-next](https://github.com/mhartington/oceanic-next)
+
+- [sainnhe/gruvbox-material](https://github.com/sainnhe/gruvbox-material)

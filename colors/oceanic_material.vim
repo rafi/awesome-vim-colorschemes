@@ -289,26 +289,6 @@ function! s:apply_syntax_highlightings()
   exec 'hi markdownIdDeclaration'. s:fg_purple
   exec 'hi markdownBoldDelimiter'. s:fg_grey1
   exec 'hi markdownId'. s:fg_yellow
-
-  " Plugin: https://github.com/gabrielelana/vim-markdown
-  exec 'hi mkdURL'. s:fg_blue. s:fg_none. s:underline
-  exec 'hi mkdInlineURL'. s:fg_purple. s:underline
-  exec 'hi mkdItalic'. s:fg_grey1. s:italic
-  exec 'hi mkdCodeDelimiter'.s:fg_aqua
-  exec 'hi mkdBold'.s:fg_grey1
-  exec 'hi mkdLink'.s:fg_purple
-  exec 'hi mkdHeading'.s:fg_grey1
-  exec 'hi mkdListItem'.s:fg_red
-  exec 'hi mkdRule'.s:fg_purple
-  exec 'hi mkdDelimiter'.s:fg_grey1
-  exec 'hi mkdId'.s:fg_yellow
-  "===============================================================
-  " https://github.com/marshallward/vim-restructuredtext
-  "===============================================================
-  exec 'hi rstStandaloneHyperlink'. s:fg_purple.s:underline
-  exec 'hi rstSubstitutionReference'.s:fg_blue
-  exec 'hi rstInterpretedTextOrHyperlinkReference'.s:fg_aqua
-  exec 'hi rstTableLines'.s:fg_grey1
   "===============================================================
   " Latex: http://www.drchip.org/astronaut/vim/index.html#SYNTAX_TEX
   "===============================================================
@@ -321,110 +301,6 @@ function! s:apply_syntax_highlightings()
   exec 'hi texBeginEndName'.s:fg_blue
   exec 'hi texDocType'.s:fg_purple
   exec 'hi texDocTypeArgs'.s:fg_orange
-  "===============================================================
-  " Html: https://notabug.org/jorgesumle/vim-html-syntax {{{
-  "===============================================================
-  exec 'hi htmlH1'. s:fg_red. s:bold
-  exec 'hi htmlH2'. s:fg_orange. s:bold
-  exec 'hi htmlH3'. s:fg_yellow. s:bold
-  exec 'hi htmlH4'. s:fg_green. s:bold
-  exec 'hi htmlH5'. s:fg_blue. s:bold
-  exec 'hi htmlH6'. s:fg_purple.s:bold
-  exec 'hi htmlLink'. s:fg_none. s:underline
-  exec 'hi htmlBold'. s:fg_none. s:bold
-  exec 'hi htmlBoldUnderline'. s:fg_none. s:bold . s:underline
-  exec 'hi htmlBoldItalic'. s:fg_none. s:bold . s:italic
-  exec 'hi htmlBoldUnderlineItalic'. s:fg_none. s:bold . s:underline . s:italic
-  exec 'hi htmlUnderline'. s:fg_none. s:fg_none. s:underline
-  exec 'hi htmlUnderlineItalic'. s:fg_none. s:underline . s:italic
-  exec 'hi htmlItalic'. s:fg_none. s:italic
-  exec 'hi htmlTag'. s:fg_green
-  exec 'hi htmlEndTag'. s:fg_blue
-  exec 'hi htmlTagN'. s:fg_orange. s:italic
-  exec 'hi htmlTagName'. s:fg_orange. s:italic
-  exec 'hi htmlArg'. s:fg_aqua
-  exec 'hi htmlScriptTag'. s:fg_purple
-  exec 'hi htmlSpecialTagName'. s:fg_red.s:italic
-  "===============================================================
-  " Xml:" builtin: https://github.com/chrisbra/vim-xml-ftplugin
-  "===============================================================
-  exec 'hi xmlTag'. s:fg_green
-  exec 'hi xmlEndTag'. s:fg_blue
-  exec 'hi xmlTagName'. s:fg_orange.s:italic
-  exec 'hi xmlEqual'. s:fg_orange
-  exec 'hi xmlAttrib'. s:fg_aqua
-  exec 'hi xmlEntity'. s:fg_red
-  exec 'hi xmlEntityPunct'. s:fg_red
-  exec 'hi xmlDocTypeDecl'. s:fg_grey1
-  exec 'hi xmlDocTypeKeyword'. s:fg_purple.s:italic
-  exec 'hi xmlCdataStart'. s:fg_grey1
-  exec 'hi xmlCdataCdata'. s:fg_purple
-  "===============================================================
-  " CSS: builtin: https://github.com/JulesWang/css.vim
-  "===============================================================
-  exec 'hi cssAttrComma'.s:fg_fg0
-  exec 'hi cssBraces'.s:fg_fg0
-  exec 'hi cssTagName'.s:fg_purple. s:fg_none. s:italic
-  exec 'hi cssClassNameDot'.s:fg_red
-  exec 'hi cssClassName'.s:fg_red .s:italic
-  exec 'hi cssFunctionName'.s:fg_yellow
-  exec 'hi cssAttr'.s:fg_orange
-  exec 'hi cssProp'.s:fg_aqua
-  exec 'hi cssCommonAttr'.s:fg_yellow
-  exec 'hi cssPseudoClassId'.s:fg_blue
-  exec 'hi cssPseudoClassFn'.s:fg_green
-  exec 'hi cssPseudoClass'.s:fg_purple
-  exec 'hi cssImportant'.s:fg_red  . s:italic
-  exec 'hi cssSelectorOp'.s:fg_orange
-  exec 'hi cssSelectorOp2'.s:fg_orange
-  exec 'hi cssColor'.s:fg_green
-  exec 'hi cssAttributeSelector'.s:fg_aqua
-  exec 'hi cssUnitDecorators'.s:fg_orange
-  exec 'hi cssValueLength'.s:fg_green
-  exec 'hi cssValueInteger'.s:fg_green
-  exec 'hi cssValueNumber'.s:fg_green
-  exec 'hi cssValueAngle'.s:fg_green
-  exec 'hi cssValueTime'.s:fg_green
-  exec 'hi cssValueFrequency'.s:fg_green
-  exec 'hi cssVendor'.s:fg_grey1
-  exec 'hi cssNoise'.s:fg_grey1
-  "===============================================================
-  " SASS
-  "===============================================================
-  exec 'hi sassProperty'.s:fg_aqua
-  exec 'hi sassAmpersand'.s:fg_orange
-  exec 'hi sassClass'.s:fg_red  .s:italic
-  exec 'hi sassClassChar'.s:fg_red
-  exec 'hi sassMixing'.s:fg_purple .s:italic
-  exec 'hi sassMixinName'.s:fg_orange
-  exec 'hi sassCssAttribute'.s:fg_yellow
-  exec 'hi sassInterpolationDelimiter'.s:fg_green
-  exec 'hi sassFunction'.s:fg_yellow
-  exec 'hi sassControl'.s:fg_red  .s:italic
-  exec 'hi sassFor'.s:fg_red  .s:italic
-  exec 'hi sassFunctionName'.s:fg_green . s:bold
-  "===============================================================
-  " scss-syntax: https://github.com/cakebaker/scss-syntax.vim
-  "===============================================================
-  exec 'hi scssMixinName'.s:fg_yellow
-  exec 'hi scssSelectorChar'.s:fg_red
-  exec 'hi scssSelectorName'.s:fg_red  .s:italic
-  exec 'hi scssInterpolationDelimiter'.s:fg_green
-  exec 'hi scssVariableValue'.s:fg_green
-  exec 'hi scssNull'.s:fg_purple
-  exec 'hi scssBoolean'.s:fg_purple
-  exec 'hi scssVariableAssignment'.s:fg_grey1
-  exec 'hi scssForKeyword'.s:fg_purple  .s:italic
-  exec 'hi scssAttribute'.s:fg_orange
-  exec 'hi scssFunctionName'.s:fg_yellow
-  "===============================================================
-  " LESS: vim-less: https://github.com/groenewege/vim-less
-  "===============================================================
-  exec ' hi lessMixinChar'.s:fg_grey1
-  exec ' hi lessClass'.s:fg_red  .s:italic
-  exec ' hi lessVariable'.s:fg_blue
-  exec ' hi lessAmpersandChar'.s:fg_orange
-  exec ' hi lessFunction'.s:fg_yellow
   "===============================================================
   " Javascript:
   " https://github.com/pangloss/vim-javascript
@@ -857,21 +733,6 @@ function! s:apply_syntax_highlightings()
   exec 'hi semshiErrorSign' . s:fg_red
   exec 'hi semshiErrorChar' . s:fg_red
   "===============================================================
-  " Java:
-  "===============================================================
-  exec 'hi javaClassDecl' . s:fg_red  . s:italic
-  exec 'hi javaMethodDecl' . s:fg_red  . s:italic
-  exec 'hi javaVarArg' . s:fg_green
-  exec 'hi javaAnnotation' . s:fg_blue
-  exec 'hi javaUserLabel' . s:fg_purple
-  exec 'hi javaTypedef' . s:fg_aqua
-  exec 'hi javaParen' . s:fg_fg0
-  exec 'hi javaParen1' . s:fg_fg0
-  exec 'hi javaParen2' . s:fg_fg0
-  exec 'hi javaParen3' . s:fg_fg0
-  exec 'hi javaParen4' . s:fg_fg0
-  exec 'hi javaParen5' . s:fg_fg0
-  "===============================================================
   " Kotlin:
   " kotlin-vim: https://github.com/udalov/kotlin-vim
   "===============================================================
@@ -934,17 +795,8 @@ function! s:apply_syntax_highlightings()
   exec 'hi swiftClosureArgument' . s:fg_purple
   "===============================================================
   " PHP:
-  " builtin: https://jasonwoof.com/gitweb/?p=vim-syntax.git;a=blob;f=php.vim;hb=HEAD
-  "===============================================================
-  exec 'hi phpVarSelector' . s:fg_blue
-  exec 'hi phpDefine' . s:fg_orange  . s:italic
-  exec 'hi phpStructure' . s:fg_red  . s:italic
-  exec 'hi phpSpecialFunction' . s:fg_green  . s:bold
-  exec 'hi phpInterpSimpleCurly' . s:fg_yellow
-  exec 'hi phpComparison' . s:fg_orange
-  exec 'hi phpMethodsVar' . s:fg_aqua
-  exec 'hi phpMemberSelector' . s:fg_green
   " php.vim: https://github.com/StanAngeloff/php.vim
+  "===============================================================
   exec 'hi phpParent' . s:fg_fg0
   exec 'hi phpNowDoc' . s:fg_green
   exec 'hi phpFunction' . s:fg_green  . s:bold
