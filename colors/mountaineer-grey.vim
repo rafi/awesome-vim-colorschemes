@@ -152,7 +152,7 @@ endif
 " Theme setup
 hi clear
 syntax reset
-let g:colors_name = "tomorrow"
+let g:colors_name = "mountaineer-grey"
 
 " Highlighting function
 " Optional variables are attributes and guisp

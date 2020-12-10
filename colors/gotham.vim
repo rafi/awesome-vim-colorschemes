@@ -233,7 +233,11 @@ call s:Col('rubyStringDelimiter', 'green')
 " HTML (and often Markdown).
 call s:Col('htmlArg', 'blue')
 call s:Col('htmlItalic', 'magenta')
+call s:Attr('htmlItalic', 'italic')
 call s:Col('htmlBold', 'cyan', '')
+call s:Attr('htmlBold', 'bold')
+call s:Col('htmlBoldItalic', 'cyan', '')
+call s:Attr('htmlBoldItalic', 'bold,italic')
 
 " Python                                                                                                                   
 call s:Col('pythonStatement', 'blue')

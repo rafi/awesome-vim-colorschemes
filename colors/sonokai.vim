@@ -21,7 +21,7 @@ endif
 let s:configuration = sonokai#get_configuration()
 let s:palette = sonokai#get_palette(s:configuration.style)
 let s:path = expand('<sfile>:p') " the path of this script
-let s:last_modified = 'Mon 29 Jun 2020 10:07:19 AM UTC'
+let s:last_modified = 'Mon Nov 23 03:17:36 AM UTC 2020'
 let g:sonokai_loaded_file_types = []
 " }}}
 " Common Highlight Groups: {{{
@@ -61,10 +61,17 @@ highlight! link vCursor Cursor
 highlight! link iCursor Cursor
 highlight! link lCursor Cursor
 highlight! link CursorIM Cursor
-call sonokai#highlight('CursorColumn', s:palette.none, s:palette.bg1)
-call sonokai#highlight('CursorLine', s:palette.none, s:palette.bg1)
+if &diff
+  call sonokai#highlight('CursorLine', s:palette.none, s:palette.none, 'underline')
+  call sonokai#highlight('CursorColumn', s:palette.none, s:palette.none, 'bold')
+else
+  call sonokai#highlight('CursorLine', s:palette.none, s:palette.bg1)
+  call sonokai#highlight('CursorColumn', s:palette.none, s:palette.bg1)
+endif
 call sonokai#highlight('LineNr', s:palette.grey, s:palette.none)
-if (&relativenumber == 1 && &cursorline == 0) || s:configuration.sign_column_background !=# 'default'
+if &diff
+  call sonokai#highlight('CursorLineNr', s:palette.fg, s:palette.none, 'underline')
+elseif (&relativenumber == 1 && &cursorline == 0) || s:configuration.sign_column_background !=# 'default'
   call sonokai#highlight('CursorLineNr', s:palette.fg, s:palette.none)
 else
   call sonokai#highlight('CursorLineNr', s:palette.fg, s:palette.bg1)
@@ -93,6 +100,7 @@ elseif s:configuration.menu_selection_background ==# 'red'
 endif
 highlight! link WildMenu PmenuSel
 call sonokai#highlight('PmenuThumb', s:palette.none, s:palette.grey)
+call sonokai#highlight('NormalFloat', s:palette.fg, s:palette.bg2)
 call sonokai#highlight('Question', s:palette.yellow, s:palette.none)
 call sonokai#highlight('SpellBad', s:palette.red, s:palette.none, 'undercurl', s:palette.red)
 call sonokai#highlight('SpellCap', s:palette.yellow, s:palette.none, 'undercurl', s:palette.yellow)
@@ -114,18 +122,31 @@ call sonokai#highlight('debugPC', s:palette.bg0, s:palette.green)
 call sonokai#highlight('debugBreakpoint', s:palette.bg0, s:palette.red)
 call sonokai#highlight('ToolbarButton', s:palette.bg0, s:palette.bg_blue)
 if has('nvim')
+  call sonokai#highlight('LspDiagnosticsFloatingError', s:palette.red, s:palette.bg2)
+  call sonokai#highlight('LspDiagnosticsFloatingWarning', s:palette.yellow, s:palette.bg2)
+  call sonokai#highlight('LspDiagnosticsFloatingInformation', s:palette.blue, s:palette.bg2)
+  call sonokai#highlight('LspDiagnosticsFloatingHint', s:palette.green, s:palette.bg2)
   call sonokai#highlight('Substitute', s:palette.bg0, s:palette.yellow)
+  highlight! link LspDiagnosticsDefaultError ErrorLine
+  highlight! link LspDiagnosticsDefaultWarning WarningLine
+  highlight! link LspDiagnosticsDefaultInformation InfoLine
+  highlight! link LspDiagnosticsDefaultHint HintLine
+  highlight! link LspDiagnosticsVirtualTextError Grey
+  highlight! link LspDiagnosticsVirtualTextWarning Grey
+  highlight! link LspDiagnosticsVirtualTextInformation Grey
+  highlight! link LspDiagnosticsVirtualTextHint Grey
+  highlight! link LspDiagnosticsUnderlineError ErrorLine
+  highlight! link LspDiagnosticsUnderlineWarning WarningLine
+  highlight! link LspDiagnosticsUnderlineInformation InfoLine
+  highlight! link LspDiagnosticsUnderlineHint HintLine
+  highlight! link LspDiagnosticsSignError RedSign
+  highlight! link LspDiagnosticsSignWarning YellowSign
+  highlight! link LspDiagnosticsSignInformation BlueSign
+  highlight! link LspDiagnosticsSignHint GreenSign
   highlight! link TermCursor Cursor
   highlight! link healthError Red
   highlight! link healthSuccess Green
   highlight! link healthWarning Yellow
-  highlight! link LspDiagnosticsError Grey
-  highlight! link LspDiagnosticsWarning Grey
-  highlight! link LspDiagnosticsInformation Grey
-  highlight! link LspDiagnosticsHint Grey
-  highlight! link LspReferenceText CurrentWord
-  highlight! link LspReferenceRead CurrentWord
-  highlight! link LspReferenceWrite CurrentWord
 endif
 " }}}
 " Syntax: {{{
@@ -219,17 +240,19 @@ else
   call sonokai#highlight('PurpleSign', s:palette.purple, s:palette.bg1)
 endif
 if s:configuration.diagnostic_line_highlight
-  call sonokai#highlight('ErrorLine', s:palette.bg0, s:palette.red)
-  call sonokai#highlight('WarningLine', s:palette.bg0, s:palette.yellow)
-  call sonokai#highlight('InfoLine', s:palette.bg0, s:palette.blue)
-  call sonokai#highlight('HintLine', s:palette.bg0, s:palette.green)
+  call sonokai#highlight('ErrorLine', s:palette.none, s:palette.diff_red)
+  call sonokai#highlight('WarningLine', s:palette.none, s:palette.diff_yellow)
+  call sonokai#highlight('InfoLine', s:palette.none, s:palette.diff_blue)
+  call sonokai#highlight('HintLine', s:palette.none, s:palette.diff_green)
 else
   highlight clear ErrorLine
   highlight clear WarningLine
   highlight clear InfoLine
   highlight clear HintLine
 endif
-if s:configuration.current_word ==# 'grey background'
+if &diff
+  call sonokai#highlight('CurrentWord', s:palette.bg0, s:palette.green)
+elseif s:configuration.current_word ==# 'grey background'
   call sonokai#highlight('CurrentWord', s:palette.none, s:palette.bg2)
 else
   call sonokai#highlight('CurrentWord', s:palette.none, s:palette.none, s:configuration.current_word)
@@ -342,21 +365,40 @@ highlight! link CocGitTopRemovedSign RedSign
 highlight! link CocExplorerBufferRoot Red
 highlight! link CocExplorerBufferExpandIcon Blue
 highlight! link CocExplorerBufferBufnr Yellow
-highlight! link CocExplorerBufferModified Red
+highlight! link CocExplorerBufferModified Yellow
+highlight! link CocExplorerBufferReadonly Red
 highlight! link CocExplorerBufferBufname Grey
 highlight! link CocExplorerBufferFullpath Grey
 highlight! link CocExplorerFileRoot Red
+highlight! link CocExplorerFileRootName Green
 highlight! link CocExplorerFileExpandIcon Blue
 highlight! link CocExplorerFileFullpath Grey
 highlight! link CocExplorerFileDirectory Green
-highlight! link CocExplorerFileGitStage Blue
-highlight! link CocExplorerFileGitUnstage Yellow
+highlight! link CocExplorerFileGitStaged Purple
+highlight! link CocExplorerFileGitUnstaged Yellow
+highlight! link CocExplorerFileGitRootStaged Purple
+highlight! link CocExplorerFileGitRootUnstaged Yellow
+highlight! link CocExplorerGitPathChange Fg
+highlight! link CocExplorerGitContentChange Fg
+highlight! link CocExplorerGitRenamed Purple
+highlight! link CocExplorerGitCopied Fg
+highlight! link CocExplorerGitAdded Green
+highlight! link CocExplorerGitUntracked Blue
+highlight! link CocExplorerGitUnmodified Fg
+highlight! link CocExplorerGitUnmerged Orange
+highlight! link CocExplorerGitMixed Fg
+highlight! link CocExplorerGitModified Yellow
+highlight! link CocExplorerGitDeleted Red
+highlight! link CocExplorerGitIgnored Grey
 highlight! link CocExplorerFileSize Blue
 highlight! link CocExplorerTimeAccessed Purple
 highlight! link CocExplorerTimeCreated Purple
 highlight! link CocExplorerTimeModified Purple
 highlight! link CocExplorerFileRootName Orange
 highlight! link CocExplorerBufferNameVisible Green
+highlight! link CocExplorerIndentLine Conceal
+highlight! link CocExplorerHelpDescription Grey
+highlight! link CocExplorerHelpHint Grey
 " }}}
 " prabirshrestha/vim-lsp {{{
 highlight! link LspErrorVirtual Grey

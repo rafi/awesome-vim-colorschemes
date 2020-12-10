@@ -24,7 +24,7 @@ endif
 
 let s:oceanic_material_transparent_background = get(g:,'oceanic_material_transparent_background',0)
 
-let s:oceanic_material_background = get(g:,'oceanic_material_background','medium')
+let s:oceanic_material_background = get(g:,'oceanic_material_background','ocean')
 
 let s:oceanic_material_allow_bold = get(g:,'oceanic_material_allow_bold', 0)
 
@@ -244,7 +244,7 @@ function! s:apply_syntax_highlightings()
   exec 'hi Special'. s:fg_yellow
   exec 'hi SpecialChar'. s:fg_yellow
   exec 'hi Type'. s:fg_yellow
-  exec 'hi Function'. s:fg_magenta. 'gui=bold'
+  exec 'hi Function'. s:fg_magenta. s:bold
   exec 'hi String'. s:fg_green
   exec 'hi Character'. s:fg_green
   exec 'hi Constant'. s:fg_aqua
