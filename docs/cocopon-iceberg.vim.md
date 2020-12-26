@@ -14,7 +14,7 @@ information.
 # Features
 - Simple: no configuration required and easy to use
 - Fast: pre-compiled to reduce loading time
-- Dark and light background (light version is in public beta)
+- Dark and light background
 - 256-colors terminal support
 - Terminal colors support
 - [airline][airline] theme and [lightline][lightline] colorscheme

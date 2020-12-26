@@ -84,8 +84,8 @@ function! iceberg#palette#dark#create() abort
   let g.search_fg = pgmnt#color#hsl(hue_orange, 0.50, 0.15)
   let g.specialkey_fg = pgmnt#color#adjust_color(
         \ g.normal_bg, {
-        \   'saturation': +0.08,
-        \   'lightness': +0.09,
+        \   'saturation': +0.10,
+        \   'lightness': +0.35,
         \ })
   let g.tablinesel_bg = g.normal_bg
   let g.tablinesel_fg = pgmnt#color#mix(g.normal_fg, g.normal_bg, 0.75)
@@ -95,6 +95,11 @@ function! iceberg#palette#dark#create() abort
         \ g.normal_bg, {
         \   'saturation': +0.05,
         \   'lightness': +0.10,
+        \ })
+  let g.whitespace_fg = pgmnt#color#adjust_color(
+        \ g.normal_bg, {
+        \   'saturation': +0.08,
+        \   'lightness': +0.09,
         \ })
   let g.wildmenu_bg = pgmnt#color#lighten(g.statusline_bg, 0.30)
   let g.wildmenu_fg = g.statusline_fg
@@ -192,10 +197,11 @@ function! iceberg#palette#dark#create() abort
   let c.matchparen_fg = 255
   let c.search_bg = c.orange
   let c.search_fg = c.normal_bg
-  let c.specialkey_fg = 236
+  let c.specialkey_fg = 240
   let c.todo_bg = c.normal_bg
   let c.todo_fg = c.green
   let c.visual_bg = 236
+  let c.whitespace_fg = 236
   let c.wildmenu_bg = 255
   let c.wildmenu_fg = c.statusline_fg
 

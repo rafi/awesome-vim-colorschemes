@@ -364,8 +364,8 @@ call s:hi('javaScriptDeprecated',	    { 'fg': s:pink, 'styles': [s:styles.italic
 call s:hi('javaScriptReserved',	        { 'fg': s:blue, 'styles': [s:styles.italic] })
 
 function! s:overwrite_javascript_highlight()
-    syn clear javaScriptIdentifier
-    syn clear javaScriptReserved
+    silent! syn clear javaScriptIdentifier
+    silent! syn clear javaScriptReserved
     call s:hi('javascriptEndColons',         { 'fg': s:pink })
     call s:hi('javascriptLogicSymbols',      { 'fg': s:salmon })
     call s:hi('javascriptOpSymbols',         { 'fg': s:pink })
@@ -587,8 +587,8 @@ call s:hi('jsxClosePunct',     { 'fg': s:blue })
 call s:hi('jsxCloseString',    { 'fg': s:blue })
 
 function! s:overwrite_javascriptreact_highlight()
-    syn clear javaScriptIdentifier
-    syn clear javaScriptReserved
+    silent! syn clear javaScriptIdentifier
+    silent! syn clear javaScriptReserved
     call s:hi('jsxDeclarationOverwrite',     { 'fg': s:green, 'styles': [s:styles.italic] })
     call s:hi('jsxBraces',                   { 'fg': s:blue })
     call s:hi('jsxParens',                   { 'fg': s:pink })

@@ -88,8 +88,8 @@ function! iceberg#palette#light#create() abort
   let g.search_fg = pgmnt#color#hsl(hue_orange, 0.50, 0.35)
   let g.specialkey_fg = pgmnt#color#adjust_color(
         \ g.normal_bg, {
-        \   'saturation': +0.08,
-        \   'lightness': -0.09,
+        \   'saturation': +0.25,
+        \   'lightness': -0.18,
         \ })
   let g.tablinesel_bg = g.normal_bg
   let g.tablinesel_fg = pgmnt#color#mix(g.normal_fg, g.normal_bg, 0.75)
@@ -99,6 +99,11 @@ function! iceberg#palette#light#create() abort
         \ g.normal_bg, {
         \   'saturation': +0.05,
         \   'lightness': -0.10,
+        \ })
+  let g.whitespace_fg = pgmnt#color#adjust_color(
+        \ g.normal_bg, {
+        \   'saturation': +0.08,
+        \   'lightness': -0.09,
         \ })
   let g.wildmenu_bg = pgmnt#color#darken(g.statusline_bg, 0.30)
   let g.wildmenu_fg = g.statusline_fg
@@ -193,10 +198,11 @@ function! iceberg#palette#light#create() abort
   let c.matchparen_fg = 0
   let c.search_bg = 180
   let c.search_fg = 94
-  let c.specialkey_fg = 251
+  let c.specialkey_fg = 248
   let c.todo_bg = c.normal_bg
   let c.todo_fg = c.green
   let c.visual_bg = 251
+  let c.whitespace_fg = 251
   let c.wildmenu_bg = 235
   let c.wildmenu_fg = c.statusline_fg
 

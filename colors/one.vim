@@ -364,8 +364,8 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   call <sid>X('CursorLine',   '',              s:syntax_cursor,  'none')
   call <sid>X('Directory',    s:hue_2,         '',               '')
   call <sid>X('ErrorMsg',     s:hue_5,         s:syntax_bg,      'none')
-  call <sid>X('VertSplit',    s:vertsplit,     '',               'none')
-  call <sid>X('Folded',       s:syntax_bg,     s:syntax_fold_bg, 'none')
+  call <sid>X('VertSplit',    s:syntax_cursor, s:syntax_cursor,  'none')
+  call <sid>X('Folded',       s:syntax_fg,     s:syntax_bg,      'none')
   call <sid>X('FoldColumn',   s:mono_3,        s:syntax_cursor,  '')
   call <sid>X('IncSearch',    s:hue_6,         '',               '')
   call <sid>X('LineNr',       s:mono_4,        '',               '')
@@ -706,6 +706,17 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
   call <sid>X('markdownListMarker',       s:hue_5,   '', '')
   " }}}
 
+  " Perl highlighting -------------------------------------------------------{{{
+  call <sid>X('perlFunction',      s:hue_3,     '', '')
+  call <sid>X('perlMethod',        s:syntax_fg, '', '')
+  call <sid>X('perlPackageConst',  s:hue_3,     '', '')
+  call <sid>X('perlPOD',           s:mono_3,    '', '')
+  call <sid>X('perlSubName',       s:syntax_fg, '', '')
+  call <sid>X('perlSharpBang',     s:mono_3,    '', '')
+  call <sid>X('perlSpecialString', s:hue_4,     '', '')
+  call <sid>X('perlVarPlain',      s:hue_2,     '', '')
+  call <sid>X('podCommand',        s:mono_3,    '', '')
+
   " PHP highlighting --------------------------------------------------------{{{
   call <sid>X('phpClass',        s:hue_6_2, '', '')
   call <sid>X('phpFunction',     s:hue_2,   '', '')
@@ -842,26 +853,6 @@ if has('gui_running') || has('termguicolors') || &t_Co == 88 || &t_Co == 256
    " Neovim NERDTree Background fix ------------------------------------------{{{
   call <sid>X('NERDTreeFile', s:syntax_fg, '', '')
   " }}}
-
-  " Neovim Terminal Colors --------------------------------------------------{{{
-  if has('nvim')
-    let g:terminal_color_0  = "#353a44"
-    let g:terminal_color_8  = "#353a44"
-    let g:terminal_color_1  = "#e88388"
-    let g:terminal_color_9  = "#e88388"
-    let g:terminal_color_2  = "#a7cc8c"
-    let g:terminal_color_10 = "#a7cc8c"
-    let g:terminal_color_3  = "#ebca8d"
-    let g:terminal_color_11 = "#ebca8d"
-    let g:terminal_color_4  = "#72bef2"
-    let g:terminal_color_12 = "#72bef2"
-    let g:terminal_color_5  = "#d291e4"
-    let g:terminal_color_13 = "#d291e4"
-    let g:terminal_color_6  = "#65c2cd"
-    let g:terminal_color_14 = "#65c2cd"
-    let g:terminal_color_7  = "#e3e5e9"
-    let g:terminal_color_15 = "#e3e5e9"
-  endif
 
   " Delete functions =========================================================={{{
   " delf <SID>X
