@@ -306,10 +306,13 @@ hi! link xmlTag                     htmlTag
 hi! link xmlEndTag                  xmlTag
 hi! link xmlTagName                 htmlTagName
 
-" Signify, git-gutter
-hi link SignifySignAdd              LineNr
-hi link SignifySignDelete           LineNr
-hi link SignifySignChange           LineNr
+" Signify
+call s:h("SignifySignAdd",{"fg": s:green, "bg": s:bg_subtle})
+call s:h("SignifySignDelete",{"fg": s:red, "bg": s:bg_subtle})
+call s:h("SignifySignChange",{"fg": s:yellow, "bg": s:bg_subtle})
+call s:h("SignifySignDeleteFirstLine",{"fg": s:red, "bg": s:bg_subtle})
+
+" GitGutter
 call s:h("GitGutterAdd",{"fg": s:green, "bg": s:bg_subtle})
 call s:h("GitGutterDelete",{"fg": s:red, "bg": s:bg_subtle})
 call s:h("GitGutterChange",{"fg": s:yellow, "bg": s:bg_subtle})

@@ -7,9 +7,17 @@
 " -----------------------------------------------------------------------------
 
 " Initialization: {{{
-highlight clear
-if exists('syntax_on')
-  syntax reset
+let s:configuration = sonokai#get_configuration()
+let s:palette = sonokai#get_palette(s:configuration.style)
+let s:path = expand('<sfile>:p') " the path of this script
+let s:last_modified = 'Thu Dec 31 10:21:32 AM UTC 2020'
+let g:sonokai_loaded_file_types = []
+
+if !(exists('g:colors_name') && g:colors_name ==# 'sonokai' && s:configuration.better_performance)
+  highlight clear
+  if exists('syntax_on')
+    syntax reset
+  endif
 endif
 
 let g:colors_name = 'sonokai'
@@ -17,12 +25,6 @@ let g:colors_name = 'sonokai'
 if !(has('termguicolors') && &termguicolors) && !has('gui_running') && &t_Co != 256
   finish
 endif
-
-let s:configuration = sonokai#get_configuration()
-let s:palette = sonokai#get_palette(s:configuration.style)
-let s:path = expand('<sfile>:p') " the path of this script
-let s:last_modified = 'Mon Nov 23 03:17:36 AM UTC 2020'
-let g:sonokai_loaded_file_types = []
 " }}}
 " Common Highlight Groups: {{{
 " UI: {{{
@@ -122,27 +124,30 @@ call sonokai#highlight('debugPC', s:palette.bg0, s:palette.green)
 call sonokai#highlight('debugBreakpoint', s:palette.bg0, s:palette.red)
 call sonokai#highlight('ToolbarButton', s:palette.bg0, s:palette.bg_blue)
 if has('nvim')
-  call sonokai#highlight('LspDiagnosticsFloatingError', s:palette.red, s:palette.bg2)
-  call sonokai#highlight('LspDiagnosticsFloatingWarning', s:palette.yellow, s:palette.bg2)
-  call sonokai#highlight('LspDiagnosticsFloatingInformation', s:palette.blue, s:palette.bg2)
-  call sonokai#highlight('LspDiagnosticsFloatingHint', s:palette.green, s:palette.bg2)
   call sonokai#highlight('Substitute', s:palette.bg0, s:palette.yellow)
-  highlight! link LspDiagnosticsDefaultError ErrorLine
-  highlight! link LspDiagnosticsDefaultWarning WarningLine
-  highlight! link LspDiagnosticsDefaultInformation InfoLine
-  highlight! link LspDiagnosticsDefaultHint HintLine
+  highlight! link LspDiagnosticsFloatingError ErrorFloat
+  highlight! link LspDiagnosticsFloatingWarning WarningFloat
+  highlight! link LspDiagnosticsFloatingInformation InfoFloat
+  highlight! link LspDiagnosticsFloatingHint HintFloat
+  highlight! link LspDiagnosticsDefaultError ErrorText
+  highlight! link LspDiagnosticsDefaultWarning WarningText
+  highlight! link LspDiagnosticsDefaultInformation InfoText
+  highlight! link LspDiagnosticsDefaultHint HintText
   highlight! link LspDiagnosticsVirtualTextError Grey
   highlight! link LspDiagnosticsVirtualTextWarning Grey
   highlight! link LspDiagnosticsVirtualTextInformation Grey
   highlight! link LspDiagnosticsVirtualTextHint Grey
-  highlight! link LspDiagnosticsUnderlineError ErrorLine
-  highlight! link LspDiagnosticsUnderlineWarning WarningLine
-  highlight! link LspDiagnosticsUnderlineInformation InfoLine
-  highlight! link LspDiagnosticsUnderlineHint HintLine
+  highlight! link LspDiagnosticsUnderlineError ErrorText
+  highlight! link LspDiagnosticsUnderlineWarning WarningText
+  highlight! link LspDiagnosticsUnderlineInformation InfoText
+  highlight! link LspDiagnosticsUnderlineHint HintText
   highlight! link LspDiagnosticsSignError RedSign
   highlight! link LspDiagnosticsSignWarning YellowSign
   highlight! link LspDiagnosticsSignInformation BlueSign
   highlight! link LspDiagnosticsSignHint GreenSign
+  highlight! link LspReferenceText CurrentWord
+  highlight! link LspReferenceRead CurrentWord
+  highlight! link LspReferenceWrite CurrentWord
   highlight! link TermCursor Cursor
   highlight! link healthError Red
   highlight! link healthSuccess Green
@@ -250,6 +255,14 @@ else
   highlight clear InfoLine
   highlight clear HintLine
 endif
+call sonokai#highlight('ErrorText', s:palette.none, s:palette.diff_red, 'undercurl', s:palette.red)
+call sonokai#highlight('WarningText', s:palette.none, s:palette.diff_yellow, 'undercurl', s:palette.yellow)
+call sonokai#highlight('InfoText', s:palette.none, s:palette.diff_blue, 'undercurl', s:palette.blue)
+call sonokai#highlight('HintText', s:palette.none, s:palette.diff_green, 'undercurl', s:palette.green)
+call sonokai#highlight('ErrorFloat', s:palette.red, s:palette.bg2)
+call sonokai#highlight('WarningFloat', s:palette.yellow, s:palette.bg2)
+call sonokai#highlight('InfoFloat', s:palette.blue, s:palette.bg2)
+call sonokai#highlight('HintFloat', s:palette.green, s:palette.bg2)
 if &diff
   call sonokai#highlight('CurrentWord', s:palette.bg0, s:palette.green)
 elseif s:configuration.current_word ==# 'grey background'
@@ -300,48 +313,63 @@ endif
 " }}}
 " Plugins: {{{
 " nvim-treesitter/nvim-treesitter {{{
-highlight! link TSPunctDelimiter Grey
-highlight! link TSPunctBracket Fg
-highlight! link TSPunctSpecial Fg
-highlight! link TSConstant OrangeItalic
+highlight! link TSAnnotation BlueItalic
+highlight! link TSAttribute BlueItalic
+highlight! link TSBoolean Purple
+highlight! link TSCharacter Yellow
+highlight! link TSComment Grey
+highlight! link TSConditional Red
 highlight! link TSConstBuiltin OrangeItalic
 highlight! link TSConstMacro Orange
-highlight! link TSString Yellow
-highlight! link TSStringRegex Green
-highlight! link TSStringEscape Green
-highlight! link TSCharacter Yellow
-highlight! link TSNumber Purple
-highlight! link TSBoolean Purple
+highlight! link TSConstant OrangeItalic
+highlight! link TSConstructor Fg
+highlight! link TSError ErrorText
+highlight! link TSException Red
+highlight! link TSField Green
 highlight! link TSFloat Purple
-highlight! link TSFunction Green
 highlight! link TSFuncBuiltin Green
 highlight! link TSFuncMacro Green
-highlight! link TSParameter OrangeItalic
-highlight! link TSMethod Green
-highlight! link TSField Green
-highlight! link TSProperty Green
-highlight! link TSConstructor Fg
-highlight! link TSConditional Red
-highlight! link TSRepeat Red
-highlight! link TSLabel Red
-highlight! link TSOperator Red
+highlight! link TSFunction Green
+highlight! link TSInclude BlueItalic
 highlight! link TSKeyword Red
-highlight! link TSException Red
+highlight! link TSKeywordFunction Red
+highlight! link TSLabel Red
+highlight! link TSMethod Green
+highlight! link TSNamespace Purple
+highlight! link TSNumber Purple
+highlight! link TSOperator Red
+highlight! link TSParameter OrangeItalic
+highlight! link TSParameterReference OrangeItalic
+highlight! link TSProperty Green
+highlight! link TSPunctBracket Fg
+highlight! link TSPunctDelimiter Grey
+highlight! link TSPunctSpecial Fg
+highlight! link TSRepeat Red
+highlight! link TSString Yellow
+highlight! link TSStringEscape Green
+highlight! link TSStringRegex Green
+highlight! link TSStructure BlueItalic
+highlight! link TSTag BlueItalic
+highlight! link TSTagDelimiter Red
+highlight! link TSText Green
+call sonokai#highlight('TSEmphasis', s:palette.none, s:palette.none, 'bold')
+call sonokai#highlight('TSUnderline', s:palette.none, s:palette.none, 'underline')
 highlight! link TSType BlueItalic
 highlight! link TSTypeBuiltin BlueItalic
-highlight! link TSStructure BlueItalic
-highlight! link TSInclude BlueItalic
+highlight! link TSURI markdownUrl
+highlight! link TSVariable Fg
+highlight! link TSVariableBuiltin OrangeItalic
 " }}}
 " neoclide/coc.nvim {{{
 call sonokai#highlight('CocHoverRange', s:palette.none, s:palette.none, 'bold,underline')
-call sonokai#highlight('CocErrorHighlight', s:palette.none, s:palette.none, 'undercurl', s:palette.red)
-call sonokai#highlight('CocWarningHighlight', s:palette.none, s:palette.none, 'undercurl', s:palette.yellow)
-call sonokai#highlight('CocInfoHighlight', s:palette.none, s:palette.none, 'undercurl', s:palette.blue)
-call sonokai#highlight('CocHintHighlight', s:palette.none, s:palette.none, 'undercurl', s:palette.green)
-call sonokai#highlight('CocErrorFloat', s:palette.red, s:palette.bg2)
-call sonokai#highlight('CocWarningFloat', s:palette.yellow, s:palette.bg2)
-call sonokai#highlight('CocInfoFloat', s:palette.blue, s:palette.bg2)
-call sonokai#highlight('CocHintFloat', s:palette.green, s:palette.bg2)
+highlight! link CocErrorFloat ErrorFloat
+highlight! link CocWarningFloat WarningFloat
+highlight! link CocInfoFloat InfoFloat
+highlight! link CocHintFloat HintFloat
+highlight! link CocErrorHighlight ErrorText
+highlight! link CocWarningHighlight WarningText
+highlight! link CocInfoHighlight InfoText
+highlight! link CocHintHighlight HintText
 highlight! link CocHighlightText CurrentWord
 highlight! link CocErrorSign RedSign
 highlight! link CocWarningSign YellowSign
@@ -405,10 +433,10 @@ highlight! link LspErrorVirtual Grey
 highlight! link LspWarningVirtual Grey
 highlight! link LspInformationVirtual Grey
 highlight! link LspHintVirtual Grey
-highlight! link LspErrorHighlight CocErrorHighlight
-highlight! link LspWarningHighlight CocWarningHighlight
-highlight! link LspInformationHighlight CocInfoHighlight
-highlight! link LspHintHighlight CocHintHighlight
+highlight! link LspErrorHighlight ErrorText
+highlight! link LspWarningHighlight WarningText
+highlight! link LspInformationHighlight InfoText
+highlight! link LspHintHighlight HintText
 highlight! link lspReference CurrentWord
 " }}}
 " ycm-core/YouCompleteMe {{{
@@ -416,13 +444,13 @@ highlight! link YcmErrorSign RedSign
 highlight! link YcmWarningSign YellowSign
 highlight! link YcmErrorLine ErrorLine
 highlight! link YcmWarningLine WarningLine
-highlight! link YcmErrorSection CocErrorHighlight
-highlight! link YcmWarningSection CocWarningHighlight
+highlight! link YcmErrorSection ErrorText
+highlight! link YcmWarningSection WarningText
 " }}}
 " dense-analysis/ale {{{
-highlight! link ALEError CocErrorHighlight
-highlight! link ALEWarning CocWarningHighlight
-highlight! link ALEInfo CocInfoHighlight
+highlight! link ALEError ErrorText
+highlight! link ALEWarning WarningText
+highlight! link ALEInfo InfoText
 highlight! link ALEErrorSign RedSign
 highlight! link ALEWarningSign YellowSign
 highlight! link ALEInfoSign BlueSign
@@ -436,13 +464,13 @@ highlight! link ALEVirtualTextStyleError Grey
 highlight! link ALEVirtualTextStyleWarning Grey
 " }}}
 " neomake/neomake {{{
-highlight! link NeomakeError ALEError
+highlight! link NeomakeError ErrorText
+highlight! link NeomakeWarning WarningText
+highlight! link NeomakeInfo InfoText
+highlight! link NeomakeMessage HintText
 highlight! link NeomakeErrorSign RedSign
-highlight! link NeomakeWarning ALEWarning
 highlight! link NeomakeWarningSign YellowSign
-highlight! link NeomakeInfo ALEInfo
 highlight! link NeomakeInfoSign BlueSign
-highlight! link NeomakeMessage Green
 highlight! link NeomakeMessageSign GreenSign
 highlight! link NeomakeVirtualtextError Grey
 highlight! link NeomakeVirtualtextWarning Grey
@@ -450,8 +478,8 @@ highlight! link NeomakeVirtualtextInfo Grey
 highlight! link NeomakeVirtualtextMessag Grey
 " }}}
 " vim-syntastic/syntastic {{{
-highlight! link SyntasticError ALEError
-highlight! link SyntasticWarning ALEWarning
+highlight! link SyntasticError ErrorText
+highlight! link SyntasticWarning WarningText
 highlight! link SyntasticErrorSign RedSign
 highlight! link SyntasticWarningSign YellowSign
 highlight! link SyntasticErrorLine ErrorLine
@@ -810,6 +838,20 @@ highlight! link texDocType RedItalic
 highlight! link texDocTypeArgs Orange
 highlight! link texInputFile Green
 " }}}
+" vimtex: https://github.com/lervag/vimtex {{{
+highlight! link texFileArg Green
+highlight! link texCmd BlueItalic
+highlight! link texCmdPackage BlueItalic
+highlight! link texCmdDef Red
+highlight! link texDefArgName Yellow
+highlight! link texCmdNewcmd Red
+highlight! link texCmdClass Red
+highlight! link texCmdTitle Red
+highlight! link texCmdAuthor Red
+highlight! link texCmdEnv Red
+highlight! link texCmdPart Red
+highlight! link texEnvArgName Green
+" }}}
 " ft_end }}}
 " ft_begin: html/markdown/javascriptreact/typescriptreact {{{
 " builtin: https://notabug.org/jorgesumle/vim-html-syntax{{{
@@ -835,6 +877,11 @@ highlight! link htmlArg Blue
 highlight! link htmlScriptTag Purple
 highlight! link htmlSpecialTagName RedItalic
 highlight! link htmlString Green
+" }}}
+" ft_end }}}
+" ft_begin: htmldjango {{{
+" builtin: https://github.com/vim/vim/blob/master/runtime/syntax/htmldjango.vim{{{
+highlight! link djangoTagBlock Yellow
 " }}}
 " ft_end }}}
 " ft_begin: xml {{{
