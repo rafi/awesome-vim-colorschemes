@@ -10,7 +10,7 @@
 let s:configuration = sonokai#get_configuration()
 let s:palette = sonokai#get_palette(s:configuration.style)
 let s:path = expand('<sfile>:p') " the path of this script
-let s:last_modified = 'Thu Dec 31 10:21:32 AM UTC 2020'
+let s:last_modified = 'Tue Jan 19 10:49:00 AM UTC 2021'
 let g:sonokai_loaded_file_types = []
 
 if !(exists('g:colors_name') && g:colors_name ==# 'sonokai' && s:configuration.better_performance)
@@ -244,6 +244,17 @@ else
   call sonokai#highlight('BlueSign', s:palette.blue, s:palette.bg1)
   call sonokai#highlight('PurpleSign', s:palette.purple, s:palette.bg1)
 endif
+if s:configuration.diagnostic_text_highlight
+  call sonokai#highlight('ErrorText', s:palette.none, s:palette.diff_red, 'undercurl', s:palette.red)
+  call sonokai#highlight('WarningText', s:palette.none, s:palette.diff_yellow, 'undercurl', s:palette.yellow)
+  call sonokai#highlight('InfoText', s:palette.none, s:palette.diff_blue, 'undercurl', s:palette.blue)
+  call sonokai#highlight('HintText', s:palette.none, s:palette.diff_green, 'undercurl', s:palette.green)
+else
+  call sonokai#highlight('ErrorText', s:palette.none, s:palette.none, 'undercurl', s:palette.red)
+  call sonokai#highlight('WarningText', s:palette.none, s:palette.none, 'undercurl', s:palette.yellow)
+  call sonokai#highlight('InfoText', s:palette.none, s:palette.none, 'undercurl', s:palette.blue)
+  call sonokai#highlight('HintText', s:palette.none, s:palette.none, 'undercurl', s:palette.green)
+endif
 if s:configuration.diagnostic_line_highlight
   call sonokai#highlight('ErrorLine', s:palette.none, s:palette.diff_red)
   call sonokai#highlight('WarningLine', s:palette.none, s:palette.diff_yellow)
@@ -255,10 +266,6 @@ else
   highlight clear InfoLine
   highlight clear HintLine
 endif
-call sonokai#highlight('ErrorText', s:palette.none, s:palette.diff_red, 'undercurl', s:palette.red)
-call sonokai#highlight('WarningText', s:palette.none, s:palette.diff_yellow, 'undercurl', s:palette.yellow)
-call sonokai#highlight('InfoText', s:palette.none, s:palette.diff_blue, 'undercurl', s:palette.blue)
-call sonokai#highlight('HintText', s:palette.none, s:palette.diff_green, 'undercurl', s:palette.green)
 call sonokai#highlight('ErrorFloat', s:palette.red, s:palette.bg2)
 call sonokai#highlight('WarningFloat', s:palette.yellow, s:palette.bg2)
 call sonokai#highlight('InfoFloat', s:palette.blue, s:palette.bg2)
@@ -657,7 +664,7 @@ if sonokai#ft_exists(s:path) " If the ftplugin exists.
       call sonokai#ft_gen(s:path, s:last_modified, 'update')
     endif
     finish
-  elseif !has('nvim') " Only clean the `after/ftplugin` directory when in vim. This code will produce a bug in neovim.
+  else
     call sonokai#ft_clean(s:path, 1)
   endif
 else

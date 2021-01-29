@@ -74,7 +74,19 @@ If your terminal and setup supports it, you can enable italics and bold fonts wi
   colorscheme OceanicNext
 ```
 
+If your terminal has transparancy, you can enable it in neovim by adding the
+following lines to your init.vim **after** calling `colorscheme OceanicNext`:
 
+```viml
+hi Normal guibg=NONE ctermbg=NONE
+hi LineNr guibg=NONE ctermbg=NONE
+hi SignColumn guibg=NONE ctermbg=NONE
+hi EndOfBuffer guibg=NONE ctermbg=NONE
+```
+Each line above disables the background for a given highlight group
+(e.g., LineNr). You can choose which to disable. This will show your terminal's
+background (whether or not it's transparent). For best results, use an Oceanic
+Next color scheme in your terminal.
 
 ## Screenshot
 

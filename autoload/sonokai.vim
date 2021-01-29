@@ -17,6 +17,7 @@ function! sonokai#get_configuration() "{{{
         \ 'sign_column_background': get(g:, 'sonokai_sign_column_background', 'default'),
         \ 'current_word': get(g:, 'sonokai_current_word', get(g:, 'sonokai_transparent_background', 0) == 0 ? 'grey background' : 'bold'),
         \ 'lightline_disable_bold': get(g:, 'sonokai_lightline_disable_bold', 0),
+        \ 'diagnostic_text_highlight': get(g:, 'sonokai_diagnostic_text_highlight', 0),
         \ 'diagnostic_line_highlight': get(g:, 'sonokai_diagnostic_line_highlight', 0),
         \ 'better_performance': get(g:, 'sonokai_better_performance', 0),
         \ }
@@ -214,7 +215,10 @@ function! sonokai#ft_write(rootpath, ft, content) "{{{
   " If there is something like `call sonokai#highlight()`, then add
   " code to initialize the palette and configuration.
   if matchstr(a:content, 'sonokai#highlight') !=# ''
-    call writefile(['let s:configuration = sonokai#get_configuration()', 'let s:palette = sonokai#get_palette(s:configuration.style)'], ft_path, 'a')
+    call writefile([
+          \ 'let s:configuration = sonokai#get_configuration()',
+          \ 'let s:palette = sonokai#get_palette(s:configuration.style)'
+          \ ], ft_path, 'a')
   endif
   " Append the content.
   call writefile(split(a:content, "\n"), ft_path, 'a')
