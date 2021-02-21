@@ -181,6 +181,7 @@ endfunction
   call s:hi('TSOperator',                         s:base07, '',       '',          '')
   call s:hi('TSTag',                              s:base07, '',       '',          '')
   call s:hi('TSKeyword',                          s:purple, '',       '',          '')
+  call s:hi('TSKeywordOperator',                  s:purple, '',       '',          '')
   call s:hi('TSVariableBuiltin',                  s:red,    '',       '',          '')
   call s:hi('TSLabel',                            s:cyan,   '',       '',          '')
 

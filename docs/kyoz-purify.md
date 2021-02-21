@@ -15,6 +15,7 @@
   - [Lightline](#lightline)
 - [Customize](#customize)
   - [Font styles](#font-styles)
+  - [Background](#background)
   - [Overrides colors](#overrides-colors)
 - [Why i have to install other plugins](#why-i-have-to-install-other-plugins)
 - [License](#license)
@@ -98,6 +99,23 @@ let g:purify_inverse = 0     " default: 1
 ```
 
 **Note**: Those style formats only working if your terminal, your settings, your fonts support em.
+
+### Background
+
+By default, Vim using your terminal background color as the background colors.
+
+If you are using GUI version of Vim, Nvim, it'll have Purify Background (#252834), but if you are using terminal vim, neovim, you have to choose and set the background your self:
+
+```
+colorscheme purify "--------------------------------- Set onedark theme
+hi Normal guibg=#252834 ctermbg=234 "---- Place this after you set the colorscheme
+```
+
+P/s: If you are nvim-qt, you may need set this to your `ginit.vim`
+
+```
+set background=dark
+```
 
 ### Overrides colors
 

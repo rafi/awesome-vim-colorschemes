@@ -644,4 +644,11 @@ call s:hi("EasyMotionShade",         { "fg": s:comment_grey })
 
 " }}}
 
+" Try setting background and foreground colors if user using GUI version
+if has("gui_running") || exists('g:GuiLoaded')
+    hi Normal guifg=#FFFFFF
+    hi Normal guibg=#252834
+endif
+
 execute 'set background=dark'
+
