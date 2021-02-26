@@ -53,6 +53,7 @@ Use your favorite package-manager to install, and enjoy!
 | [oceanic-material] | Material dark colorscheme | ✓ | ✓ |
 | [one] | Adaptation of one-light and one-dark | ✓ | ✓ |
 | [onedark] | Inspired by Atom's One Dark syntax theme | ✓ | ✓ |
+| [onehalf] | Clean, vibrant and pleasing color scheme | ✓ | ✓ |
 | [orbital] | Dark blue base16 theme | ✓ | ✓ |
 | [paramount] | Minimal colorscheme that only puts emphasis on the paramount | ✓ | ✓ |
 | [pink-moon] | Dark pastel theme | ✓ | ✓ |
@@ -116,6 +117,7 @@ Use your favorite package-manager to install, and enjoy!
 [oceanic-material]: https://github.com/hardcoreplayers/oceanic-material
 [one]: https://github.com/rakr/vim-one
 [onedark]: https://github.com/joshdick/onedark.vim
+[onehalf]: https://github.com/sonph/onehalf
 [orbital]: https://github.com/fcpg/vim-orbital
 [paramount]: https://github.com/owickstrom/vim-colors-paramount
 [pink-moon]: https://github.com/sts10/vim-pink-moon

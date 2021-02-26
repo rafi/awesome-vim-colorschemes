@@ -72,6 +72,7 @@ function _main() {
 	_dl romainl/flattened
 	_dl sainnhe/sonokai
 	_dl scheakur/vim-scheakur
+	_dl sonph/onehalf vim/
 	_dl sts10/vim-pink-moon
 	_dl tomasr/molokai
 	_dl tyrannicaltoucan/vim-deep-space
