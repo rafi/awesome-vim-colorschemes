@@ -109,6 +109,7 @@ hi htmlTag guifg=#8085a6 ctermfg=103
 hi htmlEndTag guifg=#8085a6 ctermfg=103
 hi htmlSpecialTagName guifg=#ac8b83 ctermfg=138
 hi htmlArg guifg=#8085a6 ctermfg=103
+hi jsonQuote guifg=#8085a6 ctermfg=103
 hi yamlBlockMappingKey guifg=#929be5 ctermfg=104
 hi yamlAnchor guifg=#b871b8 ctermfg=133
 hi pythonStatement guifg=#ac8b83 ctermfg=138

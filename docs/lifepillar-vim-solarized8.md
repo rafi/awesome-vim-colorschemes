@@ -18,12 +18,14 @@ Instead, this color scheme works **out of the box everywhere**. For the best
 experience, you need:
 
 - Vim ≥7.4.1799, or NeoVim, with `termguicolors` set, **and**
-- [a true-color enabled terminal](https://gist.github.com/XVilka/8346728).
+- a terminal supporting millions of colors (but see below for workarounds).
 
-Solarized 8 also works in any GUI version of Vim: no configuration is necessary.<sup>*</sup>
+Solarized 8 also works in any GUI version of Vim: no configuration is
+necessary.<sup>*</sup> See below for installation instructions.
 
 <sup>*</sup> [VimR](https://github.com/qvacua/vimr) users must set
 `termguicolors` before loading the color scheme.
+
 
 ## But, my terminal has only 256 colors!
 
@@ -42,19 +44,28 @@ If you do not like this approximation, to get exact colors with such terminals
 you have two possibilities:
 
 1. Modify some of your terminal colors in the range 16–255 to match Solarized
-   palette. For this purpose, you may run `scripts/solarized8.sh`; no setting is
-   needed in Vim. Note, however, that this is not supported by all terminals
-   (e.g., in macOS's Terminal.app this approach does not work: the script has no
-   effect).
+   palette. For this purpose, you may run (*not* source!)
+   `scripts/solarized8.sh`; no setting is needed in Vim. For instance, if you
+   are using Bash, put this in `.bashrc`:
+
+   ```sh
+   sh /path/to/scripts/solarized.sh
+   ```
+
+   **Note:** this method is supported only by some, but not all, terminals. For
+   instance, in Apple's Terminal.app, running `solarized.sh` has no effect.
 
 2. Set your terminal's 16 ANSI colors (the colors in the range 0–15) to the
-   Solarized palette and `set t_Co=16` in Vim (or `let g:solarized_use16=1`). Be
-   aware that, if you force the usage of your terminal colors, but your terminal
-   is not configured with the Solarized palette, your colors will be completely
-   off.
+   Solarized palette (how to do that depends on the terminal) *and* `set
+   t_Co=16` in Vim (or `let g:solarized_use16=1`) to instruct Vim to use your
+   terminal's colors. Be aware that, if you force the use of your terminal
+   colors in Vim with any of these settings, but your terminal is not
+   configured to use the Solarized palette, your colors will be completely off!
 
-Finally, if your terminal does not support true colors, you must *not* set
-`termguicolors`.
+**Note:** whatever method you choose, keep in mind that if your terminal does
+not support millions of colors, you must *not* set `termguicolors` (i.e., make
+sure that `set termguicolors?` outputs `notermguicolors`).
+
 
 ## What if I happen to work on vt100 or similar?
 
@@ -75,9 +86,9 @@ recommend that you use them. Just clone this repo inside `pack/*/opt`, e.g.:
     git clone https://github.com/lifepillar/vim-solarized8.git \
         ~/.vim/pack/themes/opt/solarized8
 
-Otherwise, use your favourite installation method.
+Otherwise, use you favourite installation method.
 
-There are actually four optimized<sup>*</sup> color schemes:
+There are actually four optimized<sup>*</sup> color schemes you may load:
 
 - `solarized8_high`: high-contrast variant (screenshow below, first column);
 - `solarized8`: the default Solarized theme (screenshot below, second column);
@@ -86,16 +97,27 @@ There are actually four optimized<sup>*</sup> color schemes:
 
 ![](https://raw.github.com/lifepillar/Resources/master/solarized8/solarized8-variants.png)
 
-The “flat” variant does not exist in the original Solarized. It differs
-mainly in how the status line, split bars and tab bar look like:
+The “flat” variant does not exist in the original Solarized. It differs from
+`solarized8` mainly in how the status line, split bars and tab bar look like:
 
 ![](https://raw.github.com/lifepillar/Resources/master/solarized8/solarized8-normal-vs-flat.png)
 
 To use a Solarized 8 color scheme, set the background (`dark` or `light`) then
 load the variant you want, e.g.:
 
-    set background=dark
-    colorscheme solarized8
+```vim
+set background=dark
+colorscheme solarized8
+```
+
+If you opt to use some Vim plugin manager instead, the following should be
+added to your `vimrc`, rather than the above, for the color scheme to be loaded
+correctly:
+
+```vim
+set background=dark
+autocmd vimenter * ++nested colorscheme solarized8
+```
 
 To switch the background from dark to light or vice versa, just set `background`
 accordingly.
@@ -134,9 +156,10 @@ The following options were not available in the original Solarized:
   may override the cursor's color).
 - `g:solarized_use16`: set to `1` to force using your 16 ANSI terminal colors.
 - `g:solarized_extra_hi_groups`: set to `1` to enable Solarized
-  filetype-specific syntax highlighting groups (default is `0`). Please be aware
-  that there is [a long standing issue](https://github.com/vim/vim/issues/4405)
-  with syntax items defined in color schemes.
+  filetype-specific syntax highlighting groups (default is `0`). Please be
+  aware that if your Vim is not recent enough you may encounter [an
+  issue](https://github.com/vim/vim/issues/4405) with syntax items defined in
+  color schemes.
 
 All these options may be used with any Solarized 8 variant.
 

@@ -91,15 +91,15 @@ let s:terminal_r2_bg = s:palette.bg4
 let s:terminal_middle_fg = s:palette.fg
 let s:terminal_middle_bg = s:palette.bg1
 
-let s:inactive_l1_fg = s:palette.fg
-let s:inactive_l1_bg = s:palette.bg4
-let s:inactive_l2_fg = s:palette.fg
-let s:inactive_l2_bg = s:palette.bg4
-let s:inactive_r1_fg = s:palette.fg
-let s:inactive_r1_bg = s:palette.bg4
-let s:inactive_r2_fg = s:palette.fg
-let s:inactive_r2_bg = s:palette.bg4
-let s:inactive_middle_fg = s:palette.fg
+let s:inactive_l1_fg = s:palette.grey
+let s:inactive_l1_bg = s:palette.bg1
+let s:inactive_l2_fg = s:palette.grey
+let s:inactive_l2_bg = s:palette.bg1
+let s:inactive_r1_fg = s:palette.grey
+let s:inactive_r1_bg = s:palette.bg1
+let s:inactive_r2_fg = s:palette.grey
+let s:inactive_r2_bg = s:palette.bg1
+let s:inactive_middle_fg = s:palette.grey
 let s:inactive_middle_bg = s:palette.bg1
 "}}}
 " Implementation: {{{

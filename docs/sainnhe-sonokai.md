@@ -44,35 +44,7 @@ The `shusia` and `maia` variants are based on `monokai pro` and `monokai machine
 - Rich support for common file types and plugins.
 - [Italic support](https://github.com/sainnhe/icursive-nerd-font) 🎉
 
-## Installation
-
-### Via Plugin Manager
-
-Take [vim-plug](https://github.com/junegunn/vim-plug) for example:
-
-```vim
-Plug 'sainnhe/sonokai'
-```
-
-For better syntax highlighting support, please install [sheerun/vim-polyglot](https://github.com/sheerun/vim-polyglot) or [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter).
-
-### Manually
-
-1. Clone this repository.
-2. Copy `/path/to/sonokai/autoload/sonokai.vim` to `~/.vim/autoload/`.
-3. Copy `/path/to/sonokai/colors/sonokai.vim` to `~/.vim/colors/` .
-4. Copy `/path/to/sonokai/doc/sonokai.txt` to `~/.vim/doc/` and execute `:helptags ~/.vim/doc/` to generate help tags.
-5. To install [airline](https://github.com/vim-airline/vim-airline) theme, copy `/path/to/sonokai/autoload/airline/themes/sonokai.vim` to `~/.vim/autoload/airline/themes/` .
-6. To install [lightline](https://github.com/itchyny/lightline.vim) theme, copy `/path/to/sonokai/autoload/lightline/colorscheme/sonokai.vim` to `~/.vim/autoload/lightline/colorscheme/` .
-
-### AUR
-
-There are some packages available for Arch Linux users in AUR:
-
-- [vim-sonokai-git](https://aur.archlinux.org/pkgbase/vim-sonokai-git/)
-- [neovim-sonokai-git](https://aur.archlinux.org/pkgbase/neovim-sonokai-git/)
-
-## Usage
+## Documentation
 
 See [`:help sonokai.txt`](https://github.com/sainnhe/sonokai/blob/master/doc/sonokai.txt)
 
@@ -83,7 +55,7 @@ See this [wiki page](https://github.com/sainnhe/sonokai/wiki/Related-Projects).
 ## More Color Schemes
 
 - [Gruvbox Material](https://github.com/sainnhe/gruvbox-material)
-- [Forest Night](https://github.com/sainnhe/forest-night)
+- [Everforest](https://github.com/sainnhe/everforest)
 - [Edge](https://github.com/sainnhe/edge)
 
 ## Inspiration

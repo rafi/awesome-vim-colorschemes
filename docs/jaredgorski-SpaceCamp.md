@@ -49,7 +49,7 @@ Plug 'jaredgorski/spacecamp'
 - [Chrome Secure Shell](https://github.com/jaredgorski/SpaceCamp/raw/master/.terminal_themes/spacecamp_chrome-secure-shell.config)
 - [Gnome Terminal](https://github.com/jaredgorski/SpaceCamp/raw/master/.terminal_themes/spacecamp_gnome-terminal.sh)
 - [Guake](https://github.com/jaredgorski/SpaceCamp/raw/master/.terminal_themes/spacecamp_guake.config)
-- [Kitty: spacecamp-kitty](https://github.com/sebastianks/spacecamp-kitty) by [@sebastianks](https://github.com/sebastianks)
+- [Kitty: spacecamp-kitty](https://github.com/sebkolind/spacecamp-kitty) by [@sebkolind](https://github.com/sebkolind)
 - [Konsole](https://github.com/jaredgorski/SpaceCamp/raw/master/.terminal_themes/spacecamp_konsole.config)
 - [Linux Console](https://github.com/jaredgorski/SpaceCamp/raw/master/.terminal_themes/spacecamp_linux-console.sh)
 - [MinTTY](https://github.com/jaredgorski/SpaceCamp/raw/master/.terminal_themes/spacecamp_mintty.config)

@@ -71,6 +71,28 @@ environments.
 
 Feel free to send comments with ideas, suggestions and push requests.
 
+## FZF Compatible colors
+
+If you use [FZF](https://github.com/junegunn/fzf), you can get termschool compatible
+colors by adding the following to your `~/.bashrc`:
+
+```sh
+export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS}"'
+  --color="fg:231,bg:234,bg+:23,hl:113,gutter:234"
+  --color="query:255,prompt:178,pointer:178,marker:44"
+'
+```
+
+If your terminal supports truecolor, you can make the FZF colors match the GUI
+colors more closely:
+
+```sh
+export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS}"'
+  --color="fg:#f0f0f0,bg:#252c31,bg+:#005f5f,hl:#87d75f,gutter:#252c31"
+  --color="query:#ffffff,prompt:#f0f0f0,pointer:#dfaf00,marker:#00d7d7"
+'
+```
+
 ## Related Links
 
 You may also want to check the

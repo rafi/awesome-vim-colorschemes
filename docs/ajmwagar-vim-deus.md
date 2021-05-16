@@ -49,7 +49,7 @@ Add the following lines to your `~/.vimrc`:
 ```vim
 call plug#begin('~/.vim/bundle/')
 Plug 'ajmwagar/vim-deus'
-cal  plug#end()
+call  plug#end()
 ```
 
 Don't forget to run:
@@ -107,25 +107,26 @@ Don't forget to run:
 
 ## Palette
 
-| Color                                                  | Hex     | Use           |
-|--------------------------------------------------------|---------|---------------|
-|<img src="https://www.colorhexa.com/eaeaea.png" width="30" height="30"/>| #eaeaea | foreground    |
-|<img src="https://www.colorhexa.com/2c323b.png" width="30" height="30"/>| #2c323b | background    |
-|<img src="https://www.colorhexa.com/ffffff.png" width="30" height="30"/>| #ffffff | white         |
-|<img src="https://www.colorhexa.com/000000.png" width="30" height="30"/>| #000000 | black         |
+| Color                                                                  | Hex     | Use           |
+|------------------------------------------------------------------------|---------|---------------|
+|<img src="https://www.colorhexa.com/242a32.png" width="30" height="30"/>| #242a32 | black         |
 |<img src="https://www.colorhexa.com/d54e53.png" width="30" height="30"/>| #d54e53 | red           |
 |<img src="https://www.colorhexa.com/98c379.png" width="30" height="30"/>| #98c379 | green         |
 |<img src="https://www.colorhexa.com/e5c07b.png" width="30" height="30"/>| #e5c07b | yellow        |
-|<img src="https://www.colorhexa.com/83a598.png" width="30" height="30"/>| #83a598 | teal          |
+|<img src="https://www.colorhexa.com/83a598.png" width="30" height="30"/>| #83a598 | blue          |
 |<img src="https://www.colorhexa.com/c678dd.png" width="30" height="30"/>| #c678dd | purple        |
-|<img src="https://www.colorhexa.com/70c0ba.png" width="30" height="30"/>| #70c0ba | bright teal   |
-|<img src="https://www.colorhexa.com/666666.png" width="30" height="30"/>| #666666 | gray          |
+|<img src="https://www.colorhexa.com/70c0ba.png" width="30" height="30"/>| #70c0ba | teal          |
+|<img src="https://www.colorhexa.com/eaeaea.png" width="30" height="30"/>| #eaeaea | white         |
+|<img src="https://www.colorhexa.com/666666.png" width="30" height="30"/>| #666666 | bright black  |
 |<img src="https://www.colorhexa.com/ec3e45.png" width="30" height="30"/>| #ec3e45 | bright red    |
 |<img src="https://www.colorhexa.com/90c966.png" width="30" height="30"/>| #90c966 | bright green  |
 |<img src="https://www.colorhexa.com/edbf69.png" width="30" height="30"/>| #edbf69 | bright yellow |
-|<img src="https://www.colorhexa.com/2bcec2.png" width="30" height="30"/>| #2bcec2 | bright blue   |
+|<img src="https://www.colorhexa.com/73ba9f.png" width="30" height="30"/>| #73ba9f | bright blue   |
 |<img src="https://www.colorhexa.com/c858e9.png" width="30" height="30"/>| #c858e9 | bright purple |
-
+|<img src="https://www.colorhexa.com/2bcec2.png" width="30" height="30"/>| #2bcec2 | bright teal   |
+|<img src="https://www.colorhexa.com/ffffff.png" width="30" height="30"/>| #ffffff | bright white  |
+|<img src="https://www.colorhexa.com/2c323b.png" width="30" height="30"/>| #2c323b | background    |
+|<img src="https://www.colorhexa.com/eaeaea.png" width="30" height="30"/>| #eaeaea | foreground    |
 
 ## Troubleshooting
 
@@ -153,6 +154,14 @@ Instructions on how to enable TrueColor for Tmux can be found [here](https://gis
 ### Italics
 
 If you use vim in a terminal that supports italics, set the environment variable `TERM_ITALICS` to TRUE (i.e. `export TERM_ITALICS=true`) to enable with vim-deus.
+
+### Terminal Support
+
+Deus has been ported to the following terminal emulators. 
+
+| Terminal Emulator                                   | Configuration                                               |
+|-----------------------------------------------------|-------------------------------------------------------------|
+| [Alacritty](https://github.com/alacritty/alacritty) | [alacritty.yml](./terminal/alacritty.yml)                   |
 
 ---
 

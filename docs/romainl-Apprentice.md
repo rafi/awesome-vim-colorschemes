@@ -232,6 +232,10 @@ I removed it from `master` but you can still find it in the "fancylines-and-neov
 
 * [Apprentice-term](https://github.com/habamax/apprentice-term) is another effort to make Apprentice available to advanced Windows users.
 
+* [Alchemist](https://github.com/habamax/vim-alchemist) appears to be trying to turn lead into gold, which I should probably take as a thinly veiled insult.
+
+* [Saturnite](https://github.com/habamax/vim-saturnite) is a colorscheme for week-end coders adapted from Apprentice.
+
 Go team!
 
 [0]:  http://romainl.github.io/Apprentice/images/1c1c1c.png

@@ -6,6 +6,12 @@
 " License: MIT License
 " =============================================================================
 
+" g:sonokai#tmux: is in tmux < 2.9 or not {{{
+let g:sonokai#tmux = executable('tmux') && $TMUX !=# '' ?
+                  \ (str2float(system("tmux -V | grep -oE '[0-9]+\.[0-9]*'")) < 2.9 ?
+                    \ 1 :
+                    \ 0) :
+                  \ 0 "}}}
 function! sonokai#get_configuration() "{{{
   return {
         \ 'style': get(g:, 'sonokai_style', 'default'),
@@ -13,12 +19,13 @@ function! sonokai#get_configuration() "{{{
         \ 'disable_italic_comment': get(g:, 'sonokai_disable_italic_comment', 0),
         \ 'enable_italic': get(g:, 'sonokai_enable_italic', 0),
         \ 'cursor': get(g:, 'sonokai_cursor', 'auto'),
-        \ 'menu_selection_background': get(g:, 'sonokai_menu_selection_background', 'green'),
+        \ 'menu_selection_background': get(g:, 'sonokai_menu_selection_background', 'blue'),
         \ 'sign_column_background': get(g:, 'sonokai_sign_column_background', 'default'),
         \ 'current_word': get(g:, 'sonokai_current_word', get(g:, 'sonokai_transparent_background', 0) == 0 ? 'grey background' : 'bold'),
         \ 'lightline_disable_bold': get(g:, 'sonokai_lightline_disable_bold', 0),
         \ 'diagnostic_text_highlight': get(g:, 'sonokai_diagnostic_text_highlight', 0),
         \ 'diagnostic_line_highlight': get(g:, 'sonokai_diagnostic_line_highlight', 0),
+        \ 'diagnostic_virtual_text': get(g:, 'sonokai_diagnostic_virtual_text', 'grey'),
         \ 'better_performance': get(g:, 'sonokai_better_performance', 0),
         \ }
 endfunction "}}}
@@ -27,7 +34,7 @@ function! sonokai#get_palette(style) "{{{
     let palette = {
           \ 'black':      ['#181819',   '237',  'DarkGrey'],
           \ 'bg0':        ['#2c2e34',   '235',  'Black'],
-          \ 'bg1':        ['#30323a',   '236',  'DarkGrey'],
+          \ 'bg1':        ['#33353f',   '236',  'DarkGrey'],
           \ 'bg2':        ['#363944',   '236',  'DarkGrey'],
           \ 'bg3':        ['#3b3e48',   '237',  'DarkGrey'],
           \ 'bg4':        ['#414550',   '237',  'Grey'],
@@ -52,7 +59,7 @@ function! sonokai#get_palette(style) "{{{
     let palette = {
           \ 'black':      ['#1a181a',   '237',  'DarkGrey'],
           \ 'bg0':        ['#2d2a2e',   '235',  'Black'],
-          \ 'bg1':        ['#343136',   '236',  'DarkGrey'],
+          \ 'bg1':        ['#37343a',   '236',  'DarkGrey'],
           \ 'bg2':        ['#3b383e',   '236',  'DarkGrey'],
           \ 'bg3':        ['#423f46',   '237',  'DarkGrey'],
           \ 'bg4':        ['#49464e',   '237',  'Grey'],
@@ -77,7 +84,7 @@ function! sonokai#get_palette(style) "{{{
     let palette = {
           \ 'black':      ['#181a1c',   '237',  'DarkGrey'],
           \ 'bg0':        ['#2b2d3a',   '235',  'Black'],
-          \ 'bg1':        ['#2f3242',   '236',  'DarkGrey'],
+          \ 'bg1':        ['#333648',   '236',  'DarkGrey'],
           \ 'bg2':        ['#363a4e',   '236',  'DarkGrey'],
           \ 'bg3':        ['#393e53',   '237',  'DarkGrey'],
           \ 'bg4':        ['#3f445b',   '237',  'Grey'],
@@ -102,7 +109,7 @@ function! sonokai#get_palette(style) "{{{
     let palette = {
           \ 'black':      ['#181a1c',   '237',  'DarkGrey'],
           \ 'bg0':        ['#2a2f38',   '235',  'Black'],
-          \ 'bg1':        ['#303541',   '236',  'DarkGrey'],
+          \ 'bg1':        ['#333846',   '236',  'DarkGrey'],
           \ 'bg2':        ['#373c4b',   '236',  'DarkGrey'],
           \ 'bg3':        ['#3d4455',   '237',  'DarkGrey'],
           \ 'bg4':        ['#424b5b',   '237',  'Grey'],
@@ -127,7 +134,7 @@ function! sonokai#get_palette(style) "{{{
     let palette = {
           \ 'black':      ['#1c1e1f',   '237',  'DarkGrey'],
           \ 'bg0':        ['#273136',   '235',  'Black'],
-          \ 'bg1':        ['#2e383e',   '236',  'DarkGrey'],
+          \ 'bg1':        ['#313b42',   '236',  'DarkGrey'],
           \ 'bg2':        ['#353f46',   '236',  'DarkGrey'],
           \ 'bg3':        ['#3a444b',   '237',  'DarkGrey'],
           \ 'bg4':        ['#414b53',   '237',  'Grey'],
@@ -159,7 +166,7 @@ function! sonokai#highlight(group, fg, bg, ...) "{{{
         \ 'ctermbg=' . a:bg[1]
         \ 'gui=' . (a:0 >= 1 ?
           \ (a:1 ==# 'undercurl' ?
-            \ (executable('tmux') && $TMUX !=# '' ?
+            \ (g:sonokai#tmux ?
               \ 'underline' :
               \ 'undercurl') :
             \ a:1) :
