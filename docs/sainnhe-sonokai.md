@@ -28,13 +28,19 @@
 
 ![sonokai-maia](https://user-images.githubusercontent.com/37491630/87898142-f2b7a380-ca7f-11ea-98ea-4c4e832cdbf1.png)
 
+<h2 align="center">
+𝐄𝐬𝐩𝐫𝐞𝐬𝐬𝐨
+</h2>
+
+![sonokai-espresso](https://user-images.githubusercontent.com/37491630/120320919-49834000-c315-11eb-872c-230f78cf99a1.png)
+
 Sometimes I need a high contrast color scheme, and I think monokai is one of the best solutions, it's very beautiful and vivid.
 
-However there is one thing I can't stand -- the contrast is too high, which is totally unacceptable to me.
+However there is one thing I can't stand -- the contrast is too high, which is totally unacceptable for me.
 
 This color scheme is based on [Monokai Pro](https://monokai.pro/vscode), the contrast is adjusted to be a bit lower while keeping the colors vivid enough.
 
-The `shusia` and `maia` variants are based on `monokai pro` and `monokai machine` respectively. I'm not going to port all variants of [Monokai Pro](https://monokai.pro/vscode) because I don't like some of them. In addition, I designed some new variants inspired by other color schemes.
+The `shusia`, `maia` and `espresso` variants are basically modified versions of Monokai Pro. I'm not going to port all variants of Monokai Pro because I don't like some of them. In addition, I designed some new variants inspired by other color schemes.
 
 ## Features
 
@@ -42,6 +48,8 @@ The `shusia` and `maia` variants are based on `monokai pro` and `monokai machine
 - Vivid colors.
 - Highly customizable.
 - Rich support for common file types and plugins.
+- Semantic highlighting support.
+- Tree-sitter support.
 - [Italic support](https://github.com/sainnhe/icursive-nerd-font) 🎉
 
 ## Documentation
@@ -61,7 +69,8 @@ See this [wiki page](https://github.com/sainnhe/sonokai/wiki/Related-Projects).
 ## Inspiration
 
 - [Monokai Pro](https://monokai.pro/vscode)
-- [Edge](https://github.com/sainnhe/edge)
+- [Atom One](https://github.com/atom/atom/tree/master/packages/one-dark-syntax)
+- [Material](https://github.com/equinusocio/material-theme)
 - [Nord](https://www.nordtheme.com)
 
 ## License

@@ -561,9 +561,15 @@ call s:h("SignifySignAdd", { "fg": s:green })
 call s:h("SignifySignChange", { "fg": s:yellow })
 call s:h("SignifySignDelete", { "fg": s:red })
 
+" neoclide/coc.nvim
+call s:h("CocErrorSign", { "fg": s:red })
+call s:h("CocWarningSign", { "fg": s:yellow })
+call s:h("CocInfoSign", { "fg": s:blue })
+call s:h("CocHintSign", { "fg": s:cyan })
+
 " neomake/neomake
-call s:h("NeomakeWarningSign", { "fg": s:yellow })
 call s:h("NeomakeErrorSign", { "fg": s:red })
+call s:h("NeomakeWarningSign", { "fg": s:yellow })
 call s:h("NeomakeInfoSign", { "fg": s:blue })
 
 " plasticboy/vim-markdown (keep consistent with Markdown, above)
@@ -571,6 +577,12 @@ call s:h("mkdDelimiter", { "fg": s:purple })
 call s:h("mkdHeading", { "fg": s:red })
 call s:h("mkdLink", { "fg": s:blue })
 call s:h("mkdURL", { "fg": s:cyan, "gui": "underline", "cterm": "underline" })
+
+" prabirshrestha/vim-lsp
+call s:h("LspError", { "fg": s:red })
+call s:h("LspWarning", { "fg": s:yellow })
+call s:h("LspInformation", { "fg": s:blue })
+call s:h("LspHint", { "fg": s:cyan })
 
 " tpope/vim-fugitive
 call s:h("diffAdded", { "fg": s:green })
@@ -627,7 +639,8 @@ if has("nvim")
   let g:terminal_color_background = g:terminal_color_0
   let g:terminal_color_foreground = g:terminal_color_7
   " }}}
-  " Neovim LSP colors {{{
+
+  " Neovim LSP {{{
   call s:h("LspDiagnosticsDefaultError", { "fg": s:red })
   call s:h("LspDiagnosticsDefaultWarning", { "fg": s:yellow })
   call s:h("LspDiagnosticsDefaultInformation", { "fg": s:white })
@@ -636,7 +649,7 @@ if has("nvim")
   call s:h("LspDiagnosticsUnderlineWarning", { "fg": s:yellow, "gui": "underline", "cterm": "underline" })
   call s:h("LspDiagnosticsUnderlineInformation", { "fg": s:white, "gui": "underline", "cterm": "underline" })
   call s:h("LspDiagnosticsUnderlineHint", { "fg": s:comment_grey, "gui": "underline", "cterm": "underline" })
-" }}}
+  " }}}
 endif
 
 " }}}

@@ -20,7 +20,7 @@ function! sonokai#get_configuration() "{{{
         \ 'enable_italic': get(g:, 'sonokai_enable_italic', 0),
         \ 'cursor': get(g:, 'sonokai_cursor', 'auto'),
         \ 'menu_selection_background': get(g:, 'sonokai_menu_selection_background', 'blue'),
-        \ 'sign_column_background': get(g:, 'sonokai_sign_column_background', 'default'),
+        \ 'show_eob': get(g:, 'sonokai_show_eob', 1),
         \ 'current_word': get(g:, 'sonokai_current_word', get(g:, 'sonokai_transparent_background', 0) == 0 ? 'grey background' : 'bold'),
         \ 'lightline_disable_bold': get(g:, 'sonokai_lightline_disable_bold', 0),
         \ 'diagnostic_text_highlight': get(g:, 'sonokai_diagnostic_text_highlight', 0),
@@ -153,6 +153,31 @@ function! sonokai#get_palette(style) "{{{
           \ 'blue':       ['#78cee9',   '110',  'Blue'],
           \ 'purple':     ['#baa0f8',   '176',  'Magenta'],
           \ 'grey':       ['#82878b',   '246',  'LightGrey'],
+          \ 'none':       ['NONE',      'NONE', 'NONE']
+          \ }
+  elseif a:style ==# 'espresso'
+    let palette = {
+          \ 'black':      ['#1f1e1c',   '237',  'DarkGrey'],
+          \ 'bg0':        ['#312c2b',   '235',  'Black'],
+          \ 'bg1':        ['#393230',   '236',  'DarkGrey'],
+          \ 'bg2':        ['#413937',   '236',  'DarkGrey'],
+          \ 'bg3':        ['#49403c',   '237',  'DarkGrey'],
+          \ 'bg4':        ['#4e433f',   '237',  'Grey'],
+          \ 'bg_red':     ['#fd6883',   '203',  'Red'],
+          \ 'diff_red':   ['#55393d',   '52',   'DarkRed'],
+          \ 'bg_green':   ['#adda78',   '107',  'Green'],
+          \ 'diff_green': ['#394634',   '22',   'DarkGreen'],
+          \ 'bg_blue':    ['#85dad2',   '110',  'Blue'],
+          \ 'diff_blue':  ['#354157',   '17',   'DarkBlue'],
+          \ 'diff_yellow':['#4e432f',   '54',   'DarkMagenta'],
+          \ 'fg':         ['#e4e3e1',   '250',  'White'],
+          \ 'red':        ['#f86882',   '203',  'Red'],
+          \ 'orange':     ['#f08d71',   '215',  'Orange'],
+          \ 'yellow':     ['#f0c66f',   '179',  'Yellow'],
+          \ 'green':      ['#a6cd77',   '107',  'Green'],
+          \ 'blue':       ['#81d0c9',   '110',  'Blue'],
+          \ 'purple':     ['#9fa0e1',   '176',  'Magenta'],
+          \ 'grey':       ['#90817b',   '246',  'LightGrey'],
           \ 'none':       ['NONE',      'NONE', 'NONE']
           \ }
   endif
