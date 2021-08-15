@@ -13,7 +13,7 @@ if version > 580
 endif
 
 let g:colors_name = "nord"
-let s:nord_vim_version="0.16.0"
+let s:nord_vim_version="0.17.0"
 set background=dark
 
 let s:nord0_gui = "#2E3440"
@@ -277,6 +277,7 @@ call s:hi("Comment", s:nord3_gui_bright, "", s:nord3_term, "", s:italicize_comme
 call s:hi("Conceal", "", "NONE", "", "NONE", "", "")
 call s:hi("Conditional", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Constant", s:nord4_gui, "", "NONE", "", "", "")
+call s:hi("Decorator", s:nord12_gui, "", s:nord12_term, "", "", "")
 call s:hi("Define", s:nord9_gui, "", s:nord9_term, "", "", "")
 call s:hi("Delimiter", s:nord6_gui, "", s:nord6_term, "", "", "")
 call s:hi("Exception", s:nord9_gui, "", s:nord9_term, "", "", "")
@@ -301,8 +302,10 @@ call s:hi("Tag", s:nord4_gui, "", "", "", "", "")
 call s:hi("Todo", s:nord13_gui, "NONE", s:nord13_term, "NONE", "", "")
 call s:hi("Type", s:nord9_gui, "", s:nord9_term, "", "NONE", "")
 call s:hi("Typedef", s:nord9_gui, "", s:nord9_term, "", "", "")
+hi! link Annotation Decorator
 hi! link Macro Define
 hi! link PreCondit PreProc
+hi! link Variable Identifier
 
 "+-----------+
 "+ Languages +
@@ -686,6 +689,50 @@ hi! link jsThis Keyword
 hi! link jsNoise Delimiter
 hi! link jsPrototype Keyword
 hi! link jsRegexpString SpecialChar
+
+" Pandoc
+" > vim-pandoc/vim-pandoc-syntax
+call s:hi("pandocDefinitionBlockTerm", s:nord7_gui, "", s:nord7_term, "", s:italic, "")
+call s:hi("pandocTableDelims", s:nord3_gui, "", s:nord3_term, "", "", "")
+hi! link pandocAtxHeader markdownH1
+hi! link pandocBlockQuote markdownBlockquote
+hi! link pandocCiteAnchor Operator
+hi! link pandocCiteKey pandocReferenceLabel
+hi! link pandocDefinitionBlockMark Operator
+hi! link pandocEmphasis markdownItalic
+hi! link pandocFootnoteID pandocReferenceLabel
+hi! link pandocFootnoteIDHead markdownLinkDelimiter
+hi! link pandocFootnoteIDTail pandocFootnoteIDHead
+hi! link pandocGridTableDelims pandocTableDelims
+hi! link pandocGridTableHeader pandocTableDelims
+hi! link pandocOperator Operator
+hi! link pandocPipeTableDelims pandocTableDelims
+hi! link pandocReferenceDefinition pandocReferenceLabel
+hi! link pandocReferenceLabel markdownLinkText
+hi! link pandocReferenceURL markdownUrl
+hi! link pandocSimpleTableHeader pandocAtxHeader
+hi! link pandocStrong markdownBold
+hi! link pandocTableHeaderWord pandocAtxHeader
+hi! link pandocUListItemBullet Operator
+
+" tree-sitter
+" > nvim-treesitter/nvim-treesitter
+if has("nvim")
+  hi! link TSAnnotation Annotation
+  hi! link TSConstBuiltin Constant
+  hi! link TSConstructor Function
+  hi! link TSEmphasis Italic
+  hi! link TSError Error
+  hi! link TSFuncBuiltin Function
+  hi! link TSFuncMacro Function
+  hi! link TSStringRegex SpecialChar
+  hi! link TSStrong Bold
+  hi! link TSStructure Structure
+  hi! link TSTagDelimiter TSTag
+  hi! link TSUnderline Underline
+  hi! link TSVariable Variable
+  hi! link TSVariableBuiltin Keyword
+endif
 
 " TypeScript
 " > HerringtonDarkholme/yats.vim

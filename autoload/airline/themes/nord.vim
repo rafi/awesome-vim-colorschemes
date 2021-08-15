@@ -5,7 +5,7 @@
 " Repository: https://github.com/arcticicestudio/nord-vim
 " License: MIT
 
-let s:nord_vim_version="0.16.0"
+let s:nord_vim_version="0.17.0"
 let g:airline#themes#nord#palette = {}
 
 let s:nord0_gui = "#2E3440"

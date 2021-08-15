@@ -5,7 +5,10 @@
 " License:    The MIT License (MIT)
 " Based On:   https://github.com/MaxSt/FlatColor/
 
-" A companion [vim-airline](https://github.com/bling/vim-airline) theme is available at: https://github.com/joshdick/airline-onedark.vim
+" Companion statusline plugin and terminal themes are included with onedark.vim:
+"  * https://github.com/joshdick/onedark.vim#lightlinevim-colorscheme
+"  * https://github.com/joshdick/onedark.vim#vim-airline-theme
+"  * https://github.com/joshdick/onedark.vim/tree/main/term
 
 " Color Reference {{{
 
@@ -56,7 +59,7 @@ let g:colors_name="onedark"
 " Set to "256" for 256-color terminals, or
 " set to "16" to use your terminal emulator's native colors
 " (a 16-color palette for this color scheme is available; see
-" < https://github.com/joshdick/onedark.vim/blob/master/README.md >
+" < https://github.com/joshdick/onedark.vim/blob/main/README.md >
 " for more information.)
 if !exists("g:onedark_termcolors")
   let g:onedark_termcolors = 256
@@ -142,7 +145,8 @@ let s:purple = s:colors.purple
 let s:cyan = s:colors.cyan
 let s:white = s:colors.white
 let s:black = s:colors.black
-let s:visual_black = s:colors.visual_black " Black out selected text in 16-color visual mode
+let s:foreground = s:colors.foreground
+let s:background = s:colors.background
 let s:comment_grey = s:colors.comment_grey
 let s:gutter_fg_grey = s:colors.gutter_fg_grey
 let s:cursor_grey = s:colors.cursor_grey
@@ -157,9 +161,9 @@ let s:vertsplit = s:colors.vertsplit
 
 let g:terminal_ansi_colors = [
   \ s:black.gui, s:red.gui, s:green.gui, s:yellow.gui,
-  \ s:blue.gui, s:purple.gui, s:cyan.gui, s:white.gui,
-  \ s:visual_grey.gui, s:dark_red.gui, s:green.gui, s:dark_yellow.gui,
-  \ s:blue.gui, s:purple.gui, s:cyan.gui, s:comment_grey.gui
+  \ s:blue.gui, s:purple.gui, s:cyan.gui, s:comment_grey.gui,
+  \ s:visual_grey.gui, s:red.gui, s:green.gui, s:yellow.gui,
+  \ s:blue.gui, s:purple.gui, s:cyan.gui, s:white.gui
 \]
 
 " }}}
@@ -237,10 +241,10 @@ call s:h("MatchParen", { "fg": s:blue, "gui": "underline", "cterm": "underline" 
 call s:h("ModeMsg", {}) " 'showmode' message (e.g., "-- INSERT --")
 call s:h("MoreMsg", {}) " more-prompt
 call s:h("NonText", { "fg": s:special_grey }) " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
-call s:h("Normal", { "fg": s:white, "bg": s:black }) " normal text
-call s:h("Pmenu", { "bg": s:menu_grey }) " Popup menu: normal item.
-call s:h("PmenuSel", { "fg": s:black, "bg": s:blue }) " Popup menu: selected item.
-call s:h("PmenuSbar", { "bg": s:special_grey }) " Popup menu: scrollbar.
+call s:h("Normal", { "fg": s:foreground, "bg": s:background }) " normal text
+call s:h("Pmenu", { "fg": s:white, "bg": s:menu_grey }) " Popup menu: normal item.
+call s:h("PmenuSel", { "fg": s:cursor_grey, "bg": s:blue }) " Popup menu: selected item.
+call s:h("PmenuSbar", { "bg": s:cursor_grey }) " Popup menu: scrollbar.
 call s:h("PmenuThumb", { "bg": s:white }) " Popup menu: Thumb of the scrollbar.
 call s:h("Question", { "fg": s:purple }) " hit-enter prompt and yes/no questions
 call s:h("QuickFixLine", { "fg": s:black, "bg": s:yellow }) " Current quickfix item in the quickfix window.
@@ -259,7 +263,7 @@ call s:h("TabLineFill", {}) " tab pages line, where there are no labels
 call s:h("TabLineSel", { "fg": s:white }) " tab pages line, active tab page label
 call s:h("Terminal", { "fg": s:white, "bg": s:black }) " terminal window (see terminal-size-color)
 call s:h("Title", { "fg": s:green }) " titles for output from ":set all", ":autocmd" etc.
-call s:h("Visual", { "fg": s:visual_black, "bg": s:visual_grey }) " Visual mode selection
+call s:h("Visual", { "bg": s:visual_grey }) " Visual mode selection
 call s:h("VisualNOS", { "bg": s:visual_grey }) " Visual mode selection when vim is "Not Owning the Selection". Only X11 Gui's gui-x11 and xterm-clipboard supports this.
 call s:h("WarningMsg", { "fg": s:yellow }) " warning messages
 call s:h("WildMenu", { "fg": s:black, "bg": s:blue }) " current match in 'wildmenu' completion
@@ -541,9 +545,9 @@ call s:h("xmlTagName", { "fg": s:red })
 " Plugin Highlighting {{{
 
 " airblade/vim-gitgutter
-hi link GitGutterAdd    SignifySignAdd
-hi link GitGutterChange SignifySignChange
-hi link GitGutterDelete SignifySignDelete
+call s:h("GitGutterAdd", { "fg": s:green })
+call s:h("GitGutterChange", { "fg": s:yellow })
+call s:h("GitGutterDelete", { "fg": s:red })
 
 " dense-analysis/ale
 call s:h("ALEError", { "fg": s:red, "gui": "underline", "cterm": "underline" })
@@ -556,10 +560,15 @@ call s:h("EasyMotionTarget2First", { "fg": s:yellow, "gui": "bold", "cterm": "bo
 call s:h("EasyMotionTarget2Second", { "fg": s:dark_yellow, "gui": "bold", "cterm": "bold" })
 call s:h("EasyMotionShade",  { "fg": s:comment_grey })
 
+" lewis6991/gitsigns.nvim
+hi link GitSignsAdd    GitGutterAdd
+hi link GitSignsChange GitGutterChange
+hi link GitSignsDelete GitGutterDelete
+
 " mhinz/vim-signify
-call s:h("SignifySignAdd", { "fg": s:green })
-call s:h("SignifySignChange", { "fg": s:yellow })
-call s:h("SignifySignDelete", { "fg": s:red })
+hi link SignifySignAdd    GitGutterAdd
+hi link SignifySignChange GitGutterChange
+hi link SignifySignDelete GitGutterDelete
 
 " neoclide/coc.nvim
 call s:h("CocErrorSign", { "fg": s:red })
@@ -636,19 +645,23 @@ if has("nvim")
   let g:terminal_color_13 = s:purple.gui " No dark version
   let g:terminal_color_14 = s:cyan.gui " No dark version
   let g:terminal_color_15 = s:comment_grey.gui
-  let g:terminal_color_background = g:terminal_color_0
-  let g:terminal_color_foreground = g:terminal_color_7
+  let g:terminal_color_background = s:background.gui
+  let g:terminal_color_foreground = s:foreground.gui
   " }}}
 
   " Neovim LSP {{{
   call s:h("LspDiagnosticsDefaultError", { "fg": s:red })
   call s:h("LspDiagnosticsDefaultWarning", { "fg": s:yellow })
-  call s:h("LspDiagnosticsDefaultInformation", { "fg": s:white })
-  call s:h("LspDiagnosticsDefaultHint", { "fg": s:comment_grey })
+  call s:h("LspDiagnosticsDefaultInformation", { "fg": s:blue })
+  call s:h("LspDiagnosticsDefaultHint", { "fg": s:cyan })
   call s:h("LspDiagnosticsUnderlineError", { "fg": s:red, "gui": "underline", "cterm": "underline" })
   call s:h("LspDiagnosticsUnderlineWarning", { "fg": s:yellow, "gui": "underline", "cterm": "underline" })
-  call s:h("LspDiagnosticsUnderlineInformation", { "fg": s:white, "gui": "underline", "cterm": "underline" })
-  call s:h("LspDiagnosticsUnderlineHint", { "fg": s:comment_grey, "gui": "underline", "cterm": "underline" })
+  call s:h("LspDiagnosticsUnderlineInformation", { "fg": s:blue, "gui": "underline", "cterm": "underline" })
+  call s:h("LspDiagnosticsUnderlineHint", { "fg": s:cyan, "gui": "underline", "cterm": "underline" })
+  call s:h("LspDiagnosticsVirtualTextError", { "fg": s:red, "bg": s:cursor_grey  })
+  call s:h("LspDiagnosticsVirtualTextWarning", { "fg": s:yellow, "bg": s:cursor_grey  })
+  call s:h("LspDiagnosticsVirtualTextInformation", { "fg": s:blue, "bg": s:cursor_grey  })
+  call s:h("LspDiagnosticsVirtualTextHint", { "fg": s:cyan, "bg": s:cursor_grey  })
   " }}}
 endif
 
