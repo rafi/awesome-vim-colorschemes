@@ -1,6 +1,6 @@
 " Name:         stellarized
-" Author:       nightsense
-" Maintainer:   nightsense
+" Author:       haystackandroid
+" Maintainer:   haystackandroid
 " License:      MIT
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')

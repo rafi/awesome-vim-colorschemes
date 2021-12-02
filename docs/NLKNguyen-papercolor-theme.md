@@ -85,24 +85,25 @@ In **8 color** and **4 color** terminals, they might lack the necessary variatio
 
 **Default Theme Palette**
 
-|    | Light Theme                                                 |  8-bit | 24-bit  | Dark Theme                                                  |  8-bit | 24-bit  |
-|--- | -----                                                       | -------|---------| -----                                                       | -------|---------|
-| 0  |![#eeeeee](https://placehold.it/100x40/eeeeee/000000?text=+) |  255   | #eeeeee |![#1c1c1c](https://placehold.it/100x40/1c1c1c/000000?text=+) |  234   | #1c1c1c |
-| 1  |![#af0000](https://placehold.it/100x40/af0000/000000?text=+) |  124   | #af0000 |![#af005f](https://placehold.it/100x40/af005f/000000?text=+) |  125   | #af005f |
-| 2  |![#008700](https://placehold.it/100x40/008700/000000?text=+) |  28    | #008700 |![#5faf00](https://placehold.it/100x40/5faf00/000000?text=+) |  70    | #5faf00 |
-| 3  |![#5f8700](https://placehold.it/100x40/5f8700/000000?text=+) |  64    | #5f8700 |![#d7af5f](https://placehold.it/100x40/d7af5f/000000?text=+) |  179   | #d7af5f |
-| 4  |![#0087af](https://placehold.it/100x40/0087af/000000?text=+) |  31    | #0087af |![#5fafd7](https://placehold.it/100x40/5fafd7/000000?text=+) |  74    | #5fafd7 |
-| 5  |![#878787](https://placehold.it/100x40/878787/000000?text=+) |  102   | #878787 |![#808080](https://placehold.it/100x40/808080/000000?text=+) |  244   | #808080 |
-| 6  |![#005f87](https://placehold.it/100x40/005f87/000000?text=+) |  24    | #005f87 |![#d7875f](https://placehold.it/100x40/d7875f/000000?text=+) |  173   | #d7875f |
-| 7  |![#444444](https://placehold.it/100x40/444444/000000?text=+) |  238   | #444444 |![#d0d0d0](https://placehold.it/100x40/d0d0d0/000000?text=+) |  252   | #d0d0d0 |
-| 8  |![#bcbcbc](https://placehold.it/100x40/bcbcbc/000000?text=+) |  250   | #bcbcbc |![#585858](https://placehold.it/100x40/585858/000000?text=+) |  240   | #585858 |
-| 9  |![#d70000](https://placehold.it/100x40/d70000/000000?text=+) |  160   | #d70000 |![#5faf5f](https://placehold.it/100x40/5faf5f/000000?text=+) |  71    | #5faf5f |
-| 10 |![#d70087](https://placehold.it/100x40/d70087/000000?text=+) |  162   | #d70087 |![#afd700](https://placehold.it/100x40/afd700/000000?text=+) |  148   | #afd700 |
-| 11 |![#8700af](https://placehold.it/100x40/8700af/000000?text=+) |  91    | #8700af |![#af87d7](https://placehold.it/100x40/af87d7/000000?text=+) |  140   | #af87d7 |
-| 12 |![#d75f00](https://placehold.it/100x40/d75f00/000000?text=+) |  166   | #d75f00 |![#ffaf00](https://placehold.it/100x40/ffaf00/000000?text=+) |  214   | #ffaf00 |
-| 13 |![#d75f00](https://placehold.it/100x40/d75f00/000000?text=+) |  166   | #d75f00 |![#ff5faf](https://placehold.it/100x40/ff5faf/000000?text=+) |  205   | #ff5faf |
-| 14 |![#005faf](https://placehold.it/100x40/005faf/000000?text=+) |  25    | #005faf |![#00afaf](https://placehold.it/100x40/00afaf/000000?text=+) |  37    | #00afaf |
-| 15 |![#005f87](https://placehold.it/100x40/005f87/000000?text=+) |  24    | #005f87 |![#5f8787](https://placehold.it/100x40/5f8787/000000?text=+) |  66    | #5f8787 |
+|    | Light Theme                                                        |  8-bit | 24-bit  | Dark Theme                                                         |  8-bit | 24-bit  |
+|--- | -----                                                              | -------|---------| -----                                                              | -------|---------|
+| 0  |![#eeeeee](https://via.placeholder.com/100x40/eeeeee/000000?text=+) |  255   | #eeeeee |![#1c1c1c](https://via.placeholder.com/100x40/1c1c1c/000000?text=+) |  234   | #1c1c1c |
+| 1  |![#af0000](https://via.placeholder.com/100x40/af0000/000000?text=+) |  124   | #af0000 |![#af005f](https://via.placeholder.com/100x40/af005f/000000?text=+) |  125   | #af005f |
+| 2  |![#008700](https://via.placeholder.com/100x40/008700/000000?text=+) |  28    | #008700 |![#5faf00](https://via.placeholder.com/100x40/5faf00/000000?text=+) |  70    | #5faf00 |
+| 3  |![#5f8700](https://via.placeholder.com/100x40/5f8700/000000?text=+) |  64    | #5f8700 |![#d7af5f](https://via.placeholder.com/100x40/d7af5f/000000?text=+) |  179   | #d7af5f |
+| 4  |![#0087af](https://via.placeholder.com/100x40/0087af/000000?text=+) |  31    | #0087af |![#5fafd7](https://via.placeholder.com/100x40/5fafd7/000000?text=+) |  74    | #5fafd7 |
+| 5  |![#878787](https://via.placeholder.com/100x40/878787/000000?text=+) |  102   | #878787 |![#808080](https://via.placeholder.com/100x40/808080/000000?text=+) |  244   | #808080 |
+| 6  |![#005f87](https://via.placeholder.com/100x40/005f87/000000?text=+) |  24    | #005f87 |![#d7875f](https://via.placeholder.com/100x40/d7875f/000000?text=+) |  173   | #d7875f |
+| 7  |![#444444](https://via.placeholder.com/100x40/444444/000000?text=+) |  238   | #444444 |![#d0d0d0](https://via.placeholder.com/100x40/d0d0d0/000000?text=+) |  252   | #d0d0d0 |
+| 8  |![#bcbcbc](https://via.placeholder.com/100x40/bcbcbc/000000?text=+) |  250   | #bcbcbc |![#585858](https://via.placeholder.com/100x40/585858/000000?text=+) |  240   | #585858 |
+| 9  |![#d70000](https://via.placeholder.com/100x40/d70000/000000?text=+) |  160   | #d70000 |![#5faf5f](https://via.placeholder.com/100x40/5faf5f/000000?text=+) |  71    | #5faf5f |
+| 10 |![#d70087](https://via.placeholder.com/100x40/d70087/000000?text=+) |  162   | #d70087 |![#afd700](https://via.placeholder.com/100x40/afd700/000000?text=+) |  148   | #afd700 |
+| 11 |![#8700af](https://via.placeholder.com/100x40/8700af/000000?text=+) |  91    | #8700af |![#af87d7](https://via.placeholder.com/100x40/af87d7/000000?text=+) |  140   | #af87d7 |
+| 12 |![#d75f00](https://via.placeholder.com/100x40/d75f00/000000?text=+) |  166   | #d75f00 |![#ffaf00](https://via.placeholder.com/100x40/ffaf00/000000?text=+) |  214   | #ffaf00 |
+| 13 |![#d75f00](https://via.placeholder.com/100x40/d75f00/000000?text=+) |  166   | #d75f00 |![#ff5faf](https://via.placeholder.com/100x40/ff5faf/000000?text=+) |  205   | #ff5faf |
+| 14 |![#005faf](https://via.placeholder.com/100x40/005faf/000000?text=+) |  25    | #005faf |![#00afaf](https://via.placeholder.com/100x40/00afaf/000000?text=+) |  37    | #00afaf |
+| 15 |![#005f87](https://via.placeholder.com/100x40/005f87/000000?text=+) |  24    | #005f87 |![#5f8787](https://via.placeholder.com/100x40/5f8787/000000?text=+) |  66    | #5f8787 |
+
 
 There are many more colors for many additional syntax groups, but they are designed to fall back to these base 16 colors strategically so that it can utilize the terminal native color palette (if configured like above), and also theme designers only need to provide 16 colors for a functional theme.
 
@@ -160,6 +161,12 @@ It's easy to use a plugin manager like [Vundle](https://github.com/gmarik/Vundle
 A newer and popular plugin manager is Plug that you can use as well. Similar setup like above; run `:PlugInstall`
 
     Plug 'NLKNguyen/papercolor-theme'
+    
+To use vims built in package manager use this command
+
+    git clone https://github.com/NLKNguyen/papercolor-theme.git ~/.vim/pack/colors/start/papercolor-theme
+    
+    
 ### Manual
 
 If you can't use a plugin manager (you should), then manually place `PaperColor.vim` file into `colors` folder within your Vim directory, e.g. `~/.vim/colors/`
@@ -430,11 +437,13 @@ I try to respond to users' feedback and feature requests as much as possible. Ob
 
 [PaperColor for Vscode](https://github.com/Rozbo/papercolor-vscode) by [rozbo](https://github.com/rozbo)
 
+[PaperColor for Vscode Redux](https://github.com/mrworkman/papercolor-vscode-redux) by [mrworkman](https://github.com/mrworkman)
+
 [PaperColor theme for Hyper](https://github.com/rafaelrinaldi/hyper-papercolor) by [Rafael Rinaldi](https://github.com/rafaelrinaldi)
 
 [PaperColor Theme for kitty](https://github.com/craffate/papercolor-kitty) by [Cyril Raffatelli](https://github.com/craffate)
 
-[PaperColor Light theme for cmus](https://github.com/eremit/papercolor-light-cmus) by [eremit](https://github.com/eremit)
+[PaperColor Light theme for several tools](https://github.com/stoerdebegga/papercolor-light-contrib) by [stoerdebegga](https://github.com/stoerdebegga)
 
 [PaperColor Light theme for Alacritty](https://github.com/eendroroy/alacritty-theme/blob/master/themes/papercolor_light.yaml)
 

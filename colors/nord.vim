@@ -13,7 +13,7 @@ if version > 580
 endif
 
 let g:colors_name = "nord"
-let s:nord_vim_version="0.17.0"
+let s:nord_vim_version="0.18.0"
 set background=dark
 
 let s:nord0_gui = "#2E3440"
@@ -574,6 +574,7 @@ call s:hi("CocHintSign" , s:nord10_gui, "", s:nord10_term, "", "", "")
 
 " Neovim LSP
 " > neovim/nvim-lspconfig
+call s:hi("LspCodeLens", s:nord3_gui_bright, "", s:nord3_term, "", "", "")
 call s:hi("LspDiagnosticsDefaultWarning", s:nord13_gui, "", s:nord13_term, "", "", "")
 call s:hi("LspDiagnosticsDefaultError" , s:nord11_gui, "", s:nord11_term, "", "", "")
 call s:hi("LspDiagnosticsDefaultInformation" , s:nord8_gui, "", s:nord8_term, "", "", "")
@@ -722,7 +723,6 @@ if has("nvim")
   hi! link TSConstBuiltin Constant
   hi! link TSConstructor Function
   hi! link TSEmphasis Italic
-  hi! link TSError Error
   hi! link TSFuncBuiltin Function
   hi! link TSFuncMacro Function
   hi! link TSStringRegex SpecialChar

@@ -204,6 +204,14 @@ call s:h("SyntasticWarning",        {"bg": s:yellow, "fg": s:black, "gui": "bold
 call s:h("SyntasticErrorSign",      {"fg": s:red})
 call s:h("SyntasticError",          {"bg": s:red, "fg": s:white, "gui": "bold", "cterm": "bold"})
 
+" which-key.nvim
+call s:h("WhichKey",                {"bg": s:bg, "fg": s:pink, "gui": "bold", "cterm": "bold"})
+call s:h("WhichKeyDesc",            {"bg": s:bg, "fg": s:norm_subtle, "gui": "bold", "cterm": "bold"})
+call s:h("WhichKeySeparator",       {"bg": s:bg, "fg": s:norm, "gui": "bold", "cterm": "bold"})
+call s:h("WhichKeyFloat",           {"bg": s:bg})
+
+hi link WhichKeyGroup WhichKey
+
 " Neomake
 hi link NeomakeWarningSign	SyntasticWarningSign
 hi link NeomakeErrorSign	SyntasticErrorSign

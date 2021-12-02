@@ -1,4 +1,4 @@
-" carbonized-light, a vim colourscheme by nightsense
+" carbonized-light, a vim colourscheme by haystackandroid
 "
 " generated with a theme template adapted from
 " base16-vim (https://github.com/chriskempson/base16-vim)
@@ -79,7 +79,7 @@ syntax reset
 
 " set new theme
 set background=light
-augroup NightsenseThemeSet
+augroup HaystackandroidThemeSet
    autocmd!
    autocmd CursorMoved * execute 'if !exists("colors_name") |
          \ colorscheme carbonized-light | endif'

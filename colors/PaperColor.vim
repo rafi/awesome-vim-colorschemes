@@ -907,16 +907,19 @@ fun! s:set_color_variables()
     fun! s:create_color_variables(color_name, rich_color, term_color)
       let {'s:fg_' . a:color_name} = ' guifg=' . a:rich_color[0] . ' '
       let {'s:bg_' . a:color_name} = ' guibg=' . a:rich_color[0] . ' '
+      let {'s:sp_' . a:color_name} = ' guisp=' . a:rich_color[0] . ' '
     endfun
   elseif s:mode == s:MODE_256_COLOR
     fun! s:create_color_variables(color_name, rich_color, term_color)
       let {'s:fg_' . a:color_name} = ' ctermfg=' . a:rich_color[1] . ' '
       let {'s:bg_' . a:color_name} = ' ctermbg=' . a:rich_color[1] . ' '
+      let {'s:sp_' . a:color_name} = ''
     endfun
   else
     fun! s:create_color_variables(color_name, rich_color, term_color)
       let {'s:fg_' . a:color_name} = ' ctermfg=' . a:term_color . ' '
       let {'s:bg_' . a:color_name} = ' ctermbg=' . a:term_color . ' '
+      let {'s:sp_' . a:color_name} = ''
     endfun
   endif
   " }}}
@@ -1240,6 +1243,28 @@ fun! s:apply_syntax_highlightings()
   exec 'hi Title' . s:fg_comment
   exec 'hi Global' . s:fg_blue
 
+  " Neovim (LSP) diagnostics
+  if has('nvim')
+    exec 'hi LspDiagnosticsDefaultError' . s:fg_error_fg . s:bg_error_bg
+    exec 'hi LspDiagnosticsDefaultWarning' . s:fg_todo_fg . s:bg_todo_bg . s:ft_bold
+    exec 'hi LspDiagnosticsDefaultInformation' . s:fg_todo_fg . s:bg_todo_bg . s:ft_bold
+    exec 'hi LspDiagnosticsDefaultHint' . s:fg_todo_fg . s:bg_todo_bg . s:ft_bold
+
+    exec 'hi LspDiagnosticsUnderlineError cterm=undercurl gui=undercurl' . s:sp_error_fg
+    exec 'hi LspDiagnosticsUnderlineWarning cterm=undercurl gui=undercurl' . s:sp_todo_fg
+    exec 'hi LspDiagnosticsUnderlineInformation cterm=undercurl gui=undercurl' . s:sp_todo_fg
+    exec 'hi LspDiagnosticsUnderlineHint cterm=undercurl gui=undercurl' . s:sp_todo_fg
+
+    hi! link DiagnosticError LspDiagnosticsDefaultError
+    hi! link DiagnosticWarn LspDiagnosticsDefaultWarning
+    hi! link DiagnosticInfo LspDiagnosticsDefaultInformation
+    hi! link DiagnosticHint LspDiagnosticsDefaultHint
+
+    hi! link DiagnosticUnderlineError LspDiagnosticsUnderlineError
+    hi! link DiagnosticUnderlineWarn LspDiagnosticsUnderlineWarning
+    hi! link DiagnosticUnderlineInfo LspDiagnosticsUnderlineInformation
+    hi! link DiagnosticUnderlineHint LspDiagnosticsUnderlineHint
+  endif
 
   " Extension {{{
   " VimL Highlighting
@@ -2204,6 +2229,23 @@ fun! s:apply_syntax_highlightings()
   exec 'hi diffLine' . s:fg_orange
   exec 'hi diffBDiffer' . s:fg_orange
   exec 'hi diffNewFile' . s:fg_comment
+
+  " Pluging: CoC
+  exec 'hi CocFloating' . s:fg_popupmenu_fg . s:bg_popupmenu_bg . s:ft_none
+  exec 'hi CocErrorFloat' . s:fg_popupmenu_fg . s:bg_popupmenu_bg . s:ft_none
+  exec 'hi CocWarningFloat' . s:fg_popupmenu_fg . s:bg_popupmenu_bg . s:ft_none
+  exec 'hi CocInfoFloat' . s:fg_popupmenu_fg . s:bg_popupmenu_bg . s:ft_none
+  exec 'hi CocHintFloat' . s:fg_popupmenu_fg . s:bg_popupmenu_bg . s:ft_none
+
+  exec 'hi CocErrorHighlight' . s:fg_foreground . s:bg_spellbad
+  exec 'hi CocWarningHighlight' . s:fg_foreground . s:bg_spellcap
+  exec 'hi CocInfoHighlight' . s:fg_foreground . s:bg_spellcap
+  exec 'hi CocHintHighlight' . s:fg_foreground . s:bg_spellcap
+
+  exec 'hi CocErrorSign' . s:fg_error_fg . s:bg_error_bg
+  exec 'hi CocWarningSign' . s:fg_todo_fg . s:bg_todo_bg . s:ft_bold
+  exec 'hi CocInfoSign' . s:fg_todo_fg . s:bg_todo_bg . s:ft_bold
+  exec 'hi CocHintSign' . s:fg_todo_fg . s:bg_todo_bg . s:ft_bold
 
 endfun
 " }}}
