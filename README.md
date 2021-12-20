@@ -15,7 +15,8 @@ Use your favorite package-manager to install, and enjoy!
 | [afterglow] | Adaptation from Sublime Text | ✓ | ✓ |
 | [alduin] | Dark rustic colors | ✓ | ✓ |
 | [anderson] | Dark vim colorscheme based on colors from Wes Anderson films | ✓ | ✓ |
-| [angr] | Pleasant, mild, dark theme | ✓ | ✓ | | [ayu-vim] | Simple, bright and elegant theme |   | ✓ |
+| [angr] | Pleasant, mild, dark theme | ✓ | ✓ |
+| [ayu-vim] | Simple, bright and elegant theme |   | ✓ |
 | [Apprentice] | Dark, low-contrast colorscheme | ✓ | ✓ |
 | [Archery] | Vim colorscheme inspired by Arch Linux colors | ✓ | ✓ |
 | [Atom] | Designed to be very readable in both light and dark environments |   | ✓ |
