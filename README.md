@@ -15,8 +15,7 @@ Use your favorite package-manager to install, and enjoy!
 | [afterglow] | Adaptation from Sublime Text | ✓ | ✓ |
 | [alduin] | Dark rustic colors | ✓ | ✓ |
 | [anderson] | Dark vim colorscheme based on colors from Wes Anderson films | ✓ | ✓ |
-| [angr] | Pleasant, mild, dark theme | ✓ | ✓ |
-| [ayu-vim] | Simple, bright and elegant theme |   | ✓ |
+| [angr] | Pleasant, mild, dark theme | ✓ | ✓ | | [ayu-vim] | Simple, bright and elegant theme |   | ✓ |
 | [Apprentice] | Dark, low-contrast colorscheme | ✓ | ✓ |
 | [Archery] | Vim colorscheme inspired by Arch Linux colors | ✓ | ✓ |
 | [Atom] | Designed to be very readable in both light and dark environments |   | ✓ |
@@ -28,6 +27,7 @@ Use your favorite package-manager to install, and enjoy!
 | [flattened] | Solarized, without the bullshit | ✓ (16) | ✓ |
 | [focuspoint] | Maintain color coordination and important keyword focus |   | ✓ |
 | [fogbell] | Minimal grey monotone with 3 variants | ✓ | ✓ |
+| [fusion] | Radioactie dark colorscheme for vim | ✓ | ✓ |
 | [github] | Based on Github's syntax highlighting | ✓ | ✓ |
 | [gotham] | Very dark vim colorscheme | ✓ | ✓ |
 | [gruvbox] | Retro groove color scheme | ✓ | ✓ |
