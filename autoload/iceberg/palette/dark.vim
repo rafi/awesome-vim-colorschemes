@@ -7,6 +7,7 @@ function! iceberg#palette#dark#create() abort
   let hue_lblue = 190
   let hue_blue = 215
   let hue_purple = 255
+  let hue_pale = 225
 
   " gui {{{
   let g = {}
@@ -18,6 +19,7 @@ function! iceberg#palette#dark#create() abort
   let g.orange = pgmnt#color#hsl(hue_orange, 0.65, 0.68)
   let g.purple = pgmnt#color#hsl(hue_purple, 0.32, 0.68)
   let g.red    = pgmnt#color#hsl(hue_red,    0.65, 0.68)
+  let g.pale   = pgmnt#color#hsl(hue_pale,   0.28, 0.72)
 
   " normal
   let g.normal_bg = pgmnt#color#hsl(hue_base, 0.20, 0.11)
@@ -149,6 +151,7 @@ function! iceberg#palette#dark#create() abort
   let c.orange = 216
   let c.purple = 140
   let c.red = 203
+  let c.pale = 252
 
   " normal
   let c.normal_bg = 234

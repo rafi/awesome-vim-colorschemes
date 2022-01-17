@@ -216,6 +216,21 @@ if has('nvim')
   let g:terminal_color_15 = s:nord6_gui
 endif
 
+"+- Neovim Diagnostics API -+
+call s:hi("DiagnosticWarn", s:nord13_gui, "", s:nord13_term, "", "", "")
+call s:hi("DiagnosticError" , s:nord11_gui, "", s:nord11_term, "", "", "")
+call s:hi("DiagnosticInfo" , s:nord8_gui, "", s:nord8_term, "", "", "")
+call s:hi("DiagnosticHint" , s:nord10_gui, "", s:nord10_term, "", "", "")
+call s:hi("DiagnosticUnderlineWarn" , s:nord13_gui, "", s:nord13_term, "", "undercurl", "")
+call s:hi("DiagnosticUnderlineError" , s:nord11_gui, "", s:nord11_term, "", "undercurl", "")
+call s:hi("DiagnosticUnderlineInfo" , s:nord8_gui, "", s:nord8_term, "", "undercurl", "")
+call s:hi("DiagnosticUnderlineHint" , s:nord10_gui, "", s:nord10_term, "", "undercurl", "")
+
+"+- Neovim DocumentHighlight -+
+call s:hi("LspReferenceText", "", s:nord3_gui, "", s:nord3_term, "", "")
+call s:hi("LspReferenceRead", "", s:nord3_gui, "", s:nord3_term, "", "")
+call s:hi("LspReferenceWrite", "", s:nord3_gui, "", s:nord3_term, "", "")
+
 "+--- Gutter ---+
 call s:hi("CursorColumn", "", s:nord1_gui, "NONE", s:nord1_term, "", "")
 if g:nord_cursor_line_number_background == 0
@@ -575,14 +590,16 @@ call s:hi("CocHintSign" , s:nord10_gui, "", s:nord10_term, "", "", "")
 " Neovim LSP
 " > neovim/nvim-lspconfig
 call s:hi("LspCodeLens", s:nord3_gui_bright, "", s:nord3_term, "", "", "")
-call s:hi("LspDiagnosticsDefaultWarning", s:nord13_gui, "", s:nord13_term, "", "", "")
-call s:hi("LspDiagnosticsDefaultError" , s:nord11_gui, "", s:nord11_term, "", "", "")
-call s:hi("LspDiagnosticsDefaultInformation" , s:nord8_gui, "", s:nord8_term, "", "", "")
-call s:hi("LspDiagnosticsDefaultHint" , s:nord10_gui, "", s:nord10_term, "", "", "")
-call s:hi("LspDiagnosticsUnderlineWarning" , s:nord13_gui, "", s:nord13_term, "", "undercurl", "")
-call s:hi("LspDiagnosticsUnderlineError" , s:nord11_gui, "", s:nord11_term, "", "undercurl", "")
-call s:hi("LspDiagnosticsUnderlineInformation" , s:nord8_gui, "", s:nord8_term, "", "undercurl", "")
-call s:hi("LspDiagnosticsUnderlineHint" , s:nord10_gui, "", s:nord10_term, "", "undercurl", "")
+if has("nvim-0.5")
+  call s:hi("LspDiagnosticsDefaultWarning", s:nord13_gui, "", s:nord13_term, "", "", "")
+  call s:hi("LspDiagnosticsDefaultError" , s:nord11_gui, "", s:nord11_term, "", "", "")
+  call s:hi("LspDiagnosticsDefaultInformation" , s:nord8_gui, "", s:nord8_term, "", "", "")
+  call s:hi("LspDiagnosticsDefaultHint" , s:nord10_gui, "", s:nord10_term, "", "", "")
+  call s:hi("LspDiagnosticsUnderlineWarning" , s:nord13_gui, "", s:nord13_term, "", "undercurl", "")
+  call s:hi("LspDiagnosticsUnderlineError" , s:nord11_gui, "", s:nord11_term, "", "undercurl", "")
+  call s:hi("LspDiagnosticsUnderlineInformation" , s:nord8_gui, "", s:nord8_term, "", "undercurl", "")
+  call s:hi("LspDiagnosticsUnderlineHint" , s:nord10_gui, "", s:nord10_term, "", "undercurl", "")
+endif
 
 " GitGutter
 " > airblade/vim-gitgutter

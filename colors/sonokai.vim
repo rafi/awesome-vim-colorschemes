@@ -10,7 +10,7 @@
 let s:configuration = sonokai#get_configuration()
 let s:palette = sonokai#get_palette(s:configuration.style)
 let s:path = expand('<sfile>:p') " the path of this script
-let s:last_modified = 'Tue Nov 30 08:06:39 UTC 2021'
+let s:last_modified = 'Sun Jan 16 12:16:28 UTC 2022'
 let g:sonokai_loaded_file_types = []
 
 if !(exists('g:colors_name') && g:colors_name ==# 'sonokai' && s:configuration.better_performance)
@@ -305,14 +305,15 @@ endif
 if (has('termguicolors') && &termguicolors) || has('gui_running')
   " Definition
   let s:terminal = {
-        \ 'black':    s:palette.black,
-        \ 'red':      s:palette.red,
-        \ 'yellow':   s:palette.yellow,
-        \ 'green':    s:palette.green,
-        \ 'cyan':     s:palette.orange,
-        \ 'blue':     s:palette.blue,
-        \ 'purple':   s:palette.purple,
-        \ 'white':    s:palette.fg
+        \ 'black':           s:palette.black,
+        \ 'red':             s:palette.red,
+        \ 'yellow':          s:palette.yellow,
+        \ 'green':           s:palette.green,
+        \ 'cyan':            s:palette.orange,
+        \ 'blue':            s:palette.blue,
+        \ 'purple':          s:palette.purple,
+        \ 'white':           s:palette.fg,
+        \ 'bright_black':    s:palette.grey,
         \ }
   " Implementation: {{{
   if !has('nvim')
@@ -328,7 +329,7 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
     let g:terminal_color_5 = s:terminal.purple[0]
     let g:terminal_color_6 = s:terminal.cyan[0]
     let g:terminal_color_7 = s:terminal.white[0]
-    let g:terminal_color_8 = s:terminal.black[0]
+    let g:terminal_color_8 = s:terminal.bright_black[0]
     let g:terminal_color_9 = s:terminal.red[0]
     let g:terminal_color_10 = s:terminal.green[0]
     let g:terminal_color_11 = s:terminal.yellow[0]
@@ -343,7 +344,7 @@ endif
 " Plugins: {{{
 " nvim-treesitter/nvim-treesitter {{{
 call sonokai#highlight('TSStrong', s:palette.none, s:palette.none, 'bold')
-call sonokai#highlight('TSEmphasis', s:palette.none, s:palette.none, 'bold')
+call sonokai#highlight('TSEmphasis', s:palette.none, s:palette.none, 'italic')
 call sonokai#highlight('TSUnderline', s:palette.none, s:palette.none, 'underline')
 call sonokai#highlight('TSNote', s:palette.bg0, s:palette.blue, 'bold')
 call sonokai#highlight('TSWarning', s:palette.bg0, s:palette.yellow, 'bold')
@@ -473,78 +474,15 @@ highlight! link CocFadeOut Grey
 highlight! link CocStrikeThrough Grey
 highlight! link CocListMode StatusLine
 highlight! link CocListPath StatusLine
-highlight! link CocTreeOpenClose Grey
+highlight! link CocSelectedText Red
+highlight! link CocListsLine Fg
+highlight! link CocListsDesc Grey
 highlight! link HighlightedyankRegion Visual
-highlight! link CocSymbolFile Fg
-highlight! link CocSymbolModule TSNamespace
-highlight! link CocSymbolNamespace TSNamespace
-highlight! link CocSymbolPackage TSNamespace
-highlight! link CocSymbolClass TSType
-highlight! link CocSymbolMethod TSMethod
-highlight! link CocSymbolProperty TSProperty
-highlight! link CocSymbolField TSField
-highlight! link CocSymbolConstructor TSConstructor
-highlight! link CocSymbolEnum TSStructure
-highlight! link CocSymbolInterface TSType
-highlight! link CocSymbolFunction TSFunction
-highlight! link CocSymbolVariable TSVariable
-highlight! link CocSymbolConstant TSConstant
-highlight! link CocSymbolString TSString
-highlight! link CocSymbolNumber TSNumber
-highlight! link CocSymbolBoolean TSBoolean
-highlight! link CocSymbolArray TSVariable
-highlight! link CocSymbolObject TSVariable
-highlight! link CocSymbolKey TSKeyword
-highlight! link CocSymbolNull TSVariableBuiltin
-highlight! link CocSymbolEnumMember TSNumber
-highlight! link CocSymbolStruct TSStructure
-highlight! link CocSymbolEvent TSLabel
-highlight! link CocSymbolOperator TSOperator
-highlight! link CocSymbolTypeParameter TSType
-highlight! link CocSymbolDefault TSNone
 highlight! link CocGitAddedSign GreenSign
 highlight! link CocGitChangeRemovedSign PurpleSign
 highlight! link CocGitChangedSign BlueSign
 highlight! link CocGitRemovedSign RedSign
 highlight! link CocGitTopRemovedSign RedSign
-highlight! link CocExplorerBufferRoot Red
-highlight! link CocExplorerBufferExpandIcon Blue
-highlight! link CocExplorerBufferBufnr Yellow
-highlight! link CocExplorerBufferModified Yellow
-highlight! link CocExplorerBufferReadonly Red
-highlight! link CocExplorerBufferBufname Grey
-highlight! link CocExplorerBufferFullpath Grey
-highlight! link CocExplorerFileRoot Red
-highlight! link CocExplorerFileRootName Green
-highlight! link CocExplorerFileExpandIcon Blue
-highlight! link CocExplorerFileFullpath Grey
-highlight! link CocExplorerFileDirectory Green
-highlight! link CocExplorerFileGitStaged Purple
-highlight! link CocExplorerFileGitUnstaged Yellow
-highlight! link CocExplorerFileGitRootStaged Purple
-highlight! link CocExplorerFileGitRootUnstaged Yellow
-highlight! link CocExplorerGitPathChange Fg
-highlight! link CocExplorerGitContentChange Fg
-highlight! link CocExplorerGitRenamed Purple
-highlight! link CocExplorerGitCopied Fg
-highlight! link CocExplorerGitAdded Green
-highlight! link CocExplorerGitUntracked Blue
-highlight! link CocExplorerGitUnmodified Fg
-highlight! link CocExplorerGitUnmerged Orange
-highlight! link CocExplorerGitMixed Fg
-highlight! link CocExplorerGitModified Yellow
-highlight! link CocExplorerGitDeleted Red
-highlight! link CocExplorerGitIgnored Grey
-highlight! link CocExplorerFileSize Blue
-highlight! link CocExplorerTimeAccessed Purple
-highlight! link CocExplorerTimeCreated Purple
-highlight! link CocExplorerTimeModified Purple
-highlight! link CocExplorerFileRootName Orange
-highlight! link CocExplorerBufferNameVisible Green
-highlight! link CocExplorerIndentLine Conceal
-highlight! link CocExplorerHelpDescription Grey
-highlight! link CocExplorerHelpHint Grey
-highlight! link CocRustChainingHint Grey
 " }}}
 " prabirshrestha/vim-lsp {{{
 highlight! link LspErrorVirtual VirtualTextError
@@ -706,12 +644,24 @@ highlight! link GitGutterAdd GreenSign
 highlight! link GitGutterChange BlueSign
 highlight! link GitGutterDelete RedSign
 highlight! link GitGutterChangeDelete PurpleSign
+highlight! link GitGutterAddLine DiffAdd
+highlight! link GitGutterChangeLine DiffChange
+highlight! link GitGutterDeleteLine DiffDelete
+highlight! link GitGutterChangeDeleteLine DiffChange
+highlight! link GitGutterAddLineNr Green
+highlight! link GitGutterChangeLineNr Blue
+highlight! link GitGutterDeleteLineNr Red
+highlight! link GitGutterChangeDeleteLineNr Purple
 " }}}
 " mhinz/vim-signify {{{
 highlight! link SignifySignAdd GreenSign
 highlight! link SignifySignChange BlueSign
 highlight! link SignifySignDelete RedSign
 highlight! link SignifySignChangeDelete PurpleSign
+highlight! link SignifyLineAdd DiffAdd
+highlight! link SignifyLineChange DiffChange
+highlight! link SignifyLineChangeDelete DiffChange
+highlight! link SignifyLineDelete DiffDelete
 " }}}
 " andymass/vim-matchup {{{
 call sonokai#highlight('MatchParenCur', s:palette.none, s:palette.none, 'bold')
@@ -857,7 +807,13 @@ highlight! link TelescopeSelection DiffAdd
 highlight! link GitSignsAdd GreenSign
 highlight! link GitSignsChange BlueSign
 highlight! link GitSignsDelete RedSign
-highlight! link GitSignsChangeDelete PurpleSign
+highlight! link GitSignsAddNr Green
+highlight! link GitSignsChangeNr Blue
+highlight! link GitSignsDeleteNr Red
+highlight! link GitSignsAddLn DiffAdd
+highlight! link GitSignsChangeLn DiffChange
+highlight! link GitSignsDeleteLn DiffDelete
+highlight! link GitSignsCurrentLineBlame Grey
 " }}}
 " phaazon/hop.nvim {{{
 call sonokai#highlight('HopNextKey', s:palette.red, s:palette.none, 'bold')
@@ -916,6 +872,34 @@ highlight! link NotifyINFOTitle Green
 highlight! link NotifyDEBUGTitle Grey
 highlight! link NotifyTRACETitle Purple
 " }}}
+" glepnir/lspsaga.nvim {{{
+call sonokai#highlight('LspFloatWinBorder', s:palette.bg0, s:palette.bg0)
+call sonokai#highlight('LspSagaDiagnosticHeader', s:palette.orange, s:palette.none, 'bold')
+call sonokai#highlight('LspSagaCodeActionTitle', s:palette.blue, s:palette.none, 'bold')
+call sonokai#highlight('DefinitionPreviewTitle', s:palette.purple, s:palette.none, 'bold')
+highlight! link LspSagaDiagnosticBorder Orange
+highlight! link LspSagaDiagnosticTruncateLine Orange
+highlight! link LspSagaRenameBorder Blue
+highlight! link LspSagaRenamePromptPrefix Red
+highlight! link LspSagaCodeActionBorder Blue
+highlight! link LspSagaCodeActionTruncateLine Blue
+highlight! link LspSagaCodeActionContent Green
+highlight! link LspSagaHoverBorder Green
+highlight! link LspSagaDocTruncateLine Green
+highlight! link LspSagaSignatureHelpBorder Green
+highlight! link LspSagaShTruncateLine Green
+highlight! link LspSagaDefPreviewBorder Purple
+highlight! link DefinitionIcon Purple
+highlight! link LspLinesDiagBorder Yellow
+highlight! link LineDiagTuncateLine Yellow
+highlight! link LspSagaAutoPreview Blue
+highlight! link LspSagaFinderSelection Fg
+highlight! link DiagnosticWarning DiagnosticWarn
+highlight! link DiagnosticInformation DiagnosticInfo
+highlight! link ReferencesCount Grey
+highlight! link DefinitionCount Grey
+highlight! link TargetFileName Grey
+" }}}
 endif
 " }}}
 " Extended File Types: {{{
@@ -966,6 +950,78 @@ highlight! link plugStar Purple
 highlight! link plugUpdate Blue
 highlight! link plugDeleted Grey
 highlight! link plugEdge Purple
+" ft_end }}}
+" ft_begin: coctree {{{
+" https://github.com/neoclide/coc.nvim
+highlight! link CocTreeOpenClose Purple
+highlight! link CocTreeDescription Grey
+highlight! link CocSymbolFile Green
+highlight! link CocSymbolModule Red
+highlight! link CocSymbolNamespace Red
+highlight! link CocSymbolPackage Red
+highlight! link CocSymbolClass Blue
+highlight! link CocSymbolMethod Green
+highlight! link CocSymbolProperty Orange
+highlight! link CocSymbolField Green
+highlight! link CocSymbolConstructor Green
+highlight! link CocSymbolEnum Blue
+highlight! link CocSymbolInterface Blue
+highlight! link CocSymbolFunction Green
+highlight! link CocSymbolVariable Orange
+highlight! link CocSymbolConstant Orange
+highlight! link CocSymbolString Yellow
+highlight! link CocSymbolNumber Yellow
+highlight! link CocSymbolBoolean Yellow
+highlight! link CocSymbolArray Yellow
+highlight! link CocSymbolObject Yellow
+highlight! link CocSymbolKey Red
+highlight! link CocSymbolNull Yellow
+highlight! link CocSymbolEnumMember Orange
+highlight! link CocSymbolStruct Blue
+highlight! link CocSymbolEvent Yellow
+highlight! link CocSymbolOperator Yellow
+highlight! link CocSymbolTypeParameter Blue
+highlight! link CocSymbolDefault Yellow
+" ft_end }}}
+" ft_begin: coc-explorer {{{
+" https://github.com/weirongxu/coc-explorer
+highlight! link CocExplorerBufferRoot Red
+highlight! link CocExplorerBufferExpandIcon Blue
+highlight! link CocExplorerBufferBufnr Yellow
+highlight! link CocExplorerBufferModified Yellow
+highlight! link CocExplorerBufferReadonly Red
+highlight! link CocExplorerBufferBufname Grey
+highlight! link CocExplorerBufferFullpath Grey
+highlight! link CocExplorerFileRoot Red
+highlight! link CocExplorerFileRootName Green
+highlight! link CocExplorerFileExpandIcon Blue
+highlight! link CocExplorerFileFullpath Grey
+highlight! link CocExplorerFileDirectory Green
+highlight! link CocExplorerFileGitStaged Purple
+highlight! link CocExplorerFileGitUnstaged Yellow
+highlight! link CocExplorerFileGitRootStaged Purple
+highlight! link CocExplorerFileGitRootUnstaged Yellow
+highlight! link CocExplorerGitPathChange Fg
+highlight! link CocExplorerGitContentChange Fg
+highlight! link CocExplorerGitRenamed Purple
+highlight! link CocExplorerGitCopied Fg
+highlight! link CocExplorerGitAdded Green
+highlight! link CocExplorerGitUntracked Blue
+highlight! link CocExplorerGitUnmodified Fg
+highlight! link CocExplorerGitUnmerged Orange
+highlight! link CocExplorerGitMixed Fg
+highlight! link CocExplorerGitModified Yellow
+highlight! link CocExplorerGitDeleted Red
+highlight! link CocExplorerGitIgnored Grey
+highlight! link CocExplorerFileSize Blue
+highlight! link CocExplorerTimeAccessed Purple
+highlight! link CocExplorerTimeCreated Purple
+highlight! link CocExplorerTimeModified Purple
+highlight! link CocExplorerFileRootName Orange
+highlight! link CocExplorerBufferNameVisible Green
+highlight! link CocExplorerIndentLine Conceal
+highlight! link CocExplorerHelpDescription Grey
+highlight! link CocExplorerHelpHint Grey
 " ft_end }}}
 " ft_begin: tagbar {{{
 " https://github.com/majutsushi/tagbar
@@ -1114,6 +1170,13 @@ highlight! link NeogitCommandCodeNormal Green
 highlight! link NeogitCommandCodeError Red
 highlight! link NeogitCommitViewHeader diffIndexLine
 highlight! link NeogitFilePath diffFile
+" ft_end }}}
+" ft_begin: dashboard {{{
+" https://github.com/glepnir/dashboard-nvim
+highlight! link DashboardHeader Blue
+highlight! link DashboardCenter Green
+highlight! link DashboardShortcut Red
+highlight! link DashboardFooter Yellow
 " ft_end }}}
 " ft_begin: markdown {{{
 " builtin: {{{
@@ -1866,6 +1929,10 @@ highlight! link rustAssert Green
 highlight! link rustPanic Green
 highlight! link rustPubScopeCrate BlueItalic
 highlight! link rustAttribute Purple
+" }}}
+" coc-rust-analyzer: https://github.com/fannheyward/coc-rust-analyzer {{{
+highlight! link CocRustChainingHint Grey
+highlight! link CocRustTypeHint Grey
 " }}}
 " ft_end }}}
 " ft_begin: swift {{{
