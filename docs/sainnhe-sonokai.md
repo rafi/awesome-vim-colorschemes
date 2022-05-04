@@ -48,9 +48,9 @@ The `shusia`, `maia` and `espresso` variants are basically modified versions of 
 - Vivid colors.
 - Highly customizable.
 - Rich support for common file types and plugins.
-- Semantic highlighting support.
 - Tree-sitter support.
-- [Italic support](https://github.com/sainnhe/icursive-nerd-font) 🎉
+- Semantic highlighting support.
+- [Italic support](https://www.sainnhe.dev/post/patch-fonts-with-cursive-italic-styles/) 🎉
 
 ## Documentation
 

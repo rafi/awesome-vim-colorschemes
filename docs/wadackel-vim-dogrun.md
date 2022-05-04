@@ -9,6 +9,7 @@
 
 - No configuration are required to start using it.
 - Support 256 colors terminal.
+- Supports Neovim's built-in [language server client](https://neovim.io/doc/user/lsp.html).
 - Supports [lightline.vim](https://github.com/itchyny/lightline.vim) theme.
 - Supports [vim-clap](https://github.com/liuchengxu/vim-clap) theme.
 - Supports [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter).
@@ -102,9 +103,12 @@ From now on, we will gradually support it :dog:
 - [fugitive.vim](https://github.com/tpope/vim-fugitive)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [lightline.vim](https://github.com/itchyny/lightline.vim)
+- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - [vim-clap](https://github.com/liuchengxu/vim-clap)
 - [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+- [vim-lsp](https://github.com/prabirshrestha/vim-lsp)
 - [vimfiler](https://github.com/Shougo/vimfiler.vim)
 
 ## Inspired

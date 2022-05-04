@@ -1264,6 +1264,7 @@ fun! s:apply_syntax_highlightings()
     hi! link DiagnosticUnderlineWarn LspDiagnosticsUnderlineWarning
     hi! link DiagnosticUnderlineInfo LspDiagnosticsUnderlineInformation
     hi! link DiagnosticUnderlineHint LspDiagnosticsUnderlineHint
+
   endif
 
   " Extension {{{
@@ -2162,6 +2163,14 @@ fun! s:apply_syntax_highlightings()
   exec 'hi DiffDelete' . s:fg_diffdelete_fg . s:bg_diffdelete_bg . s:ft_none
   exec 'hi DiffText' . s:fg_difftext_fg . s:bg_difftext_bg . s:ft_none
 
+  " Plugin: vim-gitgutter
+  exec 'hi GitGutterAdd' . s:fg_diffadd_fg
+  exec 'hi GitGutterChange' . s:fg_diffchange_fg
+  exec 'hi GitGutterDelete' . s:fg_diffdelete_fg
+  exec 'hi GitGutterAddLine' . s:fg_diffadd_fg . s:bg_diffadd_bg . s:ft_none
+  exec 'hi GitGutterChangeLine' . s:fg_diffchange_fg . s:bg_diffchange_bg . s:ft_none
+  exec 'hi GitGutterDeleteLine' . s:fg_diffdelete_fg . s:bg_diffdelete_bg . s:ft_none
+
   " Plugin: AGit
   exec 'hi agitHead' . s:fg_green . s:ft_bold
   exec 'hi agitHeader' . s:fg_olive
@@ -2246,6 +2255,54 @@ fun! s:apply_syntax_highlightings()
   exec 'hi CocWarningSign' . s:fg_todo_fg . s:bg_todo_bg . s:ft_bold
   exec 'hi CocInfoSign' . s:fg_todo_fg . s:bg_todo_bg . s:ft_bold
   exec 'hi CocHintSign' . s:fg_todo_fg . s:bg_todo_bg . s:ft_bold
+
+  " Debug Adapter Protocol (DAP) - Plugin: rcarriga/nvim-dap-ui
+  if has('nvim')
+    exec 'hi DapUIDecoration' . s:fg_blue
+    " DAP Scopes window
+    hi! link DapUIType Type
+    hi! link DapUIVariable Identifier
+    exec 'hi DapUIScope' . s:fg_red . s:ft_bold
+    hi! link DapUIValue Number
+    exec 'hi DapUIModifiedValue' . s:fg_orange . s:ft_bold . s:bg_error_bg
+    " DAP Breakpoints window
+    hi! link DapUILineNumber LineNr
+    hi! link DapUIBreakpointsDisabledLine LineNr
+    exec 'hi DapUIBreakpointsCurrentLine' . s:fg_linenumber_fg . s:ft_bold . s:bg_error_bg
+    exec 'hi DapUIBreakpointsInfo' . s:fg_green
+    exec 'hi DapUIBreakpointsPath' . s:fg_olive . s:ft_bold
+    " DAP Stacks window
+    exec 'hi DapUIFrameName' . s:fg_blue
+    exec 'hi DapUIThread' . s:fg_pink . s:ft_bold
+    exec 'hi DapUIStoppedThread' . s:fg_pink
+    " DAP Watches window
+    exec 'hi DapUIWatchesEmpty' . s:fg_pink . s:ft_bold
+    hi! link DapUIWatchesError DapUIWatchesEmpty
+    hi! link DapUIWatchesValue Number
+    " DAP Breakpoints window
+    exec 'hi DapUISource' . s:fg_olive
+    " DAP Floating window
+    exec 'hi DapUIFloatBorder' . s:fg_blue
+  endif
+
+  " Plugin: hrsh7th/nvim-cmp
+  if has('nvim')
+    hi! link CmpItemKindValue Number
+    hi! link CmpItemKindVariable Identifier
+    hi! link CmpItemKindKeyword Keyword
+    hi! link CmpItemKindField CmpItemKindVariable
+    exec 'hi CmpItemKindFunction' . s:fg_blue
+    hi! link CmpItemKindMethod CmpItemKindFunction
+    hi! link CmpItemKindConstructor CmpItemKindFunction
+    hi! link CmpItemKindClass Structure
+    hi! link CmpItemKindInterface Structure
+    exec 'hi CmpItemKindSnippet' . s:fg_orange
+    exec 'hi CmpItemKindFile' . s:fg_orange
+    hi! link CmpItemKindFolder CmpItemKindFile
+    exec 'hi CmpItemAbbrMatch' . s:fg_blue . s:ft_bold
+    exec 'hi CmpItemAbbrMatchFuzzy' . s:fg_blue . s:ft_bold
+    exec 'hi CmpItemAbbrDeprecated' . s:fg_foreground . ' gui=strikethrough'
+  endif
 
 endfun
 " }}}

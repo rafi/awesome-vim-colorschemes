@@ -159,12 +159,31 @@ let s:vertsplit = s:colors.vertsplit
 
 " Terminal Colors {{{
 
-let g:terminal_ansi_colors = [
-  \ s:black.gui, s:red.gui, s:green.gui, s:yellow.gui,
-  \ s:blue.gui, s:purple.gui, s:cyan.gui, s:comment_grey.gui,
-  \ s:visual_grey.gui, s:red.gui, s:green.gui, s:yellow.gui,
-  \ s:blue.gui, s:purple.gui, s:cyan.gui, s:white.gui
-\]
+if has('nvim')
+  let g:terminal_color_0 = s:black.gui
+  let g:terminal_color_1 = s:red.gui
+  let g:terminal_color_2 = s:green.gui
+  let g:terminal_color_3 = s:yellow.gui
+  let g:terminal_color_4 = s:blue.gui
+  let g:terminal_color_5 = s:purple.gui
+  let g:terminal_color_6 = s:cyan.gui
+  let g:terminal_color_7 = s:comment_grey.gui
+  let g:terminal_color_8 = s:visual_grey.gui
+  let g:terminal_color_9 = s:red.gui
+  let g:terminal_color_10 = s:green.gui
+  let g:terminal_color_11 = s:yellow.gui
+  let g:terminal_color_12 = s:blue.gui
+  let g:terminal_color_13 = s:purple.gui
+  let g:terminal_color_14 = s:cyan.gui
+  let g:terminal_color_15 = s:white.gui
+else
+  let g:terminal_ansi_colors = [
+    \ s:black.gui, s:red.gui, s:green.gui, s:yellow.gui,
+    \ s:blue.gui, s:purple.gui, s:cyan.gui, s:comment_grey.gui,
+    \ s:visual_grey.gui, s:red.gui, s:green.gui, s:yellow.gui,
+    \ s:blue.gui, s:purple.gui, s:cyan.gui, s:white.gui
+  \]
+endif
 
 " }}}
 
@@ -321,6 +340,7 @@ call s:h("goTypeDecl", { "fg": s:purple })
 " HTML (keep consistent with Markdown, below)
 call s:h("htmlArg", { "fg": s:dark_yellow })
 call s:h("htmlBold", { "fg": s:dark_yellow, "gui": "bold", "cterm": "bold" })
+call s:h("htmlBoldItalic", { "fg": s:green, "gui": "bold,italic", "cterm": "bold,italic" })
 call s:h("htmlEndTag", { "fg": s:white })
 call s:h("htmlH1", { "fg": s:red })
 call s:h("htmlH2", { "fg": s:red })
@@ -413,6 +433,7 @@ call s:h("lessClass", { "fg": s:dark_yellow })
 " Markdown (keep consistent with HTML, above)
 call s:h("markdownBlockquote", { "fg": s:comment_grey })
 call s:h("markdownBold", { "fg": s:dark_yellow, "gui": "bold", "cterm": "bold" })
+call s:h("markdownBoldItalic", { "fg": s:green, "gui": "bold,italic", "cterm": "bold,italic" })
 call s:h("markdownCode", { "fg": s:green })
 call s:h("markdownCodeBlock", { "fg": s:green })
 call s:h("markdownCodeDelimiter", { "fg": s:green })
@@ -575,6 +596,7 @@ call s:h("CocErrorSign", { "fg": s:red })
 call s:h("CocWarningSign", { "fg": s:yellow })
 call s:h("CocInfoSign", { "fg": s:blue })
 call s:h("CocHintSign", { "fg": s:cyan })
+call s:h("CocFadeOut", { "fg": s:comment_grey })
 
 " neomake/neomake
 call s:h("NeomakeErrorSign", { "fg": s:red })

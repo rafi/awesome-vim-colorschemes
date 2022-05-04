@@ -76,9 +76,14 @@ let s:head_c         = s:dark_cyan
 
 " shamelessly stolen from hemisu: https://github.com/noahfrederick/vim-hemisu/
 function! s:h(group, style)
-  " Not all terminals support italics properly. If yours does, opt-in.
-  if g:challenger_deep_terminal_italics == 0 && has_key(a:style, "cterm") && a:style["cterm"] == "italic"
-    unlet a:style.cterm
+  if g:challenger_deep_terminal_italics == 0
+    " Not all terminals support italics properly. If yours does, opt-in.
+    if get(a:style, "cterm", "") == "italic"
+      unlet a:style.cterm
+    endif
+    if get(a:style, "gui", "") == "italic"
+      unlet a:style.gui
+    endif
   endif
   if g:challenger_deep_termcolors == 16
     let l:ctermfg = (has_key(a:style, "fg") ? a:style.fg.cterm16 : "NONE")

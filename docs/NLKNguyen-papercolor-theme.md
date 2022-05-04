@@ -119,7 +119,7 @@ Currently designed for these languages:
 Other file types can still display well as long as your Vim is set up to recognize the language syntax even though that may not be the optimal experience. So, if the language you are working on isn't listed here, feel free to make a design request.
 ## 📚 Targeted plugins for additional syntax highlighting
 
-vimdiff, netrw, [NERDTree](https://github.com/scrooloose/nerdtree), [tagbar](https://github.com/majutsushi/tagbar), [tabline](https://github.com/mkitt/tabline.vim), [vim-airline](https://github.com/bling/vim-airline), [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides), [vim-startify](https://github.com/mhinz/vim-startify), [Agit](https://github.com/cohama/agit.vim), [vim-signify](https://github.com/mhinz/vim-signify)
+vimdiff, netrw, [NERDTree](https://github.com/scrooloose/nerdtree), [tagbar](https://github.com/majutsushi/tagbar), [tabline](https://github.com/mkitt/tabline.vim), [vim-airline](https://github.com/bling/vim-airline), [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides), [vim-startify](https://github.com/mhinz/vim-startify), [Agit](https://github.com/cohama/agit.vim), [vim-signify](https://github.com/mhinz/vim-signify), [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui) ([PR](https://github.com/NLKNguyen/papercolor-theme/pull/181)), [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) ([PR](https://github.com/NLKNguyen/papercolor-theme/pull/182)), [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 
 The below are programming language syntax highlighting plugins that enhances upon Vim built-in syntax highlighting.
 

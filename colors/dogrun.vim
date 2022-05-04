@@ -105,6 +105,18 @@ hi TSTypeBuiltin guifg=#ac8b83 ctermfg=138
 hi TSStructue guifg=#b871b8 ctermfg=133
 hi TSInclude guifg=#929be5 ctermfg=104
 hi TSVariableBuiltin guifg=#ac8b83 ctermfg=138
+hi DiagnosticError guifg=#dc6f79 ctermfg=167
+hi DiagnosticVirtualTextError guifg=#dc6f79 ctermfg=167 gui=bold cterm=bold
+hi DiagnosticUnderlineError guifg=#dc6f79 ctermfg=167 gui=underline cterm=underline
+hi DiagnosticWarn guifg=#ac8b83 ctermfg=138
+hi DiagnosticVirtualTextWarn guifg=#ac8b83 ctermfg=138 gui=bold cterm=bold
+hi DiagnosticUnderlineWarn guifg=#ac8b83 ctermfg=138 gui=underline cterm=underline
+hi DiagnosticInfo guifg=#82dabf ctermfg=115
+hi DiagnosticVirtualTextInfo guifg=#545c8c ctermfg=60 gui=bold cterm=bold
+hi DiagnosticUnderlineInfo gui=underline cterm=underline
+hi DiagnosticHint guifg=#82dabf ctermfg=115
+hi DiagnosticVirtualTextHint guifg=#545c8c ctermfg=60 gui=bold cterm=bold
+hi DiagnosticUnderlineHint gui=underline cterm=underline
 hi htmlTag guifg=#8085a6 ctermfg=103
 hi htmlEndTag guifg=#8085a6 ctermfg=103
 hi htmlSpecialTagName guifg=#ac8b83 ctermfg=138
@@ -195,6 +207,44 @@ hi CocErrorSign guifg=#dc6f79 ctermfg=167 gui=bold cterm=bold
 hi CocWarningSign guifg=#ac8b83 ctermfg=138 gui=bold cterm=bold
 hi CocInfoSign guifg=#82dabf ctermfg=115 gui=bold cterm=bold
 hi CocHintSign guifg=#82dabf ctermfg=115 gui=bold cterm=bold
+hi LspError guifg=#dc6f79 ctermfg=167
+hi LspErrorText guifg=#dc6f79 ctermfg=167 gui=bold cterm=bold
+hi LspErrorHighlight gui=underline cterm=underline
+hi LspErrorVirtualText guifg=#dc6f79 ctermfg=167 gui=bold cterm=bold
+hi LspWarning guifg=#ac8b83 ctermfg=138
+hi LspWarningText guifg=#ac8b83 ctermfg=138 gui=bold cterm=bold
+hi LspWarningHighlight gui=underline cterm=underline
+hi LspWarningVirtualText guifg=#ac8b83 ctermfg=138 gui=bold cterm=bold
+hi LspInformation guifg=#82dabf ctermfg=115
+hi LspInformationText guifg=#82dabf ctermfg=115 gui=bold cterm=bold
+hi LspInformationHighlight gui=underline cterm=underline
+hi LspInformationVirtualText guifg=#545c8c ctermfg=60 gui=bold cterm=bold
+hi LspHint guifg=#82dabf ctermfg=115
+hi LspHintText guifg=#82dabf ctermfg=115 gui=bold cterm=bold
+hi LspHintHighlight gui=underline cterm=underline
+hi LspHintVirtualText guifg=#545c8c ctermfg=60 gui=bold cterm=bold
+hi LspCodeActionText guifg=#6f78be ctermfg=104 gui=bold cterm=bold
+hi CmpItemAbbr guifg=#9ea3c0 ctermfg=146
+hi CmpItemAbbrMatch guifg=#929be5 ctermfg=104 gui=bold cterm=bold
+hi CmpItemAbbrMatchFuzzy guifg=#929be5 ctermfg=104 gui=bold cterm=bold
+hi CmpItemKind guifg=#8085a6 ctermfg=103
+hi CmpItemKindDefault guifg=#8085a6 ctermfg=103
+hi CmpItemKindText guifg=#8085a6 ctermfg=103
+hi CmpItemKindVariable guifg=#8085a6 ctermfg=103
+hi CmpItemKindKeyword guifg=#8085a6 ctermfg=103
+hi CmpItemKindInterface guifg=#8085a6 ctermfg=103
+hi CmpItemKindFunction guifg=#8085a6 ctermfg=103
+hi CmpItemKindMethod guifg=#8085a6 ctermfg=103
+hi CmpItemKindProperty guifg=#8085a6 ctermfg=103
+hi CmpItemKindUnit guifg=#8085a6 ctermfg=103
+hi TelescopeNormal guifg=#8085a6 ctermfg=103
+hi TelescopeTitle guifg=#929be5 ctermfg=104
+hi TelescopeMatching guifg=#929be5 ctermfg=104 gui=bold cterm=bold
+hi TelescopeBorder guifg=#545c8c ctermfg=60
+hi TelescopePromptPrefix guifg=#73c1a9 ctermfg=79
+hi TelescopePromptCounter guifg=#545c8c ctermfg=60
+hi TelescopeMultiIcon guifg=#a8a384 ctermfg=144
+hi TelescopeMultiSelection guifg=#a8a384 ctermfg=144
 hi CleverFChar guifg=#494f8b ctermfg=60 guibg=#5d6ad8 ctermbg=62 gui=underline cterm=underline
 hi ConflictMarkerBegin guibg=#548e7c ctermbg=66 gui=bold cterm=bold
 hi ConflictMarkerOurs guibg=#26463b ctermbg=23 gui=NONE cterm=NONE

@@ -162,10 +162,6 @@ call s:hi('CursorIM',     {})
 call s:hi('CursorColumn', {})
 call s:hi('CursorLine',   { 'styles': [s:styles.underline] })
 call s:hi('Directory',    { 'fg': s:blue })
-call s:hi('DiffAdd',      { 'fg': s:black, 'bg': s:green })
-call s:hi('DiffChange',   { 'fg': s:black, 'bg': s:yellow })
-call s:hi('DiffDelete',   { 'fg': s:black, 'bg': s:salmon })
-call s:hi('DiffText',     { 'fg': s:yellow, 'bg': s:black })
 call s:hi('ErrorMsg',     { 'fg': s:salmon })
 call s:hi('VertSplit',    { 'fg': s:pink })
 call s:hi('Folded',       { 'fg': s:comment_grey })
@@ -641,6 +637,11 @@ call s:hi("EasyMotionTarget",        { "fg": s:green })
 call s:hi("EasyMotionTarget2First",  { "fg": s:green })
 call s:hi("EasyMotionTarget2Second", { "fg": s:blue })
 call s:hi("EasyMotionShade",         { "fg": s:comment_grey })
+
+" gitsigns.nvim
+call s:hi('GitSignsAdd',    { 'fg': s:green })
+call s:hi('GitSignsChange', { 'fg': s:dark_yellow })
+call s:hi('GitSignsDelete', { 'fg': s:red })
 
 " }}}
 

@@ -5,7 +5,7 @@
 "
 " File:       iceberg.vim
 " Maintainer: cocopon <cocopon@me.com>
-" Modified:   2021-12-28 09:50+0900
+" Modified:   2022-04-26 21:56+0900
 " License:    MIT
 
 
@@ -430,6 +430,7 @@ hi! link TSString String
 hi! link TSStringRegex String
 hi! link TSStringEscape Special
 hi! link TSTag htmlTagName
+hi! link TSTagAttribute htmlArg
 hi! link TSTagDelimiter htmlTagName
 hi! link TSText icebergNormalFg
 hi! link TSTitle Title

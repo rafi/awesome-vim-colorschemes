@@ -4,21 +4,13 @@ Apprentice is a dark, low-contrast colorscheme for Vim based on the awesome [Sor
 
 It is essentially a streamlined version of the original, with a reduced number of colors entirely taken from the default xterm palette to ensure a similar look in 256colors-ready terminal emulators and GUI Vim.
 
-Some code in MacVim:
+Here is how it looks in the MacVim GUI:
 
-![image](http://romainl.github.io/Apprentice/images/0macvim.png)
+![image](http://romainl.github.io/Apprentice/images/macvim.app.png)
 
-Some code in iTerm, with `TERM=xterm-256color`:
+And here is how it looks in Terminal.app, with `TERM=xterm-256color`:
 
-![image](http://romainl.github.io/Apprentice/images/0256term.png)
-
-Some code in mintty, with `TERM=xterm-256color`:
-
-![image](http://romainl.github.io/Apprentice/images/0256mintty.png)
-
-Some code in iTerm, with `TERM=xterm`, using the Tango color palette:
-
-![image](http://romainl.github.io/Apprentice/images/08termtango.png)
+![image](http://romainl.github.io/Apprentice/images/terminal.app.png)
 
 ## Preparing your environment
 
@@ -104,14 +96,6 @@ And a sample `~/.minttyrc` for you Cygwin users:
     BoldCyan=95,175,175
     BoldWhite=255,255,255
 
-Some code in iTerm, with `TERM=xterm`, using the color palette above:
-
-![image](http://romainl.github.io/Apprentice/images/08termapprentice.png)
-
-Some code in the Windows console, with `TERM=cygwin`, using the color palette above:
-
-![image](http://romainl.github.io/Apprentice/images/016console.png)
-
 ### All terminal emulators
 
 I recommend adjusting your terminal's background color to the one used in Apprentice if you want to avoid having a “frame” around Vim:
@@ -150,6 +134,8 @@ or download the `PKGBUILD` and do:
 
     $ makepkg -i
 
+NOTE: that package is maintained by a third-party so YMMV.
+
 ## Enabling Apprentice
 
 To test Apprentice, just type this command from *normal* mode and hit `Enter`:
@@ -164,21 +150,25 @@ If you like what you see and want to make Apprentice your default colorscheme, a
 
 If you don't want to maintain your own fork of Apprentice you can add something like this to your `vimrc`, before `colorscheme apprentice`:
 
-    function! MyHighlights() abort
+    function! MyApprenticeOverrides() abort
         highlight Comment ctermfg=245
         highlight NonText ctermbg=17
     endfunction
 
     augroup MyColors
         autocmd!
-        autocmd ColorScheme * call MyHighlights()
+        autocmd ColorScheme apprentice call MyApprenticeOverrides()
     augroup END
 
 See [this Gist](https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f) for reference.
 
 ## Hacking Apprentice
 
-Apprentice now comes with the very template used to generate it: `colors/apprentice.erb`. The template, based on [vim-rnb](https://github.com/romainl/vim-rnb), is well maintained and documented.
+Originally written manually, Apprentice switched to a template based on [romainl/vim-rnb](https://github.com/romainl/vim-rnb) a few years ago, which made the life of the author and contributors much easier even if the rate of change had been pretty low for quite a while.
+
+Following the author's involvement with the [vim/colorschemes](https://github.com/vim/colorschemes) project, Apprentice is now using a noticeably more powerful templating system: [lifepillar/colortemplate](https://github.com/lifepillar/vim-colortemplate) that is on its way to become the official standard.
+
+You can find the template under `colortemplate/`. See `:help colortemplate` for further instructions.
 
 If you feel like making a pull request, make sure you commit both the modified template *and* the modified colorscheme.
 

@@ -13,6 +13,7 @@
   - [Built-in](#built-in)
   - [Airline](#airline)
   - [Lightline](#lightline)
+  - [Gitsigns.nvim](#gitsigns.nvim)
 - [Customize](#customize)
   - [Font styles](#font-styles)
   - [Background](#background)
@@ -83,6 +84,11 @@ let g:lightline = {
       \ 'colorscheme': 'purify',
       \ }
 ```
+
+### Gitsigns.nvim
+
+You don't have to do anything, just install [Gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) correctly
+
 
 ## Customize
 
