@@ -8,7 +8,7 @@ Use your favorite package-manager to install, and enjoy!
 
 ## Color Schemes
 
-| Scheme | Description | Terminal | GUI |
+| Scheme         | Description | Terminal | GUI |
 | -------------- | ------------|:--------:|:---:|
 | [256noir] | Dark minimal colors, to avoid distraction | ✓ | ✓ |
 | [abstract] | Dark theme based on Abstract app | ✓ | ✓ |
@@ -59,7 +59,6 @@ Use your favorite package-manager to install, and enjoy!
 | [pink-moon] | Dark pastel theme | ✓ | ✓ |
 | [purify] | Clean & vibrant color schemes for Vim, Terminals... | ✓ | ✓ |
 | [pyte] | Clean, light (nearly white) theme |   | ✓ |
-| [rakr] | Flat colorscheme light and dark variant | ✓ | ✓ |
 | [rdark-terminal2] | Modified rdark-terminal to enhance visibility | ✓ |   |
 | [seoul256] | Low-contrast color scheme based on Seoul Colors | ✓ | ✓ |
 | [sierra] | Dark vintage colors | ✓ | ✓ |
@@ -123,7 +122,6 @@ Use your favorite package-manager to install, and enjoy!
 [pink-moon]: https://github.com/sts10/vim-pink-moon
 [purify]: https://github.com/kyoz/purify
 [pyte]: https://github.com/vim-scripts/pyte
-[rakr]: https://github.com/rakr/vim-colors-rakr
 [rdark-terminal2]: https://github.com/vim-scripts/rdark-terminal2.vim
 [seoul256]: https://github.com/junegunn/seoul256.vim
 [sierra]: https://github.com/AlessandroYorba/Sierra

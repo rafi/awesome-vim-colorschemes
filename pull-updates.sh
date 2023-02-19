@@ -65,7 +65,6 @@ function _main() {
 	_dl nightsense/stellarized
 	_dl nikolvs/vim-sunbather
 	_dl owickstrom/vim-colors-paramount
-	_dl rakr/vim-colors-rakr
 	_dl rakr/vim-one
 	_dl rakr/vim-two-firewatch
 	_dl romainl/Apprentice
