@@ -69,6 +69,8 @@ Creator of Iceberg talked about how to create your lovely color scheme in
   by [Kuniwak](https://github.com/Kuniwak)
 - [Emacs](https://github.com/conao3/iceberg-theme.el)
   by [conao3](https://github.com/conao3)
+- [CotEditor](https://github.com/YusukeSano/coteditor-iceberg)
+  by [YusukeSano](https://github.com/YusukeSano)
 
 
 ## Terminal emulators

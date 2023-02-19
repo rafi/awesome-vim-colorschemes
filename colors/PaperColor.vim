@@ -1970,7 +1970,7 @@ fun! s:apply_syntax_highlightings()
   exec 'hi xmlEndTag' . s:fg_blue
   exec 'hi xmlNamespace' . s:fg_orange
 
-  " Exlixir Highlighting
+  " Elixir Highlighting
   " @target https://github.com/elixir-lang/vim-elixir
   exec 'hi elixirAlias' . s:fg_blue . s:ft_bold
   exec 'hi elixirAtom' . s:fg_navy

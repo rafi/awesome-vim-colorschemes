@@ -2,7 +2,7 @@
 
 <tr>
 <td colspan='8'><h1>snow</h1>
-<img src="https://github.com/haystackandroid/snow/raw/master/images/header.jpg" />
+<img src="https://github.com/nightsense/snow/raw/master/images/header.jpg" />
 <h4>a blue-tinted winter vimscape</h4>
 </td>
 </tr>
@@ -11,13 +11,13 @@
 
 <td colspan='4' width='50%'>
 <br>
-<img alt="screenshot of the snow vim theme, light version" src="https://github.com/haystackandroid/snow/raw/master/images/screenshot-light.png" width='420' />
+<img alt="screenshot of the snow vim theme, light version" src="https://github.com/nightsense/snow/raw/master/images/screenshot-light.png" width='420' />
 <br><br>
 </td>
 
 <td colspan='4' width='50%'>
 <br>
-<img alt="screenshot of the snow vim theme, dark version" src="https://github.com/haystackandroid/snow/raw/master/images/screenshot-dark.png" width='420' />
+<img alt="screenshot of the snow vim theme, dark version" src="https://github.com/nightsense/snow/raw/master/images/screenshot-dark.png" width='420' />
 <br><br>
 </td>
 
@@ -109,31 +109,31 @@
 
 <br>
 
-*because <img height="16" src='https://github.com/haystackandroid/snow/raw/master/images/red.png' /> red is the color of life, reddish text is for...*
+*because <img height="16" src='https://github.com/nightsense/snow/raw/master/images/red.png' /> red is the color of life, reddish text is for...*
 
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.colorhexa.com/ae5865.png" height='12' width='12'> **names**, which give life <img height="9" src='https://github.com/haystackandroid/snow/raw/master/images/name.png' /> to abstractions (like variables and functions)
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.colorhexa.com/ae5865.png" height='12' width='12'> **names**, which give life <img height="9" src='https://github.com/nightsense/snow/raw/master/images/name.png' /> to abstractions (like variables and functions)
 
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.colorhexa.com/8f63a2.png" height='12' width='12'> **types** ("meta-names" <img height="15" src='https://github.com/haystackandroid/snow/raw/master/images/type.png' />), such as variable type (int, char...) or storage class (static, register...)
-
-<br>
-
-*because <img height="16" src='https://github.com/haystackandroid/snow/raw/master/images/gold.png' /> gold is a special color, gold text is for...*
-
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.colorhexa.com/906c33.png" height='12' width='12'> **specials** (elements that unlock <img height="16" src='https://github.com/haystackandroid/snow/raw/master/images/special.png' /> special features), such as delimiters and debug statements
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.colorhexa.com/8f63a2.png" height='12' width='12'> **types** ("meta-names" <img height="15" src='https://github.com/nightsense/snow/raw/master/images/type.png' />), such as variable type (int, char...) or storage class (static, register...)
 
 <br>
 
-*because <img height="15" src='https://github.com/haystackandroid/snow/raw/master/images/green.png' /> green is the color of proceeding with action, greenish text is for...*
+*because <img height="16" src='https://github.com/nightsense/snow/raw/master/images/gold.png' /> gold is a special color, gold text is for...*
 
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.colorhexa.com/4d7f43.png" height='12' width='12'> **statements** (the magic <img height="11" src='https://github.com/haystackandroid/snow/raw/master/images/statement.png' /> "action words" of code), such as conditions (if, then...) or loops (for, do...)
-
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.colorhexa.com/008483.png" height='12' width='12'> **meta-statements** ("meta-actions", or "meta-magic" <img height="16" src='https://github.com/haystackandroid/snow/raw/master/images/meta-statement.png' />), such as macros and "include module" statements
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.colorhexa.com/906c33.png" height='12' width='12'> **specials** (elements that unlock <img height="16" src='https://github.com/nightsense/snow/raw/master/images/special.png' /> special features), such as delimiters and debug statements
 
 <br>
 
-*because <img height="14" src='https://github.com/haystackandroid/snow/raw/master/images/blue.png' /> blue is the calm color of sea and sky, evoking enduring constancy, blue text is for...*
+*because <img height="15" src='https://github.com/nightsense/snow/raw/master/images/green.png' /> green is the color of proceeding with action, greenish text is for...*
 
-&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.colorhexa.com/2b7ab2.png" height='12' width='12'> **constants** (values that are fixed <img height="22" src='https://github.com/haystackandroid/snow/raw/master/images/constant.png' /> in place), such as booleans, integers, and strings
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.colorhexa.com/4d7f43.png" height='12' width='12'> **statements** (the magic <img height="11" src='https://github.com/nightsense/snow/raw/master/images/statement.png' /> "action words" of code), such as conditions (if, then...) or loops (for, do...)
+
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.colorhexa.com/008483.png" height='12' width='12'> **meta-statements** ("meta-actions", or "meta-magic" <img height="16" src='https://github.com/nightsense/snow/raw/master/images/meta-statement.png' />), such as macros and "include module" statements
+
+<br>
+
+*because <img height="14" src='https://github.com/nightsense/snow/raw/master/images/blue.png' /> blue is the calm color of sea and sky, evoking enduring constancy, blue text is for...*
+
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.colorhexa.com/2b7ab2.png" height='12' width='12'> **constants** (values that are fixed <img height="22" src='https://github.com/nightsense/snow/raw/master/images/constant.png' /> in place), such as booleans, integers, and strings
 
 <br>
 
@@ -142,7 +142,7 @@ while **secondary colors** (<img src="http://www.colorhexa.com/8f63a2.png" heigh
 
 <br>
 
-This logic is replicated in the <a href="https://github.com/haystackandroid/cosmic_latte">cosmic_latte</a> theme.
+This logic is replicated in the <a href="https://github.com/nightsense/cosmic_latte">cosmic_latte</a> theme.
 
 </td>
 </tr>
@@ -162,7 +162,7 @@ Having installed vim-plug, snow can be installed by adding the following to the 
 
 ```
 call plug#begin('~/.vim/plugged')
-Plug 'haystackandroid/snow'
+Plug 'nightsense/snow'
 call plug#end()
 ```
 

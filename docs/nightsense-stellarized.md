@@ -1,7 +1,7 @@
 <table><tbody align="center">
 
 <tr><td colspan='2'><h1>stellarized</h1>
-<img src="https://github.com/haystackandroid/stellarized/raw/master/images/header.jpg" />
+<img src="https://github.com/nightsense/stellarized/raw/master/images/header.jpg" />
 <h4>paint vim with the stars</h4>
 </td></tr>
 
@@ -10,12 +10,12 @@
 <tr>
 <td>
 <br>
-<img alt="screenshot of the stellarized vim theme, light version" src="https://github.com/haystackandroid/stellarized/raw/master/images/screenshot-light.png" width="422" />
+<img alt="screenshot of the stellarized vim theme, light version" src="https://github.com/nightsense/stellarized/raw/master/images/screenshot-light.png" width="422" />
 <br>
 </td>
 <td>
 <br>
-<img alt="screenshot of the stellarized vim theme, dark version" src="https://github.com/haystackandroid/stellarized/raw/master/images/screenshot-dark.png" width="422" />
+<img alt="screenshot of the stellarized vim theme, dark version" src="https://github.com/nightsense/stellarized/raw/master/images/screenshot-dark.png" width="422" />
 <br>
 </td>
 </tr>
@@ -30,7 +30,7 @@
 
 <h5>Specifically, dark base colors are shifted bluewise (to the<br>approximate "hot star hue"), while light base colors<br>are shifted orangewise (to the "cold star hue").</h5>
 
-<h5>stellarized is a special adaptation of <a href='https://github.com/haystackandroid/snow'>snow</a>.</h5>
+<h5>stellarized is a special adaptation of <a href='https://github.com/nightsense/snow'>snow</a>.</h5>
 
 </td></tr>
 
@@ -50,7 +50,7 @@ Having installed vim-plug, stellarized can be installed by adding the following 
 
 ```
 call plug#begin('~/.vim/plugged')
-Plug 'haystackandroid/stellarized'
+Plug 'nightsense/stellarized'
 call plug#end()
 ```
 
@@ -140,7 +140,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 If `termguicolors` is not set, terminal vim will fall back to a rough approximation of stellarized.
 
-Note that if you're running vim in iTerm2, you must [use vim 8.1](https://github.com/haystackandroid/stellarized/issues/4) in order for stellarized to work properly.
+Note that if you're running vim in iTerm2, you must [use vim 8.1](https://github.com/nightsense/stellarized/issues/4) in order for stellarized to work properly.
 
 ### cursor shape
 

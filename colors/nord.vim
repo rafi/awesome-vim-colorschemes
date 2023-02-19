@@ -13,7 +13,7 @@ if version > 580
 endif
 
 let g:colors_name = "nord"
-let s:nord_vim_version="0.18.0"
+let s:nord_vim_version="0.19.0"
 set background=dark
 
 let s:nord0_gui = "#2E3440"
@@ -573,6 +573,10 @@ if has('nvim')
     call s:hi("LspDiagnosticsUnderlineInformation" , s:nord8_gui, "", s:nord8_term, "", "undercurl", "")
     call s:hi("LspDiagnosticsUnderlineHint" , s:nord10_gui, "", s:nord10_term, "", "undercurl", "")
   endif
+  
+  " Gitsigns
+  " > lewis6991/gitsigns.nvim
+  hi! link GitSignsCurrentLineBlame Comment
 endif
 
 " GitGutter
@@ -588,6 +592,10 @@ call s:hi("SignifySignAdd", s:nord14_gui, "", s:nord14_term, "", "", "")
 call s:hi("SignifySignChange", s:nord13_gui, "", s:nord13_term, "", "", "")
 call s:hi("SignifySignChangeDelete", s:nord11_gui, "", s:nord11_term, "", "", "")
 call s:hi("SignifySignDelete", s:nord11_gui, "", s:nord11_term, "", "", "")
+
+" Sneak
+" > justinmk/vim-sneak
+hi! link Sneak Search
 
 " fugitive.vim
 " > tpope/vim-fugitive

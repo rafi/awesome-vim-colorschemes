@@ -130,7 +130,7 @@ function! s:set_color_variables() abort
         \ 'light_grey': s:colors.bg5,
         \ 'dark_grey': s:colors.grey0,
         \ }
-  let g:terminal_color_0 = s:terminal.black[0]
+  let g:terminal_color_0 = "#0C1A1D" 
   let g:terminal_color_1 = s:terminal.red[0]
   let g:terminal_color_2 = s:terminal.green[0]
   let g:terminal_color_3 = s:terminal.yellow[0]

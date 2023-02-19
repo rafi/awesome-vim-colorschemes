@@ -117,8 +117,8 @@ if !exists('s:rgb_map')
         \ 250: '#bcbcbc', 251: '#c6c6c6', 252: '#d0d0d0',
         \ 253: '#dadada', 254: '#e4e4e4', 255: '#eeeeee' }
     else
-        let s:rgb_map =
-        \{ 22: '#006F00', 23: '#007173', 24: '#007299', 25: '#0074BE', 30: '#009799',
+        let s:rgb_map = { 16: '#000000',
+        \  22: '#006F00', 23: '#007173', 24: '#007299', 25: '#0074BE', 30: '#009799',
         \  31: '#0099BD', 38: '#00BDDF', 52: '#730B00', 58: '#727100', 59: '#727272',
         \  65: '#719872', 66: '#719899', 67: '#7299BC', 68: '#719CDF', 73: '#6FBCBD',
         \  74: '#70BDDF', 88: '#9B1300', 89: '#9B1D72', 94: '#9A7200', 95: '#9A7372',
@@ -301,8 +301,8 @@ call s:hi('NonText', [59, 145], ['', ''])
 call s:hi('MoreMsg', [173, 173], ['', ''])
 
 " Popup menu
-call s:hi('Pmenu', [s:dark_bg + 1, 238], [224, 224])
-call s:hi('PmenuSel', [s:dark_fg, s:dark_fg], [89, 89])
+call s:hi('Pmenu', [s:dark_fg, s:light_fg], [s:dark_bg + 1, s:light_bg - 2])
+call s:hi('PmenuSel', [s:dark_fg, s:dark_fg], [95, 95])
 call s:hi('PmenuSbar', ['', ''], [65, 65])
 call s:hi('PmenuThumb', ['', ''], [23, 23])
 
