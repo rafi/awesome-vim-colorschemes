@@ -32,7 +32,7 @@ function _main() {
 	_dl challenger-deep-theme/vim
 	_dl chase/focuspoint-vim
 	_dl christophermca/meta5
-	_dl co1ncidence/mountaineer
+	_dl TheNiteCoder/mountaineer.vim
 	_dl cocopon/iceberg.vim
 	_dl cseelus/vim-colors-lucid
 	_dl danilo-augusto/vim-afterglow

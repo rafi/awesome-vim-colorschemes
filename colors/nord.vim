@@ -1,9 +1,5 @@
-" Copyright (C) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
-" Copyright (C) 2016-present Sven Greb <development@svengreb.de>
-
-" Project: Nord Vim
-" Repository: https://github.com/arcticicestudio/nord-vim
-" License: MIT
+" Copyright (c) 2016-present Sven Greb <development@svengreb.de>
+" This source code is licensed under the MIT license found in the license file.
 
 if version > 580
   hi clear
@@ -91,7 +87,7 @@ if exists("g:nord_comment_brightness")
   echohl WarningMsg
   echomsg 'nord: warning: Variable g:nord_comment_brightness has been deprecated and will be removed in version 1.0.0!' .
                    \' The comment color brightness has been increased by 10% by default.' .
-                   \' Please see https://github.com/arcticicestudio/nord-vim/issues/145 for more details.'
+                   \' Please see https://github.com/nordtheme/vim/issues/145 for more details.'
   echohl None
   let g:nord_comment_brightness = 10
 endif

@@ -110,7 +110,7 @@ Use your favorite package-manager to install, and enjoy!
 [minimalist]: https://github.com/dikiaap/minimalist
 [molokai]: https://github.com/tomasr/molokai
 [molokayo]: https://github.com/fmoralesc/molokayo
-[mountaineer]: https://github.com/co1ncidence/mountaineer
+[mountaineer]: https://github.com/TheNiteCoder/mountaineer.vim
 [nord]: https://github.com/arcticicestudio/nord-vim
 [oceanicnext]: https://github.com/mhartington/oceanic-next
 [oceanic-material]: https://github.com/hardcoreplayers/oceanic-material
