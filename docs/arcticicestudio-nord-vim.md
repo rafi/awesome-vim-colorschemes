@@ -1,8 +1,8 @@
 <p align="center">
   <a href="https://www.nordtheme.com/ports/vim" target="_blank">
     <picture>
-      <source srcset="https://raw.githubusercontent.com/arcticicestudio/nord-docs/main/assets/images/ports/vim/repository-hero.svg?sanitize=true" width="100%" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" />
-      <img src="https://raw.githubusercontent.com/arcticicestudio/nord-docs/main/assets/images/ports/vim/repository-hero.svg?sanitize=true" width="100%" />
+      <source srcset="https://raw.githubusercontent.com/nordtheme/web/main/assets/images/ports/vim/repository-hero.svg?sanitize=true" width="100%" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" />
+      <img src="https://raw.githubusercontent.com/nordtheme/web/main/assets/images/ports/vim/repository-hero.svg?sanitize=true" width="100%" />
     </picture>
   </a>
 </p>
@@ -20,11 +20,14 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/arcticicestudio/styleguide-markdown/releases/latest" target="_blank">
-    <img src="https://img.shields.io/github/release/arcticicestudio/styleguide-markdown.svg?style=flat-square&label=Markdown%20Style%20Guide&colorA=4c566a&colorB=88c0d0&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzOSIgaGVpZ2h0PSIzOSIgdmlld0JveD0iMCAwIDM5IDM5Ij48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNEOERFRTkiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBkPSJNMS41IDEuNWgzNnYzNmgtMzZ6Ii8%2BPHBhdGggZmlsbD0iI0Q4REVFOSIgZD0iTTIwLjY4MyAyNS42NTVsNS44NzItMTMuNDhoLjU2Nmw1Ljg3MyAxMy40OGgtMS45OTZsLTQuMTU5LTEwLjA1Ni00LjE2MSAxMC4wNTZoLTEuOTk1em0tMi42OTYgMGwtMTMuNDgtNS44NzJ2LS41NjZsMTMuNDgtNS44NzJ2MS45OTVMNy45MzEgMTkuNWwxMC4wNTYgNC4xNnoiLz48L3N2Zz4%3D"/>
+  <a href="https://github.com/svengreb/styleguide-javascript/releases/latest" target="_blank">
+    <img src="https://img.shields.io/github/release/svengreb/styleguide-javascript.svg?style=flat-square&label=JavaScript%20Style%20Guide&logoColor=eceff4&colorA=4c566a&colorB=88c0d0&logo=javascript"/>
   </a>
-  <a href="https://github.com/arcticicestudio/styleguide-git/releases/latest" target="_blank">
-    <img src="https://img.shields.io/github/release/arcticicestudio/styleguide-git.svg?style=flat-square&label=Git%20Style%20Guide&logoColor=eceff4&colorA=4c566a&colorB=88c0d0&logo=git"/>
+  <a href="https://github.com/svengreb/styleguide-markdown/releases/latest" target="_blank">
+    <img src="https://img.shields.io/github/release/svengreb/styleguide-markdown.svg?style=flat-square&label=Markdown%20Style%20Guide&colorA=4c566a&colorB=88c0d0&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzOSIgaGVpZ2h0PSIzOSIgdmlld0JveD0iMCAwIDM5IDM5Ij48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNEOERFRTkiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBkPSJNMS41IDEuNWgzNnYzNmgtMzZ6Ii8%2BPHBhdGggZmlsbD0iI0Q4REVFOSIgZD0iTTIwLjY4MyAyNS42NTVsNS44NzItMTMuNDhoLjU2Nmw1Ljg3MyAxMy40OGgtMS45OTZsLTQuMTU5LTEwLjA1Ni00LjE2MSAxMC4wNTZoLTEuOTk1em0tMi42OTYgMGwtMTMuNDgtNS44NzJ2LS41NjZsMTMuNDgtNS44NzJ2MS45OTVMNy45MzEgMTkuNWwxMC4wNTYgNC4xNnoiLz48L3N2Zz4%3D"/>
+  </a>
+  <a href="https://github.com/svengreb/styleguide-git/releases/latest" target="_blank">
+    <img src="https://img.shields.io/github/release/svengreb/styleguide-git.svg?style=flat-square&label=Git%20Style%20Guide&logoColor=eceff4&colorA=4c566a&colorB=88c0d0&logo=git"/>
   </a>
 </p>
 
@@ -35,7 +38,7 @@
 <p align="center">
   <a href="https://www.nordtheme.com/ports/vim" target="_blank">
     <picture>
-      <img src="https://raw.githubusercontent.com/arcticicestudio/nord-docs/main/assets/images/ports/vim/overview-go.png"/>
+      <img src="https://raw.githubusercontent.com/nordtheme/web/main/assets/images/ports/vim/overview-go.png"/>
     </picture>
   </a>
 </p>
@@ -50,7 +53,7 @@ Learn about the [installation and activation][20], how to [configure][18] and [c
 
 ### Quick Start
 
-Thanks to existing plugin/_runtimepath_ managers for Vim, Nord Vim can be installed for all platforms and the various variants/forks of Vim in a uniform way within a few lines of codes. The recommended manager is [vim-plug][2], but any other manager like [pathogen][3] or [Vundle][5] can also be used.
+Thanks to existing plugin/_runtimepath_ managers for Vim, Nord Vim can be installed for all platforms and the various variants/forks of Vim in a uniform way within a few lines of codes. The recommended manager is [vim-plug][2], but any other manager like [pathogen][3] or [Vundle][3] can also be used.
 
 To automatically download and activate Nord Vim, follow the install instructions for [vim-plug][2] and
 
@@ -60,7 +63,7 @@ To automatically download and activate Nord Vim, follow the install instructions
 
 <p align="center">
   <picture>
-    <img src="https://raw.githubusercontent.com/arcticicestudio/nord-docs/main/assets/images/ports/vim/installation-vim-plug.png"/>
+    <img src="https://raw.githubusercontent.com/nordtheme/web/main/assets/images/ports/vim/installation-vim-plug.png"/>
   </picture>
 </p>
 
@@ -71,21 +74,21 @@ See the Nord Vim's documentation for [more installation options][20] and how to 
 <p align="center">
   <strong>A unified UI and editor syntax element design provides a clutter-free and fluidly merging appearance.</strong><br />
   <picture>
-    <img src="https://raw.githubusercontent.com/arcticicestudio/nord-docs/main/assets/images/ports/vim/overview-go-nerdtree.png"/>
+    <img src="https://raw.githubusercontent.com/nordtheme/web/main/assets/images/ports/vim/overview-go-nerdtree.png"/>
   </picture>
 </p>
 
 <p align="center">
   <strong>Small details with unobtrusive styles for popular and common code editor features like search result marker and brace matching — designed to get out of your way with a visually attractive appearance.</strong><br />
   <picture>
-    <img src="https://raw.githubusercontent.com/arcticicestudio/nord-docs/main/assets/images/ports/vim/editor-search-highlighting.png"/>
+    <img src="https://raw.githubusercontent.com/nordtheme/web/main/assets/images/ports/vim/editor-search-highlighting.png"/>
   </picture>
 </p>
 
 <p align="center">
   <strong>Support for a wide range of programming languages — from bundled plugins up to many popular syntax and UI third-party plugins.</strong><br />
   <picture>
-    <img src="https://raw.githubusercontent.com/arcticicestudio/nord-docs/main/assets/images/ports/vim/syntax-javascript-react-hook.png"/>
+    <img src="https://raw.githubusercontent.com/nordtheme/web/main/assets/images/ports/vim/syntax-javascript-react-hook.png"/>
   </picture>
 </p>
 
@@ -124,7 +127,6 @@ The guide also includes information about [minimal, complete, and verifiable exa
 [2]: https://github.com/junegunn/vim-plug
 [3]: https://github.com/tpope/vim-pathogen
 [4]: https://github.com/vim-airline/vim-airline
-[5]: https://github.com/tpope/vim-pathogen
 [6]: https://www.nordtheme.com/community
 [7]: https://github.com/nordtheme/.github/blob/main/contributing.md#branch-organization
 [8]: https://github.com/nordtheme/.github/blob/main/contributing.md#bug-reports

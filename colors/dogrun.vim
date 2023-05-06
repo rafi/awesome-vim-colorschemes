@@ -279,6 +279,16 @@ if has("nvim-0.8.0")
   hi @tag guifg=#9ea3c0 ctermfg=146
   hi @tag.delimiter guifg=#929be5 ctermfg=104
   hi @tag.attribute guifg=#929be5 ctermfg=104
+  hi @lsp.type.class guifg=#9ea3c0 ctermfg=146
+  hi @lsp.type.interface guifg=#ac8b83 ctermfg=138
+  hi @lsp.type.parameter guifg=#929be5 ctermfg=104
+  hi @lsp.type.property guifg=#929be5 ctermfg=104
+  hi @lsp.type.struct guifg=#9ea3c0 ctermfg=146
+  hi @lsp.type.type guifg=#ac8b83 ctermfg=138
+  hi @lsp.type.typeParameter guifg=#9ea3c0 ctermfg=146
+  hi @lsp.type.variable guifg=#9ea3c0 ctermfg=146
+  hi @lsp.type.member guifg=#929be5 ctermfg=104
+  hi @lsp.type.namespace guifg=#9ea3c0 ctermfg=146
 endif
 let g:defx_icons_gui_colors = {
   \ 'brown': 'a9323d',

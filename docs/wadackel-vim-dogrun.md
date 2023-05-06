@@ -13,6 +13,7 @@
 - Supports [lightline.vim](https://github.com/itchyny/lightline.vim) theme.
 - Supports [vim-clap](https://github.com/liuchengxu/vim-clap) theme.
 - Supports [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter).
+- Supports LSP Semantic highlights.
 - Loading speed is increased by precompiled script. (powered by Rust)
 
 Check [here](#supported-filetypes--plugins) for a list of supported file types and plugins :muscle:

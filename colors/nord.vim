@@ -382,10 +382,18 @@ hi! link diffAdded DiffAdd
 hi! link diffChanged DiffChange
 hi! link diffRemoved DiffDelete
 
+call s:hi("elixirModuleDeclaration", s:nord7_gui, "", s:nord7_term, "", "", "")
+call s:hi("elixirAlias", s:nord7_gui, "", s:nord7_term, "", "", "")
+call s:hi("elixirAtom", s:nord6_gui, "", s:nord6_term, "", s:bold, "")
+
 call s:hi("gitconfigVariable", s:nord7_gui, "", s:nord7_term, "", "", "")
 
 call s:hi("goBuiltins", s:nord7_gui, "", s:nord7_term, "", "", "")
 hi! link goConstants Keyword
+
+" fatih/vim-go
+call s:hi("gomodVersion", s:nord7_gui, "", s:nord7_term, "", "", "")
+call s:hi("gomodGoVersion", s:nord8_gui, "", s:nord8_term, "", "", "")
 
 call s:hi("helpBar", s:nord3_gui, "", s:nord3_term, "", "", "")
 call s:hi("helpHyperTextJump", s:nord8_gui, "", s:nord8_term, "", s:underline, "")
@@ -569,7 +577,7 @@ if has('nvim')
     call s:hi("LspDiagnosticsUnderlineInformation" , s:nord8_gui, "", s:nord8_term, "", "undercurl", "")
     call s:hi("LspDiagnosticsUnderlineHint" , s:nord10_gui, "", s:nord10_term, "", "undercurl", "")
   endif
-  
+
   " Gitsigns
   " > lewis6991/gitsigns.nvim
   hi! link GitSignsCurrentLineBlame Comment
@@ -708,7 +716,7 @@ hi! link pandocSimpleTableHeader pandocAtxHeader
 hi! link pandocStrong markdownBold
 hi! link pandocTableHeaderWord pandocAtxHeader
 hi! link pandocUListItemBullet Operator
-  
+
 if has('nvim')
   " tree-sitter
   " > nvim-treesitter/nvim-treesitter

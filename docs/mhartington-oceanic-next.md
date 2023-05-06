@@ -35,7 +35,7 @@ For vim, add the following to your `.vimrc`.
 colorscheme OceanicNext
  ```
 
-For neovim, add the following to your `.nvimrc`.
+For neovim, add the following to your `init.vim`.
 
 
 ```viml
