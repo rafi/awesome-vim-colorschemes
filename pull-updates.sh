@@ -74,6 +74,7 @@ function _main() {
 	_dl sonph/onehalf vim/
 	_dl sts10/vim-pink-moon
 	_dl tomasr/molokai
+	_dl edersonferreira/dalton-vim
 	_dl tyrannicaltoucan/vim-deep-space
 	_dl vim-scripts/pyte
 	_dl vim-scripts/rdark-terminal2.vim

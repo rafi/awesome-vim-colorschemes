@@ -22,6 +22,7 @@ Use your favorite package-manager to install, and enjoy!
 | [Atom] | Designed to be very readable in both light and dark environments |   | ✓ |
 | [carbonized] | Inspired by the Carbon keycap set | ✓ (16) | ✓ |
 | [challenger-deep] | FlatColor colorscheme | ✓ | ✓ |
+| [dalton] | Dark theme with some blue | ✓ | ✓ |
 | [deep-space] | Intergalactic friendly color scheme based off Hybrid | ✓ | ✓ |
 | [deus] | For the late night coder | ✓ | ✓ |
 | [dogrun] | Dark purple | ✓ | ✓ |
@@ -85,6 +86,7 @@ Use your favorite package-manager to install, and enjoy!
 [ayu-vim]: https://github.com/ayu-theme/ayu-vim
 [carbonized]: https://github.com/nightsense/carbonized
 [challenger-deep]: https://github.com/challenger-deep-theme/vim
+[dalton]: https://github.com/edersonferreira/dalton-vim
 [deep-space]: https://github.com/tyrannicaltoucan/vim-deep-space
 [deus]: https://github.com/ajmwagar/vim-deus
 [dogrun]: https://github.com/wadackel/vim-dogrun
