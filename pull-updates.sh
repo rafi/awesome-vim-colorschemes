@@ -39,6 +39,7 @@ function _main() {
 	_dl dikiaap/minimalist
 	_dl endel/vim-github-colorscheme
 	_dl fcpg/vim-orbital
+	_dl lfenzo/vim-fusion
 	_dl fmoralesc/molokayo
 	_dl gilgigilgil/anderson.vim
 	_dl gregsexton/Atom

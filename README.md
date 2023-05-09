@@ -28,6 +28,7 @@ Use your favorite package-manager to install, and enjoy!
 | [flattened] | Solarized, without the bullshit | ✓ (16) | ✓ |
 | [focuspoint] | Maintain color coordination and important keyword focus |   | ✓ |
 | [fogbell] | Minimal grey monotone with 3 variants | ✓ | ✓ |
+| [fusion] | Radioactie dark colorscheme for vim | ✓ | ✓ |
 | [github] | Based on Github's syntax highlighting | ✓ | ✓ |
 | [gotham] | Very dark vim colorscheme | ✓ | ✓ |
 | [gruvbox] | Retro groove color scheme | ✓ | ✓ |
@@ -91,6 +92,7 @@ Use your favorite package-manager to install, and enjoy!
 [flattened]: https://github.com/romainl/flattened
 [focuspoint]: https://github.com/chase/focuspoint-vim
 [fogbell]: https://github.com/jaredgorski/fogbell.vim
+[fusion]: https://github.com/lfenzo/vim-fusion
 [github]: https://github.com/endel/vim-github-colorscheme
 [gotham]: https://github.com/whatyouhide/vim-gotham
 [gruvbox]: https://github.com/morhetz/gruvbox
