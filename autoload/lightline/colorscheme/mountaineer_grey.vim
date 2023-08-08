@@ -1,24 +1,24 @@
 " =============================================================================
-" Filename: autoload/lightline/colorscheme/mountaineer.vim
-" Author: nuaNce
+" Filename: autoload/lightline/colorscheme/mountaineer-grey.vim
+" Author: itchyny
 " License: MIT License
 " Last Change: 2013/09/07 12:21:04.
 " =============================================================================
 let s:base03 = [ '#f0f0f0', 233 ]
-let s:base02 = [ '#232323', 236 ]
-let s:base01 = [ '#232323', 239 ]
+let s:base02 = [ '#191919', 236 ]
+let s:base01 = [ '#191919', 239 ]
 let s:base00 = [ '#666656', 242  ]
 let s:base0 = [ '#808070', 244 ]
-let s:base1 = [ '#232323', 246 ]
+let s:base1 = [ '#191919', 246 ]
 let s:base2 = [ '#a8a897', 248 ]
-let s:base3 = [ '#ac8a8c', 253 ]
-let s:yellow = [ '#3d3d3d', 215 ]
-let s:orange = [ '#3d3d3d', 222 ]
-let s:red = [ '#3d3d3d', 167 ]
-let s:magenta = [ '#3d3d3d', 217 ]
-let s:blue = [ '#3d3d3d', 103 ]
-let s:cyan = [ '#3d3d3d', 110 ]
-let s:green = [ '#3d3d3d', 107 ]
+let s:base3 = [ '#ebc7bc', 253 ]
+let s:yellow = [ '#2c2c2c', 215 ]
+let s:orange = [ '#2c2c2c', 222 ]
+let s:red = [ '#2c2c2c', 167 ]
+let s:magenta = [ '#2c2c2c', 217 ]
+let s:blue = [ '#2c2c2c', 103 ]
+let s:cyan = [ '#2c2c2c', 110 ]
+let s:green = [ '#2c2c2c', 107 ]
 
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 let s:p.normal.left = [ [ s:base03, s:blue ], [ s:base3, s:base01 ] ]

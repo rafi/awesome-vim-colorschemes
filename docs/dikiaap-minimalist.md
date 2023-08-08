@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://files.dikiaap.id/img/open-source/minimalist_preview.png" alt="Minimalist on HTML">
+    <img src="https://dikiaap.pages.dev/img/open-source/minimalist_preview.png" alt="Minimalist on HTML">
 </p>
 
 # Minimalist
@@ -81,4 +81,4 @@ If you need more syntax highlighting, you can use
 
 ## License
 
-MIT © [Diki Ananta](https://dikiaap.id)
+MIT © Diki Ananta

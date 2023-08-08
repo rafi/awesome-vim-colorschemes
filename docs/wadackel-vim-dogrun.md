@@ -1,6 +1,6 @@
 ![vim-dogrun](./docs/images/repo-banner.png)
 
-[![CI](https://img.shields.io/github/workflow/status/wadackel/vim-dogrun/CI/master?style=flat-square)](https://github.com/wadackel/vim-dogrun/actions)
+[![CI](https://img.shields.io/github/actions/workflow/status/wadackel/vim-dogrun/ci.yml?branch=main&style=flat-square)](https://github.com/wadackel/vim-dogrun/actions)
 [![LICENSE](https://img.shields.io/github/license/wadackel/vim-dogrun?style=flat-square)](./LICENSE)
 
 > A dark Neovim / Vim colorscheme for the GUI and 256 / true-color terminals.
@@ -13,6 +13,7 @@
 - Supports [lightline.vim](https://github.com/itchyny/lightline.vim) theme.
 - Supports [vim-clap](https://github.com/liuchengxu/vim-clap) theme.
 - Supports [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter).
+- Supports LSP Semantic highlights.
 - Loading speed is increased by precompiled script. (powered by Rust)
 
 Check [here](#supported-filetypes--plugins) for a list of supported file types and plugins :muscle:
@@ -98,8 +99,10 @@ From now on, we will gradually support it :dog:
 - [conflict-marker.vim](https://github.com/rhysd/conflict-marker.vim)
 - [defx-git](https://github.com/kristijanhusak/defx-git)
 - [defx-icons](https://github.com/kristijanhusak/defx-icons)
+- [dressing.nvim](https://github.com/stevearc/dressing.nvim)
 - [easymotion](https://github.com/easymotion/vim-easymotion)
 - [fern.vim](https://github.com/lambdalisue/fern.vim)
+- [fidget.nvim](https://github.com/j-hui/fidget.nvim)
 - [fugitive.vim](https://github.com/tpope/vim-fugitive)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [lightline.vim](https://github.com/itchyny/lightline.vim)

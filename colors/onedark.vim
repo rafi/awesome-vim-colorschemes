@@ -85,6 +85,9 @@ function! s:h(group, style, ...)
     if (has_key(a:style, "gui"))
       let s:highlight.gui = a:style.gui
     endif
+    if (has_key(a:style, "cterm"))
+      let s:highlight.cterm = a:style.cterm
+    endif
   else
     let s:highlight = a:style
     let s:group_colors[a:group] = s:highlight " Cache default highlight group settings
@@ -203,7 +206,7 @@ call s:h("Conditional", { "fg": s:purple }) " if, then, else, endif, switch, etc
 call s:h("Repeat", { "fg": s:purple }) " for, do, while, etc.
 call s:h("Label", { "fg": s:purple }) " case, default, etc.
 call s:h("Operator", { "fg": s:purple }) " sizeof", "+", "*", etc.
-call s:h("Keyword", { "fg": s:red }) " any other keyword
+call s:h("Keyword", { "fg": s:purple }) " any other keyword
 call s:h("Exception", { "fg": s:purple }) " try, catch, throw
 call s:h("PreProc", { "fg": s:yellow }) " generic Preprocessor
 call s:h("Include", { "fg": s:blue }) " preprocessor #include
@@ -572,8 +575,11 @@ call s:h("GitGutterDelete", { "fg": s:red })
 
 " dense-analysis/ale
 call s:h("ALEError", { "fg": s:red, "gui": "underline", "cterm": "underline" })
-call s:h("ALEWarning", { "fg": s:yellow, "gui": "underline", "cterm": "underline"})
-call s:h("ALEInfo", { "gui": "underline", "cterm": "underline"})
+call s:h("ALEWarning", { "fg": s:yellow, "gui": "underline", "cterm": "underline" })
+call s:h("ALEInfo", { "gui": "underline", "cterm": "underline" })
+call s:h("ALEErrorSign", { "fg": s:red })
+call s:h("ALEWarningSign", { "fg": s:yellow })
+call s:h("ALEInfoSign", { })
 
 " easymotion/vim-easymotion
 call s:h("EasyMotionTarget", { "fg": s:red, "gui": "bold", "cterm": "bold" })
@@ -597,6 +603,8 @@ call s:h("CocWarningSign", { "fg": s:yellow })
 call s:h("CocInfoSign", { "fg": s:blue })
 call s:h("CocHintSign", { "fg": s:cyan })
 call s:h("CocFadeOut", { "fg": s:comment_grey })
+" https://github.com/joshdick/onedark.vim/issues/313
+highlight! link CocMenuSel PmenuSel
 
 " neomake/neomake
 call s:h("NeomakeErrorSign", { "fg": s:red })
@@ -610,10 +618,14 @@ call s:h("mkdLink", { "fg": s:blue })
 call s:h("mkdURL", { "fg": s:cyan, "gui": "underline", "cterm": "underline" })
 
 " prabirshrestha/vim-lsp
-call s:h("LspError", { "fg": s:red })
-call s:h("LspWarning", { "fg": s:yellow })
-call s:h("LspInformation", { "fg": s:blue })
-call s:h("LspHint", { "fg": s:cyan })
+call s:h("LspErrorText", { "fg": s:red })
+call s:h("LspWarningText", { "fg": s:yellow })
+call s:h("LspInformationText", { "fg":s:blue })
+call s:h("LspHintText", { "fg":s:cyan })
+call s:h("LspErrorHighlight", { "fg": s:red, "gui": "underline", "cterm": "underline" })
+call s:h("LspWarningHighlight", { "fg": s:yellow, "gui": "underline", "cterm": "underline" })
+call s:h("LspInformationHighlight", { "fg":s:blue, "gui": "underline", "cterm": "underline" })
+call s:h("LspHintHighlight", { "fg":s:cyan, "gui": "underline", "cterm": "underline" })
 
 " tpope/vim-fugitive
 call s:h("diffAdded", { "fg": s:green })

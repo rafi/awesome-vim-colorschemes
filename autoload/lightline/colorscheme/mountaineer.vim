@@ -1,6 +1,6 @@
 " =============================================================================
 " Filename: autoload/lightline/colorscheme/mountaineer.vim
-" Author: nuaNce
+" Author: itchyny
 " License: MIT License
 " Last Change: 2013/09/07 12:21:04.
 " =============================================================================

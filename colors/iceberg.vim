@@ -5,7 +5,7 @@
 "
 " File:       iceberg.vim
 " Maintainer: cocopon <cocopon@me.com>
-" Modified:   2022-04-26 21:56+0900
+" Modified:   2022-11-16 22:13+0900
 " License:    MIT
 
 
@@ -113,12 +113,12 @@ if &background == 'light'
   hi SyntasticStyleErrorSign ctermbg=253 ctermfg=125 guibg=#dcdfe7 guifg=#cc517a
   hi SyntasticStyleWarningSign ctermbg=253 ctermfg=130 guibg=#dcdfe7 guifg=#c57339
   hi SyntasticWarningSign ctermbg=253 ctermfg=130 guibg=#dcdfe7 guifg=#c57339
+  hi ZenSpace ctermbg=125 guibg=#cc517a
   hi TSFunction ctermfg=237 guifg=#505695
   hi TSFunctionBuiltin ctermfg=237 guifg=#505695
   hi TSFunctionMacro ctermfg=237 guifg=#505695
   hi TSMethod ctermfg=237 guifg=#505695
   hi TSURI cterm=underline ctermfg=31 gui=underline guifg=#3f83a6 term=underline
-  hi ZenSpace ctermbg=125 guibg=#cc517a
   hi DiagnosticUnderlineInfo cterm=underline ctermfg=31 gui=underline guisp=#3f83a6 term=underline
   hi DiagnosticInfo ctermfg=31 guifg=#3f83a6
   hi DiagnosticSignInfo ctermbg=253 ctermfg=31 guibg=#dcdfe7 guifg=#3f83a6
@@ -247,12 +247,12 @@ else
   hi SyntasticStyleErrorSign ctermbg=235 ctermfg=203 guibg=#1e2132 guifg=#e27878
   hi SyntasticStyleWarningSign ctermbg=235 ctermfg=216 guibg=#1e2132 guifg=#e2a478
   hi SyntasticWarningSign ctermbg=235 ctermfg=216 guibg=#1e2132 guifg=#e2a478
+  hi ZenSpace ctermbg=203 guibg=#e27878
   hi TSFunction ctermfg=252 guifg=#a3adcb
   hi TSFunctionBuiltin ctermfg=252 guifg=#a3adcb
   hi TSFunctionMacro ctermfg=252 guifg=#a3adcb
   hi TSMethod ctermfg=252 guifg=#a3adcb
   hi TSURI cterm=underline ctermfg=109 gui=underline guifg=#89b8c2 term=underline
-  hi ZenSpace ctermbg=203 guibg=#e27878
   hi DiagnosticUnderlineInfo cterm=underline ctermfg=109 gui=underline guisp=#89b8c2 term=underline
   hi DiagnosticInfo ctermfg=109 guifg=#89b8c2
   hi DiagnosticSignInfo ctermbg=235 ctermfg=109 guibg=#1e2132 guifg=#89b8c2
@@ -421,7 +421,7 @@ hi! link TSNumber Constant
 hi! link TSOperator icebergNormalFg
 hi! link TSParameter icebergNormalFg
 hi! link TSParameterReference icebergNormalFg
-hi! link TSProperty TSField
+hi! link TSProperty icebergNormalFg
 hi! link TSPunctDelimiter icebergNormalFg
 hi! link TSPunctBracket icebergNormalFg
 hi! link TSPunctSpecial Special
@@ -448,6 +448,54 @@ hi! link typescriptIdentifier Statement
 hi! link typescriptMessage icebergNormalFg
 hi! link typescriptNull Constant
 hi! link typescriptParens icebergNormalFg
+
+if has('nvim-0.8')
+  hi! link @attribute TSAttribute
+  hi! link @boolean TSBoolean
+  hi! link @character TSCharacter
+  hi! link @comment TSComment
+  hi! link @constructor TSConstructor
+  hi! link @conditional TSConditional
+  hi! link @constant TSConstant
+  hi! link @constant.builtin TSConstBuiltin
+  hi! link @constant.macro TSConstMacro
+  hi! link @error TSError
+  hi! link @exception TSException
+  hi! link @field TSField
+  hi! link @float TSFloat
+  hi! link @function TSFunction
+  hi! link @function.builtin TSFunctionBuiltin
+  hi! link @function.macro TSFunctionMacro
+  hi! link @include TSInclude
+  hi! link @keyword TSKeyword
+  hi! link @keyword.function TSKeywordFunction
+  hi! link @label TSLabel
+  hi! link @method TSMethod
+  hi! link @namespace TSNamespace
+  hi! link @number TSNumber
+  hi! link @operator TSOperator
+  hi! link @parameter TSParameter
+  hi! link @parameter.reference TSParameterReference
+  hi! link @property TSProperty
+  hi! link @punctuation.delimiter TSPunctDelimiter
+  hi! link @punctuation.bracket TSPunctBracket
+  hi! link @punctuation.special TSPunctSpecial
+  hi! link @repeat TSRepeat
+  hi! link @string TSString
+  hi! link @string.regex TSStringRegex
+  hi! link @string.escape TSStringEscape
+  hi! link @tag TSTag
+  hi! link @tag.attribute TSTagAttribute
+  hi! link @tag.delimiter TSTagDelimiter
+  hi! link @text TSText
+  hi! link @text.note Todo
+  hi! link @text.title TSTitle
+  hi! link @text.uri TSURI
+  hi! link @type TSType
+  hi! link @type.builtin TSTypeBuiltin
+  hi! link @variable TSVariable
+  hi! link @variable.builtin TSVariableBuiltin
+endif
 
 if !has('nvim')
   hi! link SpecialKey Whitespace

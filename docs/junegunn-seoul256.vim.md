@@ -118,6 +118,11 @@ Emacs color theme
 
 - [seoul256-emacs](https://github.com/anandpiyer/seoul256-emacs)
 
+kitty color theme
+-----------------
+
+- [seoul256-kitty](https://github.com/guilhermedeandrade/seoul256-kitty)
+
 Author
 ------
 

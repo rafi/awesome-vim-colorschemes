@@ -2,14 +2,14 @@
 " URL: https://github.com/sainnhe/sonokai/
 " Filename: autoload/airline/themes/sonokai.vim
 " Author: Sainnhepark
-" Email: sainnhe@gmail.com
+" Email: i@sainnhe.dev
 " License: MIT License
 " =============================================================================
 
 " Initialization: {{{
 let s:configuration = sonokai#get_configuration()
-let s:palette = sonokai#get_palette(s:configuration.style)
-if s:configuration.transparent_background
+let s:palette = sonokai#get_palette(s:configuration.style, s:configuration.colors_override)
+if s:configuration.transparent_background == 2
   let s:palette.bg1 = s:palette.none
 endif
 "}}}
@@ -182,6 +182,7 @@ let s:IA2 = [ s:inactive_sub_fg[0] , s:inactive_sub_bg[0] , s:inactive_sub_fg[1]
 let s:IA3 = [ s:inactive_mid_fg[0] , s:inactive_mid_bg[0] , s:inactive_mid_fg[1] , s:inactive_mid_bg[1] ]
 
 let g:airline#themes#sonokai#palette.inactive = airline#themes#generate_color_map(s:IA1, s:IA2, s:IA3)
+let g:airline#themes#sonokai#palette.inactive.airline_term = [ s:inactive_mid_fg[0] , s:inactive_mid_bg[0] , s:inactive_mid_fg[1] , s:inactive_mid_bg[1] ]
 let g:airline#themes#sonokai#palette.inactive_modified = deepcopy(g:airline#themes#sonokai#palette.inactive)
 let g:airline#themes#sonokai#palette.inactive_modified.airline_c = [ s:inactive_mod_fg[0] , s:inactive_mod_bg[0] , s:inactive_mod_fg[1] , s:inactive_mod_bg[1] ]
 

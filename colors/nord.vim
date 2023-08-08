@@ -1,9 +1,5 @@
-" Copyright (C) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
-" Copyright (C) 2016-present Sven Greb <development@svengreb.de>
-
-" Project: Nord Vim
-" Repository: https://github.com/arcticicestudio/nord-vim
-" License: MIT
+" Copyright (c) 2016-present Sven Greb <development@svengreb.de>
+" This source code is licensed under the MIT license found in the license file.
 
 if version > 580
   hi clear
@@ -13,7 +9,7 @@ if version > 580
 endif
 
 let g:colors_name = "nord"
-let s:nord_vim_version="0.18.0"
+let s:nord_vim_version="0.19.0"
 set background=dark
 
 let s:nord0_gui = "#2E3440"
@@ -91,7 +87,7 @@ if exists("g:nord_comment_brightness")
   echohl WarningMsg
   echomsg 'nord: warning: Variable g:nord_comment_brightness has been deprecated and will be removed in version 1.0.0!' .
                    \' The comment color brightness has been increased by 10% by default.' .
-                   \' Please see https://github.com/arcticicestudio/nord-vim/issues/145 for more details.'
+                   \' Please see https://github.com/nordtheme/vim/issues/145 for more details.'
   echohl None
   let g:nord_comment_brightness = 10
 endif
@@ -386,10 +382,18 @@ hi! link diffAdded DiffAdd
 hi! link diffChanged DiffChange
 hi! link diffRemoved DiffDelete
 
+call s:hi("elixirModuleDeclaration", s:nord7_gui, "", s:nord7_term, "", "", "")
+call s:hi("elixirAlias", s:nord7_gui, "", s:nord7_term, "", "", "")
+call s:hi("elixirAtom", s:nord6_gui, "", s:nord6_term, "", s:bold, "")
+
 call s:hi("gitconfigVariable", s:nord7_gui, "", s:nord7_term, "", "", "")
 
 call s:hi("goBuiltins", s:nord7_gui, "", s:nord7_term, "", "", "")
 hi! link goConstants Keyword
+
+" fatih/vim-go
+call s:hi("gomodVersion", s:nord7_gui, "", s:nord7_term, "", "", "")
+call s:hi("gomodGoVersion", s:nord8_gui, "", s:nord8_term, "", "", "")
 
 call s:hi("helpBar", s:nord3_gui, "", s:nord3_term, "", "", "")
 call s:hi("helpHyperTextJump", s:nord8_gui, "", s:nord8_term, "", s:underline, "")
@@ -573,6 +577,10 @@ if has('nvim')
     call s:hi("LspDiagnosticsUnderlineInformation" , s:nord8_gui, "", s:nord8_term, "", "undercurl", "")
     call s:hi("LspDiagnosticsUnderlineHint" , s:nord10_gui, "", s:nord10_term, "", "undercurl", "")
   endif
+
+  " Gitsigns
+  " > lewis6991/gitsigns.nvim
+  hi! link GitSignsCurrentLineBlame Comment
 endif
 
 " GitGutter
@@ -588,6 +596,10 @@ call s:hi("SignifySignAdd", s:nord14_gui, "", s:nord14_term, "", "", "")
 call s:hi("SignifySignChange", s:nord13_gui, "", s:nord13_term, "", "", "")
 call s:hi("SignifySignChangeDelete", s:nord11_gui, "", s:nord11_term, "", "", "")
 call s:hi("SignifySignDelete", s:nord11_gui, "", s:nord11_term, "", "", "")
+
+" Sneak
+" > justinmk/vim-sneak
+hi! link Sneak Search
 
 " fugitive.vim
 " > tpope/vim-fugitive
@@ -704,7 +716,7 @@ hi! link pandocSimpleTableHeader pandocAtxHeader
 hi! link pandocStrong markdownBold
 hi! link pandocTableHeaderWord pandocAtxHeader
 hi! link pandocUListItemBullet Operator
-  
+
 if has('nvim')
   " tree-sitter
   " > nvim-treesitter/nvim-treesitter

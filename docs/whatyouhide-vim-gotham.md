@@ -1,15 +1,13 @@
-![logo][logo]
+![Logo](https://user-images.githubusercontent.com/3890250/206901868-c0e78cc3-d10f-4404-a2d7-f7edb923e041.png)
 
 
-> It's the colorscheme we set that defines us. *(Batman)*
-
-[![main](https://github.com/whatyouhide/vim-gotham/workflows/main/badge.svg?branch=master)](https://github.com/whatyouhide/vim-gotham/actions?query=workflow%3Amain)
+> It's the colorscheme we set that defines us. — *(Batman)*
 
 Gotham is a **very dark** vim colorscheme. It works on GUI vim (MacVim or gVim)
 and on terminal vim. For terminal vim, there's support for a lot of terminal
 emulators in the [gotham-contrib][gotham-contrib] repository.
 
-![screenshot][screenshot]
+<img width="1013" alt="Screenshot of the color scheme" src="https://user-images.githubusercontent.com/3890250/206901895-954841ad-ea49-4c27-8206-1ef8aa55637c.png">
 
 
 ## Installation
@@ -80,7 +78,7 @@ let g:gotham_airline_emphasised_insert = 0
 Gotham supports [lightline.vim][lightline.vim] too. To enable the colorscheme,
 add one of the following lines to your `.vimrc`:
 
-``` viml
+```viml
 let g:lightline = { 'colorscheme': 'gotham' }
 let g:lightline = { 'colorscheme': 'gotham256' }
 ```
@@ -127,9 +125,6 @@ You can find the list of contributors [here][contributors].
 
 MIT &copy; 2014 Andrea Leopardi, see [the license][license-file].
 
-
-[logo]: http://i.imgur.com/FDLEzHC.png "Logo"
-[screenshot]: http://i.imgur.com/NfRuHFN.png "A vim screenshot"
 [license-file]: LICENSE.txt
 
 [vim-plug]: https://github.com/junegunn/vim-plug

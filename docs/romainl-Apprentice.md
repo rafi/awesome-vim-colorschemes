@@ -216,7 +216,7 @@ I removed it from `master` but you can still find it in the "fancylines-and-neov
 
 * [Apprentice-kitty](https://github.com/rsaihe/apprentice-kitty) is a port for kitty.
 
-* [Here](https://marketplace.visualstudio.com/items?itemName=amariampolskiy.theme-apprentice) is a port of Apprentice for Visual Studio Code.
+* [Here](https://marketplace.visualstudio.com/items?itemName=arzg.apprentice) and [here](https://marketplace.visualstudio.com/items?itemName=amariampolskiy.theme-apprentice) are ports of Apprentice for Visual Studio Code.
 
 * [Apprentice-windows-terminal](https://github.com/guilhermedeandrade/apprentice-windows-terminal) is a port for Windows Terminal.
 

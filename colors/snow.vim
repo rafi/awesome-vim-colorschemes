@@ -1,6 +1,6 @@
 " Name:         snow
-" Author:       haystackandroid
-" Maintainer:   haystackandroid
+" Author:       nightsense
+" Maintainer:   nightsense
 " License:      MIT
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
