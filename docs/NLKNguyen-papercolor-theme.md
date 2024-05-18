@@ -280,6 +280,9 @@ An example configuration is available below
 ```VimL
 let g:PaperColor_Theme_Options = {
   \   'language': {
+  \     'haskell': {
+  \       'no_bold_types' : 1
+  \     },
   \     'python': {
   \       'highlight_builtins' : 1
   \     },
@@ -295,11 +298,12 @@ let g:PaperColor_Theme_Options = {
 
 #### Currently available language options
 
-language | option                       | value     | default
-------   | ------                       | ------    | ------
-`c`      | `highlight_builtins`         | 1: enable | 0: disable
-`cpp`    | `highlight_standard_library` | 1: enable | 0: disable
-`python` | `highlight_builtins`         | 1: enable | 0: disable
+language  | option                       | value     | default
+------    | ------                       | ------    | ------
+`c`       | `highlight_builtins`         | 1: enable | 0: disable
+`cpp`     | `highlight_standard_library` | 1: enable | 0: disable
+`python`  | `highlight_builtins`         | 1: enable | 0: disable
+`haskell` | `no_bold_types`              | 1: enable | 0: disable
 
 
 ### Vim-airline support

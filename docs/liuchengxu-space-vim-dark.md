@@ -79,6 +79,20 @@ let g:space_vim_dark_background = 234
 color space-vim-dark
 ```
 
+## Airline
+
+```vim
+" Vim Script
+let g:airline_theme='violet'
+```
+
+## Lightline
+
+```vim
+" Vim Script
+let g:lightline = {'colorscheme': 'violet'}
+```
+
 ## Credits
 
 - Thanks to the great effort of [@axvr](https://github.com/axvr) . Now we have the Xresources port of space-vim-dark theme.

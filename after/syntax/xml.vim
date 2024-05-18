@@ -9,6 +9,6 @@
 syn region xmlEndTag
       \ start=+</+
       \ end=+>+
-      \ contains=xmlTagN
-syn match xmlTagN
+      \ contains=xmlTagName
+syn match xmlTagName
       \ contained +</\s*[-a-zA-Z0-9]\++hs=s+2

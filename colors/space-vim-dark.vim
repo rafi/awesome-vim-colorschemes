@@ -140,8 +140,8 @@ call s:hi('Debug'       , 225 , '' , 'None' , 'None')
 call s:hi('Define'      , 177 , '' , 'None' , 'None')
 call s:hi('Delimiter'   , 151 , '' , 'None' , 'None')
 
-hi DiffAdd    term=bold cterm=reverse ctermfg=142 ctermbg=235 gui=reverse guifg=#b8bb26 guibg=#29422d
-hi DiffChange term=bold cterm=reverse ctermfg=107 ctermbg=235 gui=reverse guifg=#8ec07c guibg=#32322c
+hi DiffAdd    term=bold cterm=reverse ctermfg=107 ctermbg=235 gui=reverse guifg=#8ec07c guibg=#32322c
+hi DiffChange term=bold cterm=reverse ctermfg=142 ctermbg=235 gui=reverse guifg=#b8bb26 guibg=#29422d
 hi DiffDelete term=bold cterm=reverse ctermfg=160 ctermbg=235 gui=reverse guifg=#e0211d guibg=#282828
 hi DiffText   term=reverse cterm=reverse ctermfg=214 ctermbg=235 gui=reverse guifg=#fabd2f guibg=#282828
 

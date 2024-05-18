@@ -65,6 +65,8 @@ fun! s:register_default_theme()
         \       'popupmenu_bg' : ['#d0d0d0', '252'],
         \       'search_fg' : ['#444444', '238'],
         \       'search_bg' : ['#ffff5f', '227'],
+        \       'incsearch_fg' : ['#ffff5f', '227'],
+        \       'incsearch_bg' : ['#444444', '238'],
         \       'linenumber_fg' : ['#b2b2b2', '249'],
         \       'linenumber_bg' : ['#eeeeee', '255'],
         \       'vertsplit_fg' : ['#005f87', '24'],
@@ -155,6 +157,8 @@ fun! s:register_default_theme()
         \       'popupmenu_bg' : ['#303030', '236'],
         \       'search_fg' : ['#000000', '16'],
         \       'search_bg' : ['#00875f', '29'],
+        \       'incsearch_fg' : ['#00875f', '29'],
+        \       'incsearch_bg' : ['#000000', '16'],
         \       'linenumber_fg' : ['#585858', '240'],
         \       'linenumber_bg' : ['#1c1c1c', '234'],
         \       'vertsplit_fg' : ['#5f8787', '66'],
@@ -507,7 +511,8 @@ fun! s:generate_language_option_variables()
   let l:available_language_options = [
         \   'c__highlight_builtins',
         \   'cpp__highlight_standard_library',
-        \   'python__highlight_builtins'
+        \   'python__highlight_builtins',
+        \   'haskell__no_bold_types'
         \ ]
 
   " 1. Generate variables and set to default value
@@ -1027,6 +1032,10 @@ fun! s:set_color_variables()
   call s:create_color_variables('search_fg', get(s:palette, 'search_fg', color00) , 'Black')
   call s:create_color_variables('search_bg', get(s:palette, 'search_bg', color15) , 'Yellow')
 
+  " IncSearch: ex: during a search
+  call s:create_color_variables('incsearch_fg', get(s:palette, 'incsearch_fg', color00) , 'Black')
+  call s:create_color_variables('incsearch_bg', get(s:palette, 'incsearch_bg', color15) , 'Yellow')
+
   " Todo: ex: TODO
   call s:create_color_variables('todo_fg', get(s:palette, 'todo_fg', color05) , 'LightYellow')
   call s:create_color_variables('todo_bg', get(s:palette, 'todo_bg', color00) , 'Black')
@@ -1155,6 +1164,7 @@ fun! s:apply_syntax_highlightings()
   exec 'hi Cursor' . s:fg_cursor_fg . s:bg_cursor_bg
   exec 'hi SpecialKey' . s:fg_nontext
   exec 'hi Search' . s:fg_search_fg . s:bg_search_bg
+  exec 'hi IncSearch' . s:fg_incsearch_fg . s:bg_incsearch_bg
   exec 'hi StatusLine' . s:fg_statusline_active_bg . s:bg_statusline_active_fg
   exec 'hi StatusLineNC' . s:fg_statusline_inactive_bg . s:bg_statusline_inactive_fg
   exec 'hi StatusLineTerm' . s:fg_statusline_active_bg . s:bg_statusline_active_fg
@@ -1739,7 +1749,11 @@ fun! s:apply_syntax_highlightings()
 
 
   " Haskell Highlighting
-  exec 'hi haskellType' . s:fg_aqua . s:ft_bold
+  if s:langOpt_haskell__no_bold_types == 1
+    exec 'hi haskellType' . s:fg_aqua
+  else 
+    exec 'hi haskellType' . s:fg_aqua . s:ft_bold
+  endif
   exec 'hi haskellIdentifier' . s:fg_orange . s:ft_bold
   exec 'hi haskellOperators' . s:fg_pink
   exec 'hi haskellWhere' . s:fg_foreground . s:ft_bold

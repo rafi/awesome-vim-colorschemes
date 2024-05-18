@@ -45,6 +45,7 @@ Plug 'jaredgorski/spacecamp'
 ### Ports to other editors
 
 - [Kakoune](https://github.com/haukkagu/spacecamp.kak) by [@haukkagu](https://github.com/haukkagu)
+- [VS Code](https://github.com/dinogomez/SpaceCamp) by [@dinogomez](https://github.com/dinogomez)
 
 ### Terminal emulator themes
 ```NOTE: These files may need to be renamed or pasted as snippets into the appropriate config file for your terminal emulator. See documentation for your particular terminal emulator. ```

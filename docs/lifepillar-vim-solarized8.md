@@ -1,8 +1,10 @@
-# Solarized 8: True Colors
+# Solarized 8 for Vim
 
 Solarized 8 Flat Dark      |  Solarized 8 Flat Light
 :-------------------------:|:-------------------------:
 ![](https://raw.github.com/lifepillar/Resources/master/solarized8/solarized8_dark_flat.png)  |  ![](https://raw.github.com/lifepillar/Resources/master/solarized8/solarized8_light_flat.png)
+
+**Note: if you are using Neovim, checkout the `neovim` branch of this repo.**
 
 This is yet another Solarized theme for Vim. It places itself half way between
 the original [Solarized](https://github.com/altercation/vim-colors-solarized)
@@ -17,7 +19,7 @@ for versions of Vim supporting true-color (i.e., 24-bit color) terminals.
 Instead, this color scheme works **out of the box everywhere**. For the best
 experience, you need:
 
-- Vim ≥7.4.1799, or NeoVim, with `termguicolors` set, **and**
+- Vim ≥7.4.1799 with `termguicolors` set, **and**
 - a terminal supporting millions of colors (but see below for workarounds).
 
 Solarized 8 also works in any GUI version of Vim: no configuration is
@@ -52,15 +54,15 @@ you have two possibilities:
    sh /path/to/scripts/solarized.sh
    ```
 
-   **Note:** this method is supported only by some, but not all, terminals. For
+   **Note:** this method is supported only by some terminals. For
    instance, in Apple's Terminal.app, running `solarized.sh` has no effect.
 
 2. Set your terminal's 16 ANSI colors (the colors in the range 0–15) to the
    Solarized palette (how to do that depends on the terminal) *and* `set
-   t_Co=16` in Vim (or `let g:solarized_use16=1`) to instruct Vim to use your
-   terminal's colors. Be aware that, if you force the use of your terminal
-   colors in Vim with any of these settings, but your terminal is not
-   configured to use the Solarized palette, your colors will be completely off!
+   t_Co=16` in Vim to instruct Vim to use your terminal's colors. Be aware
+   that, if you force the use of your terminal colors in Vim with any of these
+   settings, but your terminal is not configured to use the Solarized palette,
+   your colors will be completely off!
 
 **Note:** whatever method you choose, keep in mind that if your terminal does
 not support millions of colors, you must *not* set `termguicolors` (i.e., make
@@ -90,10 +92,10 @@ Otherwise, use you favourite installation method.
 
 There are actually four optimized<sup>*</sup> color schemes you may load:
 
-- `solarized8_high`: high-contrast variant (screenshow below, first column);
+- `solarized8_high`: high-contrast variant (screenshot below, first column);
 - `solarized8`: the default Solarized theme (screenshot below, second column);
-- `solarized8_low`: low-contrast variant (screenshow below, third column);
-- `solarized8_flat`: “flat” variant (screenshow below, fourth column).
+- `solarized8_low`: low-contrast variant (screenshot below, third column);
+- `solarized8_flat`: “flat” variant (screenshot below, fourth column).
 
 ![](https://raw.github.com/lifepillar/Resources/master/solarized8/solarized8-variants.png)
 
@@ -139,25 +141,35 @@ If you use Vim packages, there is no need to `packadd solarized8`. Keep your
 
 ## Options
 
-The following options are inherited from Solarized:
+The following options are inherited from Solarized, although their effects may
+be slightly different from those in the original Solarized:
 
-- `g:solarized_visibility`: one of `"normal"` (default), `"low"`, `"high"`;
-- `g:solarized_diffmode`: one of `"normal"` (default), `"low"`, `"high"`;
-- `g:solarized_termtrans`: make terminal background transparent if set to `1`
-  (default: `0`).
+- `g:solarized_visibility`: one of `"normal"` (default), `"low"`, `"high"`:
+  controls `CursorLineNr`, `LineNr`, `NonText`, `SpecialKey`, `Title`, and all
+  the `Spell*` highlight groups; in light mode, it may also slightly change the
+  color for `Cursor` and `MatchParen`;
+- `g:solarized_diffmode`: one of `"normal"` (default), `"low"`, `"high"`:
+  controls the style of `DiffAdd`, `DiffChange`, `DiffDelete`, and `DiffText`.
+- `g:solarized_termtrans`: make the background transparent if set to `1`
+  (default: `0`). This has effect only if Vim is run from the terminal.
 
 The following options were not available in the original Solarized:
 
-- `g:solarized_statusline`: one of `"normal"` (default), `"low"` or `"flat"`;
-- `g:solarized_italics`: set to `0` to suppress italics (default is `1`).
+- `g:solarized_statusline`: one of `"normal"` (default), `"low"` or `"flat"`.
+  This affects the “structural” elements of your editor: `StatusLine`,
+  `StatusLineNC`, `TabLine`, `TablineFill`, `TabLineSel`, and `VertSplit`.
+- `g:solarized_italics`: set to `0` to suppress italics (default is `1`). Note
+  that in the terminal whether italics is actually used depends also on the
+  font and the terminal environment: setting this option to `1` is not
+  guaranteed to work.
 - `g:solarized_old_cursor_style`: set to `1` if you want to use the original
-  Solarized's cursor style (default: `0`). By default, the cursor is orange/red
-  in light themes, and blue in dark themes (but please note that your terminal
-  may override the cursor's color).
-- `g:solarized_use16`: set to `1` to force using your 16 ANSI terminal colors.
+  Solarized's cursor style (default: `0`). By default, the cursor is orange or
+  red in light themes (depending on `g:solarized_visibility`), and blue in dark
+  themes. Please note that your terminal may override the cursor's color, so
+  this option is not guaranteed to change the cursor's color.
 - `g:solarized_extra_hi_groups`: set to `1` to enable Solarized
   filetype-specific syntax highlighting groups (default is `0`). Please be
-  aware that if your Vim is not recent enough you may encounter [an
+  aware that if your Vim is very old you may encounter [an
   issue](https://github.com/vim/vim/issues/4405) with syntax items defined in
   color schemes.
 
@@ -184,10 +196,14 @@ It may also be necessary to add the following to your `tmux.conf`:
 # Add truecolor support
 set-option -ga terminal-overrides ",xterm-256color:Tc"
 # Default terminal is 256 colors
-set -g default-terminal "screen-256color"
+set -g default-terminal "tmux-256color"
 ```
 
-See the discussion [here](https://github.com/lifepillar/vim-solarized8/issues/4#issuecomment-985416964) for context.
+See also these threads:
+
+- [Colors are off when running Vim via SSH inside tmux](https://github.com/lifepillar/vim-solarized8/issues/4#issuecomment-985416964)
+- [Comments look weird in tmux](https://github.com/lifepillar/vim-solarized8/issues/109)
+
 
 
 ## Hacking

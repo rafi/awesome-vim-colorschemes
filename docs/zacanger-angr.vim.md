@@ -23,4 +23,5 @@ Other plugin managers: see their docs.
 [watsoncj](https://github.com/watsoncj) fixed some inconsistencies and made the
 Airline theme.
 
-[LICENSE](./LICENSE.md)
+* [LICENSE](./LICENSE.md)
+* [Donate](https://ko-fi.com/zacanger)

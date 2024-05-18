@@ -4,7 +4,10 @@
 
 termschool is a vim theme optimized for 256-color terminals. The theme
 "medium/dark" and makes heavy use of greys, greens and blues in pastel tones.
-You can [preview termschool here](http://vimcolors.com/375/termschool/dark).
+
+This is a screenshot of vim running termschool:
+
+![vi-termschool](https://github.com/marcopaganini/termschool-vim-theme/assets/7425028/2810d08c-6db6-425e-8363-68db50f26a03)
 
 The original codeschool for 256-color terminals was created by @Astonj
 (http://astonj.com) based on the editor used at http://codeschool.com. While I

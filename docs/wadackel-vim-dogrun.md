@@ -94,6 +94,8 @@ From now on, we will gradually support it :dog:
 ### Plugins
 
 - [ALE](https://github.com/dense-analysis/ale)
+- [Copilot.vim](https://github.com/github/copilot.vim)
+- [Diffview.nvim](https://github.com/sindrets/diffview.nvim)
 - [clever-f.vim](https://github.com/rhysd/clever-f.vim)
 - [coc.nvim](https://github.com/neoclide/coc.nvim)
 - [conflict-marker.vim](https://github.com/rhysd/conflict-marker.vim)
@@ -103,16 +105,72 @@ From now on, we will gradually support it :dog:
 - [easymotion](https://github.com/easymotion/vim-easymotion)
 - [fern.vim](https://github.com/lambdalisue/fern.vim)
 - [fidget.nvim](https://github.com/j-hui/fidget.nvim)
+- [flash.nvim](https://github.com/folke/flash.nvim)
 - [fugitive.vim](https://github.com/tpope/vim-fugitive)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
+- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - [lightline.vim](https://github.com/itchyny/lightline.vim)
+- [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+- [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - [vim-clap](https://github.com/liuchengxu/vim-clap)
 - [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 - [vim-lsp](https://github.com/prabirshrestha/vim-lsp)
 - [vimfiler](https://github.com/Shougo/vimfiler.vim)
+
+## Other Tools
+
+In the future, there may be a possibility to offer separate themes, but for now, we will introduce the inline themes for each tool.
+
+### [WezTerm](https://github.com/wez/wezterm)
+
+![WezTerm](./docs/images/wezterm.png)
+
+`~/.config/wezterm/wezterm.lua`
+
+```lua
+return {
+  colors = {
+    foreground = '#9ea3c0',
+    background = '#222433',
+    cursor_fg = '#222433',
+    cursor_bg = '#9ea3c0',
+    selection_bg = '#363e7f',
+    ansi = {
+      '#111219',
+      '#c2616b',
+      '#7cbe8c',
+      '#8e8a6f',
+      '#4c89ac',
+      '#6c75cb',
+      '#73c1a9',
+      '#9ea3c0',
+    },
+    brights = {
+      '#545c8c',
+      '#b871b8',
+      '#7cbe8c',
+      '#a8a384',
+      '#589ec6',
+      '#929be5',
+      '#59b6b6',
+      '#9ea3c0',
+    },
+  },
+}
+```
+
+### [fzf](https://github.com/junegunn/fzf)
+
+![fzf](./docs/images/fzf.png)
+
+`~/.zshrc` or `~/.bashrc`
+
+```bash
+export FZF_DEFAULT_OPTS='--color=fg:#8085a6,bg:#222433,hl:#bdc3e6 --color=fg+:#8085a6,bg+:#363e7f,hl+:#bdc3e6 --color=info:#929be5,prompt:#545c8c,pointer:#ff79c6 --color=marker:#b871b8,spinner:#73c1a9,header:#545c8c,border:#545c8c,gutter:-1'
+```
 
 ## Inspired
 
