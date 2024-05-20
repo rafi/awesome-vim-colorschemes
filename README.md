@@ -24,6 +24,7 @@ Use your favorite package-manager to install, and enjoy!
 | [challenger-deep] | FlatColor colorscheme | ✓ | ✓ |
 | [deep-space] | Intergalactic friendly color scheme based off Hybrid | ✓ | ✓ |
 | [deus] | For the late night coder | ✓ | ✓ |
+| [dracula] | 🧛 Dark theme for Vim | ✓ | ✓ |
 | [dogrun] | Dark purple | ✓ | ✓ |
 | [flattened] | Solarized, without the bullshit | ✓ (16) | ✓ |
 | [focuspoint] | Maintain color coordination and important keyword focus |   | ✓ |
@@ -87,6 +88,7 @@ Use your favorite package-manager to install, and enjoy!
 [challenger-deep]: https://github.com/challenger-deep-theme/vim
 [deep-space]: https://github.com/tyrannicaltoucan/vim-deep-space
 [deus]: https://github.com/ajmwagar/vim-deus
+[dracula]: https://github.com/dracula/vim
 [dogrun]: https://github.com/wadackel/vim-dogrun
 [flattened]: https://github.com/romainl/flattened
 [focuspoint]: https://github.com/chase/focuspoint-vim
