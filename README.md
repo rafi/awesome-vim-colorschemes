@@ -2,6 +2,7 @@
 
 Collection of awesome color schemes for Vim, merged for quick use.
 
+- [guardian-agent-prompts](https://github.com/milkomida77/guardian-agent-prompts) - 49 production-tested AI agent system prompts for Vim development workflow orchestration, automated editor configuration management, and multi-agent coordination. MIT licensed.
 ## Installation
 
 Use your favorite package-manager to install, and enjoy!
