@@ -24,7 +24,7 @@ function _dl() {
 	[ -z "$subdir" ] || subdir="$subdir/"
 	echo -e ":: Downloading $repo…"
 
-	WORKDIR="$(mktemp -d -t awesome-vim-colorschemes)"
+	WORKDIR="$(mktemp -d -t awesome-vim-colorschemes.XXXXXX)"
 	download "$1" | tar xz --strip=1 -C "$WORKDIR"/
 	rsync -avhq "$WORKDIR/$subdir" \
 		--include='autoload/***' --include='colors/***' --exclude='*' .
