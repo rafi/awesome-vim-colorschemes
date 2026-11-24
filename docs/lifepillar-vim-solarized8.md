@@ -1,9 +1,5 @@
 # Solarized 8 for Vim
 
-Solarized 8 Flat Dark      |  Solarized 8 Flat Light
-:-------------------------:|:-------------------------:
-![](https://raw.github.com/lifepillar/Resources/master/solarized8/solarized8_dark_flat.png)  |  ![](https://raw.github.com/lifepillar/Resources/master/solarized8/solarized8_light_flat.png)
-
 **Note: if you are using Neovim, checkout the `neovim` branch of this repo.**
 
 This is yet another Solarized theme for Vim. It places itself half way between
@@ -32,15 +28,8 @@ necessary.<sup>*</sup> See below for installation instructions.
 ## But, my terminal has only 256 colors!
 
 For terminals not supporting true colors, Solarized 8 will fall back to use an
-approximate palette based on xterm's 256 colors, which looks more or less like
-this:
-
-Dark 256 color palette     |  Light 256 color palette
-:-------------------------:|:-------------------------:
-![](https://raw.github.com/lifepillar/Resources/master/solarized8/solarized8_dark_256.png)  |  ![](https://raw.github.com/lifepillar/Resources/master/solarized8/solarized8_light_256.png)
-
-(Yeah, it looks like a different color scheme: Solarized palette is far away
-from xterm colors!)
+approximate palette based on xterm's 256 colors, which looks like a different
+color scheme: Solarized palette is far away from xterm colors!
 
 If you do not like this approximation, to get exact colors with such terminals
 you have two possibilities:
@@ -73,36 +62,27 @@ sure that `set termguicolors?` outputs `notermguicolors`).
 
 In the past, Solarized 8 used to complain when your terminal did not support
 enough colors. But the current version will gracefully degrade to a (beautiful!)
-black&white color scheme:
-
-Solarized 8 B&W variant    | Solarized 8 B&W variant
-:-------------------------:|:-------------------------:
-![](https://raw.github.com/lifepillar/Resources/master/solarized8/solarized8_bw.png)  |  ![](https://raw.github.com/lifepillar/Resources/master/solarized8/solarized8_bw_solarized.png)
-
+black&white color scheme.
 
 ## Installation
 
 If your Vim supports packages (`echo has('packages')` prints `1`), I strongly
 recommend that you use them. Just clone this repo inside `pack/*/opt`, e.g.:
 
-    git clone https://github.com/lifepillar/vim-solarized8.git \
+    git clone https://codeberg.org/lifepillar/vim-solarized8.git \
         ~/.vim/pack/themes/opt/solarized8
 
 Otherwise, use you favourite installation method.
 
 There are actually four optimized<sup>*</sup> color schemes you may load:
 
-- `solarized8_high`: high-contrast variant (screenshot below, first column);
-- `solarized8`: the default Solarized theme (screenshot below, second column);
-- `solarized8_low`: low-contrast variant (screenshot below, third column);
-- `solarized8_flat`: “flat” variant (screenshot below, fourth column).
-
-![](https://raw.github.com/lifepillar/Resources/master/solarized8/solarized8-variants.png)
+- `solarized8_high`: high-contrast variant;
+- `solarized8`: the default Solarized theme;
+- `solarized8_low`: low-contrast variant;
+- `solarized8_flat`: “flat” variant.
 
 The “flat” variant does not exist in the original Solarized. It differs from
-`solarized8` mainly in how the status line, split bars and tab bar look like:
-
-![](https://raw.github.com/lifepillar/Resources/master/solarized8/solarized8-normal-vs-flat.png)
+`solarized8` mainly in how the status line, split bars and tab bar look like.
 
 To use a Solarized 8 color scheme, set the background (`dark` or `light`) then
 load the variant you want, e.g.:
@@ -126,18 +106,6 @@ accordingly.
 
 If you use Vim packages, there is no need to `packadd solarized8`. Keep your
 `runtimepath` clean!
-
-<sup>*</sup> Below is the result of a benchmark I have made using Vim 8.1.1450
- and iTerm 2 v3.2.6 on a MacBook Pro Early 2015 with macOS 10.14.5. To make the
- comparison meaningful, `g:solarized_extra_hi_groups` was set to `1`: Solarized
- 8 should load a bit faster if you do not enable additional syntax items. Note
- that Solarized 8 is optimized for what are believed to be the most common use
- cases, i.e., GUI, true-color terminals and 256-color terminals.
-
-<p align="center">
-<img width="500" src="https://raw.github.com/lifepillar/Resources/master/solarized8/load_time.png">
-</p>
-
 
 ## Options
 
@@ -201,15 +169,15 @@ set -g default-terminal "tmux-256color"
 
 See also these threads:
 
-- [Colors are off when running Vim via SSH inside tmux](https://github.com/lifepillar/vim-solarized8/issues/4#issuecomment-985416964)
-- [Comments look weird in tmux](https://github.com/lifepillar/vim-solarized8/issues/109)
+- [Colors are off when running Vim via SSH inside tmux](https://codeberg.org/lifepillar/vim-solarized8/issues/4)
+- [Comments look weird in tmux](https://codeberg.org/lifepillar/vim-solarized8/issues/109)
 
 
 
 ## Hacking
 
 Do you want to hack the theme? Install
-[Colortemplate](https://github.com/lifepillar/vim-colortemplate), edit the
+[Colortemplate](https://codeberg.org/lifepillar/vim-colortemplate), edit the
 `templates/*.colortemplate` files, then rebuild the color schemes.
 
 If you extend or improve Solarized 8, please consider submitting a pull request!

@@ -17,7 +17,7 @@ endif
 let s:accents = s:palette.red
 
 let s:error_fg = s:palette.bg0
-let s:error_bg = s:palette.bg_red
+let s:error_bg = s:palette.filled_red
 let s:warning_fg = s:palette.bg0
 let s:warning_bg = s:palette.yellow
 let s:term_fg = s:palette.fg
@@ -26,18 +26,18 @@ let s:term_bg = s:palette.bg1
 let s:tab_fg = s:palette.fg
 let s:tab_bg = s:palette.bg4
 let s:tab_sel_fg = s:palette.bg0
-let s:tab_sel_bg = s:palette.bg_red
+let s:tab_sel_bg = s:palette.filled_red
 let s:tab_mid_fg = s:palette.fg
 let s:tab_mid_bg = s:palette.bg1
 let s:tab_mod_fg = s:palette.bg0
-let s:tab_mod_bg = s:palette.bg_blue
+let s:tab_mod_bg = s:palette.filled_blue
 let s:tab_type_fg = s:palette.bg0
 let s:tab_type_bg = s:palette.purple
 let s:tab_label_fg = s:palette.fg
 let s:tab_label_bg = s:palette.bg4
 
 let s:normal_side_fg = s:palette.bg0
-let s:normal_side_bg = s:palette.bg_blue
+let s:normal_side_bg = s:palette.filled_blue
 let s:normal_sub_fg = s:palette.fg
 let s:normal_sub_bg = s:palette.bg4
 let s:normal_mid_fg = s:palette.fg
@@ -46,7 +46,7 @@ let s:normal_mod_fg = s:palette.blue
 let s:normal_mod_bg = s:palette.bg1
 
 let s:insert_side_fg = s:palette.bg0
-let s:insert_side_bg = s:palette.bg_green
+let s:insert_side_bg = s:palette.filled_green
 let s:insert_sub_fg = s:palette.fg
 let s:insert_sub_bg = s:palette.bg4
 let s:insert_mid_fg = s:palette.fg

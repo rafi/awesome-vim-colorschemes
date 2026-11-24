@@ -12,9 +12,9 @@ For vim, this is `~/.vim/colors/`. For Neovim, `~/.config/init/nvim/colors/`.
 
 **Recommended** use your plugin manager:
 
-* NeoBundle: `:NeoBundleDirectInstall 'zacanger/angr.vim'`.
-* Plug: `Plug 'zacanger/angr.vim'`
-* Vundle: `Plugin 'zacanger/angr.vim'`
+* NeoBundle: `:NeoBundleDirectInstall 'zautumnz/angr.vim'`.
+* Plug: `Plug 'zautumnz/angr.vim'`
+* Vundle: `Plugin 'zautumnz/angr.vim'`
 
 Other plugin managers: see their docs.
 
@@ -24,4 +24,3 @@ Other plugin managers: see their docs.
 Airline theme.
 
 * [LICENSE](./LICENSE.md)
-* [Donate](https://ko-fi.com/zacanger)

@@ -126,9 +126,9 @@ or:
 
 or whatever works for you.
 
-Arch users may be happy to hear that Apprentice [has landed in AUR](https://aur.archlinux.org/packages/vim-apprentice/). To install it, use an AUR helper:
+Arch users may be happy to hear that Apprentice [has landed in AUR](https://aur.archlinux.org/packages/vim-apprentice-git/). To install it, use an AUR helper:
 
-    $ yaourt -S vim-apprentice
+    $ yay -S vim-apprentice-git
 
 or download the `PKGBUILD` and do:
 
@@ -225,6 +225,10 @@ I removed it from `master` but you can still find it in the "fancylines-and-neov
 * [Alchemist](https://github.com/habamax/vim-alchemist) appears to be trying to turn lead into gold, which I should probably take as a thinly veiled insult.
 
 * [Saturnite](https://github.com/habamax/vim-saturnite) is a colorscheme for week-end coders adapted from Apprentice.
+
+* [prism-apprentice](https://github.com/Camroku/prism-apprentice) is a port to Prism.JS.
+
+* [apprentice.css](https://github.com/Camroku/apprentice.css) is a CSS file without classes to make simple websites with Apprentice.
 
 Go team!
 

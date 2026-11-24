@@ -123,6 +123,21 @@ kitty color theme
 
 - [seoul256-kitty](https://github.com/guilhermedeandrade/seoul256-kitty)
 
+Ghostty color theme
+-------------------
+
+- [seoul256-ghostty](https://github.com/jcmorrow/seoul256-ghostty)
+
+Zed color theme
+---------------
+
+- [seoul256-zed](https://github.com/jcmorrow/seoul256-zed)
+
+Zellij color theme
+------------------
+
+- [seoul256-zellij](https://github.com/seungjin/seoul256-zellij)
+
 Author
 ------
 

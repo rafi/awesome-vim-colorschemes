@@ -272,6 +272,6 @@ hi! link diffAdded String
 "
 " This is needed for some reason: {{{
 
-let &background = s:style
+let &background = index(['light', 'dark'], s:style) > -1 ?  s:style : 'dark'
 
 " }}}

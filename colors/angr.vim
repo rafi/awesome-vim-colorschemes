@@ -1,6 +1,6 @@
-" Plugin:      https://github.com/zacanger/angr.vim
+" Plugin:      https://github.com/zautumnz/angr.vim
 " Description: angr.vim theme
-" Maintainer:  zacanger
+" Maintainer:  zautumnz
 
 " Heavily based on Janah and Ego
 

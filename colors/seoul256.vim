@@ -206,8 +206,8 @@ endif
 call s:hi('Normal', [s:dark_fg, s:light_fg], [s:dark_bg, s:light_bg])
 
 call s:hi('LineNr', [101, 101], [s:dark_bg + 1, s:light_bg - 2])
-call s:hi('Visual', ['', ''], [23, 152])
-call s:hi('VisualNOS', ['', ''], [23, 152])
+call s:hi('Visual', ['NONE', 'NONE'], [23, 152])
+call s:hi('VisualNOS', ['NONE', 'NONE'], [23, 152])
 
 call s:hi('Comment', [65, 65], ['', ''])
 call s:hi('Number', [222, 95], ['', ''])
@@ -351,6 +351,8 @@ call s:hi('StatusLine', [95, 95], [187, 187])
 call s:hi('StatusLineNC', [s:dark_bg + 2, s:light_bg - 2], [187, 238])
 call s:hi('StatusLineTerm', [95, 95], [187, 187])
 call s:hi('StatusLineTermNC', [s:dark_bg + 2, s:light_bg - 2], [187, 238])
+hi StatusLine cterm=bold,reverse gui=bold,reverse
+hi StatusLineNC cterm=bold,reverse gui=bold,reverse
 hi StatusLineTerm cterm=bold,reverse gui=bold,reverse
 hi StatusLineTermNC cterm=bold,reverse gui=bold,reverse
 call s:hi('TabLineFill', [s:dark_bg + 2, s:light_bg - 2], ['', ''])

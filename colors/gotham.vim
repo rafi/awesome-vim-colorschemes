@@ -272,6 +272,20 @@ call s:Col('NeomakeErrorSign', 'red', s:linenr_background)
 call s:Col('NeomakeWarning', 'yellow')
 call s:Col('NeomakeError', 'red')
 
+" Additional highlight groups
+call s:Col('EndOfBuffer', 'base1')
+
+if has('nvim')
+  call s:Col('Float', 'cyan', 'base2')
+  call s:Col('NormalFloat', 'base7', 'base0')
+  call s:Col('FloatBorder', 'base5', 'base0')
+endif
+
+if v:version >= 802
+  call s:Col('CurSearch', 'yellow')
+  call s:Col('MsgArea', 'base7', 'base1')
+endif
+
 " Cleanup =====================================================================
 
 unlet s:colors
