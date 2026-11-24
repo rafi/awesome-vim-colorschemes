@@ -12,7 +12,7 @@ function download() {
 			;;
 		*)
 			url="https://api.github.com/repos/$1/tarball"
-			header="Authorization: token ${GITHUB_API_TOKEN:-$HOMEBREW_GITHUB_API_TOKEN}"
+			header="Authorization: token ${GITHUB_API_TOKEN:-${HOMEBREW_GITHUB_API_TOKEN:-}}"
 			;;
 	esac
 	curl -Ls "$url" -H "$header"
@@ -111,7 +111,12 @@ function _main() {
 
 	find autoload colors -type f -exec chmod -x {} \;
 	git add -- colors docs autoload
-	git commit -m "chore: update"
+	if git diff-index --quiet HEAD; then
+		git config user.name "github-actions[bot]"
+		git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+		git commit -m "chore: update"
+		git push
+	fi
 
 	echo -e '\nCompleted successfuly.'
 
