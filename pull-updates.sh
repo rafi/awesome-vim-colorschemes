@@ -1,26 +1,49 @@
 #!/usr/bin/env bash
 set -eu
 shopt -s nocaseglob
+WORKDIR=""
+
+function download() {
+	local url header
+	case "$1" in
+		codeberg:*)
+			url="https://codeberg.org/${1#*:}/archive/master.tar.gz"
+			header="Authorization: token ${CODEBERG_TOKEN}"
+			;;
+		*)
+			url="https://api.github.com/repos/$1/tarball"
+			header="Authorization: token ${GITHUB_API_TOKEN:-$HOMEBREW_GITHUB_API_TOKEN}"
+			;;
+	esac
+	curl -Ls "$url" -H "$header"
+}
 
 function _dl() {
-	local tmp="tmp" docs="docs" rtp=${2:-}
+	local repo="${1#*:}"
+	local subdir=${2:-}
+	[ -z "$subdir" ] || subdir="$subdir/"
+	echo -e ":: Downloading $repo…"
 
-	[ -d "$tmp" ] || mkdir "$tmp"
-	[ -d "$docs" ] || mkdir "$docs"
+	WORKDIR="$(mktemp -d -t awesome-vim-colorschemes)"
+	download "$1" | tar xz --strip=1 -C "$WORKDIR"/
+	rsync -avhq "$WORKDIR/$subdir" \
+		--include='autoload/***' --include='colors/***' --exclude='*' .
 
-	curl -L "https://api.github.com/repos/$1/tarball" \
-		-H "Authorization: token $HOMEBREW_GITHUB_API_TOKEN" \
-		| tar xz --strip=1 -C "$tmp"/
-
-	rsync -avh "$tmp"/"$rtp" --include='after/***' \
-		--include='autoload/***' --include='colors/***' \
-		--include='plugin/***' --exclude='*' .
-
-	cp -r "$tmp"/"$rtp"/README* "$docs"/"${1//\//-}".md
-	rm -rf "$tmp"
+	for filepath in "$WORKDIR/$subdir"README*; do
+		local filename="$(basename "$filepath")"
+		local ext=""
+		if [[ "$filename" == *.* ]]; then
+			ext=".${filepath##*.}"
+		fi
+		mv "$filepath" docs/"${repo//\//-}${ext}"
+	done
+	[ "${DEBUG:-}" = 1 ] || rm -rf "$WORKDIR"
 }
 
 function _main() {
+	rm -rf autoload colors docs
+	mkdir -p autoload colors docs
+
 	_dl nightsense/snow
 	_dl ajmwagar/vim-deus
 	_dl AlessandroYorba/Alduin
@@ -53,7 +76,7 @@ function _main() {
 	_dl keith/parsec.vim
 	_dl kristijanhusak/vim-hybrid-material
 	_dl kyoz/purify vim/
-	_dl lifepillar/vim-solarized8
+	_dl codeberg:lifepillar/vim-solarized8
 	_dl liuchengxu/space-vim-dark
 	_dl marcopaganini/termschool-vim-theme
 	_dl mhartington/oceanic-next
@@ -86,6 +109,11 @@ function _main() {
 	_dl yorickpeterse/happy_hacking.vim
 	_dl zacanger/angr.vim
 
-	chmod -x colors/*vim
+	find autoload colors -type f -exec chmod -x {} \;
+	git add -- colors docs autoload
+	git commit -m "chore: update"
+
+	echo -e '\nCompleted successfuly.'
+
 }
 _main
