@@ -8,6 +8,8 @@ on:
 jobs:
   run-script:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_API_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v7
       - name: Pull update

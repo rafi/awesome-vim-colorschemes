@@ -8,14 +8,14 @@ function download() {
 	case "$1" in
 		codeberg:*)
 			url="https://codeberg.org/${1#*:}/archive/master.tar.gz"
-			header="Authorization: token ${CODEBERG_TOKEN}"
+			header="Authorization: Bearer ${CODEBERG_TOKEN:-}"
 			;;
 		*)
 			url="https://api.github.com/repos/$1/tarball"
-			header="Authorization: token ${GITHUB_API_TOKEN:-${HOMEBREW_GITHUB_API_TOKEN:-}}"
+			header="Authorization: Bearer ${GITHUB_API_TOKEN:-${HOMEBREW_GITHUB_API_TOKEN:-}}"
 			;;
 	esac
-	curl -Ls "$url" -H "$header"
+	curl -fsSL --retry 3 --retry-delay 2 "$url" -H "$header"
 }
 
 function _dl() {
